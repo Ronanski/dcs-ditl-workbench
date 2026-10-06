@@ -7,7 +7,21 @@ Update this file on every code change (newest entry on top). File name carries t
 2. Versioning: MAJOR.MINOR.PATCH (bug fix = patch, new feature = minor, big change = major). Every build updates this file name + the version in the html file name and <title>.
 3. No phone-browser testing. Claude tests headless, the user tests in the browser. PDF only when needed / requested.
 4. Signal rule: ORIGIN signal (from field/DCS, nothing in the drawing drives it) = the user sets it (click 1/0, slider/number). Signal that is the OUTPUT of another block (this sheet or another sheet) = computed by the logic, never set by the user; FORCE is only an optional override (bypass) for signals the user does not control.
-5. User wishes (analog simulation): symbols must stand out over lines (also in pause/view mode); follow the true logic path/flow/function of every block; no visually unconnected lines; clear DI-of-DCS vs "from another logic" identification; analog vs digital wires distinct, esp. at T switching.
+5. Saved values (browser) use net / block numbers: BUMP `AN_PV` in the analog script every time the drawing reader changes (valves, timer chord, new blocks ...). Forgetting this makes old saved forces / inputs land on the wrong wires.
+6. User wishes (analog simulation): symbols must stand out over lines (also in pause/view mode); follow the true logic path/flow/function of every block; no visually unconnected lines; clear DI-of-DCS vs "from another logic" identification; analog vs digital wires distinct, esp. at T switching.
+
+## v1.4.0 (ditl-workbench-v1.4.0.html) - user test of v1.3.0 (desktop Chrome screenshots)
+- SAVED VALUES: found a real bug: v1.2.0 changed the reader (valve symbol no longer wires, so net / block numbers moved) but AN_PV stayed 5, so values saved by older versions landed on wrong wires on the desktop browser (the Android browser had empty storage). AN_PV = 7 now (rule 5). Panel hidden = no FORCE controls: now a click on a wire / block opens the panel as a floating card when it is hidden and hides it again when you click empty canvas (AN.tmp). Reset also clears saved values.
+- WIRE STYLE (Legend & style): analog colour (Auto/Amber/Cyan/Green/White/Magenta/Orange), analog line Tube/Solid, analog thickness, digital thickness (Thin/Normal/Thick/Extra). Saved in ditl.an.ws. Digital colour = the Live list.
+- ARROWHEADS follow the wire colour (live / off / analog / faint). SOLID triangles that are net arrows are no longer drawn twice.
+- TIMERS: the closing line (chord) of the half-disc was a WIRE (164 timers), now part of the symbol (violet). 
+- T SWITCH: the selected path (input -> centre -> output) is drawn as a thick line in the wire colour, under the T letter; rings removed. Not selected = nothing. Junction dots are drawn under the symbols and smaller.
+- VALUES: coloured like the analog wire (light tint), fewer (no badges on nets that only feed / leave an I/P, AO, PO, TP, FIELD, valve, actuator), more clearance around symbols (blocks +1 unit, texts +0.3, wires penalised).
+- SLIDERS: analog inputs (not only AI blocks) now have a slider next to the number (range read from "a ~ b unit" text near the wire, else 0-100), also in the selected-wire card.
+- AI FEEDBACK: the word POSITIONER links a valve / actuator to the AI that measures its position (valve: ABC-030, 050, 052; actuators: many); that AI follows the position (0-100 % of its range), slider disabled, row says "follows the valve".
+- DITL page: identical (guard). Tests OK: 54 sheets, 44 tag links, valve -> AI feedback test (valve 30 % -> AI0384 30), panel auto-open + force save test, wire style test.
+- AUDIT ABC-050 T switches: 19 T blocks, 16 switch correctly with their select signal, 1 is a hold (B input = its own output, by design: ABC-050 SW id 74), 2 AMT (the T+COS pairs near 516,385 and 481,533) have only the A data input found (the B input is not read) -> to verify with the user (what are COS / AMT B?).
+- OPEN: user says some wires are not coloured although the simulation by click is right; no example yet. Checks done: no orphan glyph lines, no touching wires with different lit state in ABC-050 / ABC-052. Need sheet + place.
 
 ## v1.3.0 (ditl-workbench-v1.3.0.html) - colour-coded symbols, no overlapping labels
 User test of v1.2.0: symbols were all white, coloured arcs (timer half-discs) stayed white; wants colour coding. Simple colours stay for wires / live wires. Texts, values, timer progress, valve positions must not overlap.
