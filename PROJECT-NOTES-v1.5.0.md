@@ -10,6 +10,18 @@ Update this file on every code change (newest entry on top). File name carries t
 5. Saved values (browser) use net / block numbers: BUMP `AN_PV` in the analog script every time the drawing reader changes (valves, timer chord, new blocks ...). Forgetting this makes old saved forces / inputs land on the wrong wires.
 6. User wishes (analog simulation): symbols must stand out over lines (also in pause/view mode); follow the true logic path/flow/function of every block; no visually unconnected lines; clear DI-of-DCS vs "from another logic" identification; analog vs digital wires distinct, esp. at T switching.
 
+## v1.5.0 (ditl-workbench-v1.5.0.html) - user test of v1.4.0
+- T SWITCH: no line inside the box, no ">A / >B" arrows. The letter of the input in use (a/b or A/B written on the drawing) is coloured (analog or digital colour) and bold; the other stays normal. (pins keep a reference to their label text: p.lt).
+- COS: the diamond COS next to a T has no wire. Reading: it is the operator's MANUAL value for the B input of that T. 86 of 173 COS blocks are now a real input ("COS manual value", slider, badge at the COS). ABC-050: the two T+COS (A/M near circle 9 / M.0706, and the SV selector next to the PV-SV deviation box). TO CONFIRM WITH THE USER that COS = operator manual value.
+- VALUES: default colour green; settings: colour, size, font, weight; placed closer (max 7.5 units); settings card has sections Digital / Analog / Forced / Values.
+- DIGITAL WIRES: own colour (Live list stays the default), solid or tube, thickness. FORCED wires: own colour (default white) + dashed. PER-WIRE LOOK: click a wire -> "Look of this wire" (colour + thickness, saved per sheet, Reset clears).
+- FAINT (nobody follows it) is now the wire colour at 40 % instead of dark grey: this was probably the "lines are not coloured" (dark grey looked uncoloured). No geometry cause found: no orphan glyph lines, no touching nets with different state (checked ABC-050, ABC-052); touch-without-dot = 657 pairs overall, only 3 would feed a floating input (all ABC-001D) so strict-T is right.
+- ANALOG INPUTS: always instant, ramp dropdown removed (user had "Analog: normal" saved: slider / values / comparators looked out of sync because the value ramped 5 %/s). Comparators checked in ABC-050: all 14 correct on both sides of the set point.
+- TREND ARROWS: valve %, actuator %, and the AI that follows them show up/down arrows while moving (same as timers).
+- STORAGE: a warning appears if the browser refuses to store data.
+- FORCE "second try fails" (user): NOT reproduced (digital, analog, repeated, release, reload, hidden panel all pass). Suspects: two tabs of different versions share one browser storage; stale saved values (fixed with AN_PV=7). Ask the user for exact steps if it comes back.
+- DITL page: identical (guard). Tests: 54 sheets no errors, 44 tag links, force tests, valve -> AI test, per-wire look / settings test.
+
 ## v1.4.0 (ditl-workbench-v1.4.0.html) - user test of v1.3.0 (desktop Chrome screenshots)
 - SAVED VALUES: found a real bug: v1.2.0 changed the reader (valve symbol no longer wires, so net / block numbers moved) but AN_PV stayed 5, so values saved by older versions landed on wrong wires on the desktop browser (the Android browser had empty storage). AN_PV = 7 now (rule 5). Panel hidden = no FORCE controls: now a click on a wire / block opens the panel as a floating card when it is hidden and hides it again when you click empty canvas (AN.tmp). Reset also clears saved values.
 - WIRE STYLE (Legend & style): analog colour (Auto/Amber/Cyan/Green/White/Magenta/Orange), analog line Tube/Solid, analog thickness, digital thickness (Thin/Normal/Thick/Extra). Saved in ditl.an.ws. Digital colour = the Live list.
