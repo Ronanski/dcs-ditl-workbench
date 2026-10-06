@@ -11,6 +11,12 @@ Update this file on every code change (newest entry on top). File name carries t
 6. The analog module must NEVER reference a `const` before its definition (v1.6.0 first draft crashed the whole analog module: KV used before defined). After every patch: load the file in the browser and check there is no page error (tools/test-links.js does).
 7. User wishes (analog simulation): symbols must stand out over lines (also in pause/view mode); follow the true logic path/flow/function of every block; no visually unconnected lines; clear DI-of-DCS vs "from another logic" identification; analog vs digital wires distinct, esp. at T switching.
 
+## v1.10.0 (ditl-workbench-v1.10.0.html) - project file + desktop shell
+- Why: user cannot rely on browser storage (laptop, plant rules: no server / OPC / eDNA / VPN). Direction in docs/ARCHITECTURE.md (plant sim + controller sim + engineering station, offline, portable exe without admin rights).
+- NEW analog bar: Save / Save as / Open + Ctrl+S (analog page only). File = JSON {app, kind, ver, saved, sv (inputs, forces, switches, tuning), ws (settings), cur}. Uses the Chrome file picker (overwrites the same file), a download in other browsers, native dialogs in the desktop app (window.nativeFS from app/preload.js). Opening a file rebuilds all sheets from it (no reload). Old "Save settings file" still works.
+- NEW app/ : Electron shell (offline: all network requests blocked, asInvoker = no admin), prepare-ui.js copies the newest ditl-workbench-v*.html into the app. .github/workflows/build-windows.yml builds the portable exe on GitHub (Actions > run > Artifacts). Tested here: app starts under xvfb, loads the analog page, native save works. NOT tested: the Windows exe itself (needs the GitHub build + the user's laptop).
+- Tools: tools/patch-1.10.0.js, tools/test-project.js (save -> change -> open restores forces, Ctrl+S). DITL identical (guard).
+
 ## v1.9.2 (ditl-workbench-v1.9.2.html) - other sheets (user: "almost perfect 1.9.1, can you fix the other sheets too?")
 - Audit of all 54 sheets (blocks with no input, undriven wires, tags driven elsewhere but not linked): clean except the items below.
 - FIX timers drawn with a wire a hair off horizontal (ABC-057 TR708/TR709, ABC-008): the wire was not cut at the timer, so the timer had no pins. Cut tolerance .06 -> .2.
