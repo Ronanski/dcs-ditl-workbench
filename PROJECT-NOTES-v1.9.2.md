@@ -11,6 +11,14 @@ Update this file on every code change (newest entry on top). File name carries t
 6. The analog module must NEVER reference a `const` before its definition (v1.6.0 first draft crashed the whole analog module: KV used before defined). After every patch: load the file in the browser and check there is no page error (tools/test-links.js does).
 7. User wishes (analog simulation): symbols must stand out over lines (also in pause/view mode); follow the true logic path/flow/function of every block; no visually unconnected lines; clear DI-of-DCS vs "from another logic" identification; analog vs digital wires distinct, esp. at T switching.
 
+## v1.9.2 (ditl-workbench-v1.9.2.html) - other sheets (user: "almost perfect 1.9.1, can you fix the other sheets too?")
+- Audit of all 54 sheets (blocks with no input, undriven wires, tags driven elsewhere but not linked): clean except the items below.
+- FIX timers drawn with a wire a hair off horizontal (ABC-057 TR708/TR709, ABC-008): the wire was not cut at the timer, so the timer had no pins. Cut tolerance .06 -> .2.
+- FIX comparators (H/ , /L) whose input wire has no arrow head (ABC-014 x4, ABC-019 x2): both pins were 'out'. Now the pin with no arrow (or, if both, the left pin) is the input.
+- NEW "IF M.xxxx = 1 / SET SV = n" notes with no T next to the word SV (ABC-017, 029, 030, 033, 054, 055 (3 values on one wire), 056): the preset is put on the wire that carries the nearest "SV" text. Tested by forcing each M tag = 1: value jumps to the note value (all 9 notes OK, plus ABC-050). Several notes on one wire: last true one wins.
+- NOT changed (checked): "SET SIxxxx => TAG.SV" notes (ABC-007, 013, 051, 052) = write into the SV of a controller on ANOTHER sheet (controllers are pass-through, no SV in the sim); ABC-003x T#47 / ABC-003A T#63 / ABC-052 AND#112 are drawn with open inputs; ABC-000 = symbol list.
+- AN_PV = 11 (nets of ABC-057 / 008 changed). Tools: tools/patch-1.9.2.js. DITL identical (guard). Circles, storage, anim tests pass.
+
 ## v1.9.1 (ditl-workbench-v1.9.1.html) - corrections to v1.9.0 (user feedback)
 - T PATH COLOUR: user says v1.8.1 was RIGHT (selected T path lit, not selected = grey, vice versa). v1.9.0 change reverted. (Known: in v1.8.1 61 T's on 54 sheets show a selected input grey when their output only feeds an unselected input further on - left as the user wants.)
 - ENGINEERING THEME: pure white was wrong. Now every element keeps its own colour family but muted (58% toward light grey): gates teal, timers violet, comparators green, selectors blue... wires / valves / live values keep their normal colours. Values keep the user's chosen colour (no auto-white).
