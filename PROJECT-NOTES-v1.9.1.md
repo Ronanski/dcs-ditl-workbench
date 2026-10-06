@@ -11,6 +11,13 @@ Update this file on every code change (newest entry on top). File name carries t
 6. The analog module must NEVER reference a `const` before its definition (v1.6.0 first draft crashed the whole analog module: KV used before defined). After every patch: load the file in the browser and check there is no page error (tools/test-links.js does).
 7. User wishes (analog simulation): symbols must stand out over lines (also in pause/view mode); follow the true logic path/flow/function of every block; no visually unconnected lines; clear DI-of-DCS vs "from another logic" identification; analog vs digital wires distinct, esp. at T switching.
 
+## v1.9.1 (ditl-workbench-v1.9.1.html) - corrections to v1.9.0 (user feedback)
+- T PATH COLOUR: user says v1.8.1 was RIGHT (selected T path lit, not selected = grey, vice versa). v1.9.0 change reverted. (Known: in v1.8.1 61 T's on 54 sheets show a selected input grey when their output only feeds an unselected input further on - left as the user wants.)
+- ENGINEERING THEME: pure white was wrong. Now every element keeps its own colour family but muted (58% toward light grey): gates teal, timers violet, comparators green, selectors blue... wires / valves / live values keep their normal colours. Values keep the user's chosen colour (no auto-white).
+- OPEN (user, later, when the IO list exists): selected address text highlights (yellow / sky) with its description.
+- OPEN: v1.8.1 "errors on refresh" (investigating); force of OUTPUT signals not saved on the Windows laptop (works on tablet); question: move to another format than one html?
+- Tools: tools/patch-1.9.1.js. DITL identical (guard).
+
 ## v1.9.0 (ditl-workbench-v1.9.0.html) - flow-aware links, engineering theme, T path colour, value placement
 - LINKS: a single circle now remembers the M.xxxx / SIxxxx tags written next to it and the text "( FROM ABC-003A )" / "TO ABC-xxx". It is matched to the circle with the same number in THAT drawing (tag match scores highest); the FROM/TO word fixes the direction (FROM = this end receives) when the arrows do not. ABC-003B/C/D #2 (x4 each) now link to ABC-003A. Unlinked single circles 8 -> 4 (004A #6 #8 #9, 020 #9: no matching text/partner, check by eye).
 - LINKS (external inputs): an input with no tag next to the wire now also uses a tag a bit further away and the "( FROM ABC-xxx )" text; the tag is searched in that drawing first. Linked external inputs 179 -> 194 of 936 (the rest are real origin signals: set by the user).
