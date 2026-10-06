@@ -9,6 +9,18 @@ Update this file on every code change (newest entry on top). File name carries t
 4. Signal rule: ORIGIN signal (from field/DCS, nothing in the drawing drives it) = the user sets it (click 1/0, slider/number). Signal that is the OUTPUT of another block (this sheet or another sheet) = computed by the logic, never set by the user; FORCE is only an optional override (bypass) for signals the user does not control.
 5. User wishes (analog simulation): symbols must stand out over lines (also in pause/view mode); follow the true logic path/flow/function of every block; no visually unconnected lines; clear DI-of-DCS vs "from another logic" identification; analog vs digital wires distinct, esp. at T switching.
 
+## v1.2.0 (ditl-workbench-v1.2.0.html) - animation, valves, followed path
+User test of v1.1.0: colours OK, legend OK. Problems: analog values "do not work" when pressing the check; timer count animation missing; valve position instant.
+- ANALOG INPUTS: found the cause: inputs moved at 5 %/s ("Analog: normal"), so 90 took 18 s and the logic looked dead. Default is now "Analog: instant" (setting stored under a new key ditl.an.ramp2).
+- TIMERS: count shown ON the drawing under the timer: TON/TPS/TPV count up "up-arrow 2.4 / 5.0 s" with a progress bar, TOF counts down "down-arrow 3.1 s". Hidden when idle.
+- CONTROL VALVES: the bowtie symbol (44 in 29 sheets) is no longer a wire; it is a block VLV fed by the stem wire (0-100 %, digital 1 = 100). Travel animation, full stroke 20 s (editable in the panel), outline colour: green = closed, red = open, white = moving, blue = stopped half-open. % shown beside it.
+- I/P: only the main input counts; the other input pin (air supply) is not an input any more (ABC-050: 28 -> 27 inputs).
+- ANALOG WIRES: always coloured (a value, also 0, is flowing). Faint = nobody follows it: feeds only an input not selected by a T, or blocks that only feed such inputs (chain, not only the first wire).
+- TIMER/VALVE legend added. Tools: patch-1.2.0.js, test-anim.js.
+- DITL page: identical (guard). Tests: 54 analog sheets compile/run/render with no errors; 44 tag links; valve + timer animation test.
+- User decisions: "TO DITL 52-03" NOT linked (DITL not simulated yet). STN101015 ignored. Still on hold: PID/SUMA/SUMP (in = out), 19 CONST.
+- PLAN (agreed idea): ABC-050 has 31 of the 51 block kinds. Pilot sheets in order: ABC-050, then a sheet with the missing kinds (MAN, PIDV, ACT, TOF, DCMP, PVSV, DIV, ABS, SQRT, LAG, ADD, TP, PO, HLIM, SUMA...), then a family-by-family regression over all 54 sheets with the audit/test tools.
+
 ## v1.1.0 (ditl-workbench-v1.1.0.html) - analog look
 - Symbols stand out over wires, in run and pause: symbol outlines bright white and thicker (.6), the raw CAD lines under the wires dimmed (50%), wires thinner.
 - DIGITAL wire = thin solid line (Live colour when 1, grey when 0). ANALOG wire = tube (coloured edge + dark core), amber when it carries a value (cyan if Live is Yellow/Green/Magenta), grey when 0. Forced = dashed. Selected = thicker.
