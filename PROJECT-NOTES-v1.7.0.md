@@ -11,6 +11,16 @@ Update this file on every code change (newest entry on top). File name carries t
 6. The analog module must NEVER reference a `const` before its definition (v1.6.0 first draft crashed the whole analog module: KV used before defined). After every patch: load the file in the browser and check there is no page error (tools/test-links.js does).
 7. User wishes (analog simulation): symbols must stand out over lines (also in pause/view mode); follow the true logic path/flow/function of every block; no visually unconnected lines; clear DI-of-DCS vs "from another logic" identification; analog vs digital wires distinct, esp. at T switching.
 
+## v1.7.0 (ditl-workbench-v1.7.0.html) - pneumatic line, actuator head, fewer values, brighter analog
+- PNEUMATIC (air) LINES: nets driven by an I/P block (its air outputs, also the line to the valve) and the air-supply net of the I/P (the second input pin, "AS") have their own colour (default sky blue, selectable in Legend & style > Pneumatic). They blink while their valve travels (class .blink, only while the valve state mv is true).
+- HATCH MARKS (the // across a pneumatic line): 516 pairs of tiny diagonals were wires (175 junk nets); now symbols drawn in the pneumatic colour.
+- ACTUATOR HEAD (half-disc above the I/P, 42 in the 54 sheets): arc + its chord is one symbol (block ACH, linked to the nearest valve). Outline takes the valve state colour (green closed, red open, white moving, blue half open) and blinks while the valve moves.
+- VALUES: no value badge on a wire driven by a constant (the number is written on the drawing: "160 T/H"); a value of a tagged analog wire sits right under its tag. Not solved: when the tag text is attached to another net (T output of ABC-050 "SI0166") the badge stays beside the T.
+- ANALOG: brighter amber (#ffc233), tube core thinner (22 %), faint (not followed) analog wires 68 % (was 40 %).
+- CIRCLES (user confirmed): the LOWER number of a two-number circle is the drawing it goes to (03 / 061 = ABC-061). Already how it is read (S.xc, tgt). All 14 targets found in the sheet list (007 002 050 057 027 026 033 030 051 052 056 013 015 016).
+- AN_PV = 9 (reader changed: hatch marks, heads).
+- DITL page identical (guard). Tests: all earlier tests + pneumatic blink (11 blinking elements while moving, 0 when still).
+
 ## v1.6.1 (ditl-workbench-v1.6.1.html) - saving, 4th layer
 - User: with v1.6.0 settings / analog forces still vanish after F5 on the PC. Unknown which storage is dead there, so ONE bundle {sv, ws, cur, cat, ts} is written to 4 layers: browser storage, IndexedDB, window.name (tab memory) and the ADDRESS BAR (#a=... , survives F5 even when every storage is blocked; also works as a bookmark = your settings). On open the NEWEST layer wins. The Saving block shows which layer the last load came from and which layers work.
 - Bug found while testing (my own): the first draft wrote the empty default bundle at start-up BEFORE reading the saved one (newest = defaults = everything lost). Fixed: what the page was opened with is read first (BOOT) and nothing is written until it has been applied.
