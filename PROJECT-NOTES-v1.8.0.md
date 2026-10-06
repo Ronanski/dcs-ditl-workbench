@@ -11,6 +11,15 @@ Update this file on every code change (newest entry on top). File name carries t
 6. The analog module must NEVER reference a `const` before its definition (v1.6.0 first draft crashed the whole analog module: KV used before defined). After every patch: load the file in the browser and check there is no page error (tools/test-links.js does).
 7. User wishes (analog simulation): symbols must stand out over lines (also in pause/view mode); follow the true logic path/flow/function of every block; no visually unconnected lines; clear DI-of-DCS vs "from another logic" identification; analog vs digital wires distinct, esp. at T switching.
 
+## v1.8.0 (ditl-workbench-v1.8.0.html) - "cannot force AO / MV"
+- User: AO of the valve and the MV cannot be forced (even with the check). REPRODUCED the causes: (1) the force itself worked, but nothing showed it: value badges of AO / I-P nets are hidden (v1.4 "fewer values") and the AO % overlay read the INPUT net; (2) the file now opens PAUSED, so the valve / timers do not move after a force until Run is pressed (nothing explained that); (3) clicking the MV wire (net PICMS1006.MV, 7 consumers) can hit another overlapping wire (a digital one: the card then only has 1 / 0 buttons, no number box).
+- NEW panel section "Signals to force" (closed by default): every tagged wire that a block drives and the outputs of AO, I/P, controllers and selectors, each with live value and FORCE (number + check / x). ABC-050: 68 rows incl. PICMS1006.MV, AO output, I/P output -> valve. Tested: MV 70 -> AO 70.00 % -> valve travels after Run -> AI0384 follows; AO output 20 -> valve up-arrow 20 %.
+- A forced wire always shows its value (hidden badges appear when forced; a badge is made on the fly if there was none). AO overlay % now follows the AO OUTPUT.
+- Toast when a value is changed while paused: "valves, timers and ramps only move after you press Run" (every 15 s at most).
+- Several wires under one click: click again = next wire (message "2 of 3"); a digital input is not toggled while cycling (use the panel).
+- T switch: the path that is NOT selected is shown DE-ENERGISED (same grey as an OFF wire, full width), lit only when selected (user request; only analog data paths and directly unselected digital inputs; select / control wires stay lit).
+- DITL page identical (guard). All earlier tests pass (storage full / blocked, force digital + analog, valve -> AI, COS lamp, links, 54 sheets).
+
 ## v1.7.0 (ditl-workbench-v1.7.0.html) - pneumatic line, actuator head, fewer values, brighter analog
 - PNEUMATIC (air) LINES: nets driven by an I/P block (its air outputs, also the line to the valve) and the air-supply net of the I/P (the second input pin, "AS") have their own colour (default sky blue, selectable in Legend & style > Pneumatic). They blink while their valve travels (class .blink, only while the valve state mv is true).
 - HATCH MARKS (the // across a pneumatic line): 516 pairs of tiny diagonals were wires (175 junk nets); now symbols drawn in the pneumatic colour.
