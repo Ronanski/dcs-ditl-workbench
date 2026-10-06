@@ -9,6 +9,14 @@ Update this file on every code change (newest entry on top). File name carries t
 4. Signal rule: ORIGIN signal (from field/DCS, nothing in the drawing drives it) = the user sets it (click 1/0, slider/number). Signal that is the OUTPUT of another block (this sheet or another sheet) = computed by the logic, never set by the user; FORCE is only an optional override (bypass) for signals the user does not control.
 5. User wishes (analog simulation): symbols must stand out over lines (also in pause/view mode); follow the true logic path/flow/function of every block; no visually unconnected lines; clear DI-of-DCS vs "from another logic" identification; analog vs digital wires distinct, esp. at T switching.
 
+## v1.3.0 (ditl-workbench-v1.3.0.html) - colour-coded symbols, no overlapping labels
+User test of v1.2.0: symbols were all white, coloured arcs (timer half-discs) stayed white; wants colour coding. Simple colours stay for wires / live wires. Texts, values, timer progress, valve positions must not overlap.
+- SYMBOL COLOUR CODE (outline + faint tint + the text inside): gates AND/OR/NOT/FF teal; timers violet (arcs included, progress bar violet); comparators lime; T switch / COS pink; controllers green; I/O (AI, AO, PO, I/P, alarm, output flags, SIG.AB) tan; math/signal/constants blue; numbered connector circles light grey; other shapes steel; valve = state colour. Colour is taken from the block that contains the symbol part (also AND box lines, OR circle, arcs).
+- LABELS: the placement routine now also avoids wires and looks only at nearby items; timer count, valve % and the T label are placed with it (first), then the analog value badges. Timer text shortened ("up-arrow 2.4/5s", "down-arrow 3.1s").
+- LEGEND: button "Legend" opens a card with the symbol colours, valve colours and wire styles.
+- DITL page: identical (guard). Tests: no errors in 54 sheets, 44 tag links, animation test OK.
+- Known: some labels still touch when a drawing is very crowded (e.g. value next to a tag text); report the sheet + place.
+
 ## v1.2.0 (ditl-workbench-v1.2.0.html) - animation, valves, followed path
 User test of v1.1.0: colours OK, legend OK. Problems: analog values "do not work" when pressing the check; timer count animation missing; valve position instant.
 - ANALOG INPUTS: found the cause: inputs moved at 5 %/s ("Analog: normal"), so 90 took 18 s and the logic looked dead. Default is now "Analog: instant" (setting stored under a new key ditl.an.ramp2).
