@@ -9,6 +9,15 @@ Update this file on every code change (newest entry on top). File name carries t
 4. Signal rule: ORIGIN signal (from field/DCS, nothing in the drawing drives it) = the user sets it (click 1/0, slider/number). Signal that is the OUTPUT of another block (this sheet or another sheet) = computed by the logic, never set by the user; FORCE is only an optional override (bypass) for signals the user does not control.
 5. User wishes (analog simulation): symbols must stand out over lines (also in pause/view mode); follow the true logic path/flow/function of every block; no visually unconnected lines; clear DI-of-DCS vs "from another logic" identification; analog vs digital wires distinct, esp. at T switching.
 
+## v1.1.0 (ditl-workbench-v1.1.0.html) - analog look
+- Symbols stand out over wires, in run and pause: symbol outlines bright white and thicker (.6), the raw CAD lines under the wires dimmed (50%), wires thinner.
+- DIGITAL wire = thin solid line (Live colour when 1, grey when 0). ANALOG wire = tube (coloured edge + dark core), amber when it carries a value (cyan if Live is Yellow/Green/Magenta), grey when 0. Forced = dashed. Selected = thicker.
+- T switch: ring on both inputs, filled ring on the active one; the not-selected input wire is faint (digital too, not only analog).
+- Legend (digital / analog / T active input) in the sheet header bar.
+- DITL page: identical (guard). Tools: patch-1.1.0.js, shot.js (screenshot of a region).
+- docs/ABC-050-signal-list.md: the user asked for a list of the origin signals of ABC-050 (item 4 of the panel wording is on hold until the user decides).
+- On hold by the user: block function check (PID / SUMA / SUMP stay in = out), the 19 CONST "value not found".
+
 ## v1.0.1 (ditl-workbench-v1.0.1.html) - cross-sheet signal links by TAG
 - v1.0.0 = v46 unchanged (baseline).
 - PROBLEM: an input on one sheet whose same tag (M.xxxx, B.xxxx, SIxxxx, AIxxxx, xxx.MV/PV/SV) is an OUTPUT of a block on another sheet was treated as a user input (only numbered circles were linked across sheets). Now linked by tag: the target wire is computed from the other sheet (value flows, click shows "galing sa sheet ABC-xxx", FORCE only). 44 such links found in the 54 built-in sheets.
