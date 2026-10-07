@@ -50,7 +50,7 @@ When the user confirms a block, Claude writes a small test for it (tools/test-bl
 |---|---|---|---|---|
 | **PID / PIDV** | 68 | ABC-017/050: **the input is the DEVIATION** (a DEV block "SV + / PV −" feeds the PID); tag + module (e.g. PICSB1052 S2-MDL001); "ACT:R / ACT:D" text; output goes to a T (auto/manual) | MV 0..100 % = P + I (+ D) of the deviation; ACT:R reverse / ACT:D direct action; anti-windup at the limits; tracks (bumpless) when its track input is on; **Kp, Ti, Td are NOT in the drawings** (DCS database): editable in the panel, default values, optional table import | SIMPLIFIED (output follows input — wrong: MV must not equal the deviation) |
 | ALM | 104 | "ALM tag MDL"; 51 have only the input, 53 also have two outputs (left/right) | alarm module: outputs = HIGH and LOW alarm (digital), limits are DCS parameters (not in the drawing) -> editable, default from range; effect on logic through the outputs | SIMPLIFIED (shows the level only) |
-| CTK | 5 | input + "ctl" | **Found by analysis (ABC-007 #79: input SI0169, ctl M.018D, output goes nowhere on the sheet; drawing note "SET SI0169 => FICFA1071.SV  IF M.018D = 1")**: CTK = conditional write of a value into the SV of ANOTHER controller. While ctl = 1 it sends the input; when ctl = 0 it does NOT write (no value 0). Now: outputs 0 when ctl = 0 (wrong) — to fix | SIMPLIFIED |
+| CTK | 5 | input + "ctl" | **User agreed with this analysis (2026-10-07).** Found by analysis (ABC-007 #79: input SI0169, ctl M.018D, output goes nowhere on the sheet; drawing note "SET SI0169 => FICFA1071.SV  IF M.018D = 1")**: CTK = conditional write of a value into the SV of ANOTHER controller. While ctl = 1 it sends the input; when ctl = 0 it does NOT write (no value 0). Now: outputs 0 when ctl = 0 (wrong) — to fix | SIMPLIFIED |
 
 ## Field / drawing
 | Block | n | Behaviour | Status |
@@ -74,3 +74,9 @@ Three windows of the Loop Design tool (project D:\LMYP2, station 101 FCS2000EI).
 - Guess for the names: SH/SL = sensor (range) high/low · PH/PL = process high/low · DVH/DVL = deviation (PV−SV) high/low · DPH/DPL = rate of change of PV · MH/ML = MV high/low · DMH = MV rate. TO CONFIRM.
 
 What this gives the app: loop name + range + unit + action (reverse/direct) per tag; the real pin set of the PID module (PV / SV local-remote / MV / external MV / read-back / backup / auto-man); alarm priorities. STILL MISSING: the gains P / I / D (and PID type), the alarm limit values — ask the user for the tuning display of the same loop in the operator station.
+
+## FF dominance — analysis of the drawings (2026-10-07)
+In a random test 23 of 47 FFs can see S and R together (random inputs are independent, so real cases are fewer). Where the Q output goes:
+- 14 FFs feed the control of a T / AMT (auto / manual selector, tags SI0111, SI0121, SI0131, SI0305-8, SI0321, SI0341, SI0351, SI0371 ...) and R is a "go to MANUAL / bad / MAN request" (e.g. R <- FICCL1061A.MAN, SICL1060A.MAN, HICHR1002B.MAN, or NOT(...)): the safe side = **reset-dominant** (fail to manual). The app already does this.
+- 9 FFs are not auto/manual latches and need the user's look: ABC-003B/C/D #37 (OR / OR), 003A #52 (OR / OR), 003E #25 (S <- TPS, R <- M.0097), 052 #65 (S M.070D, R M.071D), 055 #10, 057 #10, 001C #5.
+- The DCS function-block help (EWS, LOGIC.LGO) would settle it for all.
