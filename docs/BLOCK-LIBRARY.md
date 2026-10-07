@@ -39,7 +39,7 @@ When the user confirms a block, Claude writes a small test for it (tools/test-bl
 |---|---|---|---|
 | ADD, SUB, SUM (+), MUL, DIV, SQRT, ABS | 8/53/60/53/11/13/7 | arithmetic; SUM inputs marked + or − | IMPLEMENTED |
 | DEV | 92 | **CONFIRMED by user for the marked pins (+ minus −).** + input minus − input (error). 12 DEV have no sign marks: order by pin position — confirm | IMPLEMENTED |
-| FX F(X) | 111 | piece-wise linear from the LN table of that sheet. **FX with no table or no input is stuck** — where do the tables come from? | IMPLEMENTED |
+| FX F(X) | 111 | piece-wise linear from the LN table of that sheet. In the app all 111 FX have a table (89 embedded in the html); the user's LINEAR.xls (sheets S<station>-LN<n>, 16 points) is a newer source to compare / import | IMPLEMENTED |
 | LAG f(t) | 14 | first-order lag; time constant not in the drawing (default) — confirm | IMPLEMENTED |
 | RATE | 24 | rate limiter, up/down rate inputs | IMPLEMENTED |
 | RAMPB "RAMP:x%/sec BUMPLESS 1:BYPASS" | 15 | **CONFIRMED by user: rate = the number written in the text (per sec / per min).** Output ramps to input at x per time; when the BYPASS input = 1 it follows the input at once (bumpless) | IMPLEMENTED |

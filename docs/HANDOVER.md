@@ -9,8 +9,8 @@ Ako ay automation engineer (hindi coder): Taglish, simple at tapat, sabihin kung
 Pagkabasa, ibuod mo sa 5 linya kung nasaan tayo at ano ang susunod, at hintayin ang utos ko.
 ```
 
-## State (v1.11.0)
-- Current build: `ditl-workbench-v1.11.0.html` (analog page, project file Save/Open, portable app shell in `app/`, Windows build by GitHub Actions).
+## State (v1.11.1)
+- Current build: `ditl-workbench-v1.11.1.html` (analog page, project file Save/Open, portable app shell in `app/`, Windows build by GitHub Actions).
 - All 54 ABC sheets read; digital + analog links; SET SV presets on 8 sheets; T legs per leg; timers/comparators fixed on 057/008/014/019.
 
 ## Read also: docs/PROGRESS.md (percent), docs/BACKLOG.md (what the user asked to note), docs/BLOCK-LIBRARY.md (block behaviours waiting for his confirmation)

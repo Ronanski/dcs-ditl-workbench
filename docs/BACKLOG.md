@@ -47,3 +47,8 @@
 - `LMYP-1 #1_IO_Rev.1.xls`: sheets DCS Numbering, Station 101..105: columns STN, N, I, NO, Address (I.0000), TAG NO., Description, Base Scale, Full Scale, Unit, Type (DI/...), Signal Ab. Add. (SIG.AB address), Rev., Remark. = tag descriptions + ranges + SIG.AB addresses.
 - `LMYP-1 #1-Memory-101..105.xls`: memory lists (M.xxxx descriptions) — not read yet.
 - Plan: importer for these -> project file "DCS parameters / tag table" (FX tables, TP coefficients, descriptions, ranges). Original .xls stay with the user.
+
+## 2026-10-07 later: units, exe, PID
+- Units: 4 units; drawings and lists = unit 1; unit n: first digit of the tag number = n (SB1053 -> SB2053); addresses almost identical. Add a Unit setting later.
+- Exe SmartScreen: not signed -> "More info -> Run anyway" or Unblock the zip; a real certificate costs money (decide later).
+- tools/triage.js runs in Node without the embedded LN tables: FX-related stuck counts are overstated (known).

@@ -17,12 +17,31 @@
   "build": {
     "appId": "local.dcs.engineering.station",
     "productName": "DCS Engineering Station",
-    "files": ["main.js", "preload.js", "ui/**"],
-    "directories": { "output": "dist" },
+    "files": [
+      "main.js",
+      "preload.js",
+      "ui/**"
+    ],
+    "directories": {
+      "output": "dist"
+    },
     "win": {
-      "target": [{ "target": "portable", "arch": ["x64"] }],
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
       "requestedExecutionLevel": "asInvoker"
     },
-    "portable": { "artifactName": "DCS-Engineering-Station-${version}-portable.exe" }
+    "portable": {
+      "artifactName": "DCS-Engineering-Station-${version}-portable.exe"
+    },
+    "copyright": "Copyright (c) 2026 Ronanski"
+  },
+  "author": {
+    "name": "Ronanski"
   }
 }
