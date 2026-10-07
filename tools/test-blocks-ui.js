@@ -13,7 +13,11 @@ const tot=await p.evaluate(()=>{const S=AN.cs().S;const bl=S.blk.find(x=>x.k==='
 r=await centre('ABC-009A',292,612,60);await p.mouse.click(r.x,r.y);await p.waitForTimeout(500);t=await panel();T('SEL panel has the mode select (PRI / SEC / AVG)',/Select mode/.test(t)&&/PRI/.test(t),t.split('\n').slice(0,4).join(' | '));
 const mode=await p.evaluate(()=>{const d=document.getElementById('ansel');const s=d.querySelector('select');if(!s)return null;s.value='PRI';s.dispatchEvent(new Event('change'));return AN.cs().S.blk.find(x=>x.k==='SEL'&&Math.abs(x.cx-292)<3).p.mode});T('changing the mode is stored',mode==='PRI',String(mode));
 /* TP */
-r=await centre('ABC-003B',688,586,60);await p.mouse.click(r.x,r.y);await p.waitForTimeout(500);t=await panel();T('TP panel asks for the operating temperature',/Operating temperature/.test(t)&&/NOT compensating/.test(t));
+r=await centre('ABC-003B',688,586,60);await p.mouse.click(r.x,r.y);await p.waitForTimeout(500);t=await panel();T('TP panel shows the operating temperature from the Compensation file (302 °C, FT-FA1043-B)',/Operating temperature/.test(t)&&/Compensation file/.test(t)&&/FT-FA1043-B/.test(t)&&/302/.test(t),t.split('\n').slice(0,6).join(' | '));
+/* ALM / RATE / PO: assumed defaults are shown and flagged */
+r=await centre('ABC-010',529,521,60);await p.mouse.click(r.x,r.y);await p.waitForTimeout(500);t=await panel();T('ALM panel shows the ASSUMED limits (LIBR10011)',/ASSUMED DEFAULT/.test(t)&&/150/.test(t)&&/75/.test(t),t.split('\n').slice(0,8).join(' | '));
+r=await centre('ABC-004A',367,310,60);await p.mouse.click(r.x,r.y);await p.waitForTimeout(500);t=await panel();T('RATE panel flags the ASSUMED rate (ABC-004A coal feeder)',/ASSUMED rate/.test(t)&&/FICCL1061A/.test(t),t.split('\n').slice(0,6).join(' | '));
+
 /* circle walk */
 r=await centre('ABC-001B',686,217,60);const seen=[];for(let i=0;i<5;i++){await p.mouse.click(r.x,r.y);await p.waitForTimeout(700);const st=await p.evaluate(()=>{const v=AN.av[AN.cs().name];return AN.cs().name+' @'+Math.round(v[0]+v[2]/2)+','+Math.round(-v[1]-v[3]/2)});seen.push(st);r=await p.evaluate(()=>{const e=document.getElementById('svg').getBoundingClientRect();return{x:e.x+e.width/2,y:e.y+e.height/2}})}
 console.log('   walk from ABC-001B "C":',seen.join('  ->  '));const names=seen.map(x=>x.split(' ')[0]);T('walk visits ABC-001A, ABC-001C and comes back to ABC-001B',names.includes('ABC-001A')&&names.includes('ABC-001C')&&names[3]==='ABC-001B'||names.slice(0,4).includes('ABC-001B'));T('the fifth click starts again',seen[4]===seen[0]);

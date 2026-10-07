@@ -52,4 +52,5 @@ rep(`if(nl.size)(tgt?S.xc:S.conn).push({num,tgt,x:c.x,y:c.y,r:c.r,nets:[...nl],s
 /* F-12 the "M" circle of a motor symbol (trapezoid = motor-operated damper / valve actuator: ABC-003A / B / C / D) is the motor, not a connector */
 rep(`if(S.gate.some(g=>g.body&&g.body.r&&anD(g.body.cx,g.body.cy,c.x,c.y)<.5))continue;`,`if(S.gate.some(g=>g.body&&g.body.r&&anD(g.body.cx,g.body.cy,c.x,c.y)<.5))continue;if(S.shp.some(sh=>sh.ty==='quad'&&c.x>=sh.x0&&c.x<=sh.x1&&c.y>=sh.y0&&c.y<=sh.y1))continue;`);
 require('./patch-blocks.js')(rep);
+require('./patch-defaults.js')(rep);
 fs.writeFileSync(process.argv[2]||'logic-sim-v1.14.4.html',h);console.log('wip written',h.length);
