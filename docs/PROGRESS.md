@@ -8,9 +8,9 @@ Phase 1 = engineering station + controller logic (what we have now). Phase 2 = p
 | 2 | Block behaviour | 25 | 58.5 % | 14.6 | `node tools/progress.js <html>`: confirmed 100 · implemented 60 · simplified 25 · missing 0, weighted by block count (3,261 blocks; PID moved simplified -> implemented in v1.11.0) |
 | 3 | Signals and links | 10 | 85 % | 8.5 | 194 external inputs linked by tag / FROM text, 304 two-line circles, the rest are real origin signals |
 | 4 | Modes and tools | 15 | 37.5 % | 5.6 | 3 of 8: Run, Pause, force/inputs done · Step, View, Trace, Why?, address highlight open |
-| 5 | Project / files / app | 10 | 50 % | 5.0 | 3 of 6: project file, desktop shell built, docs done · exe verified on laptop, persistent DXF import, drawing-change report open |
+| 5 | Project / files / app | 10 | 67 % | 6.7 | 4 of 6: project file, desktop shell, exe + apk + Releases pipeline, docs done · exe / apk verified on the user's devices, persistent DXF import and drawing-change report open |
 | 6 | Verification | 20 | 10 % | 2.0 | ABC-050 checked against the PDF (1 of 51 sheets); triage done; per-block tests 0; plant scenarios 0 |
-| | **PHASE 1 TOTAL** | 100 | | **51.7 %** | |
+| | **PHASE 1 TOTAL** | 100 | | **53.4 %** | |
 
 Rule: a block only counts as 100 when the user confirmed it AND a test exists. Honest estimate, not a promise: item 6 (verification) will move slowest.
 

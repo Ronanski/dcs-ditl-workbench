@@ -3,7 +3,7 @@ const {app,BrowserWindow,ipcMain,dialog,session,Menu}=require('electron');
 const path=require('path'),fs=require('fs');
 let win;
 function create(){
-  win=new BrowserWindow({width:1500,height:900,backgroundColor:'#0b1013',title:'DCS Engineering Station',
+  win=new BrowserWindow({width:1500,height:900,backgroundColor:'#0b1013',title:'Logic Sim',
     webPreferences:{preload:path.join(__dirname,'preload.js'),contextIsolation:true,nodeIntegration:false,sandbox:true}});
   Menu.setApplicationMenu(null);
   session.defaultSession.webRequest.onBeforeRequest((d,cb)=>cb({cancel:!/^(file|devtools|data|blob|chrome-extension):/i.test(d.url)}));

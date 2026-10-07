@@ -1,0 +1,13 @@
+{
+  "name": "logic-sim-android",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Logic Sim for Android: the same html in a WebView (Capacitor). Built by GitHub Actions, see .github/workflows/release.yml",
+  "dependencies": {
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/cli": "^6.1.2",
+    "@capacitor/core": "^6.1.2",
+    "@capacitor/filesystem": "^6.0.1",
+    "@capacitor/share": "^6.0.2"
+  }
+}

@@ -2,6 +2,15 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
+## v1.12.0 (logic-sim-v1.12.0.html) - new name, one version, exe + apk + GitHub Releases (user: "go")
+- NAME: everything is now **logic-sim-vX.Y.Z**: html, portable exe, apk. ONE version = the number in the html file name at the repo root (tools/version.js); app/prepare-ui.js and android/prepare-www.js take it from there. Found and fixed: the exe was always called "1.10.0" because its version came from a stale package.json.
+- html: title "Logic Sim v1.12.0"; project-file `ver` and Diagnostics now read the version from the title (changed in one place only). Nothing else in the html changed (DITL identical, guard).
+- EXE: Electron (productName "Logic Sim"), portable, asInvoker (no admin), author "Ronanski". Not code-signed (no free certificate possible, see DESIGN 4b) -> SmartScreen: More info > Run anyway / Unblock-File.
+- APK: Capacitor 6 WebView with the same html; file bridge injected only into the apk copy: Save = Android share sheet (Save to Files / Drive), Open = file chooser; settings stay in the app's own storage. Signed with the sideload keystore android/signing/logic-sim.keystore (stable signature so later versions install over the old app; password in the workflow; not a secret). Version code = major*10000 + minor*100 + patch.
+- RELEASES: .github/workflows/release.yml (jobs version -> exe, apk -> release) publishes GitHub Release vX.Y.Z with the html, exe and apk and the notes of this file.
+- TESTED here: version script, exe shell in Electron under xvfb (window title "Logic Sim v1.12.0", native save), Capacitor project generation (cap add android) and the Android bridge with a mock Capacitor (writeFile + share called). NOT testable here (no Android SDK / no Windows): the Windows exe itself and the apk build / install -> see the Actions run and ask the user.
+- DITL identical (guard).
+
 ## v1.11.1 (ditl-workbench-v1.11.1.html) - PID range from the drawing text + notes on the user's data
 - USER: "the PID has a range, depending on the text in the drawing - did you not notice?" -> true, I had not. 61 of 68 controllers carry a text like "0.0 ~ 65.0 T/H" next to the box (units T/H, mm, kg/cm2, degC, mmH2O, %, ppm). That range is now read (P.rlo, P.rhi, P.unit, P.span) and 100 % of the deviation = that span; the 7 without it (ABC-003A/B/C/D/E, 004A, 012) fall back to the range of the transmitter feeding the deviation. Shown in the PID panel and editable.
 - SAMPLE (tools/sample-pid.js, ABC-017 PICSB1052, 0~50 kg/cm2, reverse, first-order plant 20 s): default Kp 1 / Ti 60 s: SV 20 -> 27.5 kg/cm2, PV reaches 27 in ~4 min, no overshoot, MV settles at 55 %; Kp 2 / Ti 20 s: reaches 27.4 in 45 s, no overshoot.
