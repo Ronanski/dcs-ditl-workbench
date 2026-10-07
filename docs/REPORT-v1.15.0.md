@@ -1,6 +1,6 @@
 # REPORT v1.15.0 — findings, actions done, as left (2026-10-07) — documentation revision 1 — RELEASED
 
-Built from `logic-sim-v1.14.3.html` by `tools/patch-1.15.0.js` (= `patch-blocks.js` + `patch-defaults.js` + `patch-signals.js` + `patch-selector.js`; data in `tools/assumed-data.js` and `tools/data/`). The DITL page is byte-identical to the baseline (`tools/guard-ditl.js` → IDENTICAL; the guard now also ignores the LN tables `<script id="aln">`, which are analog data like the sheets and the descriptions).
+Built from `logic-sim-v1.14.3.html` by `tools/patch-1.15.1.js` (= `patch-blocks.js` + `patch-defaults.js` + `patch-signals.js` + `patch-selector.js`; data in `tools/assumed-data.js` and `tools/data/`). The DITL page is byte-identical to the baseline (`tools/guard-ditl.js` → IDENTICAL; the guard now also ignores the LN tables `<script id="aln">`, which are analog data like the sheets and the descriptions).
 
 ## 1. What the user asked → what was done → as left
 | # | Request (2026-10-07) | Done | As left |
@@ -87,4 +87,7 @@ F-01 MUL gain constants · F-02 SUB signs · F-03 LAG time left of the box (5 bl
 O-05 ABC-003E TR256 (TPS #70) not reached by the scan · O-07 ABC-004A circles A ×2 · O-08 ABC-020 circle 9 · O-09 "tags differ" lines (45) · O-11 ABC-001C TR228 type · ALM / ramp / PO DCS values.
 
 ## 7. Release checklist state
-Patch `tools/patch-1.15.0.js` ready · AN_PV 14 → 15 (saved values of v1.14.x are dropped on first start; the user has none saved) · manual updated (PDF not rebuilt yet) · notes (PROJECT-NOTES) to be written at release · old html to `archive/html/`, old patch to `tools/history/` at release · **released on the user's go (version history: docs/RELEASES.md)**.
+Patch `tools/patch-1.15.1.js` ready · AN_PV 14 → 15 (saved values of v1.14.x are dropped on first start; the user has none saved) · manual updated (PDF not rebuilt yet) · notes (PROJECT-NOTES) to be written at release · old html to `archive/html/`, old patch to `tools/history/` at release · **released on the user's go (version history: docs/RELEASES.md)**.
+
+## 8. After v1.15.0 (released as v1.15.1): legend matrix
+Requested by the user 2026-10-07: use the legend to test every sheet. Done as `tools/legend-matrix.js` → `docs/LEGEND-MATRIX.md` (per kind, per sheet and group, all failures). Found 2 real reader defects, both fixed in the patch (not in the released html yet): H-15 (ABC-001D mirrored AND without pins, M.2034 never computed) and H-16 (3 positioner boxes read as SUB). Result: 2 973 of 2 973 blocks pass. The 45 "tags differ" link lines were all looked at: 0 wrong pairs (docs/FINDINGS.md J2). MAN: 58 of 58; SUMA: 10 of 10. Full node and browser regression of this build: see the chat report of that round.

@@ -1,5 +1,5 @@
 /* v1.15 WIP: defaults that are NOT on the drawings (tools/assumed-data.js = source of truth, docs/ASSUMED-VALUES.md = the list).
-   Called by tools/patch-1.15.0.js after patch-blocks.js: require('./patch-defaults.js')(rep).
+   Called by tools/patch-1.15.1.js after patch-blocks.js: require('./patch-defaults.js')(rep).
    - TP  : operating temperature of each flow from the user's Compensation file (real data).
    - ALM : ASSUMED limits HH / H / L / LL (150 MW CFB with reheat).
    - RATE: ASSUMED rate of the ramp boxes that have no number on the drawing.

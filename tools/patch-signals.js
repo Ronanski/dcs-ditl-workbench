@@ -1,4 +1,4 @@
-/* v1.15 WIP: signal reach fixes found by tools/audit-reach.js (docs/FINDINGS.md section H). Called by tools/patch-1.15.0.js after patch-defaults.js.
+/* v1.15 WIP: signal reach fixes found by tools/audit-reach.js (docs/FINDINGS.md section H). Called by tools/patch-1.15.1.js after patch-defaults.js.
    H-01  AI / AO triangles that point UP (apex up): the OUT pin is the pin at the APEX, not "the lower pin" (22 position feedback AIs next to the positioners had in / out swapped: their signal never reached the SIG.AB box).
    H-02  two AI boxes with the same tag on one sheet (the positioner feedback AI and the AI that feeds the MAN / PID PV) are ONE transmitter: the free one follows the one that follows the valve / actuator (the loop never saw the valve position). */
 module.exports=(rep)=>{
@@ -38,7 +38,7 @@ String.raw`if(nl.size)(tgt?S.xc:S.conn).push({num,tgt,x:c.x,y:c.y,r:c.r,nets:[..
 rep(String.raw`function paint(){const sh=cs();if(!sh||!sh.S||!L)return;`,String.raw`function paint(){const sh=cs();if(!sh||!sh.S||!L)return;AN.dbgL=L;`);
 
 /* saved values use net / block numbers: the new AND / OR / timer / contact blocks and merged nets move them, so the values saved by v1.14.x are dropped on the first start of this version (the user said he had saved nothing yet) */
-rep(String.raw`const AN_PV=14;`,String.raw`const AN_PV=15;`);
+rep(String.raw`const AN_PV=14;`,String.raw`const AN_PV=16;`);
 
 /* H-12  an arrow that sits in a GAP of a straight wire (the wire stops at its base, the next piece starts at its tip: ABC-001C "MW" row, 001B "MWD" / "X", ABC-009A / B ...) splits the wire in two nets: the circle after the arrow had no driver, the signal never left the sheet. The two collinear pieces on both sides of such an arrow are one wire. Both arrow kinds: solid triangles (R.so) and inserted arrows (R.arw). */
 rep(String.raw`/* a box with a cross (X) in the middle of a wire = hard-wired contact / signal break: the signal goes straight through */`,
@@ -59,4 +59,14 @@ String.raw` S.dot=R.dot.map(d=>({x:d.x,y:d.y,r:Math.max(d.r,.8)}));
 /* H-14  a receiving wire of a link takes the type (analog / digital) of the wire that SENDS: ABC-052 SW#13 "a" leg (circle LPB, from ABC-050 SI0163, an analog value) was drawn on the CON layer and so typed digital: it was drawn as a digital wire and its value was handled as a flag */
 rep(String.raw` for(const l of out)if(l.to===sh){S.xlk=S.xlk||{};for(const n of l.toNets)if(S.ext.includes(n))S.xlk[n]=l}`,
 String.raw` for(const l of out)if(l.to===sh){S.xlk=S.xlk||{};for(const n of l.toNets)if(S.ext.includes(n)){S.xlk[n]=l;try{const FS=l.from.S,fn=l.fromNets.find(m=>FS.drv[m].some(d=>d.k!=='LINK'));if(fn!==undefined&&!!FS.nets[fn].dig!==!!S.nets[n].dig&&!FS.nets[fn].sigab&&!S.nets[n].sigab)S.nets[n].dig=FS.nets[fn].dig}catch(e){}}}`);
+
+/* H-15  AND gate drawn MIRRORED (inputs on the left of the long bar, output on the right edge of the box: ABC-001D M.201F & M.2032 -> M.2034): the short right edge was taken for the bar and the long bar for the closing line, so the gate had no pins. The longer of the two vertical lines is the bar. */
+rep(String.raw`if(cl){S.gate.push({k:'AND',v,bar:b,bp,a0,a1,side:sd,out:v?{x:far,y:mid}:{x:mid,y:far},body:{x0:Math.min(bp,far),x1:Math.max(bp,far),y0:Math.min(t.y1,u.y1),y1:Math.max(t.y1,u.y1)},used:[b,t,u,cl]});[b,t,u,cl].forEach(s=>s.use=2)}}`,
+String.raw`if(cl){let BB=b,BP=bp,A0=a0,A1=a1,SD=sd,FAR=far;const LB=SG.find(s=>!s.use&&s!==b&&s!==cl&&(v?isV(s)&&Math.abs(s.x1-far)<.5:isH(s)&&Math.abs(s.y1-far)<.5)&&len(s)>(v?Math.abs(t.y1-u.y1):Math.abs(t.x1-u.x1))+1.5&&(v?Math.min(s.y1,s.y2)<=Math.min(t.y1,u.y1)+.6&&Math.max(s.y1,s.y2)>=Math.max(t.y1,u.y1)-.6:Math.min(s.x1,s.x2)<=Math.min(t.x1,u.x1)+.6&&Math.max(s.x1,s.x2)>=Math.max(t.x1,u.x1)-.6));
+   if(LB){BB=LB;BP=v?LB.x1:LB.y1;A0=v?Math.min(LB.y1,LB.y2):Math.min(LB.x1,LB.x2);A1=v?Math.max(LB.y1,LB.y2):Math.max(LB.x1,LB.x2);SD=-sd;FAR=bp;LB.use=2}
+   S.gate.push({k:'AND',v,bar:BB,bp:BP,a0:A0,a1:A1,side:SD,out:v?{x:FAR,y:mid}:{x:mid,y:FAR},body:{x0:Math.min(BP,FAR),x1:Math.max(BP,FAR),y0:Math.min(t.y1,u.y1),y1:Math.max(t.y1,u.y1)},used:[b,t,u,cl]});[b,t,u,cl].forEach(s=>s.use=2)}}`);
+/* H-16 */
+rep(String.raw`function anDefaults(S){`,String.raw`function anDefaults(S){
+ /* H-16 the small two-cell box above an I/P converter (valve positioner, field side) was read as a SUB with one input and no output: it is a field device */
+ for(const b of S.blk)if(b.k==='SUB'&&b.o.length===0&&b.i.length===1&&b.pins.length===1)b.k='FIELD';`);
 };

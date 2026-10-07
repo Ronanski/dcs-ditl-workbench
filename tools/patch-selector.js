@@ -1,4 +1,4 @@
-/* v1.15 WIP: G-10 the 4-way selector with a text table: "(1) IF A-ASH COOLER AUTO ( M.021A )  SELECT to "a"" ... "(4) IF D-... ( M.021D ) SELECT TO "d"" (ABC-009A ash coolers, ABC-003E burner oil flow control). The conditions are memory flags that are NOT wires of the sheet (they are made in the DITL), so they are inputs in the block panel; the first true one (1 -> 4) picks its leg, none true: the last choice stays (first start: leg of (1)). Called by tools/patch-1.15.0.js after patch-signals.js. */
+/* v1.15 WIP: G-10 the 4-way selector with a text table: "(1) IF A-ASH COOLER AUTO ( M.021A )  SELECT to "a"" ... "(4) IF D-... ( M.021D ) SELECT TO "d"" (ABC-009A ash coolers, ABC-003E burner oil flow control). The conditions are memory flags that are NOT wires of the sheet (they are made in the DITL), so they are inputs in the block panel; the first true one (1 -> 4) picks its leg, none true: the last choice stays (first start: leg of (1)). Called by tools/patch-1.15.1.js after patch-signals.js. */
 module.exports=(rep)=>{
 rep(String.raw` const posOrder=(a,b)=>(b.y-a.y)||(a.x-b.x);`,
 String.raw` /* G-10: 4-way selector table */
