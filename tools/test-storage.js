@@ -5,7 +5,7 @@ const run=async(mode)=>{const b=await chromium.launch({args:['--no-sandbox']});c
   try{if(!sessionStorage.getItem('filled')){let s='x'.repeat(1024*1024),i=0;try{while(i<12){localStorage.setItem('ditl.fill'+i,s);i++}}catch(e){}let c='x'.repeat(2000),j=0;try{while(j<5000){localStorage.setItem('ditl.pad'+j,c);j++}}catch(e){}try{let t='y'.repeat(20),q=0;while(q<20000){localStorage.setItem('ditl.z'+q,t);q++}}catch(e){}sessionStorage.setItem('filled','1')}}catch(e){}
   if(mode==='noidb'){try{Object.defineProperty(window,'indexedDB',{get(){throw new Error('blocked')}})}catch(e){}}},mode);
  const p=await ctx.newPage();const errs=[];p.on('pageerror',e=>errs.push(e.message));
- await p.goto('file://'+require('path').resolve(process.argv[2]));await p.waitForTimeout(3000);await p.click('text=Analog · ABC >> nth=0');await p.waitForTimeout(4000);
+ await p.goto('file://'+require('path').resolve(process.argv[2]));await p.waitForTimeout(3000);await p.click('text=Analog · ABC >> nth=0');await p.waitForTimeout(4000);await p.evaluate(()=>{if(AN.view)document.querySelector('button[title^=\"View mode\"]').click()});
  const ls=await p.evaluate(()=>{try{localStorage.setItem('probe_x','1');localStorage.removeItem('probe_x');return 'ls writable'}catch(e){return 'ls FULL/blocked'}});
  await p.evaluate(()=>AN.go(AN.sheets.findIndex(s=>s.name==='ABC-050')));
  // change a setting + force an analog value

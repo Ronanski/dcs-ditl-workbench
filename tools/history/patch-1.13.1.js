@@ -1,7 +1,7 @@
 /* v1.12.1 -> v1.13.0 (built in wip/, released only when the whole plan A..G + manual is complete: docs/PLAN.md). DITL page untouched. */
 const fs=require('fs');let h=fs.readFileSync('archive/html/logic-sim-v1.12.1.html','utf8');
 const rep=(a,b)=>{const n=h.split(a).length-1;if(n!==1)throw new Error(n+' x '+a.slice(0,90));h=h.split(a).join(b)};
-rep('<title>Logic Sim v1.12.1</title>','<title>Logic Sim v1.13.0</title>');
+rep('<title>Logic Sim v1.12.1</title>','<title>Logic Sim v1.13.1</title>');
 
 /* ===== D: a T drawn with NO input wires and a "NN%" text next to it (IGNITION POS. 25%, ABC-003A/B/C/D) is a constant ===== */
 rep(`  const P=b.p;
@@ -111,7 +111,7 @@ rep(`function selUpd_(d){const sh=cs(),S=sh.S,s=AN.sel;`,`function selUpd_(d){se
 function selUpd0_(d){const sh=cs(),S=sh.S,s=AN.sel;`);
 rep(` const P=b.p,pr=(k,l,st)=>{if(P[k]==null)return;`,` whyRow(d,S,b);
  const P=b.p,pr=(k,l,st)=>{if(P[k]==null)return;`);
-rep(`const sl=selNets&&selNets.has(n.id);if(sl)w+=.45;`,`const sl=selNets&&selNets.has(n.id);if(sl)w+=.45;{const T=trSet(sh);if(T){if(T.start.has(n.id)){c=TST;w+=.35}else if(T.up.has(n.id)){c=TUP;w+=.3}else if(T.dn.has(n.id)){c=TDN;w+=.3}else o=.2}if(AN.flh&&AN.flh.has(n.id)){c='#ffd23f';w+=.7}}`);
+rep(`const sl=selNets&&selNets.has(n.id);if(sl)w+=.45;`,`const sl=selNets&&selNets.has(n.id);if(sl)w+=.45;let hal='';{const T=trSet(sh);if(T){if(T.start.has(n.id))hal=TST;else if(T.up.has(n.id))hal=TUP;else if(T.dn.has(n.id))hal=TDN;else o=.35}if(!hal&&AN.flh&&AN.flh.has(n.id))hal=TFL}if(e._h!==hal){e._h=hal;e.style.filter=hal?'drop-shadow(0 0 1.6px '+hal+') drop-shadow(0 0 1px '+hal+')':''}`);
 rep(`function digClick(sh,n,shift){const S=sh.S,F=S.rt.force;let t;`,`function digClick(sh,n,shift){if(AN.view){msg('View mode: inputs are off. Turn View off to change a signal.');return}const S=sh.S,F=S.rt.force;let t;`);
 
-fs.writeFileSync('logic-sim-v1.13.0.html',h);console.log('wip html written',h.length);
+fs.writeFileSync('logic-sim-v1.13.1.html',h);console.log('wip html written',h.length);

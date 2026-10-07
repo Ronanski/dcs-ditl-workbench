@@ -1,4 +1,4 @@
-# Logic Sim — User Manual (v1.13.0)
+# Logic Sim — User Manual (v1.15.0)
 
 Logic Sim is an offline simulator and viewer of the plant DCS logic drawings: the digital interlock pages (DITL) and the 54 analog control sheets (ABC). It runs from one file, with no network, no OPC and no connection to the plant. It is for study, training and checking logic. It is **not** connected to the real DCS and never writes to it.
 
@@ -29,7 +29,7 @@ The top-left switch chooses the page:
 - **Digital · DITL** – the digital interlock logic pages (gates, flip-flops, timers). Read-only drawing behaviour; this page is never modified.
 - **Analog · ABC** – the analog control sheets: controllers (PID), selectors (auto/manual and T switches), transmitters, valves/actuators, compensation and linear tables, with the digital permissives feeding them.
 
-The app always **opens paused**. Nothing moves until you press Run or Step.
+The app always **opens in VIEW mode** (section 2.5). Nothing is simulated until you press Run.
 
 ### 2.2 The analog screen
 ![Analog page](img/02-analog.png)
@@ -39,14 +39,13 @@ Top bar, left to right:
 | Control | Meaning |
 |---|---|
 | 💾 Save / Save as… / 📂 Open | Save or open a **project file** (Ctrl+S). Keeps inputs, forces, switches, settings and your linear-table edits. |
-| ▶ Run / ❚❚ Pause | Start or stop the simulation (Space). |
-| +1 scan / +1 s / +10 s | While paused: advance a little and flash (yellow) the wires that changed. |
+| View | View mode (default): see 2.5. |
+| ▶ Run / ❚❚ Pause | Start / pause the simulation (Space). Run from VIEW starts the simulation. |
+| ◀ Back · 1 s…60 s · Next ▶ | While paused: step the time forward or roll it back by the selected amount. |
 | 1x…300x | Simulation speed. Each PID panel suggests a realistic speed for its loop. |
 | Reset | Put everything back to the drawing's start state (inputs, forces, timers). Your linear-table edits are **not** cleared; they have their own reset. |
 | Fit | Fit the sheet to the screen (key F). |
 | Values | Show/hide the live values on the drawing. |
-| View | View mode: read and trace only. No inputs, no force, no simulation. |
-| Trace | Show what drives / what is fed by the selected wire or block. |
 | Live / Theme | Colour of live signals; *Colour* theme or the muted *Engineering* theme. |
 | Health | Reader health report of the sheet. |
 | LN tables | The F(X) linear tables and their graph. |
@@ -59,14 +58,23 @@ Left list: the 54 sheets grouped by function, with a search box (sheet name, or 
 Right panel: lists the sheet's **inputs** (digital switches, analog sliders / number boxes), forced signals, and – when you select something – the details of that block or wire.
 
 ### 2.3 Colour language
-- Digital wire: thin line, live colour when **1**, grey when 0. Analog wire: thicker double line, coloured when it carries a value.
+- Digital wire: thin line, live colour when **1**, grey when 0. Analog wire: thin solid line, always coloured (it carries a value, even 0); only in VIEW is it grey (the double-line tube is still available in *Legend & style*).
 - Not-selected leg of a T (A/M) switch is grey; the selected leg is lit. Each leg is judged separately.
 - A forced signal is dashed and carries a badge.
+- Run and Pause use the same colours. View is all grey (see 2.5).
 - Values are green by default (changeable in *Legend & style*).
 - Valve/actuator: green = closed, red = open, blue = in between, white blinking = moving.
 
+### 2.5 The three modes
+| Mode | What it does |
+|---|---|
+| **VIEW** (default when the app opens) | Every wire is grey so the lines are easy to read. Nothing is simulated and no input or force can be changed. Click a block or a wire to **trace** it automatically (see 3.4); click an empty place to clear the trace. |
+| **RUN** | Press Run (or Space). The wires that should be live light up. Starting from VIEW changes nothing by itself: no value is forced. Inputs and forces exist only after you set them; Reset removes them all. |
+| **PAUSE** | Same colours as RUN, but frozen. Choose a step (1, 5, 10, 30 or 60 s) and press **Next ▶** to run the logic forward by that time, or **◀ Back** to roll it back by that time. |
+Press **View** to return to VIEW at any time (it also stops the run; your values are kept and shown again when you go back to RUN).
+
 ### 2.4 Addresses and descriptions (unit 1)
-Tags such as `I.0413`, `M.3103`, `TR0708`, `S1 M.0160` are looked up in the unit-1 IO list and memory lists that are built into the app. When you select a tag (digital) the tag is highlighted **yellow**; for analog it is **sky blue**; and a small card shows *tag name [address · station]*, the description and the type. The input list in the right panel also shows the description under each tag, and the search box finds by description.
+Tags such as `I.0413`, `M.3103`, `TR0708`, `S1 M.0160` are looked up in the unit-1 IO list and memory lists that are built into the app. When you select a tag (digital) the tag is highlighted **yellow**; for analog it is **sky blue**; and a small card shows *tag name [address · station]*, the description and the type. Hover the mouse on ANY address text of the drawing (SI, B, I, O, M, TR...) and the same card appears; select a block that carries an address (for example SIG.AB) and its card is shown. The input list in the right panel also shows the description under each tag, and the search box finds by description.
 
 ## 3. How to use
 
@@ -77,17 +85,17 @@ Tags such as `I.0413`, `M.3103`, `TR0708`, `S1 M.0160` are looked up in the unit
 4. Origin signals (inputs) are set by you; driven signals are computed by the logic. **FORCE** (in the panel, for any selected wire) is an optional override of a computed value – use it for testing only; *Release* removes it.
 
 ### 3.2 Step through the logic (paused)
-Use **+1 scan** (0.1 s), **+1 s**, **+10 s**. The wires that changed flash yellow and the status line names the first few with their new values. This is the best way to see what happens first.
+Press **Run**, then **Pause**. Choose 1 / 5 / 10 / 30 / 60 s and press **Next ▶** or **◀ Back**. The colours are the same as in RUN, so you see exactly what turned on or off. Back restores the whole simulation state of that moment (values, timers, valves). It keeps about the last 10 minutes of simulated time; a Back that is farther than the history goes to the oldest point. Inputs you changed after that moment are not replayed.
 
 ### 3.3 Select and understand a block
 Click a block or a wire. The right panel shows its inputs and outputs with live values, its parameters (timer seconds, PID tuning, ranges, …) and a **Why?** line that explains the present output in words (e.g. "AND = 0: M.3103=0 is 0 (one 0 is enough)"). For some kinds the explanation is general ("Inputs now … → output …") because a detailed text is not written yet.
 
-### 3.4 Trace
-1. Select a wire or a block, press **Trace**.
-2. White = what you selected, **cyan = driven by** (upstream), **orange = feeds** (downstream); everything else is dimmed.
-3. The panel lists each wire with its name, description and live value. Click a row to move the selection there.
-4. For T/A-M switches only the leg in use is followed. Press *Selected T leg only / Both T legs* to follow both.
-5. A row marked **◀ sheet ABC-xxx** means that input comes from another sheet; click it to jump there (↩ Back returns).
+### 3.4 Trace (VIEW mode)
+1. In VIEW, click a wire or a block. The trace appears by itself: a **glow** is drawn around the wires, white = what you selected, **blue = driven by** (upstream), **magenta = feeds** (downstream); the rest is dimmed.
+2. The panel lists each wire with its name, description and value. Click a row to move the selection there.
+3. For T/A-M switches only the leg in use is followed. *Selected T leg only / Both T legs* follows both.
+4. A row marked **◀ sheet ABC-xxx** means the input comes from another sheet; click it to jump there (↩ Back returns).
+5. Click an empty place of the drawing: the trace goes away and you are back in plain VIEW.
 Trace follows only within the sheet, plus the jump to the source sheet for inputs. Following outputs into other sheets is not done yet.
 
 ### 3.5 PID controllers
@@ -100,15 +108,23 @@ Select a PID block. The panel shows PV, SV, output, A/M mode and tuning (Kp, Ti,
 - Windows exe: Save/Open use normal file dialogs. Android: Save shows the share sheet (save to Files/Drive/…), Open picks a file.
 
 ### 3.7 LN tables (F(X) linearization)
-The 89 DCS linear tables are built in. **LN tables** shows the graph. **Edit table** lets you change the LX/LY points (in percent of the ranges; X and Y are computed). A warning shows if LX goes backward. Edits have their own **Reset this table** and **Reset ALL linear edits**; Reset on the sheet does not clear them. Each FX block finds its table by station and LN number; if only another station has that number, a warning is shown in the FX panel instead of silently using it.
+The 89 DCS linear tables of LINEAR.xls are built in, plus S1-LN38 and S1-LN39 of the drum level (from the Drum Level Calculation file). **LN tables** shows the graph. **Edit table** lets you change the LX/LY points (in percent of the ranges; X and Y are computed). A warning shows if LX goes backward. Edits have their own **Reset this table** and **Reset ALL linear edits**; Reset on the sheet does not clear them. Each FX block finds its table by station and LN number; if only another station has that number, a warning is shown in the FX panel instead of silently using it.
 
 ### 3.8 View mode
-**View** turns off Run, Step, inputs, forces and reset, so nothing can be changed by accident. You can still select, search, trace and read the descriptions. Press View again to leave.
+See 2.5 and 3.4. In VIEW nothing can be changed by accident: you can select, search, trace and read the descriptions.
 
 ### 3.9 Updating drawings (Import ABC DXF)
 **Import ABC DXF** loads updated analog drawings. The reader rebuilds the sheet; check **Health** afterwards. Always keep a saved project file before importing.
 
-### 3.10 Keyboard
+### 3.10 Assumed values and data files
+Some numbers are **not written on the drawings**. The button **Assumed values** (Analog bar, next to *LN tables*) lists all of them, and the panel of the block says it too:
+- **TP** (flow temperature compensation, 8 blocks): the operating temperature comes from your Compensation file (302 / 35 / 91 / 287 °C). Real data. DP' = DP / Kt.
+- **ALM** (104 alarms): the four limits HH / H / L / LL are **ASSUMED** for a 150 MW CFB boiler with reheat. They are NOT the DCS values. Type your own value in the block panel to replace one (it is saved with the project).
+- **Ramp boxes** (8 boxes without a rate on the drawing) and **PO / PIDV pulses** (cycle 2 s, full stroke 60 s, shortest pulse 0.2 s): **ASSUMED**, editable in the panel.
+- **F(X) LN38 / LN39 of ABC-010** (drum level compensation): taken from your Drum Level Calculation file because LINEAR.xls has them only for station 2.
+Every number, with the reason for it, is in `docs/ASSUMED-VALUES.md`; the files you sent and where each one is used are in `docs/DATA-FILES.md`.
+
+### 3.11 Keyboard
 Space run/pause · PageUp/PageDown or ←/→ sheet · F fit · Ctrl+S save · wheel/pinch zoom · drag pan.
 
 ## 4. Troubleshooting
@@ -118,15 +134,17 @@ Space run/pause · PageUp/PageDown or ←/→ sheet · F fit · Ctrl+S save · w
 | The page is blank or the sheet list is empty | Wait a few seconds on first open (the data unpacks). Use a current Chrome/Edge. Do not open the html from inside a zip: extract first. |
 | Windows says "protected your PC" | Normal for an unsigned exe. *More info → Run anyway*. |
 | Android will not install | Allow "install unknown apps" for the app you opened the apk from. If an older Logic Sim is installed from a different key, uninstall it first. |
-| Nothing moves | The app starts paused: press Run or a Step button. Valves, timers and ramps move only while running or stepping. If View is lit, turn it off. |
+| Nothing moves / all wires are grey | The app opens in VIEW: press Run. Valves, timers and ramps move only while running or while you press Next ▶. |
 | I changed an input but the output did not change | Output may be waiting on a timer, or is forced (dashed wire / *Forced signals* count). Release the force. |
 | A typed value jumps back | Press Enter or click ✓ after typing; the box keeps your number until then. |
 | My settings are gone | The browser storage was cleared or blocked (private window). Open the saved project file. The status text in *Legend & style → Saving* tells which storage works. |
 | Reset removed my forces but not my linear edit | By design: linear edits have their own reset. |
+| Values I saved in an older version are gone | When a new version changes how the drawings are read, the saved values of the affected sheets are dropped (the settings stay). Re-enter them and save a new project file. |
 | A warning appears in an FX block about a station | The LN table number exists only in another station; the app used it and warns you. Check the drawing. |
 | Description missing for an address | The IO/memory lists cover unit 1 only. Some labels are not in the lists. |
 | Something else | Note the sheet name, what you clicked, and a screenshot, and report it. |
 
 ## 5. What is and is not simulated
-Simulated: gates, flip-flops, timers (TON/TOF/pulse), T/A-M selectors, comparators, SEL (average of healthy transmitters), CTK, PID with typical tuning, valves/actuators with travel time, ramps, linear and compensation tables, constants, alarms.
+Checked against the drawings and your files (v1.15.0): flip-flops (reset wins when S = R = 1) and timers follow the symbol list of ABC-000; 150 of 153 timers equal the TR table of your memory lists (type and time); 157 of 157 AI ranges equal your IO list; in the simulation every digital output of the 51 sheets can be driven to both 0 and 1 (2191 of 2192; 18 need a sequence of input changes, e.g. latches and pulses); every link between sheets carries its value; no wire is a dead end except the real exits (TO DITL / TCS, annunciator, memory bit); on the screen a digital wire is lit only when its value is 1. The ABC → DITL crossings are not simulated (the DITL page is never touched). This shows the logic is read completely, not that it matches the plant: sheet-by-sheet comparison with the PDFs is still open.
+Simulated: gates, flip-flops, timers (TON/TOF/pulse), T/A-M selectors, comparators, SEL (average of healthy transmitters), CTK, PID with typical tuning, valves/actuators with travel time, ramps, linear and compensation tables, constants, alarms (limits assumed), pulse output.
 Not (yet): the real plant response (there is no plant model: you set the PV yourself or through a simple model), real PID tuning and alarm limits of the plant, other units than unit 1 for descriptions, communication with the real DCS. A few drawing symbols are still unrecognised (listed in docs/BACKLOG.md). Treat results as a study aid and verify against the real system before acting on them.

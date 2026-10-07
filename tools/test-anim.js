@@ -2,7 +2,7 @@
 const {chromium}=require('/opt/node-tools/node_modules/playwright');
 (async()=>{const b=await chromium.launch({args:['--no-sandbox']});const p=await b.newPage({viewport:{width:1500,height:900}});
 const errs=[];p.on('pageerror',e=>errs.push(e.message));p.on('console',m=>{if(m.type()==='error')errs.push(m.text())});
-await p.goto('file://'+require('path').resolve(process.argv[2]));await p.waitForTimeout(3000);await p.click('text=Analog · ABC >> nth=0');await p.waitForTimeout(4000);
+await p.goto('file://'+require('path').resolve(process.argv[2]));await p.waitForTimeout(3000);await p.click('text=Analog · ABC >> nth=0');await p.waitForTimeout(4000);await p.evaluate(()=>{if(AN.view)document.querySelector('button[title^=\"View mode\"]').click()});
 const setup=await p.evaluate(()=>{AN.go(AN.sheets.findIndex(s=>s.name==='ABC-050'));const sh=AN.cs(),S=sh.S;
  const vb=S.blk.find(b=>b.k==='VLV');const tm=S.blk.find(b=>b.k==='TPS'&&b.p.sec>=5);const ti=tm.i[0];
  window._t={vn:vb.pins[0].n,vid:vb.id,tid:tm.id,ti,sec:tm.p.sec};return window._t});

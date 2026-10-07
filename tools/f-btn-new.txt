@@ -1,0 +1,2 @@
+const sStp=h$('select',{title:'Pause: how far Next / Back moves the time'},[1,5,10,30,60].map(v=>h$('option',{value:v,txt:v+' s'}))),bSb=h$('button',{txt:'◀ Back',title:'Pause: roll the simulation back by the selected time'}),bSn=h$('button',{txt:'Next ▶',title:'Pause: run the simulation forward by the selected time'}),
+ bVw=h$('button',{txt:'View',title:'View mode (default): grey drawing, nothing simulated. Click a block or wire = trace it.'});

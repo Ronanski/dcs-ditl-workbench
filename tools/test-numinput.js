@@ -1,7 +1,7 @@
 /* manual numeric input (FORCE and INPUT) with a REAL mouse click on the check button, Run and Pause. usage: node test-numinput.js file.html */
 const {chromium}=require('/opt/node-tools/node_modules/playwright');
 (async()=>{const b=await chromium.launch({args:['--no-sandbox']});const p=await b.newPage({viewport:{width:1500,height:900}});const errs=[];p.on('pageerror',e=>errs.push(e.message));
-await p.goto('file://'+require('path').resolve(process.argv[2]));await p.waitForTimeout(2500);await p.click('text=Analog · ABC >> nth=0');await p.waitForTimeout(3500);
+await p.goto('file://'+require('path').resolve(process.argv[2]));await p.waitForTimeout(2500);await p.click('text=Analog · ABC >> nth=0');await p.waitForTimeout(3500);await p.evaluate(()=>{if(AN.view)document.querySelector('button[title^=\"View mode\"]').click()});
 await p.evaluate(()=>{AN.go(AN.sheets.findIndex(s=>s.name==='ABC-057'))});await p.waitForTimeout(1200);
 await p.evaluate(()=>document.querySelectorAll('#anp details').forEach(d=>d.open=true));
 const res=[];
