@@ -1054,7 +1054,7 @@ function anModel(S){
   if(sh.ty==='tri'){if(tt.includes('AI'))return 'AI';if(tt.includes('AO'))return 'AO';if(tt.includes('PO'))return 'PO';return null}
   if(sh.ty==='quad'&&tt.includes('M')&&sh.w>=20&&sh.w<=36)return 'ACT';/* motor-driven damper / valve actuator */
   if(tt.some(q=>/^H\s*\/\s*L$/.test(q))&&sh.ty==='rect')return 'DCMP';/* one input, two outputs with their own comparison text */
-  if(sh.ty==='dia'){if(tt.includes('COS')&&!tt.includes('T')&&!tt.includes('B'))return 'COS';if(tt.includes('T'))return 'AMT';return null}
+  if(sh.ty==='dia'){if(tt.includes('COS')&&!tt.includes('T'))return 'COS';if(tt.includes('T'))return 'AMT';return null}
   if(sh.ty==='rect'&&tt.includes('<')&&tt.includes('>'))return 'HLLIM';/* legend: box with both < and > = HIGH / LOW LIMIT */
   for(const q of tt)if(AN_KT[q]){if(q==='T'&&sh.ty==='dia')return 'AMT';return AN_KT[q]}
   if(sh.ty==='rect'&&tt.length===1&&/^-?\d+(?:\.\d+)?\s*[%A-Za-z°\/]{0,8}$/.test(tt[0].replace(/%%%/g,'%')))return 'CONST';
@@ -1166,7 +1166,14 @@ function anWire(S){
  for(const b of blk)if(b.k==='AI'||b.k==='AO'){const apy=b.y0;for(const p of b.pins)p.role=(p.y<=apy+b.sh.h*.45)?'out':'in';if(b.k==='AO')b.pins.forEach(p=>{p.role=p.y<=apy+b.sh.h*.45?'out':'in'})}
  /* pin labels: nearest sign / letter text */
  const LAB=/^([ab]|[+\-−]|[NY]|\d\s*:\s*\S+)$/i;
- for(const b of blk){if(!b.pins.length)continue;const cand=TX.filter(t=>LAB.test(t.t.trim())&&!(t.x>=b.x0+.3&&t.x<=b.x1-.3&&t.y>=b.y0+.3&&t.y<=b.y1-.3||false));
+ const Ts=blk.filter(q=>q.k==='SW'||q.k==='AMT'),Cs=blk.filter(q=>q.k==='COS'),nearestTb=t=>{let m=null,md=1e9;for(const q of Ts){const d=anD(q.cx,q.cy,t.x,t.y);if(d<md){md=d;m=q}}return m};
+ {const pairs=[];for(const b of Ts)for(const p of b.pins){if(p.role!=='in'&&b.pins.filter(q=>q.role==='out').length<2)continue;for(const t of TX){if(!LAB.test(t.t.trim()))continue;if(t.x>=b.x0+.3&&t.x<=b.x1-.3&&t.y>=b.y0+.3&&t.y<=b.y1-.3)continue;if(Cs.some(c=>anD(c.cx,c.cy,t.x,t.y)<11))continue;const d=anD(p.x,p.y,t.x,t.y);if(d<=11)pairs.push({p,t,d})}}
+  pairs.sort((x,y)=>x.d-y.d);const up=new Set(),ut=new Set();for(const q of pairs){if(up.has(q.p)||ut.has(q.t))continue;up.add(q.p);ut.add(q.t);q.p.lab=q.t.t.trim();q.p.lt=q.t}}
+ for(const b of Ts){if(b.pins.some(p=>/^\d\s*:/.test(p.lab||'')))continue;const used=new Set(Ts.flatMap(q=>q.pins.map(p=>p.lt)).filter(Boolean));
+  const lt=TX.filter(t=>/^\d\s*:\s*[A-Za-z]$/.test(t.t.trim())&&!used.has(t)&&anD(t.x,t.y,b.cx,b.cy)<=26&&nearestTb(t)===b)[0];if(!lt)continue;
+  let best=null,bs=1e9;for(const s2 of S.seg)for(const[x,y]of[[s2.x1,s2.y1],[s2.x2,s2.y2]]){const d1=anD(x,y,lt.x,lt.y),d2=anDistPoly(polyOf(b),x,y);if(d1<=18&&d2<=7&&!b.pins.some(p=>p.n===s2.net)&&d1+d2<bs){bs=d1+d2;best={n:s2.net,x,y}}}
+  if(best)b.pins.push({n:best.n,x:best.x,y:best.y,role:'in',lab:lt.t.trim(),lt})}
+ for(const b of blk){if(!b.pins.length||b.k==='SW'||b.k==='AMT')continue;const cand=TX.filter(t=>LAB.test(t.t.trim())&&!(t.x>=b.x0+.3&&t.x<=b.x1-.3&&t.y>=b.y0+.3&&t.y<=b.y1-.3||false));
   const pairs=[];for(const p of b.pins)for(const t of cand){const d=anD(p.x,p.y,t.x,t.y);if(d<=9)pairs.push({p,t,d})}
   pairs.sort((x,y)=>x.d-y.d);const up=new Set(),ut=new Set();for(const q of pairs){if(up.has(q.p)||ut.has(q.t))continue;up.add(q.p);ut.add(q.t);q.p.lab=q.t.t.trim();q.p.lt=q.t}}
  for(const b of blk)if((b.k==='SW'||b.k==='AMT')&&b.pins.filter(p=>p.role==='out').length>1){for(const p of b.pins)if(p.role==='out'&&/^a$/i.test(p.lab||''))p.role='in'}
@@ -1188,11 +1195,11 @@ function anWire(S){
   const ins=TX.filter(q=>q.x>=c.x-c.r&&q.x<=c.x+c.r&&q.y>=c.y-c.r&&q.y<=c.y+c.r&&/^[A-Za-z0-9][A-Za-z0-9\-]{0,7}$/.test(q.t.trim())).sort((a,b)=>b.y-a.y);
   let num,tgt=null;
   if(ins.length===2&&c.r>=3&&/^\d{3,4}[A-Z]?$/.test(ins[1].t.trim())){const u=ins[0].t.trim();num=/^\d+$/.test(u)?+u:u;tgt=ins[1].t.trim()}
-  else{if(c.r>6.5)continue;const t=TX.filter(q=>anD(q.x,q.y,c.x,c.y)<=c.r*.9&&/^\d{1,2}$/.test(q.t.trim()))[0];if(!t)continue;num=+t.t}
+  else{if(c.r>6.5)continue;const t=TX.filter(q=>anD(q.x,q.y,c.x,c.y)<=c.r*.9&&/^(\d{1,2}|[A-Z]{1,3})$/.test(q.t.trim()))[0];if(!t)continue;num=/^\d+$/.test(t.t.trim())?+t.t:t.t.trim()}
   const nl=new Set();let sink=false;for(const s of S.seg)for(const[x,y]of[[s.x1,s.y1],[s.x2,s.y2]]){const d=anD(x,y,c.x,c.y);if(Math.abs(d-c.r)<=1.2||d<c.r){nl.add(s.net);if(arrAt(s.net,x,y,2.2)&&nets[s.net].arrows.some(a=>anD(a.x,a.y,c.x,c.y)<=c.r+1.6))sink=true}}
   const tags=TX.filter(q=>/^(S\d\s*)?[MB]\.[0-9A-F]{3,5}[A-Z]?$|^(S\d\s*)?(AI|S[IO])\d{3,5}$|^[A-Z0-9]{3,}[A-Z0-9-]*\.(MV|PV|SV|REM|LOC|OUT|SIG)$/.test(q.t.trim())&&anD(q.x,q.y,c.x,c.y)<=c.r+24).sort((a,b)=>anD(a.x,a.y,c.x,c.y)-anD(b.x,b.y,c.x,c.y)).slice(0,4).map(q=>q.t.trim());
   let ref=null,rd=c.r+28;for(const q of TX){const m=/(FROM|TO)\s+ABC[-\s]?(\d{3}[A-Z]?)/i.exec(q.t);if(m){const d=anD(q.x,q.y,c.x,c.y);if(d<rd){rd=d;ref={dir:m[1].toUpperCase(),code:m[2].toUpperCase()}}}}
-  if(nl.size)(tgt?S.xc:S.conn).push({num,tgt,x:c.x,y:c.y,r:c.r,nets:[...nl],sink,tags,ref})}
+  if(nl.size)(tgt?S.xc:S.conn).push({num,tgt,x:c.x,y:c.y,r:c.r,nets:[...nl],sink,tags,ref,lt:!tgt&&typeof num==='string'})}
  return S}
 /* ===== ANALOG engine: compile the block graph, numeric + boolean evaluation with time ===== */
 function anNum(s){const m=String(s).replace(/%%%/g,'%').match(/-?\d+(?:\.\d+)?/);return m?+m[0]:null}
@@ -1227,6 +1234,7 @@ function anCompile(S){
    case 'SW':case 'AMT':{
      /* controls are the pins marked "1:A" / "1:B" ("when 1 take A / B"); the diagram may have two of them (one for A, one for B) */
      const isCtl=p=>/^\d\s*:\s*\S+/.test(p.lab||''),isAB=p=>/^[ab]$/i.test(p.lab||'');
+     const yn=ins.some(p=>/^[yn]$/i.test(p.lab||'')||/^\d\s*:\s*y$/i.test(p.lab||''));if(yn)for(const p of ins){if(/^y$/i.test(p.lab||''))p.lab='a';else if(/^n$/i.test(p.lab||''))p.lab='b';else{const mm=/^(\d)\s*:\s*y$/i.exec(p.lab||'');if(mm)p.lab=mm[1]+':a'}}
      const tcand=S.tx.filter(t=>/^\d\s*:\s*[ab]$/i.test(t.t.trim())),usedT=new Set();
      for(const p of ins)if(isCtl(p)){let bt=null,bd=1e9;for(const t of tcand)if(t.t.trim()===p.lab.trim()&&!usedT.has(t)){const d=Math.hypot(t.x-p.x,t.y-p.y);if(d<bd){bd=d;bt=t}}if(bt)usedT.add(bt)}
      const unl=ins.filter(p=>!isCtl(p)&&!isAB(p));
@@ -1235,8 +1243,8 @@ function anCompile(S){
      const lp=ins.filter(isCtl);let dg=lp.length?lp:ins.filter(p=>nets[p.n].dig);
      if(!dg.length){const c=ins.filter(p=>!isAB(p));if(c.length===1&&ins.length>=3){const q=c[0];if(!q.lab){let bt=null,bd=26;for(const t of tcand){const d=Math.hypot(t.x-q.x,t.y-q.y);if(d<bd){bd=d;bt=t}}if(bt)q.lab=bt.t.trim()}dg=[q]}}
      const an=ins.filter(p=>!dg.includes(p)).sort(posOrder);for(const q of dg)nets[q.n].dig=true;
-     b.sel=dg[0]?dg[0].n:-1;const sl=dg[0]&&dg[0].lab||'';const m=sl.match(/^\d\s*:\s*(\S+)/);P.selA=m&&/^a$/i.test(m[1]);
-     b.cs=dg.map(q=>{const mm=(q.lab||'').match(/^\d\s*:\s*(\S+)/);return{n:q.n,A:!!(mm&&/^a$/i.test(mm[1]))}});
+     b.sel=dg[0]?dg[0].n:-1;const sl=dg[0]&&dg[0].lab||'';const m=sl.match(/^\d\s*:\s*(\S+)/);P.selA=!!((m&&/^a$/i.test(m[1]))||(yn&&!m));
+     b.cs=dg.map(q=>{const mm=(q.lab||'').match(/^\d\s*:\s*(\S+)/);return{n:q.n,A:!!((mm&&/^a$/i.test(mm[1]))||(yn&&!mm))}});
      let A=an.find(p=>/^a$/i.test(p.lab||'')),B=an.find(p=>/^b$/i.test(p.lab||''));
      if(!A&&!B&&an.length){if(b.k==='AMT'){A=an.find(p=>p.side==='T')||an[0];B=an.find(p=>p!==A)}else{A=an[0];B=an[1]}}
      else if(!A)A=an.find(p=>p!==B);else if(!B)B=an.find(p=>p!==A);
@@ -1278,9 +1286,10 @@ function anCompile(S){
       const mn=an.find(p=>p.side==='L')||an.slice().sort(posOrder)[0],lm=an.filter(p=>p!==mn).sort((p,q)=>p.x-q.x);b.main=mn.n;b.up=lm[0]?lm[0].n:-1;b.dn=lm[1]?lm[1].n:b.up;b.byp=dg[0]?dg[0].n:-1;b.i=[b.main,b.up,b.dn,b.byp].filter(x=>x>=0);P.rate=0}
      else{const t=near(b.cx,b.cy,36,q=>/%%%\s*\/\s*sec|%\s*\/\s*sec|\/\s*sec/i.test(q.t))[0];P.rate=t&&anNum(t.t)>0?anNum(t.t):0;b.main=an[0]?an[0].n:(ins[0]?ins[0].n:-1);b.byp=dg[0]?dg[0].n:-1;b.up=undefined;b.i=[b.main,b.byp].filter(x=>x>=0)}break}
    case 'DCMP':{b.i=ins.map(p=>p.n);const outs2=outs.slice(),tl=TX.filter(q=>/^(?:[A-Za-z][\w-]*\s*)?[<>≤≥]/.test(q.t.replace(/%%%/g,'%').trim())),pr=[];
-     for(const p of outs2)for(const q of tl){const dx=p.x-q.x,dy=q.y-p.y;if(dy>-2&&dy<9&&dx>-14&&dx<60)pr.push({p,q,d:Math.abs(dy)+Math.abs(dx)*.2})}
+     for(const p of outs2)for(const q of tl){const dx=p.x-q.x,dy=q.y-p.y;if(dy>-8&&dy<9&&dx>-14&&dx<60)pr.push({p,q,d:Math.abs(dy)+Math.abs(dx)*.2})}
      pr.sort((a,c)=>a.d-c.d);const up=new Set(),uq=new Set();b.dc=[];
      for(const e of pr){if(up.has(e.p)||uq.has(e.q))continue;up.add(e.p);uq.add(e.q);const m=e.q.t.replace(/%%%/g,'%').trim().match(/^(?:[A-Za-z][\w-]*\s*)?([<>≤≥])\s*(=)?\s*(-?\d+(?:\.\d+)?)\s*(.*)$/);if(m)b.dc.push({n:e.p.n,op:/[>≥]/.test(m[1])?'>':'<',inc:/[≥≤]/.test(m[1])||m[2]==='=',sp:+m[3],u:m[4]||'',txt:e.q.t.trim()})}
+     for(const e of b.dc.slice()){const pe=outs2.find(p=>p.n===e.n);if(!pe)continue;for(const p2 of outs2)if(p2.n!==e.n&&!b.dc.some(x=>x.n===p2.n)&&anD(p2.x,p2.y,pe.x,pe.y)<=3)b.dc.push(Object.assign({},e,{n:p2.n}))}
      break}
    case 'VLV':{b.i=ins.map(p=>p.n);P.stroke=20;break}
    case 'ACT':{b.i=ins.map(p=>p.n);P.stroke=30;b.tag=near(b.cx,b.y0,30,q=>/^[A-Z]{2,4}-[A-Z]{1,3}\d+/.test(q.t.trim()))[0];b.tag=b.tag?b.tag.t.trim():'';break}
@@ -1329,6 +1338,11 @@ function anCompile(S){
  /* nets with no driver but a consumer: external inputs (a slider / a switch for the user) */
  S.multi=new Uint8Array(N);for(let n=0;n<N;n++)if(S.drv[n].filter(d=>d.k!=='LINK').length>1)S.multi[n]=1; /* wired-OR: several outputs joined on one wire */
  S.ext=[];for(let n=0;n<N;n++)if(!S.drv[n].length&&S.cns[n].length)S.ext.push(n);
+ S.kn={};for(const id of S.ext.slice()){const net=nets[id];if(net.dig)continue;const ends=[];for(const i of net.segs){const sg=S.seg[i];ends.push([sg.x1,sg.y1],[sg.x2,sg.y2])}
+  let best=null,bd=10;for(const t of TX){if(!/^\s*-?\d+(?:\.\d+)?\s*%\s*$/.test(t.t.trim()))continue;for(const[x,y]of ends){const d=anD(t.x,t.y,x,y);if(d<bd){bd=d;best=t}}}
+  if(best){S.kn[id]=parseFloat(best.t);S.ext.splice(S.ext.indexOf(id),1)}}
+ {const devPV=d=>{let r=null;for(const p of d.pins.filter(q=>q.role==='in')){const t=TX.filter(q=>/^(PV|SV)$/i.test(q.t.trim())&&anD(q.x,q.y,p.x,p.y)<=12).sort((a,c)=>anD(a.x,a.y,p.x,p.y)-anD(c.x,c.y,p.x,p.y))[0];if(t&&/^PV$/i.test(t.t.trim())){const ip=d.ip&&d.ip.find(x=>x.n===p.n);r=ip?ip.sg:null}}return r};
+  for(const b of S.blk)if(b.k==='DCMP'&&b.dc&&b.i&&b.i.length){const dv=(S.drv[b.i[0]]||[]).find(q=>q.k==='DEV'),sg=dv?devPV(dv):null;for(const d of b.dc){const m=/^(PV|SV)\s*-\s*(PV|SV)/i.exec(d.txt||'');if(!m)continue;d.neg=/^PV$/i.test(m[1])!==(sg!==null&&sg>0)}}}
  /* tracking providers: block whose output net feeds the A input of a selector */
  for(const b of blk)if((b.k==='SW'||b.k==='AMT')&&b.a>=0)b.trkFrom=S.drv[b.a].filter(d=>d.k==='PID'||d.k==='PIDV'||d.k==='MAN');
  return S}
@@ -1348,7 +1362,7 @@ function anInit(S){const N=S.nets.length,rt=S.rt={v:new Float64Array(N),t:0,ext:
  rt.ramp=(typeof AN!=='undefined'&&AN.ramp!=null)?AN.ramp:.05;
  return rt}
 function anFX(P,x){const ln=P.ln,t=((typeof window!=='undefined'&&window.ANLN)||{})[ln]||(P.tbl&&(P.tbl.p2||P.tbl.pts));if(!t||!t.length)return x;if(x<=t[0][0])return t[0][1];for(let i=1;i<t.length;i++)if(x<=t[i][0]){const a=t[i-1],b=t[i];return a[1]+(b[1]-a[1])*(x-a[0])/((b[0]-a[0])||1)}return t[t.length-1][1]}
-function anStep(S,dt){const rt=S.rt,v=rt.v,nets=S.nets,B=x=>x>.5?1:0;rt.t+=dt;rt.k++;const MU=S.multi;
+function anStep(S,dt){const rt=S.rt,v=rt.v,nets=S.nets,B=x=>x>.5?1:0;rt.t+=dt;rt.k++;const MU=S.multi;if(S.kn)for(const k in S.kn)v[k]=S.kn[k];
  /* external values first */
  const F=rt.force,rmp=rt.ramp==null?.05:rt.ramp;
  /* analog values that the USER sets move toward the target like a real process (rmp = fraction of the range per second; 0 = jump) */
@@ -1389,11 +1403,11 @@ function anStep(S,dt){const rt=S.rt,v=rt.v,nets=S.nets,B=x=>x>.5?1:0;rt.t+=dt;rt
      s.nok=ok.length;out(y);break}
    case 'TP':case 'IP':case 'AO':case 'PO':case 'FIELD':case 'ALM':case 'UNK':{if(b.o.length)out(rd(b.i[0]));break}
    case 'FX':out(anFX(P,rd(b.i[0])));break;
-   case 'DRATE':{const x=rd(b.i[0]),H=s.h=s.h||[];if(H.length&&H[H.length-1][0]===rt.t)H[H.length-1][1]=x;else H.push([rt.t,x]);while(H.length>2&&H[1][0]<=rt.t-60)H.shift();const o0=H[0],dw=rt.t-o0[0];out(dw>1e-6?(o0[1]-x)/dw*60:0);break}
+   case 'DRATE':{const x=rd(b.i[0]),H=s.h=s.h||[];if(H.length&&H[H.length-1][0]===rt.t)H[H.length-1][1]=x;else H.push([rt.t,x]);const W=P.win||30;while(H.length>2&&H[1][0]<=rt.t-W)H.shift();const o0=H[0],dw=rt.t-o0[0];out(dw>1e-6?(o0[1]-x)/dw*60:0);break}
    case 'LAG':{const x=rd(b.i[0]);if(s.y==null)s.y=x;s.y+=(x-s.y)*(1-Math.exp(-dt/Math.max(P.tau,.01)));out(s.y);break}
    case 'RATE':case 'RAMPB':{if(b.main!==undefined){const x=rd(b.main);if(s.y==null)s.y=x;if(b.byp>=0&&B(rd(b.byp)))s.y=x;else{const fx=b.up===undefined,ru=fx?P.rate:rd(b.up),rd_=fx?P.rate:rd(b.dn),d=x-s.y;const mu=ru>0?ru*dt:Infinity,md=rd_>0?rd_*dt:Infinity;s.y+=d>0?Math.min(d,mu):-Math.min(-d,md)}out(s.y);break}const x=rd(b.i[0]);if(s.y==null)s.y=x;const m=P.rate*dt;s.y+=Math.max(-m,Math.min(m,x-s.y));out(s.y);break}
    case 'HC':case 'LC':case 'HLC':case 'CMPK':{const x=rd(b.i[0]),sp=P.ref>=0?rd(P.ref):P.sp;out(P.op==='>'?((P.inc?x>=sp:x>sp)?1:0):((P.inc?x<=sp:x<sp)?1:0));break}
-   case 'DCMP':{const x=rd(b.i[0]);for(const d of b.dc)v[d.n]=(d.op==='>'?(d.inc?x>=d.sp:x>d.sp):(d.inc?x<=d.sp:x<d.sp))?1:0;break}
+   case 'DCMP':{const x0=rd(b.i[0]);for(const d of b.dc){const x=d.neg?-x0:x0;v[d.n]=(d.op==='>'?(d.inc?x>=d.sp:x>d.sp):(d.inc?x<=d.sp:x<d.sp))?1:0}break}
    case 'ACT':case 'VLV':{let x0=rd(b.i[0]);if(b.k==='VLV'&&b.i.length&&nets[b.i[0]].dig)x0=x0>.5?100:0;const t=Math.max(0,Math.min(100,x0));if(s.pos==null)s.pos=t;const st=100/Math.max(P.stroke,.1)*dt;s.pos+=Math.max(-st,Math.min(st,t-s.pos));s.mv=Math.abs(t-s.pos)>.05;if(s.mv)s.dir=t>s.pos?1:-1;if(b.o.length)out(s.pos);break}
    case 'CTK':{/* conditional write (SET SIxxxx => TAG.SV IF ctl): while ctl = 1 it sends the input, when ctl = 0 it does NOT write (the last value stays) */
      if(B(rd(b.ctl)))s.cv=rd(b.cin);out(s.cv==null?0:s.cv);break}
@@ -1581,7 +1595,7 @@ function lnResolve(name,ln,stn){const m=/LN(\d+)/i.exec(ln||'');if(!m)return{};c
 function lnFind(name,ln){const m=/LN(\d+)/i.exec(ln||'');if(!m)return null;const n=+m[1],c=lnTables().filter(t=>t.ln===n);if(!c.length)return null;const fo=x=>{const q=/^ABC-(\d+)/.exec(x||'');return q?+q[1]:null};
  return c.find(t=>t.dwg===name)||c.find(t=>fo(t.dwg)!=null&&fo(t.dwg)===fo(name))||(c.length===1?c[0]:null)}
 function ensure(sh){if(sh.S)return sh.S;const S=anWire(anModel(anNets(anBuild(sh.R,sh.name))));anCompile(S);anInit(S);sh.S=S;sh.cnt={};S.blk.forEach(b=>{sh.cnt[b.k]=(sh.cnt[b.k]||0)+1;if(b.k==='FX'&&b.p.ln){if(sh.stn===undefined)sh.stn=stnOf(S);const r=lnResolve(sh.name,b.p.ln,sh.stn);if(r.t)Object.defineProperty(b.p,'tbl',{value:r.t,writable:true,enumerable:false,configurable:true});if(r.warn)Object.defineProperty(b.p,'lnWarn',{value:r.warn,writable:true,enumerable:false,configurable:true})}b.p0=JSON.stringify(b.p)});applySaved(sh);anSettle(S,6);return S}
-const AN_PV=11;/* BUMP THIS whenever the drawing reader changes (net / block numbers move) *//* saved values use net / block numbers: they are dropped when the drawing reader changes */
+const AN_PV=12;/* BUMP THIS whenever the drawing reader changes (net / block numbers move) *//* saved values use net / block numbers: they are dropped when the drawing reader changes */
 const sv=sh=>{const o=AN.sv[sh.name];if(o&&o.pv===AN_PV)return o;return AN.sv[sh.name]={pv:AN_PV}};
 function applySaved(sh){const S=sh.S,v=AN.sv[sh.name];if(!v)return;if(v.pv!==AN_PV){delete AN.sv[sh.name];anSave();return}
  for(const id in v.ai||{}){const s=S.rt.st[id];if(s)s.val=v.ai[id]}
@@ -1647,7 +1661,7 @@ function linksOf(sh){if(sh.lk)return sh.lk;const S=ensure(sh),out=sh.lk=[],my=fa
    let theirs=(PS.xc||[]).filter(q=>q.num===c.num&&pointsTo(q,sh)).sort(posCmp);if(!theirs.length)theirs=(PS.conn||[]).filter(q=>q.num===c.num).sort(posCmp);
    if(theirs.length){const pc=theirs[Math.min(idx,theirs.length-1)],[a,b]=pairRoles(sh,c,p,pc);if(a===null||b===null||a!==b){hit=[p,pc];break}}}
   if(hit)addLink(out,sh,c,hit[0],hit[1]);else c.nolink=1}
- const grp={};S.conn.forEach(c=>(grp[c.num]=grp[c.num]||[]).push(c));
+ const grp={};S.conn.forEach(c=>{if(!c.lt)(grp[c.num]=grp[c.num]||[]).push(c)});
  for(const n in grp){const g=grp[n];for(const c of g){if(g.some(q=>q!==c&&q.sink!==c.sink))continue;
   for(const p of AN.sheets){if(p===sh||famOf(p.name)!==my)continue;let PS;try{PS=ensure(p)}catch(e){continue}const pg=PS.conn.filter(q=>q.num===c.num),pc=pg.find(q=>q.sink!==c.sink&&!pg.some(z=>z!==q&&z.sink!==q.sink));if(pc)addLink(out,sh,c,p,pc)}}}
  /* v1.9.0: single circles that say "( FROM ABC-003A )" / "TO ABC-xxx": go to that drawing, match number + the M.xxxx tag written next to the circle */
@@ -2112,6 +2126,7 @@ function selUpd0_(d){const sh=cs(),S=sh.S,s=AN.sel;d._k=JSON.stringify(s&&{b:s.b
  else if(b.k==='HC'||b.k==='LC'||b.k==='HLC'||b.k==='CMPK'){pr('sp','Setpoint'+(P.u?' ('+P.u+')':''));d.append(h$('small',{txt:'Output = 1 when input '+P.op+(P.inc?'=':'')+' setpoint'+(P.found?'':'  (no number was found on the drawing: default 0)')}))}
  else if(b.k==='TON'||b.k==='TOF'||b.k==='TPS')pr('sec','Time (sec)');
  else if(b.k==='LAG')pr('tau','Time constant (sec)');
+ else if(b.k==='DRATE'){if(P.win==null)P.win=30;pr('win','Window to measure the rate (sec): 5 / 10 / 30 / 60')}
  else if(b.k==='RATE'||b.k==='RAMPB')pr('rate','Rate (% per sec)');
  else if(b.k==='CONST')pr('val','Value');
  else if(b.k==='FX'){const man=(window.ANLN||{})[P.ln],tb=P.tbl,pts=man||(tb&&(tb.p2||tb.pts));

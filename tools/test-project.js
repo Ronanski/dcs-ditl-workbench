@@ -4,7 +4,7 @@ const {chromium}=require('/opt/node-tools/node_modules/playwright');
 await p.goto('file://'+require('path').resolve(process.argv[2]));await p.waitForTimeout(2500);await p.click('text=Analog · ABC >> nth=0');await p.waitForTimeout(3500);await p.evaluate(()=>{if(AN.view)document.querySelector('button[title^=\"View mode\"]').click()});
 const r=await p.evaluate(async()=>{const out={};window.__f={};
  window.showSaveFilePicker=async o=>({name:o.suggestedName,createWritable:async()=>({write:async t=>{window.__f.txt=t},close:async()=>{}})});
- AN.go(AN.sheets.findIndex(s=>s.name==='ABC-050'));const S=AN.cs().S;const n=S.ext.find(n=>!S.nets[n].dig);S.rt.force[n]=42;{const o=AN.sv['ABC-050']&&AN.sv['ABC-050'].pv?AN.sv['ABC-050']:(AN.sv['ABC-050']={pv:11});o.force={[n]:42}}AN.settle();
+ AN.go(AN.sheets.findIndex(s=>s.name==='ABC-050'));const S=AN.cs().S;const n=S.ext.find(n=>!S.nets[n].dig);S.rt.force[n]=42;{const o=AN.sv['ABC-050']&&AN.sv['ABC-050'].pv?AN.sv['ABC-050']:(AN.sv['ABC-050']={pv:12});o.force={[n]:42}}AN.settle();
  const sv=[...document.querySelectorAll('button')].find(x=>/Save$/.test(x.textContent));sv.click();await new Promise(r=>setTimeout(r,500));
  out.saved=!!window.__f.txt;const o=JSON.parse(window.__f.txt);out.keys=Object.keys(o).join(',');out.hasForce=JSON.stringify(o.sv['ABC-050']||{}).includes('42');
  // change state then open

@@ -23,7 +23,7 @@ rep(`for(const p of b.pins)if(p.role==='in'&&!dk[p.n]&&!nets[p.n].sigab)nets[p.n
 /* 6. DCMP limits are written "PV-SV > 1.5Kg/cm2" / "PV-SV < -1.0Kg/cm2" beside the two outputs */
 rep(`tl=TX.filter(q=>/^[<>≤≥]/.test(q.t.replace(/%%%/g,'%').trim()))`,`tl=TX.filter(q=>/^(?:[A-Za-z][\\w-]*\\s*)?[<>≤≥]/.test(q.t.replace(/%%%/g,'%').trim()))`);
 rep(`const m=e.q.t.replace(/%%%/g,'%').trim().match(/^([<>≤≥])\\s*(=)?\\s*(-?\\d+(?:\\.\\d+)?)\\s*(.*)$/);if(m)b.dc.push`,`const m=e.q.t.replace(/%%%/g,'%').trim().match(/^(?:[A-Za-z][\\w-]*\\s*)?([<>≤≥])\\s*(=)?\\s*(-?\\d+(?:\\.\\d+)?)\\s*(.*)$/);if(m)b.dc.push`);
-rep(`if(dy>-2&&dy<9&&dx>-3&&dx<60)pr.push`,`if(dy>-2&&dy<9&&dx>-14&&dx<60)pr.push`);
+rep(`if(dy>-2&&dy<9&&dx>-3&&dx<60)pr.push`,`if(dy>-8&&dy<9&&dx>-14&&dx<60)pr.push`);
 
 /* 7. descriptions for EVERY address: a block that carries an address (SIG.AB B.1070, ...) shows its card when selected, and hovering any address text on the drawing shows the card */
 rep(`function tagHi(){const sh=cs(),S=sh&&sh.S,n=S&&AN.sel&&AN.sel.net!=null?AN.sel.net:null,key=n==null?'':sh.name+'#'+n;if(tagHi.k===key)return;`,`function cardFill(c,a){c.innerHTML='';adesLines(a).forEach((x,i)=>{const d=document.createElement('div');d.textContent=x;if(i===0)d.style.fontWeight='700';c.append(d)})}
@@ -55,4 +55,49 @@ rep(`   case 'FX':{if(!P.ln)P.ln='';b.i=ins.map(p=>p.n);break}`,`   case 'FX':{i
 rep(`   case 'FX':out(anFX(P,rd(b.i[0])));break;`,`   case 'FX':out(anFX(P,rd(b.i[0])));break;
    case 'DRATE':{const x=rd(b.i[0]),H=s.h=s.h||[];if(H.length&&H[H.length-1][0]===rt.t)H[H.length-1][1]=x;else H.push([rt.t,x]);while(H.length>2&&H[1][0]<=rt.t-60)H.shift();const o0=H[0],dw=rt.t-o0[0];out(dw>1e-6?(o0[1]-x)/dw*60:0);break}`);
 rep(`AK=new Set(['AI','PID',`,`AK=new Set(['DRATE','AI','PID',`);
+
+/* 10. SWITCH pin labels: letters / "1:b" are matched to T pins GLOBALLY (nearest pair first, a text labels one pin only), and the "B" beside a COS (manual value) diamond is the COS's own label, not a leg of the T (ABC-009A, 019, 020, 002, 008, 050) */
+rep(` for(const b of blk){if(!b.pins.length)continue;const cand=TX.filter(t=>LAB.test(t.t.trim())&&!(t.x>=b.x0+.3&&t.x<=b.x1-.3&&t.y>=b.y0+.3&&t.y<=b.y1-.3||false));`,` const Ts=blk.filter(q=>q.k==='SW'||q.k==='AMT'),Cs=blk.filter(q=>q.k==='COS');
+ {const pairs=[];for(const b of Ts)for(const p of b.pins){if(p.role!=='in'&&b.pins.filter(q=>q.role==='out').length<2)continue;for(const t of TX){if(!LAB.test(t.t.trim()))continue;if(t.x>=b.x0+.3&&t.x<=b.x1-.3&&t.y>=b.y0+.3&&t.y<=b.y1-.3)continue;if(Cs.some(c=>anD(c.cx,c.cy,t.x,t.y)<11))continue;const d=anD(p.x,p.y,t.x,t.y);if(d<=11)pairs.push({p,t,d})}}
+  pairs.sort((x,y)=>x.d-y.d);const up=new Set(),ut=new Set();for(const q of pairs){if(up.has(q.p)||ut.has(q.t))continue;up.add(q.p);ut.add(q.t);q.p.lab=q.t.t.trim();q.p.lt=q.t}}
+ for(const b of blk){if(!b.pins.length||b.k==='SW'||b.k==='AMT')continue;const cand=TX.filter(t=>LAB.test(t.t.trim())&&!(t.x>=b.x0+.3&&t.x<=b.x1-.3&&t.y>=b.y0+.3&&t.y<=b.y1-.3||false));`);
+
+/* 11. COS diamond that has the letter "B" drawn inside its box ("B | COS", ABC-009A x2): still a COS (manual value of the A/M transfer) */
+rep(`if(tt.includes('COS')&&!tt.includes('T')&&!tt.includes('B'))return 'COS'`,`if(tt.includes('COS')&&!tt.includes('T'))return 'COS'`);
+/* 12. Y / N switches (ABC-003E, 004B, 004C, 009A, 009B, 001D): leg "y" = taken when the control is 1, leg "n" when 0; the unlabelled pin is the control */
+rep(`const isCtl=p=>/^\\d\\s*:\\s*\\S+/.test(p.lab||''),isAB=p=>/^[ab]$/i.test(p.lab||'');`,`const isCtl=p=>/^\\d\\s*:\\s*\\S+/.test(p.lab||''),isAB=p=>/^[ab]$/i.test(p.lab||'');
+     const yn=ins.some(p=>/^[yn]$/i.test(p.lab||'')||/^\\d\\s*:\\s*y$/i.test(p.lab||''));if(yn)for(const p of ins){if(/^y$/i.test(p.lab||''))p.lab='a';else if(/^n$/i.test(p.lab||''))p.lab='b';else{const mm=/^(\\d)\\s*:\\s*y$/i.exec(p.lab||'');if(mm)p.lab=mm[1]+':a'}}`);
+rep(`P.selA=m&&/^a$/i.test(m[1]);`,`P.selA=!!((m&&/^a$/i.test(m[1]))||(yn&&!m));`);
+rep(`return{n:q.n,A:!!(mm&&/^a$/i.test(mm[1]))}});`,`return{n:q.n,A:!!((mm&&/^a$/i.test(mm[1]))||(yn&&!mm))}});`);
+/* 13. a selector wire that stops short of the T (no arrow touching it, ABC-009A AMT #2 "1:B / BU-CMD"): attach the nearest wire end to the "1:x" text */
+rep(` for(const b of blk){if(!b.pins.length||b.k==='SW'||b.k==='AMT')continue;const cand=`,` for(const b of Ts){if(b.pins.some(p=>/^\\d\\s*:/.test(p.lab||'')))continue;const used=new Set(Ts.flatMap(q=>q.pins.map(p=>p.lt)).filter(Boolean));
+  const lt=TX.filter(t=>/^\\d\\s*:\\s*[A-Za-z]$/.test(t.t.trim())&&!used.has(t)&&anD(t.x,t.y,b.cx,b.cy)<=26&&nearestTb(t)===b)[0];if(!lt)continue;
+  let best=null,bs=1e9;for(const s2 of S.seg)for(const[x,y]of[[s2.x1,s2.y1],[s2.x2,s2.y2]]){const d1=anD(x,y,lt.x,lt.y),d2=anDistPoly(polyOf(b),x,y);if(d1<=18&&d2<=7&&!b.pins.some(p=>p.n===s2.net)&&d1+d2<bs){bs=d1+d2;best={n:s2.net,x,y}}}
+  if(best)b.pins.push({n:best.n,x:best.x,y:best.y,role:'in',lab:lt.t.trim(),lt})}
+ for(const b of blk){if(!b.pins.length||b.k==='SW'||b.k==='AMT')continue;const cand=`);
+rep(` const Ts=blk.filter(q=>q.k==='SW'||q.k==='AMT'),Cs=blk.filter(q=>q.k==='COS');`,` const Ts=blk.filter(q=>q.k==='SW'||q.k==='AMT'),Cs=blk.filter(q=>q.k==='COS'),nearestTb=t=>{let m=null,md=1e9;for(const q of Ts){const d=anD(q.cx,q.cy,t.x,t.y);if(d<md){md=d;m=q}}return m};`);
+
+/* 14. circles with a LETTER ("A", "B", "E", "N") continue a signal on the same sheet exactly like the numbered ones */
+rep("const t=TX.filter(q=>anD(q.x,q.y,c.x,c.y)<=c.r*.9&&/^\\d{1,2}$/.test(q.t.trim()))[0];if(!t)continue;num=+t.t}","const t=TX.filter(q=>anD(q.x,q.y,c.x,c.y)<=c.r*.9&&/^(\\d{1,2}|[A-Z]{1,3})$/.test(q.t.trim()))[0];if(!t)continue;num=/^\\d+$/.test(t.t.trim())?+t.t:t.t.trim()}");
+rep("(tgt?S.xc:S.conn).push({num,tgt,x:c.x,y:c.y,r:c.r,nets:[...nl],sink,tags,ref})}","(tgt?S.xc:S.conn).push({num,tgt,x:c.x,y:c.y,r:c.r,nets:[...nl],sink,tags,ref,lt:!tgt&&typeof num==='string'})}");
+rep("const grp={};S.conn.forEach(c=>(grp[c.num]=grp[c.num]||[]).push(c));","const grp={};S.conn.forEach(c=>{if(!c.lt)(grp[c.num]=grp[c.num]||[]).push(c)});");
+/* 15. an analog wire that starts at a bare "3%" text (no box, no driver) carries that constant (ABC-003E "SET X%" = 3 %) */
+rep(" S.ext=[];for(let n=0;n<N;n++)if(!S.drv[n].length&&S.cns[n].length)S.ext.push(n);",` S.ext=[];for(let n=0;n<N;n++)if(!S.drv[n].length&&S.cns[n].length)S.ext.push(n);
+ S.kn={};for(const id of S.ext.slice()){const net=nets[id];if(net.dig)continue;const ends=[];for(const i of net.segs){const sg=S.seg[i];ends.push([sg.x1,sg.y1],[sg.x2,sg.y2])}
+  let best=null,bd=10;for(const t of TX){if(!/^\\s*-?\\d+(?:\\.\\d+)?\\s*%\\s*$/.test(t.t.trim()))continue;for(const[x,y]of ends){const d=anD(t.x,t.y,x,y);if(d<bd){bd=d;best=t}}}
+  if(best){S.kn[id]=parseFloat(best.t);S.ext.splice(S.ext.indexOf(id),1)}}
+ {const devPV=d=>{let r=null;for(const p of d.pins.filter(q=>q.role==='in')){const t=TX.filter(q=>/^(PV|SV)$/i.test(q.t.trim())&&anD(q.x,q.y,p.x,p.y)<=12).sort((a,c)=>anD(a.x,a.y,p.x,p.y)-anD(c.x,c.y,p.x,p.y))[0];if(t&&/^PV$/i.test(t.t.trim())){const ip=d.ip&&d.ip.find(x=>x.n===p.n);r=ip?ip.sg:null}}return r};
+  for(const b of S.blk)if(b.k==='DCMP'&&b.dc&&b.i&&b.i.length){const dv=(S.drv[b.i[0]]||[]).find(q=>q.k==='DEV'),sg=dv?devPV(dv):null;for(const d of b.dc){const m=/^(PV|SV)\\s*-\\s*(PV|SV)/i.exec(d.txt||'');if(!m)continue;d.neg=/^PV$/i.test(m[1])!==(sg!==null&&sg>0)}}}`);
+rep("const rt=S.rt,v=rt.v,nets=S.nets,B=x=>x>.5?1:0;rt.t+=dt;rt.k++;const MU=S.multi;","const rt=S.rt,v=rt.v,nets=S.nets,B=x=>x>.5?1:0;rt.t+=dt;rt.k++;const MU=S.multi;if(S.kn)for(const k in S.kn)v[k]=S.kn[k];");
+rep("case 'DCMP':{const x=rd(b.i[0]);for(const d of b.dc)v[d.n]=(d.op==='>'?(d.inc?x>=d.sp:x>d.sp):(d.inc?x<=d.sp:x<d.sp))?1:0;break}","case 'DCMP':{const x0=rd(b.i[0]);for(const d of b.dc){const x=d.neg?-x0:x0;v[d.n]=(d.op==='>'?(d.inc?x>=d.sp:x>d.sp):(d.inc?x<=d.sp:x<d.sp))?1:0}break}");
+/* 16. DROP RATE: internal window setting (default 30 s; 5 / 10 / 30 / 60), the text on the drawing is kept */
+rep("while(H.length>2&&H[1][0]<=rt.t-60)H.shift();","const W=P.win||30;while(H.length>2&&H[1][0]<=rt.t-W)H.shift();");
+rep("else if(b.k==='LAG')pr('tau','Time constant (sec)');","else if(b.k==='LAG')pr('tau','Time constant (sec)');\n else if(b.k==='DRATE'){if(P.win==null)P.win=30;pr('win','Window to measure the rate (sec): 5 / 10 / 30 / 60')}");
+rep(`const AN_PV=11;`,`const AN_PV=12;`);
+
+/* 17. DCMP outputs drawn as two overlapping wires (ABC-001D: four out pins for two comparisons): every pin next to the matched one carries the same test */
+rep(`if(m)b.dc.push({n:e.p.n,op:/[>≥]/.test(m[1])?'>':'<',inc:/[≥≤]/.test(m[1])||m[2]==='=',sp:+m[3],u:m[4]||'',txt:e.q.t.trim()})}
+     break}`,`if(m)b.dc.push({n:e.p.n,op:/[>≥]/.test(m[1])?'>':'<',inc:/[≥≤]/.test(m[1])||m[2]==='=',sp:+m[3],u:m[4]||'',txt:e.q.t.trim()})}
+     for(const e of b.dc.slice()){const pe=outs2.find(p=>p.n===e.n);if(!pe)continue;for(const p2 of outs2)if(p2.n!==e.n&&!b.dc.some(x=>x.n===p2.n)&&anD(p2.x,p2.y,pe.x,pe.y)<=3)b.dc.push(Object.assign({},e,{n:p2.n}))}
+     break}`);
 fs.writeFileSync('wip/logic-sim-v1.14.1.html',h);console.log('wip written',h.length);
