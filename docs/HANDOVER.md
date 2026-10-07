@@ -14,6 +14,7 @@ Pagkabasa, ibuod mo sa 5 linya kung nasaan tayo at ano ang susunod, at hintayin 
 - All 54 ABC sheets read; digital + analog links; SET SV presets on 8 sheets; T legs per leg; timers/comparators fixed on 057/008/014/019.
 
 ## Open items (ask the user which first)
+0. Sheet triage (docs/SHEET-TRIAGE.md, tools/triage.js): fix group A reader defects (18 constants 'value not found', 6 blocks without input), re-run the triage, then review group B sheets worst first.
 1. Laptop problem (manual numeric input in Run mode): FIXED in v1.10.2 (dirty-state bug, reproduced and tested). Ask the user to confirm on the laptop. The Diagnostics report (Legend & style > Saving) stays available.
 2. "Works only in Pause, not in Run" for T switching: not reproduced. Need screenshot + sheet name + switch states.
 3. v1.8.1 "error on refresh": not reproduced (54 sheets x refresh = 0 errors). Need the console message.
