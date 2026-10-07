@@ -1,0 +1,24 @@
+# HANDOVER — continue in a new chat session
+
+## Prompt to paste into the new session (attach nothing unless the user has new files)
+```
+Ituloy natin ang proyekto sa repo ronanski/dcs-ditl-workbench, branch claude/trusting-goodall-313vmr.
+Una, basahin mo (sa ganitong ayos): README.md, DESIGN.md (mga rules na hindi nababago), ang pinakabagong PROJECT-NOTES-v*.md, at docs/HANDOVER.md (kasalukuyang estado at bukas na items).
+Huwag mo galawin ang DITL page; sundin ang checklist ng build sa DESIGN.md §3 (guard IDENTICAL, tests, notes, commit/push sa branch, ipadala ang html sa akin).
+Ako ay automation engineer (hindi coder): Taglish, simple at tapat, sabihin kung ano ang na-test at ano ang hindi.
+Pagkabasa, ibuod mo sa 5 linya kung nasaan tayo at ano ang susunod, at hintayin ang utos ko.
+```
+
+## State (v1.10.1)
+- Current build: `ditl-workbench-v1.10.1.html` (analog page, project file Save/Open, portable app shell in `app/`, Windows build by GitHub Actions).
+- All 54 ABC sheets read; digital + analog links; SET SV presets on 8 sheets; T legs per leg; timers/comparators fixed on 057/008/014/019.
+
+## Open items (ask the user which first)
+1. Laptop problem: manual analog input does not work on the user's Windows laptop (works on Android phone/tablet). Not reproducible here. Waiting for: Legend & style > Saving > **Diagnostics** report (+ F12 Console red lines) from the laptop.
+2. "Works only in Pause, not in Run" for T switching: not reproduced. Need screenshot + sheet name + switch states.
+3. v1.8.1 "error on refresh": not reproduced (54 sheets x refresh = 0 errors). Need the console message.
+4. Address highlight when selected (yellow / sky) with description — waits for the user's IO list.
+5. Direction: plant simulator + controller simulator + engineering station (docs/ARCHITECTURE.md). Needed from the user: DITL new-engine permission (rule 1), first loop (ABC-050?), IO list format, what the "operation table" contains.
+6. Engine gaps: real PID, SEL semantics, alarm logic (docs/BLOCK-COVERAGE.md).
+7. Unlinked circles: 004A #6 #8 #9, 020 #9; ABC-054 HRP -> 052 has no peer circle.
+8. Windows exe: built by Actions (success for v1.10.0); not run by Claude. Ask the user how it behaves (SmartScreen, portable start, Save dialog).
