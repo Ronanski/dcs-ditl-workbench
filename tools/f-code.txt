@@ -1,0 +1,42 @@
+/* ---------- v1.13.0 F: step / view / trace / why ---------- */
+{const st=document.createElement('style');st.textContent='body.anview #anp input,body.anview #anp select,body.anview #anp button:not(.keep){pointer-events:none;opacity:.45}body.anview #anp .keep{opacity:1}#anp .tr{cursor:pointer}#anp .tr:hover{background:#14231b}#anp .why{background:#10181d;border-left:3px solid var(--acc);padding:4px 6px;margin:4px 0;color:var(--tx)}';document.head.append(st)}
+const TUP='#22d3ee',TDN='#ff9f43',TST='#ffffff';AN.view=false;AN.trace=false;AN.allLegs=false;AN.flh=null;
+function stepBy(sec){if(AN.run||AN.view)return;const sh=cs();if(!sh||!sh.S)return;const S=sh.S,v0=Array.from(S.rt.v),n=Math.max(1,Math.round(sec/.1));for(let i=0;i<n;i++)stepSet(sh,.1);
+ const ch=new Set();S.nets.forEach(q=>{if(Math.abs((S.rt.v[q.id]||0)-(v0[q.id]||0))>1e-6)ch.add(q.id)});AN.flh=ch;paint();panelUpd();
+ const nmL=[...ch].slice(0,6).map(q=>nm(S,q)+' → '+(S.nets[q].dig?(S.rt.v[q]>.5?1:0):fmt(S.rt.v[q])));
+ msg('Step +'+sec+' s: '+(ch.size?ch.size+' wire(s) changed (flashing yellow): '+nmL.join(' · ')+(ch.size>6?' …':''):'nothing changed'));clearTimeout(AN._flt);AN._flt=setTimeout(()=>{AN.flh=null;paint()},1800)}
+bS1.onclick=()=>stepBy(.1);bS2.onclick=()=>stepBy(1);bS3.onclick=()=>stepBy(10);
+function viewSet(on){AN.view=on;bVw.classList.toggle('on',on);document.body.classList.toggle('anview',on);if(on){if(AN.run)bRun.click();AN.flh=null}for(const b of[bRun,bS1,bS2,bS3,sSpd,bRst])b.disabled=on;paint();const d=$('ansel');if(d)selUpd(d);msg(on?'View mode: inputs, force, Run and Step are off. You can still select, trace and read.':'View mode off.')}
+bVw.onclick=()=>viewSet(!AN.view);
+bTr.onclick=()=>{AN.trace=!AN.trace;bTr.classList.toggle('on',AN.trace);const sh=cs();if(sh&&sh.S)sh.S._tk=null;paint();const d=$('ansel');if(d)selUpd(d);if(AN.trace&&!AN.sel)msg('Trace: click a wire or a block.')};
+function trSet(sh){if(!AN.trace||!AN.sel)return null;const S=sh.S,s=AN.sel,key=(s.net!=null?'n'+s.net:'b'+(s.blk&&s.blk.id))+'|'+(S._dk||'')+'|'+(AN.allLegs?1:0);if(S._tk===key)return S._ts;
+ const start=new Set(),up=new Set(),dn=new Set(),upL=[],dnL=[];
+ const ups=s.net!=null?[s.net]:s.blk.pins.filter(p=>p.role==='in').map(p=>p.n),dns=s.net!=null?[s.net]:s.blk.o.slice();ups.concat(dns).forEach(n=>start.add(n));
+ const off=(b,n)=>{if(AN.allLegs||(b.k!=='SW'&&b.k!=='AMT')||b.a===b.b)return false;const q=S.rt.st[b.id];return q&&q.pk==='B'?n===b.a:n===b.b};
+ ups.forEach(n=>up.add(n));let fr=ups.slice(),g=0;
+ while(fr.length&&g++<500){const nx=[];for(const n of fr){for(const b of S.drv[n]||[])for(const m of b.i)if(!off(b,m)&&!up.has(m)){up.add(m);nx.push(m)}for(const[d,sr]of S.link||[])if(d===n&&!up.has(sr)){up.add(sr);nx.push(sr)}}nx.forEach(n=>upL.push(n));fr=nx}
+ dns.forEach(n=>dn.add(n));fr=dns.slice();g=0;
+ while(fr.length&&g++<500){const nx=[];for(const n of fr){for(const b of S.cns[n]||[])if(!off(b,n))for(const m of b.o)if(!dn.has(m)){dn.add(m);nx.push(m)}for(const[d,sr]of S.link||[])if(sr===n&&!dn.has(d)){dn.add(d);nx.push(d)}}nx.forEach(n=>dnL.push(n));fr=nx}
+ const T={start,up,dn,upL:upL.filter(n=>!start.has(n)),dnL:dnL.filter(n=>!start.has(n))};S._tk=key;S._ts=T;return T}
+function trList(d){if(!AN.trace||!AN.sel)return;const sh=cs(),S=sh.S,T=trSet(sh);if(!T)return;
+ const add=(n)=>{const e=h$('span',{cls:'v'});const f=()=>{const x=S.rt.v[n];e.textContent=S.nets[n].dig?(x>.5?'1':'0'):fmt(x)};f._s=1;PU.push(f);f();return e};
+ const row=n=>{const name=nm(S,n),ad=adesFind(sh,name),ds=ad?adesText(ad.rec):'',x=S.xlk&&S.xlk[n],r=h$('div',{cls:'r tr',title:'Click to select this wire'},[h$('span',{cls:'n',txt:name+(ds?' · '+ds:'')+(x?'  ◀ sheet '+x.from.name:'')}),add(n)]);
+  r.onclick=()=>{if(x&&AN.sheets.indexOf(x.from)>=0&&AN.sheets.indexOf(x.from)!==AN.i){AN._bk=AN.i;go(AN.sheets.indexOf(x.from));return}AN.sel={net:n};selBox();paint();panelUpd(true)};return r};
+ const lg=h$('button',{cls:'keep',txt:AN.allLegs?'Both T legs: ON':'Selected T leg only',title:'T/switch blocks: follow only the leg in use, or both'});lg.onclick=()=>{AN.allLegs=!AN.allLegs;S._tk=null;paint();selUpd(d)};
+ d.append(h$('h4',{txt:'Trace'}),h$('div',{cls:'r'},[lg]));
+ const cap=60;d.append(h$('small',{txt:'Driven by (upstream, cyan): '+T.upL.length}));T.upL.slice(0,cap).forEach(n=>d.append(row(n)));if(T.upL.length>cap)d.append(h$('small',{txt:'… +'+(T.upL.length-cap)+' more'}));
+ d.append(h$('small',{txt:'Feeds (downstream, orange): '+T.dnL.length}));T.dnL.slice(0,cap).forEach(n=>d.append(row(n)));if(T.dnL.length>cap)d.append(h$('small',{txt:'… +'+(T.dnL.length-cap)+' more'}));
+ d.append(h$('small',{txt:'This sheet only: use the ◀ rows to jump to the sheet an input comes from. Trace to other sheets going out is not done yet.'}))}
+function whyTxt(S,b){const v=S.rt.v,st=S.rt.st[b.id]||{},P=b.p||{},on=x=>x>.5,val=n=>S.nets[n].dig?(on(v[n])?'1':'0'):fmt(v[n]),ins=b.pins.filter(p=>p.role==='in'),
+  lst=a=>a.map(p=>(p.lab?p.lab+' ':'')+nm(S,p.n)+'='+val(p.n)).join(', '),o=b.o.length?val(b.o[0]):'';
+ switch(b.k){
+  case 'AND':{const z=ins.filter(p=>!on(v[p.n]));return o==='1'?'AND = 1: ALL inputs are 1.':'AND = 0: '+(z.length?lst(z)+' is 0 (one 0 is enough).':'an input is 0.')}
+  case 'OR':{const z=ins.filter(p=>on(v[p.n]));return o==='1'?'OR = 1: '+lst(z)+' is 1 (one 1 is enough).':'OR = 0: ALL inputs are 0.'}
+  case 'NOT':return 'NOT = '+o+': the input is '+(ins[0]?val(ins[0].n):'?')+', the output is the opposite.';
+  case 'FF':return 'Flip-flop Q = '+o+': S='+val(b.S)+', R='+val(b.Rn)+'. Reset (R=1) wins over Set; with both 0 it keeps its last value.';
+  case 'TON':return 'TON (on-delay '+P.sec+' s): output becomes 1 only after the input has been 1 for '+P.sec+' s. Timer now '+(st.acc||0).toFixed(1)+' s, output '+o+'.';
+  case 'TOF':return 'TOF (off-delay '+P.sec+' s): output stays 1 for '+P.sec+' s after the input drops. Timer now '+(st.acc||0).toFixed(1)+' s, output '+o+'.';
+  case 'TPS':case 'TPV':return 'Pulse: a rising edge on the input starts a pulse of '+(b.k==='TPS'?P.sec+' s':'the set time')+'. Running: '+(st.run?'yes':'no')+', output '+o+'.';
+  case 'SW':case 'AMT':return 'Selector: leg '+(st.pk==='B'?'B':'A')+' is in use (the other leg is ignored). Output '+o+'.';
+  default:return 'Inputs now: '+(lst(ins)||'-')+'  →  output '+o+'. (A detailed explanation for '+b.k+' is not written yet.)'}}
+function whyRow(d,S,b){const e=h$('div',{cls:'why'});const f=()=>{try{e.textContent='Why? '+whyTxt(S,b)}catch(x){e.textContent=''}};f._s=1;PU.push(f);f();d.append(e)}

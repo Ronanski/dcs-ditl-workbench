@@ -1,0 +1,132 @@
+name: Release (exe + apk + html)
+# One version everywhere: the number in the file name logic-sim-vX.Y.Z.html at the repo root.
+# Every push that changes that html (or the app / android / this workflow) builds
+#   logic-sim-vX.Y.Z-portable.exe   (Windows, portable, no admin)
+#   logic-sim-vX.Y.Z.apk             (Android, sideload)
+#   logic-sim-vX.Y.Z.html            (the page itself)
+# and publishes them in the GitHub Release vX.Y.Z (Releases page of the repo).
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "claude/trusting-goodall-313vmr" ]
+    paths:
+      - "logic-sim-v*.html"
+      - "app/**"
+      - "android/**"
+      - "tools/version.js"
+      - ".github/workflows/release.yml"
+      - "docs/Logic-Sim-Manual.pdf"
+permissions:
+  contents: write
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.v.outputs.version }}
+      tag: ${{ steps.v.outputs.tag }}
+      html: ${{ steps.v.outputs.html }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - id: v
+        run: node tools/version.js --github
+
+  exe:
+    needs: version
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Install
+        working-directory: app
+        run: npm install
+      - name: Build portable exe
+        working-directory: app
+        run: npm run dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exe
+          path: app/dist/logic-sim-v*-portable.exe
+
+  apk:
+    needs: version
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: 17 }
+      - name: Install Capacitor
+        working-directory: android
+        run: npm install
+      - name: Prepare the web part
+        working-directory: android
+        run: node prepare-www.js
+      - name: Create the Android project
+        working-directory: android
+        run: |
+          npx cap add android
+          npx cap sync android
+      - name: Set version name / code
+        working-directory: android
+        run: |
+          V="${{ needs.version.outputs.version }}"
+          IFS=. read MA MI PA <<< "$V"
+          CODE=$(( MA*10000 + MI*100 + PA ))
+          sed -i "s/versionCode 1/versionCode $CODE/; s/versionName \"1.0\"/versionName \"$V\"/" android/app/build.gradle
+          grep -n "versionCode\|versionName" android/app/build.gradle
+      - name: Build the signed apk
+        working-directory: android/android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleRelease \
+            -Pandroid.injected.signing.store.file="${GITHUB_WORKSPACE}/android/signing/logic-sim.keystore" \
+            -Pandroid.injected.signing.store.password=logicsim-sideload \
+            -Pandroid.injected.signing.key.alias=logicsim \
+            -Pandroid.injected.signing.key.password=logicsim-sideload
+      - name: Name it
+        run: |
+          mkdir -p out
+          cp android/android/app/build/outputs/apk/release/*.apk "out/logic-sim-v${{ needs.version.outputs.version }}.apk"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apk
+          path: out/*.apk
+
+  release:
+    needs: [version, exe, apk]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { name: exe, path: dist }
+      - uses: actions/download-artifact@v4
+        with: { name: apk, path: dist }
+      - name: Collect
+        run: |
+          cp "${{ needs.version.outputs.html }}" dist/
+          cp docs/Logic-Sim-Manual.pdf "dist/logic-sim-v${{ needs.version.outputs.version }}-manual.pdf"
+          V="${{ needs.version.outputs.version }}"
+          N="PROJECT-NOTES-v${V}.md"
+          if [ -f "$N" ]; then awk '/^## /{ if(p) exit; p=1 } p' "$N" > notes.md; fi
+          [ -s notes.md ] || echo "Logic Sim v${V}" > notes.md
+          cat >> notes.md <<'TXT'
+
+          ---
+          Files: `logic-sim-vX.Y.Z.html` (open in Chrome, no install) · `logic-sim-vX.Y.Z-portable.exe` (Windows, portable; if SmartScreen blocks it: More info > Run anyway, or Unblock the file) · `logic-sim-vX.Y.Z.apk` (Android: allow "install unknown apps").
+          TXT
+          ls -la dist
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="${{ needs.version.outputs.tag }}"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" dist/* --clobber
+            gh release edit "$TAG" --notes-file notes.md
+          else
+            gh release create "$TAG" dist/* --target "${{ github.sha }}" --title "Logic Sim ${TAG}" --notes-file notes.md
+          fi

@@ -1,8 +1,7 @@
-/* copies the newest ../ditl-workbench-vX.Y.Z.html into ui/index.html (the app shows exactly that file) */
+/* copies the newest ../logic-sim-vX.Y.Z.html into ui/index.html and puts the SAME version into package.json (exe name = logic-sim-vX.Y.Z-portable.exe) */
 const fs=require('fs'),path=require('path');
-const root=path.join(__dirname,'..');
-const v=s=>s.match(/v(\d+)\.(\d+)\.(\d+)/).slice(1).map(Number);
-const files=fs.readdirSync(root).filter(f=>/^ditl-workbench-v\d+\.\d+\.\d+\.html$/.test(f)).sort((a,b)=>{const x=v(a),y=v(b);return x[0]-y[0]||x[1]-y[1]||x[2]-y[2]});
-if(!files.length)throw new Error('no ditl-workbench-v*.html found in '+root);
-const f=files[files.length-1];fs.mkdirSync(path.join(__dirname,'ui'),{recursive:true});
-fs.copyFileSync(path.join(root,f),path.join(__dirname,'ui','index.html'));console.log('UI =',f);
+const {ver,file,root}=require('../tools/version.js');
+fs.mkdirSync(path.join(__dirname,'ui'),{recursive:true});
+fs.copyFileSync(path.join(root,file),path.join(__dirname,'ui','index.html'));
+const pj=path.join(__dirname,'package.json'),p=JSON.parse(fs.readFileSync(pj,'utf8'));p.version=ver;fs.writeFileSync(pj,JSON.stringify(p,null,2)+'\n');
+console.log('UI =',file,'| version',ver);

@@ -1,14 +1,16 @@
-# DCS Engineering Station (DITL + ABC analog workbench)
+# Logic Sim (DITL + ABC analog workbench)
 
 Offline simulator/viewer of the plant's DCS logic drawings.
 
-- Open `ditl-workbench-vX.Y.Z.html` in Chrome (double-click, no install, no network), or use the portable Windows app (GitHub > Actions > latest run > Artifacts).
+- Download from **GitHub > Releases** (latest): `logic-sim-vX.Y.Z.html` (open in Chrome, no install, no network), `logic-sim-vX.Y.Z-portable.exe` (Windows, portable) or `logic-sim-vX.Y.Z.apk` (Android).
 - Analog page: Save / Open project file (Ctrl+S). It keeps your inputs, forces, switches and settings.
+- **Manual** (installation, familiarization, how to use, troubleshooting): [docs/MANUAL.md](docs/MANUAL.md) · PDF: [docs/Logic-Sim-Manual.pdf](docs/Logic-Sim-Manual.pdf) (also attached to each Release).
 - Rules, checklist, versioning, continuity: **DESIGN.md**. What changed: **PROJECT-NOTES-vX.Y.Z.md**. Where we are / how to continue in a new chat: **docs/HANDOVER.md**.
 
 | folder | what |
 |---|---|
 | `app/` | Electron shell for the portable Windows exe |
+| `android/` | Capacitor shell for the Android apk |
 | `baseline/` | v1.0.0 html, reference for the DITL "never touched" guard |
 | `tools/` | tests, patch script of the current build, helpers (`tools/history/` = old patches) |
 | `docs/` | architecture, handover, block coverage, analysis |

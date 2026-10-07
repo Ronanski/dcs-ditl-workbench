@@ -1,8 +1,8 @@
 {
-  "name": "dcs-engineering-station",
-  "productName": "DCS Engineering Station",
+  "name": "logic-sim",
+  "productName": "Logic Sim",
   "version": "1.10.0",
-  "description": "Offline DCS logic workbench (DITL + analog ABC sheets). Portable, no admin rights needed.",
+  "description": "Logic Sim: offline DCS logic workbench (DITL + analog ABC sheets). Portable, no admin rights needed.",
   "main": "main.js",
   "private": true,
   "scripts": {
@@ -15,14 +15,33 @@
     "electron-builder": "^25.1.8"
   },
   "build": {
-    "appId": "local.dcs.engineering.station",
-    "productName": "DCS Engineering Station",
-    "files": ["main.js", "preload.js", "ui/**"],
-    "directories": { "output": "dist" },
+    "appId": "local.logicsim",
+    "productName": "Logic Sim",
+    "files": [
+      "main.js",
+      "preload.js",
+      "ui/**"
+    ],
+    "directories": {
+      "output": "dist"
+    },
     "win": {
-      "target": [{ "target": "portable", "arch": ["x64"] }],
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
       "requestedExecutionLevel": "asInvoker"
     },
-    "portable": { "artifactName": "DCS-Engineering-Station-${version}-portable.exe" }
+    "portable": {
+      "artifactName": "logic-sim-v${version}-portable.exe"
+    },
+    "copyright": "Copyright (c) 2026 Ronanski"
+  },
+  "author": {
+    "name": "Ronanski"
   }
 }

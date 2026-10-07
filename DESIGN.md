@@ -8,7 +8,7 @@ Direction (docs/ARCHITECTURE.md): engineering station + controller simulator + p
 portable Windows app without admin rights. The user is an automation engineer (non-coder): explain simply, in Taglish, like an engineer.
 
 ## 2. Hard rules
-1. **DITL page is NEVER modified.** Only the ANALOG page changes. Every build: `node tools/guard-ditl.js baseline/ditl-workbench-v1.0.0.html ditl-workbench-vX.Y.Z.html` must print IDENTICAL.
+1. **DITL page is NEVER modified.** Only the ANALOG page changes. Every build: `node tools/guard-ditl.js baseline/ditl-workbench-v1.0.0.html logic-sim-vX.Y.Z.html` must print IDENTICAL.
    (Open question, decision belongs to the user: a new shared scan engine that gives the same DITL results. Not allowed until the user says yes.)
 2. **Signal rule.** ORIGIN signal (nothing in the drawing drives it) = the user sets it (digital: click 1/0; analog: slider/number). A signal driven by a block (this sheet or another sheet) = computed, never typed. FORCE = optional override only for signals the user does not control.
 3. **Switching rule (T / AMT / COS).** The selected input path is lit, the other is grey; the active letter is coloured; COS lamp lit when manual. Colour per LEG (input pin back to the first junction).
@@ -17,32 +17,40 @@ portable Windows app without admin rights. The user is an automation engineer (n
 6. **No phone-browser testing.** Claude tests in headless Chromium here; the user tests in desktop Chrome / the portable app. PDF only when asked.
 7. **Never reference a `const` before its definition** in the analog script (v1.6.0 crash). After every patch load the file and check there is no page error.
 8. **Bump `AN_PV`** whenever the reader changes net / block numbering (saved inputs/forces are keyed by those numbers). Current: 11.
-9. **Truth in reporting.** Say what was tested and what was NOT (e.g. the Windows exe is only built on GitHub, not run by Claude).
+9. **UX the user asked to keep:** the existing LN table graph ("LN tables" button) stays; the LN edit (when built) has its OWN reset and is not touched by the global / sheet Reset.
+10. **Truth in reporting.** Say what was tested and what was NOT (e.g. the Windows exe is only built on GitHub, not run by Claude).
 
 ## 3. Every build = this checklist
-1. Patch script `tools/patch-X.Y.Z.js` (from the previous html) -> `ditl-workbench-vX.Y.Z.html` (name + `<title>` + project-file `ver` carry the version).
+1. Patch script `tools/patch-X.Y.Z.js` (from the previous html) -> `logic-sim-vX.Y.Z.html`. THE version lives in the file name; the `<title>` ("Logic Sim vX.Y.Z") is the only place inside the html (project-file `ver` and Diagnostics read it from there).
 2. Guard IDENTICAL; tests: test-project, test-numinput (REAL mouse, Run and Pause), test-circles, test-storage, test-storage2, test-anim, plus a screenshot of the changed area.
-3. Update `PROJECT-NOTES-vX.Y.Z.md` (rename the file with the version, newest entry on top), `docs/HANDOVER.md` (current state + open items) and `docs/PROGRESS.md` (run `node tools/progress.js <html>`; tell the user the new %).
+3. Update `docs/MANUAL.md` (and rebuild the PDF: `node tools/build-manual-pdf.js`) when anything the user sees changes; update `PROJECT-NOTES-vX.Y.Z.md` (rename the file with the version, newest entry on top), `docs/HANDOVER.md` (current state + open items) and `docs/PROGRESS.md` (run `node tools/progress.js <html>`; tell the user the new %).
 4. Move the PREVIOUS html to `archive/html/`, the previous patch to `tools/history/`. Root keeps exactly ONE html.
-5. Commit + push to `claude/trusting-goodall-313vmr` (no PR unless the user asks). Send the html to the user (SendUserFile; he cannot download from the sandbox).
+5. Commit + push to `claude/trusting-goodall-313vmr` (no PR unless the user asks). The push builds exe + apk and publishes the GitHub Release (see §4b): check the run (mcp__github__actions_list) and fix the build if it fails. Send the html to the user (SendUserFile; he cannot download from the sandbox).
 
 ## 4. Versioning and repo layout
 MAJOR.MINOR.PATCH — bug fix = patch, new feature = minor, big/structural change = major. Baseline v1.0.0 = old v46.
 ```
-README.md  DESIGN.md  PROJECT-NOTES-vX.Y.Z.md  ditl-workbench-vX.Y.Z.html   <- the ONLY html at the root
-app/        desktop shell (Electron, portable, offline) + build in .github/workflows/
+README.md  DESIGN.md  PROJECT-NOTES-vX.Y.Z.md  logic-sim-vX.Y.Z.html   <- the ONLY html at the root
+app/        desktop shell (Electron, portable, offline)
+android/    Android shell (Capacitor, WebView, same html) + signing/ (sideload keystore, NOT a secret)
+.github/workflows/release.yml   builds exe + apk and publishes the Release
 baseline/   ditl-workbench-v1.0.0.html (reference for the DITL guard) — never delete
 tools/      lib.js, guard-ditl.js, test-*.js, shot.js, audit.js, patch-<current>.js ; tools/history/ = old patch scripts
 docs/       ARCHITECTURE.md, HANDOVER.md, PROGRESS.md, BACKLOG.md, BLOCK-LIBRARY.md (behaviour spec, user confirms), SHEET-TRIAGE.md, BLOCK-COVERAGE.md ...
 archive/    old html builds, old notes, old pdf (nothing is deleted, only moved; git history keeps everything)
 ```
 
+## 4b. Names and releases (user rule, 2026-10-07)
+- EVERYTHING that is built is called **logic-sim-vX.Y.Z** with the SAME version: `logic-sim-vX.Y.Z.html`, `logic-sim-vX.Y.Z-portable.exe`, `logic-sim-vX.Y.Z.apk`. The version is the number in the html file name at the root (tools/version.js); the exe and apk take it from there.
+- Every build is published in the GitHub **Releases** (tag vX.Y.Z) with the three files. The old ditl-workbench-v* names are history (archive/).
+- The Windows exe is not code-signed (no free certificate possible: SignPath needs a public repo without proprietary parts, Azure Artifact Signing is not open to Philippines individuals) -> SmartScreen: More info > Run anyway, or Unblock-File. The apk is signed with the sideload keystore in android/signing (password in the workflow; it only keeps the signature stable so updates install over the old app; not a secret).
+
 ## 5. Version control and continuity (agreed structure)
 - One working branch `claude/trusting-goodall-313vmr`. Every build is one commit with the version in the message.
 - The repo is the memory: a new chat session must be able to continue by reading README -> DESIGN.md -> latest PROJECT-NOTES -> docs/HANDOVER.md. Nothing important lives only in chat.
 - `docs/HANDOVER.md` holds the paste-in prompt for a new session and the open list; update it in every build.
 - The user's own data (project files, IO list, settings files) is never committed unless the user asks.
-- The Windows portable exe is built by GitHub Actions on every push that changes the html or app/: GitHub > Actions > the run > Artifacts (kept 90 days).
+- exe + apk + html are published in GitHub > Releases (see 4b).
 
 ## 6. PROPOSED (needs the user's OK, then move to §2)
 - Git tag per release (`v1.10.1`) so old builds can be fetched without an archive folder.

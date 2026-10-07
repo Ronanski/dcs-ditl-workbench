@@ -35,3 +35,42 @@
 - To check by the user in the ladder: shapes "4T", "8T" (004A), "B | COS" (009A), "DROP RATE" (055), "/" (001B), "0" (001C); FF dominance (EWS help of FF).
 - Findings by analysis: CTK = conditional write to another controller's SV; TP = probably T/P compensation before SQRT; SIG.AB acts through T/AMT control.
 - Next batch proposal (v1.10.3): group A + SEL healthy average + CTK fix + FX tables import from the user's linear/compensation files.
+
+## 2026-10-07 (later)
+- EWS "Version" window: "Formosa Plastic CO. DCS System EWS Version Information", version 8.00G, build 2023/10/19, built by FPC-EMD. So the DCS is a Formosa in-house system (FPC-EMD); HMI = HCI Engineering Tool MICREX-VieW/H. No public manual: truth comes from the user's EWS help / function-block definitions. EWS tools seen: Modbus Setting.FBS, MQTT Setting.MQT, IEC Tool, EQU Setting, MemDebug, System Definition, Station Comm, WIRING.SKO, USERTAG.TGO.
+- Order agreed: one thing at a time. Proposed: v1.10.3 group A only -> v1.10.4 confirmed block fixes (SEL healthy average, CTK, FF) -> FX/TP data import (user's Excel: linears, compensation) -> v1.11.0 Step/Trace -> IO + memory list descriptions -> real PID when tuning data exists.
+
+## 2026-10-07 claude_import.zip (user's data; read in a scratch folder, NOT committed)
+- `LMYP-1 #1-LINEAR.xls`: 90 sheets: DATA (a load table: LOAD %, MW, MSF, COAL, TAF, PA, FA, SA, O2) + one sheet per linearizer named S1-LN1 ... S3-LN24 ("STN101 LINEARIZE  S1-LN-01"): 16 points, columns NO., LX, LY, plus X-range and Y-range in %. This is the FX table source: the drawing says "LN12" / station; match sheet S<station>-LN<n>.
+- `LMYP-1 #1-Compensation Calculation of Flow.xls`: per flow tag (FT-FA1043-A ... FT-FA1079): pressure FS/BS/operating, ATM 1.03326, temperature tag + FS/BS/operating temp, absolute temp 273.15, coefficients ap/bp (pressure) and at/bt (temperature). = the TP block (T/P compensation before SQRT).
+- `LMYP-1 #1-Drum Level Calculation.xls`: drum level-pressure compensation curve (H, dPmax, dPmin, density table by drum pressure; LN38 / LN39 y-axis).
+- `LMYP-1 #1_IO_Rev.1.xls`: sheets DCS Numbering, Station 101..105: columns STN, N, I, NO, Address (I.0000), TAG NO., Description, Base Scale, Full Scale, Unit, Type (DI/...), Signal Ab. Add. (SIG.AB address), Rev., Remark. = tag descriptions + ranges + SIG.AB addresses.
+- `LMYP-1 #1-Memory-101..105.xls`: memory lists (M.xxxx descriptions) — not read yet.
+- Plan: importer for these -> project file "DCS parameters / tag table" (FX tables, TP coefficients, descriptions, ranges). Original .xls stay with the user.
+
+## 2026-10-07 later: units, exe, PID
+- Units: 4 units; drawings and lists = unit 1; unit n: first digit of the tag number = n (SB1053 -> SB2053); addresses almost identical. Add a Unit setting later.
+- Exe SmartScreen: not signed -> "More info -> Run anyway" or Unblock the zip; a real certificate costs money (decide later).
+- tools/triage.js runs in Node without the embedded LN tables: FX-related stuck counts are overstated (known).
+
+## 2026-10-07 decisions / corrections from the user (WAITING FOR HIS "GO" before any of these is built)
+- Unit setting: NOT needed now (unit 1 only; the 4 units have the same settings).
+- LINEAR semantics (user): X and Y are PERCENT of their ranges (interpolation); NOT a multiplier. The LN number belongs to a STATION (S1/S2/S3) and the sheet title ("STN101 LINEARIZE  S1-LN-01") must match: the importer must key on station + LN number, check the title, and warn on any mismatch (no silent fallback). Convert with the ranges of the sheet: x% = (x_EU - xlo) / (xhi - xlo) * 100 ; y_EU = ylo + y% * (yhi - ylo) / 100. Find the station of each ABC sheet from the MDL tags ("S1-MDL028").
+- Exe/html version mismatch (verified): every GitHub run builds the html of that commit (run 5 = v1.11.1), but the exe file name takes its number from app/package.json (still 1.10.0), so every download is called 1.10.0. Fix: take the version from the html file name in prepare-ui.js; one VERSION for html, exe and apk.
+- SmartScreen: no automatic fix without a code-signing certificate. Options: unblock the zip / PowerShell `Unblock-File`, download without browser (no Mark-of-the-Web), IT allow-list by hash, free signing only for public open-source repos (SignPath), cheap OSS certificate, or just use the html.
+- Android: APK through GitHub Actions with Capacitor (sideload, no store, no fee); not testable here on a device; iOS needs a paid Apple account -> use the html in Safari.
+- PID: range text now read (v1.11.1). Idea: default Ti by loop type from the tag letter (F flow ~15 s, P pressure ~60 s, T temperature ~180 s, L level ~120 s) until real tuning exists.
+- Candidate order: A exe/apk versioning + pipeline, B PID defaults by loop type, C LINEAR + COMPENSATION importer (strict station/LN), D group A reader defects, E SEL healthy-average + CTK, F Step/Trace/View, G IO + memory list descriptions.
+
+## 2026-10-07 analysis results (no code changed)
+- STATION of a sheet = the station prefix of its own MDL tags ("S1-MDL028"); other S2/S4/STN10x texts are signals from other stations. Sheets: S1 = 001A/B/C, 002, 003A-E, 004A-C, 005-012, 013, 014, 029, 054*, 055; S2 = 017, 019, 020, 030-039, 050-053, 056; S3 = 015, 016, 026, 027, 057; ABC-028 shows "S5"; ABC-001D has no station text (its LN58-62 exist only in S1 -> S1). (*054 mixed texts: MDL S1.) To be confirmed by the user.
+- LINEAR.xls (89 LN sheets: S1 41, S2 24, S3 24): titles / pattern numbers match the sheet names in all 89. The 89 tables EMBEDDED in the html (read from the drawings) are IDENTICAL (points and X/Y ranges) to LINEAR.xls: 89 / 89. So FX already uses the user's DCS data.
+- FX matching by station + LN: 104 of 111 FX use exactly S<station>-LN<n>; 5 (ABC-001D, LN58-62) use S1 (correct by inference); 2 (ABC-010 LN38 / LN39, sheet station 1) use S2-LN38 / S2-LN39 because S1 has no LN38/39 -> ask the user (drum level pressure compensation, "Drum Level Calculation.xls" says LN39 / LN38). Plan: make lookup strict (station + LN) and warn instead of falling back.
+- Free code signing: SignPath Foundation needs a PUBLIC repository with an OSI licence and NO proprietary component; our html contains the plant's drawings -> not acceptable. Azure Artifact Signing: individuals only USA / Canada (and paused), organisations USA / Canada / EU / UK. Even a signed exe gets SmartScreen reputation only over time. => no free certificate for us; use Unblock / IT allow-list / html.
+- PID idea: per-sheet / per-PID suggested simulation speed from the loop type (flow 1x, pressure 5x, temperature 30x, level 10x), with a button "run at the suggested speed".
+
+## 2026-10-07 LN curve editor — SIMPLE version (user: "naglolokohan ba tayo? keep it simple"), waiting for "go"
+- The LINEAR data is already provided and matches (89/89). Goal: when an FX / linear is selected there is an "Edit table" option. Only the PERCENT columns are editable (same as in the DCS: LX / LY shown as % = value x 100); the X and Y engineering-unit columns recalculate by themselves from the ranges. Edits take effect in the simulation at once and are saved with the normal project Save. A "Reset" returns to the DCS value.
+- NOT in scope (dropped, over-engineering): named variants, export format, extra reports.
+- CONFIRMED by the user with a screenshot of LMYP-1 #1-LINEAR.xls (sheet S1-LN1, title DIESEL OIL CALORIE CORRECTION, DWG ABC-002): the only columns edited / entered are CURVE PARAMETER LX and LY (shown as percent: 0.00% .. 120.00%, 80.00% ..). X-INPUT = X range * LX and Y-OUTPUT = Y range * LY are automatic; interpolation as now. => editor: editable LX % and LY % per row, read-only X / Y in engineering units.
+- RESET RULE (user): the linear edit has ITS OWN reset (per table + "reset all linear edits") and is NOT touched by the global / sheet Reset (that one clears forces, switches, sliders only).
