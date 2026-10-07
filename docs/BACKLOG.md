@@ -26,3 +26,12 @@
 - Use: tag -> description list (feeds address highlight), PID/MAN cross-check against the drawings, real PID parameters, alarm limits, FX tables.
 - UPDATE (screenshots Module Define 1 / 2 / Wiring): see docs/BLOCK-LIBRARY.md "Evidence from the DCS engineering station". Next ask: tuning display (P I D, PID type, SV/PV/MV, PH/PL/DVH limits) of the same loop FICFW2007 from the operator station; one MAN loop (e.g. HICL2060A) Module Define; LINEAR / DELAY / ANALOG tables.
 - IDEA: "DCS parameters" table inside the project file keyed by TAGNO (name, range BS/FS, unit, action, tuning, alarm limits); the PID block reads it; import from CSV when the user can export.
+
+## Decisions / facts from the user (2026-10-07)
+- Vendor: Formosa Plastics project; engineering tool "EWS Tool", HMI "MICREX-VieW XX" (the DCS maker is not stated; the HMI name suggests Fuji Electric MICREX — unconfirmed). Station FCS2000EI.
+- The user has: wiring, IO list, compensation, linears, memory list, modbus list addresses (format not told yet). Linear table: user says it was sent — NOT received in the chat (ask again).
+- View mode: NO force (confirmed).
+- Confirmed block behaviour: SEL average, RAMPB rate from text, DEV (+ minus -).
+- To check by the user in the ladder: shapes "4T", "8T" (004A), "B | COS" (009A), "DROP RATE" (055), "/" (001B), "0" (001C); FF dominance (EWS help of FF).
+- Findings by analysis: CTK = conditional write to another controller's SV; TP = probably T/P compensation before SQRT; SIG.AB acts through T/AMT control.
+- Next batch proposal (v1.10.3): group A + SEL healthy average + CTK fix + FX tables import from the user's linear/compensation files.
