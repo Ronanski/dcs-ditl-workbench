@@ -1,6 +1,6 @@
 /* CONTROLLABILITY: for every digital logic output, search an input combination (backward justification) that makes it 0 and one that makes it 1, apply it with forces, simulate, and check. Outputs that cannot be driven to a value are listed = dead logic or a reader defect.  usage: node tools/justify.js file.html [sheet] */
 const {load,build}=require('./lib.js');const {E,rows}=load(process.argv[2]);const only=process.argv[3];
-const DIGK=new Set(['AND','OR','NOT','FF','TON','TOF','TPS','TPV','HC','LC','HLC','CMPK','HS','LS','DCMP']);let tot=0,okc=0;const fails=[];
+const DIGK=new Set(['AND','OR','NOT','FF','TON','TOF','TPS','TPV','HC','LC','HLC','CMPK','HS','LS','DCMP']);let tot=0,okc=0,seqOnly=0;const seqList=[];let seed=777;const RND=()=>{seed=(seed*1664525+1013904223)%4294967296;return seed/4294967296};const fails=[];
 for(const r of rows){if(/ABC-000/.test(r.name)||(only&&r.name!==only))continue;const S=build(E,r);
  const LINKSRC=new Map();for(const[d,sr]of S.link||[])LINKSRC.set(d,sr);
  const drvOf=n=>(S.drv[n]||[]).find(d=>d.k!=='LINK');
@@ -27,14 +27,18 @@ for(const r of rows){if(/ABC-000/.test(r.name)||(only&&r.name!==only))continue;c
    case 'SIGAB':req[n]=val;return true;
    case 'ALM':return false;
    default:return false}};
- const check=(n,val)=>{const req={};if(!j(n,val,req,0))return 'no assignment';const r0=sim(n,val,req,0);return r0==='ok'?r0:(sim(n,val,req,1)==='ok'?'ok':r0)};
+ /* last resort: random toggling of the digital origin inputs (every 1-4 s) and random analog values in the realistic range, 60 runs x 300 s: finds values that need a sequence (latches, pulses) */
+ const seqTry=(n,val)=>{const dig=S.ext.filter(m=>S.nets[m].dig),an=S.ext.filter(m=>!S.nets[m].dig);for(let run=0;run<60;run++){S.rt.force={};for(const m of dig)S.rt.force[m]=RND()<.5?1:0;for(const m of an)S.rt.force[m]=RND()*100;E.anSettle(S,10);let next=0;for(let t=0;t<600;t++){if(t>=next){next=t+2+Math.floor(RND()*8);const m=dig[Math.floor(RND()*dig.length)];if(m!=null)S.rt.force[m]=S.rt.force[m]?0:1;if(an.length&&RND()<.3){const a2=an[Math.floor(RND()*an.length)];S.rt.force[a2]=RND()*100}}E.anStep(S,.5);if((S.rt.v[n]>.5?1:0)===val){S.rt.force={};return true}}}S.rt.force={};return false};
+ let curName='';const r0name=(n,val)=>curName+' -> '+val;
+ const check=(n,val)=>{const r=check0(n,val);if(r==='ok')return r;if(seqTry(n,val)){seqOnly++;seqList.push(r0name(n,val));return 'ok'}return r};
+ const check0=(n,val)=>{const req={};if(!j(n,val,req,0))return 'no assignment';const r0=sim(n,val,req,0);return r0==='ok'?r0:(sim(n,val,req,1)==='ok'||sim(n,val,req,2)==='ok'||sim(n,val,req,3)==='ok'||[4,5,6,7,8,9,10,11].some(k=>sim(n,val,req,k)==='ok')?'ok':r0)};/* init 2 / 3 = start from the opposite leaf values (other inputs 0 / 1): gives the rising edge a pulse (TPS) needs */
  const sim=(n,val,req,init)=>{
   for(const b of S.blk)if(b.k==='AI'||b.k==='SIGAB'){}
   S.rt.force={};for(const k in req){const m=+k;const d=drvOf(m);if(!d||true){if(!(drvOf(m)&&DIGK.has(drvOf(m).k)&&false))S.rt.force[m]=req[k]}}
   // only force the leaves: nets with no logic driver, and analog set-point inputs
   S.rt.force={};for(const k in req){if(k[0]==='a')continue;const m=+k;const d=drvOf(m);const leaf=!d||!DIGK.has(d.k)&&!['SW','AMT'].includes(d.k);if(leaf||(S.nets[m]&&!S.nets[m].dig))S.rt.force[m]=req[k]}
-  const leaves=Object.keys(S.rt.force).map(Number);S.rt.force={};for(const m of S.ext)if(S.nets[m].dig)S.rt.force[m]=init;for(const[dd]of S.link||[]){if(!drvOf(dd))S.rt.force[dd]=init}E.anSettle(S,10);for(let t=0;t<10;t++)E.anStep(S,.5);for(const[dd]of S.link||[])delete S.rt.force[dd];
+  const leaves=Object.keys(S.rt.force).map(Number);S.rt.force={};for(const m of S.ext)if(S.nets[m].dig)S.rt.force[m]=init>=4?(m in req?1-req[m]:(RND()<.5?1:0)):init>=2?(m in req?1-req[m]:init-2):init;for(const[dd]of S.link||[]){if(!drvOf(dd))S.rt.force[dd]=init}E.anSettle(S,10);for(let t=0;t<10;t++)E.anStep(S,.5);for(const[dd]of S.link||[])delete S.rt.force[dd];
   for(const m of leaves)S.rt.force[m]=req[m];for(const k in req)if(k[0]==='a'){const c=req[k],m=+k.slice(1);S.rt.force[m]=(c.lo>-Infinity&&c.hi<Infinity)?(c.lo+c.hi)/2:c.lo>-Infinity?c.lo+Math.max(1,Math.abs(c.lo)*.2):c.hi-Math.max(1,Math.abs(c.hi)*.2)}let mx=0,mn=1;E.anSettle(S,10);const smp=()=>{const q=S.rt.v[n]>.5?1:0;if(q>mx)mx=q;if(q<mn)mn=q};smp();for(let t=0;t<200;t++){E.anStep(S,.5);smp()}const v=val?mx:mn;S.rt.force={};return v===val?'ok':'assignment found but simulation gives '+(val?mx:mn)};
  for(const b of S.blk){if(!DIGK.has(b.k)||!b.o||!b.o.length)continue;if(!S.nets[b.o[0]]||!S.nets[b.o[0]].segs.length)continue;
-  for(const n of b.o){if(!S.nets[n].dig)continue;for(const val of[0,1]){tot++;const res=check(n,val);if(res==='ok')okc++;else fails.push(r.name+' '+b.k+'#'+b.id+' '+(b.tag||(b.txt||[])[0]||'')+' -> '+val+' : '+res)}}}}
-console.log('digital outputs x value (0 / 1):',tot,' reachable:',okc,' NOT reachable:',fails.length);const by={};fails.forEach(f=>{const s=f.split(' ')[0];by[s]=(by[s]||0)+1});console.log(JSON.stringify(by));fails.slice(0,200).forEach(f=>console.log('  '+f));
+  curName=r.name+' '+b.k+'#'+b.id;for(const n of b.o){if(!S.nets[n].dig)continue;for(const val of[0,1]){tot++;const res=check(n,val);if(res==='ok')okc++;else fails.push(r.name+' '+b.k+'#'+b.id+' '+(b.tag||(b.txt||[])[0]||'')+' -> '+val+' : '+res)}}}}
+console.log('digital outputs x value (0 / 1):',tot,' reachable:',okc,' NOT reachable:',fails.length,' (of the reachable, '+seqOnly+' only by a random input SEQUENCE: latches / pulses / edges)');if(process.env.SEQ)seqList.forEach(x=>console.log('  seq: '+x));const by={};fails.forEach(f=>{const s=f.split(' ')[0];by[s]=(by[s]||0)+1});console.log(JSON.stringify(by));fails.slice(0,200).forEach(f=>console.log('  '+f));
