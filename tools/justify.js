@@ -17,7 +17,8 @@ for(const r of rows){if(/ABC-000/.test(r.name)||(only&&r.name!==only))continue;c
    case 'OR':return val?tryList(ins.map(x=>[[x,1]])):tryList([ins.map(x=>[x,0])]);
    case 'NOT':return tryList([[[ins[0],val?0:1]]]);
    case 'FF':return val?tryList([[[d.S,1],[d.Rn,0]]]):tryList([[[d.Rn,1]]]);
-   case 'TON':case 'TPS':case 'TPV':return val?tryList([[[ins[0],1]]]):tryList([[[ins[0],0]]]);
+   case 'TON':return val?tryList([[[ins[0],1]]]):tryList([[[ins[0],0]]]);
+   case 'TPS':case 'TPV':return val?tryList([[[ins[0],1]]]):tryList([[[ins[0],0]],[[ins[0],1]]]);/* a pulse is 0 again after its time, also with the input held at 1 */
    case 'TOF':return tryList([[[ins[0],val?1:0]]]);
    case 'HC':case 'LC':case 'HLC':case 'CMPK':case 'HS':case 'LS':{const x=ins[0];const sp=P.ref>=0?(S.kn&&S.kn[P.ref]!=null?S.kn[P.ref]:50):(P.sp||0);const gt=P.op==='>';const rq=Object.assign({},req);if(!addCon(rq,x,val?gt:!gt,sp,val?!!P.inc:!P.inc))return false;rq[n]=val;for(const k in req)delete req[k];Object.assign(req,rq);return true}
    case 'DCMP':{const x=ins[0];const dc=(d.dc||[]).find(q=>q.n===n);if(!dc)return false;const gt=dc.op==='>';let g2=val?gt:!gt,sp=dc.sp;if(dc.neg){g2=!g2;sp=-sp}const rq=Object.assign({},req);if(!addCon(rq,x,g2,sp,false))return false;rq[n]=val;for(const k in req)delete req[k];Object.assign(req,rq);return true}
