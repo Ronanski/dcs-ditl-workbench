@@ -40,14 +40,16 @@ rep(`for(const s of SG){if(s.use||!/^CON$/i.test(s.l))continue;const L=len(s);if
 rep(`const CIc=R.ci.filter(c=>/^CON$/i.test(c.l)&&c.r>2.5&&c.r<5.2);`,`const CIc=R.ci.filter(c=>/(CON$|^DCS-LP$|^0$)/i.test(c.l)&&c.r>2.5&&c.r<5.6&&(/CON$/i.test(c.l)||!R.tx.some(q=>Math.hypot(q.x-c.x,q.y-c.y)<=c.r)));`);
 /* F-10 OR gates with a very long bar (more than 130 units: ABC-003E 134, ABC-004A 141, ABC-007 147, 7 or more inputs) or a bar on a layer with a garbled name ending in CON (ABC-009A) */
 rep(`BARMAX=130`,`BARMAX=160`);
-/* F-11 circles whose "( FROM / TO ABC-xxx )" text is further than the 28 units searched (ABC-004A 6, 8, 9: "B-CF RUN ( FROM ABC-004B )"): the text nearest to the circle that no other circle owns is taken, up to 80 units. Without it the number circles of the 004A / B / C family could not find their sender on the other sheet. */
+/* F-11 circles whose "( FROM / TO ABC-xxx )" text is further than the 28 units searched (ABC-004A 6, 8, 9: "B-CF RUN ( FROM ABC-004B )"): the text nearest to the circle that no other circle owns is taken, up to 80 units; a circle with SEVERAL texts under it (ABC-001B "C": "( TO ABC-001A )" and "( TO ABC-001C )") keeps all the sheets (ref.codes). Without it the number circles of the 004A / B / C family could not find their sender on the other sheet and a click could not visit every sheet. */
 rep(`if(nl.size)(tgt?S.xc:S.conn).push({num,tgt,x:c.x,y:c.y,r:c.r,nets:[...nl],sink,tags,ref,lt:!tgt&&typeof num==='string'})}
  return S}`,`if(nl.size)(tgt?S.xc:S.conn).push({num,tgt,x:c.x,y:c.y,r:c.r,nets:[...nl],sink,tags,ref,lt:!tgt&&typeof num==='string'})}
- {const RX=/(FROM|TO)\\s+ABC[-\\s]?(\\d{3}[A-Z]?)/i,all=S.conn.concat(S.xc),used=new Set();
+ {const RX=/(FROM|TO)\\s+ABC[-\\s]?(\\d{3}[A-Z]?)/i,all=S.conn.concat(S.xc),used=new Set(),codesOf=q=>{const m=RX.exec(q.t),ex=((/ABC[-\\s]?\\d{3}[A-Z]?((?:\\s*\\/\\s*[A-Z])+)/i.exec(q.t)||[0,''])[1].match(/[A-Za-z]/g)||[]).map(L=>m[2].slice(0,3)+L.toUpperCase());return[m[2].toUpperCase()].concat(ex)};
   for(const c of all)if(c.ref){let bq=null,bd=c.r+28;for(const q of TX){if(!RX.test(q.t))continue;const d=anD(q.x,q.y,c.x,c.y);if(d<bd){bd=d;bq=q}}if(bq)used.add(bq)}
   const prs=[];for(const c of all)if(!c.ref&&!(!c.tgt&&S.conn.some(o=>o!==c&&o.num===c.num&&o.sink!==c.sink)))for(const q of TX){if(used.has(q)||!RX.test(q.t))continue;const d=anD(q.x,q.y,c.x,c.y);if(d<=80)prs.push({c,q,d})}
-  prs.sort((a,b)=>a.d-b.d);const uc=new Set(),uq=new Set();for(const e of prs){if(uc.has(e.c)||uq.has(e.q))continue;uc.add(e.c);uq.add(e.q);const m=RX.exec(e.q.t);e.c.ref={dir:m[1].toUpperCase(),code:m[2].toUpperCase(),codes:[m[2].toUpperCase(),...((/ABC[-\\s]?\\d{3}[A-Z]?((?:\\s*\\/\\s*[A-Z])+)/i.exec(e.q.t)||[0,''])[1].match(/[A-Za-z]/g)||[]).map(L=>m[2].slice(0,3)+L.toUpperCase())]}}}
+  prs.sort((a,b)=>a.d-b.d);const uc=new Set(),uq=new Set();for(const e of prs){if(uc.has(e.c)||uq.has(e.q))continue;uc.add(e.c);uq.add(e.q);const m=RX.exec(e.q.t);e.c.ref={dir:m[1].toUpperCase(),code:m[2].toUpperCase(),codes:codesOf(e.q)}}
+  for(const q of TX){if(!RX.test(q.t)||uq.has(q))continue;let bc=null,bd=45;for(const c of all){const d=anD(q.x,q.y,c.x,c.y);if(d<bd){bd=d;bc=c}}if(bc&&bc.ref){bc.ref.codes=bc.ref.codes||[bc.ref.code];for(const cd of codesOf(q))if(!bc.ref.codes.includes(cd))bc.ref.codes.push(cd)}}}
  return S}`);
 /* F-12 the "M" circle of a motor symbol (trapezoid = motor-operated damper / valve actuator: ABC-003A / B / C / D) is the motor, not a connector */
 rep(`if(S.gate.some(g=>g.body&&g.body.r&&anD(g.body.cx,g.body.cy,c.x,c.y)<.5))continue;`,`if(S.gate.some(g=>g.body&&g.body.r&&anD(g.body.cx,g.body.cy,c.x,c.y)<.5))continue;if(S.shp.some(sh=>sh.ty==='quad'&&c.x>=sh.x0&&c.x<=sh.x1&&c.y>=sh.y0&&c.y<=sh.y1))continue;`);
+require('./patch-blocks.js')(rep);
 fs.writeFileSync(process.argv[2]||'logic-sim-v1.14.4.html',h);console.log('wip written',h.length);

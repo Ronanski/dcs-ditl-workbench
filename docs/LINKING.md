@@ -22,7 +22,8 @@ An **arrow head pointing into the circle** = the wire ends there = the signal LE
 3. **Single circle + "( FROM / TO ABC-xxx )"**: the reference text nearest to the circle names the other sheet(s) ("004B/C" = both). In those sheets the page looks for the circle with the same number / letter and picks the best partner by score: shared tags beside both circles (×4), the partner's text pointing back (+2), opposite roles (+1). A circle that already has its partner on the same sheet (same label, opposite role) is internal and is not sent to another sheet.
 4. **Numbered circle with no partner on its sheet**: paired with the same-number, opposite-role circle on another sheet of the SAME family (number part of the sheet name: 004A ↔ 004B ↔ 004C).
 5. **Signal tag** (`tagIndex`): a tag that a block DRIVES on one sheet and that is an unfed input on another sheet is one signal. The text "( FROM ABC-xxx )" near the input restricts the source sheet; the tag must match exactly (a "S2" prefix = other station is part of the tag).
-6. **Text presets** "IF M.xxxx = 1 SET SV = n": the number is put on the wire of the nearest "SV" text; the last true one wins. "SET SIxxxx => TAG.SV": written into the SV of a controller that may be on ANOTHER sheet — **not simulated across sheets yet (GAP)**.
+6. **Text instructions** (v1.15 WIP): "IF M.xxxx = 1 SET SV = n": the number is put on the wire of the nearest "SV" text. "IF M.xxxx = 1 SET SIxxxx => TAG.SV": while the condition holds, the source signal is written into the SV of controller TAG (the SV pin of the DEV in front of its PID; on all 7 sheets the controller is on the same sheet). "SET SI0200 => AB0117": into the operator value of the COS named AB0117. "= 0" conditions work too; several writes to one SV: the last true one wins.
+7. **Clicking a circle** (v1.15 WIP): every click goes to the next end of the group (this sheet and every sheet named by the sheet code under the number / letter or by the FROM / TO text, "004B/C" = both; reached also through the other circles because a receiver knows only its sender); fixed order = sheet, then top to bottom, left to right; after the last it starts again.
 
 ## 3. What the audit checks (tools/audit-links.js)
 - every circle with a sheet name or a FROM / TO text has a partner;
@@ -38,4 +39,4 @@ Latest run on the WIP v1.14.4: see section F "Link audit" at the end of docs/FIN
 - The same number is used for different signals inside one family (ABC-004A: 1 is a sink TO 005 and a source FROM 004B). The text "( FROM / TO ABC-xxx )" and the tags beside the circle are the only way to tell them apart.
 - The reference text can be 70 units away from its circle; each text is given to one circle only (nearest first), circles that already have a partner on the same sheet do not take one.
 - Same-number circles in the sheets of a family (004A / B / C use 1-4-7-10 / 2-5-8-11 / 3-6-9-12) are one signal each: one sender, many receivers (fan-out), which the pairing code only partly models (ABC-004A circle 8).
-- "SET SIxxxx => TAG.SV" across sheets is not simulated.
+

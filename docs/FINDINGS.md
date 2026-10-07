@@ -21,6 +21,19 @@ Status: **R-xx** = already released (v1.14.2 / v1.14.3). **F-xx** = fixed in the
 | F-11 | ABC-004A circles 6, 8, 9 ("M.0162 6 ( FROM ABC-004C )", "B-CF RUN 8", "C-CF RUN 9" with "( FROM ABC-004B / C )" written 70 units to the left) | Signals M.0162, M.015E, M.016E come from ABC-004C / 004B (circles 6 / 9 / 8 "TO ABC-004A") | The reference text was further than the 28 units searched: no sender found, the three signals were not connected to the other sheets | `node tools/audit-links.js <html>`: circles linked to another sheet 361 → 364 (004C → 004A numbers 6 and 9 now linked; 8 still to do) |
 | F-12 | ABC-003A / B / C / D · "M" circle inside the trapezoid of the motor-driven damper (688, 102) | A motor symbol, not a connector | Read as a letter circle "M" | Not in the list of circles any more |
 
+## G. Function blocks that did not work (WIP, tools/test-blocks.js, tools/test-math.js, tools/test-blocks-ui.js)
+| ID | Block | Legend (user's words) | Before | Now | Check |
+|---|---|---|---|---|---|
+| G-01 | SUMA analog integrator (10) | Integrates an analog input over time; not a digital state | pass-through ("temporary") | total = integral of the input (per hour), Reset total | force the input 3600 for 10 s → total 10 (all 10 blocks tested); the total is in the block panel |
+| G-02 | SUMP pulse integrator | counts pulse events | pass-through | counts rising edges | none on the sheets: tested by code only |
+| G-03 | SEL select circuits (26) | AVERAGE: (A+B+C)/3; PRI / SEC / AVG | one fixed average | Select mode in the panel: AVG / PRI (left input) / SEC (right input) / (1) / (3); bad input → average of the healthy ones | ABC-009A SEL: inputs 10 / 30: AVG 20, PRI 10, SEC 30; ABC-050 AVERAGE 30 / 60 / 90 → 60 |
+| G-04 | DIV, SQRT | divide by zero / negative root = invalid condition, handled explicitly | silently 0 | INVALID flag in the panel; DIV holds the last good value, SQRT gives 0 | ABC-002 DIV: 50 / 10 = 5, then / 0 → flag + 5 |
+| G-05 | TP temperature / pressure compensation (8) | compensated value | pass-through | DP / Kt (T 100, operating 20 → 40 / 1.2727); needs the operating temperature | the panel says "NOT compensating" until it is typed |
+| G-06 | PO pulse output, PIDV | pulse event, not an analog value | pass-through | PO shows raise (PO1) / lower (PO2) pulses | change the demand up / down |
+| G-07 | The instructions "IF M = 1 SET SIxxxx => TAG.SV" (7) and "SET SI0200 => AB0117" (ABC-001A) | the written instruction is part of the logic | not simulated (CTK only passed the value) | executed: the source is written into the SV of the controller (DEV pin "SV" in front of its PID) / into the COS value while the condition holds; the condition tag is an input you can set | ABC-013: M.0252 = 1, SI0361 = 77 → the SV of PICMS1002 is 77 |
+| G-08 | Page links: click on a circle | "go through ALL the ends, again and again: 1 to 2, to 3, back to 1" | one click = one other end | every click goes to the next end of the group (this sheet and every sheet named by the number / letter + sheet or the FROM / TO text, "004B/C" = both, also through the other circles), after the last the first again; the partner of a link is chosen by the tag first, by position only when the tags do not decide | ABC-001B "C": 001C, 001C, 001A, 001B, 001C ... (`tools/test-blocks-ui.js`) |
+| G-09 | Mathematics (ABS, ADD, SUB, SUM, DEV, MUL, DIV, SQRT, HS, LS, HLIM, LLIM, HLLIM, LAG) | the formula of the legend | not tested on every block | 998 random-input checks on every block of the 54 sheets: 0 mismatches | `node tools/test-math.js <html>` |
+
 ## B. Already released (v1.14.2 and v1.14.3)
 
 | ID | Sheet · place | Drawing | Old reading | Check |
