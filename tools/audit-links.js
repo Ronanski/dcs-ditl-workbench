@@ -1,4 +1,4 @@
-/* Page links, strictly: every circle of every sheet (numbered, lettered, number + sheet, single circle with "( FROM / TO ABC-xxx )") and every signal-tag link is checked against what the drawing says: partner found, one sender + one receiver, the partner is on the sheet the text names, the tags written beside both ends agree.  usage: node tools/audit-links.js file.html [--all]  (prints the problems; --all prints every link) */
+/* Page links, strictly: every circle of every sheet (numbered, lettered, number + sheet, single circle with "( FROM / TO ABC-xxx )") and every signal-tag link is checked against what the drawing says: partner found, one sender + one receiver, the partner is on the sheet the text names, the nearest tag written beside each end appears beside the other end.  usage: node tools/audit-links.js file.html [--all]  (prints the problems; --all prints every link) */
 const {chromium}=require('/opt/node-tools/node_modules/playwright');const path=require('path');
 (async()=>{const b=await chromium.launch({args:['--no-sandbox']});const p=await b.newPage({viewport:{width:1500,height:860}});
 await p.goto('file://'+path.resolve(process.argv[2]));await p.waitForTimeout(2500);await p.click('text=Analog · ABC >> nth=0');await p.waitForTimeout(3500);
@@ -18,7 +18,7 @@ const res=await p.evaluate((all)=>{const rep=[],stat={circles:0,internal:0,xc:0,
     const want=c.tgt?[String(c.tgt)]:(c.ref?(c.ref.codes||[c.ref.code]):null);
     if(want){const oc=cod(other.sh.name);const ok=want.some(w=>w===oc||(!/[A-Z]$/.test(w)&&parseInt(w,10)===parseInt(oc,10)));if(!ok)rep.push('WRONG SHEET | '+sh.name+' "'+c.num+'" says '+want.join('/')+' but is linked to '+other.sh.name)}
     /* tags written beside both ends */
-    const ta=c.tags||[],tb=o.tags||[];if(ta.length&&tb.length&&!ta.some(t=>tb.includes(t)))rep.push('TAGS DIFFER | '+sh.name+' "'+c.num+'" '+JSON.stringify(ta)+' <-> '+other.sh.name+' "'+(o.num)+'" '+JSON.stringify(tb));
+    const ta=c.tags||[],tb=o.tags||[];if(ta.length&&tb.length&&!tb.includes(ta[0])&&!ta.includes(tb[0]))rep.push('TAGS DIFFER | '+sh.name+' "'+c.num+'" '+JSON.stringify(ta)+' <-> '+other.sh.name+' "'+(o.num)+'" '+JSON.stringify(tb));
     /* one sender, one receiver */
     const sender=l.from===sh&&l.fromC===c||l.from!==sh&&l.toC===c;
     if(all)rep.push('link | '+(l.from.name+' -> '+l.to.name)+' "'+l.num+'" '+JSON.stringify(ta))}}}

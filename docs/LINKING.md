@@ -32,4 +32,10 @@ An **arrow head pointing into the circle** = the wire ends there = the signal LE
 Internal pairs (same sheet) are counted separately.
 
 ## 4. Results (see docs/FINDINGS.md for what was fixed)
-Latest run on the WIP v1.14.4: see the section "Link audit" at the end of FINDINGS.md.
+Latest run on the WIP v1.14.4: see section F "Link audit" at the end of docs/FINDINGS.md (364 of 377 circles with a sheet name / FROM-TO text linked; the rest explained or open).
+
+## 5. Known weak points (be careful when changing the link code)
+- The same number is used for different signals inside one family (ABC-004A: 1 is a sink TO 005 and a source FROM 004B). The text "( FROM / TO ABC-xxx )" and the tags beside the circle are the only way to tell them apart.
+- The reference text can be 70 units away from its circle; each text is given to one circle only (nearest first), circles that already have a partner on the same sheet do not take one.
+- Same-number circles in the sheets of a family (004A / B / C use 1-4-7-10 / 2-5-8-11 / 3-6-9-12) are one signal each: one sender, many receivers (fan-out), which the pairing code only partly models (ABC-004A circle 8).
+- "SET SIxxxx => TAG.SV" across sheets is not simulated.
