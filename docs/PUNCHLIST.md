@@ -20,7 +20,7 @@
 | P11 | PID gains | default tuning by loop type |
 | P12 | PRI / SEC / AVG default mode of the SEL blocks | default AVG |
 | P13 | Units of S1-LN38 / S1-LN39 (drum level) | deduced (identity at 0 kg/cm2): confirm with the DCS table |
-| P14 | exe and apk | built, never run on a real Windows / Android device |
+| P14 | exe and apk | built; the user tests them himself; NOT counted in the progress (decision 2026-10-07) |
 | P15 | Block kinds | none confirmed by the user yet (block behaviour is capped at 60 % until he confirms) |
 | P16 | Sheet-by-sheet comparison with the PDFs | 1 of 51 sheets (ABC-050) |
 
