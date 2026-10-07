@@ -39,3 +39,11 @@
 ## 2026-10-07 (later)
 - EWS "Version" window: "Formosa Plastic CO. DCS System EWS Version Information", version 8.00G, build 2023/10/19, built by FPC-EMD. So the DCS is a Formosa in-house system (FPC-EMD); HMI = HCI Engineering Tool MICREX-VieW/H. No public manual: truth comes from the user's EWS help / function-block definitions. EWS tools seen: Modbus Setting.FBS, MQTT Setting.MQT, IEC Tool, EQU Setting, MemDebug, System Definition, Station Comm, WIRING.SKO, USERTAG.TGO.
 - Order agreed: one thing at a time. Proposed: v1.10.3 group A only -> v1.10.4 confirmed block fixes (SEL healthy average, CTK, FF) -> FX/TP data import (user's Excel: linears, compensation) -> v1.11.0 Step/Trace -> IO + memory list descriptions -> real PID when tuning data exists.
+
+## 2026-10-07 claude_import.zip (user's data; read in a scratch folder, NOT committed)
+- `LMYP-1 #1-LINEAR.xls`: 90 sheets: DATA (a load table: LOAD %, MW, MSF, COAL, TAF, PA, FA, SA, O2) + one sheet per linearizer named S1-LN1 ... S3-LN24 ("STN101 LINEARIZE  S1-LN-01"): 16 points, columns NO., LX, LY, plus X-range and Y-range in %. This is the FX table source: the drawing says "LN12" / station; match sheet S<station>-LN<n>.
+- `LMYP-1 #1-Compensation Calculation of Flow.xls`: per flow tag (FT-FA1043-A ... FT-FA1079): pressure FS/BS/operating, ATM 1.03326, temperature tag + FS/BS/operating temp, absolute temp 273.15, coefficients ap/bp (pressure) and at/bt (temperature). = the TP block (T/P compensation before SQRT).
+- `LMYP-1 #1-Drum Level Calculation.xls`: drum level-pressure compensation curve (H, dPmax, dPmin, density table by drum pressure; LN38 / LN39 y-axis).
+- `LMYP-1 #1_IO_Rev.1.xls`: sheets DCS Numbering, Station 101..105: columns STN, N, I, NO, Address (I.0000), TAG NO., Description, Base Scale, Full Scale, Unit, Type (DI/...), Signal Ab. Add. (SIG.AB address), Rev., Remark. = tag descriptions + ranges + SIG.AB addresses.
+- `LMYP-1 #1-Memory-101..105.xls`: memory lists (M.xxxx descriptions) — not read yet.
+- Plan: importer for these -> project file "DCS parameters / tag table" (FX tables, TP coefficients, descriptions, ranges). Original .xls stay with the user.

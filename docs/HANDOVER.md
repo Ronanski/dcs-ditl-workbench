@@ -9,8 +9,8 @@ Ako ay automation engineer (hindi coder): Taglish, simple at tapat, sabihin kung
 Pagkabasa, ibuod mo sa 5 linya kung nasaan tayo at ano ang susunod, at hintayin ang utos ko.
 ```
 
-## State (v1.10.2)
-- Current build: `ditl-workbench-v1.10.2.html` (analog page, project file Save/Open, portable app shell in `app/`, Windows build by GitHub Actions).
+## State (v1.11.0)
+- Current build: `ditl-workbench-v1.11.0.html` (analog page, project file Save/Open, portable app shell in `app/`, Windows build by GitHub Actions).
 - All 54 ABC sheets read; digital + analog links; SET SV presets on 8 sheets; T legs per leg; timers/comparators fixed on 057/008/014/019.
 
 ## Read also: docs/PROGRESS.md (percent), docs/BACKLOG.md (what the user asked to note), docs/BLOCK-LIBRARY.md (block behaviours waiting for his confirmation)
@@ -22,6 +22,6 @@ Pagkabasa, ibuod mo sa 5 linya kung nasaan tayo at ano ang susunod, at hintayin 
 3. v1.8.1 "error on refresh": not reproduced (54 sheets x refresh = 0 errors). Need the console message.
 4. Address highlight when selected (yellow / sky) with description — waits for the user's IO list.
 5. Direction: plant simulator + controller simulator + engineering station (docs/ARCHITECTURE.md). Needed from the user: DITL new-engine permission (rule 1), first loop (ABC-050?), IO list format, what the "operation table" contains.
-6. Engine gaps: real PID, SEL semantics, alarm logic (docs/BLOCK-COVERAGE.md).
+6. Engine gaps: PID tuning data (real Kp/Ti/Td), SEL healthy-average, CTK write semantics, alarm logic (docs/BLOCK-COVERAGE.md).
 7. Unlinked circles: 004A #6 #8 #9, 020 #9; ABC-054 HRP -> 052 has no peer circle.
 8. Windows exe: built by Actions (success for v1.10.0); not run by Claude. Ask the user how it behaves (SmartScreen, portable start, Save dialog).
