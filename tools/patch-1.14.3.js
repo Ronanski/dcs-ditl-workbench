@@ -1,4 +1,4 @@
-/* v1.14.2 -> v1.14.3 (WIP, not released). Reader fixes from the logic verification. DITL page untouched.  usage: node tools/patch-1.14.3.js [out.html]  (reads logic-sim-v1.14.2.html, or archive/html/ once it was moved) */
+/* v1.14.2 -> v1.14.3 (released). Reader fixes from the logic verification. DITL page untouched.  usage: node tools/patch-1.14.3.js [out.html]  (reads archive/html/logic-sim-v1.14.2.html, or the root file before it is archived; writes logic-sim-v1.14.3.html) */
 const fs=require('fs');const src=fs.existsSync('logic-sim-v1.14.2.html')?'logic-sim-v1.14.2.html':'archive/html/logic-sim-v1.14.2.html';let h=fs.readFileSync(src,'utf8');
 const rep=(a,b)=>{const n=h.split(a).length-1;if(n!==1)throw new Error(n+' x '+a.slice(0,90));h=h.split(a).join(b)};
 rep('<title>Logic Sim v1.14.2</title>','<title>Logic Sim v1.14.3</title>');
@@ -23,4 +23,10 @@ rep(`function anModel(S){
 /* 7. MAN: the PV wire runs under the box and shows a stub on its left edge: that touch is not an output. A MAN output pin on a net that another block (the transmitter, AI) already drives is dropped */
 rep(` /* a net can never be both the in and the out of the same block: the in wins when an arrow is on it */`,` for(const b of blk)if(b.k==='MAN')b.pins=b.pins.filter(p=>!(p.role==='out'&&blk.some(q=>q!==b&&q.k!=='MAN'&&q.pins&&q.pins.some(x=>x.n===p.n&&x.role==='out'))));
  /* a net can never be both the in and the out of the same block: the in wins when an arrow is on it */`);
+/* 8. "( TO ABC-004B/C )" names two drawings: the reader took only the first (004A circle D -> 004B only, 004C "D FROM ABC-004A" stayed unlinked) */
+rep(`ref={dir:m[1].toUpperCase(),code:m[2].toUpperCase()}`,`ref={dir:m[1].toUpperCase(),code:m[2].toUpperCase(),codes:[m[2].toUpperCase(),...((/ABC[-\\s]?\\d{3}[A-Z]?((?:\\s*\\/\\s*[A-Z])+)/i.exec(q.t)||[0,''])[1].match(/[A-Za-z]/g)||[]).map(L=>m[2].slice(0,3)+L.toUpperCase())]}`);
+rep(`codeOf(p.name)===c.ref.code`,`(c.ref.codes||[c.ref.code]).includes(codeOf(p.name))`);
+rep(`q.ref&&(q.ref.code===codeOf(sh.name)||`,`q.ref&&((q.ref.codes||[q.ref.code]).includes(codeOf(sh.name))||`);
+/* 9. block / net numbering changed again (merged OR bars, one MAN instead of two, new circles): saved per-sheet inputs / forces of older versions are dropped */
+rep(`const AN_PV=13;`,`const AN_PV=14;`);
 fs.writeFileSync(process.argv[2]||'logic-sim-v1.14.3.html',h);console.log('wip written',h.length);
