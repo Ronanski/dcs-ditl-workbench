@@ -13,7 +13,7 @@ portable Windows app without admin rights. The user is an automation engineer (n
 2. **Signal rule.** ORIGIN signal (nothing in the drawing drives it) = the user sets it (digital: click 1/0; analog: slider/number). A signal driven by a block (this sheet or another sheet) = computed, never typed. FORCE = optional override only for signals the user does not control.
 3. **Switching rule (T / AMT / COS).** The selected input path is lit, the other is grey; the active letter is coloured; COS lamp lit when manual. Colour per LEG (input pin back to the first junction).
 4. **Colours.** Wires simple: digital thin solid (live colour), analog amber tube/solid. Symbols stand out over lines. Legend must not obstruct. Values green by default, selectable colour/size/font; no redundant values (none on constants, I/P, AO, valve chain); value above/below the address without covering text / line / shape. Engineering theme = muted colours, still distinct per element (NOT pure white).
-5. **Always paused on open.** Settings, forces, inputs, switches must survive refresh / restart (project file, see §5).
+5. **Opens in VIEW mode (grey, nothing simulated); RUN starts the simulation, PAUSE has Back / Next.** Settings, forces, inputs, switches must survive refresh / restart (project file, see §5).
 6. **No phone-browser testing.** Claude tests in headless Chromium here; the user tests in desktop Chrome / the portable app. PDF only when asked.
 7. **Never reference a `const` before its definition** in the analog script (v1.6.0 crash). After every patch load the file and check there is no page error.
 8. **Bump `AN_PV`** whenever the reader changes net / block numbering (saved inputs/forces are keyed by those numbers). Current: 11.
