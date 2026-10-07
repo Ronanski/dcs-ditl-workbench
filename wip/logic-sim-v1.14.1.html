@@ -1032,7 +1032,7 @@ function anTouch(S,x,y,tol){const o=new Set();for(const s of S.seg){for(const[px
 function anArrowAt(S,net,x,y,tol){return S.nets[net].arrows.some(a=>anD(a.x,a.y,x,y)<=tol)}
 /* ===== ANALOG builder part 3: blocks, pins, labels, connectors ===== */
 const AN_HDR=/^(PID|PIDV|MAN|ALM|SUMA|SUMP)$/i;
-const AN_KT={'T':'SW','COS':'COS','A':'CONST','F(X)':'FX','F(x)':'FX','f(t)':'LAG','H/':'HC','/L':'LC','>':'HS','<':'LS','+':'ADD','-':'SUB','−':'SUB','X':'MUL','x':'MUL','ABS':'ABS','TP':'TP','PO':'PO','I/P':'IP','E/P':'IP','AI':'AI','AO':'AO','SIG.AB':'SIGAB'};
+const AN_KT={'/':'DIV','÷':'DIV','*':'MUL','×':'MUL','T':'SW','COS':'COS','A':'CONST','F(X)':'FX','F(x)':'FX','f(t)':'LAG','H/':'HC','/L':'LC','>':'HS','<':'LS','+':'ADD','-':'SUB','−':'SUB','X':'MUL','x':'MUL','ABS':'ABS','TP':'TP','PO':'PO','I/P':'IP','E/P':'IP','AI':'AI','AO':'AO','SIG.AB':'SIGAB'};
 function anDistPoly(p,x,y){let m=1e9;for(let i=0;i<p.length;i++){const a=p[i],b=p[(i+1)%p.length];m=Math.min(m,anPtSeg(x,y,{x1:a[0],y1:a[1],x2:b[0],y2:b[1]}))}return m}
 function anInPoly(p,x,y){let c=false;for(let i=0,j=p.length-1;i<p.length;j=i++){if((p[i][1]>y)!==(p[j][1]>y)&&x<(p[j][0]-p[i][0])*(y-p[i][1])/(p[j][1]-p[i][1])+p[i][0])c=!c}return c}
 function anModel(S){
@@ -1057,6 +1057,8 @@ function anModel(S){
   if(sh.ty==='dia'){if(tt.includes('COS')&&!tt.includes('T')&&!tt.includes('B'))return 'COS';if(tt.includes('T'))return 'AMT';return null}
   if(sh.ty==='rect'&&tt.includes('<')&&tt.includes('>'))return 'HLLIM';/* legend: box with both < and > = HIGH / LOW LIMIT */
   for(const q of tt)if(AN_KT[q]){if(q==='T'&&sh.ty==='dia')return 'AMT';return AN_KT[q]}
+  if(sh.ty==='rect'&&tt.length===1&&/^-?\d+(?:\.\d+)?\s*[%A-Za-z°\/]{0,8}$/.test(tt[0].replace(/%%%/g,'%')))return 'CONST';
+  if(sh.ty==='rect'&&tt.some(q=>/^DROP\s*RATE/i.test(q)))return 'DRATE';
   if(sh.ty==='rect'&&sh.w<=16){
    if(S.shp.some(o=>o!==sh&&o.ty==='tri'&&o.w<=8&&o.x0>=sh.x0&&o.x1<=sh.x1&&o.y0>=sh.y0&&o.y1<=sh.y1))return 'DEV';
    if(tt.length===1){const q=tt[0].replace(/%%%/g,'%');
@@ -1205,18 +1207,19 @@ function anCompile(S){
   pr.sort((a,c)=>a.d-c.d);const ub=new Set(),uq=new Set();for(const p of pr){if(ub.has(p.b)||uq.has(p.q))continue;ub.add(p.b);uq.add(p.q);p.b.p.ln=p.q.t.trim().toUpperCase().replace(/[\s-]/g,'')}}
  const posOrder=(a,b)=>(b.y-a.y)||(a.x-b.x);
  /* analog or digital: decided by WHO drives the wire (the CAD layer colour is the same for both on some sheets) */
- {const DK=new Set(['AND','OR','NOT','FF','TON','TOF','TPS','TPV','HC','LC','HLC','CMPK','PVSV','DCMP','SIGAB']),AK=new Set(['AI','PID','PIDV','MAN','SUM','SUB','DEV','ADD','MUL','DIV','ABS','SQRT','HS','LS','HLIM','LLIM','SEL','FX','LAG','RATE','RAMPB','CONST','TP','AMT','SW','CTK']),dk={};
+ {const DK=new Set(['AND','OR','NOT','FF','TON','TOF','TPS','TPV','HC','LC','HLC','CMPK','PVSV','DCMP','SIGAB']),AK=new Set(['DRATE','AI','PID','PIDV','MAN','SUM','SUB','DEV','ADD','MUL','DIV','ABS','SQRT','HS','LS','HLIM','LLIM','SEL','FX','LAG','RATE','RAMPB','CONST','TP','AMT','SW','CTK']),dk={};
   for(const b of blk){const d=DK.has(b.k),a=AK.has(b.k);if(!d&&!a)continue;for(const p of b.pins)if(p.role==='out'&&!nets[p.n].sigab){nets[p.n].dig=d;dk[p.n]=1}}
   for(const b of blk)if(['AND','OR','NOT','FF','TON','TOF','TPS','TPV'].includes(b.k))for(const p of b.pins)if(p.role==='in'&&p.lab!=='X'&&!dk[p.n]&&!nets[p.n].sigab)nets[p.n].dig=true
   /* inputs of comparators / math blocks that nobody drives are analog values */
-  for(const b of blk)if(['HC','LC','HLC','DCMP','PVSV','FX','SQRT','SUM','SUB','ADD','MUL','DIV','DEV','LAG','RATE','HLIM','LLIM','SEL','HS','LS','AO','ALM','PID','PIDV','ABS'].includes(b.k))for(const p of b.pins)if(p.role==='in'&&!dk[p.n]&&!nets[p.n].sigab)nets[p.n].dig=false}
+  for(const b of blk)if(['HC','LC','HLC','DCMP','PVSV','FX','SQRT','SUM','SUB','ADD','MUL','DIV','DEV','LAG','RATE','HLIM','LLIM','SEL','HS','LS','AO','ALM','PID','PIDV','ABS'].includes(b.k))for(const p of b.pins)if(p.role==='in'&&!dk[p.n]&&!nets[p.n].sigab)nets[p.n].dig=false
+  S.lab.forEach((l,n)=>{if(l&&nets[n]&&!nets[n].sigab&&/\.(LOC|REM|MAN)$/i.test(String(l.t).trim()))nets[n].dig=true})}
  {const K=blk.filter(b=>b.k==='CONST'&&!(b.txt[0]&&/^-?\d/.test(b.txt[0].replace(/%%%/g,'%')))),used=new Set(),pairs=[];
   const nt=TX.filter(q=>/^-?\d+(\.\d+)?\s*([%°A-Za-z][^:]{0,30})?$/.test(q.t.trim())&&!blk.some(o=>o.k!=='CONST'&&q.x>=o.x0&&q.x<=o.x1&&q.y>=o.y0&&q.y<=o.y1));
   for(const b of K)for(const q of nt){const dx=Math.max(b.x0-q.x,0,q.x-b.x1),dy=Math.max(b.y0-q.y,0,q.y-b.y1),d=Math.hypot(dx,dy);if(d<=9)pairs.push({b,q,d})}
   pairs.sort((x,y)=>x.d-y.d);const ub=new Set();for(const p of pairs){if(ub.has(p.b)||used.has(p.q))continue;ub.add(p.b);used.add(p.q);p.b.p.val=anNum(p.q.t)}
   /* an "A" box labelled with a signal name (not a number) = a reference to that signal, not a constant */
   const tg=TX.filter(q=>/^[A-Za-z][A-Za-z0-9]*\d[A-Za-z0-9]*(\.[A-Za-z0-9]+)?$/.test(q.t.trim())&&q.t.trim().length>=6&&!blk.some(o=>o.k!=='CONST'&&q.x>=o.x0&&q.x<=o.x1&&q.y>=o.y0&&q.y<=o.y1));
-  for(const b of K){if(ub.has(b))continue;let bt=null,bd=9;for(const q of tg){const w=q.t.trim().length*(q.h||4)*.6,dx=Math.max(b.x0-(q.x+w),0,q.x-b.x1),dy=Math.max(b.y0-q.y,0,q.y-b.y1),d=Math.hypot(dx,dy);if(d<bd){bd=d;bt=q}}if(bt)b.ref=bt.t.trim()}}
+  for(const b of K){if(ub.has(b))continue;if(TX.some(q=>/^\s*\(?\s*-?\d+(?:\.\d+)?\s*(?:%|\/\s*-?\d+(?:\.\d+)?)\s*\)?\s*$/.test(q.t.trim())&&Math.hypot(q.x-b.cx,q.y-b.cy)<16))continue;let bt=null,bd=9;for(const q of tg){const w=q.t.trim().length*(q.h||4)*.6,dx=Math.max(b.x0-(q.x+w),0,q.x-b.x1),dy=Math.max(b.y0-q.y,0,q.y-b.y1),d=Math.hypot(dx,dy);if(d<bd){bd=d;bt=q}}if(bt)b.ref=bt.t.trim()}}
  for(const b of blk){b.i=[];b.o=[];const ins=b.pins.filter(p=>p.role==='in'),outs=b.pins.filter(p=>p.role==='out');b.o=[...new Set(outs.map(p=>p.n))];
   if((b.k==='SW'||b.k==='AMT')&&!ins.length&&outs.length){const pt=near(b.cx,b.cy,14,t=>/^\s*-?\d+(?:\.\d+)?\s*%\s*$/.test(t.t.trim()))[0];if(pt){b.k='CONST';b.txt=[pt.t.trim()];b.p={val:anNum(pt.t)};b.note='T without wires: constant '+pt.t.trim()}}
   const P=b.p;
@@ -1250,8 +1253,8 @@ function anCompile(S){
      b.S=sp?sp.n:-1;b.Rn=rp?rp.n:-1;b.i=[b.S,b.Rn].filter(x=>x>=0);break}
    case 'DEV':case 'SUB':case 'SUM':case 'ADD':{const s=ins.slice().sort((p,q)=>(p.side==='L'?0:1)-(q.side==='L'?0:1)||posOrder(p,q));b.ip=s.map((p,i)=>({n:p.n,sg:/^[-−]$/.test((p.lab||'').trim())?-1:/^\+$/.test((p.lab||'').trim())?1:(b.k==='SUB'||b.k==='DEV')&&i>0?-1:1}));
      if((b.k==='SUB'||b.k==='DEV')&&b.ip.length&&!b.ip.some(x=>x.sg<0)&&b.ip.length>1)b.ip[b.ip.length-1].sg=-1;b.i=b.ip.map(x=>x.n);break}
-   case 'DIV':{const s=ins.slice().sort(posOrder);let num=null,den=null;const lt=near(b.cx,b.cy,14,t=>/^[ab]\s*\/\s*[ab]$/i.test(t.t.trim()))[0];
-     if(lt){const m=lt.t.trim().toLowerCase().match(/^([ab])\s*\/\s*([ab])$/);num=s.find(p=>(p.lab||'').toLowerCase()===m[1]);den=s.find(p=>(p.lab||'').toLowerCase()===m[2])}
+   case 'DIV':{const s=ins.slice().sort(posOrder);let num=null,den=null;const lt=near(b.cx,b.cy,30,t=>/(?:^|=)\s*[ab]\s*\/\s*[ab]\b/i.test(t.t.trim()))[0];
+     if(lt){const m=lt.t.trim().toLowerCase().match(/(?:^|=)\s*([ab])\s*\/\s*([ab])\b/);num=s.find(p=>(p.lab||'').toLowerCase()===m[1]);den=s.find(p=>(p.lab||'').toLowerCase()===m[2])}
      if(!num||!den){num=s[0];den=s[1]}b.nu=num?num.n:-1;b.de=den?den.n:-1;b.i=[b.nu,b.de].filter(x=>x>=0);break}
    case 'PID':case 'PIDV':{const s=ins.slice().sort(posOrder);b.in0=s[0]?s[0].n:-1;b.i=s.map(p=>p.n);
      const at=near(b.cx,b.cy,40,t=>/^ACT\s*:\s*[RN]/i.test(t.t.trim()))[0];P.act=at&&/R/i.test(at.t.trim().split(':')[1]||'')?-1:1;
@@ -1261,21 +1264,23 @@ function anCompile(S){
      b.tag=(b.txt||[]).filter(t=>!AN_HDR.test(t.trim()))[0]||'';break}
    case 'MAN':{const r=anRange(S,b,60);P.lo=r?r.lo:0;P.hi=r?r.hi:100;P.u=r?r.u:'%';b.i=ins.map(p=>p.n);b.tag=(b.txt||[]).filter(t=>!AN_HDR.test(t.trim()))[0]||'';break}
    case 'AI':{break}
-   case 'CONST':{if(b.ref){const on=b.pins.find(p=>p.role==='out');if(on){(S.tagN=S.tagN||[]).push({t:b.ref,n:on.n,d:0});b.o=[];b.i=[];P.val=0;break}}const tn=b.txt.length?b.txt[0].replace(/%%%/g,'%'):null;if(tn&&/^-?\d+(\.\d+)?\s*%?$/.test(tn))P.val=anNum(tn);
+   case 'CONST':{if(b.ref){const on=b.pins.find(p=>p.role==='out');if(on){(S.tagN=S.tagN||[]).push({t:b.ref,n:on.n,d:0});b.o=[];b.i=[];P.val=0;break}}const tn=b.txt.length?b.txt[0].replace(/%%%/g,'%'):null;if(tn&&/^-?\d+(\.\d+)?\s*[%A-Za-z°\/]{0,8}$/.test(tn))P.val=anNum(tn);
     /* v1.12.1: value written as a ratio next to the box (SCALE CONVERT 40 / 120 = 0.3333) or as a number with a unit / percent note (7.6 kg/cm2, 1.0 (100%)) */
     if(P.val==null){const fr=near(b.cx,b.cy,40,t=>/^\s*-?\d+(?:\.\d+)?\s*\/\s*-?\d+(?:\.\d+)?\s*$/.test(t.t.trim()))[0];if(fr){const m=/(-?\d+(?:\.\d+)?)\s*\/\s*(-?\d+(?:\.\d+)?)/.exec(fr.t);if(+m[2]){P.val=+m[1]/+m[2];b.note='ratio '+fr.t.trim()}}}
+    if(P.val==null){const pc=near(b.cx,b.cy,16,t=>/^\(?\s*-?\d+(?:\.\d+)?\s*%\s*\)?$/.test(t.t.trim()))[0];if(pc){P.val=parseFloat(pc.t.replace(/[()%\s]/g,''));b.note='value '+pc.t.trim()}}
     if(P.val==null){const nu=near(b.cx,b.cy,24,t=>(Math.abs(t.y-b.cy)<=4||/^\s*-?\d+(?:\.\d+)?\s*\(\s*\d+\s*%\s*\)\s*$/.test(t.t.trim()))&&/^\s*-?\d+(?:\.\d+)?\s*(?:[A-Za-z%°][\w%°\/²³]*\s*)?(?:\(.*\))?\s*$/.test(t.t.trim())&&/[A-Za-z%°(]/.test(t.t.trim()))[0];if(nu){P.val=parseFloat(nu.t.trim());b.note='value '+nu.t.trim()}}
     if(P.val==null){P.val=0;b.warn='value not found'}b.i=[];break}
    case 'FX':{if(!P.ln)P.ln='';b.i=ins.map(p=>p.n);break}
+   case 'DRATE':{b.i=ins.map(p=>p.n);break}
    case 'LAG':{const t=near(b.cx,b.y0,12,q=>/^\d+(\.\d+)?\s*(sec|s|min)/i.test(q.t.trim()))[0];P.tau=t?anNum(t.t)*(/min/i.test(t.t)?60:1):15;b.i=ins.map(p=>p.n);break}
    case 'RATE':{const dg=ins.filter(p=>nets[p.n].dig),an=ins.filter(p=>!nets[p.n].dig);
      if(an.length>=2){/* rate limiter with its own limit inputs (ABC-003E): signal in on the side, two limit inputs, 1:BYPASS */
       const mn=an.find(p=>p.side==='L')||an.slice().sort(posOrder)[0],lm=an.filter(p=>p!==mn).sort((p,q)=>p.x-q.x);b.main=mn.n;b.up=lm[0]?lm[0].n:-1;b.dn=lm[1]?lm[1].n:b.up;b.byp=dg[0]?dg[0].n:-1;b.i=[b.main,b.up,b.dn,b.byp].filter(x=>x>=0);P.rate=0}
      else{const t=near(b.cx,b.cy,36,q=>/%%%\s*\/\s*sec|%\s*\/\s*sec|\/\s*sec/i.test(q.t))[0];P.rate=t&&anNum(t.t)>0?anNum(t.t):0;b.main=an[0]?an[0].n:(ins[0]?ins[0].n:-1);b.byp=dg[0]?dg[0].n:-1;b.up=undefined;b.i=[b.main,b.byp].filter(x=>x>=0)}break}
-   case 'DCMP':{b.i=ins.map(p=>p.n);const outs2=outs.slice(),tl=TX.filter(q=>/^[<>≤≥]/.test(q.t.replace(/%%%/g,'%').trim())),pr=[];
-     for(const p of outs2)for(const q of tl){const dx=p.x-q.x,dy=q.y-p.y;if(dy>-2&&dy<9&&dx>-3&&dx<60)pr.push({p,q,d:Math.abs(dy)+Math.abs(dx)*.2})}
+   case 'DCMP':{b.i=ins.map(p=>p.n);const outs2=outs.slice(),tl=TX.filter(q=>/^(?:[A-Za-z][\w-]*\s*)?[<>≤≥]/.test(q.t.replace(/%%%/g,'%').trim())),pr=[];
+     for(const p of outs2)for(const q of tl){const dx=p.x-q.x,dy=q.y-p.y;if(dy>-2&&dy<9&&dx>-14&&dx<60)pr.push({p,q,d:Math.abs(dy)+Math.abs(dx)*.2})}
      pr.sort((a,c)=>a.d-c.d);const up=new Set(),uq=new Set();b.dc=[];
-     for(const e of pr){if(up.has(e.p)||uq.has(e.q))continue;up.add(e.p);uq.add(e.q);const m=e.q.t.replace(/%%%/g,'%').trim().match(/^([<>≤≥])\s*(=)?\s*(-?\d+(?:\.\d+)?)\s*(.*)$/);if(m)b.dc.push({n:e.p.n,op:/[>≥]/.test(m[1])?'>':'<',inc:/[≥≤]/.test(m[1])||m[2]==='=',sp:+m[3],u:m[4]||'',txt:e.q.t.trim()})}
+     for(const e of pr){if(up.has(e.p)||uq.has(e.q))continue;up.add(e.p);uq.add(e.q);const m=e.q.t.replace(/%%%/g,'%').trim().match(/^(?:[A-Za-z][\w-]*\s*)?([<>≤≥])\s*(=)?\s*(-?\d+(?:\.\d+)?)\s*(.*)$/);if(m)b.dc.push({n:e.p.n,op:/[>≥]/.test(m[1])?'>':'<',inc:/[≥≤]/.test(m[1])||m[2]==='=',sp:+m[3],u:m[4]||'',txt:e.q.t.trim()})}
      break}
    case 'VLV':{b.i=ins.map(p=>p.n);P.stroke=20;break}
    case 'ACT':{b.i=ins.map(p=>p.n);P.stroke=30;b.tag=near(b.cx,b.y0,30,q=>/^[A-Z]{2,4}-[A-Z]{1,3}\d+/.test(q.t.trim()))[0];b.tag=b.tag?b.tag.t.trim():'';break}
@@ -1287,7 +1292,8 @@ function anCompile(S){
      if(hit){sp=+hit[3];u=hit[4]||'';if(hit[1]){op=/[>≥]/.test(hit[1])?'>':'<';inc=/[≥≤]/.test(hit[1])||hit[2]==='='}P.found=1}
      P.ref=-1;if(!hit)for(const q of near(b.cx,b.cy,16)){const m=cl(q).match(/^([<>≤≥])\s*(=)?\s*([A-Za-z][\w.]{3,})$/);if(!m)continue;{P.refTag=m[3];op=/[>≥]/.test(m[1])?'>':'<';inc=/[≥≤]/.test(m[1])||m[2]==='=';P.found=1;break}}
      P.op=op;P.sp=sp;P.inc=inc;P.u=u;b.i=ins.map(p=>p.n);break}
-   case 'CMPK':{const m=b.txt[0].replace(/%%%/g,'%').match(/^([<>≤≥])\s*(-?\d+(?:\.\d+)?)/);P.op=m?(m[1]==='≥'?'>':m[1]==='≤'?'<':m[1]):'<';P.sp=m?+m[2]:0;b.i=ins.map(p=>p.n);break}
+   case 'CMPK':{const m=b.txt[0].replace(/%%%/g,'%').match(/^([<>≤≥])\s*(-?\d+(?:\.\d+)?)/);P.op=m?(m[1]==='≥'?'>':m[1]==='≤'?'<':m[1]):'<';P.sp=m?+m[2]:0;b.i=ins.map(p=>p.n);
+     if(!m&&ins.length>=2){const st=TX.filter(q=>/^SET\b/i.test(q.t.trim())&&anD(q.x,q.y,b.cx,b.cy)<24).sort((a,c)=>anD(a.x,a.y,b.cx,b.cy)-anD(c.x,c.y,b.cx,b.cy))[0];const th=st?ins.slice().sort((a,c)=>anD(a.x,a.y,st.x,st.y)-anD(c.x,c.y,st.x,st.y))[0]:ins.find(p=>p.side==='T');const sg=th&&ins.find(p=>p!==th);if(th&&sg){P.ref=th.n;P.refSet=1;b.i=[sg.n,th.n]}}break}
    case 'PVSV':{const sd=ins.slice().sort((p,q)=>(p.side==='R'?0:1)-(q.side==='R'?0:1)||posOrder(p,q));b.pv=sd[0]?sd[0].n:-1;b.sv=sd[1]?sd[1].n:-1;b.i=[b.pv,b.sv].filter(x=>x>=0);break}
    case 'CTK':{const ci=ins.find(p=>p.lab==='ctl'),ii=ins.find(p=>p!==ci);b.ctl=ci?ci.n:-1;b.cin=ii?ii.n:-1;b.i=[b.cin,b.ctl].filter(x=>x>=0);if(b.ctl>=0&&!nets[b.ctl].sigab)nets[b.ctl].dig=true;break}
    case 'TON':case 'TOF':case 'TPS':b.i=ins.map(p=>p.n);break;
@@ -1383,6 +1389,7 @@ function anStep(S,dt){const rt=S.rt,v=rt.v,nets=S.nets,B=x=>x>.5?1:0;rt.t+=dt;rt
      s.nok=ok.length;out(y);break}
    case 'TP':case 'IP':case 'AO':case 'PO':case 'FIELD':case 'ALM':case 'UNK':{if(b.o.length)out(rd(b.i[0]));break}
    case 'FX':out(anFX(P,rd(b.i[0])));break;
+   case 'DRATE':{const x=rd(b.i[0]),H=s.h=s.h||[];if(H.length&&H[H.length-1][0]===rt.t)H[H.length-1][1]=x;else H.push([rt.t,x]);while(H.length>2&&H[1][0]<=rt.t-60)H.shift();const o0=H[0],dw=rt.t-o0[0];out(dw>1e-6?(o0[1]-x)/dw*60:0);break}
    case 'LAG':{const x=rd(b.i[0]);if(s.y==null)s.y=x;s.y+=(x-s.y)*(1-Math.exp(-dt/Math.max(P.tau,.01)));out(s.y);break}
    case 'RATE':case 'RAMPB':{if(b.main!==undefined){const x=rd(b.main);if(s.y==null)s.y=x;if(b.byp>=0&&B(rd(b.byp)))s.y=x;else{const fx=b.up===undefined,ru=fx?P.rate:rd(b.up),rd_=fx?P.rate:rd(b.dn),d=x-s.y;const mu=ru>0?ru*dt:Infinity,md=rd_>0?rd_*dt:Infinity;s.y+=d>0?Math.min(d,mu):-Math.min(-d,md)}out(s.y);break}const x=rd(b.i[0]);if(s.y==null)s.y=x;const m=P.rate*dt;s.y+=Math.max(-m,Math.min(m,x-s.y));out(s.y);break}
    case 'HC':case 'LC':case 'HLC':case 'CMPK':{const x=rd(b.i[0]),sp=P.ref>=0?rd(P.ref):P.sp;out(P.op==='>'?((P.inc?x>=sp:x>sp)?1:0):((P.inc?x<=sp:x<sp)?1:0));break}
@@ -1538,9 +1545,17 @@ function adesLines(a){const r=a.rec,o=[];if(r.k==='io'){o.push((r.tag||'')+'   [
  else{o.push(a.key+'   [STN10'+a.stn+']');if(r.d)o.push(r.d);const x=[r.t?('timer '+r.t+(r.v!=null?' '+r.v+' s':'')):'',r.r].filter(Boolean).join('  ·  ');if(x)o.push(x)}return o}
 let CARD=null;
 function tagCard(){if(!CARD){CARD=h$('div',{id:'antag',style:'position:absolute;left:10px;top:10px;max-width:440px;background:#0f1a22ee;border:1px solid #2b4a5a;border-left:4px solid #ffe14a;padding:6px 10px;font:12px sans-serif;color:#e7eef3;display:none;z-index:6;pointer-events:none;line-height:1.45'});const c=$('cv');if(c){if(!/relative|absolute|fixed/.test(getComputedStyle(c).position))c.style.position='relative';c.append(CARD)}}return CARD}
+{const sv_=$('svg');let hc=null;const HC=()=>{if(!hc){hc=h$('div',{id:'anhov',style:'position:absolute;max-width:420px;background:#0f1a22f5;border:1px solid #2b4a5a;border-left:4px solid #5cc8ff;padding:5px 9px;font:12px sans-serif;color:#e7eef3;display:none;z-index:7;pointer-events:none;line-height:1.4'});const c=$('cv');if(c){if(!/relative|absolute|fixed/.test(getComputedStyle(c).position))c.style.position='relative';c.append(hc)}}return hc};
+ sv_.addEventListener('mousemove',e=>{if(!live()||e.buttons)return;const sh=cs();if(!sh||!sh.S||!ADES)return;const[x,y]=xy(e);let f=null;for(const t of sh.S.tx){const s=t.t.trim();if(s.length<4||s.length>14)continue;const h=t.h||2.6;if(x>=t.x-.6&&x<=t.x+s.length*h*.62+.6&&y>=t.y-h*.3&&y<=t.y+h*1.15){const a=adesFind(sh,s);if(a){f=a;break}}}
+  const c=HC();if(!c)return;if(!f){c.style.display='none';return}cardFill(c,f);const cr=$('cv').getBoundingClientRect();c.style.left=Math.max(4,Math.min(cr.width-330,e.clientX-cr.left+14))+'px';c.style.top=Math.max(4,Math.min(cr.height-80,e.clientY-cr.top+16))+'px';c.style.display='block'});
+ sv_.addEventListener('mouseleave',()=>{if(hc)hc.style.display='none'})}
 /* selected wire: its address text turns yellow (digital) / sky blue (analog) and the description is shown on the drawing */
-function tagHi(){const sh=cs(),S=sh&&sh.S,n=S&&AN.sel&&AN.sel.net!=null?AN.sel.net:null,key=n==null?'':sh.name+'#'+n;if(tagHi.k===key)return;tagHi.k=key;
- (tagHi.prev||[]).forEach(([e,f,w])=>{e.setAttribute('fill',f);if(w==null)e.removeAttribute('font-weight');else e.setAttribute('font-weight',w)});tagHi.prev=[];const c=tagCard();c.style.display='none';if(n==null||!L||!L.txe)return;
+function cardFill(c,a){c.innerHTML='';adesLines(a).forEach((x,i)=>{const d=document.createElement('div');d.textContent=x;if(i===0)d.style.fontWeight='700';c.append(d)})}
+function tagHi(){const sh=cs(),S=sh&&sh.S,n=S&&AN.sel&&AN.sel.net!=null?AN.sel.net:null,key=n==null?(S&&AN.sel&&AN.sel.blk?sh.name+'b'+AN.sel.blk.id:''):sh.name+'#'+n;if(tagHi.k===key)return;tagHi.k=key;
+ (tagHi.prev||[]).forEach(([e,f,w])=>{e.setAttribute('fill',f);if(w==null)e.removeAttribute('font-weight');else e.setAttribute('font-weight',w)});tagHi.prev=[];const c=tagCard();c.style.display='none';
+ if(n==null&&S&&AN.sel&&AN.sel.blk&&L&&L.txe){const b=AN.sel.blk;let hit=null;for(const[t,e]of L.txe){if(t.x>=b.x0-14&&t.x<=b.x1+14&&t.y>=b.y0-14&&t.y<=b.y1+14){const a=adesFind(sh,t.t.trim());if(a){hit={e,a};break}}}
+  if(hit){c.style.borderLeftColor='#ffe14a';tagHi.prev.push([hit.e,hit.e.getAttribute('fill'),hit.e.getAttribute('font-weight')]);hit.e.setAttribute('fill','#ffe14a');hit.e.setAttribute('font-weight','700');cardFill(c,hit.a);c.style.display='block'}return}
+ if(n==null||!L||!L.txe)return;
  const l=S.lab[n]||((S.tagN||[]).filter(q=>q.n===n).sort((a,b)=>a.d-b.d)[0]&&{t:S.tagN.filter(q=>q.n===n).sort((a,b)=>a.d-b.d)[0].t});if(!l||!l.t)return;
  const col=S.nets[n].dig?'#ffe14a':'#5cc8ff';c.style.borderLeftColor=col;
  for(const[t,e]of L.txe)if(t.t.trim()===String(l.t).trim()&&(l.x==null||Math.hypot(t.x-l.x,t.y-l.y)<4)){tagHi.prev.push([e,e.getAttribute('fill'),e.getAttribute('font-weight')]);e.setAttribute('fill',col);e.setAttribute('font-weight','700')}
