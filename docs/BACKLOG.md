@@ -119,3 +119,9 @@
 - New scans: tools/audit-sheets.js, audit-signs.js, audit-params.js, audit-shapes.js, shot-multi.js (contact sheet of several places).
 - Fixed in the WIP: MUL gain constants, SUB signs 9 – 13 units from the pin, LAG times written left of the box (5 blocks used 15 s), timer 300 s read as 5 s (ABC-013 TR74), the RATE LIMITER symbol "V⟩" (3 blocks) read as a high limit, unrecognised grey blocks (limiter ABC-001A, 2 subtract boxes ABC-001A, RATE LIMIT ABC-001B, add box ABC-001D, summation bars ABC-026 / 027).
 - AN_PV must go 14 -> 15 at the build (new blocks).
+
+## Logic verification, round 7 (v1.15.0, tools/patch-1.15.0.js = patch-blocks + patch-defaults + patch-signals + patch-selector)
+- User data: Compensation file -> 8 TP (operating temperatures); Drum Level Calculation file -> S1-LN38 / S1-LN39 (ABC-010); IO list / memory lists used as CHECKS (157 / 157 AI ranges, 150 / 153 timers). Documented in docs/DATA-FILES.md.
+- Assumed values (user: "ikaw na ang magset"): 104 ALM limits, 8 ramp rates, PO pulse cycle -> tools/assumed-data.js, docs/ASSUMED-VALUES.md, button "Assumed values", block panels.
+- Signals must arrive: tools/audit-reach.js (223 dead ends + 4 orphans -> 0, docs/FINDINGS.md section H), tools/test-links-all.js (182 / 182 carry), tools/test-paint.js (lit only when 1), 4-way selectors (G-10).
+- OPEN: O-05 (TR256), O-07 / O-08 / O-09 (links), O-11 (ABC-001C TR228 type), DCS values for ALM / ramps / PO, PRI / SEC / AVG default mode, sheet-by-sheet comparison with the PDFs, exe / apk on the user's devices.

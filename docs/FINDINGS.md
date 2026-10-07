@@ -33,6 +33,7 @@ Status: **R-xx** = already released (v1.14.2 / v1.14.3). **F-xx** = fixed in the
 | G-07 | The instructions "IF M = 1 SET SIxxxx => TAG.SV" (7) and "SET SI0200 => AB0117" (ABC-001A) | the written instruction is part of the logic | not simulated (CTK only passed the value) | executed: the source is written into the SV of the controller (DEV pin "SV" in front of its PID) / into the COS value while the condition holds; the condition tag is an input you can set | ABC-013: M.0252 = 1, SI0361 = 77 → the SV of PICMS1002 is 77 |
 | G-08 | Page links: click on a circle | "go through ALL the ends, again and again: 1 to 2, to 3, back to 1" | one click = one other end | every click goes to the next end of the group (this sheet and every sheet named by the number / letter + sheet or the FROM / TO text, "004B/C" = both, also through the other circles), after the last the first again; the partner of a link is chosen by the tag first, by position only when the tags do not decide | ABC-001B "C": 001C, 001C, 001A, 001B, 001C ... (`tools/test-blocks-ui.js`) |
 | G-09 | Mathematics (ABS, ADD, SUB, SUM, DEV, MUL, DIV, SQRT, HS, LS, HLIM, LLIM, HLLIM, LAG) | the formula of the legend | not tested on every block | 998 random-input checks on every block of the 54 sheets: 0 mismatches | `node tools/test-math.js <html>` |
+| G-10 | 4-way selectors with a text table: ABC-009A SW#32 (ash coolers A–D: "(1) IF A-ASH COOLER AUTO ( M.021A ) SELECT to "a"" … (4)) and ABC-003E SW#4 (burner oil flow control remote ( M.009A … D ) → a … d) | The text table IS the logic: the first true condition picks its leg | The table was ignored: the T box had only legs a / b and the c / d legs (circles C 003C, D 003D, J 009B) fed nothing | The 4 conditions are inputs in the block panel (they are memory flags made outside the sheet); first true (1 → 4) picks its leg, none true: the last choice stays | `node tools/test-blocks.js` (14 checks); open the block: 4 check boxes |
 
 ## H. Signals that did not reach their destination — found by `tools/audit-reach.js` (WIP v1.15.0)
 Method: every wire that is DRIVEN but feeds nothing (dead end) and every wire that feeds logic but nobody drives (orphan) was listed on all 51 sheets, then each group was LOOKED at on the drawing (arrows!). 223 dead ends + 4 orphans at the start; every one was either fixed (below) or shown to be a real exit (section H2).
@@ -49,15 +50,19 @@ Method: every wire that is DRIVEN but feeds nothing (dead end) and every wire th
 | H-09 | ABC-055 · contact glyph (two small circles + bar) at (760, 405): FF M.000A "BU-CMD" opens / closes the wire from the T switch to the PO | Control arrow 0.6 beside the circle axis | The glyph needed the arrow 3.3 ± 2.2 beside the axis: no contact, the T output dead-ended | any digital arrow tip within 5.8 of the glyph axis | ABC-055: 1 contact (CTK) |
 | H-10 | 45 circles in 11 sheets: ABC-004A 21 → 21 / 004B → 21 / 004C, ABC-003A 12 (→ 003B / C / D), ABC-027 01 / 026 + A, 013 (9), 050 (7), 003E (7), 001C (5), 003A (9) … | Chain of touching circles: the arrow ends in the first, the others touching it (same wire or same number) are more senders (fan-out) | Read as receivers (no arrow): they could not pair, the values of 003A "12" never reached 003B / C / D | touching circle with the same wire or number as a sender = sender, and takes its wire | `test-links-all.js`; ABC-027 "A" now paired |
 | H-11 | ABC-003E · 4 CMPK "< X%" (O-03) | Set point = the text "3%" at the end of the wire (PS0005 of the function block table) | Looked like an orphan input | already read as a known constant (S.kn = 3 %); the audit now says so | 4 orphans → 0 (explained, not a defect) |
+| H-12 | ABC-001C · the "MW" row of 5 circles (270 … 315, 525) and "FFD" (652, 413); ABC-009A / B (6 + 2 arrow gaps) | An arrow drawn as a small triangle in a GAP of a straight wire (the wire stops at its base, the next piece starts at its tip) | The wire was two nets: the circles after the arrow had no driver, so the unit MW (GCP AI 1001) never left ABC-001C to 001A, 013, 003A, 057 | the two collinear pieces on both sides of such an arrow are one wire (not inside a timer D, not gate parts) | `test-links-all.js`: "MW" 4 links carry the value |
+| H-13 | ABC-001A (10 nets), 001B (5), 001D (11): "MWD" (720, 493), "X" (756, 406) … | Junction dots drawn as small CIRCLE entities on layer MEM (3 circles r 1.06 / 1.06 / 1.95) | Not junction dots: the branch to the circle was a separate wire without a driver (001D: 15 user inputs that nothing needed) | small circles on layer MEM are junction dots | 001D user inputs 15 → 5; MWD / X links carry the value |
+| H-14 | ABC-052 · SW#13 "a" leg, circle LPB (from ABC-050 SI0163) | An analog value (100 % / the other leg) | The receiving wire was typed DIGITAL (drawn on layer CON): drawn as a digital wire, value used as a flag | a receiving wire takes the type of the wire that sends | `test-links-all.js`: LPB carries 37.5 |
 
 ### H2. Wires that really end (not defects, listed so you can judge) — `node tools/audit-reach.js <html> --all`
 | Kind | Count | Examples |
 |---|---|---|
-| Output pin of an AO / ALM / MAN / PO / SUMA … (terminal block) | 232 | AO0592 to the I/P, ALM → HMI |
+| Output pin of an AO / ALM / MAN / PO / SUMA … (terminal block) | 231 | AO0592 to the I/P, ALM → HMI |
 | Exit "TO DITL xx-yy" (hexagon / text) | 91 | ABC-019 "REHEATER INLET DE-S/H TEMP. < 11 °C … TO DITL 35-09" |
 | Annunciator / "( TO TCS )" / "TO ABC-xxx" text | 10 | ABC-004A TOF B.080B / C / D "CRT (ANN.)", ABC-001C AO0359 "( TO TCS )" |
 | Written as a memory bit with no reader on the ABC sheets (M.xxxx, B.xxxx) | 5 | ABC-012 M.0248 FF, ABC-001D M.200D / M.200E |
 | Contact of an instruction text (CTK) / source of "SET SIxxxx => TAG.SV" | 6 | ABC-007 ×2, 013, 051, 052 |
+| AI wire that feeds only its SIG.AB box (monitor only) | 27 | field transmitters of unused signals (ABC-015 / 016 positioner feedbacks, ABC-020 S4 AIs) |
 | Second output pin of a PID that is already used | 30 | tick marks at the PID box edge (O-02) |
 | Stub drawn inside its own block | 4 | RAMPB box lines ABC-007 |
 **Not simulated by design:** the ABC → DITL crossings (the DITL page is never touched): the 91 "TO DITL" exits end at the sheet border.
@@ -81,10 +86,25 @@ Method: every wire that is DRIVEN but feeds nothing (dead end) and every wire th
 |---|---|---|---|
 | O-01 | ABC-008 SUB #21 (681, 138); ABC-014 SUB #8 (330, 228), #19 (696, 228) | The small two-cell blue box above the I/P (valve positioner, field side) is read as a SUB with one input and no output | None on the logic (no output) |
 | O-02 | 35 PID and 22 MAN (e.g. ABC-003A PID #13) | Tick marks at the left / right edge of the box are read as extra output pins on a stub net | None (nobody reads that net), only extra "outputs goes nowhere" in the scan |
-| O-03 | ABC-003E · CMPK #8, #13, #18, #23 | Input "A" of the "< X%" comparators comes from a circle of another sheet (A / 003A … 003D): check on the real run that the link is live | To confirm in the app |
+| O-03 | ABC-003E · CMPK #8, #13, #18, #23 | Set point "3%" is the text at the end of the wire (PS0005 of the BUMPLESS function block table): read as a known constant | **Resolved** (not an input from another sheet) |
 | O-05 | ABC-003E · TPS #62 (TR256) | Pulse when FF M.008F falls (its reset OR M.0097 has 7 inputs: all must be 0 to set the FF first, then one goes to 1) | The scan did not reach the output by random sequences; not yet shown by hand: to do |
-| O-06 | ABC-004A #75, 004B #26, 004C #26, ABC-009A #97-99, 009B #20, ABC-020 #91 (ramp box between two Y/N switches, "1:BYPASS") | The ramp box has NO rate number on the drawing (the rate is a DCS parameter) | Rate 0 = no limit = pass-through: this is why they look as if they do nothing. Needs the DCS value of each |
+| O-06 | 8 ramp boxes (ABC-004A / B / C, 009A ×3, 009B, 020) | No rate number on the drawing | **Assumed rates** (docs/ASSUMED-VALUES.md section 2); DCS values still wanted |
 | O-04 | 14 digital outputs | Reached only by a SEQUENCE of input changes (latches, pulses, edges): ABC-013, 050 LC #58 / AND #101, 052 (user: ignore), 055 | Not a defect: proves the simulation can reach them, not that the plant does |
+| O-07 | ABC-004A letter circles "A" at (194, 354) and (381, 95) ("FROM 004C", "FROM 004B/C") | The partners are the circles B / C of 004B / 004C ("TO 004A") by tag SI0110, not by letter | Not linked by letter; the signal SI0110 is joined by the tag rule (to confirm on the drawing) |
+| O-08 | ABC-020 circle "9" (501, 599) | No partner circle found on any sheet | Unlinked sink (the signal leaves the sheet to nowhere that we can see) |
+| O-09 | "Tags differ" lines of `audit-links.js` (45): 003B / C / D "2" ↔ 003A, 004A FFD ↔ 001C, 009A / B "L", 012 / 001C "MST", 013 / 050 "BOF", 015 / 016 "1" ↔ 057 | Circles pair by number / name and sheet, the tag written beside the two ends differs (M.144C vs B.1206, "S2 SI0161" vs "SI0161") | To look at one by one with the user; the links carry values (`test-links-all.js`) |
+| O-10 | ABC-003E circles A / B / C / D ← 003A … D, ABC-009A circle J ← 009B | Feed the 4-way selectors (G-10) | Done through the selector; the BUMPLESS parameter table at the left of ABC-003E (PS0001 … PS0005) is documentation, not simulated |
+| O-11 | ABC-001C TR228 (212, 162) | Drawing: TON 2 s. Memory list (your file): TPs 2 | Type differs between the drawing and the memory list: simulated as drawn (TON); to confirm |
+| O-12 | ABC-050 → 052 and the 91 "TO DITL" exits | The ABC → DITL crossings | Not simulated by design (the DITL page is never touched) |
+
+## I. Checks against the files the user sent (docs/DATA-FILES.md)
+| ID | Check | Result | Tool |
+|---|---|---|---|
+| I-01 | Timers of the drawings (type and time) against the TR table of the memory lists (station 1 – 5) | 153 timers have a TRnnn label: **150 equal**; 2 are pairing artefacts of the check (ABC-052 TR353 / TR354 are two timers 6 units apart; ABC-001C TR258 is in the S2 table); **1 real difference: ABC-001C TR228** drawing TON 2 s, memory list TPs 2 (O-11). 9 timers have no TR label | `node tools/audit-timers.js <html>` |
+| I-02 | AI ranges written on the drawings against Base / Full Scale of the IO list | **157 of 157 equal** | `node tools/audit-ai-ranges.js <html>` |
+| I-03 | LN tables built in against LINEAR.xls | 89 of 89 equal (v1.14.x); station rule strict | `node tools/test-ln.js` |
+| I-04 | S1-LN38 / S1-LN39 (ABC-010 drum level) | **Missing in LINEAR.xls** (only S2-LN38 / 39 of the heaters): ABC-010 had been using the HEATER tables (warning "using S2-LN38 (the only one that exists)"). Now built from the Drum Level Calculation file; with the units deduced, level out = level in at 0 kg/cm2 | `node tools/test-drum.js <html>` |
+| I-05 | Compensation file: coefficients at / bt against the operating temperatures | 8 of 8 rows consistent: at = span / (Top + 273.15), bt = 273.15 / (Top + 273.15) | `node tools/test-blocks.js` |
 
 ## D. Method (the cluster / motif idea of docs/BLOCK-COVERAGE.md)
 
@@ -92,13 +112,13 @@ Sheets that are copies of each other (035-039, 003B/C/D, 004B/C, 011/012, 026/02
 
 ## D2. Scans (all in tools/, run with node)
 
-`audit-sheets.js` (pin role vs the arrow of the drawing, pins per block kind, floating inputs) · `audit-signs.js` (+ / − of SUM / SUB / ADD / DEV against the texts: 486 input pins, 352 with a sign text, 0 disagreements left) · `audit-params.js` (comparator set points, timer times, LAG times against the texts again) · `audit-shapes.js` (boxes that did not become a block: 0 left) · `multi-driver.js` · `dup-blocks.js` · `test-legend.js` (FF table and timer diagrams of ABC-000) · `justify.js` (every digital output can reach 0 and 1).
+`audit-reach.js` (dead ends / orphans, section H) · `test-links-all.js` · `audit-tags.js` · `test-paint.js` (lit when 1, grey when 0, 51 sheets × 3 patterns) · `audit-timers.js` / `audit-ai-ranges.js` / `test-drum.js` (section I) · `count-blocks.js` · `audit-sheets.js` (pin role vs the arrow of the drawing, pins per block kind, floating inputs) · `audit-signs.js` (+ / − of SUM / SUB / ADD / DEV against the texts: 486 input pins, 352 with a sign text, 0 disagreements left) · `audit-params.js` (comparator set points, timer times, LAG times against the texts again) · `audit-shapes.js` (boxes that did not become a block: 0 left) · `multi-driver.js` · `dup-blocks.js` · `test-legend.js` (FF table and timer diagrams of ABC-000) · `justify.js` (every digital output can reach 0 and 1).
 
 ## E. NOT checked yet (honest list)
 
 Block-by-block comparison of the **function blocks against the PDF drawings, sheet by sheet** is not finished: PID details (real gains, alarm limits, REM/LOC), the FX tables are identical to LINEAR.xls (89 of 89) but their use on each sheet was not compared one by one, SEL / CTK / TP behaviour is as agreed with the user but not compared per sheet, DIV order (a / b) was read from the formula text only. The automatic scans above find reading mistakes; they cannot find a wrong formula that is read consistently.
 
-## F. Link audit (tools/audit-links.js, WIP v1.15.0) — see docs/LINKING.md for the rules
-789 circles: 381 numbered, 104 letter, 304 name + sheet. 419 are paired inside their own sheet. 377 carry a sheet name or a FROM / TO text, 364 are linked to the other sheet, plus 27 signal-tag links. Two-text circles (name / sheet): 303 of 304 (ABC-054 HRP is linked by its tag SI0180).
-Checked on the drawing and explained (not a defect): ABC-004A "A" (194, 354) and (381, 95) tie to the same wire SI0110 (same tag, joined by the tag rule); ABC-027 "A" circles sit beside the "01 / 026" circle (same signal, tag SI0120 / SI0121); ABC-054 HRP.
-**Still open (to check with the user):** ABC-020 circle "9" (sink at 501, 599) has no partner anywhere; the audit still prints "tags differ" lines that must be looked at one by one on the drawings: ABC-003B / C / D circle "2" ↔ ABC-003A, ABC-004A FFD ↔ ABC-001C, ABC-009A / B "L", ABC-012 / 001C "MST", ABC-013 / 050 "BOF", ABC-050 / 052 "6", ABC-015 / 016 "1" ↔ ABC-057 (M.144C vs B.1206: the same signal under two addresses?), ABC-004A circle 8 (sender in 004B, family numbering 2 / 5 / 8 / 11).
+## F. Link audit (tools/audit-links.js and tools/test-links-all.js, v1.15.0) — see docs/LINKING.md for the rules
+789 circles: 381 numbered, 104 letter, 304 name + sheet. 421 are paired inside their own sheet. 377 carry a sheet name or a FROM / TO text, 373 are linked to the other sheet (4 not: O-07 ×2, O-08, ABC-054 HRP which is joined by its tag SI0180), plus 27 signal-tag links.
+`test-links-all.js`: 182 circle pairs / tag links, every one carries the value to the receiving wire (the sending wire forced to 1 / 0 or 37.5 / 12.5, receiving wire read on the other sheet); 0 links with a receiver that does not get the value (was 25 before H-10 / H-12 / H-13 / H-14).
+Open: O-07, O-08, O-09 (above).

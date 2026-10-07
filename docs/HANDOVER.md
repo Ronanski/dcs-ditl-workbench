@@ -7,7 +7,7 @@ Ituloy natin ang proyekto: Logic Sim (simulator ng DCS logic drawings) sa repo r
 BASAHIN MUNA, sa ganitong ayos, bago gumawa ng kahit ano:
 1. README.md
 2. DESIGN.md  (mga rules na HINDI nababago + checklist ng bawat build, §3)
-2b. docs/FUNCTIONALITY.md (ANO ang dapat gawin ng bawat symbol - ito ang batas), docs/LINKING.md (page links), docs/FINDINGS.md (mga nahanap na mali + paano i-check)
+2b. docs/FUNCTIONALITY.md (ANO ang dapat gawin ng bawat symbol - ito ang batas), docs/LINKING.md (page links), docs/FINDINGS.md (mga nahanap na mali + paano i-check), docs/DATA-FILES.md (mga file na binigay ng user at saan ginagamit - wag nang hingin ulit), docs/ASSUMED-VALUES.md (LAHAT ng numerong wala sa drawing: galing sa file o assumed), docs/REPORT-v1.15.0.md (buong report: findings, ginawa, as-left)
 3. PROJECT-NOTES-v1.14.3.md  (ang pinakabagong entry sa taas; ito rin ang changelog)
 4. docs/HANDOVER.md  (estado + bukas na items + mga pangako sa user)
 5. docs/BACKLOG.md  (ang "Logic scan" sections sa dulo = ang kasalukuyang trabaho)
