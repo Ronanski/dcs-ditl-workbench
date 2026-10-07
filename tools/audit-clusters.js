@@ -1,0 +1,7 @@
+/* Sheets that are copies of each other (035-039, 003B/C/D, 004B/C, 011/012, 026/027): compare block kinds and parameters (set points, times, signs, gains, rates); every difference is either a real difference of the drawings (tags) or a reading mistake on one of them.  usage: node tools/audit-clusters.js file.html */
+const {load,build}=require('./lib.js');const {E,rows}=load(process.argv[2]);
+const CL=[['ABC-035','ABC-036','ABC-037','ABC-038','ABC-039'],['ABC-003B','ABC-003C','ABC-003D'],['ABC-004B','ABC-004C'],['ABC-011','ABC-012'],['ABC-026','ABC-027']];
+const sig=(S,b)=>{const P=b.p||{};const bits=[b.k];['sp','op','sec','tau','rate','gain'].forEach(k=>{if(P[k]!=null&&P[k]!==0&&P[k]!==undefined)bits.push(k+'='+(typeof P[k]==='number'?+P[k].toPrecision(5):P[k]))});if(b.ip)bits.push('signs'+b.ip.map(q=>q.sg>0?'+':'-').join(''));bits.push('i'+(b.i||[]).length+'o'+(b.o||[]).length);return bits.join(' ')};
+for(const cl of CL){const M=cl.map(n=>{const S=build(E,rows.find(x=>x.name===n));const m=new Map();for(const b of S.blk){if(['TXD','ACH','VLV'].includes(b.k))continue;const k=sig(S,b);m.set(k,(m.get(k)||0)+1)}return m});
+ const keys=new Set(M.flatMap(m=>[...m.keys()]));let diffs=0;const lines=[];for(const k of keys){const c=M.map(m=>m.get(k)||0);if(new Set(c).size>1){diffs++;lines.push('   '+k+'  ->  '+cl.map((n,i)=>n.slice(4)+':'+c[i]).join('  '))}}
+ console.log(cl.join(' / ')+' : '+keys.size+' block signatures, '+diffs+' differ');lines.forEach(l=>console.log(l))}

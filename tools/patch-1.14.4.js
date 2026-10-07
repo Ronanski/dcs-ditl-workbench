@@ -17,7 +17,7 @@ rep(`  if(sg.g.length){const{d,h,v}=sg;
    if(d.length===2&&h.length===2&&!v.length)return 'SUM';`,`  if(tt.some(q=>q.trim()==='V'))return 'RATE';
   if(sg.g.length){const{d,h,v}=sg;
    if(d.length===2&&h.length===2&&!v.length)return 'SUM';`);
-rep(`P.rate=t&&anNum(t.t)>0?anNum(t.t):0;b.main=an[0]?an[0].n:(ins[0]?ins[0].n:-1);`,`P.rate=t&&anNum(t.t)>0?anNum(t.t):0;if((b.txt||[]).some(q=>q.trim()==='V')){const ht=near(b.cx,b.cy,70,q=>/\\d\\s*%\\s*\\/\\s*(hr|h)\\b/i.test(q.t.trim()))[0];if(ht){const m=/(\\d+(?:\\.\\d+)?)\\s*%\\s*\\/\\s*(?:hr|h)\\b/i.exec(ht.t),rg_=anRange(S,b,90);P.rate=+m[1]/100*(rg_?Math.abs(rg_.hi-rg_.lo):100)/3600;P.hr=+m[1]}else P.rate=0}b.main=an[0]?an[0].n:(ins[0]?ins[0].n:-1);`);
+rep(`P.rate=t&&anNum(t.t)>0?anNum(t.t):0;b.main=an[0]?an[0].n:(ins[0]?ins[0].n:-1);`,`P.rate=t&&anNum(t.t)>0?anNum(t.t):0;if((b.txt||[]).some(q=>q.trim()==='V')){const ht=near(b.cx,b.cy,70,q=>/\\d\\s*%\\s*\\/\\s*(hr|h)\\b/i.test(q.t.trim()))[0];if(ht){const m=/(\\d+(?:\\.\\d+)?)\\s*%\\s*\\/\\s*(?:hr|h)\\b/i.exec(ht.t),rg_=anRange(S,b,90);P.rate=+m[1]/3600;P.hr=+m[1]}else P.rate=0}b.main=an[0]?an[0].n:(ins[0]?ins[0].n:-1);`);
 /* F-06 grey blocks (other layer, no standard glyph) that were not recognised at all: ABC-001A high / low limit box (ramp with flat ends, texts HIGH LIMIT / LOW LIMIT), ABC-001A two small boxes with "+" / "-" beside the pins (subtract), ABC-001B "RATE LIMIT" ramp box FM0403, ABC-001D box with a drawn "+" (add). Their outputs were never driven. */
 rep(` /* control valves: the wire that touches the tip (stem)`,` for(const sh of S.shp){if(sh.ty!=='rect'||sh.w>42||sh.h>50||blk.some(b=>b.sh===sh||(b.x0!=null&&sh.cx>=b.x0-1&&sh.cx<=b.x1+1&&sh.cy>=b.y0-1&&sh.cy<=b.y1+1)))continue;if(txIn(sh).length)continue;const sg=sigOf(sh);let k=null;
   const nearT=re=>TX.some(q=>re.test(q.t.trim())&&anD(q.x,q.y,sh.cx,sh.cy)<=50);
@@ -31,4 +31,13 @@ rep(`   case 'DIV':{const s=ins.slice().sort(posOrder);let num=null,den=null;`,`
    case 'DIV':{const s=ins.slice().sort(posOrder);let num=null,den=null;`);
 rep(`   case 'ABS':out(Math.abs(rd(b.i[0])));break;`,`   case 'HLLIM':{let x=rd(b.main);if(b.lo>=0)x=Math.max(x,rd(b.lo));if(b.hi>=0)x=Math.min(x,rd(b.hi));out(x);break}
    case 'ABS':out(Math.abs(rd(b.i[0])));break;`);
+/* F-07 rates written per MINUTE or per HOUR were used as per SECOND: RAMP "1% / min" (ABC-020 RAMPB #52, ABC-051 RAMPB #24 "1.67% / min") ran 60 times too fast; RATE "1% / min" (ABC-034 #26) and "2 kg/cm2 / min" (ABC-052 #88) were not read at all (no limit) */
+rep(`const t=near(b.cx,b.cy,36,q=>/%%%\\s*\\/\\s*sec|%\\s*\\/\\s*sec|\\/\\s*sec/i.test(q.t))[0];P.rate=t&&anNum(t.t)>0?anNum(t.t):0;`,`const t=near(b.cx,b.cy,36,q=>/\\/\\s*(sec|min|hr|h)\\b/i.test(q.t)&&anNum(q.t)>0)[0];P.rate=t&&anNum(t.t)>0?anNum(t.t)/(/\\/\\s*min/i.test(t.t)?60:/\\/\\s*(hr|h)\\b/i.test(t.t)?3600:1):0;`);
+rep(`P.rate=t?anNum(t.replace(/RAMP\\s*:/i,'')):1;`,`P.rate=t?anNum(t.replace(/RAMP\\s*:/i,''))/(/\\/\\s*min/i.test(t)?60:/\\/\\s*(hr|h)\\b/i.test(t)?3600:1):1;`);
+/* F-08 gate drawn with its BAR on the grey layer DCS-LP while its circle is on CON (ABC-003C OR #92-equivalent at (306, 270): the copy of ABC-003B #92 / 003D #91): the bar was not taken, the gate did not exist, its output was never driven */
+rep(`for(const s of SG){if(s.use||!/^CON$/i.test(s.l))continue;const L=len(s);if(L<6||L>BARMAX)continue;`,`for(const s of SG){if(s.use||!/(CON$|^DCS-LP$|^0$)/i.test(s.l))continue;const L=len(s);if(L<6||L>BARMAX)continue;`);
+/* F-09 six more OR gates drawn completely on another layer (bar and circle grey: ABC-003E M.0097, ABC-004A M.0138 and M.2020, ABC-007 M.0198, ABC-009A (544, 682), ABC-001C M.2013): gate circles of r 2.5 - 5.6 on CON / DCS-LP / 0 with no text inside are taken (a connector circle always has its number inside) */
+rep(`const CIc=R.ci.filter(c=>/^CON$/i.test(c.l)&&c.r>2.5&&c.r<5.2);`,`const CIc=R.ci.filter(c=>/(CON$|^DCS-LP$|^0$)/i.test(c.l)&&c.r>2.5&&c.r<5.6&&(/CON$/i.test(c.l)||!R.tx.some(q=>Math.hypot(q.x-c.x,q.y-c.y)<=c.r)));`);
+/* F-10 OR gates with a very long bar (more than 130 units: ABC-003E 134, ABC-004A 141, ABC-007 147, 7 or more inputs) or a bar on a layer with a garbled name ending in CON (ABC-009A) */
+rep(`BARMAX=130`,`BARMAX=160`);
 fs.writeFileSync(process.argv[2]||'logic-sim-v1.14.4.html',h);console.log('wip written',h.length);
