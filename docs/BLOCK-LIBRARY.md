@@ -63,3 +63,12 @@ When the user confirms a block, Claude writes a small test for it (tools/test-bl
 
 ## Shapes not recognised yet (ask the user)
 ABC-004A "4T" and "8T" · ABC-009A diamond "B | COS" · ABC-055 "DROP RATE ( X / MIN )" · ABC-001B "/" · ABC-001C "0" · 82 empty triangles + 15 empty rectangles (probably arrow heads / contact boxes — to confirm).
+
+## Evidence from the DCS engineering station (user's screenshots, 2026-10-07, loop FICFW2007 "Boiler feed water flow control", PID)
+Three windows of the Loop Design tool (project D:\LMYP2, station 101 FCS2000EI). Interpretations below are HYPOTHESES until the user confirms.
+- **Module Define 1:** `Scale 1` BS 0.0 .. FS 550.0, unit T/H (PV range) · `Scale 2` BS 0.0 .. FS 550.0 T/H (SV/MV scale) · `Ref TAGNO 1/2/3` = LICBR2001, LICBR2001A (related loops: drum level, 3-element control) · `Link NO` 0 · `Valve Sts` N · `MV Sts` N · `Limit` Y · `Div Code` 256 · "Optional elimination of the Mode": Remote / Auto / Manual (unchecked = mode available).
+- **Module Wiring:** `Act R` (N = normal, R = reverse: this is the "ACT:R" in the drawings) · PID block pins: **PV** (from SI0269, "Root Y/N"), **SV** (from DATA SI0259, **L/R** local/remote select, REM/LOC) — this is the "SET SIxxxx => TAG.SV" note in the drawing · **OMV, DOMV, DMV** (output / delta output / delta MV) · **EX-MV, EX-CMD** (external MV and command) · **AUT / MAN** (mode) · `RB-MV` = LICBR2001A.MV (read-back MV, tracking) · `BU-CMD` = M.0222 (backup command) · `FAULT` · `Alarm Lock` PHA PLA DVHA DVLA.
+- **Module Define 2 (alarms):** per PV: SH SL PH PL DPH DPL DVH DVL; per MV: MH ML (DMH ...). Each has an alarm LEVEL selector (N/0/1/2/3/4 = none or priority), a format number, a sound (WAV NO.) and a "no alarm" check box. **No limit VALUES in these windows** (probably PH/PL ... are set on the tuning / operator side).
+- Guess for the names: SH/SL = sensor (range) high/low · PH/PL = process high/low · DVH/DVL = deviation (PV−SV) high/low · DPH/DPL = rate of change of PV · MH/ML = MV high/low · DMH = MV rate. TO CONFIRM.
+
+What this gives the app: loop name + range + unit + action (reverse/direct) per tag; the real pin set of the PID module (PV / SV local-remote / MV / external MV / read-back / backup / auto-man); alarm priorities. STILL MISSING: the gains P / I / D (and PID type), the alarm limit values — ask the user for the tuning display of the same loop in the operator station.
