@@ -1,0 +1,25 @@
+/* P7: imported DXF is kept after reload and has a drawing-change report. usage: node tools/test-import.js <html> <same.dxf> <edited.dxf> (sheet ABC-050; the DXFs are written from the built-in sheet, see docs/DESIGN.md) */
+const {chromium}=require('/opt/node-tools/node_modules/playwright');const path=require('path');
+const [html,same,edit]=process.argv.slice(2);let fail=0;const ck=(n,ok,x)=>{console.log((ok?'PASS ':'FAIL ')+n+(x?'  '+x:''));if(!ok)fail++};
+(async()=>{const b=await chromium.launch({args:['--no-sandbox']});const ctx=await b.newContext({viewport:{width:1700,height:950}});const p=await ctx.newPage();const errs=[];p.on('pageerror',e=>errs.push(e.message));
+const boot=async()=>{await p.goto('file://'+path.resolve(html));await p.waitForTimeout(2500);await p.click('text=Analog · ABC >> nth=0');await p.waitForTimeout(3500)};
+await boot();
+const re=async()=>{await p.reload();await p.waitForTimeout(3000);if(await p.evaluate(()=>AN.cat!=='an'))await p.click('text=Analog · ABC >> nth=0');await p.waitForTimeout(4000)};
+const st=()=>p.evaluate(()=>{const s=AN.sheets.find(s=>s.name==='ABC-050');return{imp:!!s.imp,title:s.title,rep:s.rep&&{same:s.rep.same,rows:s.rep.rows.map(r=>r.what+':'+r.a+'>'+r.b),bgone:s.rep.bgone.length,tgone:s.rep.tgone.length,tnew:s.rep.tnew.length,err:s.rep.err},n:AN.sheets.length}});
+const base=await st();ck('built-in before import',!base.imp);
+await p.setInputFiles('input[type=file][accept=".dxf"] >> nth=1',same);await p.waitForTimeout(2500);
+let s1=await st();ck('import 1 (unchanged drawing) applied and report says IDENTICAL',s1.imp&&s1.rep.same,JSON.stringify(s1.rep)+' '+JSON.stringify(await p.evaluate(()=>AN.impErr)));ck('sheet count unchanged',s1.n===base.n);
+ck('report panel opened',await p.evaluate(()=>/Imported DXF/.test(document.getElementById('anln').textContent)&&document.getElementById('anln').style.display==='block'));
+await re();
+let s2=await st();ck('kept after reload (F5)',s2.imp&&/kept in this browser/.test(s2.title),s2.title.slice(0,70));
+await p.setInputFiles('input[type=file][accept=".dxf"] >> nth=1',edit);await p.waitForTimeout(2500);
+let s3=await st();ck('import 2 (3 texts removed) report says DIFFERENT',s3.imp&&s3.rep&&!s3.rep.same&&s3.rep.tgone===3&&s3.rep.tnew===0,JSON.stringify({same:s3.rep.same,tgone:s3.rep.tgone,rows:s3.rep.rows.filter(r=>/texts/.test(r))}));
+await re();
+let s4=await st();ck('edited version kept after reload',s4.imp&&s4.rep&&s4.rep.tgone===3);
+await p.evaluate(()=>AN.go(AN.sheets.findIndex(s=>s.name==='ABC-050')));await p.waitForTimeout(1500);
+ck('imported sheet still simulates (S built, blocks>0)',await p.evaluate(()=>{const S=AN.cs().S;return !!S&&S.blk.length>0}));
+await p.click('text=Imports');await p.waitForTimeout(500);await p.click('text=Back to built-in');await p.waitForTimeout(1500);
+let s5=await st();ck('back to built-in',!s5.imp&&s5.n===base.n);
+await re();
+let s6=await st();ck('still built-in after reload (import removed from storage)',!s6.imp&&s6.n===base.n);
+ck('no page errors',errs.length===0,errs.join('|'));console.log(fail?fail+' FAIL':'ALL PASS');await b.close();process.exit(fail?1:0)})();

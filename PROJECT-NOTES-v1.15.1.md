@@ -4,6 +4,11 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
+## WIP after v1.15.1 (not released; no "go" yet) - open items closed, persistent DXF import
+- H-17 (tools/patch-signals.js): two lone circles with the same letter on one sheet (ABC-004A "A" x2) are paired: O-07 closed. O-08 (ABC-020 "9") = drawing exit, no partner on 54 sheets. O-05 (TR256) shown by a 7-step sequence test in tools/test-blocks.js (526 checks now). P18: tools/test-loops.js 68 / 68 closed loops.
+- P7: tools/patch-import.js: imported DXF kept in IndexedDB (keys imp:list, imp:<sheet>), re-applied in loadData(); button Imports = drawing-change report (tolerance matching: texts 1.5, blocks 3 units) + Back to built-in; tools/test-import.js 10 / 10. AN_PV stays 16 (the reader did not change except H-17 which only adds a link).
+- Tests on the WIP build: guard IDENTICAL, test-blocks 526, math 998, legend FF 282 / TON 35 / TOF 19 / TPS 108, PID 68, comparators 240, rate 43, loops 68, legend-matrix 2973 / 2973, reach 0 dead ends / 0 orphans, links 182 / 182, paint 0 lit-with-0, browser suite OK (storage, project, numinput, defaults-ui, blocks-ui, links, ln, modes, anim, circles, addr-ui, ades, back-manual). Progress 81.9 %.
+
 ## v1.15.1 (logic-sim-v1.15.1.html) - legend matrix: every block of every sheet tested against its symbol (revision 1)
 - USER "go" (2026-10-07). AN_PV 15 -> 16 (net numbers moved). DITL page identical.
 - LEGEND MATRIX (user idea: use the legend to test all sheets): tools/legend-matrix.js -> docs/LEGEND-MATRIX.md: 2 973 of 2 973 blocks of the 51 sheets pass the function of their symbol (gates, FF, timers, comparators, math, T switches incl. 4-way selectors, MAN 58 / 58, PID, ramps, AI / AO / CONST / ALM, valves, SEL, SUMA 10 / 10, CTK, TP, PO).

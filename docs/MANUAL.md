@@ -50,7 +50,8 @@ Top bar, left to right:
 | Health | Reader health report of the sheet. |
 | LN tables | The F(X) linear tables and their graph. |
 | Panel | Show/hide the right panel. |
-| Import ABC DXF | Load updated drawings (see 3.7). |
+| Import ABC DXF | Load updated drawings; kept in this browser (see 3.9). |
+| Imports | List of imported drawings, drawing-change report, Back to built-in. |
 | ◀ sheet ▶ | Previous / next sheet. PageUp / PageDown also work. |
 
 Left list: the 54 sheets grouped by function, with a search box (sheet name, or any text in the sheet).
@@ -113,8 +114,8 @@ The 89 DCS linear tables of LINEAR.xls are built in, plus S1-LN38 and S1-LN39 of
 ### 3.8 View mode
 See 2.5 and 3.4. In VIEW nothing can be changed by accident: you can select, search, trace and read the descriptions.
 
-### 3.9 Updating drawings (Import ABC DXF)
-**Import ABC DXF** loads updated analog drawings. The reader rebuilds the sheet; check **Health** afterwards. Always keep a saved project file before importing.
+### 3.9 Updating drawings (Import ABC DXF) — WIP after v1.15.1
+**Import ABC DXF** loads updated analog drawings (the sheet name is the file name, e.g. `ABC-050.dxf` replaces ABC-050). The imported file is **kept in this browser** and used again every time you open the app. The saved values (forces, inputs) of that sheet are cleared at import, because the numbers of the wires can change. After the import the **Imports** panel opens with the **drawing-change report**: counts of blocks / nets / lines / circles / texts (built-in vs imported), the block kinds that changed, and the blocks and texts that exist in only one of the two. "IDENTICAL" means nothing changed. **Back to built-in** removes the import and returns to the built-in drawing. Check **Health** afterwards and keep a saved project file before importing.
 
 ### 3.10 Assumed values and data files
 Some numbers are **not written on the drawings**. The button **Assumed values** (Analog bar, next to *LN tables*) lists all of them, and the panel of the block says it too:

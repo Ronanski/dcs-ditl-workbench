@@ -44,4 +44,17 @@ for(const [n,id] of [['ABC-009A',32],['ABC-003E',4]]){const S=sheet(n),b=S.blk.f
 {let found=0;for(const r of rows){if(/ABC-000/.test(r.name))continue;const S=build(E,r);for(const q of S.sets||[]){found++;ok(q.src>=0&&q.ctl>=0&&q.tgt>=0,r.name+' "'+q.text+'" / "'+q.cond+'": source net '+q.src+', condition net '+q.ctl+', target net '+q.tgt)}}ok(found===8,'instructions SET ... => ... found: '+found+' (8 on the drawings)')}
 {const S=sheet('ABC-013'),q=S.sets.find(x=>/PICMS1002/.test(x.text));S.rt.force={};S.rt.force[q.src]=77;S.rt.force[q.ctl]=0;E.anSettle(S,5);const v0=S.rt.v[q.tgt];S.rt.force[q.ctl]=1;E.anSettle(S,5);ok(Math.abs(S.rt.v[q.tgt]-77)<1e-6,'ABC-013 IF M.0252 = 1: SI0361 (77) is written into the SV of PICMS1002 (SV net '+q.tgt+' was '+v0+')');S.rt.force[q.ctl]=0;E.anSettle(S,5);ok(Math.abs(S.rt.v[q.tgt]-77)>1e-6||S.ext.includes(q.tgt),'ABC-013 condition 0: no longer written (unless the SV is an operator value, then the written value stays)')}
 {const S=sheet('ABC-001A'),q=S.sets.find(x=>/AB0117/.test(x.text));S.rt.force={};S.rt.force[q.src]=123;S.rt.force[q.ctl]=1;E.anSettle(S,5);ok(Math.abs(S.rt.v[q.tgt]-123)<1e-6,'ABC-001A IF HIC-ULD.MAN = 1: SI0200 (123) is written into the manual value AB0117')}
+/* O-05: ABC-003E TPS (TR256) fires when FF M.008F FALLS. The FF is reset by an OR with 7 inputs: all must be 0 to set the FF first, then one goes to 1 (a SEQUENCE, so the random scan of justify.js cannot find it) */
+{const S=sheet('ABC-003E'),by=id=>S.blk.find(b=>b.id===id),tps=S.blk.find(b=>b.k==='TPS'&&S.drv[b.i[0]].length===1&&S.drv[b.i[0]][0].k==='NOT'&&by(S.drv[b.i[0]][0].id).i.length===1&&S.drv[by(S.drv[b.i[0]][0].id).i[0]][0].k==='FF');
+ ok(!!tps,'O-05 found the TPS that follows an FF through a NOT on ABC-003E');
+ if(tps){const nt=by(S.drv[tps.i[0]][0].id),ff=by(S.drv[nt.i[0]][0].id),or=by(S.drv[ff.Rn][0].id);
+  ok(or.k==='OR'&&or.i.length===7,'O-05 the reset of the FF is an OR with '+or.i.length+' inputs');
+  const run=sec=>{const n=Math.round(sec/.1);for(let i=0;i<n;i++)E.anStep(S,.1)};
+  S.rt.force={};for(const n of or.i)S.rt.force[n]=0;S.rt.force[ff.S]=0;E.anSettle(S,5);
+  S.rt.force[ff.S]=1;E.anSettle(S,5);E.anStep(S,.1);delete S.rt.force[ff.S];S.rt.force[ff.S]=0;E.anSettle(S,5);E.anStep(S,.1);
+  run(tps.p.sec+1);/* the start-up pulse (FF Q was 0 at the first scan) is over */
+  ok(S.rt.v[ff.o[0]]===1,'O-05 step 1: all 7 reset inputs 0, set pulse -> the FF is set (Q = 1)');ok(S.rt.v[tps.o[0]]===0,'O-05 step 1: the TPS output is 0 (no pulse)');
+  S.rt.force[or.i[0]]=1;E.anSettle(S,5);E.anStep(S,.1);
+  ok(S.rt.v[ff.o[0]]===0,'O-05 step 2: one reset input goes to 1 -> the FF falls (Q = 0)');ok(S.rt.v[tps.o[0]]===1,'O-05 step 2: the TPS pulses (output 1)');
+  run(tps.p.sec+1);ok(S.rt.v[tps.o[0]]===0,'O-05 step 3: after the pulse time ('+tps.p.sec+' s) the TPS output is 0 again, reset input still 1')}}
 console.log('block tests:',tot,'failures:',bad);
