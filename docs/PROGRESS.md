@@ -8,9 +8,9 @@ Phase 1 = engineering station + controller logic (what we have now). Phase 2 = p
 | 2 | Block behaviour | 25 | 59.9 % | 15.0 | `node tools/progress.js <html>`: confirmed 100 · implemented 60 · simplified 25 · missing 0, weighted by block count (3,261 blocks; PID moved simplified -> implemented in v1.11.0) v1.15.0: ALM, TP, SUMA, PO, CTK, DCMP, HLLIM, DRATE moved simplified -> implemented (each has a test: tools/test-blocks.js, test-math.js, test-rate.js; 3,318 blocks, 3,307 implemented, 11 simplified = FIELD devices) |
 | 3 | Signals and links | 10 | 94 % | 9.4 | 194 external inputs linked by tag / FROM text, 304 two-line circles, the rest are real origin signals v1.15.0: every one of 182 link pairs carries its value (tools/test-links-all.js), no dead-end wire except real exits (tools/audit-reach.js), 4-way selectors, 8 TP from the Compensation file (estimate: +9 points) |
 | 4 | Modes and tools | 15 | 87.5 % | 13.1 | 7 of 8: Run, Pause, force/inputs, Step, View, Why?, address highlight done · Trace partly (this sheet only; outgoing to other sheets open) |
-| 5 | Project / files / app | 10 | 67 % | 6.7 | 4 of 6: project file, desktop shell, exe + apk + Releases pipeline, docs done · exe / apk verified on the user's devices, persistent DXF import and drawing-change report open |
+| 5 | Project / files / app | 10 | 80 % | 8.0 | 4 of 5: project file, desktop shell + release pipeline, docs done · persistent DXF import + drawing-change report open. exe / apk tested on devices is NOT counted (user decision 2026-10-07: he tests them himself; the html is what matters) |
 | 6 | Verification | 20 | 75 % | 15.0 | 8-check rubric on the html only (section "Detailed breakdown"): 6 automated checks done on 51 / 51 sheets, PDF eye-comparison 1 / 51 (ABC-050), user confirmation 0 (estimate) |
-| | **PHASE 1 TOTAL** | 100 | | **78.6 %** | (v1.15.0 after re-measuring verification on the html only; 69.6 % with the old verification figure, 65.3 % after v1.14.3) |
+| | **PHASE 1 TOTAL** | 100 | | **79.9 %** | (v1.15.0; exe / apk device test removed from the count; 65.3 % after v1.14.3) |
 
 Rule: a block only counts as 100 when the user confirmed it AND a test exists. Honest estimate, not a promise: item 6 (verification) will move slowest.
 
@@ -98,13 +98,12 @@ Scale of `tools/block-status.json`: confirmed by the user = 100, implemented (ha
 
 Raise it: the user confirms kinds on his own screen (each confirmed kind moves from 60 to 100 for its blocks); biggest by count: CONST 261, NOT 243, AMT 225, AND 224, AI 201, SIGAB 198.
 
-### Project / files / app (weight 10) — why 67 %
-| Item | Status | Share |
-|---|---|---|
-| Project file (save / open, restore) | done (test-project, test-storage) | 1/6 |
-| Desktop shell (portable exe) | done (built by GitHub Actions v1.15.0) | 1/6 |
-| exe + apk + Release pipeline | done (run #10: exe, apk, release all green) | 1/6 |
-| Documentation (manual, reports, data files, assumed values) | done | 1/6 |
-| exe / apk verified on the user's devices | **not done**: only the user can do it | 0 |
-| Persistent DXF import + report of drawing changes | **not done**: can be built (punch list P8) | 0 |
-4 of 6 = 67 %.
+### Project / files / app (weight 10) — 80 %
+exe / apk tested on the user's devices is NOT counted (the user tests them himself; the html is what matters).
+| Item | Status |
+|---|---|
+| Project file (save / open, restore) | done (test-project, test-storage) |
+| Desktop shell (portable exe) and exe + apk + Release pipeline | done (run #10 green) |
+| Documentation (manual, reports, data files, assumed values, punch list) | done |
+| Persistent DXF import + report of drawing changes | **not done** (punch list P7) |
+4 of 5 = 80 %.
