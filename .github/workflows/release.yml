@@ -15,6 +15,7 @@ on:
       - "android/**"
       - "tools/version.js"
       - ".github/workflows/release.yml"
+      - "docs/Logic-Sim-Manual.pdf"
 permissions:
   contents: write
 jobs:
@@ -107,6 +108,7 @@ jobs:
       - name: Collect
         run: |
           cp "${{ needs.version.outputs.html }}" dist/
+          cp docs/Logic-Sim-Manual.pdf "dist/logic-sim-v${{ needs.version.outputs.version }}-manual.pdf"
           V="${{ needs.version.outputs.version }}"
           N="PROJECT-NOTES-v${V}.md"
           if [ -f "$N" ]; then awk '/^## /{ if(p) exit; p=1 } p' "$N" > notes.md; fi

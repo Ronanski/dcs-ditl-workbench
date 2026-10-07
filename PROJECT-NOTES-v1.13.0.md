@@ -4,6 +4,21 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
+## v1.13.0 (logic-sim-v1.13.0.html) - step / view / trace / why, PID defaults, strict LN lookup, SEL / CTK, descriptions, manual
+- STEP (paused): buttons +1 scan (0.1 s), +1 s, +10 s. The wires that changed flash yellow and the status line names the first ones with the new values.
+- VIEW mode: no Run, no Step, no inputs, no force, no Reset; select / search / trace still work.
+- TRACE: select a wire or block, press Trace: white = selected, cyan = driven by, orange = feeds, rest dimmed; side list with name, description and live value, click to move; T/A-M switches follow the leg in use (toggle for both); inputs that come from another sheet show "◀ sheet X" and jump there. Outgoing trace into other sheets is NOT done.
+- WHY?: a line in the block panel explains the present output (AND, OR, NOT, FF, TON, TOF, pulse, selector; other kinds show inputs -> output only).
+- DESCRIPTIONS + ADDRESS HIGHLIGHT: the unit-1 IO list and memory lists (26,783 records, data/ades-unit1.json, embedded) give the description of every tag in the input list, search and on the drawing; the selected tag is highlighted yellow (digital) / sky blue (analog) with a card (tag [address . station], description, type). Test: 1726 of 1861 address-like labels on the sheets are found (TR names are zero-padded).
+- PID: default tuning by loop type from the tag (flow, pressure, temperature, level, analysis, speed) and a "Use this speed" button per loop. Typical values, not the plant's real tuning.
+- FX / LN: strict lookup by station + LN number (109 of 111 exact). ABC-010 LN38 / LN39 exist only in station 2: used with a warning in the FX panel, no silent fallback. Each sheet gets its station from the MDL / S1 / S2 / STN texts.
+- LN EDIT: "Edit table" (LX / LY in %, X / Y computed, warning if LX goes backward), own "Reset this table" and "Reset ALL linear edits"; NOT cleared by the sheet / global Reset; saved in the project file (`ln`) and in the browser storage. The existing graph is unchanged.
+- SEL = average of the healthy transmitters (holds the last value when all are bad); CTK holds its value while the control is 0.
+- READER: a T with no input wires and a "25%" text (IGNITION POS., ABC-003A/B/C/D) is read as a constant 25 % (confirmed by the user). ABC-052 AND #112 stays as drawn (user: ignore). ABC-002 #32 ratio = scale conversion (confirmed).
+- MANUAL: docs/MANUAL.md (installation, familiarization, how to use, troubleshooting) + docs/Logic-Sim-Manual.pdf (tools/build-manual-pdf.js); also attached to the Release. Updated every release (DESIGN checklist).
+- TESTED here (Chromium, wip file == released file): guard IDENTICAL; test-project, test-circles, test-anim, test-storage, test-numinput, test-pid, test-ln, test-ades, test-trace (step, flash, trace colours, view mode) pass, no page errors. NOT tested: real devices (exe / apk), trace on every block kind, Why? for every kind.
+- Open (docs/BACKLOG.md): ABC-010 LN38/39 station; nine FF dominance cases; TP formula; unrecognised shapes; real PID gains; exe / apk behaviour on the user's devices.
+
 ## v1.12.1 (logic-sim-v1.12.1.html) - reader: constants whose value was not found
 - 18 constants (ABC-002 x5, 004A, 005, 006 x3, 010, 032, 052, 056, 001B x3, 001C) were read as 0 ("value not found"), so everything multiplied by them was dead. Two writing styles were not understood: a RATIO next to the box under "SCALE CONVERT" (40 / 120 = 0.3333, 35 / 1115, 500 / 550, 12000 / 2700, 1 / 60 ...) and a number with a unit or percent note (7.6 kg/cm2, 1.0 (100%)). Both are read now (ratio within 40 units, value with unit within 24); the block remembers where the value came from (b.note).
 - RESULT: constants not found 18 -> 0. Triage (tools/triage.js): stuck logic outputs 198 -> 156 of 2015; sheets passing the screen 19 -> 25 (adds 004A, 005, 006, 032, 001B, 056).
