@@ -21,7 +21,7 @@ portable Windows app without admin rights. The user is an automation engineer (n
 
 ## 3. Every build = this checklist
 1. Patch script `tools/patch-X.Y.Z.js` (from the previous html) -> `ditl-workbench-vX.Y.Z.html` (name + `<title>` + project-file `ver` carry the version).
-2. Guard IDENTICAL; tests: test-project, test-circles, test-storage, test-storage2, test-anim, plus a screenshot of the changed area.
+2. Guard IDENTICAL; tests: test-project, test-numinput (REAL mouse, Run and Pause), test-circles, test-storage, test-storage2, test-anim, plus a screenshot of the changed area.
 3. Update `PROJECT-NOTES-vX.Y.Z.md` (rename the file with the version, newest entry on top) and `docs/HANDOVER.md` (current state + open items).
 4. Move the PREVIOUS html to `archive/html/`, the previous patch to `tools/history/`. Root keeps exactly ONE html.
 5. Commit + push to `claude/trusting-goodall-313vmr` (no PR unless the user asks). Send the html to the user (SendUserFile; he cannot download from the sandbox).

@@ -2,6 +2,13 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
+## v1.10.2 (ditl-workbench-v1.10.2.html) - manual numeric input lost in Run mode (bug report from the user's laptop)
+- SYMPTOM: type 77 in the numeric box, press the check button -> "Type a number first, then press ✓" (FORCE) or nothing applied (INPUT), only while RUN is on; Enter worked; Pause worked; other devices worked.
+- CAUSE (diagnosis suggested by the user via another assistant, VERIFIED in the code and reproduced): the panel updater runs every 100 ms in Run and restored each box when `document.activeElement !== box`. Pressing the check button moves focus to the button, so the next tick overwrote the typed number (FORCE box -> '', INPUT box -> old value) before the click was processed. My earlier tests used Enter / instant programmatic clicks, so they never hit it. Timing + browser focus rules explain "some devices work".
+- FIX (smallest): per-field dirty state `anEdit()`: dirty from the first typed character until committed (check / Enter / change), cancelled (Esc, release) or abandoned (2.5 s after losing focus); the updater skips dirty fields. Applied to FORCE box, INPUT box (inCtl) and the panel number boxes (analog inputs, setpoints, transmitters). Slider code untouched.
+- TEST (tools/test-numinput.js, REAL mouse down 350 ms then up on the check button): v1.10.1 = FAIL for FORCE and INPUT in Run; v1.10.2 = OK in Run and Pause for click and Enter, FORCE and INPUT. Clock keeps running after the commit, slider still works, no page errors. Project file / circles / storage tests unchanged.
+- DITL identical (guard).
+
 ## v1.10.1 (ditl-workbench-v1.10.1.html) - T legs per leg, diagnostics for the laptop (user test of v1.9.2)
 - USER: in other sheets the switching rule (energized / selected path lit, other path grey) was not followed; worse in Run than in Pause (images: ABC-050 turbine start-up T chain; a T whose "a" input wire is shared).
 - FOUND (two causes, both also in Pause): (1) a wire is ONE net, so when the not-selected input of a T shares its net with another block the whole wire stayed lit; (2) the selected input of a T went grey when the T output fed an unselected input further on (ABC-050 WARM T chain: WARM selected but its wire grey because HOT overrides downstream).

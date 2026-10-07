@@ -9,12 +9,12 @@ Ako ay automation engineer (hindi coder): Taglish, simple at tapat, sabihin kung
 Pagkabasa, ibuod mo sa 5 linya kung nasaan tayo at ano ang susunod, at hintayin ang utos ko.
 ```
 
-## State (v1.10.1)
-- Current build: `ditl-workbench-v1.10.1.html` (analog page, project file Save/Open, portable app shell in `app/`, Windows build by GitHub Actions).
+## State (v1.10.2)
+- Current build: `ditl-workbench-v1.10.2.html` (analog page, project file Save/Open, portable app shell in `app/`, Windows build by GitHub Actions).
 - All 54 ABC sheets read; digital + analog links; SET SV presets on 8 sheets; T legs per leg; timers/comparators fixed on 057/008/014/019.
 
 ## Open items (ask the user which first)
-1. Laptop problem: manual analog input does not work on the user's Windows laptop (works on Android phone/tablet). Not reproducible here. Waiting for: Legend & style > Saving > **Diagnostics** report (+ F12 Console red lines) from the laptop.
+1. Laptop problem (manual numeric input in Run mode): FIXED in v1.10.2 (dirty-state bug, reproduced and tested). Ask the user to confirm on the laptop. The Diagnostics report (Legend & style > Saving) stays available.
 2. "Works only in Pause, not in Run" for T switching: not reproduced. Need screenshot + sheet name + switch states.
 3. v1.8.1 "error on refresh": not reproduced (54 sheets x refresh = 0 errors). Need the console message.
 4. Address highlight when selected (yellow / sky) with description — waits for the user's IO list.
