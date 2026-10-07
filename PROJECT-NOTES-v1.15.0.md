@@ -4,6 +4,14 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
+## v1.15.0 (logic-sim-v1.15.0.html) - signals must arrive: reader fixes, user data files, assumed values (revision 1)
+- USER "go" (2026-10-07). AN_PV 14 -> 15 (block / net numbers moved): inputs / forces saved by v1.14.x are dropped (the user had none). DITL page identical (guard also ignores the LN tables = analog data).
+- USER DATA: Compensation file -> 8 TP operating temperatures (302 / 35 / 91 / 287 C); Drum Level Calculation file -> S1-LN38 / LN39 of ABC-010 (LINEAR.xls has them only for S2: ABC-010 used the heater tables); IO list and memory lists used as checks (157 / 157 AI ranges, 150 / 153 timers). docs/DATA-FILES.md.
+- ASSUMED (user: "ikaw na ang magset"): 104 ALM limits, 8 ramp rates, PO pulse 2 s / 60 s / 0.2 s: tools/assumed-data.js -> docs/ASSUMED-VALUES.md -> button "Assumed values" + block panels. DESIGN.md rules 14 and 15.
+- READER / SIGNAL FIXES (docs/FINDINGS.md H): 44 AI pins (apex), 22 twin AI, 36 AND gates on other layers, TP timer label, OR bar 168 / circle 6.8, SIG.AB junction side, large timer D, contact glyph, 45 chained circles, arrow gaps, junction dots on layer MEM, receiver takes sender type. Dead ends 223 + 4 orphans -> 0.
+- FUNCTION BLOCKS: SUMA / SUMP, SEL modes, DIV / SQRT invalid, TP, PO pulses, "SET SIxxxx => TAG.SV" instructions, 4-way selectors (ABC-009A, 003E), circle click walks all ends (docs/FINDINGS.md G).
+- TESTS: block 519, math 998, legend FF 282 / TON 35 / TOF 19 / TPS 108, PID 68, comparators 240, switches 382, justify 2191 / 2192, links 182 / 182, paint 51 sheets x 3 patterns, browser suite. NOT tested: exe / apk on devices, real plant response, PDF sheet-by-sheet comparison. Report: docs/REPORT-v1.15.0.md. Open: O-05, O-07, O-08, O-09, O-11.
+
 ## v1.14.3 (logic-sim-v1.14.3.html) - logic verification: legend test, circles, MAN, NOT elbow pins
 - USER "go". AN_PV 13 -> 14 (block numbers moved): inputs / forces saved per sheet by an older version are dropped (settings still load). The user has no saved projects.
 - RULES FROM THE USER (this round): the gate legend is ON the drawings (ABC-000 SYMBOL LIST) - read it, do not ask; look at the diagram (arrows!) BEFORE calling something wrong; verify all 51 sheets and all block kinds, not only gates (CONTENTS 1, 2 and SYMBOL LIST are not counted: 54 - 3 = 51).

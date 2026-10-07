@@ -1,4 +1,4 @@
-# REPORT v1.15.0 — findings, actions done, as left (2026-10-07, NOT RELEASED: waiting for the user's "go")
+# REPORT v1.15.0 — findings, actions done, as left (2026-10-07) — documentation revision 1 — RELEASED
 
 Built from `logic-sim-v1.14.3.html` by `tools/patch-1.15.0.js` (= `patch-blocks.js` + `patch-defaults.js` + `patch-signals.js` + `patch-selector.js`; data in `tools/assumed-data.js` and `tools/data/`). The DITL page is byte-identical to the baseline (`tools/guard-ditl.js` → IDENTICAL; the guard now also ignores the LN tables `<script id="aln">`, which are analog data like the sheets and the descriptions).
 
@@ -12,7 +12,7 @@ Built from `logic-sim-v1.14.3.html` by `tools/patch-1.15.0.js` (= `patch-blocks.
 | 4 | Every value put in must be recorded and appear in the documentation | `tools/assumed-data.js` (single source) → `docs/ASSUMED-VALUES.md` (generated) → button **Assumed values** + block panels; DESIGN.md rule 14 | **Done** |
 | 5 | All findings and corrections visible and tabulated; document the files sent | docs/FINDINGS.md (sections A, G, H, I, B, C, F), this report, docs/DATA-FILES.md | **Done** |
 | 6 | All analog and digital signals reach their destination; all symbols work; lit when they should be, grey when they should be; energize / de-energize correct — ALL sheets | See sections 3 – 5: dead-end audit on all 51 sheets (227 → 0), every link carries its value, paint test (5 865 digital wire states = 51 sheets × 3 input patterns: lit only when the value is 1), legend truth tables, 36 more AND gates, 44 AI pins, 4-way selectors | **Done for what can be tested without the real plant** (section 6 lists what is NOT) |
-| 7 | Report before "go" | This report + the tables in the chat | **Waiting for "go"** |
+| 7 | Report before "go" | This report + the tables in the chat | **Done: go received, released as v1.15.0** |
 
 ## 2. Numbers that are not on the drawings (details: docs/ASSUMED-VALUES.md)
 | Kind | Count | Status | Where |
@@ -87,4 +87,4 @@ F-01 MUL gain constants · F-02 SUB signs · F-03 LAG time left of the box (5 bl
 O-05 ABC-003E TR256 (TPS #70) not reached by the scan · O-07 ABC-004A circles A ×2 · O-08 ABC-020 circle 9 · O-09 "tags differ" lines (45) · O-11 ABC-001C TR228 type · ALM / ramp / PO DCS values.
 
 ## 7. Release checklist state
-Patch `tools/patch-1.15.0.js` ready · AN_PV 14 → 15 (saved values of v1.14.x are dropped on first start; the user has none saved) · manual updated (PDF not rebuilt yet) · notes (PROJECT-NOTES) to be written at release · old html to `archive/html/`, old patch to `tools/history/` at release · **nothing is released until the user says "go"**.
+Patch `tools/patch-1.15.0.js` ready · AN_PV 14 → 15 (saved values of v1.14.x are dropped on first start; the user has none saved) · manual updated (PDF not rebuilt yet) · notes (PROJECT-NOTES) to be written at release · old html to `archive/html/`, old patch to `tools/history/` at release · **released on the user's go (version history: docs/RELEASES.md)**.
