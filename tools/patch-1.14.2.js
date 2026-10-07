@@ -1,5 +1,5 @@
-/* v1.14.1 -> v1.14.2 (WIP, not released). Reader fixes from the logic scan A. DITL page untouched.  usage: node tools/patch-1.14.2.js [out.html]  (default: wip file in the cwd) */
-const fs=require('fs');let h=fs.readFileSync('logic-sim-v1.14.1.html','utf8');
+/* v1.14.1 -> v1.14.2 (released). Reader fixes from the logic scan A. DITL page untouched.  usage: node tools/patch-1.14.2.js  (reads archive/html/logic-sim-v1.14.1.html, writes logic-sim-v1.14.2.html in the cwd) */
+const fs=require('fs');let h=fs.readFileSync('archive/html/logic-sim-v1.14.1.html','utf8');
 const rep=(a,b)=>{const n=h.split(a).length-1;if(n!==1)throw new Error(n+' x '+a.slice(0,90));h=h.split(a).join(b)};
 rep('<title>Logic Sim v1.14.1</title>','<title>Logic Sim v1.14.2</title>');
 /* 1. NOT (⊠) on a wire that is part of a multi-branch net: the net-wide "has an arrow" test picked the wrong pin (ABC-004A/B/C: ⊠ on the 1:BYPASS wire became a second driver of M.0146). Use the arrows on the pin's own straight wire, beyond the box: pointing away = OUT, pointing at the box = IN */
@@ -17,4 +17,6 @@ rep(`[b,t,u,cl].forEach(s=>s.use=2)}}}
  /* NOT: square with X`);
 /* 4. DCMP outputs whose wire makes an elbow (ABC-001D #19: ">= 2 MW" / "< 0.3 MW" are written over the far end of the wire, at the FF, not at the box): look for the test text near the arrow end of the output wire too */
 rep(`for(const p of outs2)for(const q of tl){const dx=p.x-q.x,dy=q.y-p.y;if(dy>-8&&dy<9&&dx>-14&&dx<60)pr.push({p,q,d:Math.abs(dy)+Math.abs(dx)*.2})}`,`for(const p of outs2)for(const q of tl){const dx=p.x-q.x,dy=q.y-p.y;if(dy>-8&&dy<9&&dx>-14&&dx<60)pr.push({p,q,d:Math.abs(dy)+Math.abs(dx)*.2});for(const ar of nets[p.n].arrows){const ex=ar.x-q.x,ey=q.y-ar.y;if(ey>-1&&ey<9&&ex>-14&&ex<10)pr.push({p,q,d:Math.abs(ey)+Math.abs(ex)*.2+3})}}`);
-fs.writeFileSync(process.argv[2]||'wip-1.14.2.html',h);console.log('wip written',h.length);
+/* 5. net / block numbering changed (new AND gates, NOT pins): saved per-sheet inputs / forces of older versions are dropped */
+rep(`const AN_PV=12;`,`const AN_PV=13;`);
+fs.writeFileSync(process.argv[2]||'logic-sim-v1.14.2.html',h);console.log('wip written',h.length);

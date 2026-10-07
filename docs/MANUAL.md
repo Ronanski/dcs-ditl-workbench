@@ -1,4 +1,4 @@
-# Logic Sim — User Manual (v1.14.1)
+# Logic Sim — User Manual (v1.14.2)
 
 Logic Sim is an offline simulator and viewer of the plant DCS logic drawings: the digital interlock pages (DITL) and the 54 analog control sheets (ABC). It runs from one file, with no network, no OPC and no connection to the plant. It is for study, training and checking logic. It is **not** connected to the real DCS and never writes to it.
 
@@ -137,5 +137,6 @@ Space run/pause · PageUp/PageDown or ←/→ sheet · F fit · Ctrl+S save · w
 | Something else | Note the sheet name, what you clicked, and a screenshot, and report it. |
 
 ## 5. What is and is not simulated
+Checked against the drawings (v1.14.2): in the simulation every digital output of the 54 sheets can be driven to both 0 and 1 (14 of them need a sequence of input changes, e.g. latches and pulses). This shows the logic is read completely, not that it matches the plant: sheet-by-sheet comparison with the PDFs is still in progress.
 Simulated: gates, flip-flops, timers (TON/TOF/pulse), T/A-M selectors, comparators, SEL (average of healthy transmitters), CTK, PID with typical tuning, valves/actuators with travel time, ramps, linear and compensation tables, constants, alarms.
 Not (yet): the real plant response (there is no plant model: you set the PV yourself or through a simple model), real PID tuning and alarm limits of the plant, other units than unit 1 for descriptions, communication with the real DCS. A few drawing symbols are still unrecognised (listed in docs/BACKLOG.md). Treat results as a study aid and verify against the real system before acting on them.
