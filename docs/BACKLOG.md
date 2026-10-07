@@ -52,3 +52,12 @@
 - Units: 4 units; drawings and lists = unit 1; unit n: first digit of the tag number = n (SB1053 -> SB2053); addresses almost identical. Add a Unit setting later.
 - Exe SmartScreen: not signed -> "More info -> Run anyway" or Unblock the zip; a real certificate costs money (decide later).
 - tools/triage.js runs in Node without the embedded LN tables: FX-related stuck counts are overstated (known).
+
+## 2026-10-07 decisions / corrections from the user (WAITING FOR HIS "GO" before any of these is built)
+- Unit setting: NOT needed now (unit 1 only; the 4 units have the same settings).
+- LINEAR semantics (user): X and Y are PERCENT of their ranges (interpolation); NOT a multiplier. The LN number belongs to a STATION (S1/S2/S3) and the sheet title ("STN101 LINEARIZE  S1-LN-01") must match: the importer must key on station + LN number, check the title, and warn on any mismatch (no silent fallback). Convert with the ranges of the sheet: x% = (x_EU - xlo) / (xhi - xlo) * 100 ; y_EU = ylo + y% * (yhi - ylo) / 100. Find the station of each ABC sheet from the MDL tags ("S1-MDL028").
+- Exe/html version mismatch (verified): every GitHub run builds the html of that commit (run 5 = v1.11.1), but the exe file name takes its number from app/package.json (still 1.10.0), so every download is called 1.10.0. Fix: take the version from the html file name in prepare-ui.js; one VERSION for html, exe and apk.
+- SmartScreen: no automatic fix without a code-signing certificate. Options: unblock the zip / PowerShell `Unblock-File`, download without browser (no Mark-of-the-Web), IT allow-list by hash, free signing only for public open-source repos (SignPath), cheap OSS certificate, or just use the html.
+- Android: APK through GitHub Actions with Capacitor (sideload, no store, no fee); not testable here on a device; iOS needs a paid Apple account -> use the html in Safari.
+- PID: range text now read (v1.11.1). Idea: default Ti by loop type from the tag letter (F flow ~15 s, P pressure ~60 s, T temperature ~180 s, L level ~120 s) until real tuning exists.
+- Candidate order: A exe/apk versioning + pipeline, B PID defaults by loop type, C LINEAR + COMPENSATION importer (strict station/LN), D group A reader defects, E SEL healthy-average + CTK, F Step/Trace/View, G IO + memory list descriptions.
