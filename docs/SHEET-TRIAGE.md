@@ -19,3 +19,6 @@ These need only a spot check by eye, one per cluster (035-039 = ONE sheet).
 2. 003B/C/D are the same drawing: check 003B only, Claude diffs the other two.
 3. Group C: spot check 014, 017, 035, 053, 055, 057 (one each); the rest follow.
 Roughly 51 sheets -> about 14 sheets to review in detail + 6 spot checks.
+
+## Update v1.12.1
+Group A constants fixed: not found 18 -> 0; stuck outputs 198 -> 156; clean sheets 19 -> 25 (added 004A, 005, 006, 032, 001B, 056). Still flagged: 6 blocks without input (ABC-003A/B/C/D T "IGNITION POS. 25%" with no wires, ABC-052 AND #112): open in the drawing itself.

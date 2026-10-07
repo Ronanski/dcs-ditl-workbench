@@ -2,6 +2,13 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
+## v1.12.1 (logic-sim-v1.12.1.html) - group A: constants whose value was not found (user "go")
+- 18 constants (ABC-002 x5, 004A, 005, 006 x3, 010, 032, 052, 056, 001B x3, 001C) were read as 0 ("value not found"), so everything multiplied by them was dead. Two writing styles were not understood: a RATIO next to the box under "SCALE CONVERT" (40 / 120 = 0.3333, 35 / 1115, 500 / 550, 12000 / 2700, 1 / 60 ...) and a number with a unit or percent note (7.6 kg/cm2, 1.0 (100%)). Both are read now (ratio within 40 units, value with unit within 24); the block remembers where the value came from (b.note).
+- RESULT: constants not found 18 -> 0. Triage (tools/triage.js): stuck logic outputs 198 -> 156 of 2015; sheets passing the screen 19 -> 25 (adds 004A, 005, 006, 032, 001B, 056).
+- NOT a reader fault (drawing is open): the T in ABC-003A/B/C/D (#47 / #63, "IGNITION POS. 25%") has no input wires drawn at all, and ABC-052 AND #112 is drawn as a bar without gate body. Left as they are; listed in docs/SHEET-TRIAGE.md for the user's look in the ladder.
+- Ratio values are plausible unit conversions (fraction of two ranges); ABC-002 #32 uses a ratio written 38 units to the left of the box (432 / 1115, same pair as ABC-006 #47): please confirm.
+- DITL identical (guard). Project file, circles, anim, PID, numeric-input and storage tests pass.
+
 ## v1.12.0 (logic-sim-v1.12.0.html) - new name, one version, exe + apk + GitHub Releases (user: "go")
 - NAME: everything is now **logic-sim-vX.Y.Z**: html, portable exe, apk. ONE version = the number in the html file name at the repo root (tools/version.js); app/prepare-ui.js and android/prepare-www.js take it from there. Found and fixed: the exe was always called "1.10.0" because its version came from a stale package.json.
 - html: title "Logic Sim v1.12.0"; project-file `ver` and Diagnostics now read the version from the title (changed in one place only). Nothing else in the html changed (DITL identical, guard).
