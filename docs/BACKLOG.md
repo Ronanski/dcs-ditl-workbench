@@ -74,3 +74,10 @@
 - NOT in scope (dropped, over-engineering): named variants, export format, extra reports.
 - CONFIRMED by the user with a screenshot of LMYP-1 #1-LINEAR.xls (sheet S1-LN1, title DIESEL OIL CALORIE CORRECTION, DWG ABC-002): the only columns edited / entered are CURVE PARAMETER LX and LY (shown as percent: 0.00% .. 120.00%, 80.00% ..). X-INPUT = X range * LX and Y-OUTPUT = Y range * LY are automatic; interpolation as now. => editor: editable LX % and LY % per row, read-only X / Y in engineering units.
 - RESET RULE (user): the linear edit has ITS OWN reset (per table + "reset all linear edits") and is NOT touched by the global / sheet Reset (that one clears forces, switches, sliders only).
+
+## Logic scan (v1.14.0 -> WIP v1.14.1)
+- Screens: tools/triage.js (stuck outputs), tools/stuck-roots.js (root causes, realistic ranges), tools/zero-analog.js (analog outputs that never get a value), tools/multi-out.js (T with 2 OUT pins), tools/why-stuck.js <sheet> <block id>, tools/shot-region.js (picture of a region), tools/test-back-manual.js.
+- v1.14.0: 146 of 2011 logic outputs never change (7.3 %); analog outputs that never get a value 13 of 1018 (ABC-002 x6, 010 x3, 030 x3 (test artifact), 052 x1).
+- Found + fixed in WIP v1.14.1 (tools/patch-1.14.1.js, wip/): (1) a vertical 2-pin block with no input: the upper pin is the input (ABC-002 F(X) LN5, fed from circle 001C); (2) T with two OUT pins: the pin labelled "A" is the A input (ABC-004A #3 #9, 010 #3 #23 #43, 011 #14, 012 #14). Result: analog outputs that never get a value 13 -> 1 (ABC-052 CTK #141: its control comes from another sheet = test artifact); stuck 146 -> 139; clean sheets 29 -> 30.
+- Not defects (test artifacts): most HC / LC (alarm limits in engineering units, e.g. 980 C, vs random inputs), inputs coming from other sheets (LINK), outputs that go nowhere on the sheet (alarms to the DCS).
+- Still to check by eye against the drawing: ABC-003E CMPK "< X%" x4 and NOT x4 (input FICDO1043A.LOC analog), ABC-001C DCMP "H / L", ABC-009A / 009B / 004C NOT on a .MAN / .LOC analog tag, ABC-020 AND #108/#109 (4 links from station 4 M.0344-M.0347).
