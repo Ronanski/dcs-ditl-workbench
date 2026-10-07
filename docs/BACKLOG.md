@@ -114,7 +114,7 @@
 - MAN stations (ABC-015 / 016; found by the scan "nets with 2+ drivers"): the lower row of MAN boxes is drawn TWICE (two identical rectangles) = duplicate MAN blocks (16 on 015 / 016), and the PV wire runs under the box showing a stub on its left edge = a false output pin on the PV net. Both fixed: nets with 2+ real drivers 43 -> 0, duplicate blocks 16 -> 0; check AI = 37, MAN = 55 -> PV 37, MV 55.
 - STILL OPEN (tools: the scan in the notes of this round): 28 numbered / letter circles with "FROM / TO ABC-xxx" that find no partner on the other sheet (e.g. 003B circles 6 and 8 FROM 003A, 003E circles 4 / 5 FROM 007, 004A circles 1 / 7 TO 005, 004B / 004C circles 5 / 6 / 8 / 9 TO 004A). To be checked one by one against both drawings.
 
-## Logic verification, round 6 (WIP v1.14.4, tools/patch-1.14.4.js; not released)
+## Logic verification, round 6 (WIP v1.15.0, tools/patch-1.15.0.js; not released)
 - Full table of findings (what the drawing shows, what the simulator did, how to check): **docs/FINDINGS.md**.
 - New scans: tools/audit-sheets.js, audit-signs.js, audit-params.js, audit-shapes.js, shot-multi.js (contact sheet of several places).
 - Fixed in the WIP: MUL gain constants, SUB signs 9 – 13 units from the pin, LAG times written left of the box (5 blocks used 15 s), timer 300 s read as 5 s (ABC-013 TR74), the RATE LIMITER symbol "V⟩" (3 blocks) read as a high limit, unrecognised grey blocks (limiter ABC-001A, 2 subtract boxes ABC-001A, RATE LIMIT ABC-001B, add box ABC-001D, summation bars ABC-026 / 027).

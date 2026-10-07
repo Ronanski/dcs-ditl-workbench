@@ -1,4 +1,4 @@
-# Logic Sim — User Manual (v1.14.3)
+# Logic Sim — User Manual (v1.15.0)
 
 Logic Sim is an offline simulator and viewer of the plant DCS logic drawings: the digital interlock pages (DITL) and the 54 analog control sheets (ABC). It runs from one file, with no network, no OPC and no connection to the plant. It is for study, training and checking logic. It is **not** connected to the real DCS and never writes to it.
 
@@ -108,7 +108,7 @@ Select a PID block. The panel shows PV, SV, output, A/M mode and tuning (Kp, Ti,
 - Windows exe: Save/Open use normal file dialogs. Android: Save shows the share sheet (save to Files/Drive/…), Open picks a file.
 
 ### 3.7 LN tables (F(X) linearization)
-The 89 DCS linear tables are built in. **LN tables** shows the graph. **Edit table** lets you change the LX/LY points (in percent of the ranges; X and Y are computed). A warning shows if LX goes backward. Edits have their own **Reset this table** and **Reset ALL linear edits**; Reset on the sheet does not clear them. Each FX block finds its table by station and LN number; if only another station has that number, a warning is shown in the FX panel instead of silently using it.
+The 89 DCS linear tables of LINEAR.xls are built in, plus S1-LN38 and S1-LN39 of the drum level (from the Drum Level Calculation file). **LN tables** shows the graph. **Edit table** lets you change the LX/LY points (in percent of the ranges; X and Y are computed). A warning shows if LX goes backward. Edits have their own **Reset this table** and **Reset ALL linear edits**; Reset on the sheet does not clear them. Each FX block finds its table by station and LN number; if only another station has that number, a warning is shown in the FX panel instead of silently using it.
 
 ### 3.8 View mode
 See 2.5 and 3.4. In VIEW nothing can be changed by accident: you can select, search, trace and read the descriptions.
@@ -116,7 +116,15 @@ See 2.5 and 3.4. In VIEW nothing can be changed by accident: you can select, sea
 ### 3.9 Updating drawings (Import ABC DXF)
 **Import ABC DXF** loads updated analog drawings. The reader rebuilds the sheet; check **Health** afterwards. Always keep a saved project file before importing.
 
-### 3.10 Keyboard
+### 3.10 Assumed values and data files
+Some numbers are **not written on the drawings**. The button **Assumed values** (Analog bar, next to *LN tables*) lists all of them, and the panel of the block says it too:
+- **TP** (flow temperature compensation, 8 blocks): the operating temperature comes from your Compensation file (302 / 35 / 91 / 287 °C). Real data. DP' = DP / Kt.
+- **ALM** (104 alarms): the four limits HH / H / L / LL are **ASSUMED** for a 150 MW CFB boiler with reheat. They are NOT the DCS values. Type your own value in the block panel to replace one (it is saved with the project).
+- **Ramp boxes** (8 boxes without a rate on the drawing) and **PO / PIDV pulses** (cycle 2 s, full stroke 60 s, shortest pulse 0.2 s): **ASSUMED**, editable in the panel.
+- **F(X) LN38 / LN39 of ABC-010** (drum level compensation): taken from your Drum Level Calculation file because LINEAR.xls has them only for station 2.
+Every number, with the reason for it, is in `docs/ASSUMED-VALUES.md`; the files you sent and where each one is used are in `docs/DATA-FILES.md`.
+
+### 3.11 Keyboard
 Space run/pause · PageUp/PageDown or ←/→ sheet · F fit · Ctrl+S save · wheel/pinch zoom · drag pan.
 
 ## 4. Troubleshooting
@@ -137,6 +145,6 @@ Space run/pause · PageUp/PageDown or ←/→ sheet · F fit · Ctrl+S save · w
 | Something else | Note the sheet name, what you clicked, and a screenshot, and report it. |
 
 ## 5. What is and is not simulated
-Checked against the drawings (v1.14.3): flip-flops (reset wins when S = R = 1) and timers follow the symbol list of ABC-000; in the simulation every digital output of the 54 sheets can be driven to both 0 and 1 (14 of them need a sequence of input changes, e.g. latches and pulses). This shows the logic is read completely, not that it matches the plant: sheet-by-sheet comparison with the PDFs is still in progress.
-Simulated: gates, flip-flops, timers (TON/TOF/pulse), T/A-M selectors, comparators, SEL (average of healthy transmitters), CTK, PID with typical tuning, valves/actuators with travel time, ramps, linear and compensation tables, constants, alarms.
+Checked against the drawings and your files (v1.15.0): flip-flops (reset wins when S = R = 1) and timers follow the symbol list of ABC-000; 150 of 153 timers equal the TR table of your memory lists (type and time); 157 of 157 AI ranges equal your IO list; in the simulation every digital output of the 51 sheets can be driven to both 0 and 1 (2191 of 2192; 18 need a sequence of input changes, e.g. latches and pulses); every link between sheets carries its value; no wire is a dead end except the real exits (TO DITL / TCS, annunciator, memory bit); on the screen a digital wire is lit only when its value is 1. The ABC → DITL crossings are not simulated (the DITL page is never touched). This shows the logic is read completely, not that it matches the plant: sheet-by-sheet comparison with the PDFs is still open.
+Simulated: gates, flip-flops, timers (TON/TOF/pulse), T/A-M selectors, comparators, SEL (average of healthy transmitters), CTK, PID with typical tuning, valves/actuators with travel time, ramps, linear and compensation tables, constants, alarms (limits assumed), pulse output.
 Not (yet): the real plant response (there is no plant model: you set the PV yourself or through a simple model), real PID tuning and alarm limits of the plant, other units than unit 1 for descriptions, communication with the real DCS. A few drawing symbols are still unrecognised (listed in docs/BACKLOG.md). Treat results as a study aid and verify against the real system before acting on them.

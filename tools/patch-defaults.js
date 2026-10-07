@@ -1,5 +1,5 @@
 /* v1.15 WIP: defaults that are NOT on the drawings (tools/assumed-data.js = source of truth, docs/ASSUMED-VALUES.md = the list).
-   Called by tools/patch-1.14.4.js after patch-blocks.js: require('./patch-defaults.js')(rep).
+   Called by tools/patch-1.15.0.js after patch-blocks.js: require('./patch-defaults.js')(rep).
    - TP  : operating temperature of each flow from the user's Compensation file (real data).
    - ALM : ASSUMED limits HH / H / L / LL (150 MW CFB with reheat).
    - RATE: ASSUMED rate of the ramp boxes that have no number on the drawing.
@@ -42,4 +42,10 @@ function asOpen(){anln.hidden=false;anln.style.display='block';anln.innerHTML=''
   h$('b',{txt:'PO / PIDV pulse output (ASSUMED)'}),tab(['Pulse cycle s','Full stroke s','Shortest pulse s','Why'],[[D.PO.cyc,D.PO.stroke,D.PO.minp,D.PO.basis]]),
   h$('b',{txt:'ALM limits (ASSUMED) — '+D.ALM.length+' alarms'}),tab(['Tag','HH','H','L','LL','Unit','Description','Why'],D.ALM.map(e=>[e.tag,e.hh,e.h,e.l,e.ll,e.u,e.desc,e.basis])))}
 bAs.onclick=()=>{if(anln.style.display==='block'&&anln.firstChild&&/NOT written/.test(anln.firstChild.textContent)){anln.style.display='none';anln.hidden=true}else asOpen()};`);
+/* F(X) LN38 / LN39 of STATION 1 (ABC-010 drum level pressure compensation) are NOT in LINEAR.xls (only S2-LN38 / S2-LN39 of the heaters are): the sheet had no table (y = x). The user's file "Drum Level Calculation.xls" has the two curves (K = LN39 Y-axis, N = LN38 Y-axis, x = drum pressure kg/cm2). */
+{const dl=require('./data/drum-level-ln.json'),ent=(ln,pts,title)=>({key:'S1-LN'+ln,stn:1,ln,dwg:'ABC-010',ptn:'S1-LN-'+ln,title,xr:[0,250],yr:[0,1],xu:'RANGE (kg/cm2)',yu:'RANGE (%)',src:'Drum Level Calculation.xls',pts});
+ /* units deduced from the sheet (SUB: 100 - LN38 = offset in %, DIV: / LN39 = gain as a ratio): LN38 y = N x 100 (%), LN39 y = K (ratio). Check: with these units the sheet gives level out = level in at 0 kg/cm2 (identity), as physics needs; any other unit choice gives an offset / gain error at zero pressure. */
+ const add=[Object.assign(ent(38,dl.LN38.map(q=>[q[0],q[1]*100]),'DRUM LEVEL PRESSURE COMPENSATION F4(p), N x 100 % (from the Drum Level Calculation file)'),{yr:[0,100]}),ent(39,dl.LN39,'DRUM LEVEL PRESSURE COMPENSATION F3(p), K as a ratio (from the Drum Level Calculation file)')];
+ rep(String.raw`<script type="application/json" id="aln">[`,String.raw`<script type="application/json" id="aln">[`+JSON.stringify(add).slice(1,-1).replace(/<\/script/gi,'<\\/script')+',');
+ rep(String.raw`(tb&&!man?tb.key+' · '+tb.dwg+' · ':'')`,String.raw`(tb&&!man?tb.key+' · '+tb.dwg+' · '+(tb.src?'FROM THE FILE '+tb.src+' (not in LINEAR.xls) · ':''):'')`)}
 };

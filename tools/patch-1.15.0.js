@@ -1,7 +1,7 @@
-/* v1.14.3 -> v1.14.4 (WIP, not released). Reader fixes from the sheet-by-sheet verification (docs/FINDINGS.md). DITL page untouched.  usage: node tools/patch-1.14.4.js [out.html]  (reads archive/html/logic-sim-v1.14.3.html, or the root file before it is archived; writes logic-sim-v1.14.4.html) */
+/* v1.14.3 -> v1.15.0 (WIP until the user says go). Reader fixes from the sheet-by-sheet verification (docs/FINDINGS.md). DITL page untouched.  usage: node tools/patch-1.15.0.js [out.html]  (reads archive/html/logic-sim-v1.14.3.html, or the root file before it is archived; writes logic-sim-v1.15.0.html) */
 const fs=require('fs');const src=fs.existsSync('logic-sim-v1.14.3.html')?'logic-sim-v1.14.3.html':'archive/html/logic-sim-v1.14.3.html';let h=fs.readFileSync(src,'utf8');
 const rep=(a,b)=>{const n=h.split(a).length-1;if(n!==1)throw new Error(n+' x '+a.slice(0,90));h=h.split(a).join(b)};
-rep('<title>Logic Sim v1.14.3</title>','<title>Logic Sim v1.14.4</title>');
+rep('<title>Logic Sim v1.14.3</title>','<title>Logic Sim v1.15.0</title>');
 /* F-01 MUL with ONE input and a number written above the X box ("0.8", "1.2" on ABC-002): the number is the gain; it was ignored (output = input x 1) */
 rep(`   case 'DIV':{const s=ins.slice().sort(posOrder);let num=null,den=null;`,`   case 'MUL':{b.i=ins.map(p=>p.n);if(ins.length===1){const t=near(b.cx,b.cy,16,q=>/^-?\\d+(?:\\.\\d+)?$/.test(q.t.trim()))[0];b.gain=t?+t.t.trim():1}break}
    case 'DIV':{const s=ins.slice().sort(posOrder);let num=null,den=null;`);
@@ -53,4 +53,6 @@ rep(`if(nl.size)(tgt?S.xc:S.conn).push({num,tgt,x:c.x,y:c.y,r:c.r,nets:[...nl],s
 rep(`if(S.gate.some(g=>g.body&&g.body.r&&anD(g.body.cx,g.body.cy,c.x,c.y)<.5))continue;`,`if(S.gate.some(g=>g.body&&g.body.r&&anD(g.body.cx,g.body.cy,c.x,c.y)<.5))continue;if(S.shp.some(sh=>sh.ty==='quad'&&c.x>=sh.x0&&c.x<=sh.x1&&c.y>=sh.y0&&c.y<=sh.y1))continue;`);
 require('./patch-blocks.js')(rep);
 require('./patch-defaults.js')(rep);
-fs.writeFileSync(process.argv[2]||'logic-sim-v1.14.4.html',h);console.log('wip written',h.length);
+require('./patch-signals.js')(rep);
+require('./patch-selector.js')(rep);
+fs.writeFileSync(process.argv[2]||'logic-sim-v1.15.0.html',h);console.log('wip written',h.length);

@@ -1,10 +1,10 @@
 # FINDINGS — what the logic verification found wrong (and how to check it yourself)
 
 Method: every finding was found by an automatic scan, then **looked at on the drawing** (with the arrows) before it was called wrong. Coordinates are drawing units (x, y); picture of a place: `node tools/shot-region.js <html> ABC-xxx x y 60 out.png`, several at once: `node tools/shot-multi.js <html> out.png "ABC-xxx,x,y,60" ...`.
-Status: **R-xx** = already released (v1.14.2 / v1.14.3). **F-xx** = fixed in the WIP v1.14.4 (not released until the user says "go"). **O-xx** = open / low risk.
+Status: **R-xx** = already released (v1.14.2 / v1.14.3). **F-xx** = fixed in the WIP v1.15.0 (not released until the user says "go"). **O-xx** = open / low risk.
 "Before" = what the simulator did with the old reading. Forcing a wire in the app: click the wire / tag, type the value, press the check button (RUN or PAUSE).
 
-## A. Fixed in WIP v1.14.4 (not released)
+## A. Fixed in WIP v1.15.0 (not released)
 
 | ID | Sheet · block · place | What the DRAWING shows | What the simulator did BEFORE | How to check (after the build) |
 |---|---|---|---|---|
@@ -33,6 +33,34 @@ Status: **R-xx** = already released (v1.14.2 / v1.14.3). **F-xx** = fixed in the
 | G-07 | The instructions "IF M = 1 SET SIxxxx => TAG.SV" (7) and "SET SI0200 => AB0117" (ABC-001A) | the written instruction is part of the logic | not simulated (CTK only passed the value) | executed: the source is written into the SV of the controller (DEV pin "SV" in front of its PID) / into the COS value while the condition holds; the condition tag is an input you can set | ABC-013: M.0252 = 1, SI0361 = 77 → the SV of PICMS1002 is 77 |
 | G-08 | Page links: click on a circle | "go through ALL the ends, again and again: 1 to 2, to 3, back to 1" | one click = one other end | every click goes to the next end of the group (this sheet and every sheet named by the number / letter + sheet or the FROM / TO text, "004B/C" = both, also through the other circles), after the last the first again; the partner of a link is chosen by the tag first, by position only when the tags do not decide | ABC-001B "C": 001C, 001C, 001A, 001B, 001C ... (`tools/test-blocks-ui.js`) |
 | G-09 | Mathematics (ABS, ADD, SUB, SUM, DEV, MUL, DIV, SQRT, HS, LS, HLIM, LLIM, HLLIM, LAG) | the formula of the legend | not tested on every block | 998 random-input checks on every block of the 54 sheets: 0 mismatches | `node tools/test-math.js <html>` |
+
+## H. Signals that did not reach their destination — found by `tools/audit-reach.js` (WIP v1.15.0)
+Method: every wire that is DRIVEN but feeds nothing (dead end) and every wire that feeds logic but nobody drives (orphan) was listed on all 51 sheets, then each group was LOOKED at on the drawing (arrows!). 223 dead ends + 4 orphans at the start; every one was either fixed (below) or shown to be a real exit (section H2).
+
+| ID | Sheet · block · place | What the DRAWING shows | What the simulator did BEFORE | Fix (patch `tools/patch-signals.js`) | How to check |
+|---|---|---|---|---|---|
+| H-01 | **44 AI boxes whose triangle points UP**: ABC-015 ×12, 016 ×10, 020 ×8 (S4 AI0368 … 0375), 008 ×3, 007 ×2 (AI0192 …), 014 ×2, 003A / B / C / D, 030, 050, 052 (e.g. ABC-015 AI0544 above POSITIONER ZT-FA1005 at (96, 462)) | Field wire comes IN at the base, the signal leaves at the APEX (to the SIG.AB box and the loop) | In / out pins swapped (the lower pin was always "out"): the AI value went into the field wire, nothing downstream saw it | OUT pin = the pin at the apex of the triangle | `audit-reach.js`: AI dead ends 44 → 0 |
+| H-02 | 22 pairs of AI boxes with the SAME tag on one sheet: the positioner feedback AI (follows the valve) and the AI that feeds the MAN PV (ABC-015 ×12: AI0544 … 0564, ABC-016 ×10: AI0565 … 0423) | One transmitter drawn twice | The AI that feeds the loop was an independent slider: the PV of the MAN never followed the valve position | The free twin follows the feedback AI (valve / actuator position) | open ABC-015, move HICFA1005 MV: PV (AI0544) follows the valve |
+| H-03 | **36 AND gates** drawn as a bar + a small rectangle whose prongs are on layer 0 / DCS-LP instead of CON: ABC-003E ×8 (M.5012 / M.5011 → FF of each burner), 009A ×11, 009B ×4, 004A ×5, 004B ×2, 004C ×2, 001D ×2, 001C ×1, 020 ×1 (+1 in the legend ABC-000) | AND symbol of the legend (bar + box) | Not recognised as a gate: the inputs were merged by the bar into one net, outputs such as the comparator M.5012 or the OR M.0298 had no logic behind them (dead ends) | prongs / closing line accepted on layers CON, DCS-LP and 0; the closing line must lie between the prongs (H-03b: it had taken the wire of a T switch on ABC-004B and cut circle 21) | `node tools/count-blocks.js` before / after: 36 more AND; truth tables of the legend still 282 / 282; justify 2191 of 2192 digital outputs reach 0 and 1 |
+| H-04 | ABC-004A · TR16 "TP 2s" at (722, 608) | Pulse timer written "TP" (grey D) | Not a timer: the NOT in front of it dead-ended | label TP accepted as TPS | test-legend TPS 107 → 108 |
+| H-05 / H-06 | ABC-005 · OR M.0148 (circle at (235, 296)) | OR with 5 inputs drawn as ONE bar 168 long and a circle of radius 6.8 | Bar > 160 and circle > 5.6 were refused: plain wire, the OR in front of it dead-ended | bars up to 200, OR circle radius up to 7.2 | ABC-005: 2 OR instead of 1 |
+| H-07 | ABC-007 AI0192 (314, 142) and ABC-020 (8 AIs "S4 AI0368 … 0375") | AI → junction → H/ comparator on the left AND SIG.AB box on the right | The SIG.AB rule cut the AI wire from BOTH collinear sides: the comparator got nothing | only the pieces on the SIG.AB side of the junction are the "signal abnormal" wire | 9 nets merged back; AI dead ends 0 |
+| H-08 | ABC-001D · TOF TR221 (639, 306) | Large D (r = 6.8) with its label "TOF" 15.9 away | Label search radius 2.2 × r = 14.9: not a timer, the AND in front of it dead-ended | radius at least r + 10 | test-legend TOF 18 → 19 |
+| H-09 | ABC-055 · contact glyph (two small circles + bar) at (760, 405): FF M.000A "BU-CMD" opens / closes the wire from the T switch to the PO | Control arrow 0.6 beside the circle axis | The glyph needed the arrow 3.3 ± 2.2 beside the axis: no contact, the T output dead-ended | any digital arrow tip within 5.8 of the glyph axis | ABC-055: 1 contact (CTK) |
+| H-10 | 45 circles in 11 sheets: ABC-004A 21 → 21 / 004B → 21 / 004C, ABC-003A 12 (→ 003B / C / D), ABC-027 01 / 026 + A, 013 (9), 050 (7), 003E (7), 001C (5), 003A (9) … | Chain of touching circles: the arrow ends in the first, the others touching it (same wire or same number) are more senders (fan-out) | Read as receivers (no arrow): they could not pair, the values of 003A "12" never reached 003B / C / D | touching circle with the same wire or number as a sender = sender, and takes its wire | `test-links-all.js`; ABC-027 "A" now paired |
+| H-11 | ABC-003E · 4 CMPK "< X%" (O-03) | Set point = the text "3%" at the end of the wire (PS0005 of the function block table) | Looked like an orphan input | already read as a known constant (S.kn = 3 %); the audit now says so | 4 orphans → 0 (explained, not a defect) |
+
+### H2. Wires that really end (not defects, listed so you can judge) — `node tools/audit-reach.js <html> --all`
+| Kind | Count | Examples |
+|---|---|---|
+| Output pin of an AO / ALM / MAN / PO / SUMA … (terminal block) | 232 | AO0592 to the I/P, ALM → HMI |
+| Exit "TO DITL xx-yy" (hexagon / text) | 91 | ABC-019 "REHEATER INLET DE-S/H TEMP. < 11 °C … TO DITL 35-09" |
+| Annunciator / "( TO TCS )" / "TO ABC-xxx" text | 10 | ABC-004A TOF B.080B / C / D "CRT (ANN.)", ABC-001C AO0359 "( TO TCS )" |
+| Written as a memory bit with no reader on the ABC sheets (M.xxxx, B.xxxx) | 5 | ABC-012 M.0248 FF, ABC-001D M.200D / M.200E |
+| Contact of an instruction text (CTK) / source of "SET SIxxxx => TAG.SV" | 6 | ABC-007 ×2, 013, 051, 052 |
+| Second output pin of a PID that is already used | 30 | tick marks at the PID box edge (O-02) |
+| Stub drawn inside its own block | 4 | RAMPB box lines ABC-007 |
+**Not simulated by design:** the ABC → DITL crossings (the DITL page is never touched): the 91 "TO DITL" exits end at the sheet border.
 
 ## B. Already released (v1.14.2 and v1.14.3)
 
@@ -70,7 +98,7 @@ Sheets that are copies of each other (035-039, 003B/C/D, 004B/C, 011/012, 026/02
 
 Block-by-block comparison of the **function blocks against the PDF drawings, sheet by sheet** is not finished: PID details (real gains, alarm limits, REM/LOC), the FX tables are identical to LINEAR.xls (89 of 89) but their use on each sheet was not compared one by one, SEL / CTK / TP behaviour is as agreed with the user but not compared per sheet, DIV order (a / b) was read from the formula text only. The automatic scans above find reading mistakes; they cannot find a wrong formula that is read consistently.
 
-## F. Link audit (tools/audit-links.js, WIP v1.14.4) — see docs/LINKING.md for the rules
+## F. Link audit (tools/audit-links.js, WIP v1.15.0) — see docs/LINKING.md for the rules
 789 circles: 381 numbered, 104 letter, 304 name + sheet. 419 are paired inside their own sheet. 377 carry a sheet name or a FROM / TO text, 364 are linked to the other sheet, plus 27 signal-tag links. Two-text circles (name / sheet): 303 of 304 (ABC-054 HRP is linked by its tag SI0180).
 Checked on the drawing and explained (not a defect): ABC-004A "A" (194, 354) and (381, 95) tie to the same wire SI0110 (same tag, joined by the tag rule); ABC-027 "A" circles sit beside the "01 / 026" circle (same signal, tag SI0120 / SI0121); ABC-054 HRP.
 **Still open (to check with the user):** ABC-020 circle "9" (sink at 501, 599) has no partner anywhere; the audit still prints "tags differ" lines that must be looked at one by one on the drawings: ABC-003B / C / D circle "2" ↔ ABC-003A, ABC-004A FFD ↔ ABC-001C, ABC-009A / B "L", ABC-012 / 001C "MST", ABC-013 / 050 "BOF", ABC-050 / 052 "6", ABC-015 / 016 "1" ↔ ABC-057 (M.144C vs B.1206: the same signal under two addresses?), ABC-004A circle 8 (sender in 004B, family numbering 2 / 5 / 8 / 11).
