@@ -19,10 +19,13 @@ portable Windows app without admin rights. The user is an automation engineer (n
 8. **Bump `AN_PV`** whenever the reader changes net / block numbering (saved inputs/forces are keyed by those numbers). Current: 11.
 9. **UX the user asked to keep:** the existing LN table graph ("LN tables" button) stays; the LN edit (when built) has its OWN reset and is not touched by the global / sheet Reset.
 10. **Truth in reporting.** Say what was tested and what was NOT (e.g. the Windows exe is only built on GitHub, not run by Claude).
+11. **The legend is the law (user, 2026-10-07: "always remember this").** `docs/FUNCTIONALITY.md` (from the SYMBOL LIST sheet ABC-000 and the user's legend summary) says what EVERY symbol must do. Whoever builds or checks anything reads it first; a block that does less than its entry is a defect even when all tests pass. The only exception the user keeps for himself: how the dashed (digital) and continuous (analog) lines are drawn / coloured. EVERYTHING else is followed strictly.
+12. **Page links are followed strictly** (numbered circles, letter circles, number / letter + sheet circles, single circles with "( FROM / TO ABC-xxx )", several sheets in one text such as "004B/C", several signals in one link, signal tags that leave one sheet and enter another): see `docs/LINKING.md`. `node tools/audit-links.js <html>` must report no problem before a build.
+13. **Look before you change.** A reading mistake is only called a mistake after the drawing was LOOKED at, arrows included (`tools/shot-region.js`, `tools/shot-multi.js`). No blind troubleshooting. Every finding goes in `docs/FINDINGS.md` with what the drawing shows, what the simulator did, and how the user can check it.
 
 ## 3. Every build = this checklist
 1. Patch script `tools/patch-X.Y.Z.js` (from the previous html) -> `logic-sim-vX.Y.Z.html`. THE version lives in the file name; the `<title>` ("Logic Sim vX.Y.Z") is the only place inside the html (project-file `ver` and Diagnostics read it from there).
-2. Guard IDENTICAL; tests: test-project, test-numinput (REAL mouse, Run and Pause), test-circles, test-storage, test-storage2, test-anim, plus a screenshot of the changed area.
+2. Guard IDENTICAL; `node tools/audit-links.js`, `test-legend.js`, `test-rate.js`, `audit-signs.js`, `audit-params.js`, `multi-driver.js`, `dup-blocks.js` clean; tests: test-project, test-numinput (REAL mouse, Run and Pause), test-circles, test-storage, test-storage2, test-anim, plus a screenshot of the changed area.
 3. Update `docs/MANUAL.md` (and rebuild the PDF: `node tools/build-manual-pdf.js`) when anything the user sees changes; update `PROJECT-NOTES-vX.Y.Z.md` (rename the file with the version, newest entry on top), `docs/HANDOVER.md` (current state + open items) and `docs/PROGRESS.md` (run `node tools/progress.js <html>`; tell the user the new %).
 4. Move the PREVIOUS html to `archive/html/`, the previous patch to `tools/history/`. Root keeps exactly ONE html.
 5. Commit + push to `claude/trusting-goodall-313vmr` (no PR unless the user asks). The push builds exe + apk and publishes the GitHub Release (see §4b): check the run (mcp__github__actions_list) and fix the build if it fails. Send the html to the user (SendUserFile; he cannot download from the sandbox).
@@ -36,7 +39,7 @@ android/    Android shell (Capacitor, WebView, same html) + signing/ (sideload k
 .github/workflows/release.yml   builds exe + apk and publishes the Release
 baseline/   ditl-workbench-v1.0.0.html (reference for the DITL guard) — never delete
 tools/      lib.js, guard-ditl.js, test-*.js, shot.js, audit.js, patch-<current>.js ; tools/history/ = old patch scripts
-docs/       ARCHITECTURE.md, HANDOVER.md, PROGRESS.md, BACKLOG.md, BLOCK-LIBRARY.md (behaviour spec, user confirms), SHEET-TRIAGE.md, BLOCK-COVERAGE.md ...
+docs/       FUNCTIONALITY.md (what every symbol must do), LINKING.md (page links), FINDINGS.md (what was found wrong + how to check), ARCHITECTURE.md, HANDOVER.md, PROGRESS.md, BACKLOG.md, BLOCK-LIBRARY.md (behaviour spec, user confirms), SHEET-TRIAGE.md, BLOCK-COVERAGE.md ...
 archive/    old html builds, old notes, old pdf (nothing is deleted, only moved; git history keeps everything)
 ```
 
