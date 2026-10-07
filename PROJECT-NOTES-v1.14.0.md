@@ -4,6 +4,15 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
+## v1.14.0 (logic-sim-v1.14.0.html) - three modes: VIEW / RUN / PAUSE (Back + Next), auto-trace, thin solid wires
+- USER design (replaces the v1.13 Trace button and the +1 scan / +1 s / +10 s buttons).
+- **VIEW** (default when the app opens): every wire plain grey, nothing simulated, no inputs / force. Click a block or a wire = it is traced automatically (glow: white selected, blue driven by, magenta feeds; rest dimmed; list in the panel). Click an empty place = trace gone. No Trace button any more.
+- **RUN**: the wires that should be live light up. Pressing Run from VIEW forces nothing by itself; forced / simulated values exist only after the user sets them and are removed only by Reset. Going back to VIEW hides them (and the state), RUN shows them again.
+- **PAUSE**: same colours as RUN, frozen. Step 1 / 5 / 10 / 30 / 60 s with **Next ▶** (forward) and **◀ Back** (rollback). Back restores the whole simulation state (values, timers, valves, PID) from a history of snapshots kept while running / stepping (one per simulated second, up to ~10 min, fewer when many sheets are linked); if the nearest snapshot is earlier it replays forward to the exact time. Inputs changed after that moment are not replayed. Reset clears the history. History is per opened sheet (with its linked sheets).
+- **Wires**: default is thin and solid for live digital AND analog (the double-line tube is still a choice in Legend & style); a saved older setting is migrated once (wv:2). Digital grey = 0; analog always coloured (carries a value, even 0); only VIEW is grey.
+- TESTED here (Chromium): tools/test-modes.js (view default, grey, click = trace, blank = clear, Run leaves VIEW, no trace in RUN, Next +10 s, Back restores time and ALL net values, Back 5 s after two Next, Back 1 s after a free run, return to VIEW, Reset clears history) + the older tests (project, storage, numinput, pid, ln, anim, circles, ades) with VIEW switched off first. Guard IDENTICAL.
+- NOT tested: rollback with user input changes between steps, with many linked sheets at 300x, on real devices (exe / apk). History uses structuredClone (modern Chrome / Electron / Android WebView).
+
 ## v1.13.1 (logic-sim-v1.13.1.html) - wire colours in Trace / Step no longer hide the signal state
 - USER: the wire colours became confusing in Run / Pause / View / Trace. ASSESSMENT (screenshots of each mode): Run, Pause and View look the same by design (colour = state: live colour = 1, grey = 0, analog colour, forced dashed). The fault was v1.13.0 Trace and Step: they REPLACED the wire colour (white / cyan / orange / yellow) and dimmed the rest, so while tracing you could not see whether a wire was 0 or 1; orange sat next to the red live colour and white is also the force colour.
 - FIX: Trace and Step now draw a GLOW around the wire; the wire keeps its own state colour. Glow: white = selected (and the wires that changed after a Step, for 2 s), blue = driven by (upstream), magenta = feeds (downstream); the other wires are only dimmed to 35 %.

@@ -1,7 +1,7 @@
 /* FX tables: strict station + LN, LX/LY editor, own reset, project file. usage: node tools/test-ln.js file.html */
 const {chromium}=require('/opt/node-tools/node_modules/playwright');const path=require('path');
 (async()=>{const b=await chromium.launch({args:['--no-sandbox']});const p=await b.newPage({viewport:{width:1500,height:900}});const errs=[];p.on('pageerror',e=>errs.push(e.message));
-await p.goto('file://'+path.resolve(process.argv[2]));await p.waitForTimeout(2500);await p.click('text=Analog · ABC >> nth=0');await p.waitForTimeout(3500);
+await p.goto('file://'+path.resolve(process.argv[2]));await p.waitForTimeout(2500);await p.click('text=Analog · ABC >> nth=0');await p.waitForTimeout(3500);await p.evaluate(()=>{if(AN.view)document.querySelector('button[title^=\"View mode\"]').click()});
 const r1=await p.evaluate(()=>{let fx=0,ok=0;const warn=[];for(const sh of AN.sheets){const S=AN.ensure(sh);for(const x of S.blk){if(x.k!=='FX'||!x.p.ln)continue;fx++;if(x.p.tbl&&!x.p.lnWarn)ok++;if(x.p.lnWarn)warn.push(sh.name+' '+x.p.ln+' stn'+sh.stn+' -> '+(x.p.tbl?x.p.tbl.key:'none')+' : '+x.p.lnWarn.slice(0,70))}}return{fx,ok,warn}});
 console.log('FX',r1.fx,'strict match without warning',r1.ok,'warnings',r1.warn.length);console.log(r1.warn.join('\n'));
 // find an FX of S1-LN21 on ABC-003A and click it
