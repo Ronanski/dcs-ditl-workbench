@@ -31,7 +31,7 @@ Each of the 8 checks is worth 12.5 % of the workstream; a check counts for the s
 | C | Links between sheets carry their value | test-links-all.js (182 / 182) | 51 / 51 | 12.5 |
 | D | Wires on the screen follow the value (lit only when 1, grey when 0 or cut off) | test-paint.js | 51 / 51 | 12.5 |
 | E | Numbers against the user's own files (timers - memory list, AI ranges - IO list, LN tables - LINEAR, TP - Compensation) | audit-timers / audit-ai-ranges / test-ln / test-blocks | 51 / 51 (1 real difference: TR228) | 12.5 |
-| F | Function blocks follow the legend (gates, timers, FF, comparators, math, switches, PID, rate, selectors) | test-legend, test-math, test-switch, test-comparators, test-pid-all, test-rate, test-blocks | 51 / 51 | 12.5 |
+| F | Function blocks follow the legend (gates, timers, FF, comparators, math, switches, MAN, PID, rate, selectors, valves, integrators): every block of every sheet | `legend-matrix.js` (2 973 of 2 973 blocks; docs/LEGEND-MATRIX.md) + test-legend, test-math, test-switch, test-comparators, test-pid-all, test-rate, test-blocks | 51 / 51 | 12.5 |
 | G | Compared with the PDF drawing by eye, sheet by sheet | tools/shot-region.js + the user's PDFs | 1 / 51 (ABC-050) | 0.25 |
 | H | Confirmed by the user on his own screen | the user | 0 / 51 | 0 |
 | | **Total** | | | **75.25 %** (shown as 75 %) |

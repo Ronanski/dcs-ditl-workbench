@@ -53,6 +53,8 @@ Method: every wire that is DRIVEN but feeds nothing (dead end) and every wire th
 | H-12 | ABC-001C · the "MW" row of 5 circles (270 … 315, 525) and "FFD" (652, 413); ABC-009A / B (6 + 2 arrow gaps) | An arrow drawn as a small triangle in a GAP of a straight wire (the wire stops at its base, the next piece starts at its tip) | The wire was two nets: the circles after the arrow had no driver, so the unit MW (GCP AI 1001) never left ABC-001C to 001A, 013, 003A, 057 | the two collinear pieces on both sides of such an arrow are one wire (not inside a timer D, not gate parts) | `test-links-all.js`: "MW" 4 links carry the value |
 | H-13 | ABC-001A (10 nets), 001B (5), 001D (11): "MWD" (720, 493), "X" (756, 406) … | Junction dots drawn as small CIRCLE entities on layer MEM (3 circles r 1.06 / 1.06 / 1.95) | Not junction dots: the branch to the circle was a separate wire without a driver (001D: 15 user inputs that nothing needed) | small circles on layer MEM are junction dots | 001D user inputs 15 → 5; MWD / X links carry the value |
 | H-14 | ABC-052 · SW#13 "a" leg, circle LPB (from ABC-050 SI0163) | An analog value (100 % / the other leg) | The receiving wire was typed DIGITAL (drawn on layer CON): drawn as a digital wire, value used as a flag | a receiving wire takes the type of the wire that sends | `test-links-all.js`: LPB carries 37.5 |
+| H-15 | ABC-001D · AND at (281, 312): M.201F AND M.2032 → M.2034 (drawn mirrored: inputs on the left of the LONG bar, output on the right edge of the box) | AND symbol of the legend, mirrored | The short right edge was taken for the bar and the long bar for the closing line: the gate had NO pins, M.2034 was never computed | the longer vertical line of the symbol is the bar | `legend-matrix.js`: AND 224 / 224 |
+| H-16 | ABC-008 SUB #21 (681, 138), ABC-014 SUB #8 (330, 228), #19 (696, 228) (was O-01) | The small two-cell box above an I/P converter = valve positioner (field side) | Read as a SUB with one input and no output | read as a field device (FIELD, passes the value) | O-01 closed |
 
 ### H2. Wires that really end (not defects, listed so you can judge) — `node tools/audit-reach.js <html> --all`
 | Kind | Count | Examples |
@@ -84,7 +86,7 @@ Method: every wire that is DRIVEN but feeds nothing (dead end) and every wire th
 
 | ID | Where | What | Effect |
 |---|---|---|---|
-| O-01 | ABC-008 SUB #21 (681, 138); ABC-014 SUB #8 (330, 228), #19 (696, 228) | The small two-cell blue box above the I/P (valve positioner, field side) is read as a SUB with one input and no output | None on the logic (no output) |
+| O-01 (closed by H-16) | ABC-008 SUB #21, ABC-014 SUB #8, #19 | read as FIELD devices now | none |
 | O-02 | 35 PID and 22 MAN (e.g. ABC-003A PID #13) | Tick marks at the left / right edge of the box are read as extra output pins on a stub net | None (nobody reads that net), only extra "outputs goes nowhere" in the scan |
 | O-03 | ABC-003E · CMPK #8, #13, #18, #23 | Set point "3%" is the text at the end of the wire (PS0005 of the BUMPLESS function block table): read as a known constant | **Resolved** (not an input from another sheet) |
 | O-05 | ABC-003E · TPS #62 (TR256) | Pulse when FF M.008F falls (its reset OR M.0097 has 7 inputs: all must be 0 to set the FF first, then one goes to 1) | The scan did not reach the output by random sequences; not yet shown by hand: to do |
@@ -92,7 +94,7 @@ Method: every wire that is DRIVEN but feeds nothing (dead end) and every wire th
 | O-04 | 14 digital outputs | Reached only by a SEQUENCE of input changes (latches, pulses, edges): ABC-013, 050 LC #58 / AND #101, 052 (user: ignore), 055 | Not a defect: proves the simulation can reach them, not that the plant does |
 | O-07 | ABC-004A letter circles "A" at (194, 354) and (381, 95) ("FROM 004C", "FROM 004B/C") | The partners are the circles B / C of 004B / 004C ("TO 004A") by tag SI0110, not by letter | Not linked by letter; the signal SI0110 is joined by the tag rule (to confirm on the drawing) |
 | O-08 | ABC-020 circle "9" (501, 599) | No partner circle found on any sheet | Unlinked sink (the signal leaves the sheet to nowhere that we can see) |
-| O-09 | "Tags differ" lines of `audit-links.js` (45): 003B / C / D "2" ↔ 003A, 004A FFD ↔ 001C, 009A / B "L", 012 / 001C "MST", 013 / 050 "BOF", 015 / 016 "1" ↔ 057 | Circles pair by number / name and sheet, the tag written beside the two ends differs (M.144C vs B.1206, "S2 SI0161" vs "SI0161") | To look at one by one with the user; the links carry values (`test-links-all.js`) |
+| O-09 (closed: all 45 lines are correct pairs, section J2) | "Tags differ" lines of `audit-links.js` (45): 003B / C / D "2" ↔ 003A, 004A FFD ↔ 001C, 009A / B "L", 012 / 001C "MST", 013 / 050 "BOF", 015 / 016 "1" ↔ 057 | Circles pair by number / name and sheet, the tag written beside the two ends differs (M.144C vs B.1206, "S2 SI0161" vs "SI0161") | To look at one by one with the user; the links carry values (`test-links-all.js`) |
 | O-10 | ABC-003E circles A / B / C / D ← 003A … D, ABC-009A circle J ← 009B | Feed the 4-way selectors (G-10) | Done through the selector; the BUMPLESS parameter table at the left of ABC-003E (PS0001 … PS0005) is documentation, not simulated |
 | O-11 | ABC-001C TR228 (212, 162) | Drawing: TON 2 s. Memory list (your file): TPs 2 | Type differs between the drawing and the memory list: simulated as drawn (TON); to confirm |
 | O-12 | ABC-050 → 052 and the 91 "TO DITL" exits | The ABC → DITL crossings | Not simulated by design (the DITL page is never touched) |
@@ -105,6 +107,28 @@ Method: every wire that is DRIVEN but feeds nothing (dead end) and every wire th
 | I-03 | LN tables built in against LINEAR.xls | 89 of 89 equal (v1.14.x); station rule strict | `node tools/test-ln.js` |
 | I-04 | S1-LN38 / S1-LN39 (ABC-010 drum level) | **Missing in LINEAR.xls** (only S2-LN38 / 39 of the heaters): ABC-010 had been using the HEATER tables (warning "using S2-LN38 (the only one that exists)"). Now built from the Drum Level Calculation file; with the units deduced, level out = level in at 0 kg/cm2 | `node tools/test-drum.js <html>` |
 | I-05 | Compensation file: coefficients at / bt against the operating temperatures | 8 of 8 rows consistent: at = span / (Top + 273.15), bt = 273.15 / (Top + 273.15) | `node tools/test-blocks.js` |
+
+## J. Legend matrix — every block of every sheet against its symbol (`node tools/legend-matrix.js <html> docs/LEGEND-MATRIX.md`)
+The legend (ABC-000 → docs/FUNCTIONALITY.md) gives the function of each symbol. For EVERY block of the 51 sheets (2 973 blocks, 45 kinds) the tool forces the inputs of that one block (the rest of the sheet runs as drawn) and compares the output with the legend: AND / OR / NOT truth tables (all input combinations), FF table (S R → Q), TON / TOF / TPS diagrams, comparators above / below the set point, the 13 mathematical blocks and the lag, T switches (each control picks its leg; operator switch for COS legs; 4-way selectors), MAN (value inside its range, clamped, selector tracking), PID / PIDV direction, ramps and rate limiters, AI / AO / CONST / ALM, valves (stroke time), SEL, SUMA, CTK, TP, PO. Result per sheet and per group: **docs/LEGEND-MATRIX.md**.
+First run on v1.15.0: 2 898 of 2 976 passed; the 78 failures were: 9 test artefacts (selectors left on "forced" by the PID test, integrator not reset, tracking MAN) fixed in the tool, and the real ones below.
+| ID | Found by the matrix | Fix | As left |
+|---|---|---|---|
+| J-1 | ABC-001D AND without pins (H-15) | mirrored AND read right | 0 |
+| J-2 | 3 positioner boxes read as SUB (H-16) | field device | 0 |
+| J-3 | AI with no wire after it (ABC-030 #28, 050 #38, 052 #56) | not a defect: field transmitter, monitor only | counted as pass |
+| J-4 | AMT with COS and no control wire (ABC-001A #8, #12) | not a defect: the operator (COS) switch selects | tested with the operator switch |
+Result after the fixes: **2 973 of 2 973 pass**.
+
+### J2. Tags that "differ" at the two ends of a circle pair (audit-links, was O-09: 45 lines) — all looked at on the drawings
+| Pair | What is drawn at the two ends | Verdict |
+|---|---|---|
+| ABC-003A "2" (M.0341 "MFT TPs") → ABC-003B / C / D "2" (4 circles each, "FROM ABC-003A") | M.0341 is the MFT pulse; the texts M.025B (HOUSE OPERATION ON), M.0369 (burner oil control select) beside the 003B circles are other wires | Correct pair: the "differ" is nearby text |
+| ABC-004A "FFD" (SI0221 UNIT LOAD DEMAND LINEARIZE) ↔ ABC-001C "FFD" (F(X) LN54 → SI0221) | same signal; SI0219 is the text of the wire above | Correct |
+| ABC-009B "L" (wire SICL1060D.MV, "TO 009A") ↔ ABC-009A "L" ("FROM 009B", SICL1060D.MV → T leg b) | same signal; SI0320 is the text of circle K | Correct |
+| ABC-012 "MST" (wire to 001C) ↔ ABC-001C "MST" (TICMS1004.PV, BOILER MAIN STEAM TEMP.) | main steam temperature; M.310E is the comparator text | Correct |
+| ABC-013 "BOF" ("S2 SI0161") ↔ ABC-050 "BOF" (SI0161 BLOW-OFF VALVE FLOW DEMAND) | same tag, the other station written as a prefix | Correct |
+| ABC-015 / 016 "1" (M.144C) ↔ ABC-057 "1" ×2 (wire M.144C → circles 1/015 and 1/016, B.1206 = CRT annunciation) | M.144C goes from 057 to 015 and 016 | Correct |
+**0 wrong pairs among the 45 lines.** The audit now compares tags only as a hint; the proof of a link is `test-links-all.js` (182 / 182 carry the value).
 
 ## D. Method (the cluster / motif idea of docs/BLOCK-COVERAGE.md)
 
@@ -121,4 +145,4 @@ Block-by-block comparison of the **function blocks against the PDF drawings, she
 ## F. Link audit (tools/audit-links.js and tools/test-links-all.js, v1.15.0) — see docs/LINKING.md for the rules
 789 circles: 381 numbered, 104 letter, 304 name + sheet. 421 are paired inside their own sheet. 377 carry a sheet name or a FROM / TO text, 373 are linked to the other sheet (4 not: O-07 ×2, O-08, ABC-054 HRP which is joined by its tag SI0180), plus 27 signal-tag links.
 `test-links-all.js`: 182 circle pairs / tag links, every one carries the value to the receiving wire (the sending wire forced to 1 / 0 or 37.5 / 12.5, receiving wire read on the other sheet); 0 links with a receiver that does not get the value (was 25 before H-10 / H-12 / H-13 / H-14).
-Open: O-07, O-08, O-09 (above).
+Open: O-07, O-08 (above). O-09 is closed (section J2).
