@@ -101,4 +101,17 @@ rep(`function paint(){const sh=cs();if(!sh||!sh.S||!L)return;`,`function paint()
 rep(`function selBox(){const g=L&&L.selg;`,`function selBox(){try{tagHi()}catch(e){}const g=L&&L.selg;`);
 rep(` const mkRow=(g,key,tag,descTxt,ctlEls,pos)=>{`,` const mkRow=(g,key,tag,descTxt,ctlEls,pos)=>{{const ad=adesFind(sh,tag);if(ad){const t0=adesText(ad.rec);if(t0)descTxt=t0+(descTxt?'  ·  '+descTxt:'')}}`);
 
+/* ===== F: step / view / trace / why ===== */
+rep(`bar.append(catB[1],`,fs.readFileSync('tools/f-btn.txt','utf8')+`bar.append(catB[1],`);
+rep(`bRun,sSpd,bRst,bFit,bVal,sLv,`,`bRun,bS1,bS2,bS3,sSpd,bRst,bFit,bVal,bVw,bTr,sLv,`);
+rep(`/* ---------- panel ---------- */
+let PU=[];`,fs.readFileSync('tools/f-code.txt','utf8')+`/* ---------- panel ---------- */
+let PU=[];`);
+rep(`function selUpd_(d){const sh=cs(),S=sh.S,s=AN.sel;`,`function selUpd_(d){selUpd0_(d);try{trList(d)}catch(e){}}
+function selUpd0_(d){const sh=cs(),S=sh.S,s=AN.sel;`);
+rep(` const P=b.p,pr=(k,l,st)=>{if(P[k]==null)return;`,` whyRow(d,S,b);
+ const P=b.p,pr=(k,l,st)=>{if(P[k]==null)return;`);
+rep(`const sl=selNets&&selNets.has(n.id);if(sl)w+=.45;`,`const sl=selNets&&selNets.has(n.id);if(sl)w+=.45;{const T=trSet(sh);if(T){if(T.start.has(n.id)){c=TST;w+=.35}else if(T.up.has(n.id)){c=TUP;w+=.3}else if(T.dn.has(n.id)){c=TDN;w+=.3}else o=.2}if(AN.flh&&AN.flh.has(n.id)){c='#ffd23f';w+=.7}}`);
+rep(`function digClick(sh,n,shift){const S=sh.S,F=S.rt.force;let t;`,`function digClick(sh,n,shift){if(AN.view){msg('View mode: inputs are off. Turn View off to change a signal.');return}const S=sh.S,F=S.rt.force;let t;`);
+
 fs.writeFileSync('wip/logic-sim-v1.13.0.html',h);console.log('wip html written',h.length);

@@ -1518,7 +1518,9 @@ function anDiag(){const L_=[];const P=(k,v)=>L_.push(k+': '+v);P('app',document.
 const sRmp=h$('select',{title:'How fast an analog input you set moves to the new value (like a real process). Instant = jumps at once.'},[['0.025','Analog: slow'],['0.05','Analog: normal'],['0.2','Analog: fast'],['0','Analog: instant']].map(([v,t])=>h$('option',{value:v,txt:t})));
 sRmp.value=String(AN.ramp);if(sRmp.value!==String(AN.ramp)){sRmp.value='0'}
 sRmp.onchange=()=>{AN.ramp=+sRmp.value;try{localStorage.setItem('ditl.an.ramp2',String(AN.ramp))}catch(e){}for(const sh of AN.sheets)if(sh.S)sh.S.rt.ramp=AN.ramp};
-bar.append(catB[1],bSv,bSa,bOp,lPrj,fPrj,bRun,sSpd,bRst,bFit,bVal,sLv,sTh,bBk,bHp,bLn,bPn,lImp,shb,tClk);
+const bS1=h$('button',{txt:'+1 scan',title:'Paused: advance one scan (0.1 s) and flash the wires that changed'}),bS2=h$('button',{txt:'+1 s',title:'Paused: advance 1 second'}),bS3=h$('button',{txt:'+10 s',title:'Paused: advance 10 seconds'}),
+ bVw=h$('button',{txt:'View',title:'View mode: look and trace only - no inputs, no force, no simulation'}),bTr=h$('button',{txt:'Trace',title:'Trace: select a wire or block, then see what drives it (cyan) and what it feeds (orange)'});
+bar.append(catB[1],bSv,bSa,bOp,lPrj,fPrj,bRun,bS1,bS2,bS3,sSpd,bRst,bFit,bVal,bVw,bTr,sLv,sTh,bBk,bHp,bLn,bPn,lImp,shb,tClk);
 const anp=h$('div',{id:'anp'}),anhp=h$('div',{id:'anhp',hidden:'hidden'}),anln=h$('div',{id:'anln',hidden:'hidden'}),anlist=h$('div',{id:'anlist'});
 const barEl=document.getElementById('bar');barEl.after(bar);bar.after(meta);meta.after(errB);document.getElementById('mid').append(anp);document.body.append(anhp,anln);
 document.getElementById('sidebody').append(anlist);
@@ -1837,7 +1839,7 @@ function paint(){const sh=cs();if(!sh||!sh.S||!L)return;try{tagHi()}catch(e){}co
   /* digital = thin line (live colour when 1); analog = tube (analog colour when it carries a value); not-selected T input = faint */
   const wd_=(dTube?.95:.8)*dW,wa_=(tube?.95:.8)*aW,PNC=COLS[AN.ws.pc]||COLS.sky;document.documentElement.style.setProperty('--pnc',PNC);if(n.pn){c='var(--pnc)';w=.8*aW}else if(isD){c='#3b4651';w=n.dig?wd_:wa_;o=1}else if(n.dig){c=on?DCc:'#3b4651';w=wd_}else{c=ANC;w=wa_}/* analog: always coloured, a value (even 0) is flowing */
   const lk=(S.look||{})[n.id];if(lk){if(lk.c&&COLS[lk.c]&&!isD)c=COLS[lk.c];if(lk.w)w*=lk.w}
-  const fo=S.rt.force[n.id]!==undefined;if(fo&&FCOL)c=FCOL;const sl=selNets&&selNets.has(n.id);if(sl)w+=.45;const dsh=fo?'1.4 .8':null;
+  const fo=S.rt.force[n.id]!==undefined;if(fo&&FCOL)c=FCOL;const sl=selNets&&selNets.has(n.id);if(sl)w+=.45;{const T=trSet(sh);if(T){if(T.start.has(n.id)){c=TST;w+=.35}else if(T.up.has(n.id)){c=TUP;w+=.3}else if(T.dn.has(n.id)){c=TDN;w+=.3}else o=.2}if(AN.flh&&AN.flh.has(n.id)){c='#ffd23f';w+=.7}}const dsh=fo?'1.4 .8':null;
   if(e._c!==c||e._d!==dsh||e._w!==w||e._o!==o||e._r!==AN.wsr){e._c=c;e._d=dsh;e._w=w;e._o=o;e._r=AN.wsr;(L.arw&&L.arw[n.id]||[]).forEach(q=>{q.setAttribute('fill',c);q.setAttribute('fill-opacity',o)});e.setAttribute('stroke',c);e.setAttribute('stroke-width',w);e.setAttribute('stroke-opacity',o);if(dsh)e.setAttribute('stroke-dasharray',dsh);else e.removeAttribute('stroke-dasharray');
    const k=L.core&&L.core[n.id];if(k){k.style.display=(n.pn?false:(n.dig?dTube:tube))?'':'none';k.setAttribute('stroke-width',w*.22);if(dsh)k.setAttribute('stroke-dasharray',dsh);else k.removeAttribute('stroke-dasharray')}}}
  for(const g of L.legs||[]){const q=S.rt.st[g.b.id],pk=q&&q.pk==='B'?'B':'A',dim=(g.side==='a')===(pk==='B'),ne=L.nets[g.n];if(!ne)continue;
@@ -1878,7 +1880,7 @@ const live=()=>AN.cat==='an';
 cv.addEventListener('lostpointercapture',e=>{if(!live())return;PT.delete(e.pointerId);if(!PT.size){dn=null;pinch=null}},true);
 /* DIGITAL signals: click the wire (or its tag / the SIG.AB box) = 1, click again = 0, like DITL. A signal computed by the logic goes 1 → 0 → back to AUTO. */
 function setExt(sh,n,x){const S=sh.S;S.rt.ext[n]=x;(sv(sh).ext=sv(sh).ext||{})[n]=x;anSave();settle()}
-function digClick(sh,n,shift){const S=sh.S,F=S.rt.force;let t;
+function digClick(sh,n,shift){if(AN.view){msg('View mode: inputs are off. Turn View off to change a signal.');return}const S=sh.S,F=S.rt.force;let t;
  {let g=0,m=1;while(m&&g++<20){m=0;if(S.ext.includes(n))break;for(const[d,sr]of S.link||[])if(d===n){n=sr;m=1;break}}}
  const nme=nm(S,n);
  if(S.ext.includes(n)&&!(S.xlk&&S.xlk[n])){const x=S.rt.ext[n]>.5?0:1;setExt(sh,n,x);t=nme+' → '+x}
@@ -1914,6 +1916,48 @@ function showPanel(on){if(!on)AN.tmp=false;const ov=!!AN.ah||!!AN.tmp;ptab.style
 AN.ah=false;try{AN.ah=localStorage.getItem('ditl.an.ah')==='1'}catch(e){}
 bPn.onclick=()=>{AN.tmp=false;showPanel(anp.classList.contains('min'))};
 setInterval(()=>{if(!live()||!AN.run)return;const sh=cs();if(!sh||!sh.S)return;const dt=.1*AN.spd,n=Math.max(1,Math.ceil(dt/.5));for(let i=0;i<n;i++)stepSet(sh,dt/n);paint();panelUpd()},100);
+/* ---------- v1.13.0 F: step / view / trace / why ---------- */
+{const st=document.createElement('style');st.textContent='body.anview #anp input,body.anview #anp select,body.anview #anp button:not(.keep){pointer-events:none;opacity:.45}body.anview #anp .keep{opacity:1}#anp .tr{cursor:pointer}#anp .tr:hover{background:#14231b}#anp .why{background:#10181d;border-left:3px solid var(--acc);padding:4px 6px;margin:4px 0;color:var(--tx)}';document.head.append(st)}
+const TUP='#22d3ee',TDN='#ff9f43',TST='#ffffff';AN.view=false;AN.trace=false;AN.allLegs=false;AN.flh=null;
+function stepBy(sec){if(AN.run||AN.view)return;const sh=cs();if(!sh||!sh.S)return;const S=sh.S,v0=Array.from(S.rt.v),n=Math.max(1,Math.round(sec/.1));for(let i=0;i<n;i++)stepSet(sh,.1);
+ const ch=new Set();S.nets.forEach(q=>{if(Math.abs((S.rt.v[q.id]||0)-(v0[q.id]||0))>1e-6)ch.add(q.id)});AN.flh=ch;paint();panelUpd();
+ const nmL=[...ch].slice(0,6).map(q=>nm(S,q)+' → '+(S.nets[q].dig?(S.rt.v[q]>.5?1:0):fmt(S.rt.v[q])));
+ msg('Step +'+sec+' s: '+(ch.size?ch.size+' wire(s) changed (flashing yellow): '+nmL.join(' · ')+(ch.size>6?' …':''):'nothing changed'));clearTimeout(AN._flt);AN._flt=setTimeout(()=>{AN.flh=null;paint()},1800)}
+bS1.onclick=()=>stepBy(.1);bS2.onclick=()=>stepBy(1);bS3.onclick=()=>stepBy(10);
+function viewSet(on){AN.view=on;bVw.classList.toggle('on',on);document.body.classList.toggle('anview',on);if(on){if(AN.run)bRun.click();AN.flh=null}for(const b of[bRun,bS1,bS2,bS3,sSpd,bRst])b.disabled=on;paint();const d=$('ansel');if(d)selUpd(d);msg(on?'View mode: inputs, force, Run and Step are off. You can still select, trace and read.':'View mode off.')}
+bVw.onclick=()=>viewSet(!AN.view);
+bTr.onclick=()=>{AN.trace=!AN.trace;bTr.classList.toggle('on',AN.trace);const sh=cs();if(sh&&sh.S)sh.S._tk=null;paint();const d=$('ansel');if(d)selUpd(d);if(AN.trace&&!AN.sel)msg('Trace: click a wire or a block.')};
+function trSet(sh){if(!AN.trace||!AN.sel)return null;const S=sh.S,s=AN.sel,key=(s.net!=null?'n'+s.net:'b'+(s.blk&&s.blk.id))+'|'+(S._dk||'')+'|'+(AN.allLegs?1:0);if(S._tk===key)return S._ts;
+ const start=new Set(),up=new Set(),dn=new Set(),upL=[],dnL=[];
+ const ups=s.net!=null?[s.net]:s.blk.pins.filter(p=>p.role==='in').map(p=>p.n),dns=s.net!=null?[s.net]:s.blk.o.slice();ups.concat(dns).forEach(n=>start.add(n));
+ const off=(b,n)=>{if(AN.allLegs||(b.k!=='SW'&&b.k!=='AMT')||b.a===b.b)return false;const q=S.rt.st[b.id];return q&&q.pk==='B'?n===b.a:n===b.b};
+ ups.forEach(n=>up.add(n));let fr=ups.slice(),g=0;
+ while(fr.length&&g++<500){const nx=[];for(const n of fr){for(const b of S.drv[n]||[])for(const m of b.i)if(!off(b,m)&&!up.has(m)){up.add(m);nx.push(m)}for(const[d,sr]of S.link||[])if(d===n&&!up.has(sr)){up.add(sr);nx.push(sr)}}nx.forEach(n=>upL.push(n));fr=nx}
+ dns.forEach(n=>dn.add(n));fr=dns.slice();g=0;
+ while(fr.length&&g++<500){const nx=[];for(const n of fr){for(const b of S.cns[n]||[])if(!off(b,n))for(const m of b.o)if(!dn.has(m)){dn.add(m);nx.push(m)}for(const[d,sr]of S.link||[])if(sr===n&&!dn.has(d)){dn.add(d);nx.push(d)}}nx.forEach(n=>dnL.push(n));fr=nx}
+ const T={start,up,dn,upL:upL.filter(n=>!start.has(n)),dnL:dnL.filter(n=>!start.has(n))};S._tk=key;S._ts=T;return T}
+function trList(d){if(!AN.trace||!AN.sel)return;const sh=cs(),S=sh.S,T=trSet(sh);if(!T)return;
+ const add=(n)=>{const e=h$('span',{cls:'v'});const f=()=>{const x=S.rt.v[n];e.textContent=S.nets[n].dig?(x>.5?'1':'0'):fmt(x)};f._s=1;PU.push(f);f();return e};
+ const row=n=>{const name=nm(S,n),ad=adesFind(sh,name),ds=ad?adesText(ad.rec):'',x=S.xlk&&S.xlk[n],r=h$('div',{cls:'r tr',title:'Click to select this wire'},[h$('span',{cls:'n',txt:name+(ds?' · '+ds:'')+(x?'  ◀ sheet '+x.from.name:'')}),add(n)]);
+  r.onclick=()=>{if(x&&AN.sheets.indexOf(x.from)>=0&&AN.sheets.indexOf(x.from)!==AN.i){AN._bk=AN.i;go(AN.sheets.indexOf(x.from));return}AN.sel={net:n};selBox();paint();panelUpd(true)};return r};
+ const lg=h$('button',{cls:'keep',txt:AN.allLegs?'Both T legs: ON':'Selected T leg only',title:'T/switch blocks: follow only the leg in use, or both'});lg.onclick=()=>{AN.allLegs=!AN.allLegs;S._tk=null;paint();selUpd(d)};
+ d.append(h$('h4',{txt:'Trace'}),h$('div',{cls:'r'},[lg]));
+ const cap=60;d.append(h$('small',{txt:'Driven by (upstream, cyan): '+T.upL.length}));T.upL.slice(0,cap).forEach(n=>d.append(row(n)));if(T.upL.length>cap)d.append(h$('small',{txt:'… +'+(T.upL.length-cap)+' more'}));
+ d.append(h$('small',{txt:'Feeds (downstream, orange): '+T.dnL.length}));T.dnL.slice(0,cap).forEach(n=>d.append(row(n)));if(T.dnL.length>cap)d.append(h$('small',{txt:'… +'+(T.dnL.length-cap)+' more'}));
+ d.append(h$('small',{txt:'This sheet only: use the ◀ rows to jump to the sheet an input comes from. Trace to other sheets going out is not done yet.'}))}
+function whyTxt(S,b){const v=S.rt.v,st=S.rt.st[b.id]||{},P=b.p||{},on=x=>x>.5,val=n=>S.nets[n].dig?(on(v[n])?'1':'0'):fmt(v[n]),ins=b.pins.filter(p=>p.role==='in'),
+  lst=a=>a.map(p=>(p.lab?p.lab+' ':'')+nm(S,p.n)+'='+val(p.n)).join(', '),o=b.o.length?val(b.o[0]):'';
+ switch(b.k){
+  case 'AND':{const z=ins.filter(p=>!on(v[p.n]));return o==='1'?'AND = 1: ALL inputs are 1.':'AND = 0: '+(z.length?lst(z)+' is 0 (one 0 is enough).':'an input is 0.')}
+  case 'OR':{const z=ins.filter(p=>on(v[p.n]));return o==='1'?'OR = 1: '+lst(z)+' is 1 (one 1 is enough).':'OR = 0: ALL inputs are 0.'}
+  case 'NOT':return 'NOT = '+o+': the input is '+(ins[0]?val(ins[0].n):'?')+', the output is the opposite.';
+  case 'FF':return 'Flip-flop Q = '+o+': S='+val(b.S)+', R='+val(b.Rn)+'. Reset (R=1) wins over Set; with both 0 it keeps its last value.';
+  case 'TON':return 'TON (on-delay '+P.sec+' s): output becomes 1 only after the input has been 1 for '+P.sec+' s. Timer now '+(st.acc||0).toFixed(1)+' s, output '+o+'.';
+  case 'TOF':return 'TOF (off-delay '+P.sec+' s): output stays 1 for '+P.sec+' s after the input drops. Timer now '+(st.acc||0).toFixed(1)+' s, output '+o+'.';
+  case 'TPS':case 'TPV':return 'Pulse: a rising edge on the input starts a pulse of '+(b.k==='TPS'?P.sec+' s':'the set time')+'. Running: '+(st.run?'yes':'no')+', output '+o+'.';
+  case 'SW':case 'AMT':return 'Selector: leg '+(st.pk==='B'?'B':'A')+' is in use (the other leg is ignored). Output '+o+'.';
+  default:return 'Inputs now: '+(lst(ins)||'-')+'  →  output '+o+'. (A detailed explanation for '+b.k+' is not written yet.)'}}
+function whyRow(d,S,b){const e=h$('div',{cls:'why'});const f=()=>{try{e.textContent='Why? '+whyTxt(S,b)}catch(x){e.textContent=''}};f._s=1;PU.push(f);f();d.append(e)}
 /* ---------- panel ---------- */
 let PU=[];
 const num=(v,f,st)=>{const i=anEdit(h$('input',{type:'number',step:st||'any'}));i.value=v;i.onchange=()=>{i._clr();const x=parseFloat(i.value);if(isFinite(x))f(x);else i.value=v};return i};
@@ -2022,7 +2066,8 @@ function lookRow(d,sh,S,n){const cur=(S.look&&S.look[n])||{},st_='background:#0b
   set=(k,v)=>{S.look=S.look||{};const o=Object.assign({},S.look[n]||{});if(v===''||v==null)delete o[k];else o[k]=k==='w'?+v:v;if(Object.keys(o).length)S.look[n]=o;else delete S.look[n];sv(sh).look=Object.assign({},S.look);anSave();AN.wsr++;paint()};
  d.append(h$('div',{cls:'r'},[h$('span',{cls:'n',txt:'Look of this wire'}),mk([['','Colour: default'],['red','Red'],['yellow','Yellow'],['green','Green'],['cyan','Cyan'],['blue','Blue'],['magenta','Magenta'],['white','White'],['orange','Orange'],['amber','Amber']],cur.c||'',v=>set('c',v)),mk([['','Thick: default'],['.6','Thin'],['1.5','Thick'],['2.2','Extra thick']],cur.w?String(cur.w):'',v=>set('w',v))]))}
 function selUpd(d){const _h0=d.offsetHeight,_a=d.closest('#anp'),_st=_a?_a.scrollTop:0;try{return selUpd_(d)}finally{if(_a&&_st>0){_a.scrollTop=Math.max(0,_st+(d.offsetHeight-_h0))}}}
-function selUpd_(d){const sh=cs(),S=sh.S,s=AN.sel;d._k=JSON.stringify(s&&{b:s.blk&&s.blk.id,n:s.net});d.innerHTML='';
+function selUpd_(d){selUpd0_(d);try{trList(d)}catch(e){}}
+function selUpd0_(d){const sh=cs(),S=sh.S,s=AN.sel;d._k=JSON.stringify(s&&{b:s.blk&&s.blk.id,n:s.net});d.innerHTML='';
  PU=PU.filter(f=>!f._s);if(!s){return}
  const add=(n,dig)=>{const e=h$('span',{cls:'v'});const f=()=>{const x=S.rt.v[n];e.textContent=dig?(x>.5?'1':'0'):fmt(x)};f._s=1;PU.push(f);f();return e};
  d.append(h$('h4',{txt:s.blk?'Selected: '+s.blk.k+(s.blk.tag?' '+s.blk.tag:''):'Selected wire'}));
@@ -2030,6 +2075,7 @@ function selUpd_(d){const sh=cs(),S=sh.S,s=AN.sel;d._k=JSON.stringify(s&&{b:s.bl
  const b=s.blk;if(b.txt&&b.txt.length)d.append(h$('small',{txt:'text: '+b.txt.filter(Boolean).join(' · ')}));
  if(b.k==='COS'&&b.used)d.append(h$('div',{cls:'r'},[h$('span',{cls:'n',txt:'Manual value (operator)'}),add(b.vnet,false),ctl(S,sh,b.vnet)]));
  b.pins.forEach(p=>{d.append(h$('div',{cls:'r'},[h$('span',{cls:'n',txt:(p.role==='in'?'IN ':'OUT ')+(p.lab?p.lab+' · ':'')+nm(S,p.n)}),add(p.n,S.nets[p.n].dig),ctl(S,sh,p.n)]))});
+ whyRow(d,S,b);
  const P=b.p,pr=(k,l,st)=>{if(P[k]==null)return;d.append(h$('div',{cls:'r'},[h$('span',{cls:'n',txt:l}),num(P[k],x=>pSet(sh,b,k,x),st)]))};
  if(b.k==='PID'||b.k==='PIDV'){d.append(h$('div',{cls:'r'},[h$('span',{cls:'n',txt:'Loop type: '+(b.p.lt||'general')+' · suggested speed '+(b.p.sp||1)+'x'}),h$('button',{txt:'Use this speed',title:'Set the simulation speed in the top bar',onclick:()=>{sSpd.value=String(b.p.sp||1);sSpd.dispatchEvent(new Event('change'))}})]));pr('kp','Gain Kp (% output per % of span)');pr('ti','Integral time Ti (s, 0 = off)');pr('td','Derivative time Td (s)');pr('span','Range span ('+(b.p.unit||'engineering units')+' = 100 %)');pr('lo','Output low');pr('hi','Output high');d.append(h$('small',{txt:'The input is the DEVIATION (SV − PV) as drawn; action '+(b.p.act<0?'REVERSE (ACT:R)':'DIRECT')+' comes from the drawing. Kp / Ti / Td are DEFAULT values (the real tuning is in the DCS database, not in the drawings): edit them here. While the T / AMT after the controller is on another input, the controller tracks it (bumpless).'}))}
  else if(b.k==='SUMA'||b.k==='SUMP')d.append(h$('small',{txt:'Integrator is TEMPORARY: output = input.'}))

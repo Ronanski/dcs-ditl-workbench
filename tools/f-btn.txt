@@ -1,0 +1,2 @@
+const bS1=h$('button',{txt:'+1 scan',title:'Paused: advance one scan (0.1 s) and flash the wires that changed'}),bS2=h$('button',{txt:'+1 s',title:'Paused: advance 1 second'}),bS3=h$('button',{txt:'+10 s',title:'Paused: advance 10 seconds'}),
+ bVw=h$('button',{txt:'View',title:'View mode: look and trace only - no inputs, no force, no simulation'}),bTr=h$('button',{txt:'Trace',title:'Trace: select a wire or block, then see what drives it (cyan) and what it feeds (orange)'});
