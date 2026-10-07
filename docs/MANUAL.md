@@ -1,4 +1,4 @@
-# Logic Sim — User Manual (v1.13.0)
+# Logic Sim — User Manual (v1.13.1)
 
 Logic Sim is an offline simulator and viewer of the plant DCS logic drawings: the digital interlock pages (DITL) and the 54 analog control sheets (ABC). It runs from one file, with no network, no OPC and no connection to the plant. It is for study, training and checking logic. It is **not** connected to the real DCS and never writes to it.
 
@@ -62,6 +62,7 @@ Right panel: lists the sheet's **inputs** (digital switches, analog sliders / nu
 - Digital wire: thin line, live colour when **1**, grey when 0. Analog wire: thicker double line, coloured when it carries a value.
 - Not-selected leg of a T (A/M) switch is grey; the selected leg is lit. Each leg is judged separately.
 - A forced signal is dashed and carries a badge.
+- Run, Pause, View: same colours (they only differ in what you may do). Trace and Step never change a wire's colour: they add a **glow** around it (white = selected / just changed, blue = upstream, magenta = downstream), so you can still see 1 / 0 while tracing.
 - Values are green by default (changeable in *Legend & style*).
 - Valve/actuator: green = closed, red = open, blue = in between, white blinking = moving.
 

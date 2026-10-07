@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Logic Sim v1.13.0</title>
+<title>Logic Sim v1.13.1</title>
 <style>
 :root{--bg:#0f1418;--panel:#161d23;--line:#2a3640;--tx:#d7e0e6;--dim:#7d8e9a;--acc:#4fd18b;--sel:#38c9ff;--live:#ff4d4d;--lives:rgba(255,77,77,.30)}
 *{box-sizing:border-box}html,body{height:100%;margin:0;background:var(--bg);color:var(--tx);font:13px 'Segoe UI',system-ui,sans-serif}
@@ -1518,7 +1518,7 @@ function anDiag(){const L_=[];const P=(k,v)=>L_.push(k+': '+v);P('app',document.
 const sRmp=h$('select',{title:'How fast an analog input you set moves to the new value (like a real process). Instant = jumps at once.'},[['0.025','Analog: slow'],['0.05','Analog: normal'],['0.2','Analog: fast'],['0','Analog: instant']].map(([v,t])=>h$('option',{value:v,txt:t})));
 sRmp.value=String(AN.ramp);if(sRmp.value!==String(AN.ramp)){sRmp.value='0'}
 sRmp.onchange=()=>{AN.ramp=+sRmp.value;try{localStorage.setItem('ditl.an.ramp2',String(AN.ramp))}catch(e){}for(const sh of AN.sheets)if(sh.S)sh.S.rt.ramp=AN.ramp};
-const bS1=h$('button',{txt:'+1 scan',title:'Paused: advance one scan (0.1 s) and flash the wires that changed'}),bS2=h$('button',{txt:'+1 s',title:'Paused: advance 1 second'}),bS3=h$('button',{txt:'+10 s',title:'Paused: advance 10 seconds'}),
+const bS1=h$('button',{txt:'+1 scan',title:'Paused: advance one scan (0.1 s) and glow the wires that changed'}),bS2=h$('button',{txt:'+1 s',title:'Paused: advance 1 second'}),bS3=h$('button',{txt:'+10 s',title:'Paused: advance 10 seconds'}),
  bVw=h$('button',{txt:'View',title:'View mode: look and trace only - no inputs, no force, no simulation'}),bTr=h$('button',{txt:'Trace',title:'Trace: select a wire or block, then see what drives it (cyan) and what it feeds (orange)'});
 bar.append(catB[1],bSv,bSa,bOp,lPrj,fPrj,bRun,bS1,bS2,bS3,sSpd,bRst,bFit,bVal,bVw,bTr,sLv,sTh,bBk,bHp,bLn,bPn,lImp,shb,tClk);
 const anp=h$('div',{id:'anp'}),anhp=h$('div',{id:'anhp',hidden:'hidden'}),anln=h$('div',{id:'anln',hidden:'hidden'}),anlist=h$('div',{id:'anlist'});
@@ -1839,7 +1839,7 @@ function paint(){const sh=cs();if(!sh||!sh.S||!L)return;try{tagHi()}catch(e){}co
   /* digital = thin line (live colour when 1); analog = tube (analog colour when it carries a value); not-selected T input = faint */
   const wd_=(dTube?.95:.8)*dW,wa_=(tube?.95:.8)*aW,PNC=COLS[AN.ws.pc]||COLS.sky;document.documentElement.style.setProperty('--pnc',PNC);if(n.pn){c='var(--pnc)';w=.8*aW}else if(isD){c='#3b4651';w=n.dig?wd_:wa_;o=1}else if(n.dig){c=on?DCc:'#3b4651';w=wd_}else{c=ANC;w=wa_}/* analog: always coloured, a value (even 0) is flowing */
   const lk=(S.look||{})[n.id];if(lk){if(lk.c&&COLS[lk.c]&&!isD)c=COLS[lk.c];if(lk.w)w*=lk.w}
-  const fo=S.rt.force[n.id]!==undefined;if(fo&&FCOL)c=FCOL;const sl=selNets&&selNets.has(n.id);if(sl)w+=.45;{const T=trSet(sh);if(T){if(T.start.has(n.id)){c=TST;w+=.35}else if(T.up.has(n.id)){c=TUP;w+=.3}else if(T.dn.has(n.id)){c=TDN;w+=.3}else o=.2}if(AN.flh&&AN.flh.has(n.id)){c='#ffd23f';w+=.7}}const dsh=fo?'1.4 .8':null;
+  const fo=S.rt.force[n.id]!==undefined;if(fo&&FCOL)c=FCOL;const sl=selNets&&selNets.has(n.id);if(sl)w+=.45;let hal='';{const T=trSet(sh);if(T){if(T.start.has(n.id))hal=TST;else if(T.up.has(n.id))hal=TUP;else if(T.dn.has(n.id))hal=TDN;else o=.35}if(!hal&&AN.flh&&AN.flh.has(n.id))hal=TFL}if(e._h!==hal){e._h=hal;e.style.filter=hal?'drop-shadow(0 0 1.6px '+hal+') drop-shadow(0 0 1px '+hal+')':''}const dsh=fo?'1.4 .8':null;
   if(e._c!==c||e._d!==dsh||e._w!==w||e._o!==o||e._r!==AN.wsr){e._c=c;e._d=dsh;e._w=w;e._o=o;e._r=AN.wsr;(L.arw&&L.arw[n.id]||[]).forEach(q=>{q.setAttribute('fill',c);q.setAttribute('fill-opacity',o)});e.setAttribute('stroke',c);e.setAttribute('stroke-width',w);e.setAttribute('stroke-opacity',o);if(dsh)e.setAttribute('stroke-dasharray',dsh);else e.removeAttribute('stroke-dasharray');
    const k=L.core&&L.core[n.id];if(k){k.style.display=(n.pn?false:(n.dig?dTube:tube))?'':'none';k.setAttribute('stroke-width',w*.22);if(dsh)k.setAttribute('stroke-dasharray',dsh);else k.removeAttribute('stroke-dasharray')}}}
  for(const g of L.legs||[]){const q=S.rt.st[g.b.id],pk=q&&q.pk==='B'?'B':'A',dim=(g.side==='a')===(pk==='B'),ne=L.nets[g.n];if(!ne)continue;
@@ -1918,11 +1918,11 @@ bPn.onclick=()=>{AN.tmp=false;showPanel(anp.classList.contains('min'))};
 setInterval(()=>{if(!live()||!AN.run)return;const sh=cs();if(!sh||!sh.S)return;const dt=.1*AN.spd,n=Math.max(1,Math.ceil(dt/.5));for(let i=0;i<n;i++)stepSet(sh,dt/n);paint();panelUpd()},100);
 /* ---------- v1.13.0 F: step / view / trace / why ---------- */
 {const st=document.createElement('style');st.textContent='body.anview #anp input,body.anview #anp select,body.anview #anp button:not(.keep){pointer-events:none;opacity:.45}body.anview #anp .keep{opacity:1}#anp .tr{cursor:pointer}#anp .tr:hover{background:#14231b}#anp .why{background:#10181d;border-left:3px solid var(--acc);padding:4px 6px;margin:4px 0;color:var(--tx)}';document.head.append(st)}
-const TUP='#22d3ee',TDN='#ff9f43',TST='#ffffff';AN.view=false;AN.trace=false;AN.allLegs=false;AN.flh=null;
+/* trace / flash = a GLOW around the wire; the wire keeps its own colour (state: 1 / 0 / analog / forced) */const TUP='#3aa0ff',TDN='#ff2fd0',TST='#ffffff',TFL='#ffffff';AN.view=false;AN.trace=false;AN.allLegs=false;AN.flh=null;
 function stepBy(sec){if(AN.run||AN.view)return;const sh=cs();if(!sh||!sh.S)return;const S=sh.S,v0=Array.from(S.rt.v),n=Math.max(1,Math.round(sec/.1));for(let i=0;i<n;i++)stepSet(sh,.1);
  const ch=new Set();S.nets.forEach(q=>{if(Math.abs((S.rt.v[q.id]||0)-(v0[q.id]||0))>1e-6)ch.add(q.id)});AN.flh=ch;paint();panelUpd();
  const nmL=[...ch].slice(0,6).map(q=>nm(S,q)+' → '+(S.nets[q].dig?(S.rt.v[q]>.5?1:0):fmt(S.rt.v[q])));
- msg('Step +'+sec+' s: '+(ch.size?ch.size+' wire(s) changed (flashing yellow): '+nmL.join(' · ')+(ch.size>6?' …':''):'nothing changed'));clearTimeout(AN._flt);AN._flt=setTimeout(()=>{AN.flh=null;paint()},1800)}
+ msg('Step +'+sec+' s: '+(ch.size?ch.size+' wire(s) changed (glowing white for 2 s): '+nmL.join(' · ')+(ch.size>6?' …':''):'nothing changed'));clearTimeout(AN._flt);AN._flt=setTimeout(()=>{AN.flh=null;paint()},1800)}
 bS1.onclick=()=>stepBy(.1);bS2.onclick=()=>stepBy(1);bS3.onclick=()=>stepBy(10);
 function viewSet(on){AN.view=on;bVw.classList.toggle('on',on);document.body.classList.toggle('anview',on);if(on){if(AN.run)bRun.click();AN.flh=null}for(const b of[bRun,bS1,bS2,bS3,sSpd,bRst])b.disabled=on;paint();const d=$('ansel');if(d)selUpd(d);msg(on?'View mode: inputs, force, Run and Step are off. You can still select, trace and read.':'View mode off.')}
 bVw.onclick=()=>viewSet(!AN.view);
@@ -1942,8 +1942,8 @@ function trList(d){if(!AN.trace||!AN.sel)return;const sh=cs(),S=sh.S,T=trSet(sh)
   r.onclick=()=>{if(x&&AN.sheets.indexOf(x.from)>=0&&AN.sheets.indexOf(x.from)!==AN.i){AN._bk=AN.i;go(AN.sheets.indexOf(x.from));return}AN.sel={net:n};selBox();paint();panelUpd(true)};return r};
  const lg=h$('button',{cls:'keep',txt:AN.allLegs?'Both T legs: ON':'Selected T leg only',title:'T/switch blocks: follow only the leg in use, or both'});lg.onclick=()=>{AN.allLegs=!AN.allLegs;S._tk=null;paint();selUpd(d)};
  d.append(h$('h4',{txt:'Trace'}),h$('div',{cls:'r'},[lg]));
- const cap=60;d.append(h$('small',{txt:'Driven by (upstream, cyan): '+T.upL.length}));T.upL.slice(0,cap).forEach(n=>d.append(row(n)));if(T.upL.length>cap)d.append(h$('small',{txt:'… +'+(T.upL.length-cap)+' more'}));
- d.append(h$('small',{txt:'Feeds (downstream, orange): '+T.dnL.length}));T.dnL.slice(0,cap).forEach(n=>d.append(row(n)));if(T.dnL.length>cap)d.append(h$('small',{txt:'… +'+(T.dnL.length-cap)+' more'}));
+ const cap=60;d.append(h$('small',{txt:'Driven by (upstream, blue glow): '+T.upL.length}));T.upL.slice(0,cap).forEach(n=>d.append(row(n)));if(T.upL.length>cap)d.append(h$('small',{txt:'… +'+(T.upL.length-cap)+' more'}));
+ d.append(h$('small',{txt:'Feeds (downstream, magenta glow): '+T.dnL.length}));T.dnL.slice(0,cap).forEach(n=>d.append(row(n)));if(T.dnL.length>cap)d.append(h$('small',{txt:'… +'+(T.dnL.length-cap)+' more'}));
  d.append(h$('small',{txt:'This sheet only: use the ◀ rows to jump to the sheet an input comes from. Trace to other sheets going out is not done yet.'}))}
 function whyTxt(S,b){const v=S.rt.v,st=S.rt.st[b.id]||{},P=b.p||{},on=x=>x>.5,val=n=>S.nets[n].dig?(on(v[n])?'1':'0'):fmt(v[n]),ins=b.pins.filter(p=>p.role==='in'),
   lst=a=>a.map(p=>(p.lab?p.lab+' ':'')+nm(S,p.n)+'='+val(p.n)).join(', '),o=b.o.length?val(b.o[0]):'';

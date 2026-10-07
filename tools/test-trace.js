@@ -14,7 +14,7 @@ const tr=await p.evaluate(()=>{const sh=AN.cs(),S=sh.S;const c={};for(const n of
 await p.evaluate(()=>{AN.paint();const d=document.getElementById('ansel');});
 const txt=await p.evaluate(()=>{const d=document.getElementById('ansel');return d?d.innerText.slice(0,600):'(no ansel)'});R('panel',txt.replace(/\n/g,' | ').slice(0,400));
 // step
-const col=await p.evaluate(()=>{const S=AN.cs().S,m={};for(const n of S.nets){const e=document.querySelectorAll('#svg path,#svg line,#svg polyline');}const cs_={};document.querySelectorAll('#svg [stroke]').forEach(e=>{const c=e.getAttribute('stroke');cs_[c]=(cs_[c]||0)+1});return cs_});R('stroke colours on trace',JSON.stringify(Object.entries(col).filter(([c])=>/22d3ee|ff9f43|ffffff/i.test(c))));
+const col=await p.evaluate(()=>{const r={};document.querySelectorAll('#svg [stroke]').forEach(e=>{const f=e.style.filter;if(f){const m=f.match(/rgb\([^)]*\)/);const k=m?m[0]:f;r[k]=(r[k]||0)+1}});return r});R('glow colours on trace',JSON.stringify(col));
 await p.click('button:has-text("Trace")');await p.waitForTimeout(100);
 const st=await p.evaluate(()=>{const t0=AN.cs().S.rt.t;return t0});
 await p.click('button:text-is("+1 s")');await p.waitForTimeout(200);

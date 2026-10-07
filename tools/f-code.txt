@@ -1,10 +1,10 @@
 /* ---------- v1.13.0 F: step / view / trace / why ---------- */
 {const st=document.createElement('style');st.textContent='body.anview #anp input,body.anview #anp select,body.anview #anp button:not(.keep){pointer-events:none;opacity:.45}body.anview #anp .keep{opacity:1}#anp .tr{cursor:pointer}#anp .tr:hover{background:#14231b}#anp .why{background:#10181d;border-left:3px solid var(--acc);padding:4px 6px;margin:4px 0;color:var(--tx)}';document.head.append(st)}
-const TUP='#22d3ee',TDN='#ff9f43',TST='#ffffff';AN.view=false;AN.trace=false;AN.allLegs=false;AN.flh=null;
+/* trace / flash = a GLOW around the wire; the wire keeps its own colour (state: 1 / 0 / analog / forced) */const TUP='#3aa0ff',TDN='#ff2fd0',TST='#ffffff',TFL='#ffffff';AN.view=false;AN.trace=false;AN.allLegs=false;AN.flh=null;
 function stepBy(sec){if(AN.run||AN.view)return;const sh=cs();if(!sh||!sh.S)return;const S=sh.S,v0=Array.from(S.rt.v),n=Math.max(1,Math.round(sec/.1));for(let i=0;i<n;i++)stepSet(sh,.1);
  const ch=new Set();S.nets.forEach(q=>{if(Math.abs((S.rt.v[q.id]||0)-(v0[q.id]||0))>1e-6)ch.add(q.id)});AN.flh=ch;paint();panelUpd();
  const nmL=[...ch].slice(0,6).map(q=>nm(S,q)+' → '+(S.nets[q].dig?(S.rt.v[q]>.5?1:0):fmt(S.rt.v[q])));
- msg('Step +'+sec+' s: '+(ch.size?ch.size+' wire(s) changed (flashing yellow): '+nmL.join(' · ')+(ch.size>6?' …':''):'nothing changed'));clearTimeout(AN._flt);AN._flt=setTimeout(()=>{AN.flh=null;paint()},1800)}
+ msg('Step +'+sec+' s: '+(ch.size?ch.size+' wire(s) changed (glowing white for 2 s): '+nmL.join(' · ')+(ch.size>6?' …':''):'nothing changed'));clearTimeout(AN._flt);AN._flt=setTimeout(()=>{AN.flh=null;paint()},1800)}
 bS1.onclick=()=>stepBy(.1);bS2.onclick=()=>stepBy(1);bS3.onclick=()=>stepBy(10);
 function viewSet(on){AN.view=on;bVw.classList.toggle('on',on);document.body.classList.toggle('anview',on);if(on){if(AN.run)bRun.click();AN.flh=null}for(const b of[bRun,bS1,bS2,bS3,sSpd,bRst])b.disabled=on;paint();const d=$('ansel');if(d)selUpd(d);msg(on?'View mode: inputs, force, Run and Step are off. You can still select, trace and read.':'View mode off.')}
 bVw.onclick=()=>viewSet(!AN.view);
@@ -24,8 +24,8 @@ function trList(d){if(!AN.trace||!AN.sel)return;const sh=cs(),S=sh.S,T=trSet(sh)
   r.onclick=()=>{if(x&&AN.sheets.indexOf(x.from)>=0&&AN.sheets.indexOf(x.from)!==AN.i){AN._bk=AN.i;go(AN.sheets.indexOf(x.from));return}AN.sel={net:n};selBox();paint();panelUpd(true)};return r};
  const lg=h$('button',{cls:'keep',txt:AN.allLegs?'Both T legs: ON':'Selected T leg only',title:'T/switch blocks: follow only the leg in use, or both'});lg.onclick=()=>{AN.allLegs=!AN.allLegs;S._tk=null;paint();selUpd(d)};
  d.append(h$('h4',{txt:'Trace'}),h$('div',{cls:'r'},[lg]));
- const cap=60;d.append(h$('small',{txt:'Driven by (upstream, cyan): '+T.upL.length}));T.upL.slice(0,cap).forEach(n=>d.append(row(n)));if(T.upL.length>cap)d.append(h$('small',{txt:'… +'+(T.upL.length-cap)+' more'}));
- d.append(h$('small',{txt:'Feeds (downstream, orange): '+T.dnL.length}));T.dnL.slice(0,cap).forEach(n=>d.append(row(n)));if(T.dnL.length>cap)d.append(h$('small',{txt:'… +'+(T.dnL.length-cap)+' more'}));
+ const cap=60;d.append(h$('small',{txt:'Driven by (upstream, blue glow): '+T.upL.length}));T.upL.slice(0,cap).forEach(n=>d.append(row(n)));if(T.upL.length>cap)d.append(h$('small',{txt:'… +'+(T.upL.length-cap)+' more'}));
+ d.append(h$('small',{txt:'Feeds (downstream, magenta glow): '+T.dnL.length}));T.dnL.slice(0,cap).forEach(n=>d.append(row(n)));if(T.dnL.length>cap)d.append(h$('small',{txt:'… +'+(T.dnL.length-cap)+' more'}));
  d.append(h$('small',{txt:'This sheet only: use the ◀ rows to jump to the sheet an input comes from. Trace to other sheets going out is not done yet.'}))}
 function whyTxt(S,b){const v=S.rt.v,st=S.rt.st[b.id]||{},P=b.p||{},on=x=>x>.5,val=n=>S.nets[n].dig?(on(v[n])?'1':'0'):fmt(v[n]),ins=b.pins.filter(p=>p.role==='in'),
   lst=a=>a.map(p=>(p.lab?p.lab+' ':'')+nm(S,p.n)+'='+val(p.n)).join(', '),o=b.o.length?val(b.o[0]):'';

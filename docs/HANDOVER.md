@@ -9,7 +9,7 @@ Ako ay automation engineer (hindi coder): Taglish, simple at tapat, sabihin kung
 Pagkabasa, ibuod mo sa 5 linya kung nasaan tayo at ano ang susunod, at hintayin ang utos ko.
 ```
 
-## State (v1.13.0)
+## State (v1.13.1)
 - v1.13.0 (plan A..G + manual M complete): step / view / trace / why, PID defaults, strict LN lookup + LN edit, SEL / CTK, descriptions + address highlight, manual (docs/MANUAL.md + PDF). See PROJECT-NOTES-v1.13.0.md.
 - Previous line kept for reference: `logic-sim-v1.12.1.html` (analog page, project file Save/Open, portable app shell in `app/`, Windows build by GitHub Actions).
 - All 54 ABC sheets read; digital + analog links; SET SV presets on 8 sheets; T legs per leg; timers/comparators fixed on 057/008/014/019.

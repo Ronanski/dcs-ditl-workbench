@@ -4,6 +4,11 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
+## v1.13.1 (logic-sim-v1.13.1.html) - wire colours in Trace / Step no longer hide the signal state
+- USER: the wire colours became confusing in Run / Pause / View / Trace. ASSESSMENT (screenshots of each mode): Run, Pause and View look the same by design (colour = state: live colour = 1, grey = 0, analog colour, forced dashed). The fault was v1.13.0 Trace and Step: they REPLACED the wire colour (white / cyan / orange / yellow) and dimmed the rest, so while tracing you could not see whether a wire was 0 or 1; orange sat next to the red live colour and white is also the force colour.
+- FIX: Trace and Step now draw a GLOW around the wire; the wire keeps its own state colour. Glow: white = selected (and the wires that changed after a Step, for 2 s), blue = driven by (upstream), magenta = feeds (downstream); the other wires are only dimmed to 35 %.
+- Manual and panel texts updated. DITL identical (guard). Tests: project, circles, anim, numinput, pid, ln, ades, trace pass.
+
 ## v1.13.0 (logic-sim-v1.13.0.html) - step / view / trace / why, PID defaults, strict LN lookup, SEL / CTK, descriptions, manual
 - STEP (paused): buttons +1 scan (0.1 s), +1 s, +10 s. The wires that changed flash yellow and the status line names the first ones with the new values.
 - VIEW mode: no Run, no Step, no inputs, no force, no Reset; select / search / trace still work.
