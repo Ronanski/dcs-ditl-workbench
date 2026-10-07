@@ -71,4 +71,34 @@ rep(`  if(tb&&!man)d.append(h$('small',{txt:tb.title||''}));`,`  if(tb&&!man)d.a
 /* LN panel: list of edited tables + reset all linear edits */
 rep(`h$('button',{txt:'Download JSON',onclick:`,`h$('button',{txt:'Reset ALL linear edits ('+Object.keys(AN.lne).length+')',title:'Only the LX / LY edits of the tables. Not the global Reset.',onclick:()=>{AN.lne={};lneSave();lnApplyEdits();lnOpen();if(cs()&&cs().S)settle()}}),h$('button',{txt:'Download JSON',onclick:`);
 
+/* ===== G: descriptions from the user's IO list + memory lists (unit 1, data/ades-unit1.json), address highlight when selected ===== */
+{const zlib=require('zlib');const raw=fs.readFileSync('data/ades-unit1.json');const b64=zlib.gzipSync(raw,{level:9}).toString('base64');
+ rep('<script id="analogjs">','<script type="text/plain" id="ades">'+b64+'</script><script id="analogjs">')}
+rep(`async function loadData(){if(AN.data)return AN.data;
+ AN.data=(async()=>{try{await AN.kv}catch(e){}`,`/* descriptions: station -> address -> record (IO list rows: tag, description, range, unit, type, SIG.AB address; memory lists: description, remark, timer type / seconds) */
+let ADES=null;
+async function adesLoad(){if(ADES)return ADES;const e=document.getElementById('ades');if(!e||!e.textContent.trim()){ADES={};return ADES}try{const bin=Uint8Array.from(atob(e.textContent.trim()),c=>c.charCodeAt(0));ADES=JSON.parse(await new Response(new Blob([bin]).stream().pipeThrough(new DecompressionStream('gzip'))).text())}catch(x){ADES={}}return ADES}
+function shStn(sh){if(sh.stn===undefined&&sh.S)sh.stn=stnOf(sh.S);return sh.stn}
+function adesFind(sh,text){if(!ADES||!text)return null;const t=String(text).trim();let m=/^(?:S(\\d)\\s*)?([A-Z]{1,2})\\.([0-9A-F]{3,4})$/i.exec(t),pre,num,dot='.';
+ if(m){pre=m[2].toUpperCase();num=m[3].toUpperCase().padStart(4,'0')}else{m=/^(?:S(\\d)\\s*)?(TR|SI|SO|AI|AO|DI|DO|FP|PTN)(\\d{1,6})$/i.exec(t);if(!m)return null;pre=m[2].toUpperCase();dot='';num=pre==='PTN'?m[3].padStart(6,'0'):m[3].padStart(4,'0')}
+ const stn=m[1]?+m[1]:(sh?shStn(sh):null),T=ADES[String(stn)],key=pre+dot+num,r=T&&T[key];return r?{rec:r,stn,key}:null}
+function adesText(r){if(!r)return'';return r.k==='io'?[r.tag,r.d].filter(Boolean).join(' · '):[r.d,r.r].filter(Boolean).join(' · ')}
+function adesLines(a){const r=a.rec,o=[];if(r.k==='io'){o.push((r.tag||'')+'   ['+a.key+(a.stn?' · STN10'+a.stn:'')+']');if(r.d)o.push(r.d);const x=[r.t,(r.lo!=null||r.hi!=null)?(r.lo+' ~ '+r.hi+' '+(r.u||'')):'',r.ab?'signal abnormal '+r.ab:''].filter(Boolean).join('  ·  ');if(x)o.push(x)}
+ else{o.push(a.key+'   [STN10'+a.stn+']');if(r.d)o.push(r.d);const x=[r.t?('timer '+r.t+(r.v!=null?' '+r.v+' s':'')):'',r.r].filter(Boolean).join('  ·  ');if(x)o.push(x)}return o}
+let CARD=null;
+function tagCard(){if(!CARD){CARD=h$('div',{id:'antag',style:'position:absolute;left:10px;top:10px;max-width:440px;background:#0f1a22ee;border:1px solid #2b4a5a;border-left:4px solid #ffe14a;padding:6px 10px;font:12px sans-serif;color:#e7eef3;display:none;z-index:6;pointer-events:none;line-height:1.45'});const c=$('cv');if(c){if(!/relative|absolute|fixed/.test(getComputedStyle(c).position))c.style.position='relative';c.append(CARD)}}return CARD}
+/* selected wire: its address text turns yellow (digital) / sky blue (analog) and the description is shown on the drawing */
+function tagHi(){const sh=cs(),S=sh&&sh.S,n=S&&AN.sel&&AN.sel.net!=null?AN.sel.net:null,key=n==null?'':sh.name+'#'+n;if(tagHi.k===key)return;tagHi.k=key;
+ (tagHi.prev||[]).forEach(([e,f,w])=>{e.setAttribute('fill',f);if(w==null)e.removeAttribute('font-weight');else e.setAttribute('font-weight',w)});tagHi.prev=[];const c=tagCard();c.style.display='none';if(n==null||!L||!L.txe)return;
+ const l=S.lab[n]||((S.tagN||[]).filter(q=>q.n===n).sort((a,b)=>a.d-b.d)[0]&&{t:S.tagN.filter(q=>q.n===n).sort((a,b)=>a.d-b.d)[0].t});if(!l||!l.t)return;
+ const col=S.nets[n].dig?'#ffe14a':'#5cc8ff';c.style.borderLeftColor=col;
+ for(const[t,e]of L.txe)if(t.t.trim()===String(l.t).trim()&&(l.x==null||Math.hypot(t.x-l.x,t.y-l.y)<4)){tagHi.prev.push([e,e.getAttribute('fill'),e.getAttribute('font-weight')]);e.setAttribute('fill',col);e.setAttribute('font-weight','700')}
+ const a=adesFind(sh,l.t);c.innerHTML='';if(a){adesLines(a).forEach((x,i)=>{const d=document.createElement('div');d.textContent=x;if(i===0){d.style.fontWeight='700';d.style.color=col}c.append(d)});c.style.display='block'}else{const d=document.createElement('div');d.textContent=l.t;d.style.fontWeight='700';d.style.color=col;c.append(d);const d2=document.createElement('div');d2.style.color='#9fb3c0';d2.textContent='no description in the IO / memory lists';c.append(d2);c.style.display='block'}}
+async function loadData(){if(AN.data)return AN.data;
+ AN.data=(async()=>{try{await AN.kv}catch(e){}try{await adesLoad()}catch(e){}AN.adesLoad=adesLoad;AN.adesFind=adesFind;AN.shStn=shStn;AN.tagHi=tagHi;`);
+rep(`e.textContent=t.t;TXE.set(t,e)});`,`e.textContent=t.t;TXE.set(t,e)});L.txe=TXE;`);
+rep(`function paint(){const sh=cs();if(!sh||!sh.S||!L)return;`,`function paint(){const sh=cs();if(!sh||!sh.S||!L)return;try{tagHi()}catch(e){}`);
+rep(`function selBox(){const g=L&&L.selg;`,`function selBox(){try{tagHi()}catch(e){}const g=L&&L.selg;`);
+rep(` const mkRow=(g,key,tag,descTxt,ctlEls,pos)=>{`,` const mkRow=(g,key,tag,descTxt,ctlEls,pos)=>{{const ad=adesFind(sh,tag);if(ad){const t0=adesText(ad.rec);if(t0)descTxt=t0+(descTxt?'  ·  '+descTxt:'')}}`);
+
 fs.writeFileSync('wip/logic-sim-v1.13.0.html',h);console.log('wip html written',h.length);
