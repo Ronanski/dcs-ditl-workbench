@@ -95,7 +95,7 @@
 - Fixed in this round: "< X%" reads X from the wire (bare "3%" text at the start of the wire = constant, ABC-003E x4); DCMP "PV-SV > 1.5" now follows the sign of the DEV before it (DEV = SV-PV, so PV-SV is the negative); circles with a LETTER (86 found) continue signals on the sheet like numbered circles; switching: the "B" beside a COS is the COS's own label ("B | COS" diamond was not a COS), switch letters are matched to pins globally (nearest first), selector wires that stop short of the T are attached, Y / N switches (n = control 0, y = control 1), T legs; DROP RATE has an internal window (5 / 10 / 30 / 60 s, default 30, text on the drawing kept).
 - Divide: "T = B / A * 100 / 60" (ABC-001B) is implemented exactly as the formula: B / A, then x100, then x 1/60 (constants 10000, 100, 1/60 drawn above the boxes). User says it is a "rate": confirm the meaning / unit.
 
-## Logic scan, round 4 (WIP v1.14.2, patch tools/patch-1.14.2.js; not released)
+## Logic scan, round 4 (v1.14.2, released)
 - Result: digital output values reachable 2043 of 2076 -> 2100 of 2100 (the number of outputs grows: new AND gates are now found). 14 of them are reached only by a random input SEQUENCE (latches / pulses / edges: ABC-013, 050 LC #58 / AND #101, 052 x6 (user: ignore), 055 x2) = tools/justify.js "seq" (SEQ=1 lists them). That proves the SIMULATION can reach them, not that a plant would.
 - READER fixes (all found by looking at the drawing):
   1. NOT (⊠) pin direction: the old test "the wire that ends in an arrow is the output" looked at the whole NET, so a ⊠ on a branch of a multi-branch wire got in / out swapped: ABC-004A / B / C (⊠ on the 1:BYPASS wire became a second driver of M.0146 = the "wired-OR"; NOT a real wired-OR), ABC-055 NOT #29 (M.0315 -> TR232), ABC-003E (M.008F -> TR256). Now: arrow on the pin's OWN straight wire, else left to right / top to bottom.
@@ -104,7 +104,7 @@
 - NOT defects (checked on the drawing): ABC-013 M.025B = AND( OR(M.3221 / 3220 / 3200), OR(TOF 10 s of M.025A, TPS 300 s of M.025B itself) ): a 300 s hold loop, needs a rising edge; ABC-050 LC #58 = "<= PICMS1006.MLD" after a LIMIT with the same MLD: true when the limiter clamps (reached by the sequence).
 - Still to do (B): sheet-by-sheet check of the stuck outputs (tools/triage.js, stuck-roots.js).
 
-## Logic verification, round 5 (WIP v1.14.3, tools/patch-1.14.3.js; not released)
+## Logic verification, round 5 (v1.14.3, released)
 - Scope: only sheets with logic. ABC-000A / 000B (CONTENTS) and ABC-000 (SYMBOL LIST) are NOT counted: 54 - 3 = 51 sheets; 3 of them have no gate (ABC-028, 034, 001B) -> 48 sheets with logic.
 - The gate legend is on ABC-000 (user: do not ask, read it): OR / AND truth tables, NOT, ON / OFF delay and PULSE timer diagrams, SET / RESET table "S R -> Q: 1 0 -> 1, 0 1 -> 0, 1 1 -> 0, 0 0 -> no change" = RESET WINS. This answers the open "FF dominance" question: the engine already does reset-wins. New tools/test-legend.js checks every FF (282 cases) and timer (TON 35, TOF 18, TPS 107) against the legend: v1.14.2 had 4 FF mismatches (ABC-055 FF#8), WIP 0.
 - New scan: nets with 2+ real drivers (a drawing cannot have them): 43 -> 38; the remaining 38 are the analog MAN / AI nets of ABC-015 / 016 (see below). Fixed: NOT whose pins were swapped on an elbow wire (flow right to left: ABC-055 M.0319 -> NOT -> AND [this one made the reset of FF#8 useless], ABC-007 M.0188, ABC-020 M.017C); an OR bar drawn as two overlapping pieces on one circle made two OR gates (ABC-009A M.0308, ABC-009B M.0328): merged into one.
@@ -114,7 +114,7 @@
 - MAN stations (ABC-015 / 016; found by the scan "nets with 2+ drivers"): the lower row of MAN boxes is drawn TWICE (two identical rectangles) = duplicate MAN blocks (16 on 015 / 016), and the PV wire runs under the box showing a stub on its left edge = a false output pin on the PV net. Both fixed: nets with 2+ real drivers 43 -> 0, duplicate blocks 16 -> 0; check AI = 37, MAN = 55 -> PV 37, MV 55.
 - STILL OPEN (tools: the scan in the notes of this round): 28 numbered / letter circles with "FROM / TO ABC-xxx" that find no partner on the other sheet (e.g. 003B circles 6 and 8 FROM 003A, 003E circles 4 / 5 FROM 007, 004A circles 1 / 7 TO 005, 004B / 004C circles 5 / 6 / 8 / 9 TO 004A). To be checked one by one against both drawings.
 
-## Logic verification, round 6 (WIP v1.15.0, tools/patch-1.15.0.js; not released)
+## Logic verification, round 6 (v1.15.0, tools/patch-1.15.0.js; released)
 - Full table of findings (what the drawing shows, what the simulator did, how to check): **docs/FINDINGS.md**.
 - New scans: tools/audit-sheets.js, audit-signs.js, audit-params.js, audit-shapes.js, shot-multi.js (contact sheet of several places).
 - Fixed in the WIP: MUL gain constants, SUB signs 9 – 13 units from the pin, LAG times written left of the box (5 blocks used 15 s), timer 300 s read as 5 s (ABC-013 TR74), the RATE LIMITER symbol "V⟩" (3 blocks) read as a high limit, unrecognised grey blocks (limiter ABC-001A, 2 subtract boxes ABC-001A, RATE LIMIT ABC-001B, add box ABC-001D, summation bars ABC-026 / 027).

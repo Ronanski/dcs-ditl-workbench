@@ -9,8 +9,8 @@ Phase 1 = engineering station + controller logic (what we have now). Phase 2 = p
 | 3 | Signals and links | 10 | 94 % | 9.4 | 194 external inputs linked by tag / FROM text, 304 two-line circles, the rest are real origin signals v1.15.0: every one of 182 link pairs carries its value (tools/test-links-all.js), no dead-end wire except real exits (tools/audit-reach.js), 4-way selectors, 8 TP from the Compensation file (estimate: +9 points) |
 | 4 | Modes and tools | 15 | 87.5 % | 13.1 | 7 of 8: Run, Pause, force/inputs, Step, View, Why?, address highlight done · Trace partly (this sheet only; outgoing to other sheets open) |
 | 5 | Project / files / app | 10 | 67 % | 6.7 | 4 of 6: project file, desktop shell, exe + apk + Releases pipeline, docs done · exe / apk verified on the user's devices, persistent DXF import and drawing-change report open |
-| 6 | Verification | 20 | 30 % | 6.0 | ABC-050 checked against the PDF (1 of 51 sheets); v1.14.2: 2100 of 2100 digital outputs reachable in the simulation (tools/justify.js; 14 only by a random input sequence), comparators 240/240, switches 382/384 (estimate: +5 points); v1.14.3: legend test (FF 282, timers 160), nets with 2+ drivers 0, duplicate blocks 0 (estimate: +2); per-sheet PDF check 1/51; plant scenarios 0 v1.15.0: timers 150 / 153 equal to the memory list, 157 / 157 AI ranges equal to the IO list, paint test 51 sheets, reach / links audits (estimate: +13 points) |
-| | **PHASE 1 TOTAL** | 100 | | **69.6 %** | (v1.15.0; was 65.3 % after v1.14.3) |
+| 6 | Verification | 20 | 75 % | 15.0 | 8-check rubric on the html only (section "Detailed breakdown"): 6 automated checks done on 51 / 51 sheets, PDF eye-comparison 1 / 51 (ABC-050), user confirmation 0 (estimate) |
+| | **PHASE 1 TOTAL** | 100 | | **78.6 %** | (v1.15.0 after re-measuring verification on the html only; 69.6 % with the old verification figure, 65.3 % after v1.14.3) |
 
 Rule: a block only counts as 100 when the user confirmed it AND a test exists. Honest estimate, not a promise: item 6 (verification) will move slowest.
 
@@ -19,3 +19,92 @@ Rule: a block only counts as 100 when the user confirmed it AND a test exists. H
 - v1.10.3 / next: group A reader defects -> reader 80 -> 90 %
 - v1.11.0: Step + Trace (+ View) -> modes 37 -> 75 %
 - BLOCK-LIBRARY confirmed by the user (PID first) -> blocks 58 -> 80 % and verification starts moving
+
+## Detailed breakdown (v1.15.0, 2026-10-07) — why each number is what it is
+
+### Verification (weight 20) — the html only (exe / apk are not counted here)
+Each of the 8 checks is worth 12.5 % of the workstream; a check counts for the share of the 51 sheets (CONTENTS and SYMBOL LIST excluded) that passed it.
+| # | Check (on the html) | Tool | Sheets passed | Score |
+|---|---|---|---|---|
+| A | Reader complete: no wire that is driven but feeds nothing, no input that nothing feeds (except classified exits) | audit-reach.js | 51 / 51 | 12.5 |
+| B | Logic reachable: every digital output can be driven to 0 and 1 | justify.js (2191 of 2192; the 1 = TR256, O-05) | 51 / 51 (1 output open) | 12.5 |
+| C | Links between sheets carry their value | test-links-all.js (182 / 182) | 51 / 51 | 12.5 |
+| D | Wires on the screen follow the value (lit only when 1, grey when 0 or cut off) | test-paint.js | 51 / 51 | 12.5 |
+| E | Numbers against the user's own files (timers - memory list, AI ranges - IO list, LN tables - LINEAR, TP - Compensation) | audit-timers / audit-ai-ranges / test-ln / test-blocks | 51 / 51 (1 real difference: TR228) | 12.5 |
+| F | Function blocks follow the legend (gates, timers, FF, comparators, math, switches, PID, rate, selectors) | test-legend, test-math, test-switch, test-comparators, test-pid-all, test-rate, test-blocks | 51 / 51 | 12.5 |
+| G | Compared with the PDF drawing by eye, sheet by sheet | tools/shot-region.js + the user's PDFs | 1 / 51 (ABC-050) | 0.25 |
+| H | Confirmed by the user on his own screen | the user | 0 / 51 | 0 |
+| | **Total** | | | **75.25 %** (shown as 75 %) |
+To go higher: G needs 50 more sheets compared with the PDF; H needs the user's confirmation. A to F are done and repeated at every build.
+
+### Block behaviour (weight 25) — why 59.9 %
+Scale of `tools/block-status.json`: confirmed by the user = 100, implemented (has a test, not confirmed by the user) = 60, simplified = 25, missing = 0; weighted by the number of blocks. **No block kind has the user's confirmation yet**, so the best the scale can give today is 60 %. 3,309 of 3,320 blocks are "implemented"; 11 are "simplified" (FIELD devices: valve / damper field side, value passed through).
+| Block | Count | Status | Test |
+|---|---|---|---|
+| CONST | 261 | implemented | audit-params |
+| NOT | 243 | implemented | test-legend, justify |
+| AMT | 225 | implemented | test-switch, test-blocks |
+| AND | 224 | implemented | test-legend, justify |
+| AI | 201 | implemented | audit-ai-ranges 157, test-anim |
+| TXD | 201 | drawing-only | drawing only |
+| SIGAB | 198 | implemented | audit-reach |
+| OR | 180 | implemented | test-legend, justify |
+| COS | 173 | implemented | test-switch |
+| SW | 159 | implemented | test-switch 382, test-blocks |
+| HC | 118 | implemented | test-comparators 240 |
+| FX | 111 | implemented | test-ln 89/89, test-drum |
+| TPS | 108 | implemented | test-legend 108 |
+| ALM | 104 | implemented | test-blocks, test-defaults-ui |
+| LC | 102 | implemented | test-comparators |
+| DEV | 92 | implemented | test-math |
+| AO | 90 | implemented | test-anim |
+| PID | 66 | implemented | test-pid-all 68 |
+| SUM | 64 | implemented | test-math |
+| MAN | 58 | implemented | test-pid |
+| SUB | 55 | implemented | test-math |
+| MUL | 53 | implemented | test-math |
+| FF | 47 | implemented | test-legend 282 |
+| IP | 45 | implemented | pass-through |
+| VLV | 44 | implemented | test-anim |
+| ACH | 42 | drawing-only | drawing only |
+| ACT | 37 | implemented | test-anim |
+| TON | 35 | implemented | test-legend 35 |
+| RATE | 28 | implemented | test-rate 43 |
+| SEL | 26 | implemented | test-blocks |
+| TOF | 19 | implemented | test-legend 19 |
+| HS | 15 | implemented | test-math |
+| RAMPB | 15 | implemented | test-rate |
+| LAG | 14 | implemented | test-math |
+| SQRT | 13 | implemented | test-math |
+| CMPK | 12 | implemented | test-comparators |
+| DIV | 12 | implemented | test-math |
+| FIELD | 11 | simplified | pass-through |
+| SUMA | 10 | implemented | test-blocks |
+| ADD | 9 | implemented | test-math |
+| TP | 8 | implemented | test-blocks (8 TP) |
+| ABS | 7 | implemented | test-math |
+| CTK | 6 | implemented | test-blocks |
+| FOUT | 6 | drawing-only | drawing only |
+| LLIM | 5 | implemented | test-math |
+| LS | 4 | implemented | test-math |
+| DCMP | 3 | implemented | test-comparators, justify |
+| PVSV | 2 | implemented | test-comparators |
+| PIDV | 2 | implemented | test-pid-all |
+| PO | 2 | implemented | test-blocks |
+| HLLIM | 1 | implemented | test-math |
+| TPV | 1 | implemented | test-legend |
+| HLIM | 1 | implemented | test-math |
+| DRATE | 1 | implemented | test-rate |
+
+Raise it: the user confirms kinds on his own screen (each confirmed kind moves from 60 to 100 for its blocks); biggest by count: CONST 261, NOT 243, AMT 225, AND 224, AI 201, SIGAB 198.
+
+### Project / files / app (weight 10) — why 67 %
+| Item | Status | Share |
+|---|---|---|
+| Project file (save / open, restore) | done (test-project, test-storage) | 1/6 |
+| Desktop shell (portable exe) | done (built by GitHub Actions v1.15.0) | 1/6 |
+| exe + apk + Release pipeline | done (run #10: exe, apk, release all green) | 1/6 |
+| Documentation (manual, reports, data files, assumed values) | done | 1/6 |
+| exe / apk verified on the user's devices | **not done**: only the user can do it | 0 |
+| Persistent DXF import + report of drawing changes | **not done**: can be built (punch list P8) | 0 |
+4 of 6 = 67 %.

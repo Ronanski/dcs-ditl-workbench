@@ -1,10 +1,10 @@
 # FINDINGS — what the logic verification found wrong (and how to check it yourself)
 
 Method: every finding was found by an automatic scan, then **looked at on the drawing** (with the arrows) before it was called wrong. Coordinates are drawing units (x, y); picture of a place: `node tools/shot-region.js <html> ABC-xxx x y 60 out.png`, several at once: `node tools/shot-multi.js <html> out.png "ABC-xxx,x,y,60" ...`.
-Status: **R-xx** = already released (v1.14.2 / v1.14.3). **F-xx** = fixed in the WIP v1.15.0 (not released until the user says "go"). **O-xx** = open / low risk.
+Status: **R-xx** = already released (v1.14.2 / v1.14.3). **F-xx** = fixed in v1.15.0 (released 2026-10-07). **O-xx** = open / low risk.
 "Before" = what the simulator did with the old reading. Forcing a wire in the app: click the wire / tag, type the value, press the check button (RUN or PAUSE).
 
-## A. Fixed in WIP v1.15.0 (not released)
+## A. Fixed in v1.15.0 (released)
 
 | ID | Sheet · block · place | What the DRAWING shows | What the simulator did BEFORE | How to check (after the build) |
 |---|---|---|---|---|
@@ -21,7 +21,7 @@ Status: **R-xx** = already released (v1.14.2 / v1.14.3). **F-xx** = fixed in the
 | F-11 | ABC-004A circles 6, 8, 9 ("M.0162 6 ( FROM ABC-004C )", "B-CF RUN 8", "C-CF RUN 9" with "( FROM ABC-004B / C )" written 70 units to the left) | Signals M.0162, M.015E, M.016E come from ABC-004C / 004B (circles 6 / 9 / 8 "TO ABC-004A") | The reference text was further than the 28 units searched: no sender found, the three signals were not connected to the other sheets | `node tools/audit-links.js <html>`: circles linked to another sheet 361 → 364 (004C → 004A numbers 6 and 9 now linked; 8 still to do) |
 | F-12 | ABC-003A / B / C / D · "M" circle inside the trapezoid of the motor-driven damper (688, 102) | A motor symbol, not a connector | Read as a letter circle "M" | Not in the list of circles any more |
 
-## G. Function blocks that did not work (WIP, tools/test-blocks.js, tools/test-math.js, tools/test-blocks-ui.js)
+## G. Function blocks that did not work (v1.15.0, tools/test-blocks.js, tools/test-math.js, tools/test-blocks-ui.js)
 | ID | Block | Legend (user's words) | Before | Now | Check |
 |---|---|---|---|---|---|
 | G-01 | SUMA analog integrator (10) | Integrates an analog input over time; not a digital state | pass-through ("temporary") | total = integral of the input (per hour), Reset total | force the input 3600 for 10 s → total 10 (all 10 blocks tested); the total is in the block panel |
@@ -35,7 +35,7 @@ Status: **R-xx** = already released (v1.14.2 / v1.14.3). **F-xx** = fixed in the
 | G-09 | Mathematics (ABS, ADD, SUB, SUM, DEV, MUL, DIV, SQRT, HS, LS, HLIM, LLIM, HLLIM, LAG) | the formula of the legend | not tested on every block | 998 random-input checks on every block of the 54 sheets: 0 mismatches | `node tools/test-math.js <html>` |
 | G-10 | 4-way selectors with a text table: ABC-009A SW#32 (ash coolers A–D: "(1) IF A-ASH COOLER AUTO ( M.021A ) SELECT to "a"" … (4)) and ABC-003E SW#4 (burner oil flow control remote ( M.009A … D ) → a … d) | The text table IS the logic: the first true condition picks its leg | The table was ignored: the T box had only legs a / b and the c / d legs (circles C 003C, D 003D, J 009B) fed nothing | The 4 conditions are inputs in the block panel (they are memory flags made outside the sheet); first true (1 → 4) picks its leg, none true: the last choice stays | `node tools/test-blocks.js` (14 checks); open the block: 4 check boxes |
 
-## H. Signals that did not reach their destination — found by `tools/audit-reach.js` (WIP v1.15.0)
+## H. Signals that did not reach their destination — found by `tools/audit-reach.js` (v1.15.0)
 Method: every wire that is DRIVEN but feeds nothing (dead end) and every wire that feeds logic but nobody drives (orphan) was listed on all 51 sheets, then each group was LOOKED at on the drawing (arrows!). 223 dead ends + 4 orphans at the start; every one was either fixed (below) or shown to be a real exit (section H2).
 
 | ID | Sheet · block · place | What the DRAWING shows | What the simulator did BEFORE | Fix (patch `tools/patch-signals.js`) | How to check |
