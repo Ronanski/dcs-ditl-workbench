@@ -109,7 +109,7 @@ jobs:
           cp "${{ needs.version.outputs.html }}" dist/
           V="${{ needs.version.outputs.version }}"
           N="PROJECT-NOTES-v${V}.md"
-          if [ -f "$N" ]; then awk 'NR>1 && /^## /{exit} /^## v/{p=1} p' "$N" > notes.md; fi
+          if [ -f "$N" ]; then awk '/^## /{ if(p) exit; p=1 } p' "$N" > notes.md; fi
           [ -s notes.md ] || echo "Logic Sim v${V}" > notes.md
           cat >> notes.md <<'TXT'
 
