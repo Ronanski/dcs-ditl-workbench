@@ -4,6 +4,13 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
+## v1.15.1 (logic-sim-v1.15.1.html) - legend matrix: every block of every sheet tested against its symbol (revision 1)
+- USER "go" (2026-10-07). AN_PV 15 -> 16 (net numbers moved). DITL page identical.
+- LEGEND MATRIX (user idea: use the legend to test all sheets): tools/legend-matrix.js -> docs/LEGEND-MATRIX.md: 2 973 of 2 973 blocks of the 51 sheets pass the function of their symbol (gates, FF, timers, comparators, math, T switches incl. 4-way selectors, MAN 58 / 58, PID, ramps, AI / AO / CONST / ALM, valves, SEL, SUMA 10 / 10, CTK, TP, PO).
+- READER FIXES found by it: H-15 ABC-001D mirrored AND (M.201F & M.2032 -> M.2034) had no pins; H-16 three valve positioner boxes (ABC-008, 014) read as SUB are field devices now.
+- LINKS: the 45 "tags differ" lines were all looked at on the drawings: 0 wrong pairs (docs/FINDINGS.md J2). test-links-all 182 / 182.
+- Docs: docs/PUNCHLIST.md, PROGRESS detailed breakdown (verification counted on the html only; exe / apk device test not counted: 79.9 %), DESIGN rule 16 (everything reported in the chat is in the docs with its tables). Open: O-05, O-07, O-08, O-11, P18 (closed loops), DCS values.
+
 ## v1.15.0 (logic-sim-v1.15.0.html) - signals must arrive: reader fixes, user data files, assumed values (revision 1)
 - USER "go" (2026-10-07). AN_PV 14 -> 15 (block / net numbers moved): inputs / forces saved by v1.14.x are dropped (the user had none). DITL page identical (guard also ignores the LN tables = analog data).
 - USER DATA: Compensation file -> 8 TP operating temperatures (302 / 35 / 91 / 287 C); Drum Level Calculation file -> S1-LN38 / LN39 of ABC-010 (LINEAR.xls has them only for S2: ABC-010 used the heater tables); IO list and memory lists used as checks (157 / 157 AI ranges, 150 / 153 timers). docs/DATA-FILES.md.

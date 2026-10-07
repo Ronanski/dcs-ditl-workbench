@@ -1,4 +1,4 @@
-/* v1.15.0 WIP: function blocks that did not work (docs/FUNCTIONALITY.md GAPs) + page-link navigation. Called by tools/patch-1.15.0.js with its rep(a,b). String.raw keeps the backslashes of the regular expressions as they are (so no backtick and no dollar-brace inside the code). */
+/* v1.15.0 WIP: function blocks that did not work (docs/FUNCTIONALITY.md GAPs) + page-link navigation. Called by tools/patch-1.15.1.js with its rep(a,b). String.raw keeps the backslashes of the regular expressions as they are (so no backtick and no dollar-brace inside the code). */
 module.exports=(rep)=>{
 /* G-01 SUMA analog integrator / SUMP pulse integrator: were pass-through ("temporary"). SUMA: total = integral of the input (the input is in units per HOUR, e.g. T/H -> T); SUMP: counts the rising edges of the pulse input. PO: pulse output, shows raise / lower pulses. TP: DP / Kt. */
 rep(String.raw`   case 'TP':case 'IP':case 'AO':case 'PO':case 'FIELD':case 'ALM':case 'UNK':{if(b.o.length)out(rd(b.i[0]));break}`,
