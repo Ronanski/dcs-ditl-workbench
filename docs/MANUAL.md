@@ -1,4 +1,4 @@
-# Logic Sim — User Manual (v1.14.0)
+# Logic Sim — User Manual (v1.14.1)
 
 Logic Sim is an offline simulator and viewer of the plant DCS logic drawings: the digital interlock pages (DITL) and the 54 analog control sheets (ABC). It runs from one file, with no network, no OPC and no connection to the plant. It is for study, training and checking logic. It is **not** connected to the real DCS and never writes to it.
 
@@ -74,7 +74,7 @@ Right panel: lists the sheet's **inputs** (digital switches, analog sliders / nu
 Press **View** to return to VIEW at any time (it also stops the run; your values are kept and shown again when you go back to RUN).
 
 ### 2.4 Addresses and descriptions (unit 1)
-Tags such as `I.0413`, `M.3103`, `TR0708`, `S1 M.0160` are looked up in the unit-1 IO list and memory lists that are built into the app. When you select a tag (digital) the tag is highlighted **yellow**; for analog it is **sky blue**; and a small card shows *tag name [address · station]*, the description and the type. The input list in the right panel also shows the description under each tag, and the search box finds by description.
+Tags such as `I.0413`, `M.3103`, `TR0708`, `S1 M.0160` are looked up in the unit-1 IO list and memory lists that are built into the app. When you select a tag (digital) the tag is highlighted **yellow**; for analog it is **sky blue**; and a small card shows *tag name [address · station]*, the description and the type. Hover the mouse on ANY address text of the drawing (SI, B, I, O, M, TR...) and the same card appears; select a block that carries an address (for example SIG.AB) and its card is shown. The input list in the right panel also shows the description under each tag, and the search box finds by description.
 
 ## 3. How to use
 
@@ -131,6 +131,7 @@ Space run/pause · PageUp/PageDown or ←/→ sheet · F fit · Ctrl+S save · w
 | A typed value jumps back | Press Enter or click ✓ after typing; the box keeps your number until then. |
 | My settings are gone | The browser storage was cleared or blocked (private window). Open the saved project file. The status text in *Legend & style → Saving* tells which storage works. |
 | Reset removed my forces but not my linear edit | By design: linear edits have their own reset. |
+| Values I saved in an older version are gone | When a new version changes how the drawings are read, the saved values of the affected sheets are dropped (the settings stay). Re-enter them and save a new project file. |
 | A warning appears in an FX block about a station | The LN table number exists only in another station; the app used it and warns you. Check the drawing. |
 | Description missing for an address | The IO/memory lists cover unit 1 only. Some labels are not in the lists. |
 | Something else | Note the sheet name, what you clicked, and a screenshot, and report it. |

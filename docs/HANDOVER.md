@@ -2,30 +2,47 @@
 
 ## Prompt to paste into the new session (attach nothing unless the user has new files)
 ```
-Ituloy natin ang proyekto sa repo ronanski/dcs-ditl-workbench, branch claude/trusting-goodall-313vmr.
-Una, basahin mo (sa ganitong ayos): README.md, DESIGN.md (mga rules na hindi nababago), ang pinakabagong PROJECT-NOTES-v*.md, at docs/HANDOVER.md (kasalukuyang estado at bukas na items).
-Huwag mo galawin ang DITL page; sundin ang checklist ng build sa DESIGN.md §3 (guard IDENTICAL, tests, notes, commit/push sa branch, ipadala ang html sa akin).
-Ako ay automation engineer (hindi coder): Taglish, simple at tapat, sabihin kung ano ang na-test at ano ang hindi.
-Pagkabasa, ibuod mo sa 5 linya kung nasaan tayo at ano ang susunod, at hintayin ang utos ko.
+Ituloy natin ang proyekto: Logic Sim (simulator ng DCS logic drawings) sa repo ronanski/dcs-ditl-workbench, branch claude/trusting-goodall-313vmr.
+
+BASAHIN MUNA, sa ganitong ayos, bago gumawa ng kahit ano:
+1. README.md
+2. DESIGN.md  (mga rules na HINDI nababago + checklist ng bawat build, §3)
+3. PROJECT-NOTES-v1.14.1.md  (ang pinakabagong entry sa taas; ito rin ang changelog)
+4. docs/HANDOVER.md  (estado + bukas na items + mga pangako sa user)
+5. docs/BACKLOG.md  (ang "Logic scan" sections sa dulo = ang kasalukuyang trabaho)
+
+RULES NG USER (huwag kalimutan):
+- Ako ay automation engineer (hindi coder): Taglish, simple, tapat, engineer-style. Sabihin kung ano ang na-TEST at ano ang HINDI.
+- WALANG build / release / push ng bagong version hangga't wala akong "go". Mag-commit/push ng WIP sa branch ay ok (walang PR). Ang build = patch script -> logic-sim-vX.Y.Z.html sa root (isa lang ang html sa root), guard IDENTICAL, tests, notes + manual + PDF, archive ng lumang html, push (GitHub Actions ang gumagawa ng exe + apk + Release), SendUserFile ang html. Exe/apk: ako na ang magte-test; html lang ang ipadala.
+- DITL page: HUWAG galawin. Guard: node tools/guard-ditl.js baseline/ditl-workbench-v1.0.0.html <html>  -> dapat IDENTICAL.
+- Kapag may drawing na pinag-uusapan: TINGNAN mo ang drawing (node tools/shot-region.js <html> ABC-xxx cx cy width out.png, tapos Read ang png) at itunton ang wiring; huwag manghula. Ang user ay nagbabasa ng diagram at hindi gusto ng mga tanong na masasagot mo sa pagbasa.
+- Ang comparators (HC/LC) ay may range at gumagana (test-comparators 238/238): huwag isiping sira ang "stuck" na galing lang sa random na test.
+- ABC-052 AND #112: huwag pansinin. ABC-002 #32 ratio = SCALE CONVERT (a / b as written).
+
+KASALUKUYANG ESTADO (v1.14.1, released): modes VIEW (default, grey, click = auto trace) / RUN / PAUSE (Back + Next 1-60 s); thin solid wires; descriptions ng IO/memory lists (hover + selected); 54 ABC sheets read; switching (T, A/M, COS, Y/N) verified 382/384; 98.4 % ng digital outputs ay naaabot (tools/justify.js).
+
+SUSUNOD NA GAWIN (ayon sa pagkakasunod):
+A. Tapusin ang "fully functional simulation mode": suriin ang 33 na hindi naaabot (tools/justify.js, listahan sa PROJECT-NOTES-v1.14.1.md): wired-OR nets na may dalawang driver (ABC-004A/B/C M.0146, ABC-008 OR#75), latch/hysteresis ng ABC-013 (FF M.025A), ABC-050 LC#58 "<0", ABC-001D DCMP#19 (apat na out pin para sa dalawang comparison, dobleng iginuhit na wire).
+B. Sheet-por-sheet na pag-verify laban sa drawing: simulan sa mga sheet na may pinakamaraming "stuck" (node tools/triage.js, tools/stuck-roots.js). Tingnan ang drawing, ayusin ang reader, i-test.
+C. Mga tanong na dapat kumpirmahin ng user (isang beses lang itanong, may rekomendasyon): "/" na kahon sa ABC-001B = "T = B / A * 100 / 60" (tinawag niyang "rate"); DROP RATE (ABC-055) sign at window (30 s default); .MAN tags digital; DCMP sign (PV-SV vs DEV = SV-PV); siyam na FF dominance cases; TP formula; totoong PID gains / alarm limits (DCS database).
+D. Pagkatapos: manual (docs/MANUAL.md + PDF: node tools/build-manual-pdf.js) ay i-update sa bawat release; susunod na malaking hakbang = plant simulator / controller simulator (docs/ARCHITECTURE.md, docs/PLAN.md) — itanong muna ang pagkakasunod.
+
+Pagkabasa, ibuod mo sa 5 linya kung nasaan tayo at ano ang uunahin mo, at simulan agad ang A (walang hihintaying tanong maliban kung kailangan talaga).
 ```
 
-## State (v1.14.0)
-- v1.14.0: modes VIEW (default, grey, click = auto trace) / RUN / PAUSE (Back + Next 1-60 s, snapshot history), wires thin solid, analog always coloured except in VIEW. Next planned: scan of logic functionality (blocks that get no value). See PROJECT-NOTES-v1.14.0.md.
+## State (v1.14.1)
+- Current build: `logic-sim-v1.14.1.html` (root). Patch script: `tools/patch-1.14.1.js` (reads archive/html/logic-sim-v1.14.0.html, writes root). Old patches: tools/history/.
+- Notes / changelog: PROJECT-NOTES-v1.14.1.md. Manual: docs/MANUAL.md + docs/Logic-Sim-Manual.pdf (attached to each Release). Percent: docs/PROGRESS.md (Phase 1 ≈ 64 %).
+- Releases: GitHub Actions (.github/workflows/release.yml) builds exe + apk and publishes vX.Y.Z when a root logic-sim-v*.html is pushed. User tests exe/apk himself.
 
-## Previous state (v1.13.1)
-- v1.13.0 (plan A..G + manual M complete): step / view / trace / why, PID defaults, strict LN lookup + LN edit, SEL / CTK, descriptions + address highlight, manual (docs/MANUAL.md + PDF). See PROJECT-NOTES-v1.13.0.md.
-- Previous line kept for reference: `logic-sim-v1.12.1.html` (analog page, project file Save/Open, portable app shell in `app/`, Windows build by GitHub Actions).
-- All 54 ABC sheets read; digital + analog links; SET SV presets on 8 sheets; T legs per leg; timers/comparators fixed on 057/008/014/019.
+## Tools you will use (all in tools/, run with node)
+- lib.js (load the engine + sheets without a browser), guard-ditl.js, patch-<ver>.js (the build), version.js
+- Tests (browser, Chromium via /opt/node-tools/node_modules/playwright): test-modes, test-project, test-storage, test-storage2, test-numinput, test-pid, test-ln, test-anim, test-circles, test-ades, test-addr-ui, test-back-manual; engine tests (node only): test-comparators, test-switch
+- Scan: triage.js, stuck-roots.js, zero-analog.js, multi-out.js, audit-switch.js, justify.js, why-stuck.js <html> <sheet> <block id>, ades-coverage.js, ext-type.js, undriven.js
+- Pictures: shot-region.js <html> <sheet> <cx> <cy> <width> <out.png> (then Read the png)
+- Notes: bump AN_PV in the patch whenever reader numbering of nets / blocks changes (now 12); never reference a const before its definition; no phone testing.
 
-## Read also: docs/PROGRESS.md (percent), docs/BACKLOG.md (what the user asked to note), docs/BLOCK-LIBRARY.md (block behaviours waiting for his confirmation)
+## Read also: docs/PROGRESS.md, docs/BACKLOG.md, docs/BLOCK-LIBRARY.md, docs/PLAN.md, docs/ARCHITECTURE.md
 
-## Open items (ask the user which first)
-0. Sheet triage (docs/SHEET-TRIAGE.md, tools/triage.js): fix group A reader defects (18 constants 'value not found', 6 blocks without input), re-run the triage, then review group B sheets worst first.
-1. Laptop problem (manual numeric input in Run mode): FIXED in v1.10.2 (dirty-state bug, reproduced and tested). Ask the user to confirm on the laptop. The Diagnostics report (Legend & style > Saving) stays available.
-2. "Works only in Pause, not in Run" for T switching: not reproduced. Need screenshot + sheet name + switch states.
-3. v1.8.1 "error on refresh": not reproduced (54 sheets x refresh = 0 errors). Need the console message.
-4. (done in v1.13.0) address highlight + descriptions. Trace into other sheets (outgoing) still open.
-5. Direction: plant simulator + controller simulator + engineering station (docs/ARCHITECTURE.md). Needed from the user: DITL new-engine permission (rule 1), first loop (ABC-050?), IO list format, what the "operation table" contains.
-6. Engine gaps: PID tuning data (real Kp/Ti/Td), alarm logic (docs/BLOCK-COVERAGE.md).
-7. Unlinked circles: 004A #6 #8 #9, 020 #9; ABC-054 HRP -> 052 has no peer circle.
-8. Windows exe + Android apk: built by Actions and published in Releases from v1.12.0 (names logic-sim-vX.Y.Z); neither was run by Claude on a real device. Ask the user how they behave (SmartScreen, Save dialog; apk install, Save = share sheet, Open = file chooser).
+## Open items
+1. The 33 not-reachable outputs (see prompt, A). 2. Sheet-by-sheet verification (B). 3. User confirmations (C). 4. Shapes still unrecognised: none known after v1.14.1 except the duplicated DCMP outputs. 5. Real PID tuning / alarm limits need the DCS data. 6. Direction: plant simulator + controller simulator + engineering station (offline).

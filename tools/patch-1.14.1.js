@@ -1,5 +1,5 @@
-/* v1.14.0 -> v1.14.1 (WIP in wip/, not released until the user gives the go). Reader: pin roles. DITL page untouched. */
-const fs=require('fs');let h=fs.readFileSync('logic-sim-v1.14.0.html','utf8');
+/* v1.14.0 -> v1.14.1 (released). Reader: pin roles. DITL page untouched. */
+const fs=require('fs');let h=fs.readFileSync('archive/html/logic-sim-v1.14.0.html','utf8');
 const rep=(a,b)=>{const n=h.split(a).length-1;if(n!==1)throw new Error(n+' x '+a.slice(0,90));h=h.split(a).join(b)};
 rep('<title>Logic Sim v1.14.0</title>','<title>Logic Sim v1.14.1</title>');
 /* 1. a 2-pin block drawn VERTICALLY with no input found (ABC-002 F(X) LN5, fed from a numbered circle above): the upper pin is the input */
@@ -100,4 +100,4 @@ rep(`if(m)b.dc.push({n:e.p.n,op:/[>≥]/.test(m[1])?'>':'<',inc:/[≥≤]/.test(
      break}`,`if(m)b.dc.push({n:e.p.n,op:/[>≥]/.test(m[1])?'>':'<',inc:/[≥≤]/.test(m[1])||m[2]==='=',sp:+m[3],u:m[4]||'',txt:e.q.t.trim()})}
      for(const e of b.dc.slice()){const pe=outs2.find(p=>p.n===e.n);if(!pe)continue;for(const p2 of outs2)if(p2.n!==e.n&&!b.dc.some(x=>x.n===p2.n)&&anD(p2.x,p2.y,pe.x,pe.y)<=3)b.dc.push(Object.assign({},e,{n:p2.n}))}
      break}`);
-fs.writeFileSync('wip/logic-sim-v1.14.1.html',h);console.log('wip written',h.length);
+fs.writeFileSync('logic-sim-v1.14.1.html',h);console.log('wip written',h.length);
