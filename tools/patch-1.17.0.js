@@ -63,6 +63,7 @@ require('./patch-ditl.js')(rep);
 require('./patch-trend.js')(rep);
 require('./patch-path.js')(rep);
 require('./patch-hmi.js')(rep);
+require('./patch-hmi2.js')(rep);
 require('./patch-cos.js')(rep);
 require('./patch-proc.js')(rep);
 require('./patch-ui.js')(rep);
