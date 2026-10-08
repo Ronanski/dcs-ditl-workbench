@@ -64,5 +64,6 @@ require('./patch-trend.js')(rep);
 require('./patch-path.js')(rep);
 require('./patch-hmi.js')(rep);
 require('./patch-cos.js')(rep);
+require('./patch-proc.js')(rep);
 require('./patch-ui.js')(rep);
 fs.writeFileSync(process.argv[2]||'logic-sim-v1.16.0.html',h);console.log('wip written',h.length);

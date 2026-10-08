@@ -23,7 +23,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Boiler finishing superheater outlet main steam pressure"
 },
 {
 "stn": 101,
@@ -48,7 +49,8 @@
 "CUT": 10,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Boiler finishing S/H outlet main steam temp. (1)"
 },
 {
 "stn": 101,
@@ -73,7 +75,8 @@
 "CUT": 10,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "COMBUSTION AIR CONTROL"
 },
 {
 "stn": 101,
@@ -98,7 +101,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Coal feeder-A feedrate"
 },
 {
 "stn": 101,
@@ -123,7 +127,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Coal feeder-A feedrate"
 },
 {
 "stn": 101,
@@ -148,7 +153,8 @@
 "CUT": 10,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Superheater NO.2 inlet header steam temperature (1)"
 },
 {
 "stn": 101,
@@ -173,7 +179,8 @@
 "CUT": 10,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Superheater NO.2 outlet header steam temperature (1)"
 },
 {
 "stn": 101,
@@ -198,7 +205,8 @@
 "CUT": 10,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Finishing S/H inlet header steam temperature (1)"
 },
 {
 "stn": 101,
@@ -223,7 +231,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Boiler start up burner diesel oil circulation line oil pressure"
 },
 {
 "stn": 101,
@@ -248,7 +257,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Boiler drum level (1)"
 },
 {
 "stn": 101,
@@ -273,7 +283,8 @@
 "CUT": 10,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Boiler drum level (1)"
 },
 {
 "stn": 101,
@@ -298,7 +309,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "DRUM LEVEL CONTROL (FEED WATER FLOW CONTROL)"
 },
 {
 "stn": 101,
@@ -323,7 +335,8 @@
 "CUT": 10,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "PAF/SAF AIR FLOW CONTROL"
 },
 {
 "stn": 101,
@@ -348,7 +361,8 @@
 "CUT": 10,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "PAF/SAF AIR FLOW CONTROL"
 },
 {
 "stn": 101,
@@ -373,7 +387,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "FLUIDIZING AIR FLOW CONTROL"
 },
 {
 "stn": 101,
@@ -398,7 +413,8 @@
 "CUT": 10,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "FLUIDIZING AIR FLOW CONTROL"
 },
 {
 "stn": 101,
@@ -423,7 +439,8 @@
 "CUT": 10,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Boiler start up burner-A hot secondary air inlet flow"
 },
 {
 "stn": 101,
@@ -448,7 +465,8 @@
 "CUT": 10,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Boiler start up burner-B hot secondary air inlet flow"
 },
 {
 "stn": 101,
@@ -473,7 +491,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "FURNACE PRESSURE CONTROL"
 },
 {
 "stn": 101,
@@ -498,7 +517,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "MAIN STEAM PRESSURE CONTROL (BLOW-OFF)"
 },
 {
 "stn": 101,
@@ -523,7 +543,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace plenum/upper layer diff. pressure (A)"
 },
 {
 "stn": 101,
@@ -548,7 +569,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace plenum/upper layer diff. pressure (A)"
 },
 {
 "stn": 101,
@@ -573,7 +595,8 @@
 "CUT": 10,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Boiler start up burner-A supply line oil flow"
 },
 {
 "stn": 101,
@@ -598,7 +621,8 @@
 "CUT": 10,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Boiler start up burner-B supply line oil flow"
 },
 {
 "stn": 101,
@@ -623,7 +647,8 @@
 "CUT": 10,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Boiler start up burner-C supply line oil flow"
 },
 {
 "stn": 101,
@@ -648,7 +673,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "FURNACE PRESSURE CONTROL"
 },
 {
 "stn": 101,
@@ -673,7 +699,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Stack outlet flue gas SOx value"
 },
 {
 "stn": 101,
@@ -698,7 +725,8 @@
 "CUT": 10,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Boiler start up burner-D supply line oil flow"
 },
 {
 "stn": 101,
@@ -723,7 +751,8 @@
 "CUT": 0,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Hot reheat steam blow-off motor valve position"
 },
 {
 "stn": 101,
@@ -748,7 +777,8 @@
 "CUT": 0,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Boiler drum level (1)"
 },
 {
 "stn": 101,
@@ -773,7 +803,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "COAL MASTER CONTROL & A-COAL FEEDER CONTROL"
 },
 {
 "stn": 101,
@@ -798,7 +829,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Boiler start up burner-A diesel oil supply line oil pressure"
 },
 {
 "stn": 101,
@@ -823,7 +855,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Boiler start up burner-B diesel oil supply line oil pressure"
 },
 {
 "stn": 101,
@@ -848,7 +881,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Boiler start up burner-C diesel oil supply line oil pressure"
 },
 {
 "stn": 101,
@@ -873,7 +907,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Boiler start up burner-D diesel oil supply line oil pressure"
 },
 {
 "stn": 101,
@@ -898,7 +933,8 @@
 "CUT": 0,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 S/H NO.1 outlet header to reheater motor valve position"
 },
 {
 "stn": 101,
@@ -923,7 +959,8 @@
 "CUT": 0,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "OIL MASTER CONTROL"
 },
 {
 "stn": 101,
@@ -948,7 +985,8 @@
 "CUT": 10,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Boiler start up burner-C hot secondary air inlet flow"
 },
 {
 "stn": 101,
@@ -973,7 +1011,8 @@
 "CUT": 10,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Boiler start up burner-D hot secondary air inlet flow"
 },
 {
 "stn": 102,
@@ -998,7 +1037,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Boiler sootblower header steam pressure"
 },
 {
 "stn": 102,
@@ -1023,7 +1063,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Turbine main steam pressure(1)"
 },
 {
 "stn": 102,
@@ -1048,7 +1089,8 @@
 "CUT": 10,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 HP turbine bypass outlet temperature (1)"
 },
 {
 "stn": 102,
@@ -1073,7 +1115,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "COND. DUMPING TO RAW PIT / COND. MAKE-UP WATER / DEAERATOR LEVEL CONTROL"
 },
 {
 "stn": 102,
@@ -1098,7 +1141,8 @@
 "CUT": 10,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Reheater outlet header temperature (1)"
 },
 {
 "stn": 102,
@@ -1123,7 +1167,8 @@
 "CUT": 10,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "REHEATER/SUPERHEATER FLUE GAS DAMPER CONTROL"
 },
 {
 "stn": 102,
@@ -1148,7 +1193,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Main steam pipe to aux. steam supply pressure"
 },
 {
 "stn": 102,
@@ -1173,7 +1219,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Cold reheat to aux. steam supply pressure"
 },
 {
 "stn": 102,
@@ -1198,7 +1245,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Boiler deaerator pressure"
 },
 {
 "stn": 102,
@@ -1223,7 +1271,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Condenser hot well water level"
 },
 {
 "stn": 102,
@@ -1248,7 +1297,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Condenser hot well water level"
 },
 {
 "stn": 102,
@@ -1273,7 +1323,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Condensate water flow"
 },
 {
 "stn": 102,
@@ -1298,7 +1349,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Condensate polisher inlet water flow"
 },
 {
 "stn": 102,
@@ -1323,7 +1375,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Main steam to aux. steam desuperheater temperature"
 },
 {
 "stn": 102,
@@ -1348,7 +1401,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Gland steam turbine side temperature"
 },
 {
 "stn": 102,
@@ -1373,7 +1427,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 NO.1 HPH level (1)"
 },
 {
 "stn": 102,
@@ -1398,7 +1453,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 NO.1 HPH level (2)"
 },
 {
 "stn": 102,
@@ -1423,7 +1479,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 NO.2 HPH level (1)"
 },
 {
 "stn": 102,
@@ -1448,7 +1505,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 NO.2 HPH level (2)"
 },
 {
 "stn": 102,
@@ -1473,7 +1531,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 NO.1 LPH level (1)"
 },
 {
 "stn": 102,
@@ -1498,7 +1557,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 NO.1 LPH level (2)"
 },
 {
 "stn": 102,
@@ -1523,7 +1583,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 NO.2 LPH level (1)"
 },
 {
 "stn": 102,
@@ -1548,7 +1609,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 NO.2 LPH level (2)"
 },
 {
 "stn": 102,
@@ -1573,7 +1635,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 NO.3 LPH level (1)"
 },
 {
 "stn": 102,
@@ -1598,7 +1661,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 NO.3 LPH level (2)"
 },
 {
 "stn": 102,
@@ -1623,7 +1687,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 HP turbine first stage steam pressure (A)"
 },
 {
 "stn": 102,
@@ -1648,7 +1713,8 @@
 "CUT": 10,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 LP turbine bypass outlet temperature (1)"
 },
 {
 "stn": 102,
@@ -1673,7 +1739,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Turbine rated speed"
 },
 {
 "stn": 105,
@@ -1698,7 +1765,8 @@
 "CUT": 5,
 "DH": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "Diesel oil pump outlet to start-up burner oil pressure"
 }
 ],
 "MAN": [
@@ -1720,7 +1788,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "COORDINATED CONTROL SYSTEM"
 },
 {
 "stn": 101,
@@ -1740,7 +1809,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "COORDINATED CONTROL SYSTEM"
 },
 {
 "stn": 101,
@@ -1760,7 +1830,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "COORDINATED CONTROL SYSTEM"
 },
 {
 "stn": 101,
@@ -1780,7 +1851,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "COORDINATED CONTROL SYSTEM"
 },
 {
 "stn": 101,
@@ -1800,7 +1872,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Boiler finishing superheater outlet main steam pressure"
 },
 {
 "stn": 101,
@@ -1820,7 +1893,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Boiler finishing superheater outlet main steam pressure"
 },
 {
 "stn": 101,
@@ -1840,7 +1914,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Coal feeder-A feedrate"
 },
 {
 "stn": 101,
@@ -1860,7 +1935,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Coal feeder-B feedrate"
 },
 {
 "stn": 101,
@@ -1880,7 +1956,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Coal feeder-C feedrate"
 },
 {
 "stn": 101,
@@ -1900,7 +1977,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "FURNACE DIFF. PRESSURE CONTROL (A/B/C-BOTTOM ASH SCREW COOLER)"
 },
 {
 "stn": 101,
@@ -1920,7 +1998,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "FURNACE DIFF. PRESSURE CONTROL (A/B/C-BOTTOM ASH SCREW COOLER)"
 },
 {
 "stn": 101,
@@ -1940,7 +2019,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "FURNACE DIFF. PRESSURE CONTROL (A/B/C-BOTTOM ASH SCREW COOLER)"
 },
 {
 "stn": 101,
@@ -1960,7 +2040,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "D-BOTTOM ASH SCREW COOLER CONTROL"
 },
 {
 "stn": 101,
@@ -1980,7 +2061,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "COMBUSTION AIR CONTROL"
 },
 {
 "stn": 101,
@@ -2000,7 +2082,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "A-START UP BURNER CONTROL (FUEL / AIR)"
 },
 {
 "stn": 101,
@@ -2020,7 +2103,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "B-START UP BURNER CONTROL (FUEL / AIR)"
 },
 {
 "stn": 101,
@@ -2040,7 +2124,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "COMBUSTION AIR CONTROL"
 },
 {
 "stn": 101,
@@ -2060,7 +2145,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "COMBUSTION AIR CONTROL"
 },
 {
 "stn": 101,
@@ -2080,7 +2166,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "COAL MASTER CONTROL & A-COAL FEEDER CONTROL"
 },
 {
 "stn": 101,
@@ -2100,7 +2187,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "B-COAL FEEDER CONTROL"
 },
 {
 "stn": 101,
@@ -2120,7 +2208,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "C-COAL FEEDER CONTROL"
 },
 {
 "stn": 101,
@@ -2140,7 +2229,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Bottom ash cooler-A converter speed"
 },
 {
 "stn": 101,
@@ -2160,7 +2250,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Bottom ash cooler-B converter speed"
 },
 {
 "stn": 101,
@@ -2180,7 +2271,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Bottom ash cooler-C converter speed"
 },
 {
 "stn": 101,
@@ -2200,7 +2292,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Bottom ash cooler-D converter speed"
 },
 {
 "stn": 101,
@@ -2220,7 +2313,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "C-START UP BURNER CONTROL (FUEL / AIR)"
 },
 {
 "stn": 101,
@@ -2240,7 +2334,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "D-START UP BURNER CONTROL (FUEL / AIR)"
 },
 {
 "stn": 101,
@@ -2260,7 +2355,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Diesel oil pump to burner pressure control valve position"
 },
 {
 "stn": 101,
@@ -2280,7 +2376,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "A-START UP BURNER CONTROL (FUEL / AIR)"
 },
 {
 "stn": 101,
@@ -2300,7 +2397,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "B-START UP BURNER CONTROL (FUEL / AIR)"
 },
 {
 "stn": 101,
@@ -2320,7 +2418,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "C-START UP BURNER CONTROL (FUEL / AIR)"
 },
 {
 "stn": 101,
@@ -2340,7 +2439,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "D-START UP BURNER CONTROL (FUEL / AIR)"
 },
 {
 "stn": 102,
@@ -2360,7 +2460,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "REHEATER/SUPERHEATER FLUE GAS DAMPER CONTROL"
 },
 {
 "stn": 102,
@@ -2380,7 +2481,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "REHEATER/SUPERHEATER FLUE GAS DAMPER CONTROL"
 },
 {
 "stn": 103,
@@ -2400,7 +2502,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace temp. front wall motor control damper FA1005 position"
 },
 {
 "stn": 103,
@@ -2420,7 +2523,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace temp. front wall motor control damper FA1006 position"
 },
 {
 "stn": 103,
@@ -2440,7 +2544,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace temp. front wall motor control damper FA1007 position"
 },
 {
 "stn": 103,
@@ -2460,7 +2565,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace temp. front wall motor control damper FA1008 position"
 },
 {
 "stn": 103,
@@ -2480,7 +2586,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace temp. front wall motor control damper FA1009 position"
 },
 {
 "stn": 103,
@@ -2500,7 +2607,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace temp. front wall motor control damper FA1010 position"
 },
 {
 "stn": 103,
@@ -2520,7 +2628,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace temp. front wall motor control damper FA1011 position"
 },
 {
 "stn": 103,
@@ -2540,7 +2649,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace temp. front wall motor control damper FA1012 position"
 },
 {
 "stn": 103,
@@ -2560,7 +2670,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace temp. front wall motor control damper FA1013 position"
 },
 {
 "stn": 103,
@@ -2580,7 +2691,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace temp. front wall motor control damper FA1014 position"
 },
 {
 "stn": 103,
@@ -2600,7 +2712,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace temp. front wall motor control damper FA1015 position"
 },
 {
 "stn": 103,
@@ -2620,7 +2733,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace temp. front wall motor control damper FA1016 position"
 },
 {
 "stn": 103,
@@ -2640,7 +2754,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace temp. front wall motor control damper FA1017 position"
 },
 {
 "stn": 103,
@@ -2660,7 +2775,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace temp. front wall motor control damper FA1018 position"
 },
 {
 "stn": 103,
@@ -2680,7 +2796,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace temp. rear wall motor control damper FA1019 position"
 },
 {
 "stn": 103,
@@ -2700,7 +2817,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace temp. rear wall motor control damper FA1020 position"
 },
 {
 "stn": 103,
@@ -2720,7 +2838,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace temp. rear wall motor control damper FA1021 position"
 },
 {
 "stn": 103,
@@ -2740,7 +2859,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace temp. rear wall motor control damper FA1022 position"
 },
 {
 "stn": 103,
@@ -2760,7 +2880,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace temp. rear wall motor control damper FA1023 position"
 },
 {
 "stn": 103,
@@ -2780,7 +2901,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace temp. rear wall motor control damper FA1024 position"
 },
 {
 "stn": 103,
@@ -2800,7 +2922,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace temp. rear wall motor control damper FA1025 position"
 },
 {
 "stn": 103,
@@ -2820,7 +2943,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "#1 Furnace temp. rear wall motor control damper FA1026 position"
 },
 {
 "stn": 103,
@@ -2840,7 +2964,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "FURNACE TEMPERATURE (3)"
 },
 {
 "stn": 103,
@@ -2860,7 +2985,8 @@
 "FSC": 0,
 "CUT": 0,
 "PHONDT": 0,
-"PLONDT": 0
+"PLONDT": 0,
+"desc": "FURNACE TEMPERATURE (3)"
 }
 ],
 "SUMA": [
@@ -2879,7 +3005,8 @@
 "CUT": 0,
 "PHONDT": 0,
 "PLONDT": 0,
-"SUM unit": "T"
+"SUM unit": "T",
+"desc": "#1 Boiler start up burner-A supply line oil flow"
 },
 {
 "stn": 101,
@@ -2896,7 +3023,8 @@
 "CUT": 0,
 "PHONDT": 0,
 "PLONDT": 0,
-"SUM unit": "T"
+"SUM unit": "T",
+"desc": "#1 Boiler start up burner-B supply line oil flow"
 },
 {
 "stn": 101,
@@ -2913,7 +3041,8 @@
 "CUT": 0,
 "PHONDT": 0,
 "PLONDT": 0,
-"SUM unit": "T"
+"SUM unit": "T",
+"desc": "#1 Boiler start up burner-C supply line oil flow"
 },
 {
 "stn": 101,
@@ -2930,7 +3059,8 @@
 "CUT": 0,
 "PHONDT": 0,
 "PLONDT": 0,
-"SUM unit": "T"
+"SUM unit": "T",
+"desc": "#1 Boiler start up burner-D supply line oil flow"
 },
 {
 "stn": 101,
@@ -2947,7 +3077,8 @@
 "CUT": 0,
 "PHONDT": 0,
 "PLONDT": 0,
-"SUM unit": "T"
+"SUM unit": "T",
+"desc": "#1 Boiler feed water flow (1)"
 },
 {
 "stn": 101,
@@ -2964,7 +3095,8 @@
 "CUT": 0,
 "PHONDT": 0,
 "PLONDT": 0,
-"SUM unit": "T"
+"SUM unit": "T",
+"desc": "#1 Boiler feed water flow (2)"
 },
 {
 "stn": 101,
@@ -2981,7 +3113,8 @@
 "CUT": 0,
 "PHONDT": 0,
 "PLONDT": 0,
-"SUM unit": "T"
+"SUM unit": "T",
+"desc": "#1 Boiler main steam flow"
 },
 {
 "stn": 101,
@@ -2998,7 +3131,8 @@
 "CUT": 0,
 "PHONDT": 0,
 "PLONDT": 0,
-"SUM unit": "T"
+"SUM unit": "T",
+"desc": "#1 Limestone feeder speed"
 },
 {
 "stn": 102,
@@ -3015,7 +3149,8 @@
 "CUT": 0,
 "PHONDT": 0,
 "PLONDT": 0,
-"SUM unit": "T"
+"SUM unit": "T",
+"desc": "#1 Condensate polisher inlet water flow"
 },
 {
 "stn": 102,
@@ -3032,7 +3167,8 @@
 "CUT": 0,
 "PHONDT": 0,
 "PLONDT": 0,
-"SUM unit": "T"
+"SUM unit": "T",
+"desc": "#1 Condensate water flow"
 }
 ]
 }

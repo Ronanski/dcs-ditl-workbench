@@ -2,7 +2,7 @@
 const {chromium}=require('/opt/node-tools/node_modules/playwright');
 (async()=>{const b=await chromium.launch({args:['--no-sandbox']});const p=await b.newPage({viewport:{width:1500,height:900}});const errs=[];p.on('pageerror',e=>errs.push(e.message));
 await p.goto('file://'+require('path').resolve(process.argv[2]));await p.waitForTimeout(2500);await p.click('text=Analog · ABC >> nth=0');await p.waitForTimeout(3500);await p.evaluate(()=>{if(AN.view)document.querySelector('button[title^=\"View mode\"]').click()});
-await p.evaluate(()=>{AN.go(AN.sheets.findIndex(s=>s.name==='ABC-057'))});await p.waitForTimeout(1200);
+await p.evaluate(()=>{AN.procDefault=false;AN.go(AN.sheets.findIndex(s=>s.name==='ABC-057'))});await p.waitForTimeout(1200);
 await p.evaluate(()=>document.querySelectorAll('#anp details').forEach(d=>d.open=true));
 const res=[];
 const clickSlow=async(loc)=>{const bb=await loc.boundingBox();await p.mouse.move(bb.x+bb.width/2,bb.y+bb.height/2);await p.mouse.down();await p.waitForTimeout(350);await p.mouse.up()};
