@@ -47,3 +47,49 @@ So the work is: the 27 + part of the 107 analog (become modelled feedbacks or na
 2. Disturbances: the 107 independent field measurements become either "disturbance sliders" (editable, named, grouped on one page) or modelled feedbacks. Recommended: start as disturbance sliders with a clear label, model them later where the user says how.
 3. Start with S1 (the loops) now, then S2, S3? Recommended: yes.
 4. Trend / panel not in step: which control did you move (panel COS slider, the Trend control strip, HMI) and in which mode (VIEW, PAUSE, RUN)?
+
+---
+# 6. The user's answers (2026-10-08, later) - DECISIONS, nothing built yet, no release
+
+| # | Topic | Decision of the user | What it means for the build |
+|---|---|---|---|
+| D1 | Right panel width | No more auto-fit. A little wider than now, fixed. Wrap every text so nothing runs outside and becomes unreadable | fixed width (about 380 px instead of 300), `overflow-wrap:anywhere` on every text and control row, no horizontal overflow; remove the "grow" code |
+| D2 | HMI power | When the HMI is open, FORCE and SIMULATE on the logic sheet (panel / diagram) are disabled; the HMI has the power to control, because all inputs and outputs are on it. The logic can be watched by the floating HMI over the diagram. Panel, diagram and HMI must always show the same values. "A baby plant simulator". | one control owner at a time: HMI open = HMI controls, the sheet panel is read only; the HMI gets FORCE / SIMULATE (SIM) per value (see D6); one shared state, one refresh clock for panel, diagram, HMI and Trend |
+| D3 | Trend / panel not in step on SV | Must be exactly in step. User was in RUN mode. | see section 7 (what was checked); needs the exact steps or a screenshot |
+| D4 | What gets a Trend | STRICTLY only: PID, PIDV, MAN, SUMA, FX, integrators. Digital: never (there is no history, so a trend of a digital is nonsense). | remove the Trend block from every other block and from every wire (also the "every block gets a trend" rule of test-trend.js); digital signals never |
+| D5 | PV slider in the panel | It is not that the PV can be edited, it is that the slider still MOVES (without effect). It must be DISABLED, especially when the process model of the sheet drives that value. | slider greyed with the reason ("simulated by the plant model: set the SV"); not movable; same on the HMI |
+| D6 | FORCE / SIMULATE of a PV | Same as the real plant: when the operator forces / simulates a PV, it stays at that value whatever the SV or the manual command is. This must be considered. | priority rule (section 8) |
+| D7 | Perfection | The plant layer must be right for EVERY sheet, including forced / simulated values. | per-sheet audit with a table to review, a test per loop (68) and per feedback, forced / simulated cases tested; the plant layer is not "done" until each sheet is verified |
+| D8 | Plant table | The user is not an expert in gain / time constant: do not ask him for it. | the assistant sets defaults; the table (if any) is hidden under "advanced"; no question to the user about gains |
+| D9 | The "107 field measurements" | The user did not understand the terms | explained in section 9; honest correction: those 107 are NOT yet understood by the assistant (80 of them are unnamed wires), so the assistant must audit them first |
+
+# 7. Trend / panel in step - what the assistant checked (RUN, ABC-017 and all PID)
+- On ABC-017, SV set to 70 in RUN: Trend SV = the wire the PID sees = the panel value, at 2 s and 6 s (PV follows slowly: the model time constant). No difference found.
+- On ALL 68 PID / PIDV: the net that the Trend calls SV and PV is exactly the net at the plus / minus input of the deviation block (68 / 68 identical). So the Trend reads the same wire as the controller.
+- Possible real causes still open (not proven): (a) the panel shows the TARGET of a COS slider ("target -> now") while the Trend shows the value NOW, if a ramp is on; (b) the Trend of the zoom window and the panel refresh at different moments (Trend samples every 0.25 s of simulated time); (c) a control other than the SV (MAN output, a PV chain) is the one that differs. To decide, the assistant needs one example: sheet, tag, which control was moved, what the panel showed and what the Trend showed. Planned fix independent of the example: ONE shared state and one refresh for panel, diagram, HMI and Trend; every control shows the value NOW and the TARGET separately.
+
+# 8. FORCE / SIMULATE and the plant layer - the priority rule (answer to D6 / D7)
+In the real DCS the operator can force a value (or put a point in simulate): the logic then sees that value whatever the field does. The plant layer must behave the same:
+| Priority (high to low) | Who writes the value | Result |
+|---|---|---|
+| 1 | The user FORCES / SIMULATES the point (panel, or the HMI) | the value stays; the plant layer does NOT write that point; the PV / MV / SV do not change it; the point is marked FORCED / SIM everywhere (panel, diagram, HMI) and can be released |
+| 2 | The plant layer (loop, valve, motor feedback) | computes the value from the outputs of the logic and writes the INPUT where the field would |
+| 3 | The user as operator (SV, manual value, switch, mode input) | writes the operator inputs only |
+While a point is forced the controller keeps working (its output may wind up, alarms act) exactly as on the real plant. A forced PV makes the loop open: the PID moves its output, the PV does not follow.
+
+# 9. Plain explanations of the words the user did not understand
+- **"Gitna" (middle) vs "input" (start)**: a measurement walks a path: transmitter in the field -> input card -> blocks of the sheet (scaling, selection of 1 of 3 transmitters, average, deviation alarm between transmitters) -> the PID. The START is the input card (where the field writes). The MIDDLE is the pin of the PID, after those blocks. Today the assistant's process model writes at the PID pin, so the selection / average / deviation alarm of the sheet never see the value (they stay at 0 and cannot act). The new method writes at the START, so everything in between works like the plant. The user's own point is right and is kept: a FORCE (priority 1) can still hold the value at any point, as the operator does on the real DCS.
+- **Plant layer**: the part of the program that plays the plant. It reads what the logic orders (PID output, valve command, motor start) and answers what the field would send back (pressure moves, valve position, motor running).
+- **Gain / time constant / dead time**: three numbers that say how the PV answers when the output moves: how much it moves per % of output (gain), how slowly (time constant, seconds) and how late it starts (dead time). The assistant chooses them (D8); the user does not have to.
+- **Plant table**: a list of those numbers per loop. Not needed from the user; hidden under "advanced" or not shown.
+- **Disturbance sliders / "107 field measurements"**: analog numbers that come from the plant but that no controller of that sheet moves. Real examples would be the coal heat value or the unit load. Because there is no plant, somebody must give them a value: either a slider the user moves ("what happens if the load goes up"), or a calculation. HONEST CORRECTION: of these 107, 80 have no tag on the drawing (only a wire number), 20 are SIxxxx and 7 other tags; the assistant has NOT yet checked what each one is (some may be constants or limits that belong to the operator, not to the plant). So the next step is an audit of these 107 + 27, sheet by sheet, with a table to review (not a guess).
+
+# 10. Updated steps (nothing built until the user says go)
+| Step | What | Test |
+|---|---|---|
+| P0 | quick fixes already decided: fixed wider wrapped panel (D1); Trend only for PID / PIDV / MAN / SUMA / FX / integrators, never digital (D4); disabled PV slider with reason (D5) | test-ui-real.js + test-trend.js updated |
+| P1 | one owner of control: HMI open = sheet panel read only (D2); HMI faceplate / widgets get FORCE and SIM; one shared state and refresh for panel, diagram, HMI, Trend (D3) | the same value in all four places, checked by a test on several sheets |
+| P2 | audit of every external input of the 51 sheets (the 107 + 27 first) with a table for the user to review | table docs/SIGNAL-ROLES.md completed with real descriptions |
+| P3 | plant layer on the INPUTS with the priority rule (section 8), loops first | 68 loops reach SV with the sheet chain running; forced PV stays; released PV recovers |
+| P4 | valve / motor feedbacks (command -> feedback with delay) | each command that has a feedback follows it |
+| P5 | CCS scenario tests with the plant answering | scenarios |

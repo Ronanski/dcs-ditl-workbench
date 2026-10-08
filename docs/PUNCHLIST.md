@@ -42,3 +42,13 @@ O-01 (positioner boxes, closed by H-16) · O-02 tick marks at PID / MAN box edge
 | T7 HMI v2 (address picker, complete Auto page of all manual inputs, lock, zoom, smooth drag) | DONE v1.18.0 (drawing tools = existing widgets only) |
 | T8 dMVH (MV rate limit), TF (filter), MAN TF / FSC meaning | open (values stored, not simulated) |
 | T2 CCS scenario test (internal) | open |
+
+## Decisions 2026-10-08 (later) - see docs/SIMULATION-METHOD.md sections 6-10
+| Task | Status |
+|---|---|
+| P0 panel fixed wider + wrapped; Trend only PID / PIDV / MAN / SUMA / FX / integrators; disabled PV slider | decided, not built |
+| P1 one owner of control (HMI open = sheet read only), FORCE / SIM in HMI, one shared state | decided, not built |
+| P2 audit of the 107 + 27 inputs | next |
+| P3 plant layer on the inputs + FORCE priority | after P2 |
+| P4 feedbacks, P5 CCS scenarios | later |
+| Trend / panel difference | needs one example from the user (or fixed by P1) |
