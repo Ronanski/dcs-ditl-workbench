@@ -25,7 +25,7 @@
 | Digital outputs the test can drive to 0 and 1 | 2 194 / 2 194 (the last one by the sequence test) |
 | Timers equal to the memory list | 150 / 153 (the 3 others: ABC-052 ignored, ABC-001C TR0228 simulated as drawn, 1 not in the list) |
 | AI ranges equal to the IO list | 157 / 157 |
-| Progress (html only) | 84.0 % |
+| Progress (html only) | 85.9 % |
 
 ## What is NOT proven
 - The numbers that only the DCS has (PID gains, alarm limits, ramp rates, pulse timing, select default) are still **ASSUMED** by the simulator: the logic is right, the values are estimates. They are all listed in "Assumed values" and in docs/PUNCHLIST.md part 2.
@@ -34,4 +34,4 @@
 - exe and apk: not tested by me.
 
 ## Open task of the assistant
-Trace into other sheets (follow an output into the sheets that receive it).
+None. (Trace into other sheets is done: select a wire, a pink row "continues in sheet X" takes you there and the trace goes on; ↩ Back returns.)

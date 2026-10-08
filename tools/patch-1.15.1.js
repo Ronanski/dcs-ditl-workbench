@@ -56,4 +56,5 @@ require('./patch-defaults.js')(rep);
 require('./patch-signals.js')(rep);
 require('./patch-selector.js')(rep);
 require('./patch-import.js')(rep);
+require('./patch-trace.js')(rep);
 fs.writeFileSync(process.argv[2]||'logic-sim-v1.15.1.html',h);console.log('wip written',h.length);

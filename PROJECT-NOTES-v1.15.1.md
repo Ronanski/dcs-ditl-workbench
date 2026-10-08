@@ -11,6 +11,8 @@ Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): a
 
 - DCS DATA FORM (user request 2026-10-08): docs/DCS-DATA-FORM.pdf / .html / .json, tool tools/make-dcs-form.js: 104 ALM + 68 PID/PIDV + 8 RATE + 2 PO + 26 SEL + 10 SUMA rows with TAG, MDL address, field signal address [IO tag], description, grey = value used now, white boxes to write the DCS value; plus 6 questions (G) and the drum level table (H).
 
+- TRACE ACROSS SHEETS (T1): tools/patch-trace.js: pink row "▶ continues in sheet X (circle n)" for outputs, the ◀ row selects the sending wire, ↩ Back works; tools/test-trace-x.js 144 / 144 links. Progress 85.9 % (modes 100 %). Guard IDENTICAL; browser suite OK.
+
 ## v1.15.1 (logic-sim-v1.15.1.html) - legend matrix: every block of every sheet tested against its symbol (revision 1)
 - USER "go" (2026-10-07). AN_PV 15 -> 16 (net numbers moved). DITL page identical.
 - LEGEND MATRIX (user idea: use the legend to test all sheets): tools/legend-matrix.js -> docs/LEGEND-MATRIX.md: 2 973 of 2 973 blocks of the 51 sheets pass the function of their symbol (gates, FF, timers, comparators, math, T switches incl. 4-way selectors, MAN 58 / 58, PID, ramps, AI / AO / CONST / ALM, valves, SEL, SUMA 10 / 10, CTK, TP, PO).

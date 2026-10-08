@@ -5,7 +5,7 @@ Rule (user, 2026-10-08): this list has THREE parts, kept apart. The numbers that
 ## 1. Tasks of the assistant (the only ones that count as pending)
 | # | Task | Status |
 |---|---|---|
-| T1 | **Trace into other sheets.** In VIEW mode the trace follows a wire inside the sheet and jumps back to the source sheet of an INPUT, but does not follow OUTPUTS into the sheets that receive them (docs/MANUAL.md 3.4). | **open** (the only open task) |
+| T1 (DONE) | **Trace into other sheets.** Outputs now continue into the receiving sheet (pink ▶ row), inputs jump to the sending wire (◀ row), ↩ Back returns. `tools/patch-trace.js`, `tools/test-trace-x.js`: 144 / 144 links, Back and upstream jump tested | **done, no open task of the assistant** |
 
 Closed this round (all tested, see docs/FINDINGS.md and docs/PROGRESS.md): O-05 (TR256, sequence test) · O-07 / P2 (ABC-004A letter circles, H-17) · O-08 / P3 (ABC-020 "9" is a drawing exit) · P4 (45 "tags differ" lines) · P5 · **P6** (PIDV = PID + PO raise / lower pulses, as the legend says; values ASSUMED) · **P7** (persistent DXF import + drawing-change report, `tools/test-import.js` 10 / 10) · P17 · P18 (68 PID / PIDV closed loops, simple process) · P20 (legend matrix 2 973 / 2 973). PDF comparison (old P16): dropped by the user, the sheets are the drawings.
 
