@@ -4,6 +4,9 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
+## v1.20.2 (logic-sim-v1.20.2.html) - one value per analog address, DITL link (revision 1)
+- USER (checked ABC-002): "may address na walang value, may doble, may zero lang ... dapat alam natin lahat ng analog addresses ... Analog lang may LIVE value ... link sa DITL di gumagana ... release". Report docs/REPORT-v1.20.2.md, docs/ADDRESS-VALUES.md, FINDINGS H-38 / H-39. patch-addr.js: every analog address text (SI / AI, instrument tags, valve tags, AO) has ONE live value; the same SI / AI address on several wires of a sheet is one signal; digital addresses have no badge; the DITL reference opens the DITL page (list link, circle click). tools/audit-addr-values.js 1522 / 1529 (7 unresolved listed), tools/test-ditl-link.js 124 / 124 references. NOT done: live exchange DITL <-> ABC (FROM DITL stays one-click input), highlight of the item inside the DITL sheet. Next: P&ID direction audit, PAF / SAF + coal + air, drum level + feedwater.
+
 ## v1.20.1 (logic-sim-v1.20.1.html) - a value beside every address (revision 1)
 - USER: "ayusin mo yung mga values na walang value ... address at wires ... analog man o digital ... release". Report: docs/REPORT-v1.20.1.md, docs/ADDRESS-VALUES.md, FINDINGS H-38, DESIGN rule 19. tools/audit-addr-values.js: 2316 / 2316 address texts have a value (v1.20.0: 876). exe / apk are built by the GitHub workflow on push (v1.20.0 run succeeded). Next: P&ID direction audit of the 68 loops, PAF / SAF + coal + total air, drum level + feedwater.
 
