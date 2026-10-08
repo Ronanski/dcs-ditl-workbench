@@ -4,6 +4,9 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
+## v1.20.1 (logic-sim-v1.20.1.html) - a value beside every address (revision 1)
+- USER: "ayusin mo yung mga values na walang value ... address at wires ... analog man o digital ... release". Report: docs/REPORT-v1.20.1.md, docs/ADDRESS-VALUES.md, FINDINGS H-38, DESIGN rule 19. tools/audit-addr-values.js: 2316 / 2316 address texts have a value (v1.20.0: 876). exe / apk are built by the GitHub workflow on push (v1.20.0 run succeeded). Next: P&ID direction audit of the 68 loops, PAF / SAF + coal + total air, drum level + feedwater.
+
 ## v1.20.0 (logic-sim-v1.20.0.html) - Plant window (Reheater) + PID direction fix (revision 1)
 - USER: "Release the latest build go". Report: docs/REPORT-v1.20.0.md, docs/PLANT-WINDOW.md, FINDINGS H-37. New: Plant button (pop-out window), REHEATER system, HMI button hidden (code kept as library), 29 ACT:N loops now direct (tools/patch-pidsign.js, test-pidsign 65/65), operating point of the DCS snapshot. Next: direction audit of the 68 loops against the P&ID (K1AU3-A1-0-001), PAF / SAF + coal + total air, drum level + feedwater.
 
