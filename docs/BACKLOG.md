@@ -157,3 +157,17 @@
 | F7c faceplates of PIDV, SEL, ALM, COS | "complete in the Excel" | **checked: NOT complete**: the Excel has PID (incl. 2 PIDV), MAN, SUMA only; ALM limits (104) and SEL defaults (26) were in the first form (docs/DCS-DATA-FORM.pdf sections A and E) and are not in the filled file; COS has no faceplate parameters (it is a manual value of a T switch) |
 | F8 NEW: process model | to be decided: an optional closed-loop process per controller (PV follows the output: gain, time constant, dead time, load disturbance) so that the trend shows the PID working | proposal |
 | F9 data | PID / MAN / SUMA values received (136 rows) and applied: docs/DCS-FILLED-FORM.md | **DONE (WIP)**; DH and CUT look swapped in the PID sheet |
+
+## 2026-10-08 (go) status after v1.17.0
+| # | Status |
+|---|---|
+| F1 DITL list of open sheet | DONE v1.17.0 |
+| F2 panel auto width | DONE v1.17.0 |
+| F3 Trend explained (SV / PV, P I D, axes, sampling) | DONE v1.17.0 (Trend v2 + process model so PV follows SV through the controller) |
+| F4 floating zoom + control strip | DONE v1.17.0 |
+| F5 COS manual control, 25 unresolved | DONE v1.17.0 (173 / 173) |
+| F6 HMI v2 (picker, drawing tools, full Auto page, lock, control) | NEXT |
+| F7 faceplate data | DONE for PID / MAN / SUMA (FILE); ALM limits (104) and SEL defaults (26) stay ASSUMED, later |
+| F8 process model | DONE v1.17.0 |
+| Ramp rates of the 8 boxes | user: assistant sets defaults, diagram text wins -> kept; screw coolers corrected to 0.05 rpm/s |
+| DH / CUT | user: assistant corrects; swapped in the PID sheet (no effect on the sim) |

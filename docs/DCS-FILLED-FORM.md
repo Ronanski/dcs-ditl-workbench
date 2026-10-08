@@ -38,3 +38,8 @@ All 126 PID / MAN rows match a block of the drawings by station + MNO (no row wi
 - MAN: value range SL ~ SH, cut by ML ~ MH (% of the range): for example HIC-MWHL 75.5 % of 0 ~ 200 MW = 0 ~ 151 MW.
 - SUMA: RSTS, K, DT, TF, CUT, unit of the total are stored.
 - Tests changed because the real tunings are not the old defaults: `test-pid-all` and the PID part of `legend-matrix` check the direction with Td = 0 (a derivative kick is not a direction error) and a step of 10 % of the span; `test-loops` centres the process on the middle of the output range; two trim outputs (PIC-COBM −25 ~ 25, AICFG10571 10 ~ 35) are only checked for "bounded and inside the range" because the process gain behind a trim output is unknown. Result with the real values: 68 / 68 PID directions, 68 / 68 closed loops, 2 973 / 2 973 blocks.
+
+
+## 5. Decisions of the user (2026-10-08, "go") and what was done in v1.17.0
+- **DH and CUT**: they do not affect the simulation (stored only). Decision: corrected. In the PID sheet the two columns were swapped (photo FIC-CF: DH 5 %, CUT 0 %; the file had DH 0, CUT 5). `tools/data/dcs-form2-filled.json` now has DH and CUT exchanged for the 68 PID rows. MAN and SUMA rows are not changed (their DH and CUT are all 0).
+- **Ramp rates** (the 8 boxes without a number): the text on the drawing wins; where there is none, a default. The Excel has no ramp value, so the defaults stay: coal feeders 1 T/H per s (the drawing gives "(1T / Sec)" on the sister box), ABC-020 damper 2 % per s. CORRECTED: the screw coolers SICL1060A/B/C/D have a 0 ~ 5 rpm range in the Excel, so the rate is 0.05 rpm per s (1 % of the range per s), not 1 (that would be 20 % of the range per s). See docs/ASSUMED-VALUES.md.

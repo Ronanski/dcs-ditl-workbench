@@ -141,10 +141,10 @@ const RATE=[
  {sheet:'ABC-004A',loop:'FICCL1061A coal feeder A flow control (0-40 T/H), AUTO-MV transfer',rate:1,u:'T/H per s',basis:'the drawing gives "(1T / Sec)" for the sister box of the same loop (SI0112); same number used'},
  {sheet:'ABC-004B',loop:'FICCL1061B coal feeder B flow control (0-40 T/H)',rate:1,u:'T/H per s',basis:'same as 004A ("(1T / Sec)" on the sister box)'},
  {sheet:'ABC-004C',loop:'FICCL1061C coal feeder C flow control (0-40 T/H)',rate:1,u:'T/H per s',basis:'same as 004A'},
- {sheet:'ABC-009A',loop:'SICL1060A bottom ash screw cooler A speed control (manual mode ramp)',rate:1,u:'% per s',basis:'screw cooler VFD: 0 to 100 % in 100 s, slow mechanical drive'},
- {sheet:'ABC-009A',loop:'SICL1060B bottom ash screw cooler B speed control',rate:1,u:'% per s',basis:'same'},
- {sheet:'ABC-009A',loop:'SICL1060C bottom ash screw cooler C speed control',rate:1,u:'% per s',basis:'same'},
- {sheet:'ABC-009B',loop:'SICL1060D bottom ash screw cooler D speed control',rate:1,u:'% per s',basis:'same'},
+ {sheet:'ABC-009A',loop:'SICL1060A bottom ash screw cooler A speed control (manual mode ramp)',rate:0.05,u:'rpm per s',basis:'converter speed range is 0-5 rpm (DCS form), so 1 % of the range per second = 0.05 rpm/s (full range in 100 s, slow mechanical drive)'},
+ {sheet:'ABC-009A',loop:'SICL1060B bottom ash screw cooler B speed control',rate:0.05,u:'rpm per s',basis:'same (0.05 rpm/s = 1 % of the 0-5 rpm range per s)'},
+ {sheet:'ABC-009A',loop:'SICL1060C bottom ash screw cooler C speed control',rate:0.05,u:'rpm per s',basis:'same (0.05 rpm/s = 1 % of the 0-5 rpm range per s)'},
+ {sheet:'ABC-009B',loop:'SICL1060D bottom ash screw cooler D speed control',rate:0.05,u:'rpm per s',basis:'same (0.05 rpm/s = 1 % of the 0-5 rpm range per s)'},
  {sheet:'ABC-020',loop:'HICHR1002B superheater pass flue gas damper position (manual mode ramp)',rate:2,u:'% per s',basis:'damper actuator full stroke in about 50 s; a valve ramp on the drawing (ABC-050) is 5 % / sec'}
 ];
 

@@ -1,4 +1,4 @@
-# PUNCHLIST — what is left to do (updated 2026-10-08, v1.16.0)
+# PUNCHLIST — what is left to do (updated 2026-10-08, v1.17.0)
 
 Rule (user, 2026-10-08): this list has THREE parts, kept apart. The numbers that only the DCS can give are NOT tasks: the simulator already runs with its own values (ASSUMED, all visible in "Assumed values").
 
@@ -34,3 +34,11 @@ Closed this round (all tested, see docs/FINDINGS.md and docs/PROGRESS.md): O-05 
 
 ## Known, harmless (not corrections)
 O-01 (positioner boxes, closed by H-16) · O-02 tick marks at PID / MAN box edges read as extra pins · ABC-052 AND #112 and ABC-052 (ignored by the user) · ABC → DITL crossings not simulated by design (91 "TO DITL" exits) · 2 T switches (ABC-003E SW#4, ABC-009A SW#32) are 4-way selectors, tested in test-blocks.js · 4 wires grey with value 1 = T legs not selected.
+
+## Added with v1.17.0
+| Task | Status |
+|---|---|
+| T6 faceplate values applied, COS 173 / 173, process model, Trend v2 + control strip + floating zoom, DITL open sheet, panel width | DONE v1.17.0 |
+| T7 HMI v2 (address picker, drawing tools, complete Auto page of all manual inputs, lock, smooth drag, control logic from HMI) | NEXT |
+| T8 dMVH (MV rate limit), TF (filter), MAN TF / FSC meaning | open (values stored, not simulated) |
+| T2 CCS scenario test (internal) | open |

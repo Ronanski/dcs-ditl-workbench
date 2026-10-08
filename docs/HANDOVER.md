@@ -8,7 +8,7 @@ BASAHIN MUNA, sa ganitong ayos, bago gumawa ng kahit ano:
 1. README.md
 2. DESIGN.md  (mga rules na HINDI nababago + checklist ng bawat build, §3)
 2b. docs/FUNCTIONALITY.md (ANO ang dapat gawin ng bawat symbol - ito ang batas), docs/LINKING.md (page links), docs/FINDINGS.md (mga nahanap na mali + paano i-check), docs/DATA-FILES.md (mga file na binigay ng user at saan ginagamit - wag nang hingin ulit), docs/ASSUMED-VALUES.md (LAHAT ng numerong wala sa drawing: galing sa file o assumed), docs/REPORT-v1.15.0.md (buong report: findings, ginawa, as-left)
-3. PROJECT-NOTES-v1.16.0.md  (ang pinakabagong entry sa taas; ito rin ang changelog)
+3. PROJECT-NOTES-v1.17.0.md  (ang pinakabagong entry sa taas; ito rin ang changelog)
 4. docs/HANDOVER.md  (estado + bukas na items + mga pangako sa user)
 5. docs/BACKLOG.md  (ang "Logic scan" sections sa dulo = ang kasalukuyang trabaho)
 
@@ -33,7 +33,7 @@ Pagkabasa, ibuod mo sa 5 linya kung nasaan tayo at ano ang uunahin mo, at simula
 
 ## State (v1.14.3)
 - Current build: `logic-sim-v1.14.3.html` (root). Patch script: `tools/patch-1.14.3.js` (reads archive/html/logic-sim-v1.14.2.html, writes root). Old patches: tools/history/.
-- Notes / changelog: PROJECT-NOTES-v1.16.0.md. Manual: docs/MANUAL.md + docs/Logic-Sim-Manual.pdf (attached to each Release). Percent: docs/PROGRESS.md (Phase 1 ≈ 65.3 %).
+- Notes / changelog: PROJECT-NOTES-v1.17.0.md. Manual: docs/MANUAL.md + docs/Logic-Sim-Manual.pdf (attached to each Release). Percent: docs/PROGRESS.md (Phase 1 ≈ 65.3 %).
 - Releases: GitHub Actions (.github/workflows/release.yml) builds exe + apk and publishes vX.Y.Z when a root logic-sim-v*.html is pushed. User tests exe/apk himself.
 
 ## Tools you will use (all in tools/, run with node)
