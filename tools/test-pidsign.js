@@ -1,0 +1,7 @@
+/* Sign of every PID from the PV / SV pins of its drawn deviation block (field side of the controller): PV above SV must push the output UP for ACT:N (direct) and DOWN for ACT:R (reverse), whatever the drawn sign of the deviation block. Checked with the P term of the controller (kp * e). usage: node tools/test-pidsign.js <html> */
+const {load,build}=require('./lib.js');const {E,rows}=load(process.argv[2]);let tot=0,ok=0,nodev=0;const bad=[];
+for(const r of rows){if(/ABC-000/.test(r.name))continue;const S=build(E,r);S.procs=E.anProcList(S);
+ for(const b of S.blk){if(b.k!=='PID'&&b.k!=='PIDV')continue;const pn=E.anPins(S,b);if(!pn||pn.sv<0||!b.proc){nodev++;continue}tot++;const span=b.p.span>0?b.p.span:100;
+  S.rt.force={};S.rt.force[pn.sv]=.5*span;S.rt.force[pn.pv]=.5*span;E.anSettle(S,5);S.rt.force[pn.pv]=.5*span+.1*span;E.anStep(S,.5);const up=S.rt.st[b.id].pt;S.rt.force[pn.pv]=.5*span-.1*span;E.anStep(S,.5);const dn=S.rt.st[b.id].pt;
+  const wantUp=b.p.act<0?-1:1;const good=(up-dn)*wantUp>0;if(good)ok++;else bad.push(r.name+' '+b.txt[1]+' act '+b.p.act+' P term PV high '+up.toFixed(2)+' PV low '+dn.toFixed(2))}}
+console.log('PID with a deviation block: '+tot+' | output follows ACT (N: up with PV, R: down with PV) from the PV / SV pins: '+ok+' | problems: '+bad.length+' | no field PV (PV calculated from other controllers, no plant model) or no deviation block: '+nodev);bad.forEach(x=>console.log('PROBLEM',x));process.exit(bad.length?1:0);

@@ -4,6 +4,7 @@ Rule: every release gets a row here; the report of the release is `docs/REPORT-v
 
 | Version | Revision | Date | Build | Report | Summary |
 |---|---|---|---|---|---|
+| v1.20.0 (WIP, not released) | - | 2026-10-08 | `tools/patch-1.20.0.js` | docs/PLANT-WINDOW.md | Plant window (pop-out) with the REHEATER system; HMI button removed; operating point of the DCS snapshot |
 | v1.19.1 | 1 | 2026-10-08 | `logic-sim-v1.19.1.html` (+ exe, apk, GitHub Release v1.19.1) | docs/REPORT-v1.19.1.md | values only beside address / tag text; toggle "Wire values" |
 | v1.19.0 | 1 | 2026-10-08 | `logic-sim-v1.19.0.html` (+ exe, apk, GitHub Release v1.19.0) | docs/REPORT-v1.19.0.md, docs/SIMPLE-SUMMARY.md | plant layer at the transmitter, FORCE / SIM + HMI control, PV / SV pin fix (30 of 68 PID), SIG.AB select fix (O2 average), arrow-joins-wire, LN15 / LN21 ratio, circle values and click to source, panel 380 px, Trend scope |
 | v1.18.0 | 1 | 2026-10-08 | `logic-sim-v1.18.0.html` (+ exe, apk, GitHub Release v1.18.0) | docs/REPORT-v1.18.0.md, docs/SIMPLE-SUMMARY.md | HMI v2: complete Auto page, address picker, zoom / pan / lock |

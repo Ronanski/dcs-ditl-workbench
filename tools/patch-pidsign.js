@@ -1,0 +1,8 @@
+/* v1.20.0 WIP: SIGN OF THE PID (found with the DCS snapshot 005 REHEATER STEAM, 2026-10-08).
+   The drawings pair the action text with the way the deviation block is wired: ACT:R loops (37 of 68) have "SV + / PV -" (e = SV - PV, output up when the PV falls), ACT:N loops (29 + 1) have "PV + / SV -" (e = PV - SV). The v1.11.0 engine took the input as e = SV - PV for every loop and flipped it for ACT:N, so the 29 ACT:N loops with PV on the plus pin acted REVERSE (output up when the PV is BELOW the SV).
+   Evidence of the real plant (snapshot, every one is an ACT:N loop with PV on the plus pin and the PV below the SV): HP bypass PCV PV 121.1 / SV 123.1 -> MV 0.0; LP bypass PCV 34.4 / 36.0 -> 0.8; hot R/H pressure 34.4 / 35.5 -> 0.0; blow-off 122.1 / 128.0 -> 0.0; gland TCV 185 / 259 -> 0.0 (a direct loop: the valve opens only above the SV). ACT:R loop AUX.CONV 10.2 / 9.4 -> 0.0 (reverse: closed above the SV) agrees with the old rule.
+   Now the physical meaning is used: ACT:N = direct (output up when the PV rises), ACT:R = reverse (output up when the PV falls), whatever the drawn sign of the deviation block (es = +-pvSg * input). The process model of the plant layer follows (direct loop = the PV falls when the output rises). Loops without a deviation block keep the old rule. */
+module.exports=(rep)=>{
+rep(String.raw`const span=Math.max(1e-9,P.span||100),sg=P.act<0?1:-1,es=sg*rd(b.in0)/span*100,`,String.raw`const span=Math.max(1e-9,P.span||100),pg=b._pgv!==undefined?b._pgv:(b._pgv=(()=>{try{const q=anPins(S,b);return q&&q.pvSg?q.pvSg:null}catch(e){return null}})()),sg=pg==null?(P.act<0?1:-1):(P.act<0?-1:1)*pg,es=sg*rd(b.in0)/span*100,`);
+rep(String.raw`pr.sg=-(b.p.act<0?1:-1)*pn.pvSg;`,String.raw`pr.sg=b.p.act<0?1:-1;`);
+};

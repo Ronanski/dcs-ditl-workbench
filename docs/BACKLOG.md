@@ -194,3 +194,10 @@
 | Order of systems | 1) HP bypass and LP bypass (reheater system) 2) PAF / SAF demand, total coal flow, total air flow 3) drum level and feedwater |
 | Values on the drawing | the VALUE BELONGS TO THE ADDRESS, not to the wire: DONE (WIP): values only beside address / tag text (824 of 2 099 badges); 1 275 numbers on bare wires / block outputs are hidden behind a new toggle "Wire values" (off); a value that crosses to another sheet is shown beside the tag text of its circle (done in v1.19.0) |
 | Digital addresses | the same rule for digital addresses (value beside the address): to be checked |
+
+
+## Plant window (user 2026-10-08) - STARTED in WIP v1.20.0 (not released)
+- Done in the WIP: pop-out plant window (real second window, floating window inside the app where pop-ups are blocked), system 1 = REHEATER (screen 005 of the DCS snapshots): HP bypass, LP bypass, reheater inlet spray, hot reheat pressure control. HMI button removed from the toolbar (the HMI code stays as library for the window: state, F box, write). See docs/PLANT-WINDOW.md.
+- Next systems, one per release (order of the user): (2) PAF / SAF demand, total coal flow, total air flow (screens 007 Air / flue gas, 008 primary / secondary air, 011 coal feeder); (3) drum level and feedwater (screens 002 feed water, 003 main water / steam).
+- Not done yet: valve / damper position feedback (ZSO / ZSC and the AI position) from the AO command - the valve shows the MV of its controller; motors and valves of the DITL side; coupling between loops (closing the HP bypass does not yet raise the main steam pressure: each loop has its own first-order plant); the SV of a loop starts where the sheet logic puts it (often 0 until the operator or the ramp sets it); remove the HMI editor code completely (kept for now, hidden).
+- Rule (user): values belong to the ADDRESS. Tested in v1.20.0 WIP: no IO address is drawn as an AI block on two sheets; across sheets the value travels through circles / links (already carried). Digital addresses: same rule still to be checked.
