@@ -1,4 +1,4 @@
-# HMI VIEW — idea of the user (2026-10-08), design proposal (NOT built yet)
+# HMI VIEW — idea of the user (2026-10-08), BUILT in v1.16.0 (the three display modes were approved by the user)
 
 User: "a separate graphics view like an HMI whose buttons are connected to addresses". Questions: overlay or separate app? connected?
 
@@ -28,3 +28,11 @@ An overlay must NOT hide the diagram unless the user wants it. Three display mod
 | **Floating window** | A window over the diagram that can be moved, resized, minimised and made transparent; the diagram keeps running behind it | Test: press an HMI button and watch the diagram react |
 | **Split** | The HMI beside or below the diagram (draggable divider) | Both visible, nothing covered |
 The graphics: widgets drawn as vector shapes (valve, motor, tank, pipe, lamp, bar, number, button, trend, faceplate) from a small palette, placed by drag and drop; an optional background picture (a screenshot of the real HMI) under the widgets; every widget bound to an address / tag; the layout is saved in the project file. NOT built yet.
+
+
+## Built in v1.16.0 (as left)
+- Code: `tools/patch-hmi.js`; test: `tools/test-hmi.js` (modes, widgets bound to addresses, FORCE on a computed wire, faceplate, auto page, restore after F5).
+- Display modes: Tab / Float (movable, resizable) / Split (draggable divider). Widgets: text, lamp, number, bar, button (toggle / momentary), slider, valve, motor, tank, pipe, trend, faceplate (PID / PIDV / MAN tag). Pages, background picture, Auto page from the sheet.
+- Binding: tags / addresses of all sheets and "DITL pp-nn"; button / slider on an input = one-click input; on a computed wire = FORCE (marked, shift+click releases).
+- Saved in the browser bundle and in the project file (`hmi`). Sheets used by widgets keep running (`actSet`).
+- NOT done (listed so it is not forgotten): no animation of symbols other than colour / fill level; no pipe flow animation; a faceplate does not have its own AUTO / MAN switch (use the diagram panel through "open ▸"); no import of HMI graphics from a file other than a background picture.

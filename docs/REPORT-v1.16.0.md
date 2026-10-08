@@ -1,0 +1,22 @@
+# REPORT v1.16.0 — what was done since v1.15.2, as left (2026-10-08) — documentation revision 1 — RELEASED
+
+Built by `tools/patch-1.16.0.js` from `archive/html/logic-sim-v1.14.3.html` (= `patch-blocks` + `patch-defaults` + `patch-signals` + `patch-selector` + `patch-import` + `patch-links` + `patch-trace` + `patch-ditl` + `patch-trend` + `patch-path` + `patch-hmi`). DITL page identical (`tools/guard-ditl.js` → IDENTICAL). `AN_PV` stays 16 (the reader numbering did not change).
+
+## 1. What the user asked → what was done → as left
+| # | Request (2026-10-08) | Done | Test | As left |
+|---|---|---|---|---|
+| 1 | HMI graphics view whose buttons are connected to addresses; overlay or separate app? Does it cover the diagram? **Approved: Tab / Float / Split** | `tools/patch-hmi.js`: button **HMI**; **Tab** (own view), **Float** (movable, resizable window; the diagram keeps running behind it), **Split** (draggable divider). 12 widget types (text, lamp, number, bar, button toggle / momentary, slider, valve, motor, tank, pipe, trend, PID / MAN faceplate), pages, background picture, **Auto: this sheet**, saved in the browser storage and the project file | `tools/test-hmi.js`: modes, button writes the input, lamp follows, FORCE on a computed wire (shift-click releases), faceplate SV / PV / MV, sheets in the running set, auto page, restore after F5 | **Done**; docs/HMI-VIEW.md, MANUAL 3.4d |
+| 2 | A signal that is used in many places of a sheet: how to follow it without getting lost, **also in RUN mode** | Path (breadcrumbs, ⟲ Back to start, no loop growth), list of every exit, signal map of all sheets (each sheet once), receiving wires of a circle all selected; the same block in RUN and Pause | `tools/test-path.js` (deepest chain 3 hops, Back to start, crumb in the middle, A → B → A, RUN mode, map for 109 link sources, ≤ 80 lines), `tools/test-trace-x.js` 148 / 148 | **Done**; MANUAL 3.4 |
+| 3 | Live graph not only for PID: linear, controllers, integrators; zoom and normal view | Trend of any block or wire (PID: SV, PV, MV; others inputs and outputs), window 30 s – All, Zoom window (wheel, drag, Follow live, hide / show traces, own scale) | `tools/test-trend.js` (every PID 66, PIDV 2, FX 111, MAN 58, SUMA 10, RAMPB 15, RATE 28, LAG 14, math, SW, SEL, ALM, valves ... has a trend) | **Done**; MANUAL 3.4b |
+| 4 | Signals that come from the DITL: simulate them in the ABC sheets with one click in RUN; what the logic computes stays under the logic | Button **DITL signals**: 129 FROM DITL inputs (one click), 86 TO DITL live values, 9 texts not tied to a wire are named | `tools/test-ditl-signals.js` | **Done**; MANUAL 3.4c |
+| 5 | Circle MWD of ABC-001B says TO ABC-001D and TO ABC-020 (screenshot) | **H-18**: one link per destination sheet (`tools/patch-links.js`); 4 links were missing: 001B → 001D (MWD), 001B → 001D (X), 001B → 001A (C), 004A → 004C (D) | links 388 → 392, none lost; test-links-all 182 / 182; audit-reach 0 / 0; paint 0 | **Done**; docs/FINDINGS.md H-18 |
+| 6 | Record everything in the documentation, always | MANUAL (+ PDF), FINDINGS, PUNCHLIST, PROGRESS, BACKLOG, HMI-VIEW, RELEASES, PROJECT-NOTES, SIMPLE-SUMMARY, this report | | **Done** |
+
+## 2. Tests on the final build (`logic-sim-v1.16.0.html`)
+See the result list of the run (guard IDENTICAL; test-blocks 526; test-math 998; legend FF 282 / TON 35 / TOF 19 / TPS 108; PID 68; comparators 240; ramps 43; closed loops 68; legend matrix 2 973 / 2 973; audit-reach 0 dead ends / 0 orphans; links 182 / 182; paint 0 lit with value 0; timers 150 / 153; AI ranges 157 / 157; justify 2 193 / 2 194 (TR256 by the sequence test); browser suite: hmi, path, trend, trace-x, ditl-signals, project, numinput, circles, storage, storage2, anim, blocks-ui, modes, back-manual, links, ln, addr-ui, ades, defaults-ui, import 10 / 10).
+
+## 3. Not proven / not done (honest)
+- The HMI was tested in the browser here, not used on the user's PC; symbols change colour and fill level only (no flow animation); a faceplate has no AUTO / MAN switch of its own ("open ▸" goes to the block in the diagram).
+- Tests prove the blocks follow the legend and the drawings, not that the plant behaves the same. **No scenario test of a whole plant sequence yet: open task T2 (CCS scenario test, docs/PUNCHLIST.md).**
+- DCS-only numbers are ASSUMED (PID gains, alarm limits, ramp rates, pulse timing, select defaults): docs/PUNCHLIST.md part 2, docs/OPC-NOTES.md.
+- exe / apk are tested by the user, not here. Progress (html only): 85.9 %.

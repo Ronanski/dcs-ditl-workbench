@@ -4,7 +4,9 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
-## WIP after v1.15.2 (not released; no "go" yet) - signals through many sheets, DITL signals, Trend
+## v1.16.0 (logic-sim-v1.16.0.html) - HMI view, signals through many sheets, DITL signals, Trend (revision 1)
+- USER "go" (2026-10-08); the three HMI display modes were approved by the user. AN_PV stays 16. DITL page identical. Report: docs/REPORT-v1.16.0.md. Progress 85.9 %.
+- HMI VIEW (tools/patch-hmi.js, tools/test-hmi.js): Tab / Float / Split, 12 widget types bound to addresses, pages, background picture, Auto page from a sheet, saved with the project (hmi); sheets used by widgets keep running. docs/HMI-VIEW.md, MANUAL 3.4d.
 - H-18 (tools/patch-links.js): a circle with several destinations ("( TO ABC-001D ) ( TO ABC-020 )") gets one link per sheet: 4 new links (001B → 001D ×2, 001B → 001A, 004A → 004C); links 388 → 392, none lost.
 - PATH / EXITS / MAP (tools/patch-path.js, patch-trace.js): breadcrumbs with Back to start, no loop growth, list of every exit of the signal, signal map of all sheets, receiving wires with every net of the circle selected, richer pink rows (wire, description, feeds k). Tests: test-path.js, test-trace-x.js 148 / 148.
 - RUN MODE (user: "sa RUN mode din ay ginagamit ko ito"): the Path / exits / Map block is in the selection panel in RUN and Pause as well (before: VIEW only); the exits list does not depend on the T-leg filter. test-path.js checks the whole route and Back to start in RUN.

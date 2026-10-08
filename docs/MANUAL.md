@@ -1,4 +1,4 @@
-# Logic Sim — User Manual (v1.15.2)
+# Logic Sim — User Manual (v1.16.0)
 
 Logic Sim is an offline simulator and viewer of the plant DCS logic drawings: the digital interlock pages (DITL) and the 54 analog control sheets (ABC). It runs from one file, with no network, no OPC and no connection to the plant. It is for study, training and checking logic. It is **not** connected to the real DCS and never writes to it.
 
@@ -52,6 +52,8 @@ Top bar, left to right:
 | Panel | Show/hide the right panel. |
 | Import ABC DXF | Load updated drawings; kept in this browser (see 3.9). |
 | Imports | List of imported drawings, drawing-change report, Back to built-in. |
+| DITL signals | The signals that come FROM / go TO the DITL page: one-click inputs and live values (3.4c). |
+| HMI | The HMI graphics view: widgets connected to addresses; Tab / Float / Split (3.4d). |
 | ◀ sheet ▶ | Previous / next sheet. PageUp / PageDown also work. |
 
 Left list: the 54 sheets grouped by function, with a search box (sheet name, or any text in the sheet).
@@ -106,6 +108,17 @@ Select ANY block or wire (in VIEW, RUN or Pause): the panel shows a **Trend**: a
 ### 3.4c DITL signals (button)
 The DITL page is not simulated with the ABC sheets and is not touched. The signals that the ABC sheets say come **FROM DITL pp-nn** are inputs of the ABC set: the button **DITL signals** lists them (sheet, DITL reference, wire name and description, live value) with a **one-click control** (switch 1 / 0, or a number for an analog input). It works in RUN and Pause, all linked sheets run together, and everything that the ABC logic computes stays under the control of the logic (it is not in the list). The signals that go **TO DITL pp-nn** are listed with their live value (read-only). Texts that cannot be tied to a wire are counted and named at the top of the list.
 
+### 3.4d HMI view (graphics page connected to the addresses)
+**HMI** (toolbar) opens a graphics page whose buttons, lamps, numbers, sliders and faceplates are **connected to addresses**. It runs on the SAME engine as the diagrams: press an HMI button and the diagram reacts; the HMI shows the same values. Three display modes (buttons at the top right of the HMI):
+- **Tab** – own view: the HMI replaces the diagram area (like Digital · DITL / Analog · ABC); the right panel stays.
+- **Float** – a window over the diagram that you can **move** (drag its title bar), **resize** (drag the corner); the diagram keeps running behind it, so you can press an HMI button and watch the diagram.
+- **Split** – the HMI beside the diagram with a **draggable divider**; nothing is covered.
+**Widgets** (Edit → "+ Add widget…", then click on the page): Text, Lamp, Number, Bar, Button (toggle, or *momentary* = 1 while pressed), Slider (analog input), Valve, Motor / fan, Tank (level), Pipe, Trend (up to 3 addresses), Faceplate (tag of a PID / PIDV / MAN: SV, PV, MV bars and numbers; a MAN has a slider for its value; a PID with an input SV has an SV slider; "open ▸" jumps to the block in the diagram).
+**Address** = a tag or address written on the drawings (M.0097, SI0150, AI0130, B.0646, FICFA1043B.MV …) or a **DITL reference** ("DITL 13-69"). The status line under the page says where it was found (sheet, wire, INPUT or computed). If the address exists on several sheets, choose the sheet in the *Sheet* box (auto = the best place: for a button the input of the ABC set, for a lamp the wire that is computed).
+**Buttons and sliders:** on an **input** (signals FROM DITL and other external inputs) they write the one-click input. On a wire that the logic **computes** they FORCE it: the button shows "force" / "FORCED" (shift + click releases the force). Momentary buttons release on mouse-up.
+**Edit mode:** click a widget to select it, drag to move (grid of 5), change label / address / min / max / colour / size in the line under the page; **Duplicate**, **Delete** (or the Delete key). **+ Page**, **Rename**, **Delete page**. **Background…** puts a picture (for example a screenshot of the real HMI) under the widgets; the page takes the size of the picture (largest side 1600). **Auto: this sheet** makes a new page from the sheet you are viewing: a faceplate for every PID / MAN and a button (digital) or slider (analog) for every signal that comes FROM DITL.
+**Saved** with the other settings (browser storage and the project file), restored after F5. Every sheet that a widget reads or writes keeps running while the HMI is open (all linked sheets run together). The DITL page is not touched.
+
 ### 3.5 PID controllers
 Select a PID block. The panel shows PV, SV, output, A/M mode and tuning (Kp, Ti, Td), direct/reverse action, and the range read from the drawing. Default tuning is chosen by the loop type from the tag (flow, pressure, temperature, level, analysis, speed) and a **Use this speed** button sets the simulation speed that suits the loop. These are typical values, **not** the plant's real tuning: replace them when you have the real data.
 
@@ -121,7 +134,7 @@ The 89 DCS linear tables of LINEAR.xls are built in, plus S1-LN38 and S1-LN39 of
 ### 3.8 View mode
 See 2.5 and 3.4. In VIEW nothing can be changed by accident: you can select, search, trace and read the descriptions.
 
-### 3.9 Updating drawings (Import ABC DXF) — v1.15.2
+### 3.9 Updating drawings (Import ABC DXF) — v1.16.0
 **Import ABC DXF** loads updated analog drawings (the sheet name is the file name, e.g. `ABC-050.dxf` replaces ABC-050). The imported file is **kept in this browser** and used again every time you open the app. The saved values (forces, inputs) of that sheet are cleared at import, because the numbers of the wires can change. After the import the **Imports** panel opens with the **drawing-change report**: counts of blocks / nets / lines / circles / texts (built-in vs imported), the block kinds that changed, and the blocks and texts that exist in only one of the two. "IDENTICAL" means nothing changed. **Back to built-in** removes the import and returns to the built-in drawing. Check **Health** afterwards and keep a saved project file before importing.
 
 ### 3.10 Assumed values and data files
