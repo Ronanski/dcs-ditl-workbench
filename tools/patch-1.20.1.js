@@ -1,7 +1,7 @@
-/* v1.14.3 -> v1.20.0 (v1.19.0 = same pipeline without the address-only values; v1.18.0 = same pipeline without patch-own / patch-fix / fix-data and the plant layer; v1.17.0 = same pipeline without patch-hmi2; v1.16.0 = same pipeline without patch-face / cos / proc / ui and the Trend v2; v1.15.2 = same pipeline without patch-links / ditl / trend / path / hmi; v1.15.1 = also without patch-import.js / patch-trace.js / H-17; v1.15.0 = without H-15 / H-16 either). Reader fixes from the sheet-by-sheet verification (docs/FINDINGS.md). DITL page untouched.  usage: node tools/patch-1.16.0.js [out.html]  (reads archive/html/logic-sim-v1.14.3.html, or the root file before it is archived; writes logic-sim-v1.20.0.html) */
+/* v1.14.3 -> v1.20.1 (v1.19.0 = same pipeline without the address-only values; v1.18.0 = same pipeline without patch-own / patch-fix / fix-data and the plant layer; v1.17.0 = same pipeline without patch-hmi2; v1.16.0 = same pipeline without patch-face / cos / proc / ui and the Trend v2; v1.15.2 = same pipeline without patch-links / ditl / trend / path / hmi; v1.15.1 = also without patch-import.js / patch-trace.js / H-17; v1.15.0 = without H-15 / H-16 either). Reader fixes from the sheet-by-sheet verification (docs/FINDINGS.md). DITL page untouched.  usage: node tools/patch-1.16.0.js [out.html]  (reads archive/html/logic-sim-v1.14.3.html, or the root file before it is archived; writes logic-sim-v1.20.1.html) */
 const fs=require('fs');const src=fs.existsSync('logic-sim-v1.14.3.html')?'logic-sim-v1.14.3.html':'archive/html/logic-sim-v1.14.3.html';let h=fs.readFileSync(src,'utf8');
 const rep=(a,b)=>{const n=h.split(a).length-1;if(n!==1)throw new Error(n+' x '+a.slice(0,90));h=h.split(a).join(b)};
-rep('<title>Logic Sim v1.14.3</title>','<title>Logic Sim v1.20.0</title>');
+rep('<title>Logic Sim v1.14.3</title>','<title>Logic Sim v1.20.1</title>');
 /* F-01 MUL with ONE input and a number written above the X box ("0.8", "1.2" on ABC-002): the number is the gain; it was ignored (output = input x 1) */
 rep(`   case 'DIV':{const s=ins.slice().sort(posOrder);let num=null,den=null;`,`   case 'MUL':{b.i=ins.map(p=>p.n);if(ins.length===1){const t=near(b.cx,b.cy,16,q=>/^-?\\d+(?:\\.\\d+)?$/.test(q.t.trim()))[0];b.gain=t?+t.t.trim():1}break}
    case 'DIV':{const s=ins.slice().sort(posOrder);let num=null,den=null;`);
@@ -70,6 +70,7 @@ require('./patch-pidsign.js')(rep);
 require('./patch-own.js')(rep);
 require('./patch-plant.js')(rep);
 require('./patch-fix.js')(rep);
+require('./patch-addr.js')(rep);
 require('./patch-ui.js')(rep);
 h=require('./fix-data.js')(h);
-fs.writeFileSync(process.argv[2]||'logic-sim-v1.20.0.html',h);console.log('wip written',h.length);
+fs.writeFileSync(process.argv[2]||'logic-sim-v1.20.1.html',h);console.log('wip written',h.length);
