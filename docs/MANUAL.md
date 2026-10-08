@@ -1,4 +1,4 @@
-# Logic Sim — User Manual (v1.15.1)
+# Logic Sim — User Manual (v1.15.2)
 
 Logic Sim is an offline simulator and viewer of the plant DCS logic drawings: the digital interlock pages (DITL) and the 54 analog control sheets (ABC). It runs from one file, with no network, no OPC and no connection to the plant. It is for study, training and checking logic. It is **not** connected to the real DCS and never writes to it.
 
@@ -97,7 +97,7 @@ Click a block or a wire. The right panel shows its inputs and outputs with live 
 3. For T/A-M switches only the leg in use is followed. *Selected T leg only / Both T legs* follows both.
 4. A row marked **◀ sheet ABC-xxx** means the input comes from another sheet; click it to jump there and the sending wire is selected (↩ Back returns). A pink row **▶ continues in sheet ABC-xxx (circle n)** means the selected wire goes on in another sheet; click it: that sheet opens with the receiving wire selected and the trace goes on from there (you can follow a signal through many sheets; ↩ Back returns one step at a time).
 5. Click an empty place of the drawing: the trace goes away and you are back in plain VIEW.
-Trace now crosses sheets in both directions (WIP after v1.15.1; `node tools/test-trace-x.js`: all 144 links jump to the right sheet with the right wire).
+Trace now crosses sheets in both directions (v1.15.2; `node tools/test-trace-x.js`: all 144 links jump to the right sheet with the right wire).
 
 ### 3.5 PID controllers
 Select a PID block. The panel shows PV, SV, output, A/M mode and tuning (Kp, Ti, Td), direct/reverse action, and the range read from the drawing. Default tuning is chosen by the loop type from the tag (flow, pressure, temperature, level, analysis, speed) and a **Use this speed** button sets the simulation speed that suits the loop. These are typical values, **not** the plant's real tuning: replace them when you have the real data.
@@ -114,7 +114,7 @@ The 89 DCS linear tables of LINEAR.xls are built in, plus S1-LN38 and S1-LN39 of
 ### 3.8 View mode
 See 2.5 and 3.4. In VIEW nothing can be changed by accident: you can select, search, trace and read the descriptions.
 
-### 3.9 Updating drawings (Import ABC DXF) — WIP after v1.15.1
+### 3.9 Updating drawings (Import ABC DXF) — v1.15.2
 **Import ABC DXF** loads updated analog drawings (the sheet name is the file name, e.g. `ABC-050.dxf` replaces ABC-050). The imported file is **kept in this browser** and used again every time you open the app. The saved values (forces, inputs) of that sheet are cleared at import, because the numbers of the wires can change. After the import the **Imports** panel opens with the **drawing-change report**: counts of blocks / nets / lines / circles / texts (built-in vs imported), the block kinds that changed, and the blocks and texts that exist in only one of the two. "IDENTICAL" means nothing changed. **Back to built-in** removes the import and returns to the built-in drawing. Check **Health** afterwards and keep a saved project file before importing.
 
 ### 3.10 Assumed values and data files

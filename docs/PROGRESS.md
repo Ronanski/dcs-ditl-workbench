@@ -10,7 +10,7 @@ Phase 1 = engineering station + controller logic (what we have now). Phase 2 = p
 | 4 | Modes and tools | 15 | 100 % | 15.0 | 8 of 8: Run, Pause, force/inputs, Step, View, Why?, address highlight, Trace (also across sheets, both directions: `test-trace-x.js` 144 / 144) done |
 | 5 | Project / files / app | 10 | 100 % | 10.0 | 5 of 5: project file, desktop shell + release pipeline, docs, persistent DXF import + drawing-change report (P7, WIP build after v1.15.1: `tools/test-import.js` 10 / 10) done. exe / apk tested on devices is NOT counted (user decision 2026-10-07: he tests them himself; the html is what matters) |
 | 6 | Verification | 20 | 85.7 % | 17.1 | 7-check rubric on the html only (section "Detailed breakdown"): 6 automated checks done on 51 / 51 sheets, user confirmation 0. The PDF eye-comparison was dropped by the user (2026-10-08): the sheets are the drawings |
-| | **PHASE 1 TOTAL** | 100 | | **85.9 %** | (WIP after v1.15.1: P7 done (+2.0), the PDF check dropped (+2.1), Trace across sheets (+1.9); 79.9 % in v1.15.0; exe / apk device test not counted; 65.3 % after v1.14.3) |
+| | **PHASE 1 TOTAL** | 100 | | **85.9 %** | (v1.15.2: P7 done (+2.0), the PDF check dropped (+2.1), Trace across sheets (+1.9); 79.9 % in v1.15.0; exe / apk device test not counted; 65.3 % after v1.14.3) |
 
 Rule: a block only counts as 100 when the user confirmed it AND a test exists. Honest estimate, not a promise: item 6 (verification) will move slowest.
 
