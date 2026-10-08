@@ -53,6 +53,7 @@ rep(`if(nl.size)(tgt?S.xc:S.conn).push({num,tgt,x:c.x,y:c.y,r:c.r,nets:[...nl],s
 rep(`if(S.gate.some(g=>g.body&&g.body.r&&anD(g.body.cx,g.body.cy,c.x,c.y)<.5))continue;`,`if(S.gate.some(g=>g.body&&g.body.r&&anD(g.body.cx,g.body.cy,c.x,c.y)<.5))continue;if(S.shp.some(sh=>sh.ty==='quad'&&c.x>=sh.x0&&c.x<=sh.x1&&c.y>=sh.y0&&c.y<=sh.y1))continue;`);
 require('./patch-blocks.js')(rep);
 require('./patch-defaults.js')(rep);
+require('./patch-face.js')(rep);
 require('./patch-signals.js')(rep);
 require('./patch-selector.js')(rep);
 require('./patch-import.js')(rep);
@@ -62,4 +63,6 @@ require('./patch-ditl.js')(rep);
 require('./patch-trend.js')(rep);
 require('./patch-path.js')(rep);
 require('./patch-hmi.js')(rep);
+require('./patch-cos.js')(rep);
+require('./patch-ui.js')(rep);
 fs.writeFileSync(process.argv[2]||'logic-sim-v1.16.0.html',h);console.log('wip written',h.length);

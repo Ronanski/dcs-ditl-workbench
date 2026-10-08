@@ -152,4 +152,7 @@ const RATE=[
 const PO={cyc:2,stroke:60,minp:0.2,
  basis:'typical electric actuator on pulse (raise / lower) control: pulse cycle 2 s, full stroke 60 s, shortest pulse 0.2 s. PIDV itself runs as the velocity-form PID; the PO shows the raise (PO1) / lower (PO2) pulses and the pulse position.'};
 
-module.exports={TP,ALM,RATE,PO};
+/* ---- FACE: PID / MAN / SUMA faceplate values written by the user from the DCS (2026-10-08, file DCS-FORM-PID-MAN-SUMA_FILLED.xlsx, extract tools/data/dcs-form2-filled.json). FILE data, not assumed. ---- */
+const FACE=require('./data/dcs-form2-filled.json');
+
+module.exports={TP,ALM,RATE,PO,FACE};

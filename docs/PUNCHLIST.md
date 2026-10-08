@@ -18,7 +18,7 @@ Closed this round (all tested, see docs/FINDINGS.md and docs/PROGRESS.md): O-05 
 |---|---|---|---|
 | V1 | ALM limits HH / H / L / LL of 104 alarms | ASSUMED (150 MW CFB) | `docs/DCS-DATA-FORM.pdf` section A |
 | V2 | PID gains (Kp, Ti, Td, action, limits) of 68 PID / PIDV | default tuning by loop type. First look at the OPC data: FICFA1043B has P = 200, I = 50, D = 0 (docs/OPC-NOTES.md); unit of P (proportional band?) and I to confirm | form section B, or OPC |
-| V2b | **PID, MAN, SUMA faceplate parameters** (PH PL SH SL MH ML dMVH P I D DTI TF GAP BND CUT DH PHONDT PLONDT; MAN FSC DT; SUMA RSTS K DT) of 68 PID + 58 MAN + 10 SUMA | not yet collected; form sorted by station and MNO: `docs/DCS-FORM-PID-MAN-SUMA.xlsx` / `.pdf`; what the faceplates show: docs/DCS-FACEPLATES.md. Once the values come, the engine will also use dMVH, TF, DTI, GAP, BND, CUT, MAN FSC, SUMA K / RSTS (assistant task T5 after the data) |
+| V2b (DONE 2026-10-08: values received, docs/DCS-FILLED-FORM.md; ASSUMED-VALUES section 5) | **PID, MAN, SUMA faceplate parameters** (PH PL SH SL MH ML dMVH P I D DTI TF GAP BND CUT DH PHONDT PLONDT; MAN FSC DT; SUMA RSTS K DT) of 68 PID + 58 MAN + 10 SUMA | not yet collected; form sorted by station and MNO: `docs/DCS-FORM-PID-MAN-SUMA.xlsx` / `.pdf`; what the faceplates show: docs/DCS-FACEPLATES.md. Once the values come, the engine will also use dMVH, TF, DTI, GAP, BND, CUT, MAN FSC, SUMA K / RSTS (assistant task T5 after the data) |
 | V3 | Ramp rates of 8 boxes | ASSUMED | form section C |
 | V4 | PO pulse cycle / stroke / shortest pulse (2 PO) | 2 s / 60 s / 0.2 s | form section D |
 | V5 | PRI / SEC / AVG default of 26 select circuits | AVG | form section E |

@@ -4,9 +4,11 @@ const {chromium}=require('/opt/node-tools/node_modules/playwright');const path=r
 await p.goto('file://'+path.resolve(process.argv[2]));await p.waitForTimeout(2500);await p.click('text=Analog · ABC >> nth=0');await p.waitForTimeout(3500);
 const idx=await p.evaluate(async()=>{await AN.data;let F=0,T=0,L=0,sheets=0;const lost=[];for(const sh of AN.sheets){if(/ABC-000/.test(sh.name))continue;const x=AN.dsIdx(sh);if(x.from.size||x.to.size)sheets++;F+=x.from.size;T+=x.to.size;L+=x.lost.length;x.lost.forEach(l=>lost.push(sh.name+': '+l.t))}return{F,T,L,sheets,lost:lost.slice(0,6)}});
 console.log(JSON.stringify(idx));ck('FROM DITL inputs found',idx.F>=100,idx.F);ck('TO DITL outputs found',idx.T>=70,idx.T);ck('texts not tied to a wire are few',idx.L<=10,idx.L);
-await p.click('text=DITL signals');await p.waitForTimeout(1500);
+await p.evaluate(async()=>{AN.go(AN.sheets.findIndex(s=>s.name==='ABC-003B'));await new Promise(r=>setTimeout(r,600))});await p.click('text=DITL signals');await p.waitForTimeout(1500);
 const ui=await p.evaluate(()=>{const a=document.getElementById('anln');return{shown:a.style.display==='block',rows:a.querySelectorAll('tr').length,btn:a.querySelectorAll('button').length,head:a.textContent.slice(0,260)}});
-ck('panel opened with rows',ui.shown&&ui.rows>150,JSON.stringify({rows:ui.rows,btn:ui.btn}));console.log(ui.head);
+ck('panel opened: ONLY the signals of the open sheet (ABC-003B)',ui.shown&&ui.rows>8&&ui.rows<60&&/ABC-003B/.test(ui.head),JSON.stringify({rows:ui.rows,btn:ui.btn}));console.log(ui.head);
+await p.click('text=All sheets');await p.waitForTimeout(1200);const all=await p.evaluate(()=>document.getElementById('anln').querySelectorAll('tr').length);ck('"All sheets" lists every sheet',all>150,all);
+await p.evaluate(async()=>{AN.go(AN.sheets.findIndex(s=>s.name==='ABC-050'));await new Promise(r=>setTimeout(r,900))});const follow=await p.evaluate(()=>/ABC-050|no signal/.test(document.getElementById('anln').textContent));await p.click('text=This sheet only');await p.waitForTimeout(800);const back=await p.evaluate(()=>/ABC-050/.test(document.getElementById('anln').textContent.slice(0,80)));ck('the list follows the open sheet',back);
 /* one click switches an input and the logic reacts: pick a FROM DITL digital input that feeds a block on a sheet, toggle through the panel button, read a downstream net */
 const act=await p.evaluate(async()=>{const w=ms=>new Promise(r=>setTimeout(r,ms));const a=document.getElementById('anln');
  AN.go(AN.sheets.findIndex(s=>s.name==='ABC-003B'));await w(300);const sh=AN.cs(),S=sh.S,ix=AN.dsIdx(sh);let net=null;for(const[n]of ix.from)if(S.ext.includes(n)&&S.nets[n].dig&&S.cns[n]&&S.cns[n].length){net=n;break}

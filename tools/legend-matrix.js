@@ -57,10 +57,10 @@ for(const r of rows){if(/ABC-000/.test(r.name))continue;const S=build(E,r),V=n=>
   /* ---- PID / PIDV: direction of the action (ACT:R / ACT:N) and the range ---- */
   if(b.k==='PID'||b.k==='PIDV'){const oo=b.o.find(n=>(S.cns[n]||[]).length&&S.nets[n].segs.length);if(b.in0==null||b.in0<0||oo==null){rec(r.name,b.k,false,nm(b)+' no input or output goes nowhere');continue}
    for(const t of S.blk)if((t.k==='AMT'||t.k==='SW')&&(t.trkFrom||[]).includes(b)){const st=S.rt.st[t.id];const reach=n=>{const seen=new Set(),q=[oo];while(q.length){const x=q.pop();if(x===n)return true;if(seen.has(x))continue;seen.add(x);for(const c of S.cns[x]||[])for(const y of c.o||[])q.push(y);for(const[d,s2]of S.link||[])if(s2===x)q.push(d)}return false};st.fm=reach(t.a)?'A':reach(t.b)?'B':null}
-   const up=(b.p.act==null?-1:b.p.act)<0?10:-10;const seq=[[up,30],[-up,12],[up,12]];S.rt.force={};const ys=[];go(5);for(const [dev,secs] of seq){F(b.in0,dev);const y0=V(oo);for(let i=0;i<secs*2;i++)E.anStep(S,.5);ys.push([y0,V(oo)])}
+   const spn=b.p.span>0?b.p.span:100,td0=b.p.td;b.p.td=0;/* no derivative kick in this direction / range check; step = 10 % of the span */const up=((b.p.act==null?-1:b.p.act)<0?1:-1)*.1*spn;const seq=[[up,30],[-up,12],[up,12]];S.rt.force={};const ys=[];go(5);for(const [dev,secs] of seq){F(b.in0,dev);const y0=V(oo);for(let i=0;i<secs*2;i++)E.anStep(S,.5);ys.push([y0,V(oo)])}
    const lo=b.p.lo==null?0:b.p.lo,hi=b.p.hi==null?100:b.p.hi,rng=ys.every(([a,c])=>a>=lo-1e-6&&c<=hi+1e-6&&c>=lo-1e-6&&a<=hi+1e-6);const still=ys.every(([a,c])=>Math.abs(c-a)<1e-9);
    const dir=(ys[1][1]<ys[1][0]+1e-9)&&(ys[2][1]>ys[2][0]-1e-9)&&!(ys[1][1]>ys[1][0]+1e-6)&&!(ys[2][1]<ys[2][0]-1e-6);
-   rec(r.name,b.k,(still||dir)&&rng,nm(b)+' act '+b.p.act+' '+JSON.stringify(ys.map(p=>p.map(v=>+v.toFixed(2)))));continue}
+   b.p.td=td0;rec(r.name,b.k,(still||dir)&&rng,nm(b)+' act '+b.p.act+' '+JSON.stringify(ys.map(p=>p.map(v=>+v.toFixed(2)))));continue}
   /* ---- rate limiter / ramp ---- */
   if(b.k==='RATE'||b.k==='RAMPB'){const P=b.p||{};if(o==null||b.main==null||b.main<0){rec(r.name,b.k,false,nm(b)+' no input / output');continue}
    const run=(x0,x1,byp,secs)=>{S.rt.force={};if(b.byp>=0)F(b.byp,0);F(b.main,x0);if(b.up!==undefined)F(b.up,1);if(b.dn!==undefined)F(b.dn,1);go(5);for(let i=0;i<5;i++)E.anStep(S,.5);F(b.main,x1);if(b.byp>=0)F(b.byp,byp);const v0=V(o);for(let i=0;i<secs*2;i++)E.anStep(S,.5);return [v0,V(o)]};
@@ -79,7 +79,7 @@ for(const r of rows){if(/ABC-000/.test(r.name))continue;const S=build(E,r),V=n=>
   if(b.k==='SUMA'){if(!b.i.length){rec(r.name,'SUMA',false,nm(b)+' no input');continue}S.rt.st[b.id].tot=0;F(b.i[0],3600);go(3);for(let i=0;i<20;i++)E.anStep(S,.5);rec(r.name,'SUMA',near(S.rt.st[b.id].tot,10,.06),nm(b)+' total '+S.rt.st[b.id].tot);continue}
   if(b.k==='CTK'){if(b.ctl==null||b.ctl<0||b.cin<0||o==null){rec(r.name,'CTK',false,nm(b)+' pins');continue}F(b.cin,55);F(b.ctl,1);go(5);const on=V(o);F(b.ctl,0);F(b.cin,77);go(5);rec(r.name,'CTK',near(on,55)&&near(V(o),55),nm(b)+' ctl 1 -> '+on+', ctl 0 -> '+V(o)+' (last value stays)');continue}
   if(b.k==='TP'){if(b.tpd==null||b.tpd<0||b.tpt==null||b.tpt<0||o==null||b.p.tref==null){rec(r.name,'TP',false,nm(b)+' pins or operating temperature');continue}F(b.tpd,40);F(b.tpt,b.p.tref);go(5);const a=V(o);F(b.tpt,b.p.tref+100);go(5);const kt=(b.p.tref+100+273.15)/(b.p.tref+273.15);rec(r.name,'TP',near(a,40)&&near(V(o),40/kt,1e-5),nm(b)+' at operating T '+a+', +100 °C '+V(o));continue}
-  if(b.k==='PO'){const x=b.i[0];if(x==null){rec(r.name,'PO',false,nm(b)+' no input');continue}F(x,10);go(5);for(let i=0;i<8;i++)E.anStep(S,.5);F(x,40);let up=0;for(let i=0;i<12;i++){E.anStep(S,.5);if(S.rt.st[b.id].up)up++}rec(r.name,'PO',up>0,nm(b)+' no raise pulse');continue}
+  if(b.k==='PO'){const x=b.i[0];if(x==null){rec(r.name,'PO',false,nm(b)+' no input');continue}{const s0=S.rt.st[b.id];if(s0){s0.pos=null;s0.ct=0}}F(x,10);go(5);for(let i=0;i<8;i++)E.anStep(S,.5);F(x,40);let up=0;for(let i=0;i<12;i++){E.anStep(S,.5);if(S.rt.st[b.id].up)up++}rec(r.name,'PO',up>0,nm(b)+' no raise pulse');continue}
   if(b.k==='SIGAB'){rec(r.name,'SIGAB',true,'');continue}}
 }
 /* ---------- output ---------- */
