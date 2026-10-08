@@ -7,11 +7,39 @@ rep(String.raw`function connClick(c){const sh=cs(),S=sh.S;AN.sel={net:c.nets[0]}
 function connClick(c){const sh=cs(),S=sh.S;AN.sel={net:c.nets[0]};selBox();paint();panelUpd(true);
  {const dt=S.tx.filter(t=>/DITL\s*[0-9]{2}[A-Z]?\s*-\s*\d+/i.test(t.t)&&Math.hypot(t.x-c.x,t.y-c.y)<c.r+30).sort((a,b)=>Math.hypot(a.x-c.x,a.y-c.y)-Math.hypot(b.x-c.x,b.y-c.y))[0];if(dt){const m=/DITL\s*([0-9]{2}[A-Z]?)\s*-\s*(\d+)/i.exec(dt.t);if(m&&dsGoRef('DITL '+m[1]+'-'+m[2]))return}}`);
 rep(String.raw`cell(dir==='FROM'?'◀ FROM':'→ TO'),cell(refs.join(', ')),`,String.raw`cell(dir==='FROM'?'◀ FROM':'→ TO'),h$('td',{style:'padding:2px 6px;border-bottom:1px solid var(--line,#334)'},refs.map(r=>h$('a',{href:'#',txt:r,title:'Open the DITL page at this sheet',style:'margin-right:6px;color:var(--acc)',onclick:ev=>{ev.preventDefault();dsGoRef(r)}}))),`);
+/* THE ADDRESS OWNS THE VALUE (engine): the same SI / AI address written at several places of one sheet is ONE signal. v1.20.1 only merged the nets that the reader had named; a text that the reader had not tied to a wire (ABC-002 SI0061: 3 texts, 1 named wire) left its wire undriven = 0 beside a driven wire of the same address. Now every SI / AI text without a wire is tied to the nearest analog wire that no text names (25 units), and the source is chosen: real driver > circle link > input. */
+rep(String.raw`for(const k in G){const g=G[k];if(g.length<2)continue;const src=g.find(n=>S.drv[n].length&&nets[n].dig===nets[g[0]].dig&&!S.drv[n].some(d=>d.k==='LINK'))??-1;
+   const master=src>=0?src:g.find(n=>!S.drv[n].length&&S.cns[n].length);`,String.raw`{const named=new Set();S.lab.forEach((l,n)=>{if(l)named.add(n)});(S.tagN||[]).forEach(q=>named.add(q.n));
+   const ctag=new Set();for(const c of(S.conn||[]).concat(S.xc||[])){const n0=c.nets&&c.nets[0];if(n0==null||!nets[n0]||nets[n0].dig)continue;const tt=S.tx.filter(t=>/^(S\d\s*)?(SI|AI)\d{3,5}$/i.test(String(t.t).trim())&&Math.hypot(t.x-c.x,t.y-c.y)<c.r+14).sort((p,q)=>Math.hypot(p.x-c.x,p.y-c.y)-Math.hypot(q.x-c.x,q.y-c.y))[0];if(tt&&!ctag.has(tt)){ctag.add(tt);add(tt.t,n0);(S.tagN=S.tagN||[]).push({t:tt.t,n:n0,d:0,by:'circle'})}}
+   for(const t of S.tx){const s0=String(t.t).trim();if(!/^(S\d\s*)?(SI|AI)\d{3,5}$/i.test(s0)||ctag.has(t))continue;if(S.lab.some(l=>l&&l.t===t.t&&Math.hypot(l.x-t.x,l.y-t.y)<1))continue;let bn=null,bd=25;for(const nn of nets){if(!nn.segs.length||nn.dig||named.has(nn.id))continue;let d=1e9;for(const i of nn.segs)d=Math.min(d,anPtSeg(t.x,t.y,S.seg[i]));if(d<bd){bd=d;bn=nn.id}}
+    if(bn!=null){add(t.t,bn);(S.tagN=S.tagN||[]).push({t:t.t,n:bn,d:bd,by:'addr'})}}}
+  for(const k in G){const g=G[k];if(g.length<2)continue;const dg=nets[g[0]].dig,isL=n=>S.link.some(x=>x[0]===n);const src=g.find(n=>S.drv[n].length&&nets[n].dig===dg&&!S.drv[n].some(d=>d.k==='LINK'))??g.find(n=>isL(n))??-1;
+   const master=src>=0?src:g.find(n=>!S.drv[n].length&&S.cns[n].length);`);
 rep(String.raw` svg.append(g0,go_,gleg,gd,gfg,gf,gp,gt,gcj,L.selg,gb);
- const av=AN.av[sh.name];`,String.raw` {const done=new Set(),bx=q=>+q.t.getAttribute('x'),by=q=>-+q.t.getAttribute('y'),has=(n,x,y)=>L.bd.some(q=>q.n===n&&!q.wire&&!q.skip&&Math.hypot(bx(q)-x,by(q)-y)<45),put=(n,t,x,y,h)=>{if(n==null||!S.nets[n]||!S.nets[n].segs.length||S.nets[n].dig)return;/* user: only the ANALOG addresses have a live value; digital stays as colour */const k=n+'|'+t+'|'+Math.round(x)+'|'+Math.round(y);if(done.has(k))return;done.add(k);const ex=x+String(t).trim().length*(h||3)*.62+1.5;if(has(n,ex,y))return;
-   const e=el('text',{x:ex,y:-(y+bs*.2),class:'bd'+(S.nets[n].dig?' dg':''),'text-anchor':'start'},gb);e.dataset.n=n;L.bd.push({n,t:e,last:null,skip:false,wire:false,addr:true})};
-  S.lab.forEach((l,n)=>{if(l&&l.t)put(n,l.t,l.x,l.y,l.h)});(S.tagN||[]).forEach(q=>{const tx=S.tx.find(z=>z.t===q.t);if(tx)put(q.n,q.t,tx.x,tx.y,tx.h)})}
+ const av=AN.av[sh.name];`,String.raw` {/* ONE live value per analog address text (user: "alam natin lahat ng analog addresses sa text ... instrument tags, outputs, SI addresses"). Order: (1) the wire the reader tied the text to; (2) the tag of a block (PID / MAN / ALM ... , .PV / .SV / .MV); (3) the nearest analog wire that no text names (25 units). An old badge near the text is ADOPTED, the others are hidden (they are "wire values"). */
+  const ADRE=/^(S\d\s*)?([A-Za-z]{1,6}\.?\d{3,6}[A-Za-z]?|[A-Z]{2,}[A-Z0-9\-]*\d[A-Z0-9\-]*)(\.(PV|SV|MV))?$/,SKIP=/^(LN\d+|ABC-\d+[A-Z]?|PTN\d+|SIG\.AB|PID|PIDV|MAN|SUMA|FX|HS|AI|AO|TR\d+|P\.\d+|HOU\w*|STN\d*|MW|FM\d*|DP|S|AB|TCF\d*|MOF-.*|SC-L.*|INV-M.*)$/i,DIGRE=/^(S\d\s*)?[MBIO]\.[0-9A-Fa-f]{3,4}$/;
+  const bx=q=>+q.t.getAttribute('x'),by=q=>-+q.t.getAttribute('y'),oldB=L.bd.filter(q=>!q.addr),used=new Set(),named=new Set();
+  S.lab.forEach((l,n)=>{if(l&&l.t)named.add(n)});(S.tagN||[]).forEach(q=>named.add(q.n));
+  const segD=(x,y,n)=>{let d=1e9;for(const i of S.nets[n].segs)d=Math.min(d,anPtSeg(x,y,S.seg[i]));return d};
+  const byTag=t=>{const base=t.replace(/\.(PV|SV|MV)$/i,''),suf=((/\.(PV|SV|MV)$/i.exec(t)||[])[1]||'').toUpperCase();const b=S.blk.find(q=>q.pins&&(q.txt||[]).some(z=>String(z).trim()===base));if(!b)return null;
+   if(b.k==='PID'||b.k==='PIDV'){const pn=anPins(S,b);if(suf==='PV'&&pn)return pn.pv;if(suf==='SV'&&pn)return pn.sv;return(b.o||[])[0]}
+   if(b.k==='ALM'||b.k==='TXD')return(b.i||[])[0];return(b.o||[])[0]!=null?b.o[0]:(b.i||[])[0]};
+  const ioN=new Map();for(const b of S.blk){if(b.k!=='AI'||b.fb||!b.tagAI)continue;try{const ad=adesFind(sh,b.tagAI);const o=b.pins.find(q=>q.role==='out');if(ad&&ad.rec&&ad.rec.tag&&o)ioN.set(ad.rec.tag,o.n)}catch(e){}}/* the IO-list tag of a transmitter (AT-FG1122 = AI0273) is the value of its AI block */
+  const seenT=new Set(),rp=L.addrRep=[],un=L.addrUn=[];let nUn=0;
+  for(const t of S.tx){const s=String(t.t).trim();if(!ADRE.test(s)||SKIP.test(s)||DIGRE.test(s))continue;const kk=s+'|'+Math.round(t.x)+'|'+Math.round(t.y);if(seenT.has(kk))continue;seenT.add(kk);
+   let n=null;S.lab.forEach((l,m)=>{if(n==null&&l&&l.t===t.t&&Math.hypot(l.x-t.x,l.y-t.y)<1&&S.nets[m].segs.length)n=m});if(n==null){const q=(S.tagN||[]).find(z=>z.t===t.t&&S.nets[z.n]&&S.nets[z.n].segs.length);if(q)n=q.n}
+   if(n==null){const m=byTag(s);if(m!=null&&m>=0&&S.nets[m]&&S.nets[m].segs.length)n=m}
+   if(n==null&&/^(AO\d|[A-Z]{2,4}-[A-Z]{1,3}\d)/.test(s)){/* valve / actuator tag or AO address: the command (AO / ACT / VLV / PO) or the measurement (AI) of the nearest block */let bb=null,bdd=70;for(const q of S.blk){if(!['AO','ACT','VLV','PO','IP','AI'].includes(q.k)||q.cx==null)continue;const d=Math.hypot(q.cx-t.x,q.cy-t.y);if(d<bdd){bdd=d;bb=q}}
+    if(bb){const m=bb.k==='AI'?(bb.pins.find(q=>q.role==='out')||{}).n:((bb.i||[])[0]!=null?bb.i[0]:(bb.o||[])[0]);if(m!=null&&m>=0&&S.nets[m]&&S.nets[m].segs.length)n=m}}
+   if(n==null){const m=ioN.get(s);if(m!=null&&S.nets[m]&&S.nets[m].segs.length)n=m}
+   if(n==null){let bd=25;for(const nn of S.nets){if(!nn.segs.length||nn.dig||named.has(nn.id))continue;const d=segD(t.x,t.y,nn.id);if(d<bd){bd=d;n=nn.id}}}
+   if(n==null||!S.nets[n]||S.nets[n].dig){if(n==null){nUn++;un.push(s+'@'+Math.round(t.x)+','+Math.round(t.y))}continue}
+   const ex=t.x+s.length*(t.h||3)*.62+1.5;let ad=oldB.filter(q=>q.n===n&&!used.has(q)&&Math.hypot(bx(q)-ex,by(q)-t.y)<45).sort((a,c)=>Math.hypot(bx(a)-ex,by(a)-t.y)-Math.hypot(bx(c)-ex,by(c)-t.y))[0];
+   if(ad){used.add(ad);ad.wire=false;ad.skip=false;ad.addr=true;ad.t.style.display='';rp.push({t:s,n,b:ad});continue}
+   const e=el('text',{x:ex,y:-(t.y+bs*.2),class:'bd','text-anchor':'start'},gb);e.dataset.n=n;const nb={n,t:e,last:null,skip:false,wire:false,addr:true};L.bd.push(nb);rp.push({t:s,n,b:nb})}
+  for(const q of oldB)if(!used.has(q)&&!q.circ){q.wire=true;q.skip=false}L.nUn=nUn}
  svg.append(g0,go_,gleg,gd,gfg,gf,gp,gt,gcj,L.selg,gb);
  const av=AN.av[sh.name];`);
+rep(String.raw`for(const n of g){if(n===master||S.drv[n].length||nets[n].dig!==nets[master].dig)continue;S.link.push([n,master])}}}`,String.raw`for(const n of g){if(n===master||S.drv[n].length||nets[n].dig!==nets[master].dig||S.link.some(x=>x[0]===n))continue;S.link.push([n,master])}}}`);
 rep(String.raw`plOpen,plClose,plAIs,plRes,plVal});`,String.raw`plOpen,plClose,plAIs,plRes,plVal,dsGoRef,connClick});`);
 };
