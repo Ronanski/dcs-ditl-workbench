@@ -1,0 +1,19 @@
+/* Trend: select a PID, RUN, the chart collects SV / PV / MV, zoom overlay opens, wheel zoom, Esc closes; also a MAN, an FX and a wire. usage: node tools/test-trend.js <html> [shot.png] */
+const {chromium}=require('/opt/node-tools/node_modules/playwright');const path=require('path');let fail=0;const ck=(n,ok,x)=>{console.log((ok?'PASS ':'FAIL ')+n+(x?'  '+x:''));if(!ok)fail++};
+(async()=>{const b=await chromium.launch({args:['--no-sandbox']});const p=await b.newPage({viewport:{width:1700,height:950}});const errs=[];p.on('pageerror',e=>errs.push(e.message));
+await p.goto('file://'+path.resolve(process.argv[2]));await p.waitForTimeout(2500);await p.click('text=Analog · ABC >> nth=0');await p.waitForTimeout(3500);
+const pick=async(kind,sheet)=>p.evaluate(async([kind,sheet])=>{await AN.data;AN.go(AN.sheets.findIndex(s=>s.name===sheet));await new Promise(r=>setTimeout(r,400));const sh=AN.cs(),b=sh.S.blk.find(x=>x.k===kind);AN.sel={blk:b};AN.selBox();AN.paint();AN.panelUpd(true);await new Promise(r=>setTimeout(r,300));return{id:b.id,series:AN.trSeries(sh).map(q=>q.name),canvas:!!document.querySelector('#ansel canvas')}},[kind,sheet]);
+const r1=await pick('PID','ABC-050');ck('PID: trend canvas in the panel',r1.canvas,JSON.stringify(r1.series));ck('PID: SV, PV and MV series',r1.series.some(s=>/^SV/.test(s))&&r1.series.some(s=>/^PV/.test(s))&&r1.series.some(s=>/^MV/.test(s)));
+await p.click('button:has-text("Run")');await p.waitForTimeout(7000);
+const h=await p.evaluate(()=>{const sh=AN.cs();return{n:sh._th?sh._th.t.length:0,nets:sh._tw?sh._tw.size:0,t:sh.S.rt.t}});ck('samples collected while running',h.n>=10,JSON.stringify(h));
+await p.screenshot({path:process.argv[3]||'/tmp/trend.png'});
+await p.click('button:has-text("Zoom")');await p.waitForTimeout(800);
+const z=await p.evaluate(()=>({big:!!document.getElementById('trbig'),w:document.querySelector('#trbig canvas')&&document.querySelector('#trbig canvas').clientWidth}));ck('zoom overlay opens',z.big&&z.w>800,JSON.stringify(z));
+await p.evaluate(()=>{const c=document.querySelector('#trbig canvas');c.dispatchEvent(new WheelEvent('wheel',{deltaY:200,bubbles:true,cancelable:true}))});await p.waitForTimeout(600);
+await p.screenshot({path:(process.argv[3]||'/tmp/trend.png').replace('.png','-zoom.png')});
+await p.keyboard.press('Escape');await p.waitForTimeout(300);ck('Esc closes the zoom',await p.evaluate(()=>!document.getElementById('trbig')));
+for(const [k,s] of [['MAN','ABC-003B'],['FX','ABC-010'],['SUMA','ABC-003B']]){const r=await pick(k,s);ck(k+': trend series',r.canvas&&r.series.length>0,JSON.stringify(r.series.slice(0,3)))}
+const w=await p.evaluate(async()=>{const sh=AN.cs();const n=sh.S.nets.find(x=>x.segs.length&&sh.S.drv[x.id].length).id;AN.sel={net:n};AN.selBox();AN.panelUpd(true);await new Promise(r=>setTimeout(r,300));return{c:!!document.querySelector('#ansel canvas'),s:AN.trSeries(sh).length}});ck('wire: trend',w.c&&w.s===1);
+const cov=await p.evaluate(async()=>{const k={},zero=[];for(const sh of AN.sheets){if(/ABC-000/.test(sh.name))continue;AN.go(AN.sheets.indexOf(sh));const S=sh.S||AN.ensure(sh);for(const b of S.blk){if(!['FX','PID','PIDV','MAN','SUMA','SUMP','RAMPB','RATE','LAG','DIV','MUL','SUB','ADD','SUM','DEV','HLLIM','SQRT','TP','PO','AMT','SW','SEL','ALM','CMPK','DCMP','VLV','ACT'].includes(b.k))continue;AN.sel={blk:b};const n=AN.trSeries(sh).length;k[b.k]=k[b.k]||{blocks:0,withSeries:0};k[b.k].blocks++;if(n>0)k[b.k].withSeries++;else if((b.i||[]).length||(b.o||[]).length)zero.push(sh.name+' '+b.k+'#'+b.id)}}return{k,zero:zero.slice(0,8),nz:zero.length}});
+console.log(JSON.stringify(cov.k));ck('every FX / PID / PIDV / MAN / SUMA / ramp / math block that has wires gets a trend',cov.nz===0,JSON.stringify(cov.zero));
+ck('no page errors',errs.length===0,errs.slice(0,3).join('|'));console.log(fail?fail+' FAIL':'ALL PASS');await b.close();process.exit(fail?1:0)})();
