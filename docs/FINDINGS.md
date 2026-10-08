@@ -141,7 +141,7 @@ Sheets that are copies of each other (035-039, 003B/C/D, 004B/C, 011/012, 026/02
 
 ## E. NOT checked yet (honest list)
 
-Block-by-block comparison of the **function blocks against the PDF drawings, sheet by sheet** is not finished: PID details (real gains, alarm limits, REM/LOC), the FX tables are identical to LINEAR.xls (89 of 89) but their use on each sheet was not compared one by one, SEL / CTK / TP behaviour is as agreed with the user but not compared per sheet, DIV order (a / b) was read from the formula text only. The automatic scans above find reading mistakes; they cannot find a wrong formula that is read consistently.
+No comparison with the PDFs is needed (user, 2026-10-08): the sheets of the simulator are the drawings. What the automatic scans cannot find is a formula that is read consistently but means something else in the DCS; the legend (ABC-000) decides, and the DCS-only numbers (PID gains, alarm limits, ramp rates, pulse timing, select defaults) are listed with the simulator values in docs/ASSUMED-VALUES.md.
 
 ## F. Link audit (tools/audit-links.js and tools/test-links-all.js, v1.15.0) — see docs/LINKING.md for the rules
 789 circles: 381 numbered, 104 letter, 304 name + sheet. 421 are paired inside their own sheet. 377 carry a sheet name or a FROM / TO text, 373 are linked to the other sheet (4 not before H-17: O-07 ×2, O-08, ABC-054 HRP which is joined by its tag SI0180; 2 after), plus 27 signal-tag links.
