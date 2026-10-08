@@ -4,6 +4,7 @@ Rule: every release gets a row here; the report of the release is `docs/REPORT-v
 
 | Version | Revision | Date | Build | Report | Summary |
 |---|---|---|---|---|---|
+| v1.20.2 | 1 | 2026-10-08 | `logic-sim-v1.20.2.html` (+ exe, apk, GitHub Release v1.20.2) | docs/REPORT-v1.20.2.md, docs/ADDRESS-VALUES.md | live value only beside ANALOG addresses (digital badges removed); link to the DITL page works (124 / 124 references; circle click and list) |
 | v1.20.1 | 1 | 2026-10-08 | `logic-sim-v1.20.1.html` (+ exe, apk, GitHub Release v1.20.1) | docs/REPORT-v1.20.1.md, docs/ADDRESS-VALUES.md | a value beside EVERY address text, analog and digital (2316 of 2316; was 876) |
 | v1.20.0 | 1 | 2026-10-08 | `logic-sim-v1.20.0.html` (+ GitHub Release v1.20.0) | docs/REPORT-v1.20.0.md, docs/PLANT-WINDOW.md | Plant window (pop-out) with the REHEATER system; HMI button removed; PID direction fix for 29 ACT:N loops (H-37); operating point of the DCS snapshot |
 | v1.19.1 | 1 | 2026-10-08 | `logic-sim-v1.19.1.html` (+ exe, apk, GitHub Release v1.19.1) | docs/REPORT-v1.19.1.md | values only beside address / tag text; toggle "Wire values" |

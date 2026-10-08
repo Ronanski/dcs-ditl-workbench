@@ -1,4 +1,4 @@
-# ADDRESS VALUES - the value belongs to the address (v1.20.1)
+# ADDRESS VALUES - the value belongs to the address (v1.20.1, corrected in v1.20.2)
 
 User rule (2026-10-08): "Ang address mismo ang naglalaman ng value, analog man o digital" and "dapat address AT wires, hindi wires lang".
 
@@ -18,3 +18,13 @@ After the old badges are placed: for every `S.lab[n]` and every `S.tagN` entry, 
 ## Test
 `node tools/audit-addr-values.js <html>`: 2316 of 2316 address texts have a value; input -> address: ABC-003B digital input B.072A set 0 -> 1, the badge beside the address follows 0 -> 1.
 NOT tested: overlap / readability of the numbers on every sheet (many small numbers: use Fit / zoom); the exe / apk screens.
+
+## Correction v1.20.2 (user, same day): "Analog lang may LIVE value. Ung digital kahit wala na."
+- Only **analog** address texts get the live value (1144 of 1144, tools/audit-addr-values.js). **Digital** addresses (1172 texts) are shown by the colour of the wire only - the 1 / 0 badges of v1.20.1 are removed again (patch-addr.js skips digital nets). The Digital values stay visible in the right panel and in the Trace list.
+- Test: input -> address: a labelled analog input set 2 -> 7.5, the number beside the address follows; no digital badge.
+
+# LINK TO THE DITL PAGE (v1.20.2)
+User: "ung link sa DITL, di gumagana". The ABC sheets say "( FROM DITL 13-69 )" / "( TO DITL 02-63 )". Until v1.20.1 nothing happened when you clicked them (the DITL signals list only showed the reference as text).
+- Click the **circle** that carries a "FROM / TO DITL pp-nn" text, or the **DITL reference** in the "DITL signals" list: the app switches to Digital - DITL and opens the DITL sheet pp (name ends with DITL-pp; a code with an extra letter that has no sheet, like 80S, opens DITL-80). The DITL page is not changed. To come back press Analog - ABC.
+- Tested (tools/test-ditl-link.js): all 124 DITL references of the 51 sheets open a DITL sheet; the circle click on ABC-003B "( FROM DITL13-69 )" opens the DITL page.
+- NOT done (earlier decision of the user): the DITL page is not simulated together with the ABC set; a FROM DITL signal stays a one-click input of the ABC sheet. The item number nn is shown in the message, the DITL cell is not highlighted. Live exchange (a DITL motor state driving the ABC input) = ask the user.
