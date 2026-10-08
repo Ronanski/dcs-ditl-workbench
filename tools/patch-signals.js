@@ -69,4 +69,9 @@ String.raw`if(cl){let BB=b,BP=bp,A0=a0,A1=a1,SD=sd,FAR=far;const LB=SG.find(s=>!
 rep(String.raw`function anDefaults(S){`,String.raw`function anDefaults(S){
  /* H-16 the small two-cell box above an I/P converter (valve positioner, field side) was read as a SUB with one input and no output: it is a field device */
  for(const b of S.blk)if(b.k==='SUB'&&b.o.length===0&&b.i.length===1&&b.pins.length===1)b.k='FIELD';`);
+
+/* H-17  two circles with the same letter on one sheet and NO arrow on either (ABC-004A "A": the branch of wire SI0110 after F(X) LN23 and the circle that feeds the SUB): both were "receivers", so they never paired (and were sent to other sheets by a FROM text 40 units away). The one whose wire is driven by a block is the sender. */
+rep(String.raw` S.link=[];const by={};for(const c of S.conn){(by[c.num]=by[c.num]||[]).push(c)}`,
+String.raw` S.link=[];const by={};for(const c of S.conn){(by[c.num]=by[c.num]||[]).push(c)}
+ for(const k in by){const g=by[k];if(g.length!==2||g.some(c=>c.sink||c.tgt))continue;const dr=c=>c.nets.some(n=>S.drv[n].some(d=>d.k!=='LINK'));const a=g.filter(dr);if(a.length===1&&!dr(g.find(c=>c!==a[0]))){a[0].sink=true;a[0].fromDriver=1}}`);
 };

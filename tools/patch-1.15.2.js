@@ -1,7 +1,7 @@
-/* v1.14.3 -> v1.15.1 (released; v1.15.0 = same pipeline without H-15 / H-16). Reader fixes from the sheet-by-sheet verification (docs/FINDINGS.md). DITL page untouched.  usage: node tools/patch-1.15.1.js [out.html]  (reads archive/html/logic-sim-v1.14.3.html, or the root file before it is archived; writes logic-sim-v1.15.1.html) */
+/* v1.14.3 -> v1.15.2 (v1.15.1 = same pipeline without patch-import.js / patch-trace.js / H-17; v1.15.0 = without H-15 / H-16 either). Reader fixes from the sheet-by-sheet verification (docs/FINDINGS.md). DITL page untouched.  usage: node tools/patch-1.15.2.js [out.html]  (reads archive/html/logic-sim-v1.14.3.html, or the root file before it is archived; writes logic-sim-v1.15.2.html) */
 const fs=require('fs');const src=fs.existsSync('logic-sim-v1.14.3.html')?'logic-sim-v1.14.3.html':'archive/html/logic-sim-v1.14.3.html';let h=fs.readFileSync(src,'utf8');
 const rep=(a,b)=>{const n=h.split(a).length-1;if(n!==1)throw new Error(n+' x '+a.slice(0,90));h=h.split(a).join(b)};
-rep('<title>Logic Sim v1.14.3</title>','<title>Logic Sim v1.15.1</title>');
+rep('<title>Logic Sim v1.14.3</title>','<title>Logic Sim v1.15.2</title>');
 /* F-01 MUL with ONE input and a number written above the X box ("0.8", "1.2" on ABC-002): the number is the gain; it was ignored (output = input x 1) */
 rep(`   case 'DIV':{const s=ins.slice().sort(posOrder);let num=null,den=null;`,`   case 'MUL':{b.i=ins.map(p=>p.n);if(ins.length===1){const t=near(b.cx,b.cy,16,q=>/^-?\\d+(?:\\.\\d+)?$/.test(q.t.trim()))[0];b.gain=t?+t.t.trim():1}break}
    case 'DIV':{const s=ins.slice().sort(posOrder);let num=null,den=null;`);
@@ -55,4 +55,6 @@ require('./patch-blocks.js')(rep);
 require('./patch-defaults.js')(rep);
 require('./patch-signals.js')(rep);
 require('./patch-selector.js')(rep);
-fs.writeFileSync(process.argv[2]||'logic-sim-v1.15.1.html',h);console.log('wip written',h.length);
+require('./patch-import.js')(rep);
+require('./patch-trace.js')(rep);
+fs.writeFileSync(process.argv[2]||'logic-sim-v1.15.2.html',h);console.log('wip written',h.length);

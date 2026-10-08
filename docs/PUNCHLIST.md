@@ -1,35 +1,31 @@
-# PUNCHLIST — what still needs correction or a decision (v1.15.0, 2026-10-07)
+# PUNCHLIST — what is left to do (updated 2026-10-08, v1.15.2)
 
-**A. Real corrections still to do** (a defect or a gap in the html)
-| # | Where | Problem | Action needed | Who |
-|---|---|---|---|---|
-| P1 | ABC-001C TR228 (212, 162) | Drawing says TON 2 s, the user's memory list says TPs 2 | Look at the drawing with the user; change the type if the memory list is right | assistant + user |
-| P2 | ABC-004A circles "A" at (194, 354) and (381, 95) | Not linked by letter (partners are B / C of 004B / 004C by tag SI0110) | Pair them properly (fan-in from two sheets) and test | assistant |
-| P3 | ABC-020 circle "9" at (501, 599) | No partner circle on any sheet | Find the partner on the PDF or confirm it is an exit | assistant + user |
-| P4 (DONE 2026-10-07: all 45 lines are correct pairs, docs/FINDINGS.md J2) | 45 "tags differ" lines of audit-links (003B / C / D "2", 004A FFD, 009A / B "L", 012 "MST", 013 / 050 "BOF", 015 / 016 "1" - 057 ...) | The tag written beside the two ends of a circle pair is different | Look at each on the drawing: wrong pair or two names of one signal | assistant |
-| P5 | ABC-003E TPS #70 (TR256) | The scan cannot make the output 1 (reset OR M.0097 has 7 inputs) | Show it by hand: set M.0097 inputs, watch the pulse | assistant |
-| P6 | PIDV | Runs as a normal velocity-form PID; the pulse is only shown by the PO | Real pulse-output PID if the user wants it | assistant (needs the DCS pulse settings) |
-| P7 | Whole app | Persistent DXF import and report of drawing changes | Build it (project rule: keep a saved project before importing) | assistant |
+Rule (user, 2026-10-08): this list has THREE parts, kept apart. The numbers that only the DCS can give are NOT tasks: the simulator already runs with its own values (ASSUMED, all visible in "Assumed values").
 
-**B. Values and confirmations only the user (or the DCS) can give**
+## 1. Tasks of the assistant (the only ones that count as pending)
+| # | Task | Status |
+|---|---|---|
+| T1 (DONE) | **Trace into other sheets.** Outputs now continue into the receiving sheet (pink ▶ row), inputs jump to the sending wire (◀ row), ↩ Back returns. `tools/patch-trace.js`, `tools/test-trace-x.js`: 144 / 144 links, Back and upstream jump tested | **done, no open task of the assistant** |
+
+Closed this round (all tested, see docs/FINDINGS.md and docs/PROGRESS.md): O-05 (TR256, sequence test) · O-07 / P2 (ABC-004A letter circles, H-17) · O-08 / P3 (ABC-020 "9" is a drawing exit) · P4 (45 "tags differ" lines) · P5 · **P6** (PIDV = PID + PO raise / lower pulses, as the legend says; values ASSUMED) · **P7** (persistent DXF import + drawing-change report, `tools/test-import.js` 10 / 10) · P17 · P18 (68 PID / PIDV closed loops, simple process) · P20 (legend matrix 2 973 / 2 973). PDF comparison (old P16): dropped by the user, the sheets are the drawings.
+
+## 2. DCS-only values (NOT pending: the simulator uses its own value, recorded in docs/ASSUMED-VALUES.md; replace when the DCS value is known)
+| # | Item | Value used now | Form / source |
+|---|---|---|---|
+| V1 | ALM limits HH / H / L / LL of 104 alarms | ASSUMED (150 MW CFB) | `docs/DCS-DATA-FORM.pdf` section A |
+| V2 | PID gains (Kp, Ti, Td, action, limits) of 68 PID / PIDV | default tuning by loop type. First look at the OPC data: FICFA1043B has P = 200, I = 50, D = 0 (docs/OPC-NOTES.md); unit of P (proportional band?) and I to confirm | form section B, or OPC |
+| V3 | Ramp rates of 8 boxes | ASSUMED | form section C |
+| V4 | PO pulse cycle / stroke / shortest pulse (2 PO) | 2 s / 60 s / 0.2 s | form section D |
+| V5 | PRI / SEC / AVG default of 26 select circuits | AVG | form section E |
+| V6 | SUMA unit (10) | per hour | form section F |
+| V7 | LN38 / LN39 units (drum level) | N × 100 %, K ratio (identity at 0 kg/cm2) | form section H |
+| V8 | ABC-001C TR0228: TON or TP | TON 2 s as drawn | form G1 |
+
+## 3. Confirmations by the user (not tasks of the assistant)
 | # | Item | Now |
 |---|---|---|
-| P8 | ALM limits of 104 alarms | ASSUMED (docs/ASSUMED-VALUES.md section 4) |
-| P9 | Ramp rates of 8 boxes | ASSUMED |
-| P10 | PO pulse cycle / stroke / shortest pulse | ASSUMED 2 s / 60 s / 0.2 s |
-| P11 | PID gains | default tuning by loop type |
-| P12 | PRI / SEC / AVG default mode of the SEL blocks | default AVG |
-| P13 | Units of S1-LN38 / S1-LN39 (drum level) | deduced (identity at 0 kg/cm2): confirm with the DCS table |
-| P14 | exe and apk | built; the user tests them himself; NOT counted in the progress (decision 2026-10-07) |
-| P15 | Block kinds | none confirmed by the user yet (block behaviour is capped at 60 % until he confirms) |
-| P16 | Sheet-by-sheet comparison with the PDFs | 1 of 51 sheets (ABC-050) |
+| C1 | Block kinds confirmed on the user's own screen | none yet; block behaviour stays at 60 % until he confirms (checklist can be prepared on request) |
+| C2 | exe and apk | built; the user tests them himself; not counted in the progress |
 
-**C. Known, harmless (not corrections)**: O-01 extra two-cell box above the I/P read as SUB with no output (ABC-008, 014) · O-02 tick marks at PID / MAN box edges read as extra pins · ABC-052 AND #112 (ignored by the user) · ABC → DITL crossings not simulated by design · 91 "TO DITL" exits.
-
-**D. Added 2026-10-07 (MAN controller and integrators)**
-| # | Item | Status |
-|---|---|---|
-| P17 | Test of all 58 MAN: range, clamp, selector tracking, output feeds something | **DONE** in `tools/legend-matrix.js` (58 / 58 pass; docs/LEGEND-MATRIX.md) |
-| P18 | MAN + PID + valve as a closed loop on the main sheets (drum level, main steam temperature, furnace pressure) | open |
-| P19 | SUMA / SUMP: unit (per hour) and where the total goes | SUMA 10 / 10 integrate correctly (matrix); the unit is deduced, to confirm; SUMP has no use on the sheets (code test only) |
-| P20 | Legend matrix: 2 973 of 2 973 blocks pass the function of their symbol | **DONE**; run at every build (`node tools/legend-matrix.js <html> docs/LEGEND-MATRIX.md`) |
+## Known, harmless (not corrections)
+O-01 (positioner boxes, closed by H-16) · O-02 tick marks at PID / MAN box edges read as extra pins · ABC-052 AND #112 and ABC-052 (ignored by the user) · ABC → DITL crossings not simulated by design (91 "TO DITL" exits) · 2 T switches (ABC-003E SW#4, ABC-009A SW#32) are 4-way selectors, tested in test-blocks.js · 4 wires grey with value 1 = T legs not selected.

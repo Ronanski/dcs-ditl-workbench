@@ -4,6 +4,16 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
+## v1.15.2 (logic-sim-v1.15.2.html) - Trace across sheets, persistent DXF import, ABC-004A link (revision 1)
+- USER "go" (2026-10-08). AN_PV stays 16. DITL page identical. Report: docs/REPORT-v1.15.2.md. Progress 85.9 %.
+- H-17 (tools/patch-signals.js): two lone circles with the same letter on one sheet (ABC-004A "A" x2) are paired: O-07 closed. O-08 (ABC-020 "9") = drawing exit, no partner on 54 sheets. O-05 (TR256) shown by a 7-step sequence test in tools/test-blocks.js (526 checks now). P18: tools/test-loops.js 68 / 68 closed loops.
+- P7: tools/patch-import.js: imported DXF kept in IndexedDB (keys imp:list, imp:<sheet>), re-applied in loadData(); button Imports = drawing-change report (tolerance matching: texts 1.5, blocks 3 units) + Back to built-in; tools/test-import.js 10 / 10. AN_PV stays 16 (the reader did not change except H-17 which only adds a link).
+- Tests on the WIP build: guard IDENTICAL, test-blocks 526, math 998, legend FF 282 / TON 35 / TOF 19 / TPS 108, PID 68, comparators 240, rate 43, loops 68, legend-matrix 2973 / 2973, reach 0 dead ends / 0 orphans, links 182 / 182, paint 0 lit-with-0, browser suite OK (storage, project, numinput, defaults-ui, blocks-ui, links, ln, modes, anim, circles, addr-ui, ades, back-manual). Progress 81.9 %.
+
+- DCS DATA FORM (user request 2026-10-08): docs/DCS-DATA-FORM.pdf / .html / .json, tool tools/make-dcs-form.js: 104 ALM + 68 PID/PIDV + 8 RATE + 2 PO + 26 SEL + 10 SUMA rows with TAG, MDL address, field signal address [IO tag], description, grey = value used now, white boxes to write the DCS value; plus 6 questions (G) and the drum level table (H).
+
+- TRACE ACROSS SHEETS (T1): tools/patch-trace.js: pink row "▶ continues in sheet X (circle n)" for outputs, the ◀ row selects the sending wire, ↩ Back works; tools/test-trace-x.js 144 / 144 links. Progress 85.9 % (modes 100 %). Guard IDENTICAL; browser suite OK.
+
 ## v1.15.1 (logic-sim-v1.15.1.html) - legend matrix: every block of every sheet tested against its symbol (revision 1)
 - USER "go" (2026-10-07). AN_PV 15 -> 16 (net numbers moved). DITL page identical.
 - LEGEND MATRIX (user idea: use the legend to test all sheets): tools/legend-matrix.js -> docs/LEGEND-MATRIX.md: 2 973 of 2 973 blocks of the 51 sheets pass the function of their symbol (gates, FF, timers, comparators, math, T switches incl. 4-way selectors, MAN 58 / 58, PID, ramps, AI / AO / CONST / ALM, valves, SEL, SUMA 10 / 10, CTK, TP, PO).
