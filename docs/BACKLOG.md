@@ -125,3 +125,9 @@
 - Assumed values (user: "ikaw na ang magset"): 104 ALM limits, 8 ramp rates, PO pulse cycle -> tools/assumed-data.js, docs/ASSUMED-VALUES.md, button "Assumed values", block panels.
 - Signals must arrive: tools/audit-reach.js (223 dead ends + 4 orphans -> 0, docs/FINDINGS.md section H), tools/test-links-all.js (182 / 182 carry), tools/test-paint.js (lit only when 1), 4-way selectors (G-10).
 - OPEN: O-05 (TR256), O-07 / O-08 / O-09 (links), O-11 (ABC-001C TR228 type), DCS values for ALM / ramps / PO, PRI / SEC / AVG default mode, sheet-by-sheet comparison with the PDFs, exe / apk on the user's devices.
+
+## 2026-10-08 (user ideas, recorded)
+- **CCS scenario test (internal testing):** the user says the assistant can run scenario tests on the coordinated control (CCS) sheets by itself. Plan: use the DITL signals list (one-click inputs) as the scenario script (load demand step, boiler master / fuel master / air master), small process models for the key loops (as in tools/test-loops.js), run N seconds, record SV / PV / MV with the trend history, check the answers with the legend. First step: list the CCS sheets and their FROM DITL inputs.
+- **HMI graphics view (user suggestion): DONE in v1.16.0** (Tab / Float / Split approved by the user; docs/HMI-VIEW.md, MANUAL 3.4d).
+- **Following a signal through many sheets** (user, after testing on the staging air dampers and furnace temperature sheets: "di na makabalik, lahat dadaanan"): done in WIP after v1.15.2: path (breadcrumbs, Back to start, no loop growth), list of every exit, signal map of all sheets (docs/MANUAL.md 3.4).
+- **Live graph (user):** not only PID: linearizers (FX), controllers (PID, PIDV, MAN), integrators (SUMA / SUMP) and every other block: done in WIP (docs/MANUAL.md 3.4b), zoom and normal view.
