@@ -26,7 +26,7 @@ function hmiDig(w,a){const p=hmiPick(w,a);return p?!!p.sh.S.nets[p.n].dig:true}
 function hmiWrite(w,v,rel){const p=hmiPick(w);if(!p){msg('HMI: the address "'+w.addr+'" was not found on any sheet');return}hmiSync();if(p.ext){if(rel===true)return;setExt(p.sh,p.n,v)}else setForce(p.sh,p.n,rel===true?undefined:v)}
 function hmiBlk(w){const c=hmiIndex().blk.get(hmN(w.addr))||[];if(!c.length)return null;const q=(w.sheet&&c.find(x=>x.sh.name===w.sheet))||c[0],b=q.sh.S.blk.find(x=>x.id===q.b);return b?{sh:q.sh,b}:null}
 function hmiNets(sh,b){const S=sh.S,o=[],add=(n,name,u)=>{if(n!=null&&n>=0&&S.nets[n]&&!o.some(q=>q.n===n))o.push({n,name,u})};
- if((b.k==='PID'||b.k==='PIDV')&&b.in0>=0){const d=(S.drv[b.in0]||[]).map(x=>S.blk.find(q=>q.id===x.id)).find(q=>q&&q.ip&&q.ip.length>=2);if(d){const pl=d.ip.find(q=>q.sg>0),mi=d.ip.find(q=>q.sg<0);if(pl)add(pl.n,'SV');if(mi)add(mi.n,'PV')}(b.o||[]).slice(0,1).forEach(n=>add(n,'MV'))}
+ if((b.k==='PID'||b.k==='PIDV')&&b.in0>=0){const pn=anPins(S,b);if(pn){if(pn.sv>=0)add(pn.sv,'SV');add(pn.pv,'PV')}(b.o||[]).slice(0,1).forEach(n=>add(n,'MV'))}
  else{(b.i||[]).slice(0,2).forEach((n,i)=>add(n,'IN'+(i+1)));(b.o||[]).slice(0,1).forEach(n=>add(n,'OUT'))}return o}
 /* sheets that must keep running because a widget reads / writes them */
 function hmiSync(){const s=new Set();if(AN.hmiUi.open)for(const p of AN.hmi.pages)for(const w of p.widgets){for(const a of[w.addr,w.addr2,w.addr3]){if(!a)continue;const c=w.type==='face'?(hmiBlk(w)||{}):(hmiPick(w,a)||{});if(c.sh)s.add(c.sh.name)}}AN.hmiSheets=[...s]}

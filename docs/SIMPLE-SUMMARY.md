@@ -1,4 +1,38 @@
-# SIMPLE SUMMARY — latest build (for a non-coder), 2026-10-08
+# SIMPLE SUMMARY - after the user's second round of tests (2026-10-08, WIP, NOT released)
+
+## What the tests of the user found, in plain words
+| What you saw | What it really was | Now |
+|---|---|---|
+| The panel got wider by itself | a rule of mine added 2 px at every refresh | fixed width 380 px, text wraps |
+| HMI could not simulate | a see-through layer on every HMI widget caught the mouse (my tests clicked "around" it) | buttons and sliders work, tested with real clicks |
+| Trend and panel not in step when you move the SV | **in 30 of the 68 controllers the SV and the PV were swapped** in the Trend / HMI, and the old plant model pushed the SV (the direct-acting controllers have the PV on the other pin) | the PV is the pin that the drawing marks "PV"; all 68 checked |
+| Up / down arrows did not update | the arrows changed only the number on screen | they apply the value now |
+| PV looks forced and its slider moves with no effect | the model pushed the PV in the middle of the logic | the plant writes the transmitter / input; the slider is greyed with the reason |
+| Trend for everything | I made every block show one | only PID, PIDV, MAN, SUMA / integrator, FX |
+
+## What is built (WIP)
+1. **Plant layer**: the plant answers at the transmitter (AI) of the measurement, so the selection, average and deviation alarm of the sheet really work. Two controllers on one measurement share one model. A signal that comes from another sheet is written where it starts.
+2. **FORCE / SIM**: in the HMI every value has an **F** box: press it and the value is held (analog or digital, in RUN too). The plant, the SV and the manual command do not change a held value. Release: it goes back to the plant value.
+3. **HMI controls**: while the HMI is open the panel and the diagram only show; close the HMI to use them again.
+4. Gain / time constant / dead time are **estimated from your tuning** (not measured): docs/PLANT-MODEL.md lists every controller.
+
+## Numbers (WIP build)
+| What | Result |
+|---|---|
+| Controllers with a plant model that reach their SV (node) | 54 / 54 |
+| Same in the app (links live), sample of 14 | 14 / 14 |
+| Forced PV held and released | 54 / 54 loops |
+| Forced transmitter not overwritten | 40 / 40 |
+| Digital force held | 45 / 45 sheets |
+| Plant points disabled in the panel | 66 / 66 (76 free transmitters stay editable) |
+| Auto page of the HMI | 741 points on 51 sheets |
+
+## NOT done / not proven
+- Motor and valve feedbacks (running, open, closed) in the ABC sheets are still switches you flip; CCS scenario tests are not done.
+- Four flow / level loops write the PV wire instead of the transmitter (SQRT scaling question, docs/FINDINGS.md H-30).
+- The gain / time constant are estimates by a rule, not plant measurements.
+- exe / apk not tested by me. No release yet.
+
 
 ## Which build?
 **Logic Sim v1.18.0** (released 2026-10-08). Before it: v1.17.0 (faceplate values, COS, process model, Trend v2).

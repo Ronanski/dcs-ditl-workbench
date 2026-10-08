@@ -93,3 +93,40 @@ While a point is forced the controller keeps working (its output may wind up, al
 | P3 | plant layer on the INPUTS with the priority rule (section 8), loops first | 68 loops reach SV with the sheet chain running; forced PV stays; released PV recovers |
 | P4 | valve / motor feedbacks (command -> feedback with delay) | each command that has a feedback follows it |
 | P5 | CCS scenario tests with the plant answering | scenarios |
+
+---
+# 11. BUILT (WIP after v1.18.0, user message "apply and fix all the fix needed and update. no release muna")
+
+## 11.1 The decisions of section 6 and what was done
+| # | Decision | Built | Test |
+|---|---|---|---|
+| D1 | Panel: fixed, a little wider, text wraps | 380 px (was 300), no auto-fit, every text wraps, no horizontal scroll | tools/test-ui-real.js (width stays 380 for 12 s in RUN with a PID selected); screenshot checked |
+| D2 | HMI open = HMI controls; FORCE / SIM only from the HMI; same state everywhere | sheet panel greyed + banner, diagram click blocked while the HMI is open; F box on every HMI point; one clock for panel / diagram / HMI / Trend | tools/test-own.js, test-hmi.js, test-hmi2.js |
+| D3 | Trend and panel in step on SV (also the arrows) | root cause found: PV and SV pins were swapped on 30 of 68 loops (H-22) and the arrows did not apply (H-24); both fixed | test-own (arrows, Trend = engine), test-trend |
+| D4 | Trend ONLY for PID, PIDV, MAN, SUMA, FX, integrators | no Trend for wires, digital signals or other blocks | tools/test-trend.js (66 PID, 2 PIDV, 58 MAN, 10 SUMA, 111 FX have one; no other block, no wire) |
+| D5 | PV slider disabled | every point that the plant drives is disabled in the panel with the reason; free transmitters stay editable | tools/test-lock-all.js: 66 plant points disabled, 76 free ones editable |
+| D6 | FORCE / SIM holds a PV and digital points whatever the SV or the manual command | priority rule of section 8 in the engine: the plant never writes a forced point | tools/test-force-all.js: 54 loops (PV held and released), 40 / 40 forced transmitters not overwritten, 45 / 45 sheets digital force held |
+| D7 | Perfect on every sheet | a table per controller (docs/PLANT-MODEL.md) and a test per loop; exceptions are listed, not hidden | tools/test-proc.js 54 / 54, tools/test-proc-app.js (links live) |
+| D8 | Do not ask the user for gain / time constant | estimated from the tuning (docs/DCS-FILLED-FORM.md section 6) | listed per loop in docs/PLANT-MODEL.md |
+| D9 | The IO list / memory list exist: use them | the audit uses their descriptions: docs/SIGNAL-ROLES.md (every field / operator point of the 51 sheets with its description and role) | tools/audit-roles.js |
+
+## 11.2 Answers to the questions of the user
+| Question | Answer |
+|---|---|
+| "Pano ito gagawin habang RUN mode? Makakapag force ka pa ba ng analog at digital? May distinction method ba?" | Yes, in RUN as well as in PAUSE. Press **F** on a value of the HMI: the value is held at what it is at that moment (analog or digital); then the slider / button changes the held value; F again releases. Distinction: **SIM** = a point on the field side (input wire, transmitter), **FRC** = a point computed by the logic, **P** (blue) = the plant drives it (read only). Same hold underneath (rt.force); the controller, the alarms and the sheets keep working with the held value. |
+| "Kapag nagforce ka ng PV kahit anong SV o manual command hindi magbabago" | Done and tested on 54 loops: the plant never writes a forced point (it keeps evolving underneath), so after release the PV goes back to the plant value. |
+| "Wala ako maintindihan sa gitna at input" | The goal is a plant simulator; the plant answers where the real field answers: the transmitter (AI) or the input wire of the PV. The blocks of the sheet between the transmitter and the PID (selection of 1 of 3, average, square root, deviation alarm) now run with the plant value, like on the real plant. |
+| "Wala ba sa Excel ang gain, tc, dt? Hindi ba macompute o matantya?" | Not in the Excel (it holds controller settings). They are estimated from the tuning of each controller (rule in DCS-FILLED-FORM section 6); every value is listed in docs/PLANT-MODEL.md; they are guesses by a rule until a step test exists. |
+| "Meron naman IO LIST, memory list" | Used: descriptions of every point in docs/SIGNAL-ROLES.md. The IO list does not tell which transmitter moves which variable; that comes from the drawings (the chain from the transmitter to the PV pin, with the PV text of the DEV block). |
+
+## 11.3 What is NOT done (honest list)
+| Item | Status |
+|---|---|
+| Digital feedbacks of motors and valves (running, open, closed) in the ABC sheets | not built: they are switches the user flips; the DITL page has its own motor / valve simulation, but it is not connected to the ABC sheets (the DITL page must not change) |
+| One physical variable measured on two sheets by different transmitters (for example the main steam pressure) | each sheet has its own model unless the signal comes through a circle (then one model) |
+| 4 controllers whose PV is a calculation of other controllers (cascade / ratio / sum: FIC-CF, HS-COAL, PIC-BASC, AICFG112) | no field signal to simulate: mode "none" |
+| Flow loops through SQRT and the drum-level compensation | the plant falls back to writing the PV wire (H-30): 4 in the node test, 2 more in the app test |
+| dMVH, TF, FSC, GAP, BND, PHONDT, PLONDT | stored, not simulated |
+| ALM limits (104) and SEL defaults (26) | still ASSUMED |
+| HMI drawing tools beyond the existing widgets, symbol animation | not built |
+| exe / apk | not tested by the assistant |

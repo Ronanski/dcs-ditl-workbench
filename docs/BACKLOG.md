@@ -171,3 +171,16 @@
 | F8 process model | DONE v1.17.0 |
 | Ramp rates of the 8 boxes | user: assistant sets defaults, diagram text wins -> kept; screw coolers corrected to 0.05 rpm/s |
 | DH / CUT | user: assistant corrects; swapped in the PID sheet (no effect on the sim) |
+
+## 2026-10-08 (night) second round of the user - decisions and status (docs/SIMULATION-METHOD.md sections 6 - 11)
+| Item | Decision / status |
+|---|---|
+| Panel | fixed 380 px, wrapped text: DONE (WIP) |
+| HMI controls while open; FORCE / SIM in the HMI for analog and digital; everything in step | DONE (WIP) |
+| Trend scope | PID, PIDV, MAN, SUMA / SUMP, FX only: DONE (WIP) |
+| PV slider | disabled with the reason: DONE (WIP) |
+| Force / SIM priority over the plant | DONE (WIP) |
+| Gain / T / dead time | not asked from the user: estimated from the tuning: DONE (WIP) |
+| Digital feedbacks (motor running, valve open / closed) as part of the plant | OPEN: needs a decision on the source of the command -> feedback pairs |
+| Same physical variable on two sheets with different transmitters | OPEN |
+| Release | after the user agrees |

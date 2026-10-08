@@ -2,8 +2,8 @@
    Loops that cannot reach it (output at its limit, manual selector) are listed. usage: node tools/test-proc.js <html> */
 const {load,build}=require('./lib.js');const {E,rows}=load(process.argv[2]);let tot=0,ok=0,na=0;const bad=[],info=[];
 for(const r of rows){if(/ABC-000/.test(r.name))continue;const S=build(E,r);S.procs=E.anProcList(S);
- for(const b of S.blk){if(b.k!=='PID'&&b.k!=='PIDV')continue;if(!b.proc){na++;info.push(r.name+' '+(b.txt[1]||b.k)+': no process model (PV is not a field signal)');continue}tot++;
-  const d=S.drv[b.in0].map(x=>S.blk.find(q=>q.id===x.id)).find(q=>q&&q.k==='DEV'),pl=d.ip.find(q=>q.sg>0),span=b.p.span>0?b.p.span:100;
+ for(const b of S.blk){if(b.k!=='PID'&&b.k!=='PIDV')continue;if(b.proc&&b.proc.mode==='shared'){info.push(r.name+' '+(b.txt[1]||b.k)+': shares the measurement with '+b.proc.of+' (one plant model for the variable)');continue}if(!b.proc){na++;info.push(r.name+' '+(b.txt[1]||b.k)+': no process model (PV is not a field signal)');continue}tot++;
+  const pn=E.anPins(S,b),pl={n:pn.sv},span=b.p.span>0?b.p.span:100;
   /* the selector behind the controller on its leg */
   /* every T / switch that the controller output passes through is put on the leg that carries it (the logic would do it with its own signals) */
   const reach=n=>{const seen=new Set(),q=b.o.slice();while(q.length){const x=q.pop();if(x===n)return true;if(seen.has(x))continue;seen.add(x);for(const c of S.cns[x]||[])for(const y of c.o||[])q.push(y);for(const[dd,s2]of S.link||[])if(s2===x)q.push(dd)}return false};

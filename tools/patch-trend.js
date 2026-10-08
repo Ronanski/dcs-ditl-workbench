@@ -11,9 +11,9 @@ rep(String.raw`function whyTxt(S,b){`,String.raw`const TR_COL=['#4da3ff','#ff8a3
 function trDescOf(S,sh,n){try{const nmx=nm(S,n),a=adesFind(sh,nmx);return a?adesText(a.rec):''}catch(e){return ''}}
 function trModel(sh){const S=sh.S,s=AN.sel;if(!S||!s)return null;let n_=0;const sd=(key,name,unit,get,o)=>Object.assign({key,name,unit:unit||'',get,dig:false,desc:'',ci:n_++},o||{}),net=(n,label,unit,o)=>(n==null||n<0||!S.nets[n])?null:sd('n'+n,label+' '+nm(S,n),unit,()=>S.rt.v[n],Object.assign({dig:!!S.nets[n].dig,desc:trDescOf(S,sh,n)},o||{})),M={title:'',desc:'',panes:[]};
  const push=(title,unit,ser,dig)=>{ser=ser.filter(Boolean);if(ser.length)M.panes.push({title,unit,series:ser,dig:!!dig})};
- if(s.blk){const b=s.blk,st=()=>S.rt.st[b.id]||{},tag=b.tag||(b.txt||[])[1]||(b.txt||[])[0]||b.k,fdesc=(b.face&&b.face.desc)||'';M.title=b.k+' '+tag;M.desc=fdesc;M.blk=b;
+ if(s.blk){const b=s.blk;if(!TR_KINDS.includes(b.k))return null;const st=()=>S.rt.st[b.id]||{},tag=b.tag||(b.txt||[])[1]||(b.txt||[])[0]||b.k,fdesc=(b.face&&b.face.desc)||'';M.title=b.k+' '+tag;M.desc=fdesc;M.blk=b;
   if(b.k==='PID'||b.k==='PIDV'){const d=(S.drv[b.in0]||[]).map(x=>S.blk.find(q=>q.id===x.id)).find(q=>q&&q.ip&&q.ip.length>=2),u=b.p.unit||'';
-   const pl=d&&d.ip.find(q=>q.sg>0),mi=d&&d.ip.find(q=>q.sg<0);push('Process ('+(u||'engineering unit')+')',u,[pl&&net(pl.n,'SV',u,{desc:'set point · '+(fdesc||trDescOf(S,sh,pl.n))}),mi&&net(mi.n,'PV',u,{desc:'process value · '+(fdesc||trDescOf(S,sh,mi.n))})]);
+   const pn=anPins(S,b),pl=pn&&{n:pn.sv},mi=pn&&{n:pn.pv};push('Process ('+(u||'engineering unit')+')',u,[pl&&net(pl.n,'SV',u,{desc:'set point · '+(fdesc||trDescOf(S,sh,pl.n))}),mi&&net(mi.n,'PV',u,{desc:'process value · '+(fdesc||trDescOf(S,sh,mi.n))})]);
    const p=b.p,sp=p.span>0?p.span:100;push('Controller (% of output)','%',[(b.o||[])[0]!=null&&net(b.o[0],'MV',' %',{name:'MV output '+tag,desc:'output of the controller, limited '+(p.lo==null?0:p.lo)+' ~ '+(p.hi==null?100:p.hi)+' %'}),
     sd('st'+b.id+'p','P  = Kp · e',' %',()=>st().pt,{desc:'proportional part: Kp '+(+p.kp).toFixed(3)+' (P band '+(p.kp>0?(100/p.kp).toFixed(1):'-')+' %) times the error'}),
     sd('st'+b.id+'i','I  (integral)',' %',()=>st().it,{desc:'integral part: Ti '+p.ti+' s, adds up while the error stays'}),
@@ -23,9 +23,10 @@ function trModel(sh){const S=sh.S,s=AN.sel;if(!S||!s)return null;let n_=0;const 
   else if(b.k==='MAN'){const u=b.p.u||'';push('Manual output ('+u+')',u,[net((b.o||[])[0],'OUT',u,{name:'OUT '+tag,desc:fdesc||'manual station value'}),sd('st'+b.id+'lo','low limit',u,()=>b.p.lo,{dash:true,desc:'low limit'}),sd('st'+b.id+'hi','high limit',u,()=>b.p.hi,{dash:true,desc:'high limit'})]);push('Tracking','',[sd('st'+b.id+'trk','tracking another leg','',()=>(st().trk!=null?1:0),{dig:true,desc:'1 = the station follows the output of the switch behind it'})],true)}
   else if(b.k==='SUMA'){const u=b.face?b.face.unit:'',tu=(b.face&&b.face['SUM unit'])||'';push('Flow ('+u+')',u,[net((b.i||[])[0],'FLOW',u,{desc:fdesc})]);push('Total ('+tu+')',tu,[sd('st'+b.id+'tot','TOTAL '+tag,tu,()=>st().tot,{desc:'integrated flow'+(b.face?'; reset / limit '+b.face.RSTS+' '+tu:'')})])}
   else if(b.k==='FX'){push('Input and output','',[net((b.i||[])[0],'IN','',{}),net((b.o||[])[0],'OUT','',{})]);if(b.p&&b.p.tbl&&(b.p.tbl.p2||b.p.tbl.pts))M.xy={pts:b.p.tbl.p2||b.p.tbl.pts,inN:(b.i||[])[0],outN:(b.o||[])[0],title:b.p.ln||'F(X)'}}
-  else{push('Inputs','',(b.i||[]).slice(0,4).map((n,i)=>net(n,'IN'+(i+1),'')));push('Outputs','',(b.o||[]).slice(0,3).map(n=>net(n,'OUT','')))}}
- else if(s.net!=null){M.title='wire '+nm(S,s.net);M.desc=trDescOf(S,sh,s.net);const t=net(s.net,'',S.nets[s.net].dig?'':'');if(t)push('Wire',S.nets[s.net].dig?'':'',[t],S.nets[s.net].dig)}
+  }
+ else return null;
  return M.panes.length?M:null}
+const TR_KINDS=['PID','PIDV','MAN','SUMA','SUMP','FX'];
 const trFlat=m=>m?m.panes.flatMap(p=>p.series):[];
 function trSeries(sh){return trFlat(trModel(sh)).map(q=>({key:q.key,name:q.name,desc:q.desc,unit:q.unit}))}
 function trSample(sh){const S=sh&&sh.S;if(!S)return;const m=trModel(sh),w=sh._tw=sh._tw||new Map(),h=sh._th=sh._th||{t:[]},t=S.rt.t;if(h.t.length&&t<h.t[h.t.length-1]-1e-6){h.t.length=0;w.forEach(a=>a.length=0)}
@@ -67,7 +68,7 @@ function trendUi(d){const sh=cs();if(!sh||!sh.S)return;trSample(sh);const m0=trM
 function trStrip(box,sh,m){const S=sh.S,b=m.blk,keep=PU;PU=[];const mine=PU;
  const row=(n)=>{const nmx=nm(S,n),ds=trDescOf(S,sh,n);return h$('div',{style:'margin:5px 0;padding:3px 0;border-bottom:1px solid #1d2a31'},[h$('div',{style:'font-weight:bold',txt:nmx}),ds?h$('div',{style:'font-size:10px;color:#8a9',txt:ds}):document.createTextNode(''),ctl(S,sh,n)])};
  const seen=new Set(),ups=[],walk=(n,dp)=>{if(dp>8||seen.has(n))return;seen.add(n);if(S.ext.includes(n)&&!(S.xlk&&S.xlk[n])){ups.push(n);return}for(const dr of S.drv[n]||[]){const x=S.blk.find(q=>q.id===dr.id);if(!x||x.k==='AI')continue;if(x.k==='PID'||x.k==='PIDV'||x.k==='MAN')continue;for(const q of x.i||[])walk(q,dp+1)}};
- const starts=b?(b.k==='PID'||b.k==='PIDV'?(()=>{const d=(S.drv[b.in0]||[]).map(x=>S.blk.find(q=>q.id===x.id)).find(q=>q&&q.ip&&q.ip.length>=2),pl=d&&d.ip.find(q=>q.sg>0);return pl?[pl.n]:[]})():(b.i||[])):(AN.sel.net!=null?[AN.sel.net]:[]);
+ const starts=b?(b.k==='PID'||b.k==='PIDV'?(()=>{const pn=anPins(S,b);return pn&&pn.sv>=0?[pn.sv]:[]})():(b.i||[])):(AN.sel.net!=null?[AN.sel.net]:[]);
  box.append(h$('h4',{txt:'Control strip — what you can change'}));
  if(b&&b.k==='MAN'){const st=S.rt.st[b.id],P=b.p,i=anEdit(h$('input',{type:'number',step:'any'})),rg=h$('input',{type:'range',min:P.lo,max:P.hi,step:(P.hi-P.lo)/500}),set=v=>{st.val=Math.max(P.lo,Math.min(P.hi,v));(sv(sh).man=sv(sh).man||{})[b.id]=st.val;anSave();settle()};i.style.width='80px';rg.style.width='100%';rg.oninput=()=>set(+rg.value);i.onchange=()=>{const v=parseFloat(i.value);if(isFinite(v))set(v)};
   const u=()=>{if(document.activeElement!==rg)rg.value=st.val;if(document.activeElement!==i)i.value=(+st.val).toFixed(2)};u();mine.push(u);box.append(h$('div',{style:'margin:5px 0'},[h$('div',{style:'font-weight:bold',txt:'MAN value ▸ '+(b.tag||(b.txt||[])[0]||'')}),h$('div',{style:'font-size:10px;color:#8a9',txt:(m.desc||'')+' · range '+fmt(P.lo)+' ~ '+fmt(P.hi)+' '+(P.u||'')}),h$('div',{cls:'r'},[i,h$('span',{txt:P.u||''})]),rg]))}

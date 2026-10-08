@@ -4,6 +4,15 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
+## WIP after v1.18.0 (no release yet; the user wants to agree first) - plant layer, HMI control, FORCE / SIM, fixes
+- User tests of v1.18.0 on ABC-017 found: panel widening, HMI view-only, Trend / panel not in step, PV looking forced, PV slider movable, Trend for everything. Findings H-19 .. H-30 in docs/FINDINGS.md.
+- ROOT CAUSE (H-22): the PV of 30 of 68 PID is on the PLUS pin of the DEV block (direct-acting loops); the code assumed the minus pin for all. `anPins` now reads the "PV" / "SV" text of the drawing. This was behind the Trend / panel difference and the forced-looking PV.
+- PLANT LAYER (tools/patch-proc.js): the plant writes the transmitter (AI) of the PV or the PV input wire, never the middle of the logic; secant feedback through scaling / selectors; probing finds the transmitters that matter; compensation inputs start at mid-range; one model per variable ("shared"); cross-sheet signals handled where the signal starts; the PV wire is written only for calculated PV (4 fallbacks). K, T, L estimated from the tuning (docs/PLANT-MODEL.md).
+- FORCE / SIM (tools/patch-own.js): a point held by the user is never written by the plant; F box on every HMI point (SIM field side, FRC logic side, P plant), analog and digital, RUN and PAUSE. HMI open = HMI controls (panel and diagram cannot write).
+- UI: panel fixed 380 px wrapped; arrows of number boxes apply; Trend only PID / PIDV / MAN / SUMA / FX; one refresh clock; real-click HMI (H-20); Auto page lists transmitters and flags (741 points).
+- Tests new / changed: test-ui-real, test-own, test-force-all, test-lock-all, test-proc-app, test-proc (54 / 54), test-trend, test-hmi, test-hmi2, test-path; generated docs: PLANT-MODEL.md, SIGNAL-ROLES.md, ASSUMED-VALUES.md section 6.
+- Not done: digital feedbacks of motors / valves, CCS scenarios, SQRT scaling question (H-30), same variable on two sheets.
+
 ## v1.18.0 (logic-sim-v1.18.0.html) - HMI v2 (revision 1)
 - USER "go" (2026-10-08): "go hmi v2 na. then release go"; also: no DXF import test needed (the drawings are the existing ones), ramp-rate / DH / CUT decisions left to the assistant. AN_PV stays 16. DITL page identical. Report: docs/REPORT-v1.18.0.md.
 - HMI v2 (tools/patch-hmi2.js, tools/test-hmi2.js): complete Auto page (all faceplates, all manual inputs analog + digital, read-only linked inputs and simulated PVs), address picker (Find / Pick on diagram), wire-bound widgets, zoom / pan / smooth drag / resize / Lock, all saved. See docs/HMI-VIEW.md.

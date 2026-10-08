@@ -7,12 +7,12 @@ await E(()=>{AN.procDefault=false;AN.hmiOpen('float')});
 /* 1. Auto page on every sheet */
 const cov=await E(async()=>{const w=ms=>new Promise(r=>setTimeout(r,ms));await AN.data;const out={sheets:0,inputs:0,missing:[],unbound:[],linked:0,badWrite:[],forced:[],noRange:0};
  for(const sh of AN.sheets){if(/ABC-000/.test(sh.name))continue;const S=sh.S||AN.ensure(sh);AN.go(AN.sheets.indexOf(sh));await w(60);AN.hmiAuto();const pg=AN.hmi.pages[AN.hmi.cur];out.sheets++;
-  const ext=[],lnk=[];for(let n=0;n<S.nets.length;n++){if(!S.ext.includes(n))continue;if(AN.procLock(S,n))continue;(S.xlk&&S.xlk[n]?lnk:ext).push(n)}out.linked+=lnk.length;out.inputs+=ext.length;
+  const ext=[],lnk=[];for(let n=0;n<S.nets.length;n++){if(!S.ext.includes(n))continue;if(AN.procLock(S,n))continue;(S.xlk&&S.xlk[n]?lnk:ext).push(n)}for(const b of S.blk){if(b.k!=='AI'&&b.k!=='SIGAB')continue;if(b.k==='AI'&&b.fb)continue;if(b.k==='AI'&&AN.procAI(S,b.id))continue;const o=b.pins.find(q=>q.role==='out');if(o)ext.push(o.n)}out.linked+=lnk.length;out.inputs+=ext.length;
   const wd=pg.widgets.filter(x=>x.type==='slider'||x.type==='button');
   for(const n of ext){const q=wd.find(x=>{const k=AN.hmiPick(x);return k&&k.sh===sh&&k.n===n});if(!q)out.missing.push(sh.name+'#'+n)}
   for(const x of pg.widgets){if(x.type==='label'||x.type==='face')continue;if(!AN.hmiPick(x))out.unbound.push(sh.name+':'+x.label)}
-  for(const x of wd.slice(0,6)){const k=AN.hmiPick(x);if(!k||!k.ext){out.badWrite.push(sh.name+':'+x.label);continue}const S2=k.sh.S;if(x.type==='slider'){if(!(x.max>x.min))out.noRange++;AN.hmiWrite(x,x.min+(x.max-x.min)*.5);if(Math.abs(S2.rt.ext[k.n]-(x.min+(x.max-x.min)*.5))>1e-6)out.badWrite.push(sh.name+':'+x.label)}else{const a=S2.rt.ext[k.n]>.5?1:0;AN.hmiWrite(x,a?0:1);if((S2.rt.ext[k.n]>.5?1:0)===a)out.badWrite.push(sh.name+':'+x.label)}
-   if(S2.rt.force&&S2.rt.force[k.n]!==undefined)out.forced.push(sh.name+':'+x.label)}
+  for(const x of wd.slice(0,6)){const st=AN.hmiState(x);if(!st||st.how!=='input'){out.badWrite.push(sh.name+':'+x.label+' state='+(st&&st.how));continue}const S2=st.S,rd=()=>st.src?S2.rt.st[st.src.id].val:S2.rt.ext[st.n];if(x.type==='slider'){if(!(x.max>x.min))out.noRange++;const tg=x.min+(x.max-x.min)*.5;AN.hmiWrite(x,tg);if(Math.abs(rd()-tg)>1e-6)out.badWrite.push(sh.name+':'+x.label)}else{const a=rd()>.5?1:0;AN.hmiWrite(x,a?0:1);if((rd()>.5?1:0)===a)out.badWrite.push(sh.name+':'+x.label)}
+   if(S2.rt.force&&S2.rt.force[st.n]!==undefined)out.forced.push(sh.name+':'+x.label)}
   AN.hmi.pages.splice(AN.hmi.cur,1);AN.hmi.cur=0}
  return out});
 console.log(JSON.stringify({sheets:cov.sheets,inputs:cov.inputs,linked:cov.linked,noRange:cov.noRange}));
@@ -28,14 +28,14 @@ const z=await E(async()=>{const w=ms=>new Promise(r=>setTimeout(r,ms));AN.go(AN.
  ev('pointerdown',r.x+r.width-5,r.y+r.height-5);ev('pointermove',r.x+r.width-85,r.y+r.height-45);ev('pointerup',r.x+r.width-85,r.y+r.height-45);const v2=sv.getAttribute('viewBox').split(' ').map(Number);
  AN.hmiFit();const v3=sv.getAttribute('viewBox').split(' ').map(Number);return{v0,v1,v2,v3}});
 ck('wheel zooms in (smaller viewBox)',z.v1[2]<z.v0[2]*.9,JSON.stringify([z.v0,z.v1]));ck('dragging the empty page pans',z.v2[0]!==z.v1[0]||z.v2[1]!==z.v1[1],JSON.stringify([z.v1,z.v2]));ck('Fit restores the page',Math.abs(z.v3[2]-z.v0[2])<1e-6);
-const dr=await E(async()=>{const w=ms=>new Promise(r=>setTimeout(r,ms));AN.hmiFit();document.querySelectorAll('#hmi .hh button').forEach(x=>{if(/Edit/.test(x.textContent)&&!/Editing/.test(x.textContent))x.click()});await w(200);
+const dr=await E(async()=>{const w=ms=>new Promise(r=>setTimeout(r,ms));const HIT=el=>el.querySelector(':scope>rect[fill="transparent"]:not([data-ctl])');AN.hmiFit();document.querySelectorAll('#hmi .hh button').forEach(x=>{if(/Edit/.test(x.textContent)&&!/Editing/.test(x.textContent))x.click()});await w(200);
  const pg=AN.hmi.pages[AN.hmi.cur],wd=pg.widgets.find(x=>x.type==='slider'||x.type==='button'),g=document.querySelector('#hmicv g[data-id="'+wd.id+'"]'),sv=document.querySelector('#hmicv svg');const x0=wd.x,y0=wd.y;
- const rr=g.getBoundingClientRect(),sc=sv.getBoundingClientRect().width/pg.w;const ev=(t,x,y)=>(t==='pointerdown'?g.querySelector('rect:last-child'):sv).dispatchEvent(new PointerEvent(t,{bubbles:true,cancelable:true,pointerId:3,clientX:x,clientY:y,button:0}));
+ const rr=g.getBoundingClientRect(),sc=sv.getBoundingClientRect().width/pg.w;const ev=(t,x,y)=>(t==='pointerdown'?HIT(g):sv).dispatchEvent(new PointerEvent(t,{bubbles:true,cancelable:true,pointerId:3,clientX:x,clientY:y,button:0}));
  const cx=rr.x+4,cy=rr.y+4;ev('pointerdown',cx,cy);ev('pointermove',cx+13*sc,cy+7*sc);ev('pointerup',cx+13*sc,cy+7*sc);await w(200);return{dx:wd.x-x0,dy:wd.y-y0}});
 ck('drag moves smoothly (not forced to 5 px steps)',dr.dx!==0&&(dr.dx%5!==0||dr.dy%5!==0),JSON.stringify(dr));
-const lk=await E(async()=>{const w=ms=>new Promise(r=>setTimeout(r,ms));const pg=AN.hmi.pages[AN.hmi.cur],wd=pg.widgets.find(x=>x.type==='slider'||x.type==='button');const x0=wd.x;
+const lk=await E(async()=>{const w=ms=>new Promise(r=>setTimeout(r,ms));const HIT=el=>el.querySelector(':scope>rect[fill="transparent"]:not([data-ctl])');const pg=AN.hmi.pages[AN.hmi.cur],wd=pg.widgets.find(x=>x.type==='slider'||x.type==='button');const x0=wd.x;
  [...document.querySelectorAll('#hmi .hh button')].find(x=>/Lock/.test(x.textContent)).click();await w(200);const g=document.querySelector('#hmicv g[data-id="'+wd.id+'"]'),rr=g.getBoundingClientRect();
- const sv=document.querySelector('#hmicv svg');const ev=(t,x,y)=>(t==='pointerdown'?g.querySelector('rect:last-child'):sv).dispatchEvent(new PointerEvent(t,{bubbles:true,cancelable:true,pointerId:3,clientX:x,clientY:y,button:0}));ev('pointerdown',rr.x+4,rr.y+4);ev('pointermove',rr.x+60,rr.y+40);ev('pointerup',rr.x+60,rr.y+40);await w(100);
+ const sv=document.querySelector('#hmicv svg');const ev=(t,x,y)=>(t==='pointerdown'?HIT(g):sv).dispatchEvent(new PointerEvent(t,{bubbles:true,cancelable:true,pointerId:3,clientX:x,clientY:y,button:0}));ev('pointerdown',rr.x+4,rr.y+4);ev('pointermove',rr.x+60,rr.y+40);ev('pointerup',rr.x+60,rr.y+40);await w(100);
  const edBtn=[...document.querySelectorAll('#hmi .hh button')].find(x=>/Edit/.test(x.textContent));return{locked:AN.hmi.lock,edit:AN.hmiUi.edit,moved:wd.x!==x0,dis:edBtn&&edBtn.disabled}});
 ck('Lock: edit off, edit button disabled, widget cannot be moved',lk.locked&&!lk.edit&&lk.dis&&!lk.moved,JSON.stringify(lk));
 /* 3. picker */
