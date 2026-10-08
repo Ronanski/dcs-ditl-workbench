@@ -36,3 +36,16 @@ The graphics: widgets drawn as vector shapes (valve, motor, tank, pipe, lamp, ba
 - Binding: tags / addresses of all sheets and "DITL pp-nn"; button / slider on an input = one-click input; on a computed wire = FORCE (marked, shift+click releases).
 - Saved in the browser bundle and in the project file (`hmi`). Sheets used by widgets keep running (`actSet`).
 - NOT done (listed so it is not forgotten): no animation of symbols other than colour / fill level; no pipe flow animation; a faceplate does not have its own AUTO / MAN switch (use the diagram panel through "open ▸"); no import of HMI graphics from a file other than a background picture.
+
+
+## HMI v2 (v1.18.0) — what the user asked and what was built
+Code `tools/patch-hmi2.js`; test `tools/test-hmi2.js`.
+| # | User request (2026-10-08) | Built | Test |
+|---|---|---|---|
+| 1 | Auto page must show ALL manual inputs, analog and digital, directly simulatable (not forced); inputs from other sheets shown with a note | **Auto page** of the open sheet: all faceplates (PID / PIDV / MAN), every manual input (analog = slider with the range of the drawing or of the COS; digital = button: switches, DITL inputs, COS, mode inputs .MAN / .LOC / .REM), then the inputs that come from other sheets (read only, "← ABC-xxx"), then the PV simulated by the process model (read only; set the SV) | test-hmi2: 51 sheets, 548 manual inputs: every one has a widget that points to it and writes the INPUT (no force), 197 linked inputs read only |
+| 2 | Address picker | **Find…** (search 2 352 tags / addresses with their description and kind) and **Pick on diagram** (click a wire, or a PID / MAN block for a faceplate) | test-hmi2 |
+| 3 | Wire without a tag | the widget can be bound to a wire of a sheet (sheet + net) | test-hmi2 |
+| 4 | Zoom, smooth drag, LOCK | wheel / + / − / Fit; drag the empty page or the middle button to pan; widgets move pixel by pixel (Snap is optional); resize handle; **Lock** = no editing, you can still operate, zoom and pan; lock saved with the project | test-hmi2 |
+| 5 | A / M / CAS modes come from the switching logic | there are NO mode buttons in the HMI: the mode inputs (tag.MAN / .LOC / .REM) are digital inputs of the sheet and are listed as buttons on the Auto page | by construction (not tested separately) |
+| 6 | HMI saved | pages, widgets, lock and wire bindings are in the browser bundle and the project file | test-hmi2 (F5) |
+Not done: drawing tools (lines, shapes, text boxes are the existing widgets only: label, pipe, tank, valve, motor); symbols animate only by colour and level; the faceplate has no own A/M button (use the mode inputs).

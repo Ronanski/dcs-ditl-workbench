@@ -4,6 +4,7 @@ Rule: every release gets a row here; the report of the release is `docs/REPORT-v
 
 | Version | Revision | Date | Build | Report | Summary |
 |---|---|---|---|---|---|
+| v1.18.0 | 1 | 2026-10-08 | `logic-sim-v1.18.0.html` (+ exe, apk, GitHub Release v1.18.0) | docs/REPORT-v1.18.0.md, docs/SIMPLE-SUMMARY.md | HMI v2: complete Auto page, address picker, zoom / pan / lock |
 | v1.17.0 | 1 | 2026-10-08 | `logic-sim-v1.17.0.html` (+ exe, apk, GitHub Release v1.17.0) | docs/REPORT-v1.17.0.md, docs/SIMPLE-SUMMARY.md | DCS faceplate values applied, COS manual control 173 / 173, process model (PV follows MV), Trend v2 with control strip, DITL list of the open sheet, auto panel width |
 | v1.16.0 | 1 | 2026-10-08 | `logic-sim-v1.16.0.html` (+ exe, apk, GitHub Release v1.16.0) | docs/REPORT-v1.16.0.md, docs/SIMPLE-SUMMARY.md | HMI view (Tab / Float / Split, widgets bound to addresses); following a signal through many sheets (path, exits, signal map, also in RUN); DITL signals list (one-click inputs); live Trend (zoom) of every block and wire; H-18 (4 missing links); progress 85.9 % |
 | v1.15.2 | 1 | 2026-10-08 | `logic-sim-v1.15.2.html` (+ exe, apk, GitHub Release v1.15.2) | docs/REPORT-v1.15.2.md, docs/SIMPLE-SUMMARY.md | H-17 (ABC-004A circles), TR256 sequence test, 68 closed-loop PID tests, persistent DXF import + drawing-change report (P7), DCS data form, OPC notes, Trace across sheets (T1); progress 85.9 % |

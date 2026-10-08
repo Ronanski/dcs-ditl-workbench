@@ -1,4 +1,4 @@
-# Logic Sim — User Manual (v1.17.0)
+# Logic Sim — User Manual (v1.18.0)
 
 Logic Sim is an offline simulator and viewer of the plant DCS logic drawings: the digital interlock pages (DITL) and the 54 analog control sheets (ABC). It runs from one file, with no network, no OPC and no connection to the plant. It is for study, training and checking logic. It is **not** connected to the real DCS and never writes to it.
 
@@ -125,6 +125,8 @@ The DITL page is not simulated with the ABC sheets and is not touched. The signa
 **Buttons and sliders:** on an **input** (signals FROM DITL and other external inputs) they write the one-click input. On a wire that the logic **computes** they FORCE it: the button shows "force" / "FORCED" (shift + click releases the force). Momentary buttons release on mouse-up.
 **Edit mode:** click a widget to select it, drag to move (grid of 5), change label / address / min / max / colour / size in the line under the page; **Duplicate**, **Delete** (or the Delete key). **+ Page**, **Rename**, **Delete page**. **Background…** puts a picture (for example a screenshot of the real HMI) under the widgets; the page takes the size of the picture (largest side 1600). **Auto: this sheet** makes a new page from the sheet you are viewing: a faceplate for every PID / MAN and a button (digital) or slider (analog) for every signal that comes FROM DITL.
 **Saved** with the other settings (browser storage and the project file), restored after F5. Every sheet that a widget reads or writes keeps running while the HMI is open (all linked sheets run together). The DITL page is not touched.
+
+**HMI v2 (v1.18.0):** **Auto page** (Edit → Auto page) now builds a page of the open sheet with every faceplate and EVERY manual input (analog slider with the range of the drawing, digital button), plus the inputs that come from other sheets (read only, with the sheet name) and the PV that the process model simulates (read only: set the SV). **Find…** searches every tag / address with its description; **Pick on diagram** takes the address of the wire you click. **Zoom** with the wheel or + / − / Fit, **pan** by dragging the empty page, widgets move smoothly (tick Snap for a 5 px grid), **Lock** stops editing but you can still operate. A / M / CAS are not buttons of the HMI: they come from the switching logic, whose inputs (tag.MAN / .LOC / .REM) are among the digital buttons.
 
 ### 3.5 PID controllers
 Select a PID block. The panel shows PV, SV, output, A/M mode and tuning (Kp, Ti, Td), direct/reverse action, and the range read from the drawing. Default tuning is chosen by the loop type from the tag (flow, pressure, temperature, level, analysis, speed) and a **Use this speed** button sets the simulation speed that suits the loop. These are typical values, **not** the plant's real tuning: replace them when you have the real data.

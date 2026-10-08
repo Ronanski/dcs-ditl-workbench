@@ -4,6 +4,12 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
+## v1.18.0 (logic-sim-v1.18.0.html) - HMI v2 (revision 1)
+- USER "go" (2026-10-08): "go hmi v2 na. then release go"; also: no DXF import test needed (the drawings are the existing ones), ramp-rate / DH / CUT decisions left to the assistant. AN_PV stays 16. DITL page identical. Report: docs/REPORT-v1.18.0.md.
+- HMI v2 (tools/patch-hmi2.js, tools/test-hmi2.js): complete Auto page (all faceplates, all manual inputs analog + digital, read-only linked inputs and simulated PVs), address picker (Find / Pick on diagram), wire-bound widgets, zoom / pan / smooth drag / resize / Lock, all saved. See docs/HMI-VIEW.md.
+- Process model gain / T / L: not in the Excel (plant data, defaults by loop type, editable): docs/DCS-FILLED-FORM.md section 6.
+- Not done: drawing tools beyond the existing widgets, dMVH / TF / FSC semantics, ALM limits and SEL defaults (assumed), CCS scenario test.
+
 ## v1.17.0 (logic-sim-v1.17.0.html) - faceplate values, COS manual control, process model, Trend v2 (revision 1)
 - USER "go" (2026-10-08) after the F1-F9 discussion. AN_PV stays 16. DITL page identical. Report: docs/REPORT-v1.17.0.md.
 - FACE (tools/patch-face.js, tools/data/dcs-form2-filled.json): the user's filled Excel (PID 68, MAN 58, SUMA 10) applied by station + MNO: Kp = 100 / P, Ti, Td, limits, ranges, units; the other parameters are stored. FILE data. DH and CUT were swapped in the PID sheet: corrected (no effect on the sim).

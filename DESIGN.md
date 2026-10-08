@@ -16,7 +16,7 @@ portable Windows app without admin rights. The user is an automation engineer (n
 5. **Opens in VIEW mode (grey, nothing simulated); RUN starts the simulation, PAUSE has Back / Next.** Settings, forces, inputs, switches must survive refresh / restart (project file, see §5).
 6. **No phone-browser testing.** Claude tests in headless Chromium here; the user tests in desktop Chrome / the portable app. PDF only when asked.
 7. **Never reference a `const` before its definition** in the analog script (v1.6.0 crash). After every patch load the file and check there is no page error.
-8. **Bump `AN_PV`** whenever the reader changes net / block numbering (saved inputs/forces are keyed by those numbers). Current: 16 (v1.15.1, v1.15.2, v1.16.0 and v1.17.0).
+8. **Bump `AN_PV`** whenever the reader changes net / block numbering (saved inputs/forces are keyed by those numbers). Current: 16 (v1.15.1, v1.15.2, v1.16.0, v1.17.0 and v1.18.0).
 9. **UX the user asked to keep:** the existing LN table graph ("LN tables" button) stays; the LN edit (when built) has its OWN reset and is not touched by the global / sheet Reset.
 10. **Truth in reporting.** Say what was tested and what was NOT (e.g. the Windows exe is only built on GitHub, not run by Claude).
 11. **The legend is the law (user, 2026-10-07: "always remember this").** `docs/FUNCTIONALITY.md` (from the SYMBOL LIST sheet ABC-000 and the user's legend summary) says what EVERY symbol must do. Whoever builds or checks anything reads it first; a block that does less than its entry is a defect even when all tests pass. The only exception the user keeps for himself: how the dashed (digital) and continuous (analog) lines are drawn / coloured. EVERYTHING else is followed strictly.

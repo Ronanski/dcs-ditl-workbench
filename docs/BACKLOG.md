@@ -166,7 +166,7 @@
 | F3 Trend explained (SV / PV, P I D, axes, sampling) | DONE v1.17.0 (Trend v2 + process model so PV follows SV through the controller) |
 | F4 floating zoom + control strip | DONE v1.17.0 |
 | F5 COS manual control, 25 unresolved | DONE v1.17.0 (173 / 173) |
-| F6 HMI v2 (picker, drawing tools, full Auto page, lock, control) | NEXT |
+| F6 HMI v2 (picker, drawing tools, full Auto page, lock, control) | DONE v1.18.0 (no new drawing tools) |
 | F7 faceplate data | DONE for PID / MAN / SUMA (FILE); ALM limits (104) and SEL defaults (26) stay ASSUMED, later |
 | F8 process model | DONE v1.17.0 |
 | Ramp rates of the 8 boxes | user: assistant sets defaults, diagram text wins -> kept; screw coolers corrected to 0.05 rpm/s |

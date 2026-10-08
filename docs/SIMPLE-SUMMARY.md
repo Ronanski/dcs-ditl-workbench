@@ -1,9 +1,17 @@
 # SIMPLE SUMMARY — latest build (for a non-coder), 2026-10-08
 
 ## Which build?
-**Logic Sim v1.17.0** (released 2026-10-08). Before it: v1.16.0 (HMI view, Path / exits / Map, DITL signals, Trend).
+**Logic Sim v1.18.0** (released 2026-10-08). Before it: v1.17.0 (faceplate values, COS, process model, Trend v2).
 
-## What is new in v1.17.0, in plain words
+## What is new in v1.18.0 (HMI v2), in plain words
+1. **Auto page** of the open sheet: all controllers (faceplates) and EVERY manual input (analog slider, digital button) that you can operate directly. Inputs that come from other sheets are shown but read only, with the sheet name; PVs simulated by the process model too (set the SV).
+2. **Find…** and **Pick on diagram**: search any tag with its description, or click a wire on the diagram and the HMI widget takes its address.
+3. **Zoom** (wheel), **pan** (drag the page), smooth move of widgets, **Lock**. All saved with the project.
+4. A / M / CAS modes are not HMI buttons: they come from the switching logic; its inputs (.MAN / .LOC / .REM) are among the buttons.
+5. Gain / time constant / dead time of the process are NOT in the Excel (plant data); defaults by loop type, editable.
+Not done: new drawing tools (only the existing widgets), exe / apk not tested by me.
+
+## What was new in v1.17.0, in plain words
 1. **Your real DCS values** (the filled Excel): PID Kp / Ti / Td, output limits, ranges and units; MAN ranges; SUMA values. They come from the FILE, not guessed. DH and CUT were swapped in the PID sheet: corrected (they do nothing in the sim).
 2. **COS manual control**: all 173 are recognised (before: 25 were not). Slider or number with the range and unit of the diagram; greyed out when the switching logic does not energize it. The SV of a PID is always usable.
 3. **Process model (simulation only)**: PV follows the controller output like a real process (gain, time constant, dead time, disturbance). You control the **SV**; MV and PV move by themselves. The PV sliders are disabled while it is ON. 61 of 62 loops reach their SV.

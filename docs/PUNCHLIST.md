@@ -1,4 +1,4 @@
-# PUNCHLIST — what is left to do (updated 2026-10-08, v1.17.0)
+# PUNCHLIST — what is left to do (updated 2026-10-08, v1.18.0)
 
 Rule (user, 2026-10-08): this list has THREE parts, kept apart. The numbers that only the DCS can give are NOT tasks: the simulator already runs with its own values (ASSUMED, all visible in "Assumed values").
 
@@ -39,6 +39,6 @@ O-01 (positioner boxes, closed by H-16) · O-02 tick marks at PID / MAN box edge
 | Task | Status |
 |---|---|
 | T6 faceplate values applied, COS 173 / 173, process model, Trend v2 + control strip + floating zoom, DITL open sheet, panel width | DONE v1.17.0 |
-| T7 HMI v2 (address picker, drawing tools, complete Auto page of all manual inputs, lock, smooth drag, control logic from HMI) | NEXT |
+| T7 HMI v2 (address picker, complete Auto page of all manual inputs, lock, zoom, smooth drag) | DONE v1.18.0 (drawing tools = existing widgets only) |
 | T8 dMVH (MV rate limit), TF (filter), MAN TF / FSC meaning | open (values stored, not simulated) |
 | T2 CCS scenario test (internal) | open |
