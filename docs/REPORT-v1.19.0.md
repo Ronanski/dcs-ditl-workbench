@@ -19,7 +19,7 @@ Built by `tools/patch-1.19.0.js` (v1.18.0 pipeline + `patch-own`, `patch-fix`, `
 | 12 | Red banner "Cannot read properties of undefined (reading pts)" | the Trend of the panel redrew with the model of ANOTHER selection; it now keeps its own block; the refresh loop of the panel cannot show the banner | test-fixes |
 
 ## 2. Tests of this release (root html)
-See the table in PROJECT-NOTES-v1.19.0.md (all listed there were run on `logic-sim-v1.19.0.html`).
+See the table in PROJECT-NOTES-v1.19.1.md (all listed there were run on `logic-sim-v1.19.0.html`).
 
 ## 3. Not done / not proven
 - docs/WIRING-SUSPECTS.md: 23 + 63 suspects, most are labels beside the wire; the rest needs the user's eye on the drawings (ABC-007, 008, 010, 013, 015, 016, 019, 031, 001A, 001B, 001C, 051, 057).

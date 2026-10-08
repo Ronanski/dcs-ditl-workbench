@@ -4,6 +4,9 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
+## v1.19.1 (logic-sim-v1.19.1.html) - values only beside the address (revision 1)
+- USER: "gusto ko na makita ang values na nilalaman ng mga addresses ... irelease mo ito". Report: docs/REPORT-v1.19.1.md. Toggle "Wire values". Next: Plant window (pop-out), starting with the REHEATER system from the DCS graphics (HP / LP bypass).
+
 ## v1.19.0 (logic-sim-v1.19.0.html) - plant layer, HMI control, FORCE / SIM, reader fixes (revision 1)
 - USER "go ... i-release mo na ... input to output dapat ang testing" (2026-10-08). Report: docs/REPORT-v1.19.0.md. AN_PV 17. DITL page identical.
 - Also in this release: H-31 (O2 select circuit), H-32 (arrow joins a wire), H-33 (LN15 / LN21 ratio), H-34 (circle values / click to source), the Trend error banner (reading pts), DESIGN rule 17.

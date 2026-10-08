@@ -4,6 +4,7 @@ Rule: every release gets a row here; the report of the release is `docs/REPORT-v
 
 | Version | Revision | Date | Build | Report | Summary |
 |---|---|---|---|---|---|
+| v1.19.1 | 1 | 2026-10-08 | `logic-sim-v1.19.1.html` (+ exe, apk, GitHub Release v1.19.1) | docs/REPORT-v1.19.1.md | values only beside address / tag text; toggle "Wire values" |
 | v1.19.0 | 1 | 2026-10-08 | `logic-sim-v1.19.0.html` (+ exe, apk, GitHub Release v1.19.0) | docs/REPORT-v1.19.0.md, docs/SIMPLE-SUMMARY.md | plant layer at the transmitter, FORCE / SIM + HMI control, PV / SV pin fix (30 of 68 PID), SIG.AB select fix (O2 average), arrow-joins-wire, LN15 / LN21 ratio, circle values and click to source, panel 380 px, Trend scope |
 | v1.18.0 | 1 | 2026-10-08 | `logic-sim-v1.18.0.html` (+ exe, apk, GitHub Release v1.18.0) | docs/REPORT-v1.18.0.md, docs/SIMPLE-SUMMARY.md | HMI v2: complete Auto page, address picker, zoom / pan / lock |
 | v1.17.0 | 1 | 2026-10-08 | `logic-sim-v1.17.0.html` (+ exe, apk, GitHub Release v1.17.0) | docs/REPORT-v1.17.0.md, docs/SIMPLE-SUMMARY.md | DCS faceplate values applied, COS manual control 173 / 173, process model (PV follows MV), Trend v2 with control strip, DITL list of the open sheet, auto panel width |
