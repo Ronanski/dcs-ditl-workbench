@@ -26,15 +26,15 @@ function hmiDig(w,a){const p=hmiPick(w,a);return p?!!p.sh.S.nets[p.n].dig:true}
 function hmiWrite(w,v,rel){const p=hmiPick(w);if(!p){msg('HMI: the address "'+w.addr+'" was not found on any sheet');return}hmiSync();if(p.ext){if(rel===true)return;setExt(p.sh,p.n,v)}else setForce(p.sh,p.n,rel===true?undefined:v)}
 function hmiBlk(w){const c=hmiIndex().blk.get(hmN(w.addr))||[];if(!c.length)return null;const q=(w.sheet&&c.find(x=>x.sh.name===w.sheet))||c[0],b=q.sh.S.blk.find(x=>x.id===q.b);return b?{sh:q.sh,b}:null}
 function hmiNets(sh,b){const S=sh.S,o=[],add=(n,name,u)=>{if(n!=null&&n>=0&&S.nets[n]&&!o.some(q=>q.n===n))o.push({n,name,u})};
- if((b.k==='PID'||b.k==='PIDV')&&b.in0>=0){const d=(S.drv[b.in0]||[]).map(x=>S.blk.find(q=>q.id===x.id)).find(q=>q&&q.ip&&q.ip.length>=2);if(d){const pl=d.ip.find(q=>q.sg>0),mi=d.ip.find(q=>q.sg<0);if(pl)add(pl.n,'SV');if(mi)add(mi.n,'PV')}(b.o||[]).slice(0,1).forEach(n=>add(n,'MV'))}
+ if((b.k==='PID'||b.k==='PIDV')&&b.in0>=0){const pn=anPins(S,b);if(pn){if(pn.sv>=0)add(pn.sv,'SV');add(pn.pv,'PV')}(b.o||[]).slice(0,1).forEach(n=>add(n,'MV'))}
  else{(b.i||[]).slice(0,2).forEach((n,i)=>add(n,'IN'+(i+1)));(b.o||[]).slice(0,1).forEach(n=>add(n,'OUT'))}return o}
 /* sheets that must keep running because a widget reads / writes them */
 function hmiSync(){const s=new Set();if(AN.hmiUi.open)for(const p of AN.hmi.pages)for(const w of p.widgets){for(const a of[w.addr,w.addr2,w.addr3]){if(!a)continue;const c=w.type==='face'?(hmiBlk(w)||{}):(hmiPick(w,a)||{});if(c.sh)s.add(c.sh.name)}}AN.hmiSheets=[...s]}
 /* ---------- widgets ---------- */
-function hmiSlider(g,x,y,W,get,set,lo,hi,col,dis){const tr=hs$('rect',{x:x,y:y+8,width:W,height:4,fill:'#33424b',rx:2}),kn=hs$('rect',{x:x,y:y+1,width:8,height:18,fill:col,rx:2,style:'cursor:ew-resize'}),vt=ht$('',{x:x+W,y:y-3,'text-anchor':'end',fill:'#e6edf3','font-size':11});g.append(tr,kn,vt);
+function hmiSlider(g,x,y,W,get,set,lo,hi,col,dis){const tr=hs$('rect',{x:x,y:y+8,width:W,height:4,fill:'#33424b',rx:2}),kn=hs$('rect',{x:x,y:y+1,width:8,height:18,fill:col,rx:2,style:'cursor:ew-resize'}),vt=ht$('',{x:x+W,y:y-3,'text-anchor':'end',fill:'#e6edf3','font-size':11});const hz=hs$('rect',{x:x,y:y-4,width:W,height:28,fill:'transparent',style:'cursor:ew-resize'});g.append(tr,kn,hz,vt);
  const ui=()=>{const v=get(),f=v==null?0:Math.max(0,Math.min(1,(v-lo)/((hi-lo)||1)));kn.setAttribute('x',x+f*(W-8));vt.textContent=v==null?'--':fmt(v)};let dr=false;
  const mv=e=>{const sv_=g.ownerSVGElement,pt=sv_.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const m=g.getScreenCTM().inverse(),q=pt.matrixTransform(m),f=Math.max(0,Math.min(1,(q.x-x-4)/(W-8)));set(lo+f*(hi-lo))};
- if(!dis){const dn=e=>{if(AN.hmiUi.edit)return;dr=true;e.stopPropagation();e.target.setPointerCapture&&e.target.setPointerCapture(e.pointerId);mv(e)};[kn,tr].forEach(el=>{el.onpointerdown=dn;el.onpointermove=e=>{if(dr)mv(e)};el.onpointerup=()=>{dr=false}})}return ui}
+ if(!dis){const dn=e=>{if(AN.hmiUi.edit)return;dr=true;e.stopPropagation();e.target.setPointerCapture&&e.target.setPointerCapture(e.pointerId);mv(e)};vt.style.cursor='text';vt.ondblclick=()=>{if(AN.hmiUi.edit)return;const t=prompt('Value',get()==null?'':fmt(get()));if(t===null)return;const n=parseFloat(t);if(isFinite(n))set(n)};[kn,tr,hz].forEach(el=>{el.onpointerdown=dn;el.onpointermove=e=>{if(dr)mv(e)};el.onpointerup=()=>{dr=false}})}return ui}
 function hmiBuild(w){const g=hs$('g',{'data-id':w.id,transform:'translate('+w.x+','+w.y+')'}),W=w.w,H=w.h,col=w.col||'#35e08a',D=()=>hmiDig(w),on=v=>v!=null&&v>.5,upd=[],tip=h$('div'),
   fm=v=>v==null?'--':(D()?(v>.5?'1':'0'):fmt(v)),lab=(y,sz,a)=>ht$(w.label||'',{x:W/2,y:y,'text-anchor':'middle',fill:'#c9d4dc','font-size':sz||11}),hit=hs$('rect',{x:0,y:0,width:W,height:H,fill:'transparent'});
  const U=f=>upd.push(f);
@@ -69,7 +69,7 @@ function hmiBuild(w){const g=hs$('g',{'data-id':w.id,transform:'translate('+w.x+
   const ob=hs$('rect',{x:W-62,y:H-24,width:54,height:18,rx:3,fill:'#26323a',stroke:'#667',style:'cursor:pointer'});g.append(ob,ht$('open ▸',{x:W-35,y:H-11,'text-anchor':'middle',fill:'#e6edf3','font-size':10,style:'pointer-events:none'}));
   ob.onpointerdown=e=>{if(AN.hmiUi.edit)return;e.stopPropagation();const i=AN.sheets.indexOf(bb.sh);if(i<0)return;if(AN.hmiUi.mode==='tab'||AN.hmi.mode==='tab')hmiSetMode('float');go(i);const s2=cs();AN.sel={blk:s2.S.blk.find(x=>x.id===bb.b.id)};selBox();paint();panelUpd(true)};break}
  }
- g.append(hit);hit.style.cursor='default';g.style.cursor=AN.hmiUi.edit?'move':'default';
+ g.append(hit);hit.style.cursor='default';if(!AN.hmiUi.edit)hit.style.pointerEvents='none';g.style.cursor=AN.hmiUi.edit?'move':'default';
  const h0=hit;g._tip=()=>{const a=[w.addr,w.addr2,w.addr3].filter(Boolean).map(x=>{const p=w.type==='face'?hmiBlk(w):hmiPick(w,x);if(!p)return x+' → NOT FOUND';const S=p.sh.S,n=p.n;return x+' → '+p.sh.name+(p.b?' · block '+p.b.k:(' · '+nm(S,n)))+(p.ext?' · input':(p.drv?' · computed':''))});return a.join('\n')};
  g._upd=()=>{for(const f of upd){try{f()}catch(e){}}};g._upd();return g}
 /* ---------- the view ---------- */

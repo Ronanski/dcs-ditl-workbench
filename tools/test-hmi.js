@@ -22,12 +22,14 @@ const r=await E(async()=>{await AN.data;const w=ms=>new Promise(r=>setTimeout(r,
  /* computed wire: FORCE */
  let comp=null;for(const l of S.lab){}
  const cands=[];S.lab.forEach((l,n)=>{if(l&&/^M\.[0-9A-F]{4}$/.test(l.t)&&!S.ext.includes(n)&&S.nets[n].dig&&(S.drv[n]||[]).some(d=>d.k!=='LINK'))cands.push({t:l.t,n})});
- if(cands.length){const c=cands[0],fb=AN.hmiAdd('button',{x:20,y:300,label:'force',addr:c.t,sheet:'ABC-003B'});AN.hmiRender();await w(200);const rr=document.querySelector('#hmicv g[data-id="'+fb.id+'"] rect');rr.dispatchEvent(new PointerEvent('pointerdown',{bubbles:true,cancelable:true,pointerId:1}));await w(300);o.forced=S.rt.force[c.n]!==undefined;o.forceTag=c.t;
-  rr.dispatchEvent(new PointerEvent('pointerdown',{bubbles:true,cancelable:true,pointerId:1,shiftKey:true}));await w(300);o.released=S.rt.force[c.n]===undefined}
+ if(cands.length){const c=cands[0],fb=AN.hmiAdd('button',{x:20,y:300,label:'force',addr:c.t,sheet:'ABC-003B'});AN.hmiRender();await w(200);const g=document.querySelector('#hmicv g[data-id="'+fb.id+'"]'),rr=g.querySelector('rect[data-ctl]'),fx=g.querySelector('rect[width="27"]');const pd=el=>el.dispatchEvent(new PointerEvent('pointerdown',{bubbles:true,cancelable:true,pointerId:1}));
+  pd(rr);await w(300);o.noForceOnClick=S.rt.force[c.n]===undefined;o.forceTag=c.t;
+  pd(fx);await w(300);o.forced=S.rt.force[c.n]!==undefined;const v0=S.rt.force[c.n];pd(rr);await w(300);o.toggledWhileForced=S.rt.force[c.n]!==undefined&&S.rt.force[c.n]!==v0;
+  pd(fx);await w(300);o.released=S.rt.force[c.n]===undefined}
  return o});
 console.log(JSON.stringify(r));
 ck('address "'+r.ref+'" found on the sheets',r.found>=1);ck('button writes the input (one click)',r.before!==r.after,r.before+' -> '+r.after);ck('lamp bound to the same wire follows',r.lampOn);
-ck('faceplate of PID '+r.pidTag+' shows SV / PV / MV',r.faceNets>=6,r.faceTxt);ck('button on a computed wire FORCEs it, shift-click releases',r.forced&&r.released,r.forceTag);
+ck('faceplate of PID '+r.pidTag+' shows SV / PV / MV',r.faceNets>=6,r.faceTxt);ck('button on a computed wire is read only until F (FORCE) is pressed; forced it toggles; F again releases',r.noForceOnClick&&r.forced&&r.toggledWhileForced&&r.released,JSON.stringify([r.noForceOnClick,r.forced,r.toggledWhileForced,r.released,r.forceTag]));
 /* 3. the sheets bound to widgets keep running */
 const act=await E(()=>{AN.hmiSync();return{sheets:AN.hmiSheets,inSet:AN.actSet(AN.cs()).map(s=>s.name).length}});ck('sheets used by widgets are in the running set',act.sheets.length>=1,JSON.stringify(act));
 await p.screenshot({path:(process.argv[3]||'/tmp/hmi')+'-float.png'});

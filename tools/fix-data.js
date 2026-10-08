@@ -1,0 +1,5 @@
+/* Data fixes on the embedded LN tables (user, 2026-10-08): the O2 correction tables LN15 (ABC-002) and LN21 (ABC-003A/B/C/D) were written as PERCENT (80 ~ 120) but their output is a RATIO "0.8 ~ 1.2" (the drawing: "O2 CORR. : 0.8 ~ 1.2", LN21 "( 0.8 ~ 1.2 )"; the sister tables LN1 / LN3 are already 0.8 ~ 1.2). The outputs are divided by 100. */
+module.exports=(h)=>{const a=h.indexOf('id="aln">')+9,b=h.indexOf('</script>',a);const t=JSON.parse(h.slice(a,b));let n=0;
+ for(const r of t){if(!['S1-LN15','S1-LN21'].includes(r.key))continue;const ys=r.pts.map(q=>q[1]);if(Math.min(...ys)<79||Math.max(...ys)>121)throw new Error('LN table '+r.key+' is not 80 ~ 120 any more: check '+JSON.stringify([Math.min(...ys),Math.max(...ys)]));
+  r.pts=r.pts.map(q=>[q[0],+(q[1]/100).toFixed(6)]);r.yr=[0,1];r.yu='RATIO (0.8 ~ 1.2)';r.fix='outputs /100: the drawing gives the output as a ratio 0.8 ~ 1.2';n++}
+ if(n!==2)throw new Error('expected 2 LN tables to fix, found '+n);return h.slice(0,a)+JSON.stringify(t)+h.slice(b)};

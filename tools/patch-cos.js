@@ -13,7 +13,7 @@ function cosInfo(S,n){if(!S._cm){const m=S._cm=new Map(),all=S._cosAll=[],Ts=S.b
   for(const c of S.blk){if(c.k!=='COS')continue;const t=c.used?S.blk.find(b=>b.id===c.tb):Ts.filter(x=>Math.hypot(x.cx-c.cx,x.cy-c.cy)<30).sort((p,q)=>Math.hypot(p.cx-c.cx,p.cy-c.cy)-Math.hypot(q.cx-c.cx,q.cy-c.cy))[0];let e=null;
    if(t){const net=c.used?c.vnet:(t.b>=0&&S.ext.includes(t.b)?t.b:null);if(net!=null&&!m.has(net))e={c,t,net,kind:'T',dig:!!S.nets[net].dig}}
    if(!e){/* an external wire that touches the diamond */const ws=S.nets.filter(nn=>nn.segs.length&&S.ext.includes(nn.id)&&!m.has(nn.id)&&!(S.xlk&&S.xlk[nn.id])&&nn.segs.some(i=>ds(c.cx,c.cy,S.seg[i])<16)).map(nn=>({nn,d:Math.min(...nn.segs.map(i=>ds(c.cx,c.cy,S.seg[i])))})).sort((p,q)=>p.d-q.d);
-    if(ws.length){const nn=ws[0].nn;const dv=S.blk.filter(x=>x.k==='DEV').find(x=>(x.ip||[]).some(q=>q.n===nn.id)),sg=dv&&dv.ip.find(q=>q.n===nn.id).sg,pid=dv&&(S.cns[dv.o[0]]||[]).find(x=>x.k==='PID'||x.k==='PIDV');e={c,t:null,dev:dv,pid,net:nn.id,kind:'W',role:dv?(sg>0?'SV':'PV'):'',dig:!!nn.dig}}}
+    if(ws.length){const nn=ws[0].nn;const dv=S.blk.filter(x=>x.k==='DEV').find(x=>(x.ip||[]).some(q=>q.n===nn.id)),sg=dv&&dv.ip.find(q=>q.n===nn.id).sg,pid=dv&&(S.cns[dv.o[0]]||[]).find(x=>x.k==='PID'||x.k==='PIDV');e={c,t:null,dev:dv,pid,net:nn.id,kind:'W',role:dv?((pid&&anPins(S,pid))?(anPins(S,pid).sv===nn.id?'SV':'PV'):(sg>0?'SV':'PV')):'',dig:!!nn.dig}}}
    if(!e&&t&&t.b>=0&&!S.ext.includes(t.b))e={c,t,net:null,kind:'L',dig:!!S.nets[t.b].dig,sel:t.b};
    if(!e){unres.push(c);continue}all.push(e);if(e.net!=null)m.set(e.net,e)}}
  const e=n===-99?null:S._cm.get(n);if(!e)return null;return cosFill(S,e)}

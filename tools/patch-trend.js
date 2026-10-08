@@ -11,9 +11,9 @@ rep(String.raw`function whyTxt(S,b){`,String.raw`const TR_COL=['#4da3ff','#ff8a3
 function trDescOf(S,sh,n){try{const nmx=nm(S,n),a=adesFind(sh,nmx);return a?adesText(a.rec):''}catch(e){return ''}}
 function trModel(sh){const S=sh.S,s=AN.sel;if(!S||!s)return null;let n_=0;const sd=(key,name,unit,get,o)=>Object.assign({key,name,unit:unit||'',get,dig:false,desc:'',ci:n_++},o||{}),net=(n,label,unit,o)=>(n==null||n<0||!S.nets[n])?null:sd('n'+n,label+' '+nm(S,n),unit,()=>S.rt.v[n],Object.assign({dig:!!S.nets[n].dig,desc:trDescOf(S,sh,n)},o||{})),M={title:'',desc:'',panes:[]};
  const push=(title,unit,ser,dig)=>{ser=ser.filter(Boolean);if(ser.length)M.panes.push({title,unit,series:ser,dig:!!dig})};
- if(s.blk){const b=s.blk,st=()=>S.rt.st[b.id]||{},tag=b.tag||(b.txt||[])[1]||(b.txt||[])[0]||b.k,fdesc=(b.face&&b.face.desc)||'';M.title=b.k+' '+tag;M.desc=fdesc;M.blk=b;
+ if(s.blk){const b=s.blk;if(!TR_KINDS.includes(b.k))return null;const st=()=>S.rt.st[b.id]||{},tag=b.tag||(b.txt||[])[1]||(b.txt||[])[0]||b.k,fdesc=(b.face&&b.face.desc)||'';M.title=b.k+' '+tag;M.desc=fdesc;M.blk=b;
   if(b.k==='PID'||b.k==='PIDV'){const d=(S.drv[b.in0]||[]).map(x=>S.blk.find(q=>q.id===x.id)).find(q=>q&&q.ip&&q.ip.length>=2),u=b.p.unit||'';
-   const pl=d&&d.ip.find(q=>q.sg>0),mi=d&&d.ip.find(q=>q.sg<0);push('Process ('+(u||'engineering unit')+')',u,[pl&&net(pl.n,'SV',u,{desc:'set point · '+(fdesc||trDescOf(S,sh,pl.n))}),mi&&net(mi.n,'PV',u,{desc:'process value · '+(fdesc||trDescOf(S,sh,mi.n))})]);
+   const pn=anPins(S,b),pl=pn&&{n:pn.sv},mi=pn&&{n:pn.pv};push('Process ('+(u||'engineering unit')+')',u,[pl&&net(pl.n,'SV',u,{desc:'set point · '+(fdesc||trDescOf(S,sh,pl.n))}),mi&&net(mi.n,'PV',u,{desc:'process value · '+(fdesc||trDescOf(S,sh,mi.n))})]);
    const p=b.p,sp=p.span>0?p.span:100;push('Controller (% of output)','%',[(b.o||[])[0]!=null&&net(b.o[0],'MV',' %',{name:'MV output '+tag,desc:'output of the controller, limited '+(p.lo==null?0:p.lo)+' ~ '+(p.hi==null?100:p.hi)+' %'}),
     sd('st'+b.id+'p','P  = Kp · e',' %',()=>st().pt,{desc:'proportional part: Kp '+(+p.kp).toFixed(3)+' (P band '+(p.kp>0?(100/p.kp).toFixed(1):'-')+' %) times the error'}),
     sd('st'+b.id+'i','I  (integral)',' %',()=>st().it,{desc:'integral part: Ti '+p.ti+' s, adds up while the error stays'}),
@@ -23,9 +23,10 @@ function trModel(sh){const S=sh.S,s=AN.sel;if(!S||!s)return null;let n_=0;const 
   else if(b.k==='MAN'){const u=b.p.u||'';push('Manual output ('+u+')',u,[net((b.o||[])[0],'OUT',u,{name:'OUT '+tag,desc:fdesc||'manual station value'}),sd('st'+b.id+'lo','low limit',u,()=>b.p.lo,{dash:true,desc:'low limit'}),sd('st'+b.id+'hi','high limit',u,()=>b.p.hi,{dash:true,desc:'high limit'})]);push('Tracking','',[sd('st'+b.id+'trk','tracking another leg','',()=>(st().trk!=null?1:0),{dig:true,desc:'1 = the station follows the output of the switch behind it'})],true)}
   else if(b.k==='SUMA'){const u=b.face?b.face.unit:'',tu=(b.face&&b.face['SUM unit'])||'';push('Flow ('+u+')',u,[net((b.i||[])[0],'FLOW',u,{desc:fdesc})]);push('Total ('+tu+')',tu,[sd('st'+b.id+'tot','TOTAL '+tag,tu,()=>st().tot,{desc:'integrated flow'+(b.face?'; reset / limit '+b.face.RSTS+' '+tu:'')})])}
   else if(b.k==='FX'){push('Input and output','',[net((b.i||[])[0],'IN','',{}),net((b.o||[])[0],'OUT','',{})]);if(b.p&&b.p.tbl&&(b.p.tbl.p2||b.p.tbl.pts))M.xy={pts:b.p.tbl.p2||b.p.tbl.pts,inN:(b.i||[])[0],outN:(b.o||[])[0],title:b.p.ln||'F(X)'}}
-  else{push('Inputs','',(b.i||[]).slice(0,4).map((n,i)=>net(n,'IN'+(i+1),'')));push('Outputs','',(b.o||[]).slice(0,3).map(n=>net(n,'OUT','')))}}
- else if(s.net!=null){M.title='wire '+nm(S,s.net);M.desc=trDescOf(S,sh,s.net);const t=net(s.net,'',S.nets[s.net].dig?'':'');if(t)push('Wire',S.nets[s.net].dig?'':'',[t],S.nets[s.net].dig)}
+  }
+ else return null;
  return M.panes.length?M:null}
+const TR_KINDS=['PID','PIDV','MAN','SUMA','SUMP','FX'];
 const trFlat=m=>m?m.panes.flatMap(p=>p.series):[];
 function trSeries(sh){return trFlat(trModel(sh)).map(q=>({key:q.key,name:q.name,desc:q.desc,unit:q.unit}))}
 function trSample(sh){const S=sh&&sh.S;if(!S)return;const m=trModel(sh),w=sh._tw=sh._tw||new Map(),h=sh._th=sh._th||{t:[]},t=S.rt.t;if(h.t.length&&t<h.t[h.t.length-1]-1e-6){h.t.length=0;w.forEach(a=>a.length=0)}
@@ -47,7 +48,7 @@ function trDraw(cv,sh,m,o){const h=sh._th||{t:[]},w=sh._tw||new Map(),ctx=cv.get
   for(const q of ser){const a=w.get(q.key);ctx.strokeStyle=TR_COL[q.ci%TR_COL.length];ctx.lineWidth=big?2:1.5;ctx.setLineDash(q.dash?[5,4]:[]);ctx.beginPath();let st=false,py=0;for(let i=Math.max(0,i0-1);i<n;i++){const v=a[i];if(v==null)continue;const xx=X(T[i]),yy=Y(v);if(!st){ctx.moveTo(xx,yy);st=true}else{if(q.dig)ctx.lineTo(xx,py);ctx.lineTo(xx,yy)}py=yy;if(T[i]>t1)break}ctx.stroke();ctx.setLineDash([])}});
  ctx.fillStyle='#8a9';const info='window '+(+win).toFixed(0)+' s · sampling '+TR_DT+' s · '+(i1-i0+1)+' samples · X = simulated time';ctx.fillText(info,W-pr-ctx.measureText(info).width,H-4);
  if(o.hx!=null&&o.hx>=pl&&o.hx<=W-pr){const tt=t0+(o.hx-pl)/(W-pl-pr)*(t1-t0);ctx.strokeStyle='#ffffff88';ctx.setLineDash([3,3]);ctx.beginPath();ctx.moveTo(o.hx,pt);ctx.lineTo(o.hx,H-pb);ctx.stroke();ctx.setLineDash([]);let k=i0;for(let i=i0;i<=i1;i++)if(Math.abs(T[i]-tt)<Math.abs(T[k]-tt))k=i;o.hk=k}else o.hk=null}
-function trXY(cv,m,S){const ctx=cv.getContext('2d'),W=cv.width,H=cv.height,pl=44,pb=18,pt=14,pr=8,pts=m.xy.pts.slice().sort((a,b)=>a[0]-b[0]);ctx.fillStyle='#0b1013';ctx.fillRect(0,0,W,H);ctx.font='10px sans-serif';if(pts.length<2){return}
+function trXY(cv,m,S){if(!m||!m.xy||!m.xy.pts)return;const ctx=cv.getContext('2d'),W=cv.width,H=cv.height,pl=44,pb=18,pt=14,pr=8,pts=m.xy.pts.slice().sort((a,b)=>a[0]-b[0]);ctx.fillStyle='#0b1013';ctx.fillRect(0,0,W,H);ctx.font='10px sans-serif';if(pts.length<2){return}
  const xs=pts.map(p=>p[0]),ys=pts.map(p=>p[1]),xl=Math.min(...xs),xh=Math.max(...xs),yl=Math.min(...ys),yh=Math.max(...ys),X=x=>pl+(x-xl)/((xh-xl)||1)*(W-pl-pr),Y=y=>H-pb-(y-yl)/((yh-yl)||1)*(H-pt-pb);
  ctx.strokeStyle='#26323a';ctx.fillStyle='#8a9';for(let k=0;k<=4;k++){const xx=pl+k*(W-pl-pr)/4,yy=pt+k*(H-pt-pb)/4;ctx.beginPath();ctx.moveTo(xx,pt);ctx.lineTo(xx,H-pb);ctx.moveTo(pl,yy);ctx.lineTo(W-pr,yy);ctx.stroke();ctx.fillText((xl+(xh-xl)*k/4).toFixed(1),xx-10,H-5);ctx.fillText((yh-(yh-yl)*k/4).toFixed(1),2,yy+4)}
  ctx.strokeStyle='#4da3ff';ctx.lineWidth=1.5;ctx.beginPath();pts.forEach((p,i)=>{i?ctx.lineTo(X(p[0]),Y(p[1])):ctx.moveTo(X(p[0]),Y(p[1]))});ctx.stroke();ctx.fillStyle='#4da3ff';pts.forEach(p=>ctx.fillRect(X(p[0])-2,Y(p[1])-2,4,4));
@@ -62,12 +63,12 @@ function trendUi(d){const sh=cs();if(!sh||!sh.S)return;trSample(sh);const m0=trM
  const xyc=m0.xy?h$('canvas',{width:420,height:200,style:'width:100%;height:140px;background:#0b1013;border:1px solid var(--line);margin-top:4px'}):null;
  d.append(h$('h4',{txt:'Trend · '+m0.title}),m0.desc?h$('small',{txt:m0.desc,style:'display:block;color:#9ab'}):document.createTextNode(''),h$('div',{cls:'r'},[wsel,bz,bc]),cv,...(xyc?[xyc]:[]),leg);
  cv.onmousemove=e=>{const r=cv.getBoundingClientRect();o.hx=(e.clientX-r.left)/r.width*cv.width;draw()};cv.onmouseleave=()=>{o.hx=null;o.hk=null;draw()};
- const draw=()=>{if(!cv.isConnected)return;const m=trModel(sh)||m0;trDraw(cv,sh,m,o);if(xyc)trXY(xyc,m,S);trLegend(leg,S,m,o,sh)};draw();PU.push(()=>{if(cv.isConnected&&cs()===sh){trSample(sh);draw()}});bz.onclick=()=>trZoom(sh,o)}
+ const draw=()=>{if(!cv.isConnected)return;const mc=trModel(sh),m=(mc&&mc.blk===m0.blk&&mc.title===m0.title)?mc:m0;trDraw(cv,sh,m,o);if(xyc&&m.xy)trXY(xyc,m,S);trLegend(leg,S,m,o,sh)};draw();PU.push(()=>{if(cv.isConnected&&cs()===sh){trSample(sh);draw()}});bz.onclick=()=>trZoom(sh,o)}
 /* ---------- the floating zoom window with the control strip ---------- */
 function trStrip(box,sh,m){const S=sh.S,b=m.blk,keep=PU;PU=[];const mine=PU;
  const row=(n)=>{const nmx=nm(S,n),ds=trDescOf(S,sh,n);return h$('div',{style:'margin:5px 0;padding:3px 0;border-bottom:1px solid #1d2a31'},[h$('div',{style:'font-weight:bold',txt:nmx}),ds?h$('div',{style:'font-size:10px;color:#8a9',txt:ds}):document.createTextNode(''),ctl(S,sh,n)])};
  const seen=new Set(),ups=[],walk=(n,dp)=>{if(dp>8||seen.has(n))return;seen.add(n);if(S.ext.includes(n)&&!(S.xlk&&S.xlk[n])){ups.push(n);return}for(const dr of S.drv[n]||[]){const x=S.blk.find(q=>q.id===dr.id);if(!x||x.k==='AI')continue;if(x.k==='PID'||x.k==='PIDV'||x.k==='MAN')continue;for(const q of x.i||[])walk(q,dp+1)}};
- const starts=b?(b.k==='PID'||b.k==='PIDV'?(()=>{const d=(S.drv[b.in0]||[]).map(x=>S.blk.find(q=>q.id===x.id)).find(q=>q&&q.ip&&q.ip.length>=2),pl=d&&d.ip.find(q=>q.sg>0);return pl?[pl.n]:[]})():(b.i||[])):(AN.sel.net!=null?[AN.sel.net]:[]);
+ const starts=b?(b.k==='PID'||b.k==='PIDV'?(()=>{const pn=anPins(S,b);return pn&&pn.sv>=0?[pn.sv]:[]})():(b.i||[])):(AN.sel.net!=null?[AN.sel.net]:[]);
  box.append(h$('h4',{txt:'Control strip — what you can change'}));
  if(b&&b.k==='MAN'){const st=S.rt.st[b.id],P=b.p,i=anEdit(h$('input',{type:'number',step:'any'})),rg=h$('input',{type:'range',min:P.lo,max:P.hi,step:(P.hi-P.lo)/500}),set=v=>{st.val=Math.max(P.lo,Math.min(P.hi,v));(sv(sh).man=sv(sh).man||{})[b.id]=st.val;anSave();settle()};i.style.width='80px';rg.style.width='100%';rg.oninput=()=>set(+rg.value);i.onchange=()=>{const v=parseFloat(i.value);if(isFinite(v))set(v)};
   const u=()=>{if(document.activeElement!==rg)rg.value=st.val;if(document.activeElement!==i)i.value=(+st.val).toFixed(2)};u();mine.push(u);box.append(h$('div',{style:'margin:5px 0'},[h$('div',{style:'font-weight:bold',txt:'MAN value ▸ '+(b.tag||(b.txt||[])[0]||'')}),h$('div',{style:'font-size:10px;color:#8a9',txt:(m.desc||'')+' · range '+fmt(P.lo)+' ~ '+fmt(P.hi)+' '+(P.u||'')}),h$('div',{cls:'r'},[i,h$('span',{txt:P.u||''})]),rg]))}
@@ -86,7 +87,7 @@ function trZoom(sh,o0){const old=document.getElementById('trbig');if(old)old.rem
  hd.append(h$('b',{txt:sh.name+' · '+m0.title,style:'color:var(--acc)'}),h$('span',{txt:m0.desc||'',style:'color:#9ab;font-size:11px;flex:1 1 200px'}),ws,fol,h$('span',{txt:'opaque',style:'color:#8a9;font-size:10px'}),op,cl,h$('small',{txt:'wheel = time zoom · drag = move in time · hover = values · click a name = hide / show · drag this bar = move the window · corner = resize',style:'flex-basis:100%;color:#8a9'}));
  left.append(cv,...(xyc?[xyc]:[]),leg);body.append(left,right);ov.append(hd,body);document.body.append(ov);
  let mine=trStrip(right,sh,m0);let lastSel=JSON.stringify(AN.sel&&{b:AN.sel.blk&&AN.sel.blk.id,n:AN.sel&&AN.sel.net});
- const draw=()=>{const sh2=cs();if(sh2!==sheetAtOpen){}trSample(sh);const m=trModel(sh)||m0;trDraw(cv,sh,m,o);if(xyc)trXY(xyc,m,S);trLegend(leg,S,m,o,sh);for(const f of mine){try{f()}catch(e){}}};
+ const draw=()=>{const sh2=cs();if(sh2!==sheetAtOpen){}trSample(sh);const mc=trModel(sh),m=(mc&&mc.blk===m0.blk&&mc.title===m0.title)?mc:m0;trDraw(cv,sh,m,o);if(xyc&&m.xy)trXY(xyc,m,S);trLegend(leg,S,m,o,sh);for(const f of mine){try{f()}catch(e){}}};
  const tm=setInterval(()=>{if(!ov.isConnected){clearInterval(tm);return}draw()},250);draw();
  cv.onwheel=e=>{e.preventDefault();const h=sh._th&&sh._th.t||[];if(h.length<2)return;const full=h[h.length-1]-h[0],cur=o.win>0?o.win:full,nw=Math.max(5,Math.min(Math.max(full,5),cur*(e.deltaY>0?1.25:.8))),end=o.off!=null?o.off+cur:h[h.length-1];o.win=nw;o.off=Math.max(h[0],end-nw);if(o.off+nw>=h[h.length-1]-1e-6)o.off=null;ws.value=''};
  let dr=null;cv.onmousedown=e=>{dr={x:e.clientX,off:o.off}};addEventListener('mouseup',()=>{dr=null});cv.onmouseleave=()=>{o.hx=null;o.hk=null};

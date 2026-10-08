@@ -1,4 +1,4 @@
-# PUNCHLIST — what is left to do (updated 2026-10-08, v1.18.0)
+# PUNCHLIST — what is left to do (updated 2026-10-08, v1.19.0)
 
 Rule (user, 2026-10-08): this list has THREE parts, kept apart. The numbers that only the DCS can give are NOT tasks: the simulator already runs with its own values (ASSUMED, all visible in "Assumed values").
 
@@ -42,3 +42,27 @@ O-01 (positioner boxes, closed by H-16) · O-02 tick marks at PID / MAN box edge
 | T7 HMI v2 (address picker, complete Auto page of all manual inputs, lock, zoom, smooth drag) | DONE v1.18.0 (drawing tools = existing widgets only) |
 | T8 dMVH (MV rate limit), TF (filter), MAN TF / FSC meaning | open (values stored, not simulated) |
 | T2 CCS scenario test (internal) | open |
+
+## Decisions 2026-10-08 (later) - see docs/SIMULATION-METHOD.md sections 6-10
+| Task | Status |
+|---|---|
+| P0 panel fixed wider + wrapped; Trend only PID / PIDV / MAN / SUMA / FX / integrators; disabled PV slider | decided, not built |
+| P1 one owner of control (HMI open = sheet read only), FORCE / SIM in HMI, one shared state | decided, not built |
+| P2 audit of the 107 + 27 inputs | next |
+| P3 plant layer on the inputs + FORCE priority | after P2 |
+| P4 feedbacks, P5 CCS scenarios | later |
+| Trend / panel difference | needs one example from the user (or fixed by P1) |
+
+## Status 2026-10-08 (after the user's second round: "apply and fix all the fix needed and update; no release muna") - WIP, not released
+| Task | Status |
+|---|---|
+| P0 panel fixed 380 px + wrap; Trend only PID / PIDV / MAN / SUMA / FX; disabled plant points | DONE (WIP) - test-ui-real, test-trend, test-lock-all |
+| P1 HMI open = HMI controls; F (FORCE / SIM) on every HMI point (analog + digital, RUN + PAUSE); one clock | DONE (WIP) - test-own, test-hmi, test-hmi2 |
+| Arrows of a number box apply the value | DONE (WIP) - test-own |
+| PV / SV pin swapped on 30 of 68 loops (the real cause of "Trend and panel not in sync") | FIXED (WIP) - H-22, docs/PLANT-MODEL.md |
+| P2 audit with the IO list / memory list | DONE - docs/SIGNAL-ROLES.md (every point of the 51 sheets) |
+| P3 plant layer at the transmitter / input wire, FORCE priority, shared variables, cross-sheet signals | DONE (WIP) - test-proc 54 / 54, test-force-all, test-proc-app |
+| P4 digital feedbacks of motors / valves in the ABC sheets | NOT DONE (needs the user's confirmation of which feedback follows which command; the DITL page has its own simulation and must not change) |
+| P5 CCS scenario tests with the plant answering | NOT DONE |
+| H-30 SQRT scaling (% vs engineering units) | OPEN: ask the user to confirm with a flow loop drawing |
+| Release | WAITING for the user ("pag nagkasundo na tayo") |
