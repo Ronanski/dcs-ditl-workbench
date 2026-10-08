@@ -15,4 +15,6 @@ Source: photo of UaExpert "Data Access View" sent by the user (2026-10-08), tag 
 - DHD = deviation limit, DPH / DPL / DPV = Boolean flags, LOC / MAN / CAS = mode and cascade set value (12.3).
 - The simulator uses for this loop: Kp 1, Ti 15 s, Td 0, output 0-100 % (default by loop type, ASSUMED) → the DCS values are different.
 
+See also docs/DCS-FACEPLATES.md (faceplates of FIC-CF, FICCL1061C, FIQMS1031) and the form docs/DCS-FORM-PID-MAN-SUMA.xlsx / .pdf.
+
 Still needed: the rest of the property list (after PH: PL, PV, SV, TS …), the same view for one alarm tag (FIFA1043A), one PIDV, the OPC endpoint URL (no password), and the confirmation of the units.

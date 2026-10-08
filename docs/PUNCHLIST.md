@@ -6,6 +6,7 @@ Rule (user, 2026-10-08): this list has THREE parts, kept apart. The numbers that
 | # | Task | Status |
 |---|---|---|
 | T2 | **CCS scenario test** (internal, by the assistant): scenarios on the coordinated control sheets with the DITL signals as inputs and simple process models; first step = list the CCS sheets and their FROM DITL inputs (docs/BACKLOG.md) | **open** |
+| T5 | Use the new faceplate parameters in the engine (dMVH, TF, DTI, GAP, BND, CUT, MAN FSC, SUMA K / RSTS) when the data of form 2 arrives | **waits for the data** |
 | T3 (DONE v1.16.0) | **HMI view**: Tab / Float / Split (approved by the user), widgets bound to addresses, Auto page from a sheet, saved with the project: docs/HMI-VIEW.md, `tools/test-hmi.js` | **done** (the first real screen is made by the user with Edit or Auto) |
 | T4 (DONE v1.16.0) | **Following a signal through many sheets**: path (breadcrumbs, Back to start, no loop growth), list of every exit, signal map, one link per destination sheet (H-18); **DITL signals** list (one-click inputs); **Trend** (live graph, zoom) of every block and wire | `test-path.js` (also in RUN mode), `test-ditl-signals.js`, `test-trend.js`, `test-trace-x.js` 148 / 148 | done |
 | T1 (DONE) | **Trace into other sheets.** Outputs now continue into the receiving sheet (pink ▶ row), inputs jump to the sending wire (◀ row), ↩ Back returns. `tools/patch-trace.js`, `tools/test-trace-x.js`: 144 / 144 links, Back and upstream jump tested | **done, no open task of the assistant** |
@@ -17,6 +18,7 @@ Closed this round (all tested, see docs/FINDINGS.md and docs/PROGRESS.md): O-05 
 |---|---|---|---|
 | V1 | ALM limits HH / H / L / LL of 104 alarms | ASSUMED (150 MW CFB) | `docs/DCS-DATA-FORM.pdf` section A |
 | V2 | PID gains (Kp, Ti, Td, action, limits) of 68 PID / PIDV | default tuning by loop type. First look at the OPC data: FICFA1043B has P = 200, I = 50, D = 0 (docs/OPC-NOTES.md); unit of P (proportional band?) and I to confirm | form section B, or OPC |
+| V2b | **PID, MAN, SUMA faceplate parameters** (PH PL SH SL MH ML dMVH P I D DTI TF GAP BND CUT DH PHONDT PLONDT; MAN FSC DT; SUMA RSTS K DT) of 68 PID + 58 MAN + 10 SUMA | not yet collected; form sorted by station and MNO: `docs/DCS-FORM-PID-MAN-SUMA.xlsx` / `.pdf`; what the faceplates show: docs/DCS-FACEPLATES.md. Once the values come, the engine will also use dMVH, TF, DTI, GAP, BND, CUT, MAN FSC, SUMA K / RSTS (assistant task T5 after the data) |
 | V3 | Ramp rates of 8 boxes | ASSUMED | form section C |
 | V4 | PO pulse cycle / stroke / shortest pulse (2 PO) | 2 s / 60 s / 0.2 s | form section D |
 | V5 | PRI / SEC / AVG default of 26 select circuits | AVG | form section E |
