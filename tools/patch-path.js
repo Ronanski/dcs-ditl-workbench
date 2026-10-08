@@ -16,7 +16,8 @@ function trPathUi(d,sh){const P=AN.trPath||[];if(!P.length)return;if(P[P.length-
  P.forEach((q,k)=>{const b=h$('button',{cls:'keep',txt:(k===P.length-1?'● ':'')+q.name,title:'Go back to this sheet (the path after it is dropped)'});b.onclick=()=>trGoCrumb(k);box.append(b)});
  box.append(h$('button',{cls:'keep',txt:'⟲ Back to start',onclick:()=>trGoCrumb(0)}),h$('button',{cls:'keep',txt:'Clear path',onclick:()=>{AN.trPath=[];selUpd(d)}}));d.append(box)}
 /* every exit of the traced signal (not cut by the 60-row limit of the lists) */
-function trExitsUi(d,sh){const T=trSet(sh);if(!T)return;let ls=[];try{ls=(linksOf(sh)||[]).filter(l=>l.from===sh&&l.fromNets.some(m=>T.dn.has(m)||T.start.has(m)))}catch(e){}if(!ls.length)return;
+function trStarts(S){const s=AN.sel;if(!s)return[];return s.net!=null?(s.nets&&s.nets.length?s.nets.slice():[s.net]):(s.blk?(s.blk.o||[]).slice():[])}
+function trExitsUi(d,sh){const S=sh.S,st=trStarts(S);if(!st.length)return;const dn=trDown(S,st);let ls=[];try{ls=(linksOf(sh)||[]).filter(l=>l.from===sh&&l.fromNets.some(m=>dn.has(m)))}catch(e){}if(!ls.length)return;
  d.append(h$('small',{txt:'This signal leaves the sheet ('+ls.length+'):',style:'display:block;margin-top:4px;color:#ff8ad8'}));
  ls.forEach(l=>{let more='';try{const TS=l.to.S||ensure(l.to),tn=l.toNets[0],nmx=nm(TS,tn),ad=adesFind(l.to,nmx),ds=ad?adesText(ad.rec):'',nc=(TS.cns[tn]||[]).length;more=' → '+nmx+(ds?' · '+ds:'')+' · feeds '+nc}catch(e){}
   const r=h$('div',{cls:'r tr'},[h$('span',{cls:'n',style:'color:#ff8ad8',txt:'   ▶ '+l.to.name+' (circle '+l.num+')'+more})]);r.onclick=()=>{AN._bk=AN.i;trJump(l.to,l.toNets)};d.append(r)})}
@@ -39,7 +40,8 @@ function trMapUi(d,sh){const s=AN.sel;if(!s)return;const starts=s.net!=null?(s.n
 `);
 rep(String.raw`const ups=s.net!=null?[s.net]:s.blk.pins.filter(p=>p.role==='in').map(p=>p.n),dns=s.net!=null?[s.net]:s.blk.o.slice();`,String.raw`const ups=s.net!=null?(s.nets&&s.nets.length?s.nets.slice():[s.net]):s.blk.pins.filter(p=>p.role==='in').map(p=>p.n),dns=s.net!=null?(s.nets&&s.nets.length?s.nets.slice():[s.net]):s.blk.o.slice();`);
 rep(String.raw`key=(s.net!=null?'n'+s.net:'b'+(s.blk&&s.blk.id))`,String.raw`key=(s.net!=null?'n'+s.net+(s.nets?'_'+s.nets.join('_'):''):'b'+(s.blk&&s.blk.id))`);
-/* hooks: path + map right under the Trace title */
+rep(String.raw`function selUpd_(d){selUpd0_(d);try{trList(d)}catch(e){}}`,String.raw`function selUpd_(d){selUpd0_(d);try{trList(d)}catch(e){}if(!AN.view&&AN.sel&&cs()&&cs().S){try{const sh=cs();d.append(h$('h4',{txt:'Signal path'}));trPathUi(d,sh);trExitsUi(d,sh);trMapUi(d,sh)}catch(e){}}try{trendUi(d)}catch(e){}}`);
+/* hooks */
 rep(String.raw`d.append(h$('h4',{txt:'Trace'}),h$('div',{cls:'r'},[lg]));`,String.raw`d.append(h$('h4',{txt:'Trace'}),h$('div',{cls:'r'},[lg]));try{trPathUi(d,sh);trExitsUi(d,sh);trMapUi(d,sh)}catch(e){}`);
 rep(String.raw`panelUpd,selBox,dsIdx,dsOpen,trSeries,trSample,trDraw,trZoom});`,String.raw`panelUpd,selBox,dsIdx,dsOpen,trSeries,trSample,trDraw,trZoom,trMap,trGoCrumb});`);
 };

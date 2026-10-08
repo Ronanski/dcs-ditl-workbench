@@ -49,7 +49,7 @@ function trZoom(sh,ser,o0){const old=document.getElementById('trbig');if(old)old
  let dr=null;cv.onmousedown=e=>{dr={x:e.clientX,off:o.off}};addEventListener('mouseup',()=>{dr=null});cv.onmousemove=e=>{if(!dr)return;const h=sh._th&&sh._th.t||[];if(h.length<2)return;const cur=o.win>0?o.win:h[h.length-1]-h[0],dt=-(e.clientX-dr.x)/cv.clientWidth*cur,base=dr.off!=null?dr.off:h[h.length-1]-cur;o.off=Math.max(h[0],Math.min(h[h.length-1]-cur,base+dt));if(o.win<=0)o.off=null};
  addEventListener('keydown',function k(e){if(!ov.isConnected){removeEventListener('keydown',k,true);return}if(e.key==='Escape'){e.stopPropagation();ov.remove();clearInterval(tm);removeEventListener('keydown',k,true)}},true)}
 function whyTxt(S,b){`);
-rep(String.raw`function selUpd_(d){selUpd0_(d);try{trList(d)}catch(e){}}`,String.raw`function selUpd_(d){selUpd0_(d);try{trList(d)}catch(e){}try{trendUi(d)}catch(e){}}`);
+
 rep(String.raw`function panelUpd(sel){const sh=cs();if(!sh||!sh.S)return;`,String.raw`function panelUpd(sel){const sh=cs();if(!sh||!sh.S)return;try{trSample(sh)}catch(e){}`);
 rep(String.raw`panelUpd,selBox,dsIdx,dsOpen});`,String.raw`panelUpd,selBox,dsIdx,dsOpen,trSeries,trSample,trDraw,trZoom});`);
 };

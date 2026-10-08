@@ -19,3 +19,12 @@ User: "a separate graphics view like an HMI whose buttons are connected to addre
 - Which screen first (for example the CCS master screen or a burner screen)?
 - Does he have screenshots of the real HMI graphics to use as the background and as the list of widgets?
 - Buttons that write to a computed value: allowed through FORCE only?
+
+## Does an overlay cover the diagram? (user question, 2026-10-08)
+An overlay must NOT hide the diagram unless the user wants it. Three display modes of the same HMI view, chosen with one button:
+| Mode | What you see | Use |
+|---|---|---|
+| **Own view (tab)** | The HMI replaces the diagram area (like Digital · DITL / Analog · ABC); the ABC panel stays at the right | Operating like at a console |
+| **Floating window** | A window over the diagram that can be moved, resized, minimised and made transparent; the diagram keeps running behind it | Test: press an HMI button and watch the diagram react |
+| **Split** | The HMI beside or below the diagram (draggable divider) | Both visible, nothing covered |
+The graphics: widgets drawn as vector shapes (valve, motor, tank, pipe, lamp, bar, number, button, trend, faceplate) from a small palette, placed by drag and drop; an optional background picture (a screenshot of the real HMI) under the widgets; every widget bound to an address / tag; the layout is saved in the project file. NOT built yet.

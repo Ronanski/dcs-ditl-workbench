@@ -20,6 +20,13 @@ const r=await p.evaluate(async()=>{await AN.data;const w=ms=>new Promise(r=>setT
  /* loop test: A -> B -> A: the sheet is not added twice */
  const sa=AN.sheets.find(s=>s.name==='ABC-003E'),la=AN.linksOf(sa).find(l=>l.from===sa&&l.to.name==='ABC-003B');await sel('ABC-003E',la.fromNets[0]);AN.trPath=[];[...document.querySelectorAll('#ansel .tr')].find(x=>x.textContent.includes('continues in sheet ABC-003B ')).click();await w(180);
  const back=[...document.querySelectorAll('#ansel .tr')].filter(x=>x.textContent.includes('continues in sheet ABC-003E '));o.loopRows=back.length;if(back.length){back[0].click();await w(180)}o.loopPath=(AN.trPath||[]).map(q=>q.name);
+ /* 2b. the same in RUN mode (no Trace lists there): exits list, path, back to start, signal map */
+ document.querySelector('button.on')&&0;[...document.querySelectorAll('button')].find(x=>/Run/.test(x.textContent)&&!/Pause/.test(x.textContent)&&x.offsetParent).click();await w(400);o.runMode=!AN.view&&AN.run;
+ AN.trPath=[];AN.hist.length=0;await sel(route[0],best.l.fromNets[0]);o.runExits=/leaves the sheet/.test(document.getElementById('ansel').textContent);
+ for(let i=1;i<route.length;i++){const rows=[...document.querySelectorAll('#ansel .tr')].filter(x=>x.textContent.includes('▶ '+route[i]+' (circle'));if(!rows.length){o.runStuck=route[i];break}rows[0].click();await w(200)}
+ o.runAt=AN.cs().name;o.runPath=(AN.trPath||[]).map(q=>q.name);const rb=[...document.querySelectorAll('#ansel button')].find(x=>/Back to start/.test(x.textContent));if(rb){rb.click();await w(250)}o.runBack=AN.cs().name;
+ const mb2=[...document.querySelectorAll('#ansel button')].find(x=>/Map: where does this signal go/.test(x.textContent));o.runMapBtn=!!mb2;o.runTrend=!!document.querySelector('#ansel canvas');o.runValues=AN.run;
+ [...document.querySelectorAll('button')].find(x=>/Pause/.test(x.textContent)&&x.offsetParent).click();await w(200);
  /* 3. map for every link source: finishes, <=80 nodes, every sheet once */
  let maps=0,bad=[],maxN=0,t0=performance.now();for(const sh of AN.sheets){if(/ABC-000/.test(sh.name))continue;let ls=[];try{ls=AN.linksOf(sh).filter(l=>l.from===sh)}catch(e){continue}const seen=new Set();for(const l of ls){const k=l.fromNets.join(',');if(seen.has(k))continue;seen.add(k);try{const R=AN.trMap(sh,l.fromNets.slice(0,1));maps++;maxN=Math.max(maxN,R.length);const names=R.filter(x=>!x.again).map(x=>x.sh.name);if(new Set(names).size!==names.length||R.length>80)bad.push(sh.name+':'+l.num)}catch(e){bad.push(sh.name+':'+l.num+' '+e.message)}}}
  o.maps=maps;o.maxN=maxN;o.bad=bad.slice(0,5);o.ms=Math.round(performance.now()-t0);
@@ -31,4 +38,4 @@ ck('follows the deepest chain ('+r.depth+' hops) with the ▶ rows',r.hops>=2&&!
 ck('one click "Back to start" returns to the first sheet and its wire',r.hasStart&&r.afterStart===r.start&&r.selAfter,r.afterStart+' '+r.hasStart);
 ck('a crumb in the middle returns there and drops the rest',r.midAt===r.midExpected&&r.pathAfterMid===2,JSON.stringify([r.midAt,r.midExpected,r.pathAfterMid]));
 ck('signal map for every link source (each sheet once, <= 80 lines)',r.maps>100&&r.bad.length===0,r.maps+' maps, max '+r.maxN+' lines, '+r.ms+' ms '+JSON.stringify(r.bad));
-ck('signal map in the panel',r.mapBtn&&r.mapLines>=4,r.mapLines);ck('no page errors',errs.length===0,errs.slice(0,3).join('|'));console.log(fail?fail+' FAIL':'ALL PASS');await b.close();process.exit(fail?1:0)})();
+ck('RUN mode: exits list, follows the whole route, Back to start, map button, trend, still running',r.runMode&&r.runExits&&!r.runStuck&&r.runAt===r.route[r.route.length-1]&&r.runBack===r.route[0]&&r.runMapBtn&&r.runTrend,JSON.stringify([r.runMode,r.runExits,r.runStuck,r.runAt,r.runBack,r.runMapBtn,r.runTrend]));ck('signal map in the panel',r.mapBtn&&r.mapLines>=4,r.mapLines);ck('no page errors',errs.length===0,errs.slice(0,3).join('|'));console.log(fail?fail+' FAIL':'ALL PASS');await b.close();process.exit(fail?1:0)})();

@@ -7,6 +7,7 @@ Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): a
 ## WIP after v1.15.2 (not released; no "go" yet) - signals through many sheets, DITL signals, Trend
 - H-18 (tools/patch-links.js): a circle with several destinations ("( TO ABC-001D ) ( TO ABC-020 )") gets one link per sheet: 4 new links (001B → 001D ×2, 001B → 001A, 004A → 004C); links 388 → 392, none lost.
 - PATH / EXITS / MAP (tools/patch-path.js, patch-trace.js): breadcrumbs with Back to start, no loop growth, list of every exit of the signal, signal map of all sheets, receiving wires with every net of the circle selected, richer pink rows (wire, description, feeds k). Tests: test-path.js, test-trace-x.js 148 / 148.
+- RUN MODE (user: "sa RUN mode din ay ginagamit ko ito"): the Path / exits / Map block is in the selection panel in RUN and Pause as well (before: VIEW only); the exits list does not depend on the T-leg filter. test-path.js checks the whole route and Back to start in RUN.
 - DITL SIGNALS (tools/patch-ditl.js): button with the 129 FROM DITL inputs (one click, RUN or Pause) and the 86 TO DITL outputs (live); 9 texts not tied to a wire are named. test-ditl-signals.js.
 - TREND (tools/patch-trend.js): live graph + zoom of any block or wire (PID: SV / PV / MV; FX, MAN, SUMA, ramps, math ...): test-trend.js (every PID 66, PIDV 2, FX 111, MAN 58, SUMA 10 ... gets a trend).
 - Docs: MANUAL 3.4 / 3.4b / 3.4c, FINDINGS H-18, BACKLOG (CCS scenario, HMI), docs/HMI-VIEW.md, PUNCHLIST T2 – T4.
