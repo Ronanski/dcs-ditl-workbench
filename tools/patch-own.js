@@ -57,4 +57,13 @@ rep(String.raw`const row=mkRow(g,'n'+n,nm(S,n),wd.desc,ce,pos);`,String.raw`cons
 rep(String.raw`i.style.width='80px';rg.style.width='100%';rg.oninput=()=>set(+rg.value);`,String.raw`i.classList.add('wr');rg.classList.add('wr');i.style.width='80px';rg.style.width='100%';rg.oninput=()=>set(+rg.value);`);
 rep(String.raw`ctlEl=b}`,String.raw`b.classList.add('wr');ctlEl=b}`);
 rep(String.raw`ctlEl=i}}`,String.raw`i.classList.add('wr');ctlEl=i}}`);
+/* a circle that RECEIVES a signal from another sheet: one click goes to where the signal comes from (before, the click walked through the sibling circles of the same sheet first and looked as if nothing happened; user 2026-10-08, in RUN mode) */
+rep(String.raw` const lk=linksOf(sh).find(l=>l.at.c===c);
+ {/* the group = this circle`,String.raw` const lk=linksOf(sh).find(l=>l.at.c===c);
+ if(lk&&lk.to===sh&&lk.from!==sh&&lk.peer&&lk.peer.sh&&lk.peer.c){jumpTo(lk.peer.sh,lk.peer.c);msg('Circle '+c.num+(c.tgt?' / '+c.tgt:'')+' ← this signal comes from '+lk.peer.sh.name+'. Click the circle there to follow it onward.');return}
+ {/* the group = this circle`);
+/* a circle that carries a signal from another sheet shows the tag written under it (SI0061 ...) WITHOUT a value (the value was only on the wire, away from the tag): the live value now follows the tag text (user 2026-10-08: "bakit wala value ito?") */
+rep(String.raw` S.ext.forEach(n=>{if(!S.nets[n].dig&&!placed.has(n)){const s=S.seg[S.nets[n].segs[0]];if(s)addB(n,s.x1,s.y1)}});`,String.raw` S.ext.forEach(n=>{if(!S.nets[n].dig&&!placed.has(n)){const s=S.seg[S.nets[n].segs[0]];if(s)addB(n,s.x1,s.y1)}});
+ for(const c of(S.conn||[]).concat(S.xc||[])){const n=c.nets&&c.nets[0];if(n==null||!S.nets[n]||S.nets[n].dig||S.lab[n])continue;const tt=S.tx.filter(t=>TAGRE.test(t.t.trim())&&Math.hypot(t.x-c.x,t.y-c.y)<c.r+14).sort((a,b)=>Math.hypot(a.x-c.x,a.y-c.y)-Math.hypot(b.x-c.x,b.y-c.y))[0];if(!tt)continue;
+  const w=tt.t.trim().length*(tt.h||3)*.62,t=el('text',{x:tt.x+w+1.5,y:-(tt.y+bs*.2),class:'bd','text-anchor':'start'},gb);t.dataset.n=n;L.bd.push({n,t,last:null,skip:false})}`);
 };

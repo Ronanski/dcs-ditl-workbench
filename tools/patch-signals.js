@@ -38,7 +38,7 @@ String.raw`if(nl.size)(tgt?S.xc:S.conn).push({num,tgt,x:c.x,y:c.y,r:c.r,nets:[..
 rep(String.raw`function paint(){const sh=cs();if(!sh||!sh.S||!L)return;`,String.raw`function paint(){const sh=cs();if(!sh||!sh.S||!L)return;AN.dbgL=L;`);
 
 /* saved values use net / block numbers: the new AND / OR / timer / contact blocks and merged nets move them, so the values saved by v1.14.x are dropped on the first start of this version (the user said he had saved nothing yet) */
-rep(String.raw`const AN_PV=14;`,String.raw`const AN_PV=16;`);
+rep(String.raw`const AN_PV=14;`,String.raw`const AN_PV=17;`);
 
 /* H-12  an arrow that sits in a GAP of a straight wire (the wire stops at its base, the next piece starts at its tip: ABC-001C "MW" row, 001B "MWD" / "X", ABC-009A / B ...) splits the wire in two nets: the circle after the arrow had no driver, the signal never left the sheet. The two collinear pieces on both sides of such an arrow are one wire. Both arrow kinds: solid triangles (R.so) and inserted arrows (R.arw). */
 rep(String.raw`/* a box with a cross (X) in the middle of a wire = hard-wired contact / signal break: the signal goes straight through */`,
