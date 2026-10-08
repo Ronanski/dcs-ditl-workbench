@@ -34,3 +34,6 @@ NOT tested: the apk / exe pop-out behaviour (floating fallback is coded, not tri
 - No coupling between loops: each loop has its own first-order plant (physics are not important, user). Closing the HP bypass does not raise the main steam pressure.
 - The SV of a loop is what the sheet logic gives (often 0 at start). Press F on the SV and type a value.
 - **PID direction fixed (FINDINGS H-37).** Found while mapping this screen: the 29 ACT:N loops acted reverse; now ACT:N = direct (the bypass valve opens when the pressure is ABOVE the SV, the DCS snapshot shows MV 0.0 below it). Please confirm with the DCS.
+
+## Regression of the WIP build (all on the same build, 2026-10-08)
+blocks 526/526 · math 998/998 · legend 0 mismatch · PID 68/68 · loops 68/68 · pidsign 65/65 · legend-matrix 2973/2973 · links (1 known FAIL ABC-004A>ABC-005 TCF1, same on v1.19.1) · COS (same as v1.19.1) · proc 55/55 · force-all 55 / 41 / 45 · lock-all (68 plant points disabled, 74 free) · fixes · own · ui-real · trend · hmi · hmi2 (linked inputs skipped: read only by design) · path · circles 82/82 · trace-x 148/148 · reach 0/0 · plant · badges · DITL guard IDENTICAL. Not re-run: test-numinput (prints 'no INPUT box' info on v1.19.1 too).
