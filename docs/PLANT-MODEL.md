@@ -20,17 +20,17 @@ How to read: the **PV pin** is the input of the deviation (DEV) block that the d
 | ABC-003D | FICFA1043D | reverse | FIFA1043D.PV (drawing text) | #131 | transmitter | AI0597 | 0.50 | 50 | 0 | 1.2 | 50 | 1 | flow |
 | ABC-003D | PICDO1043D | reverse | AI0771 (drawing text) | #63 | transmitter | AI0771 | 0.72 | 38.2 | 0 | 0.83 | 38.2 | 3.2 | pressure |
 | ABC-003D | FICDO1043D | reverse | SI0480 (drawing text) | #8 | transmitter | AI0548 | 0.80 | 165.8 | 0 | 0.75 | 165.8 | 1 | flow |
-| ABC-003E | FIC-OM | reverse | #147 (drawing text) | #152 | input |  | 0.83 | 200 | 0 | 0.72 | 200 | 1 | flow |
+| ABC-003E | FIC-OM | reverse | #143 (drawing text) | #148 | input |  | 0.83 | 200 | 0 | 0.72 | 200 | 1 | flow |
 | ABC-004A | FIC-CM | reverse | SI0144 (drawing text) | #48 | pin |  | 1.00 | 30 | 0 | 0.6 | 30 | 1 | flow |
 | ABC-004A | FIC-CF | reverse | SI0143 (drawing text) | #45 | none |  | 0.80 | 25 | 0 |  |  |  | flow |
 | ABC-004A | HS-COAL | reverse | SI0237 (drawing text) | #91 | none |  | 1.53 | 720 | 0 |  |  |  | general |
 | ABC-005 | AICFG10571 | direct | AI0466 (drawing text) | #2 | transmitter | AI0466 | 1.60 | 150 | 3.2 | 0.37 | 150 | 6.4 | analysis |
-| ABC-007 | FICFA1081 | reverse | #122 (drawing text) | #123 | input |  | 0.68 | 61.2 | 0 | 0.88 | 61.2 | 1 | flow |
-| ABC-007 | FICFA1071 | reverse | #74 (drawing text) | #106 | input |  | 0.55 | 63.4 | 0 | 1.09 | 63.4 | 1 | flow |
+| ABC-007 | FICFA1081 | reverse | #120 (drawing text) | #121 | input |  | 0.68 | 61.2 | 0 | 0.88 | 61.2 | 1 | flow |
+| ABC-007 | FICFA1071 | reverse | #72 (drawing text) | #104 | input |  | 0.55 | 63.4 | 0 | 1.09 | 63.4 | 1 | flow |
 | ABC-008 | PICFG108 | direct | SI0180 (drawing text) | #100 | input |  | 0.61 | 65.6 | 0 | 0.98 | 65.6 | 5.5 | pressure |
 | ABC-008 | PICFG108A | direct | SI0180 (drawing text) | #91 | shared of PICFG108 |  | 0.48 | 76 | 0 |  |  |  | pressure |
-| ABC-009A | DPICFG108 | direct | #38 (drawing text) | #225 | transmitter | AI0134, AI0262 | 1.00 | 25 | 0 | 0.6 | 25 | 2.1 | pressure |
-| ABC-009A | PIC-BASC | reverse | SI0198 (drawing text) | #220 | none |  | 1.00 | 50 | 0 |  |  |  | pressure |
+| ABC-009A | DPICFG108 | direct | #38 (drawing text) | #221 | transmitter | AI0134, AI0262 | 1.00 | 25 | 0 | 0.6 | 25 | 2.1 | pressure |
+| ABC-009A | PIC-BASC | reverse | SI0198 (drawing text) | #216 | none |  | 1.00 | 50 | 0 |  |  |  | pressure |
 | ABC-010 | LICBR1001 | reverse | SI0256 (drawing text) | #48 | transmitter | AI0130, AI0386 | 1.05 | 420 | 0 | 0.57 | 420 | 15 | level |
 | ABC-010 | LICBR1001A | reverse | SI0256 (drawing text) | #47 | shared of LICBR1001 |  | 0.83 | 166 | 0 |  |  |  | level |
 | ABC-010 | FICFW1007 | reverse | SI0269 (drawing text) | #51 | input |  | 0.50 | 75 | 0 | 1.2 | 75 | 1 | flow |
@@ -39,7 +39,7 @@ How to read: the **PV pin** is the input of the deviation (DEV) block that the d
 | ABC-011 | TICBR1140 | reverse | SI0270 (drawing text) | #27 | transmitter | AI0610, AI0642 | 0.60 | 300 | 0 | 1 | 300 | 15 | temperature |
 | ABC-012 | TICBR1150 | direct | SI0281 (drawing text) | #1 | transmitter | AI0611, AI0643 | 2.80 | 76.4 | 7 | 0.21 | 76.4 | 14 | temperature |
 | ABC-012 | TICMS1004 | reverse | SI0280 (drawing text) | #27 | transmitter | AI0612, AI0644 | 1.60 | 1371.4 | 0 | 0.37 | 600 | 15 | temperature |
-| ABC-013 | PICMS1002 | direct | #50 (drawing text) | #23 | input |  | 0.91 | 15 | 0 | 0.66 | 15 | 1.3 | pressure |
+| ABC-013 | PICMS1002 | direct | #49 (drawing text) | #22 | input |  | 0.91 | 15 | 0 | 0.66 | 15 | 1.3 | pressure |
 | ABC-014 | FICFA1055A | reverse | #61 (drawing text) | #68 | input |  | 1.53 | 1500 | 0 | 0.39 | 600 | 1 | flow |
 | ABC-014 | FICFA1055B | reverse | #28 (drawing text) | #2 | input |  | 1.53 | 1500 | 0 | 0.39 | 600 | 1 | flow |
 | ABC-017 | PICSB1052 | reverse | AI0533 (drawing text) | #21 | transmitter | AI0533 | 6.02 | 72 | 0 | 0.2 | 72 | 6 | pressure |
@@ -67,17 +67,17 @@ How to read: the **PV pin** is the input of the deviation (DEV) block that the d
 | ABC-039 | LICHD11031 | direct | SI0214 (drawing text) | LICHD11031.SV | transmitter | AI0675, AI0851 | 2.00 | 600 | 0 | 0.3 | 600 | 15 | level |
 | ABC-039 | LICHD11032 | direct | SI0214 (drawing text) | LICHD11031.SV | shared of LICHD11031 |  | 2.00 | 270 | 0 |  |  |  | level |
 | ABC-050 | PICMS1006 | direct | SI0150 (drawing text) | #163 | transmitter | AI0416, AI0512 | 3.00 | 100 | 5 | 0.2 | 100 | 10 | pressure |
-| ABC-051 | TICMS1022 | direct | SI0160 (drawing text) | #59 | transmitter | AI0865, AI0897 | 2.00 | 138 | 0 | 0.3 | 138 | 11.5 | temperature |
+| ABC-051 | TICMS1022 | direct | SI0160 (drawing text) | #58 | transmitter | AI0865, AI0897 | 2.00 | 138 | 0 | 0.3 | 138 | 11.5 | temperature |
 | ABC-052 | PICHR1003 | direct | SI0180 (drawing text) | PICHR1003.SV | transmitter | AI0421, AI0513 | 2.50 | 75 | 5 | 0.24 | 75 | 10 | pressure |
-| ABC-052 | TICHR1012 | direct | SI0190 (drawing text) | #137 | transmitter | AI0864, AI0896 | 1.50 | 200 | 6 | 0.4 | 200 | 12 | temperature |
+| ABC-052 | TICHR1012 | direct | SI0190 (drawing text) | #136 | transmitter | AI0864, AI0896 | 1.50 | 200 | 6 | 0.4 | 200 | 12 | temperature |
 | ABC-053 | TICLO1002 | direct | SI0260 (drawing text) | #0 | transmitter | AI0452, AI0516 | 2.00 | 138 | 2 | 0.3 | 138 | 4 | temperature |
 | ABC-054 | PICHR1391 (PIDV) | direct | #21 (drawing text) | #18 | input |  | 0.20 | 0.6 | 0 | 3 | 3 | 1 | pressure |
 | ABC-055 | HICBR1391 (PIDV) | reverse | AI0181 (drawing text) | #54 | transmitter | AI0181 | 0.20 | 1 | 0 | 3 | 3 | 1 | general |
 | ABC-056 | PICCD1104 | reverse | AI0417 (drawing text) | #7 | transmitter | AI0417 | 2.00 | 180 | 0 | 0.3 | 180 | 15 | pressure |
 | ABC-001C | PIC-COBM | reverse | AI0131 (drawing text) | #74 | transmitter | AI0131 | 3.00 | 165.2 | 7 | 0.2 | 165.2 | 14 | pressure |
-| ABC-002 | AICFG112 | reverse | SI0048 (drawing text) | #55 | none |  | 0.80 | 120 | 0 |  |  |  | analysis |
+| ABC-002 | AICFG112 | reverse | SI0048 (drawing text) | #55 | transmitter | AI0273, AI0433 | 0.80 | 120 | 0 | 0.75 | 120 | 10 | analysis |
 | ABC-003A | FICFA1043A | reverse | FIFA1043A.PV (drawing text) | #162 | transmitter | AI0164 | 0.50 | 50 | 0 | 1.2 | 50 | 1 | flow |
 | ABC-003A | PICDO1043A | reverse | AI0293 (drawing text) | #115 | transmitter | AI0293 | 0.72 | 38.2 | 0 | 0.83 | 38.2 | 3.2 | pressure |
-**Count by mode:** transmitter 42 · input 11 · pin 1 · none 4 · shared 10.
+**Count by mode:** transmitter 43 · input 11 · pin 1 · none 3 · shared 10.
 
 | ABC-003A | FICDO1043A | reverse | SI0070 (drawing text) | #12 | transmitter | AI0515 | 0.80 | 165.8 | 0 | 0.75 | 165.8 | 1 | flow |

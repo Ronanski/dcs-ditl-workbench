@@ -5,7 +5,7 @@
    - Panel, diagram, HMI and Trend are refreshed by the same clock (the panel update) and read the same state. */
 module.exports=(rep)=>{
 /* one clock */
-rep(String.raw`PU.forEach(f=>f());`,String.raw`PU.forEach(f=>f());for(const f of AN.tickHooks||[])try{f()}catch(e){}`);
+rep(String.raw`PU.forEach(f=>f());`,String.raw`for(const f of PU)try{f()}catch(e){if(!AN._puErr){AN._puErr=1;console.error('panel refresh',e)}}for(const f of AN.tickHooks||[])try{f()}catch(e){}`);
 rep(String.raw`clearInterval(hmTm);hmTm=setInterval(hmiUpd,250);hmiSync()}`,String.raw`AN.tickHooks=AN.tickHooks||[];if(!AN.tickHooks.includes(hmiUpd))AN.tickHooks.push(hmiUpd);hmiSync()}`);
 rep(String.raw`clearInterval(hmTm);hmiApplyMode()}`,String.raw`AN.tickHooks=(AN.tickHooks||[]).filter(f=>f!==hmiUpd);hmiApplyMode()}`);
 rep(String.raw`const tm=setInterval(()=>{if(!ov.isConnected){clearInterval(tm);return}draw()},250);draw();`,String.raw`AN.tickHooks=AN.tickHooks||[];const hk=()=>{if(!ov.isConnected){AN.tickHooks=AN.tickHooks.filter(x=>x!==hk);return}draw()};AN.tickHooks.push(hk);const tm=0;draw();`);

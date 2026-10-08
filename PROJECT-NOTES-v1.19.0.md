@@ -4,7 +4,9 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
-## WIP after v1.18.0 (no release yet; the user wants to agree first) - plant layer, HMI control, FORCE / SIM, fixes
+## v1.19.0 (logic-sim-v1.19.0.html) - plant layer, HMI control, FORCE / SIM, reader fixes (revision 1)
+- USER "go ... i-release mo na ... input to output dapat ang testing" (2026-10-08). Report: docs/REPORT-v1.19.0.md. AN_PV 17. DITL page identical.
+- Also in this release: H-31 (O2 select circuit), H-32 (arrow joins a wire), H-33 (LN15 / LN21 ratio), H-34 (circle values / click to source), the Trend error banner (reading pts), DESIGN rule 17.
 - User tests of v1.18.0 on ABC-017 found: panel widening, HMI view-only, Trend / panel not in step, PV looking forced, PV slider movable, Trend for everything. Findings H-19 .. H-30 in docs/FINDINGS.md.
 - ROOT CAUSE (H-22): the PV of 30 of 68 PID is on the PLUS pin of the DEV block (direct-acting loops); the code assumed the minus pin for all. `anPins` now reads the "PV" / "SV" text of the drawing. This was behind the Trend / panel difference and the forced-looking PV.
 - PLANT LAYER (tools/patch-proc.js): the plant writes the transmitter (AI) of the PV or the PV input wire, never the middle of the logic; secant feedback through scaling / selectors; probing finds the transmitters that matter; compensation inputs start at mid-range; one model per variable ("shared"); cross-sheet signals handled where the signal starts; the PV wire is written only for calculated PV (4 fallbacks). K, T, L estimated from the tuning (docs/PLANT-MODEL.md).

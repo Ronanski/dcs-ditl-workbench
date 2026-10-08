@@ -1,4 +1,4 @@
-# PUNCHLIST — what is left to do (updated 2026-10-08, v1.18.0)
+# PUNCHLIST — what is left to do (updated 2026-10-08, v1.19.0)
 
 Rule (user, 2026-10-08): this list has THREE parts, kept apart. The numbers that only the DCS can give are NOT tasks: the simulator already runs with its own values (ASSUMED, all visible in "Assumed values").
 

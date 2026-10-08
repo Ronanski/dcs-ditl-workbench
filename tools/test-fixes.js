@@ -8,6 +8,12 @@ const r=await p.evaluate(async()=>{await AN.data;AN.go(AN.sheets.findIndex(s=>s.
  const fx=(sheet,ln)=>{AN.go(AN.sheets.findIndex(s=>s.name===sheet));const S2=AN.cs().S;const f=S2.blk.find(b=>b.k==='FX'&&b.p.ln===ln);const lo=f.p.tbl.pts||f.p.tbl.p2;return{ys:[Math.min(...lo.map(q=>q[1])),Math.max(...lo.map(q=>q[1]))],key:f.p.tbl.key}};
  AN.go(AN.sheets.findIndex(s=>s.name==='ABC-003E'));{const S3=AN.cs().S,a=S3.seg.find(q=>Math.abs(q.x1-676.3)<.2&&Math.abs(q.y1-176.2)<.2&&Math.abs(q.x2-676.3)<.2),g=S3.seg.find(q=>Math.abs(q.x1-687)<.2&&Math.abs(q.y1-176.2)<.2);o.arrowT={orange:a&&a.net,grey:g&&g.net,same:!!(a&&g&&a.net===g.net)}}
  o.ln15=fx('ABC-002','LN15');o.ln21=fx('ABC-003A','LN21');o.ln3=fx('ABC-004A','LN3');return o});
+/* the red banner "Cannot read properties of undefined (reading 'pts')" (user screenshot): select an FX with a table, run, then select another block: the open Trend must not fail */
+await p.evaluate(()=>{AN.go(AN.sheets.findIndex(s=>s.name==='ABC-002'));if(AN.view)document.querySelector('button[title^="View mode"]').click()});await p.waitForTimeout(400);await p.click('#anbar button:has-text("Run")');
+const bn=await p.evaluate(async()=>{const S=AN.cs().S,fx=S.blk.find(b=>b.k==='FX'&&b.p.ln==='LN15'),pid=S.blk.find(b=>b.k==='PID'),w=ms=>new Promise(r=>setTimeout(r,ms));let bad=0;window.addEventListener('error',()=>bad++);
+ for(let i=0;i<6;i++){AN.sel={blk:fx};AN.selBox();AN.panelUpd(true);await w(300);AN.sel={blk:pid};AN.selBox();AN.panelUpd(true);await w(300);AN.sel=null;AN.selBox();AN.panelUpd(true);await w(200)}
+ const ban=[...document.querySelectorAll('div')].filter(d=>/Uncaught TypeError/.test(d.textContent)&&d.children.length<3).length;return{bad,ban}});
+ck('select FX, then PID, then nothing, while running: no Trend error (reading pts)',bn.bad===0&&bn.ban===0,JSON.stringify(bn));
 console.log(JSON.stringify(r));
 ck('average select circuit of the O2 transmitters: 4.30 and 4.60 -> 4.45 (SI0048)',Math.abs(r.avg-4.45)<1e-6,r.avg);
 ck('both transmitters have their SIG.AB flag paired',r.sgi.every(x=>x!=null),JSON.stringify(r.sgi));

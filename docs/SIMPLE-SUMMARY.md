@@ -1,4 +1,7 @@
-# SIMPLE SUMMARY - after the user's second round of tests (2026-10-08, WIP, NOT released)
+# SIMPLE SUMMARY - v1.19.0 (2026-10-08, RELEASED)
+
+Also fixed from your screenshots: the O2 average select circuit now gives 4.45 (it gave 0.00), an arrow that ends in the side of a wire is a connection, the O2 correction table gives 0.8 ~ 1.2 (not 80 ~ 120), circles show their value and one click goes to the sheet the signal comes from, and the red "pts" error banner. Saved inputs of 12 sheets are reset once (AN_PV 17).
+
 
 ## What the tests of the user found, in plain words
 | What you saw | What it really was | Now |
