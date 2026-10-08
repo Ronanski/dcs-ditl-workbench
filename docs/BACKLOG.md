@@ -184,3 +184,13 @@
 | Digital feedbacks (motor running, valve open / closed) as part of the plant | OPEN: needs a decision on the source of the command -> feedback pairs |
 | Same physical variable on two sheets with different transmitters | OPEN |
 | Release | after the user agrees |
+
+## 2026-10-08 (late) user decisions - plant window and values (WIP, not released)
+| Item | Decision / status |
+|---|---|
+| HMI feature | the user does not want it (credits): to be replaced by a POP-OUT PLANT WINDOW (own window called from the app, same engine); the F box (FORCE / SIM) and the ownership rule move there; the HMI button and editor go |
+| Plant graphics | the user will send P&ID / flow diagram / plant graphics (PDF); the plant graphics screens of the DCS are the best source (they carry the layout and the tags) |
+| Physics | gain / time constant are NOT important to the user ("kung mabagal edi mabagal"): keep the estimates |
+| Order of systems | 1) HP bypass and LP bypass (reheater system) 2) PAF / SAF demand, total coal flow, total air flow 3) drum level and feedwater |
+| Values on the drawing | the VALUE BELONGS TO THE ADDRESS, not to the wire: DONE (WIP): values only beside address / tag text (824 of 2 099 badges); 1 275 numbers on bare wires / block outputs are hidden behind a new toggle "Wire values" (off); a value that crosses to another sheet is shown beside the tag text of its circle (done in v1.19.0) |
+| Digital addresses | the same rule for digital addresses (value beside the address): to be checked |
