@@ -77,5 +77,5 @@ hmiAuto=function(){const sh=cs();if(!sh||!sh.S){msg('Open an analog sheet first'
  if(sim.length){head('PV simulated by the process model ('+sim.length+') — set the SV of the controller; untick the model in the controller panel to use the PV as an input');sim.forEach((n,i)=>{const L=lab(n);put('num',Object.assign({x:20+(i%6)*170,y:y+Math.floor(i/6)*52,w:160,h:46,label:(L.txt||L.a||'wire '+n).slice(0,26),unit:''},bind(n,L.a)))});y+=Math.ceil(sim.length/6)*52+8}
  pg.h=Math.max(620,y+20);AN.hmiUi.edit=false;hmSel=null;persistAll();hmiHeader();hmiRender();hmiFit();msg('HMI page "'+sh.name+'": '+faces.length+' faceplate(s), '+an.length+' analog + '+dg.length+' digital manual input(s), '+lnk.length+' input(s) from other sheets and '+sim.length+' simulated PV(s) (read only).')};
 `);
-rep(String.raw`hmiRender,hmiHeader,hmiSync});`,String.raw`hmiRender,hmiHeader,hmiSync,hmiAddrOf,hmiList,hmiZoomBy,hmiFit,hmiVb,hmiWrite,procLock});`);
+rep(String.raw`hmiRender,hmiHeader,hmiSync});`,String.raw`hmiRender,hmiHeader,hmiSync,hmiAddrOf,hmiList,hmiZoomBy,hmiFit,hmiVb,hmiWrite,procLock,nm});`);
 };

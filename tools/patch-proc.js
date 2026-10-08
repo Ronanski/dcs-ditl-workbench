@@ -28,6 +28,10 @@ rep(String.raw`function ensure(sh){if(sh.S)return sh.S;const S=anWire(anModel(an
 rep(String.raw` for(const id in v.man||{}){const s=S.rt.st[id];if(s)s.val=v.man[id]}`,String.raw` for(const id in v.man||{}){const s=S.rt.st[id];if(s)s.val=v.man[id]}
  for(const id in v.proc||{}){const b=S.blk.find(q=>String(q.id)===String(id));if(b&&b.proc)Object.assign(b.proc,v.proc[id])}`);
 rep(String.raw`ks=Object.keys(S.rt.force);d.innerHTML='';`,String.raw`ks=Object.keys(S.rt.force).filter(k=>!(S.rt.pf&&S.rt.pf[k]));d.innerHTML='';`);
+/* the process model drives the PV through a force, but that is the PLANT, not the user: no forced look, no forced badge */
+rep(String.raw`const fo=!AN.view&&S.rt.force[n.id]!==undefined;`,String.raw`const fo=!AN.view&&S.rt.force[n.id]!==undefined&&!(S.rt.pf&&S.rt.pf[n.id]);`);
+rep(String.raw`for(const k in S.rt.force)if(L.mkBadge&&!(L.have&&L.have.has(+k)))L.mkBadge(+k);`,String.raw`for(const k in S.rt.force)if(!(S.rt.pf&&S.rt.pf[k])&&L.mkBadge&&!(L.have&&L.have.has(+k)))L.mkBadge(+k);`);
+rep(String.raw`const f=S.rt.force[b.n]!==undefined;if(b.fv!==f)`,String.raw`const f=S.rt.force[b.n]!==undefined&&!(S.rt.pf&&S.rt.pf[b.n]);if(b.fv!==f)`);
 /* panel of the PID */
 rep(String.raw`pr('lo','Output low');pr('hi','Output high');d.append(h$('small',{txt:'The input is the DEVIATION`,String.raw`pr('lo','Output low');pr('hi','Output high');try{procPanel(d,b,sh)}catch(x){}d.append(h$('small',{txt:'The input is the DEVIATION`);
 rep(String.raw`function whyTxt(S,b){`,String.raw`function procSave(sh,b){const o=sv(sh);o.proc=o.proc||{};const p=b.proc;o.proc[b.id]={on:p.on,K:p.K,T:p.T,L:p.L,dist:p.dist};anSave()}

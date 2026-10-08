@@ -148,3 +148,10 @@ No comparison with the PDFs is needed (user, 2026-10-08): the sheets of the simu
 789 circles: 381 numbered, 104 letter, 304 name + sheet. 421 are paired inside their own sheet. 377 carry a sheet name or a FROM / TO text, 373 are linked to the other sheet (4 not before H-17: O-07 ×2, O-08, ABC-054 HRP which is joined by its tag SI0180; 2 after), plus 27 signal-tag links.
 `test-links-all.js`: 182 circle pairs / tag links, every one carries the value to the receiving wire (the sending wire forced to 1 / 0 or 37.5 / 12.5, receiving wire read on the other sheet); 0 links with a receiver that does not get the value (was 25 before H-10 / H-12 / H-13 / H-14).
 Open: none (O-07 closed by H-17, O-08 is a drawing exit). 2 circles stay NOT LINKED in `audit-links.js`: ABC-020 "9" (exit) and ABC-054 HRP (joined by tag SI0180). O-09 is closed (section J2).
+
+## H-19 .. H-21 (2026-10-08, user tests of v1.18.0 on ABC-017) - found by real-mouse tests
+| # | Finding | Cause | Fix (WIP after v1.18.0) | Test |
+|---|---|---|---|---|
+| H-19 | The right panel grew by itself (12 px / 1.2 s) while a PID was selected | `anpWidth` added 2 px on every refresh | grows only when the content really overflows | tools/test-ui-real.js |
+| H-20 | HMI buttons / sliders did nothing with a real click (since v1.16.0); earlier tests missed it because they dispatched the event on the inner shape | transparent hit layer over each widget; 4 px slider track | hit layer off in operate mode, 28 px slider hit area, double-click the value to type | tools/test-ui-real.js (RUN, PAUSE, VIEW) |
+| H-21 | PV driven by the process model looked forced | model uses a force | not painted / badged as forced; real fix = plant layer on the inputs (docs/SIMULATION-METHOD.md) | by code path (not checked visually) |
