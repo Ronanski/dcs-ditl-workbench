@@ -17,7 +17,7 @@ All 126 PID / MAN rows match a block of the drawings by station + MNO (no row wi
 | PID where they differ | **FIC-OM** (ABC-003E): drawing has no range, file 0 ~ 14 · **HS-COAL** (ABC-004A): no range on the drawing, file 0 ~ 120 · **LICBR1001A** (ABC-010): transmitter range −422 ~ 820 mm, file SV range −24 ~ 74 mm |
 | MAN value range (SL ~ SH) against the drawing | equal for 55 of 58 |
 | MAN where they differ | **HICHR1002A** (ABC-020): drawing 0 ~ 100 %, file 10 ~ 100 % · **HICFABIASL** (ABC-057): drawing 0 ~ 100 %, file −10 ~ 10 % · **HIC-TADBS** (ABC-002): drawing −30 ~ 30 T/H, file −50 ~ 50 T/H |
-| Cross-check with the photos of the faceplates | FIC-CF P 125 / I 25 s / D 0, FICCL1061C range 0 ~ 40 T/H, FIQMS1031 K 5000: the file shows the same numbers where they overlap (FIC-CF P 125, I 25; the MAN row and the SUMA row are different tags in the file than the photos only when the user changed them) |
+| Cross-check with the photos of the faceplates | **FIC-CF (PID)**: file = photo for PH 100, PL 0, SH 100, SL 0, MH 100, ML 0, dMVH 25, **P 125**, **I 25**, D 0, DTI 1, TF 0, GAP 0, BND 0, PHONDT / PLONDT 0 — **but the photo has DH 5.00 % and CUT 0.00 %, the file has DH 0 and CUT 5**: DH and CUT look SWAPPED in the PID sheet (the file has DH = 0 for all 68 PID and CUT 0 ~ 10: the same swap in every row?). To confirm on one more PID faceplate; no effect now (DH and CUT are not used yet). **FICCL1061C (MAN)**: file = photo (PH 40, SH 40, MH 100, ML 0, DH 0, DT 1, TF 6, FSC 0, CUT 0). **FIQMS1031 (SUMA)**: file = photo (PH 10, PL −2.5, RSTS 99999999.9, K 5000, DT 1, TF 0, CUT 0, unit T) |
 
 ## 3. What the numbers say (PID, 68 rows)
 | Parameter | Smallest | Median | Largest | Remark |
