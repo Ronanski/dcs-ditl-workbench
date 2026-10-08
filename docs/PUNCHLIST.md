@@ -11,7 +11,7 @@
 | P6 | PIDV | Runs as a normal velocity-form PID; the pulse is only shown by the PO | Real pulse-output PID if the user wants it | assistant (needs the DCS pulse settings) |
 | P7 (DONE, WIP after v1.15.1) | Whole app | Persistent DXF import and report of drawing changes | Imported DXF is stored in the browser (IndexedDB, same store as the settings), re-applied at every start; button **Imports** shows the report (counts of blocks / nets / segments / texts, kinds that changed, blocks and texts only in one of the two) and **Back to built-in**; saved values of the sheet are cleared at import. `tools/test-import.js` 10 / 10. Not tested with a real plant DXF | assistant |
 
-**B. Values and confirmations only the user (or the DCS) can give**
+**B. Values and confirmations only the user (or the DCS) can give** — printable form with tag / description / addresses and boxes to write: `docs/DCS-DATA-FORM.pdf` (made by `node tools/make-dcs-form.js <html>`; data in `docs/DCS-DATA-FORM.json`): alarms 104, PID 68, ramps 8, PO 2, SEL 26, SUMA 10, 6 questions, drum level table
 | # | Item | Now |
 |---|---|---|
 | P8 | ALM limits of 104 alarms | ASSUMED (docs/ASSUMED-VALUES.md section 4) |
