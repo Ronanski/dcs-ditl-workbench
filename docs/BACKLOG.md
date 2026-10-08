@@ -131,3 +131,43 @@
 - **HMI graphics view (user suggestion): DONE in v1.16.0** (Tab / Float / Split approved by the user; docs/HMI-VIEW.md, MANUAL 3.4d).
 - **Following a signal through many sheets** (user, after testing on the staging air dampers and furnace temperature sheets: "di na makabalik, lahat dadaanan"): done in WIP after v1.15.2: path (breadcrumbs, Back to start, no loop growth), list of every exit, signal map of all sheets (docs/MANUAL.md 3.4).
 - **Live graph (user):** not only PID: linearizers (FX), controllers (PID, PIDV, MAN), integrators (SUMA / SUMP) and every other block: done in WIP (docs/MANUAL.md 3.4b), zoom and normal view.
+
+## 2026-10-08 (late) user feedback after v1.16.0 — TO DISCUSS (no code changed, no release)
+| # | Feedback of the user | Finding / proposal | Decision needed |
+|---|---|---|---|
+| F1 | DITL signals: show only the signals of the sheet that is open | Easy: the list = the open sheet (a switch "all sheets" stays available) | confirm |
+| F2 | Right panel: auto width, minimum = the present width, wider when something needs it | CSS: min-width 300 px, width auto, max 60 % of the window, plus a drag handle | confirm |
+| F3 | Trend hard to understand: no description, no P / I / D values, no X / Y values, no range / sampling time | Trend v2: legend with tag + description + unit; axis labels with values (Y per trace, X = time with window length and sampling time 0.25 s); PID: second pane with error e, P, I, D and MV and a text "e = SV − PV; MV = P + I + D"; other types in docs/BACKLOG (FX: X-Y curve with the operating point; MAN: value, limits, tracking; PIDV: raise / lower pulses and position; SUMA: flow, total, rate; LAG / RATE: input and output) | which type first |
+| F4 | Zoomed trend covers the panel, cannot change values | Zoom window becomes floating (move, resize, transparent) and gets a control strip with the same controls as the panel (SV, MAN value, A / M, Kp Ti Td, inputs) | confirm |
+| F5 | COS / manual: no indication which slider is which; some COS do not update; output has no effect | Checked: 173 COS blocks: 90 attached to a T switch (manual value slider exists), **83 NOT attached** (no slider at all: to be checked one by one on the drawings). All 90 attached COS pass after 40 simulated seconds: the manual value is **ramped like a field input (about 5 units per second)** and in Pause nothing moves, so it looks like "no effect". All of them are called "COS manual value" (no tag). Proposal: operator values (COS) applied at once; each one labelled by tag / address + description + sheet; the 83 checked | confirm; which of the 83 matter |
+| F6 | HMI is only monitoring: cannot draw graphics, cannot add an address, auto sheet incomplete; wants to CONTROL the logic from the HMI | HMI v2: address picker (search tag / address with description, or pick a wire in the diagram), drawing tools (line, rectangle, circle, text, symbol library), faceplate like the DCS faceplate (PV SV MV, limits, P I D, A / M, trend) that writes the engine, complete Auto page (PID, MAN, SUMA, COS, DITL inputs, lamps) | scope and order |
+| F7 | Are the photos of the faceplates enough? | Yes for the parameter list, units, layout, MNO = MDL cross-check (docs/DCS-FACEPLATES.md). Not enough for the A / M / CAS mode buttons, the ON / OFF switch, graphic overview screens | more photos |
+
+## 2026-10-08 (night) the user's answers to F1 – F7 (docs/BACKLOG.md table above)
+| # | Answer of the user | Status |
+|---|---|---|
+| F1 DITL list of the open sheet only | "ok na ok" | **DONE (WIP)**: the list shows the open sheet and follows it; "All sheets" switch |
+| F2 panel auto width | "ok na ok" (minimum = the existing width) | **DONE (WIP)**: min 300 px, grows only when something cannot wrap (max 60 % of the window), never narrower inside one selection |
+| F3 Trend | asked to EXPLAIN first: in a PID the PV must follow the SV until smooth; the parameters shown must be right | Explained in the chat; **needs a process model** (the simulator has no plant: PV is an input) → F8 |
+| F4 floating zoom + control strip | "ok na ok; must be easy to identify what is being controlled: address / tag / description" | planned with F3 |
+| F5 COS | manual value may keep the RAMP (target → now); range and unit from the diagram; address it controls; **disabled when the COS is not energized**, except when used as SV / PV or when it does not come from switching logic; panel info of the other things is fine | **DONE (WIP)**: 148 of 173 COS resolved (98 T analog, 26 T digital, 24 operator SV beside a PID), named by what they drive, range, unit, "target → now", disabled when not energized; **25 not resolved yet** (tests/test-cos.js lists them) |
+| F6 HMI v2 | Auto page must TRACE ALL manual inputs (analog and digital that can be simulated directly, not forced); inputs that come from another sheet are shown with a note; the HMI built must be saved | planned |
+| F7 modes A / M / CAS | the modes come from the switching logic (the inputs tag.MAN / .LOC / .REM are ordinary inputs): no mode buttons needed | closed |
+| F7b overview graphics | wants zoom, smooth dragging and a LOCK so that nothing moves by accident | planned (HMI v2) |
+| F7c faceplates of PIDV, SEL, ALM, COS | "complete in the Excel" | **checked: NOT complete**: the Excel has PID (incl. 2 PIDV), MAN, SUMA only; ALM limits (104) and SEL defaults (26) were in the first form (docs/DCS-DATA-FORM.pdf sections A and E) and are not in the filled file; COS has no faceplate parameters (it is a manual value of a T switch) |
+| F8 NEW: process model | to be decided: an optional closed-loop process per controller (PV follows the output: gain, time constant, dead time, load disturbance) so that the trend shows the PID working | proposal |
+| F9 data | PID / MAN / SUMA values received (136 rows) and applied: docs/DCS-FILLED-FORM.md | **DONE (WIP)**; DH and CUT look swapped in the PID sheet |
+
+## 2026-10-08 (go) status after v1.17.0
+| # | Status |
+|---|---|
+| F1 DITL list of open sheet | DONE v1.17.0 |
+| F2 panel auto width | DONE v1.17.0 |
+| F3 Trend explained (SV / PV, P I D, axes, sampling) | DONE v1.17.0 (Trend v2 + process model so PV follows SV through the controller) |
+| F4 floating zoom + control strip | DONE v1.17.0 |
+| F5 COS manual control, 25 unresolved | DONE v1.17.0 (173 / 173) |
+| F6 HMI v2 (picker, drawing tools, full Auto page, lock, control) | NEXT |
+| F7 faceplate data | DONE for PID / MAN / SUMA (FILE); ALM limits (104) and SEL defaults (26) stay ASSUMED, later |
+| F8 process model | DONE v1.17.0 |
+| Ramp rates of the 8 boxes | user: assistant sets defaults, diagram text wins -> kept; screw coolers corrected to 0.05 rpm/s |
+| DH / CUT | user: assistant corrects; swapped in the PID sheet (no effect on the sim) |

@@ -1,4 +1,4 @@
-/* every PID / PIDV of every sheet: it has an input (the deviation) and an output that something reads; with the selector behind it on the PID leg, reverse action (ACT:R) raises the output when SV > PV (deviation > 0) and direct action (ACT:N) when the deviation is < 0; the output stays inside its range.  usage: node tools/test-pid-all.js file.html */
+/* every PID / PIDV of every sheet (with Td = 0 during the test, step = 10 % of the span, limits ML ~ MH of the DCS faceplate): it has an input (the deviation) and an output that something reads; with the selector behind it on the PID leg, reverse action (ACT:R) raises the output when SV > PV (deviation > 0) and direct action (ACT:N) when the deviation is < 0; the output stays inside its range.  usage: node tools/test-pid-all.js file.html */
 const {load,build}=require('./lib.js');const {E,rows}=load(process.argv[2]);let tot=0,bad=0,ok=0,info=0;
 for(const r of rows){if(/ABC-000/.test(r.name))continue;const S=build(E,r);
  for(const b of S.blk){if(b.k!=='PID'&&b.k!=='PIDV')continue;tot++;const id=r.name+' '+b.k+'#'+b.id+' '+(b.tag||'');const o=b.o.find(n=>(S.cns[n]||[]).length&&S.nets[n].segs.length);
@@ -6,10 +6,10 @@ for(const r of rows){if(/ABC-000/.test(r.name))continue;const S=build(E,r);
   if(o==null){bad++;console.log('PROBLEM output goes nowhere |',id,'outputs',JSON.stringify(b.o));continue}
   /* the selector(s) that take this PID as their tracking source: put them on the PID leg (the leg whose net is driven by the PID, directly or through one more block) */
   for(const t of S.blk)if((t.k==='AMT'||t.k==='SW')&&(t.trkFrom||[]).includes(b)){const st=S.rt.st[t.id];const reach=n=>{const seen=new Set(),q=[o];while(q.length){const x=q.pop();if(x===n)return true;if(seen.has(x))continue;seen.add(x);for(const c of S.cns[x]||[])for(const y of c.o||[])q.push(y);for(const[d,s2]of S.link||[])if(s2===x)q.push(d)}return false};st.fm=reach(t.a)?'A':reach(t.b)?'B':null}
-  const upDev=(b.p.act==null?-1:b.p.act)<0?10:-10;const seq=[[upDev,30],[-upDev,12],[upDev,12]];S.rt.force={};let ys=[];E.anSettle(S,5);
+  const spn=b.p.span>0?b.p.span:100,td0=b.p.td;b.p.td=0;/* the derivative kick of a step is not what this test checks (direction and range); the step is 10 % of the span */const upDev=((b.p.act==null?-1:b.p.act)<0?1:-1)*.1*spn;const seq=[[upDev,30],[-upDev,12],[upDev,12]];S.rt.force={};let ys=[];E.anSettle(S,5);
   for(const [dev,secs] of seq){S.rt.force[b.in0]=dev;const y0=S.rt.v[o];for(let i=0;i<secs*2;i++)E.anStep(S,.5);ys.push([y0,S.rt.v[o]])}
   const lo=b.p.lo==null?0:b.p.lo,hi=b.p.hi==null?100:b.p.hi,rng=ys.every(([a,c])=>a>=lo-1e-6&&c<=hi+1e-6&&c>=lo-1e-6&&a<=hi+1e-6);
   const moved=ys[0][1]-ys[0][0];if(Math.abs(moved)<1e-9&&Math.abs(ys[1][1]-ys[1][0])<1e-9&&Math.abs(ys[2][1]-ys[2][0])<1e-9){info++;console.log('info  no response at all (the selector behind is on manual / tracking another input, or the output is held) |',id);continue}
   const dir=(ys[1][1]<ys[1][0]+1e-9)&&(ys[2][1]>ys[2][0]-1e-9)&&!(ys[1][1]>ys[1][0]+1e-6)&&!(ys[2][1]<ys[2][0]-1e-6);/* the first 30 s are a warm-up: the selector has just been put on the PID leg (the PID output jumps from the tracked value) */
-  if(!dir||!rng){bad++;console.log('PROBLEM',(!dir?'direction':'range'),'| act',b.p.act,JSON.stringify(ys.map(p=>p.map(v=>+v.toFixed(2)))),'|',id)}else ok++}}
+  if(!dir||!rng){bad++;console.log('PROBLEM',(!dir?'direction':'range'),'| act',b.p.act,JSON.stringify(ys.map(p=>p.map(v=>+v.toFixed(2)))),'|',id)}else ok++;b.p.td=td0}}
 console.log('PID / PIDV tested:',tot,'| direction and range right:',ok,'| no response (tracking / held):',info,'| problems:',bad);

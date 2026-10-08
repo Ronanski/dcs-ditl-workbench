@@ -1,55 +1,99 @@
-/* v1.15.3 WIP: live TREND of the selected block or wire (PID, MAN, FX, integrators, ramps, valves ... any block): small chart in the selection panel (normal view) + big overlay (Zoom).
-   Series: PID / PIDV = SV, PV (the two inputs of the DEV block that feeds the PID) and MV; any other block = its input and output nets; a wire = that wire.
-   History is kept per sheet for the wires being watched, one sample every 0.25 simulated seconds, up to 10 minutes; starts when you select the block. */
+/* v1.16.1 WIP: TREND v2 of the selected block or wire (every PID, PIDV, MAN, SUMA, FX, ramp, LAG, math, switch ... and any wire).
+   - PID / PIDV: pane "Process": SV and PV (engineering unit); pane "Controller": MV, P, I, D contributions and the error e (all in %): MV = P + I + D, so you SEE how the controller works; PIDV adds the raise / lower pulses and the position of the PO.
+   - MAN: output with its low / high limits. SUMA: flow and total. FX: in / out in time AND the X-Y curve of the table with the operating point. Others: inputs and outputs.
+   - Every trace has tag / address + description, unit and the live value; axes with numbers (Y per pane, X = simulated time), window, sampling time (0.25 s) and number of samples; hover = values at that time.
+   - Normal view in the panel; ZOOM = a floating window (move, resize, transparent) with a CONTROL STRIP: the inputs and parameters of the block (SV, MAN value, Kp Ti Td, process model, COS ...) with tag / description, so you can simulate while the trend is big.
+   History: one sample every 0.25 simulated seconds, up to 10 minutes per sheet, starts when the block is selected. */
 module.exports=(rep)=>{
-rep(String.raw`function whyTxt(S,b){`,String.raw`const TR_COL=['#4da3ff','#ff8a3d','#35e08a','#ff4dd0','#ffd84d','#9b8cff','#7fe0e0'],TR_DT=.25,TR_CAP=2400;
-function trSeries(sh){const S=sh.S,s=AN.sel;if(!s)return[];const out=[],add=(n,name)=>{if(n==null||n<0||!S.nets[n]||out.some(q=>q.n===n))return;out.push({n,name:name||nm(S,n)})};
- if(s.blk){const b=s.blk;if((b.k==='PID'||b.k==='PIDV')&&b.in0>=0){const d=(S.drv[b.in0]||[]).map(x=>S.blk.find(q=>q.id===x.id)).find(q=>q&&q.ip&&q.ip.length>=2);
-   if(d){const pl=d.ip.find(q=>q.sg>0),mi=d.ip.find(q=>q.sg<0);if(pl)add(pl.n,'SV '+nm(S,pl.n));if(mi)add(mi.n,'PV '+nm(S,mi.n))}else add(b.in0,'deviation '+nm(S,b.in0));
-   (b.o||[]).slice(0,1).forEach(n=>add(n,'MV '+nm(S,n)))}
-  else{(b.i||[]).slice(0,4).forEach((n,i)=>add(n,'in '+nm(S,n)));(b.o||[]).slice(0,3).forEach(n=>add(n,'out '+nm(S,n)))}}
- else if(s.net!=null)add(s.net);return out}
-function trSample(sh){const S=sh&&sh.S;if(!S)return;const w=sh._tw=sh._tw||new Map(),h=sh._th=sh._th||{t:[]},t=S.rt.t;
- if(h.t.length&&t<h.t[h.t.length-1]-1e-6){h.t.length=0;w.forEach(a=>a.length=0)}
- for(const q of trSeries(sh)){if(!w.has(q.n)){if(w.size>=24){const k=w.keys().next().value;w.delete(k)}w.set(q.n,new Array(h.t.length).fill(null))}}
- if(h.t.length&&t-h.t[h.t.length-1]<TR_DT-1e-9)return;if(!w.size)return;h.t.push(t);w.forEach((a,n)=>a.push(S.rt.v[n]));
- if(h.t.length>TR_CAP){h.t.shift();w.forEach(a=>a.shift())}}
-function trDraw(cv,sh,ser,o){const S=sh.S,h=sh._th||{t:[]},w=sh._tw||new Map(),ctx=cv.getContext('2d'),W=cv.width,H=cv.height,pl=44,pr=6,pt=6,pb=16;ctx.clearRect(0,0,W,H);ctx.fillStyle='#0b1013';ctx.fillRect(0,0,W,H);
- const T=h.t,n=T.length;ctx.font='10px sans-serif';
- if(n<2){ctx.fillStyle='#8a9';ctx.fillText('No data yet: press ▶ Run (or Next ▶).',pl,H/2);return}
- const tEnd=T[n-1],win=o.win>0?o.win:(T[n-1]-T[0]),t1=o.off!=null?o.off+win:tEnd,t0=t1-win;
- let i0=0;while(i0<n-1&&T[i0+1]<t0)i0++;
- const data=ser.map(q=>({q,a:w.get(q.n)||[]})).filter(x=>x.a.length&&!o.hide.has(x.q.n)),stat=data.map(x=>{let lo=1e30,hi=-1e30;for(let i=i0;i<n;i++){const v=x.a[i];if(v==null||T[i]>t1)continue;if(v<lo)lo=v;if(v>hi)hi=v}if(lo>hi){lo=0;hi=1}if(hi-lo<1e-9){lo-=.5;hi+=.5}const pad=(hi-lo)*.08;return{lo:lo-pad,hi:hi+pad}});
- let own=o.own;if(own==null){const r=stat.map(s=>s.hi-s.lo);own=r.length>1&&Math.max(...r)/Math.max(1e-9,Math.min(...r))>4}o.autoOwn=own;
- const gl=Math.min(...stat.map(s=>s.lo)),gh=Math.max(...stat.map(s=>s.hi)),X=t=>pl+(t-t0)/(t1-t0)*(W-pl-pr),Y=(v,s)=>{const lo=own?s.lo:gl,hi=own?s.hi:gh;return H-pb-(v-lo)/(hi-lo)*(H-pt-pb)};
- ctx.strokeStyle='#26323a';ctx.lineWidth=1;ctx.fillStyle='#8a9';
- for(let k=0;k<=4;k++){const y=pt+k*(H-pt-pb)/4;ctx.beginPath();ctx.moveTo(pl,y);ctx.lineTo(W-pr,y);ctx.stroke();if(!own||data.length===1){const v=(own?stat[0]:{lo:gl,hi:gh});const val=v.hi-(v.hi-v.lo)*k/4;ctx.fillText(Math.abs(val)>=100?val.toFixed(0):val.toFixed(1),2,y+3)}}
- for(let k=0;k<=4;k++){const t=t0+k*(t1-t0)/4,x=X(t);ctx.beginPath();ctx.moveTo(x,pt);ctx.lineTo(x,H-pb);ctx.stroke();ctx.fillText(fmtT(Math.max(0,t)),Math.min(x-8,W-40),H-3)}
- if(own&&data.length>1)ctx.fillText('each trace on its own scale',pl+4,pt+10);
- data.forEach((x,k)=>{const col=TR_COL[ser.indexOf(x.q)%TR_COL.length],dg=S.nets[x.q.n].dig;ctx.strokeStyle=col;ctx.lineWidth=o.big?2:1.5;ctx.beginPath();let st=false,py=0;
-  for(let i=Math.max(0,i0-1);i<n;i++){const v=x.a[i];if(v==null)continue;const xx=X(T[i]),yy=Y(v,stat[k]);if(!st){ctx.moveTo(xx,yy);st=true}else{if(dg)ctx.lineTo(xx,py);ctx.lineTo(xx,yy)}py=yy;if(T[i]>t1)break}ctx.stroke()})}
-function trendUi(d){const sh=cs();if(!sh||!sh.S)return;const ser=trSeries(sh);if(!ser.length)return;const S=sh.S;trSample(sh);
- const o={win:60,own:null,hide:new Set(),off:null},cv=h$('canvas',{width:300,height:130,style:'width:100%;height:130px;background:#0b1013;border:1px solid var(--line);margin-top:4px'});
- const leg=h$('div',{style:'font-size:11px;margin-top:2px'}),wsel=h$('select',{style:'pointer-events:auto;opacity:1'},[['30 s',30],['1 min',60],['5 min',300],['10 min',600],['All',0]].map(([t,v])=>h$('option',{value:v,txt:t})));wsel.value='60';wsel.onchange=()=>{o.win=+wsel.value;o.off=null;draw()};
- const bz=h$('button',{cls:'keep',txt:'Zoom ⤢',title:'Big trend window (wheel = time zoom, drag = move in time)'}),bc=h$('button',{cls:'keep',txt:'Clear',title:'Forget the history of this sheet'});bc.onclick=()=>{sh._th=null;sh._tw=null;trSample(sh);draw()};
- d.append(h$('h4',{txt:'Trend'}),h$('div',{cls:'r'},[wsel,bz,bc]),cv,leg);
- const legend=()=>{leg.innerHTML='';ser.forEach((q,k)=>{const sp=h$('span',{style:'margin-right:8px;white-space:nowrap'});const sw=h$('span',{txt:'■ ',style:'color:'+TR_COL[k%TR_COL.length]});const v=S.rt.v[q.n];sp.append(sw,document.createTextNode(q.name+' = '+(S.nets[q.n].dig?(v>.5?'1':'0'):fmt(v))));leg.append(sp)})};
- const draw=()=>{if(!cv.isConnected)return;trDraw(cv,sh,ser,o);legend()};draw();PU.push(()=>{if(cv.isConnected&&cs()===sh){trSample(sh);draw()}});
- bz.onclick=()=>trZoom(sh,ser,o)}
-function trZoom(sh,ser,o0){const old=document.getElementById('trbig');if(old)old.remove();const o=Object.assign({},o0,{big:true,hide:new Set(o0.hide)}),S=sh.S;
- const ov=h$('div',{id:'trbig',style:'position:fixed;inset:4vh 4vw;background:#0b1013;border:1px solid var(--acc,#3a6);z-index:99999;padding:8px;display:flex;flex-direction:column'}),cv=h$('canvas',{width:1200,height:520,style:'width:100%;flex:1;min-height:0;background:#0b1013'});
- const bar=h$('div',{style:'display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:6px'}),ws=h$('select',{},[['30 s',30],['1 min',60],['5 min',300],['10 min',600],['All',0]].map(([t,v])=>h$('option',{value:v,txt:t})));ws.value=String(o.win);ws.onchange=()=>{o.win=+ws.value;o.off=null};
- const own=h$('label',{},[h$('input',{type:'checkbox'}),document.createTextNode(' each trace on its own scale')]);own.firstChild.checked=o.own==null?false:o.own;own.firstChild.onchange=()=>{o.own=own.firstChild.checked};
- const live=h$('button',{txt:'Follow live',onclick:()=>{o.off=null}}),cl=h$('button',{txt:'✕ Close',onclick:()=>{ov.remove();clearInterval(tm)}});
- bar.append(h$('b',{txt:sh.name+' · Trend'}),ws,own,live,cl,h$('small',{txt:'wheel = zoom in time · drag = move in time · click a name to hide / show a trace'}));
- const leg=h$('div',{style:'margin-top:6px;font-size:12px'});ov.append(bar,cv,leg);document.body.append(ov);
- const draw=()=>{trSample(sh);trDraw(cv,sh,ser,o);if(o.own==null&&document.activeElement!==own.firstChild)own.firstChild.checked=!!o.autoOwn;leg.innerHTML='';ser.forEach((q,k)=>{const v=S.rt.v[q.n],sp=h$('span',{style:'margin-right:12px;cursor:pointer;white-space:nowrap;opacity:'+(o.hide.has(q.n)?.35:1)},[h$('span',{txt:'■ ',style:'color:'+TR_COL[k%TR_COL.length]}),document.createTextNode(q.name+' = '+(S.nets[q.n].dig?(v>.5?'1':'0'):fmt(v)))]);sp.onclick=()=>{o.hide.has(q.n)?o.hide.delete(q.n):o.hide.add(q.n)};leg.append(sp)})};
+/* the PID shows what it is made of */
+rep(String.raw`s.ep=es;s.out=u;s.inited=1;out(u);break}`,String.raw`s.ep=es;s.out=u;s.es=es;s.pt=kp*es;s.it=s.I;s.dd=Dt;s.inited=1;out(u);break}`);
+rep(String.raw`function whyTxt(S,b){`,String.raw`const TR_COL=['#4da3ff','#ff8a3d','#35e08a','#ff4dd0','#ffd84d','#9b8cff','#7fe0e0','#c0c0c0'],TR_DT=.25,TR_CAP=2400;
+function trDescOf(S,sh,n){try{const nmx=nm(S,n),a=adesFind(sh,nmx);return a?adesText(a.rec):''}catch(e){return ''}}
+function trModel(sh){const S=sh.S,s=AN.sel;if(!S||!s)return null;let n_=0;const sd=(key,name,unit,get,o)=>Object.assign({key,name,unit:unit||'',get,dig:false,desc:'',ci:n_++},o||{}),net=(n,label,unit,o)=>(n==null||n<0||!S.nets[n])?null:sd('n'+n,label+' '+nm(S,n),unit,()=>S.rt.v[n],Object.assign({dig:!!S.nets[n].dig,desc:trDescOf(S,sh,n)},o||{})),M={title:'',desc:'',panes:[]};
+ const push=(title,unit,ser,dig)=>{ser=ser.filter(Boolean);if(ser.length)M.panes.push({title,unit,series:ser,dig:!!dig})};
+ if(s.blk){const b=s.blk,st=()=>S.rt.st[b.id]||{},tag=b.tag||(b.txt||[])[1]||(b.txt||[])[0]||b.k,fdesc=(b.face&&b.face.desc)||'';M.title=b.k+' '+tag;M.desc=fdesc;M.blk=b;
+  if(b.k==='PID'||b.k==='PIDV'){const d=(S.drv[b.in0]||[]).map(x=>S.blk.find(q=>q.id===x.id)).find(q=>q&&q.ip&&q.ip.length>=2),u=b.p.unit||'';
+   const pl=d&&d.ip.find(q=>q.sg>0),mi=d&&d.ip.find(q=>q.sg<0);push('Process ('+(u||'engineering unit')+')',u,[pl&&net(pl.n,'SV',u,{desc:'set point · '+(fdesc||trDescOf(S,sh,pl.n))}),mi&&net(mi.n,'PV',u,{desc:'process value · '+(fdesc||trDescOf(S,sh,mi.n))})]);
+   const p=b.p,sp=p.span>0?p.span:100;push('Controller (% of output)','%',[(b.o||[])[0]!=null&&net(b.o[0],'MV',' %',{name:'MV output '+tag,desc:'output of the controller, limited '+(p.lo==null?0:p.lo)+' ~ '+(p.hi==null?100:p.hi)+' %'}),
+    sd('st'+b.id+'p','P  = Kp · e',' %',()=>st().pt,{desc:'proportional part: Kp '+(+p.kp).toFixed(3)+' (P band '+(p.kp>0?(100/p.kp).toFixed(1):'-')+' %) times the error'}),
+    sd('st'+b.id+'i','I  (integral)',' %',()=>st().it,{desc:'integral part: Ti '+p.ti+' s, adds up while the error stays'}),
+    sd('st'+b.id+'d','D  (derivative)',' %',()=>st().dd,{desc:'derivative part: Td '+p.td+' s, reacts to the speed of the error'}),
+    sd('st'+b.id+'e','error e = SV − PV',' % of span',()=>st().es,{desc:'deviation in % of the range ('+sp+' '+(u||'')+' = 100 %); the controller works to make it 0'})]);
+   if(b.k==='PIDV'){const po=(S.cns[(b.o||[])[0]]||[]).find(x=>x.k==='PO')||S.blk.find(x=>x.k==='PO');if(po){push('Pulse output (PO)','%',[sd('st'+po.id+'pos','PO position',' %',()=>(S.rt.st[po.id]||{}).pos,{desc:'position of the actuator by the raise / lower pulses'})]);push('Pulses','',[sd('st'+po.id+'up','raise pulse','',()=>(S.rt.st[po.id]||{}).up?1:0,{dig:true}),sd('st'+po.id+'dn','lower pulse','',()=>(S.rt.st[po.id]||{}).dn?1:0,{dig:true})],true)}}}
+  else if(b.k==='MAN'){const u=b.p.u||'';push('Manual output ('+u+')',u,[net((b.o||[])[0],'OUT',u,{name:'OUT '+tag,desc:fdesc||'manual station value'}),sd('st'+b.id+'lo','low limit',u,()=>b.p.lo,{dash:true,desc:'low limit'}),sd('st'+b.id+'hi','high limit',u,()=>b.p.hi,{dash:true,desc:'high limit'})]);push('Tracking','',[sd('st'+b.id+'trk','tracking another leg','',()=>(st().trk!=null?1:0),{dig:true,desc:'1 = the station follows the output of the switch behind it'})],true)}
+  else if(b.k==='SUMA'){const u=b.face?b.face.unit:'',tu=(b.face&&b.face['SUM unit'])||'';push('Flow ('+u+')',u,[net((b.i||[])[0],'FLOW',u,{desc:fdesc})]);push('Total ('+tu+')',tu,[sd('st'+b.id+'tot','TOTAL '+tag,tu,()=>st().tot,{desc:'integrated flow'+(b.face?'; reset / limit '+b.face.RSTS+' '+tu:'')})])}
+  else if(b.k==='FX'){push('Input and output','',[net((b.i||[])[0],'IN','',{}),net((b.o||[])[0],'OUT','',{})]);if(b.p&&b.p.tbl&&(b.p.tbl.p2||b.p.tbl.pts))M.xy={pts:b.p.tbl.p2||b.p.tbl.pts,inN:(b.i||[])[0],outN:(b.o||[])[0],title:b.p.ln||'F(X)'}}
+  else{push('Inputs','',(b.i||[]).slice(0,4).map((n,i)=>net(n,'IN'+(i+1),'')));push('Outputs','',(b.o||[]).slice(0,3).map(n=>net(n,'OUT','')))}}
+ else if(s.net!=null){M.title='wire '+nm(S,s.net);M.desc=trDescOf(S,sh,s.net);const t=net(s.net,'',S.nets[s.net].dig?'':'');if(t)push('Wire',S.nets[s.net].dig?'':'',[t],S.nets[s.net].dig)}
+ return M.panes.length?M:null}
+const trFlat=m=>m?m.panes.flatMap(p=>p.series):[];
+function trSeries(sh){return trFlat(trModel(sh)).map(q=>({key:q.key,name:q.name,desc:q.desc,unit:q.unit}))}
+function trSample(sh){const S=sh&&sh.S;if(!S)return;const m=trModel(sh),w=sh._tw=sh._tw||new Map(),h=sh._th=sh._th||{t:[]},t=S.rt.t;if(h.t.length&&t<h.t[h.t.length-1]-1e-6){h.t.length=0;w.forEach(a=>a.length=0)}
+ if(m)for(const q of trFlat(m))if(!w.has(q.key)){if(w.size>=40){const k=w.keys().next().value;w.delete(k)}w.set(q.key,new Array(h.t.length).fill(null))}
+ if(h.t.length&&t-h.t[h.t.length-1]<TR_DT-1e-9)return;if(!w.size||!m)return;const vals={};for(const q of trFlat(m)){let v=null;try{v=q.get()}catch(e){}vals[q.key]=v==null||!isFinite(v)?null:v}
+ h.t.push(t);w.forEach((a,k)=>a.push(k in vals?vals[k]:null));if(h.t.length>TR_CAP){h.t.shift();w.forEach(a=>a.shift())}}
+function trUnitTxt(u){return u?' '+u.trim():''}
+function trDraw(cv,sh,m,o){const h=sh._th||{t:[]},w=sh._tw||new Map(),ctx=cv.getContext('2d'),W=cv.width,H=cv.height,pl=58,pr=8,pt=6,pb=22,T=h.t,n=T.length,big=!!o.big,fs=big?12:10;ctx.clearRect(0,0,W,H);ctx.fillStyle='#0b1013';ctx.fillRect(0,0,W,H);ctx.font=fs+'px sans-serif';
+ o.geo=null;if(n<2||!m){ctx.fillStyle='#8a9';ctx.fillText('No data yet: press ▶ Run (or Next ▶). The history starts when the block is selected.',pl,H/2);return}
+ const win=o.win>0?o.win:(T[n-1]-T[0]),t1=o.off!=null?o.off+win:T[n-1],t0=t1-win;let i0=0;while(i0<n-1&&T[i0+1]<t0)i0++;let i1=n-1;while(i1>0&&T[i1-1]>t1)i1--;
+ const P=m.panes,gap=big?10:6,ph=(H-pt-pb-gap*(P.length-1))/P.length,X=t=>pl+(t-t0)/(t1-t0)*(W-pl-pr);o.geo={pl,pr,t0,t1,W,panes:[]};
+ P.forEach((pn,pi)=>{const y0=pt+pi*(ph+gap),y1=y0+ph,ser=pn.series.filter(q=>!o.hide.has(q.key)&&(w.get(q.key)||[]).length);let lo=1e30,hi=-1e30;
+  if(pn.dig){lo=-.1;hi=1.1}else{for(const q of ser){const a=w.get(q.key);for(let i=i0;i<=i1;i++){const v=a[i];if(v==null)continue;if(v<lo)lo=v;if(v>hi)hi=v}}if(lo>hi){lo=0;hi=1}if(hi-lo<1e-9){lo-=.5;hi+=.5}const pd=(hi-lo)*.08;lo-=pd;hi+=pd}
+  const Y=v=>y1-(v-lo)/(hi-lo)*(y1-y0);o.geo.panes.push({y0,y1,lo,hi});ctx.strokeStyle='#26323a';ctx.lineWidth=1;ctx.fillStyle='#8a9';ctx.strokeRect(pl+.5,y0+.5,W-pl-pr,y1-y0);
+  for(let k=0;k<=4;k++){const yy=y0+k*(y1-y0)/4;ctx.beginPath();ctx.moveTo(pl,yy);ctx.lineTo(W-pr,yy);ctx.stroke();const val=hi-(hi-lo)*k/4;if(!pn.dig)ctx.fillText(Math.abs(val)>=1000?val.toFixed(0):Math.abs(val)>=100?val.toFixed(1):val.toFixed(2),2,yy+(k===0?10:k===4?-2:4))}
+  if(pn.dig){ctx.fillText('1',pl-12,Y(1)+4);ctx.fillText('0',pl-12,Y(0)+4)}
+  for(let k=0;k<=4;k++){const t=t0+k*(t1-t0)/4,x=X(t);ctx.beginPath();ctx.moveTo(x,y0);ctx.lineTo(x,y1);ctx.stroke();if(pi===P.length-1)ctx.fillText(fmtT(Math.max(0,t)),Math.min(Math.max(x-14,pl),W-44),H-pb+fs+3)}
+  ctx.fillStyle='#c9d4dc';ctx.fillText(pn.title,pl+6,y0+fs+2);
+  for(const q of ser){const a=w.get(q.key);ctx.strokeStyle=TR_COL[q.ci%TR_COL.length];ctx.lineWidth=big?2:1.5;ctx.setLineDash(q.dash?[5,4]:[]);ctx.beginPath();let st=false,py=0;for(let i=Math.max(0,i0-1);i<n;i++){const v=a[i];if(v==null)continue;const xx=X(T[i]),yy=Y(v);if(!st){ctx.moveTo(xx,yy);st=true}else{if(q.dig)ctx.lineTo(xx,py);ctx.lineTo(xx,yy)}py=yy;if(T[i]>t1)break}ctx.stroke();ctx.setLineDash([])}});
+ ctx.fillStyle='#8a9';const info='window '+(+win).toFixed(0)+' s · sampling '+TR_DT+' s · '+(i1-i0+1)+' samples · X = simulated time';ctx.fillText(info,W-pr-ctx.measureText(info).width,H-4);
+ if(o.hx!=null&&o.hx>=pl&&o.hx<=W-pr){const tt=t0+(o.hx-pl)/(W-pl-pr)*(t1-t0);ctx.strokeStyle='#ffffff88';ctx.setLineDash([3,3]);ctx.beginPath();ctx.moveTo(o.hx,pt);ctx.lineTo(o.hx,H-pb);ctx.stroke();ctx.setLineDash([]);let k=i0;for(let i=i0;i<=i1;i++)if(Math.abs(T[i]-tt)<Math.abs(T[k]-tt))k=i;o.hk=k}else o.hk=null}
+function trXY(cv,m,S){const ctx=cv.getContext('2d'),W=cv.width,H=cv.height,pl=44,pb=18,pt=14,pr=8,pts=m.xy.pts.slice().sort((a,b)=>a[0]-b[0]);ctx.fillStyle='#0b1013';ctx.fillRect(0,0,W,H);ctx.font='10px sans-serif';if(pts.length<2){return}
+ const xs=pts.map(p=>p[0]),ys=pts.map(p=>p[1]),xl=Math.min(...xs),xh=Math.max(...xs),yl=Math.min(...ys),yh=Math.max(...ys),X=x=>pl+(x-xl)/((xh-xl)||1)*(W-pl-pr),Y=y=>H-pb-(y-yl)/((yh-yl)||1)*(H-pt-pb);
+ ctx.strokeStyle='#26323a';ctx.fillStyle='#8a9';for(let k=0;k<=4;k++){const xx=pl+k*(W-pl-pr)/4,yy=pt+k*(H-pt-pb)/4;ctx.beginPath();ctx.moveTo(xx,pt);ctx.lineTo(xx,H-pb);ctx.moveTo(pl,yy);ctx.lineTo(W-pr,yy);ctx.stroke();ctx.fillText((xl+(xh-xl)*k/4).toFixed(1),xx-10,H-5);ctx.fillText((yh-(yh-yl)*k/4).toFixed(1),2,yy+4)}
+ ctx.strokeStyle='#4da3ff';ctx.lineWidth=1.5;ctx.beginPath();pts.forEach((p,i)=>{i?ctx.lineTo(X(p[0]),Y(p[1])):ctx.moveTo(X(p[0]),Y(p[1]))});ctx.stroke();ctx.fillStyle='#4da3ff';pts.forEach(p=>ctx.fillRect(X(p[0])-2,Y(p[1])-2,4,4));
+ const xi=S.rt.v[m.xy.inN],yo=S.rt.v[m.xy.outN];if(xi!=null&&yo!=null){ctx.fillStyle='#ff4dd0';ctx.beginPath();ctx.arc(X(Math.max(xl,Math.min(xh,xi))),Y(Math.max(yl,Math.min(yh,yo))),5,0,7);ctx.fill();ctx.fillStyle='#ff4dd0';ctx.fillText('now: in '+fmt(xi)+' → out '+fmt(yo),pl+6,pt+10)}
+ ctx.fillStyle='#c9d4dc';ctx.fillText('X-Y curve of the table '+m.xy.title+' (the dot = the operating point)',pl+6,H-pb-6)}
+function trLegend(leg,S,m,o,sh){leg.innerHTML='';const hk=o.hk,h=sh._th||{t:[]},w=sh._tw||new Map();
+ trFlat(m).forEach(q=>{let v=null;if(hk!=null&&w.get(q.key))v=w.get(q.key)[hk];else{try{v=q.get()}catch(e){}}const txt=v==null||!isFinite(v)?'--':(q.dig?(v>.5?'1':'0'):fmt(v)+trUnitTxt(q.unit)),sp=h$('div',{style:'margin:1px 0;cursor:pointer;opacity:'+(o.hide.has(q.key)?.35:1)},[h$('span',{txt:'■ ',style:'color:'+TR_COL[q.ci%TR_COL.length]}),h$('b',{txt:q.name}),document.createTextNode(' = '+txt+(hk!=null?'  @ '+fmtT(Math.max(0,h.t[hk])):'')),(o.big||o.desc)&&q.desc?h$('div',{txt:q.desc,style:'font-size:10px;color:#8a9;margin-left:14px'}):document.createTextNode('')]);sp.onclick=()=>{o.hide.has(q.key)?o.hide.delete(q.key):o.hide.add(q.key)};leg.append(sp)})}
+function trendUi(d){const sh=cs();if(!sh||!sh.S)return;trSample(sh);const m0=trModel(sh);if(!m0)return;const S=sh.S,o={win:60,hide:new Set(),hx:null,hk:null,desc:true},rows=m0.panes.length,hgt=rows>1?190:130,
+  cv=h$('canvas',{width:420,height:hgt*1.4,style:'width:100%;height:'+hgt+'px;background:#0b1013;border:1px solid var(--line);margin-top:4px'}),leg=h$('div',{style:'font-size:11px;margin-top:2px'}),
+  wsel=h$('select',{style:'pointer-events:auto;opacity:1'},[['30 s',30],['1 min',60],['5 min',300],['10 min',600],['All',0]].map(([t,v])=>h$('option',{value:v,txt:t})));wsel.value='60';wsel.onchange=()=>{o.win=+wsel.value;draw()};
+ const bz=h$('button',{cls:'keep',txt:'Zoom ⤢',title:'Big floating trend window with a control strip (move, resize, transparent)'}),bc=h$('button',{cls:'keep',txt:'Clear',title:'Forget the history of this sheet'});bc.onclick=()=>{sh._th=null;sh._tw=null;trSample(sh);draw()};
+ const xyc=m0.xy?h$('canvas',{width:420,height:200,style:'width:100%;height:140px;background:#0b1013;border:1px solid var(--line);margin-top:4px'}):null;
+ d.append(h$('h4',{txt:'Trend · '+m0.title}),m0.desc?h$('small',{txt:m0.desc,style:'display:block;color:#9ab'}):document.createTextNode(''),h$('div',{cls:'r'},[wsel,bz,bc]),cv,...(xyc?[xyc]:[]),leg);
+ cv.onmousemove=e=>{const r=cv.getBoundingClientRect();o.hx=(e.clientX-r.left)/r.width*cv.width;draw()};cv.onmouseleave=()=>{o.hx=null;o.hk=null;draw()};
+ const draw=()=>{if(!cv.isConnected)return;const m=trModel(sh)||m0;trDraw(cv,sh,m,o);if(xyc)trXY(xyc,m,S);trLegend(leg,S,m,o,sh)};draw();PU.push(()=>{if(cv.isConnected&&cs()===sh){trSample(sh);draw()}});bz.onclick=()=>trZoom(sh,o)}
+/* ---------- the floating zoom window with the control strip ---------- */
+function trStrip(box,sh,m){const S=sh.S,b=m.blk,keep=PU;PU=[];const mine=PU;
+ const row=(n)=>{const nmx=nm(S,n),ds=trDescOf(S,sh,n);return h$('div',{style:'margin:5px 0;padding:3px 0;border-bottom:1px solid #1d2a31'},[h$('div',{style:'font-weight:bold',txt:nmx}),ds?h$('div',{style:'font-size:10px;color:#8a9',txt:ds}):document.createTextNode(''),ctl(S,sh,n)])};
+ const seen=new Set(),ups=[],walk=(n,dp)=>{if(dp>8||seen.has(n))return;seen.add(n);if(S.ext.includes(n)&&!(S.xlk&&S.xlk[n])){ups.push(n);return}for(const dr of S.drv[n]||[]){const x=S.blk.find(q=>q.id===dr.id);if(!x||x.k==='AI')continue;if(x.k==='PID'||x.k==='PIDV'||x.k==='MAN')continue;for(const q of x.i||[])walk(q,dp+1)}};
+ const starts=b?(b.k==='PID'||b.k==='PIDV'?(()=>{const d=(S.drv[b.in0]||[]).map(x=>S.blk.find(q=>q.id===x.id)).find(q=>q&&q.ip&&q.ip.length>=2),pl=d&&d.ip.find(q=>q.sg>0);return pl?[pl.n]:[]})():(b.i||[])):(AN.sel.net!=null?[AN.sel.net]:[]);
+ box.append(h$('h4',{txt:'Control strip — what you can change'}));
+ if(b&&b.k==='MAN'){const st=S.rt.st[b.id],P=b.p,i=anEdit(h$('input',{type:'number',step:'any'})),rg=h$('input',{type:'range',min:P.lo,max:P.hi,step:(P.hi-P.lo)/500}),set=v=>{st.val=Math.max(P.lo,Math.min(P.hi,v));(sv(sh).man=sv(sh).man||{})[b.id]=st.val;anSave();settle()};i.style.width='80px';rg.style.width='100%';rg.oninput=()=>set(+rg.value);i.onchange=()=>{const v=parseFloat(i.value);if(isFinite(v))set(v)};
+  const u=()=>{if(document.activeElement!==rg)rg.value=st.val;if(document.activeElement!==i)i.value=(+st.val).toFixed(2)};u();mine.push(u);box.append(h$('div',{style:'margin:5px 0'},[h$('div',{style:'font-weight:bold',txt:'MAN value ▸ '+(b.tag||(b.txt||[])[0]||'')}),h$('div',{style:'font-size:10px;color:#8a9',txt:(m.desc||'')+' · range '+fmt(P.lo)+' ~ '+fmt(P.hi)+' '+(P.u||'')}),h$('div',{cls:'r'},[i,h$('span',{txt:P.u||''})]),rg]))}
+ starts.forEach(n=>walk(n,0));if(ups.length){box.append(h$('div',{style:'color:#9ab;font-size:11px',txt:'Inputs that feed this block (manual values / set points):'}));ups.slice(0,10).forEach(n=>box.append(row(n)))}
+ if(b&&(b.k==='PID'||b.k==='PIDV')){const pf=(k,t,tt)=>{const i=anEdit(h$('input',{type:'number',step:'any',value:b.p[k]}));i.style.width='70px';i.onchange=()=>{const v=parseFloat(i.value);if(isFinite(v)){b.p[k]=v;(sv(sh).p=sv(sh).p||{})[b.id]=Object.assign({},(sv(sh).p||{})[b.id],{[k]:v});anSave();settle()}};return h$('div',{cls:'r',title:tt},[h$('span',{cls:'n',txt:t}),i])};
+  box.append(h$('div',{style:'margin-top:8px;font-weight:bold',txt:'Controller parameters ▸ '+(b.txt[1]||b.k)}),pf('kp','Kp (= 100 / P band)','gain'),pf('ti','Ti (s, 0 = off)','integral time'),pf('td','Td (s)','derivative time'),pf('lo','Output low %',''),pf('hi','Output high %',''));
+  try{procPanel(box,b,sh)}catch(e){}}
+ PU=keep;return mine}
+function trZoom(sh,o0){const old=document.getElementById('trbig');if(old)old.remove();const m0=trModel(sh);if(!m0)return;const S=sh.S,o=Object.assign({},o0,{big:true,hide:new Set(o0.hide),hx:null,hk:null,desc:true}),sheetAtOpen=sh;
+ const ov=h$('div',{id:'trbig',style:'position:fixed;left:6vw;top:6vh;width:86vw;height:84vh;background:#0b1013;border:1px solid var(--acc,#3a6);z-index:99999;display:flex;flex-direction:column;box-shadow:0 8px 40px #000d;resize:both;overflow:hidden;min-width:520px;min-height:300px'}),
+  hd=h$('div',{style:'display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:6px 8px;background:#10181d;border-bottom:1px solid #223;cursor:move'}),body=h$('div',{style:'flex:1;display:flex;min-height:0'}),left=h$('div',{style:'flex:1;display:flex;flex-direction:column;min-width:0;padding:6px'}),right=h$('div',{style:'width:340px;overflow:auto;padding:6px 8px;border-left:1px solid #223;background:#0f1519;font-size:12px'}),
+  cv=h$('canvas',{width:1200,height:620,style:'width:100%;flex:1;min-height:0;background:#0b1013'}),leg=h$('div',{style:'font-size:12px;margin-top:6px;max-height:34%;overflow:auto'}),xyc=m0.xy?h$('canvas',{width:520,height:240,style:'width:260px;height:120px;background:#0b1013;margin-top:4px;align-self:flex-end'}):null;
+ const ws=h$('select',{},[['30 s',30],['1 min',60],['5 min',300],['10 min',600],['All',0]].map(([t,v])=>h$('option',{value:v,txt:t})));ws.value=String(o.win);ws.onchange=()=>{o.win=+ws.value;o.off=null};
+ const op=h$('input',{type:'range',min:35,max:100,value:100,style:'width:70px',title:'Transparency of this window'});op.oninput=()=>{ov.style.opacity=op.value/100};
+ const fol=h$('button',{txt:'Follow live',onclick:()=>{o.off=null}}),cl=h$('button',{txt:'✕ Close',onclick:()=>{ov.remove();clearInterval(tm)}});
+ hd.append(h$('b',{txt:sh.name+' · '+m0.title,style:'color:var(--acc)'}),h$('span',{txt:m0.desc||'',style:'color:#9ab;font-size:11px;flex:1 1 200px'}),ws,fol,h$('span',{txt:'opaque',style:'color:#8a9;font-size:10px'}),op,cl,h$('small',{txt:'wheel = time zoom · drag = move in time · hover = values · click a name = hide / show · drag this bar = move the window · corner = resize',style:'flex-basis:100%;color:#8a9'}));
+ left.append(cv,...(xyc?[xyc]:[]),leg);body.append(left,right);ov.append(hd,body);document.body.append(ov);
+ let mine=trStrip(right,sh,m0);let lastSel=JSON.stringify(AN.sel&&{b:AN.sel.blk&&AN.sel.blk.id,n:AN.sel&&AN.sel.net});
+ const draw=()=>{const sh2=cs();if(sh2!==sheetAtOpen){}trSample(sh);const m=trModel(sh)||m0;trDraw(cv,sh,m,o);if(xyc)trXY(xyc,m,S);trLegend(leg,S,m,o,sh);for(const f of mine){try{f()}catch(e){}}};
  const tm=setInterval(()=>{if(!ov.isConnected){clearInterval(tm);return}draw()},250);draw();
- cv.onwheel=e=>{e.preventDefault();const h=sh._th&&sh._th.t||[];if(h.length<2)return;const full=h[h.length-1]-h[0],cur=o.win>0?o.win:full;const nw=Math.max(5,Math.min(Math.max(full,5),cur*(e.deltaY>0?1.25:.8)));const end=o.off!=null?o.off+cur:h[h.length-1];o.win=nw;o.off=Math.max(h[0],end-nw);if(o.off+nw>=h[h.length-1]-1e-6)o.off=null;ws.value=''};
- let dr=null;cv.onmousedown=e=>{dr={x:e.clientX,off:o.off}};addEventListener('mouseup',()=>{dr=null});cv.onmousemove=e=>{if(!dr)return;const h=sh._th&&sh._th.t||[];if(h.length<2)return;const cur=o.win>0?o.win:h[h.length-1]-h[0],dt=-(e.clientX-dr.x)/cv.clientWidth*cur,base=dr.off!=null?dr.off:h[h.length-1]-cur;o.off=Math.max(h[0],Math.min(h[h.length-1]-cur,base+dt));if(o.win<=0)o.off=null};
+ cv.onwheel=e=>{e.preventDefault();const h=sh._th&&sh._th.t||[];if(h.length<2)return;const full=h[h.length-1]-h[0],cur=o.win>0?o.win:full,nw=Math.max(5,Math.min(Math.max(full,5),cur*(e.deltaY>0?1.25:.8))),end=o.off!=null?o.off+cur:h[h.length-1];o.win=nw;o.off=Math.max(h[0],end-nw);if(o.off+nw>=h[h.length-1]-1e-6)o.off=null;ws.value=''};
+ let dr=null;cv.onmousedown=e=>{dr={x:e.clientX,off:o.off}};addEventListener('mouseup',()=>{dr=null});cv.onmouseleave=()=>{o.hx=null;o.hk=null};
+ cv.onmousemove=e=>{const r=cv.getBoundingClientRect();o.hx=(e.clientX-r.left)/r.width*cv.width;if(!dr)return;const h=sh._th&&sh._th.t||[];if(h.length<2)return;const cur=o.win>0?o.win:h[h.length-1]-h[0],dt=-(e.clientX-dr.x)/cv.clientWidth*cur,base=dr.off!=null?dr.off:h[h.length-1]-cur;o.off=Math.max(h[0],Math.min(h[h.length-1]-cur,base+dt));if(o.win<=0)o.off=null};
+ hd.addEventListener('pointerdown',e=>{if(e.target!==hd&&e.target.tagName!=='B')return;const r=ov.getBoundingClientRect(),sx=e.clientX-r.left,sy=e.clientY-r.top;const mv=ev=>{ov.style.left=Math.max(0,ev.clientX-sx)+'px';ov.style.top=Math.max(0,ev.clientY-sy)+'px'},up=()=>{removeEventListener('pointermove',mv);removeEventListener('pointerup',up)};addEventListener('pointermove',mv);addEventListener('pointerup',up)});
  addEventListener('keydown',function k(e){if(!ov.isConnected){removeEventListener('keydown',k,true);return}if(e.key==='Escape'){e.stopPropagation();ov.remove();clearInterval(tm);removeEventListener('keydown',k,true)}},true)}
 function whyTxt(S,b){`);
-
 rep(String.raw`function panelUpd(sel){const sh=cs();if(!sh||!sh.S)return;`,String.raw`function panelUpd(sel){const sh=cs();if(!sh||!sh.S)return;try{trSample(sh)}catch(e){}`);
-rep(String.raw`panelUpd,selBox,dsIdx,dsOpen});`,String.raw`panelUpd,selBox,dsIdx,dsOpen,trSeries,trSample,trDraw,trZoom});`);
+rep(String.raw`panelUpd,selBox,dsIdx,dsOpen});`,String.raw`panelUpd,selBox,dsIdx,dsOpen,trSeries,trSample,trDraw,trZoom,trModel});`);
 };

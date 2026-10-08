@@ -1,29 +1,32 @@
 # SIMPLE SUMMARY — latest build (for a non-coder), 2026-10-08
 
 ## Which build?
-**Logic Sim v1.16.0** (released 2026-10-08). Before it: v1.15.2 (Trace across sheets, DXF import that stays, ABC-004A link) and v1.15.1 (legend matrix).
+**Logic Sim v1.17.0** (released 2026-10-08). Before it: v1.16.0 (HMI view, Path / exits / Map, DITL signals, Trend).
 
-## What is new in v1.16.0, in plain words
-1. **HMI view** (button "HMI"): a graphics page with buttons, lamps, numbers, sliders, valves, tanks, trends and PID / MAN faceplates, all **connected to addresses** (tags, or "DITL 13-69"). Three ways to show it, as you approved: **Tab** (own view), **Float** (a window you can move and resize over the diagram, the diagram keeps running behind it) and **Split** (beside the diagram, draggable divider). A button on an input switches it (one click); a button on a wire that the logic computes FORCEs it and says so. "Auto: this sheet" builds a page from the sheet you are looking at. The page is saved with your project.
-2. **Following a signal through many sheets**, also in RUN mode: a **Path** (click any sheet to go back, "Back to start"), the list of **every exit** of the signal, and a **Map** of all the sheets it goes to (each sheet once, no endless loop).
-3. **Fixed links:** a circle with several destinations ("TO ABC-001D, TO ABC-020") now links to all of them (4 links were missing).
-4. **DITL signals** (button): the 129 signals that come from the DITL are one-click inputs; the 86 that go to the DITL show their live value.
-5. **Trend:** a live graph with zoom for any block or wire (PID: SV, PV, MV; linearizers, MAN, integrators, ramps ...).
+## What is new in v1.17.0, in plain words
+1. **Your real DCS values** (the filled Excel): PID Kp / Ti / Td, output limits, ranges and units; MAN ranges; SUMA values. They come from the FILE, not guessed. DH and CUT were swapped in the PID sheet: corrected (they do nothing in the sim).
+2. **COS manual control**: all 173 are recognised (before: 25 were not). Slider or number with the range and unit of the diagram; greyed out when the switching logic does not energize it. The SV of a PID is always usable.
+3. **Process model (simulation only)**: PV follows the controller output like a real process (gain, time constant, dead time, disturbance). You control the **SV**; MV and PV move by themselves. The PV sliders are disabled while it is ON. 61 of 62 loops reach their SV.
+4. **Trend v2**: Process pane (SV, PV) and Controller pane (MV, P, I, D, error), descriptions, units, axes, sampling, values on hover; the zoom is a floating window with a **control strip** to change Kp, Ti, Td, limits, SV.
+5. **DITL signals** list: only the open sheet ("All sheets" to see all). **Right panel** grows to fit its content.
+6. Ramp rates of the 8 boxes: diagram text first, otherwise defaults (the screw coolers corrected to 0.05 rpm/s because their range is 0-5 rpm).
 
 ## Numbers
 | What | Result |
 |---|---|
-| Blocks that follow the legend | 2 973 / 2 973 |
-| Links between sheets that carry the value | 182 / 182 (388 → 392 links after H-18) |
-| Wires that go nowhere without a reason | 0 |
-| Digital outputs the test can drive to 0 and 1 | 2 194 / 2 194 |
-| Progress (html only) | 85.9 % |
+| Block tests | 526 / 526 |
+| PID direction and range | 68 / 68 |
+| PID closed loop (simple process) | 68 / 68 |
+| PID with the process model reach SV | 61 / 62 (1 slow level loop) |
+| COS recognised | 173 / 173 |
+| Legend matrix | 2 973 / 2 973 |
+| Wires that go nowhere | 0 |
 
 ## What is NOT proven
-- DCS-only numbers (PID gains, alarm limits, ramp rates, pulse timing, select defaults) are still ASSUMED (docs/PUNCHLIST.md part 2).
-- The tests prove the blocks follow the legend and the drawings; no scenario test of a whole plant sequence yet.
-- HMI: tested in the browser here (modes, bindings, FORCE, faceplate, save / restore); not tried on your PC with real use. Symbols change colour / level only (no flow animation); a faceplate has no AUTO / MAN switch of its own (use "open ▸").
-- exe and apk: not tested by me.
+- The process model numbers (gain, T, dead time) are guesses by loop type, not your plant. Edit them in the panel.
+- dMVH (MV rate limit), TF (filter), MAN TF / FSC, GAP, BND are stored but not simulated yet. ALM limits and SEL defaults are still ASSUMED.
+- DXF import test was not run in this release (needs two DXF files; that part was not changed).
+- exe and apk: not tested by me. No scenario test of a whole plant sequence yet.
 
-## Open task of the assistant
-**CCS scenario test** (internal): scenarios on the coordinated control sheets using the DITL signals as inputs (docs/BACKLOG.md).
+## Next
+**HMI v2**: address picker, drawing tools, a complete Auto page with all manual inputs, lock, control from the HMI. Then the CCS scenario test.

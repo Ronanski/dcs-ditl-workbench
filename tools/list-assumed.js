@@ -37,5 +37,24 @@ Unit = the unit of the transmitter range written on the drawing. Empty (—) = n
 | Tag | HH | H | L | LL | Unit | Description | Why |
 |---|---|---|---|---|---|---|---|
 ${D.ALM.map(e=>`| ${e.tag} | ${f(e.hh)} | ${f(e.h)} | ${f(e.l)} | ${f(e.ll)} | ${e.u} | ${e.desc} | ${e.basis} |`).join('\n')}
+
+## 5. PID / PIDV, MAN and SUMA faceplate values — FILE (written by the user from the DCS, 2026-10-08)
+Source: the user's file \`DCS-FORM-PID-MAN-SUMA_FILLED.xlsx\` (extract \`tools/data/dcs-form2-filled.json\`), 136 rows, all ticked OK. Matched to the drawings by station + MNO (the number of the S1-MDLnnn address). Used by the simulator: PID Kp = 100 / P, Ti = I, Td = D, output limits ML ~ MH, SV range SL ~ SH; MAN value range SL ~ SH cut by ML / MH (% of the range). Recorded, not used yet: dMVH, DTI, TF, GAP, BND, CUT, DH, PHONDT, PLONDT, MAN DH / DT / TF / FSC / CUT, SUMA RSTS / K / DT / TF / CUT.
+
+### 5.1 PID / PIDV (${D.FACE.PID.length})
+| Stn | MNO | Sheet | Tag | Unit | SH | SL | PH | PL | MH | ML | dMVH | P % | I s | D s | DTI | TF | GAP | BND | CUT | DH | PHONDT | PLONDT |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+${D.FACE.PID.map(e=>`| ${e.stn} | ${e.mno} | ${e.sheet} | ${e.tag} | ${e.unit} | ${e.SH} | ${e.SL} | ${e.PH} | ${e.PL} | ${e.MH} | ${e.ML} | ${e.dMVH} | **${e.P}** | **${e.I}** | **${e.D}** | ${e.DTI} | ${e.TF} | ${e.GAP} | ${e.BND} | ${e.CUT} | ${e.DH} | ${e.PHONDT} | ${e.PLONDT} |`).join('\n')}
+
+### 5.2 MAN (${D.FACE.MAN.length})
+| Stn | MNO | Sheet | Tag | Unit | SH | SL | PH | PL | MH | ML | DH | DT | TF | FSC | CUT | PHONDT | PLONDT |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+${D.FACE.MAN.map(e=>`| ${e.stn} | ${e.mno} | ${e.sheet} | ${e.tag} | ${e.unit} | ${e.SH} | ${e.SL} | ${e.PH} | ${e.PL} | ${e.MH} | ${e.ML} | ${e.DH} | ${e.DT} | ${e.TF} | ${e.FSC} | ${e.CUT} | ${e.PHONDT} | ${e.PLONDT} |`).join('\n')}
+
+### 5.3 SUMA (${D.FACE.SUMA.length})
+| Stn | MNO | Sheet | Tag | Unit | PH | PL | RSTS | K | DT | TF | CUT | PHONDT | PLONDT | SUM unit |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+${D.FACE.SUMA.map(e=>`| ${e.stn} | ${e.mno} | ${e.sheet} | ${e.tag} | ${e.unit} | ${e.PH} | ${e.PL} | ${e.RSTS} | ${e.K} | ${e.DT} | ${e.TF} | ${e.CUT} | ${e.PHONDT} | ${e.PLONDT} | ${e['SUM unit']} |`).join('\n')}
+
 `;
 fs.writeFileSync(path.join(__dirname,'..','docs','ASSUMED-VALUES.md'),o);console.log('docs/ASSUMED-VALUES.md written',o.length,'bytes;',D.TP.length,'TP,',D.RATE.length,'RATE,',D.ALM.length,'ALM')

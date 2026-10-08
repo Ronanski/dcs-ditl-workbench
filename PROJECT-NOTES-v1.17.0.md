@@ -4,6 +4,15 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
+## v1.17.0 (logic-sim-v1.17.0.html) - faceplate values, COS manual control, process model, Trend v2 (revision 1)
+- USER "go" (2026-10-08) after the F1-F9 discussion. AN_PV stays 16. DITL page identical. Report: docs/REPORT-v1.17.0.md.
+- FACE (tools/patch-face.js, tools/data/dcs-form2-filled.json): the user's filled Excel (PID 68, MAN 58, SUMA 10) applied by station + MNO: Kp = 100 / P, Ti, Td, limits, ranges, units; the other parameters are stored. FILE data. DH and CUT were swapped in the PID sheet: corrected (no effect on the sim).
+- COS (tools/patch-cos.js): 173 / 173 resolved (T 98, T digital 26, W 42, L 7); manual control with range / unit from the diagram, "target -> now", disabled when not energized (except SV / PV / no switching logic); SV of PID always usable and named.
+- PROCESS MODEL (tools/patch-proc.js): simulation only. PV of a PID loop = first-order lag + dead time of the controller output, gain K, T, L, disturbance; the AI sliders that feed that PV are disabled while it is ON (default ON in the app); SV is what the user controls. 61 of 62 loops reach SV (LICCD1110B level is slow), 6 PID have no field PV.
+- TREND v2 (tools/patch-trend.js): panes Process (SV, PV) and Controller (MV, P, I, D, error), description / unit of every series, axes, sampling 0.25 s, hover values, XY curve for FX; floating zoom window (transparency, drag, resize, wheel zoom) with a control strip (address / tag / description of what can be changed).
+- DITL signals list shows only the open sheet (toggle All sheets). Panel width grows to its content (min 300 px). RATE defaults: screw coolers 0.05 rpm/s (range 0-5 rpm).
+- Not done yet (next): HMI v2 (address picker, drawing tools, full Auto page, lock, control from HMI), dMVH / TF / FSC semantics, ALM limits and SEL defaults (assumed), CCS scenario test.
+
 ## v1.16.0 (logic-sim-v1.16.0.html) - HMI view, signals through many sheets, DITL signals, Trend (revision 1)
 - USER "go" (2026-10-08); the three HMI display modes were approved by the user. AN_PV stays 16. DITL page identical. Report: docs/REPORT-v1.16.0.md. Progress 85.9 %.
 - HMI VIEW (tools/patch-hmi.js, tools/test-hmi.js): Tab / Float / Split, 12 widget types bound to addresses, pages, background picture, Auto page from a sheet, saved with the project (hmi); sheets used by widgets keep running. docs/HMI-VIEW.md, MANUAL 3.4d.

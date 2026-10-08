@@ -43,5 +43,5 @@ rep(String.raw`key=(s.net!=null?'n'+s.net:'b'+(s.blk&&s.blk.id))`,String.raw`key
 rep(String.raw`function selUpd_(d){selUpd0_(d);try{trList(d)}catch(e){}}`,String.raw`function selUpd_(d){selUpd0_(d);try{trList(d)}catch(e){}if(!AN.view&&AN.sel&&cs()&&cs().S){try{const sh=cs();d.append(h$('h4',{txt:'Signal path'}));trPathUi(d,sh);trExitsUi(d,sh);trMapUi(d,sh)}catch(e){}}try{trendUi(d)}catch(e){}}`);
 /* hooks */
 rep(String.raw`d.append(h$('h4',{txt:'Trace'}),h$('div',{cls:'r'},[lg]));`,String.raw`d.append(h$('h4',{txt:'Trace'}),h$('div',{cls:'r'},[lg]));try{trPathUi(d,sh);trExitsUi(d,sh);trMapUi(d,sh)}catch(e){}`);
-rep(String.raw`panelUpd,selBox,dsIdx,dsOpen,trSeries,trSample,trDraw,trZoom});`,String.raw`panelUpd,selBox,dsIdx,dsOpen,trSeries,trSample,trDraw,trZoom,trMap,trGoCrumb});`);
+rep(String.raw`panelUpd,selBox,dsIdx,dsOpen,trSeries,trSample,trDraw,trZoom,trModel});`,String.raw`panelUpd,selBox,dsIdx,dsOpen,trSeries,trSample,trDraw,trZoom,trModel,trMap,trGoCrumb});`);
 };

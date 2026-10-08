@@ -1,4 +1,4 @@
-# Logic Sim — User Manual (v1.16.0)
+# Logic Sim — User Manual (v1.17.0)
 
 Logic Sim is an offline simulator and viewer of the plant DCS logic drawings: the digital interlock pages (DITL) and the 54 analog control sheets (ABC). It runs from one file, with no network, no OPC and no connection to the plant. It is for study, training and checking logic. It is **not** connected to the real DCS and never writes to it.
 
@@ -107,6 +107,13 @@ Select ANY block or wire (in VIEW, RUN or Pause): the panel shows a **Trend**: a
 
 ### 3.4c DITL signals (button)
 The DITL page is not simulated with the ABC sheets and is not touched. The signals that the ABC sheets say come **FROM DITL pp-nn** are inputs of the ABC set: the button **DITL signals** lists them (sheet, DITL reference, wire name and description, live value) with a **one-click control** (switch 1 / 0, or a number for an analog input). It works in RUN and Pause, all linked sheets run together, and everything that the ABC logic computes stays under the control of the logic (it is not in the list). The signals that go **TO DITL pp-nn** are listed with their live value (read-only). Texts that cannot be tied to a wire are counted and named at the top of the list.
+
+### 3.4e Faceplate values, COS manual control, process model, Trend v2 (v1.17.0)
+- **Faceplate values**: the PID / MAN / SUMA values written from the DCS (Kp = 100 / P, Ti, Td, limits, ranges, unit) are applied automatically; the panel says "FILE" for them and "ASSUMED" for what is still a guess (docs/ASSUMED-VALUES.md).
+- **COS** (operator manual value / change-over): in the panel section "COS manual values and change-overs": slider + number, range and unit from the diagram, "target -> now"; greyed out when the COS is not energized by the switching logic (exception: a COS used as SV or PV).
+- **Process model** (simulation only): in the PID panel. PV follows the controller output (gain K, time constant T, dead time L, load disturbance). While it is ON the PV sliders are disabled: control the SV, the MV and PV move by themselves. Untick it to use the PV as a plain input again.
+- **Trend v2**: Process pane (SV, PV) and Controller pane (MV, P, I, D, error); click a name to hide it; Zoom opens a floating window (drag the bar, corner resize, transparency, wheel zoom) with a control strip to change Kp, Ti, Td, limits, SV and the process model without leaving the graph.
+- DITL signals: the list shows the open sheet; "All sheets" shows everything.
 
 ### 3.4d HMI view (graphics page connected to the addresses)
 **HMI** (toolbar) opens a graphics page whose buttons, lamps, numbers, sliders and faceplates are **connected to addresses**. It runs on the SAME engine as the diagrams: press an HMI button and the diagram reacts; the HMI shows the same values. Three display modes (buttons at the top right of the HMI):
