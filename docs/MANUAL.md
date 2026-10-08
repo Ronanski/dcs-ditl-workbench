@@ -1,4 +1,4 @@
-# Logic Sim — User Manual (v1.17.0)
+# Logic Sim — User Manual (v1.18.0)
 
 Logic Sim is an offline simulator and viewer of the plant DCS logic drawings: the digital interlock pages (DITL) and the 54 analog control sheets (ABC). It runs from one file, with no network, no OPC and no connection to the plant. It is for study, training and checking logic. It is **not** connected to the real DCS and never writes to it.
 
