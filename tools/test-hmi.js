@@ -4,7 +4,7 @@ const {chromium}=require('/opt/node-tools/node_modules/playwright');const path=r
 await p.goto('file://'+path.resolve(process.argv[2]));await p.waitForTimeout(2500);await p.click('text=Analog · ABC >> nth=0');await p.waitForTimeout(3500);
 const E=(f,a)=>p.evaluate(f,a);
 /* 1. open, modes */
-await p.click('button:has-text("HMI")');await p.waitForTimeout(500);
+await p.evaluate(()=>AN.hmiOpen());/* the HMI button is hidden since v1.20.0 (the Plant window replaced it); the code is the library of the window */await p.waitForTimeout(500);
 const geo=()=>E(()=>{const r=id=>{const e=document.getElementById(id);if(!e)return null;const b=e.getBoundingClientRect();return{w:Math.round(b.width),h:Math.round(b.height),x:Math.round(b.x),y:Math.round(b.y),disp:getComputedStyle(e).display,pos:getComputedStyle(e).position}};return{hmi:r('hmi'),cv:r('cv'),mode:AN.hmi.mode}});
 let g=await geo();ck('HMI opens as its own view (Tab): diagram area hidden',g.mode==='tab'&&g.hmi.w>400&&g.cv.disp==='none',JSON.stringify(g));
 await E(()=>AN.hmiSetMode('float'));await p.waitForTimeout(300);g=await geo();ck('Float: window over the diagram, diagram still visible',g.hmi.pos==='fixed'&&g.cv.disp!=='none'&&g.cv.w>300&&g.hmi.w>=320,JSON.stringify(g));

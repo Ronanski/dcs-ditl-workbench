@@ -37,7 +37,7 @@ function anProcStep(S,dt){const rt=S.rt,v=rt.v,F=rt.force,pm=rt.pm||(rt.pm={}),p
   if(!pr.on){if(q)delete pm[b.id];if(pf[pr.pv]){delete F[pr.pv];delete pf[pr.pv]}continue}
   const st=rt.st[b.id]||{},u=st.out==null?0:st.out,span=b.p.span>0?b.p.span:100,lo=b.p.rlo!=null?b.p.rlo:0,um=((b.p.lo==null?0:b.p.lo)+(b.p.hi==null?100:b.p.hi))/2;
   /* plant: steady state PV = bottom of the range + span * (0.5 + sign * K * (command - middle) / 100) + disturbance; dead time, then first order; it cannot leave the range of the instrument */
-  const ss=c=>lo+span*(.5+pr.sg*pr.K*(c-um)/100)+(pr.dist||0)/100*span;
+  const ss=c=>lo+span*(.5+pr.sg*pr.K*(c-um)/100)+(pr.dist||0)/100*span+(pr.op||0);
   if(!q)q=pm[b.id]={y:ss(u),h:[],u:null};
   if(dt>0){q.h.push([rt.t,u]);while(q.h.length>2&&q.h[1][0]<=rt.t-pr.L)q.h.shift();const tgt=ss(q.h[0][1]);q.y+=(1-Math.exp(-dt/Math.max(pr.T,.05)))*(tgt-q.y);q.y=Math.max(lo,Math.min(lo+span,q.y))}
   if(dt<=0&&q.u!=null)continue;

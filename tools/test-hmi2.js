@@ -11,7 +11,7 @@ const cov=await E(async()=>{const w=ms=>new Promise(r=>setTimeout(r,ms));await A
   const wd=pg.widgets.filter(x=>x.type==='slider'||x.type==='button');
   for(const n of ext){const q=wd.find(x=>{const k=AN.hmiPick(x);return k&&k.sh===sh&&k.n===n});if(!q)out.missing.push(sh.name+'#'+n)}
   for(const x of pg.widgets){if(x.type==='label'||x.type==='face')continue;if(!AN.hmiPick(x))out.unbound.push(sh.name+':'+x.label)}
-  for(const x of wd.slice(0,6)){const st=AN.hmiState(x);if(!st||st.how!=='input'){out.badWrite.push(sh.name+':'+x.label+' state='+(st&&st.how));continue}const S2=st.S,rd=()=>st.src?S2.rt.st[st.src.id].val:S2.rt.ext[st.n];if(x.type==='slider'){if(!(x.max>x.min))out.noRange++;const tg=x.min+(x.max-x.min)*.5;AN.hmiWrite(x,tg);if(Math.abs(rd()-tg)>1e-6)out.badWrite.push(sh.name+':'+x.label)}else{const a=rd()>.5?1:0;AN.hmiWrite(x,a?0:1);if((rd()>.5?1:0)===a)out.badWrite.push(sh.name+':'+x.label)}
+  for(const x of wd.slice(0,6)){AN.stepSet(sh,.5);const st=AN.hmiState(x);if(st&&st.S.xlk&&st.S.xlk[st.n]){out.linked++;continue}/* a input that the link of a circle feeds is read only by design (the source sheet owns the value) */if(!st||st.how!=='input'){out.badWrite.push(sh.name+':'+x.label+' state='+(st&&st.how));continue}const S2=st.S,rd=()=>st.src?S2.rt.st[st.src.id].val:S2.rt.ext[st.n];if(x.type==='slider'){if(!(x.max>x.min))out.noRange++;const tg=x.min+(x.max-x.min)*.5;AN.hmiWrite(x,tg);if(Math.abs(rd()-tg)>1e-6)out.badWrite.push(sh.name+':'+x.label)}else{const a=rd()>.5?1:0;AN.hmiWrite(x,a?0:1);if((rd()>.5?1:0)===a)out.badWrite.push(sh.name+':'+x.label)}
    if(S2.rt.force&&S2.rt.force[st.n]!==undefined)out.forced.push(sh.name+':'+x.label)}
   AN.hmi.pages.splice(AN.hmi.cur,1);AN.hmi.cur=0}
  return out});

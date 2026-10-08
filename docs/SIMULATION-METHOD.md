@@ -130,3 +130,10 @@ While a point is forced the controller keeps working (its output may wind up, al
 | ALM limits (104) and SEL defaults (26) | still ASSUMED |
 | HMI drawing tools beyond the existing widgets, symbol animation | not built |
 | exe / apk | not tested by the assistant |
+
+## 12. Direction of the controller (v1.20.0 WIP)
+- Rule now: **ACT:N = direct** (output up when the PV rises), **ACT:R = reverse** (output up when the PV falls). The drawn sign of the deviation block does not matter: the engine looks at which pin of the DEV block carries the PV (anPins) and uses e = +/- pvSg x input.
+- Plant model: direct loop -> the PV FALLS when the output rises (K < 0); reverse loop -> the PV rises (K > 0).
+- Why: the drawings pair the action text with the deviation block (ACT:R = "SV + / PV -", ACT:N = "PV + / SV -"). The old engine flipped the input once more for ACT:N (29 loops acted reverse). Evidence and test: FINDINGS H-37, tools/test-pidsign.js.
+- Operating point (plant window): the values of the DCS snapshot are the start values of the transmitters that nobody sets; a modelled loop gets an offset (`pr.op`) so that its PV sits at the snapshot value when the output is in the middle.
+

@@ -4,6 +4,9 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
+## v1.20.0 (logic-sim-v1.20.0.html) - Plant window (Reheater) + PID direction fix (revision 1)
+- USER: "Release the latest build go". Report: docs/REPORT-v1.20.0.md, docs/PLANT-WINDOW.md, FINDINGS H-37. New: Plant button (pop-out window), REHEATER system, HMI button hidden (code kept as library), 29 ACT:N loops now direct (tools/patch-pidsign.js, test-pidsign 65/65), operating point of the DCS snapshot. Next: direction audit of the 68 loops against the P&ID (K1AU3-A1-0-001), PAF / SAF + coal + total air, drum level + feedwater.
+
 ## v1.19.1 (logic-sim-v1.19.1.html) - values only beside the address (revision 1)
 - USER: "gusto ko na makita ang values na nilalaman ng mga addresses ... irelease mo ito". Report: docs/REPORT-v1.19.1.md. Toggle "Wire values". Next: Plant window (pop-out), starting with the REHEATER system from the DCS graphics (HP / LP bypass).
 
