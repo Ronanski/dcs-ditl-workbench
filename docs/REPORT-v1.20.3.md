@@ -1,0 +1,7 @@
+# REPORT v1.20.3 - continuity of the analog signals
+User: "Icheck mo lahat ang ABC sheets kung may analog signals tag / address na di nakakatanggap ng value ... dapat sure ang continuity ... apply the fix, release".
+Audit (tools/audit-continuity.js, 1410 analog addresses, 51 sheets): v1.20.2 = 50 without a source, 97 giving nothing; v1.20.3 = **0 without a source, 0 unexplained** (18 explained: totalizer displays, SET instructions, output to TCS). Details and fixes: docs/CONTINUITY.md, FINDINGS H-40.
+Fixes: long-name link circles (ABC-008 PAF-MV / SAF-MV) are circles; select-circuit boxes up to 64 wide are blocks (ABC-001C, 008, 031); a circle tag names its signal wire; AO / SI / AI addresses at several places of a sheet are one signal; AI triangles of positioners and instrument tags resolve; test-links-all FAIL was a test artefact (now 0).
+Effect: three loops now have a transmitter chain in the plant model (PICFG108, FICFW1007, LICCD1104).
+Regression on this build: blocks 526, math 998, legend 0, PID 68, loops 68, pidsign 64 / 64 (one loop lost its field PV), matrix 2973, proc 54, force-all, lock-all, fixes, own, ui-real, trend, hmi, hmi2, path, trace-x, links-all 0 FAIL, reach 0 / 0, plant, badges, addr, continuity, ditl-link, circles, DITL guard IDENTICAL.
+NOT done: the 61 free-end wires of docs/WIRING-SUSPECTS.md B were sampled, not all checked by eye; digital addresses not part of this audit; exe / apk not tried on a device.

@@ -27,13 +27,13 @@ How to read: the **PV pin** is the input of the deviation (DEV) block that the d
 | ABC-005 | AICFG10571 | direct | AI0466 (drawing text) | #2 | transmitter | AI0466 | 1.60 | 150 | 3.2 | 0.37 | 150 | 6.4 | analysis |
 | ABC-007 | FICFA1081 | reverse | #120 (drawing text) | #121 | input |  | 0.68 | 61.2 | 0 | 0.88 | 61.2 | 1 | flow |
 | ABC-007 | FICFA1071 | reverse | #72 (drawing text) | #104 | input |  | 0.55 | 63.4 | 0 | 1.09 | 63.4 | 1 | flow |
-| ABC-008 | PICFG108 | direct | SI0180 (drawing text) | #100 | input |  | 0.61 | 65.6 | 0 | 0.98 | 65.6 | 5.5 | pressure |
+| ABC-008 | PICFG108 | direct | SI0180 (drawing text) | #100 | transmitter | AI0132, AI0260, AI0388 | 0.61 | 65.6 | 0 | 0.98 | 65.6 | 5.5 | pressure |
 | ABC-008 | PICFG108A | direct | SI0180 (drawing text) | #91 | shared of PICFG108 |  | 0.48 | 76 | 0 |  |  |  | pressure |
 | ABC-009A | DPICFG108 | direct | #38 (drawing text) | #221 | transmitter | AI0134, AI0262 | 1.00 | 25 | 0 | 0.6 | 25 | 2.1 | pressure |
 | ABC-009A | PIC-BASC | reverse | SI0198 (drawing text) | #216 | none |  | 1.00 | 50 | 0 |  |  |  | pressure |
 | ABC-010 | LICBR1001 | reverse | SI0256 (drawing text) | #48 | transmitter | AI0130, AI0386 | 1.05 | 420 | 0 | 0.57 | 420 | 15 | level |
 | ABC-010 | LICBR1001A | reverse | SI0256 (drawing text) | #47 | shared of LICBR1001 |  | 0.83 | 166 | 0 |  |  |  | level |
-| ABC-010 | FICFW1007 | reverse | SI0269 (drawing text) | #51 | input |  | 0.50 | 75 | 0 | 1.2 | 75 | 1 | flow |
+| ABC-010 | FICFW1007 | reverse | SI0269 (drawing text) | #51 | transmitter | AI0592, AI0256, AI0384 | 0.50 | 75 | 0 | 1.2 | 75 | 1 | flow |
 | ABC-010 | LICBR1001B | reverse | SI0256 (drawing text) | #23 | shared of LICBR1001 |  | 1.35 | 539.8 | 5 |  |  |  | level |
 | ABC-011 | TICBR1130 | direct | SI0271 (drawing text) | #1 | transmitter | AI0609, AI0641 | 1.20 | 60 | 0 | 0.5 | 60 | 5 | temperature |
 | ABC-011 | TICBR1140 | reverse | SI0270 (drawing text) | #27 | transmitter | AI0610, AI0642 | 0.60 | 300 | 0 | 1 | 300 | 15 | temperature |
@@ -41,7 +41,7 @@ How to read: the **PV pin** is the input of the deviation (DEV) block that the d
 | ABC-012 | TICMS1004 | reverse | SI0280 (drawing text) | #27 | transmitter | AI0612, AI0644 | 1.60 | 1371.4 | 0 | 0.37 | 600 | 15 | temperature |
 | ABC-013 | PICMS1002 | direct | #49 (drawing text) | #22 | input |  | 0.91 | 15 | 0 | 0.66 | 15 | 1.3 | pressure |
 | ABC-014 | FICFA1055A | reverse | #61 (drawing text) | #68 | input |  | 1.53 | 1500 | 0 | 0.39 | 600 | 1 | flow |
-| ABC-014 | FICFA1055B | reverse | #28 (drawing text) | #2 | input |  | 1.53 | 1500 | 0 | 0.39 | 600 | 1 | flow |
+| ABC-014 | FICFA1055B | reverse | #28 (drawing text) | #2 | none |  | 1.53 | 1500 | 0 |  |  |  | flow |
 | ABC-017 | PICSB1052 | reverse | AI0533 (drawing text) | #21 | transmitter | AI0533 | 6.02 | 72 | 0 | 0.2 | 72 | 6 | pressure |
 | ABC-019 | TICHR1002 | direct | SI0100 (drawing text) | #55 | transmitter | AI0867, AI0899 | 5.00 | 200 | 5 | 0.2 | 200 | 10 | temperature |
 | ABC-020 | TICHR1002A | reverse | #191 (drawing text) | #189 | input |  | 4.00 | 184.2 | 0 | 0.2 | 184.2 | 15 | temperature |
@@ -51,7 +51,7 @@ How to read: the **PV pin** is the input of the deviation (DEV) block that the d
 | ABC-030 | PICAS1004 | reverse | SI0270 (drawing text) | #68 | shared of PICAS1005 |  | 0.32 | 45 | 0 |  |  |  | pressure |
 | ABC-031 | LICCD1110A | reverse | AI0640 (drawing text) | #75 | transmitter | AI0640 | 1.40 | 420.2 | 0 | 0.43 | 420.2 | 15 | level |
 | ABC-031 | LICCD1110B | direct | AI0640 (drawing text) | #62 | shared of LICCD1110A |  | 1.40 | 420.2 | 0 |  |  |  | level |
-| ABC-031 | LICCD1104 | reverse | #23 (drawing text) | #39 | input |  | 1.67 | 165 | 0 | 0.36 | 165 | 13.8 | level |
+| ABC-031 | LICCD1104 | reverse | #23 (drawing text) | #39 | transmitter | AI0672, AI0848, AI0928 | 1.67 | 165 | 0 | 0.36 | 165 | 13.8 | level |
 | ABC-032 | FICCD1121 | direct | FIQCD1121.PV (drawing text) | #0 | transmitter | AI0436 | 0.33 | 30 | 0 | 1.8 | 30 | 1 | flow |
 | ABC-032 | FICCD1120 | reverse | FIQCD1120.PV (drawing text) | #41 | transmitter | AI0437 | 1.25 | 75 | 0 | 0.48 | 75 | 1 | flow |
 | ABC-033 | TICAS1001 | direct | AI0641 (drawing text) | #23 | transmitter | AI0641 | 2.00 | 180 | 0 | 0.3 | 180 | 15 | temperature |
@@ -78,6 +78,6 @@ How to read: the **PV pin** is the input of the deviation (DEV) block that the d
 | ABC-002 | AICFG112 | reverse | SI0048 (drawing text) | #55 | transmitter | AI0273, AI0433 | 0.80 | 120 | 0 | 0.75 | 120 | 10 | analysis |
 | ABC-003A | FICFA1043A | reverse | FIFA1043A.PV (drawing text) | #162 | transmitter | AI0164 | 0.50 | 50 | 0 | 1.2 | 50 | 1 | flow |
 | ABC-003A | PICDO1043A | reverse | AI0293 (drawing text) | #115 | transmitter | AI0293 | 0.72 | 38.2 | 0 | 0.83 | 38.2 | 3.2 | pressure |
-**Count by mode:** transmitter 43 · input 11 · pin 1 · none 3 · shared 10.
+**Count by mode:** transmitter 46 · input 7 · pin 1 · none 4 · shared 10.
 
 | ABC-003A | FICDO1043A | reverse | SI0070 (drawing text) | #12 | transmitter | AI0515 | 0.80 | 165.8 | 0 | 0.75 | 165.8 | 1 | flow |
