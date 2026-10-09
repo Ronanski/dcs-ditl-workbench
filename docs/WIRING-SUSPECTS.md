@@ -2,27 +2,26 @@
 
 A wire that carries a value into a block but has no source in the logic is treated as an INPUT that the user must set. That is right for a tag, an address or a circle; it is wrong when the drawing really connects it to another wire or block output and the reader missed the connection (found so far: the SIG.AB branch of ABC-002, the arrow into a wire of ABC-003E ...). This list is what is left: compare with the drawings (coordinates are drawing units, as in the status line).
 
-## A. Wires that join only INPUT pins (no output on the wire) - 16
+## A. Wires that join only INPUT pins (no output on the wire) - 15
 | Sheet | Net | Kind | Consumers (block @ x,y) | Free ends | Nearest text |
 |---|---|---|---|---|---|
 | ABC-004A | net 49 | digital | consumers OR#92@750,503, NOT#113@712,599 | free ends 697,599 ; 706,599 ; 639,599 ; 744,576 | nearest text "CONTROL IN MANUAL" (3.9) |
 | ABC-005 | net 43 | analog | consumers DIV#18@717,633, DIV#21@433,478 | free ends 724,633 ; 803,633 ; 433,484 ; 783,633 | nearest text "COS" (3.3) |
 | ABC-006 | net 16 | digital | consumers AND#60@620,376, NOT#64@601,351 | free ends 597,351 ; 588,383 ; 618,383 ; 525,383 | nearest text "FA BLOWER A RUNNING" (2.3) |
-| ABC-008 | net 13 | digital | consumers NOT#76@142,373, TPS#81@133,286 | free ends 120,373 ; 133,286 ; 139,373 ; 62,373 | nearest text "ID FAN RUNNING" (2.7) |
+| ABC-008 | net 13 | digital | consumers NOT#77@142,373, TPS#82@133,286 | free ends 120,373 ; 133,286 ; 139,373 ; 62,373 | nearest text "ID FAN RUNNING" (2.7) |
 | ABC-009A | net 155 | digital | consumers AND#107@199,459, NOT#138@181,479 | free ends 171,465 ; 179,479 ; 196,465 ; 111,465 | nearest text "COAL FEEDER-C RUNNING" (1.4) |
 | ABC-009A | net 159 | digital | consumers AND#114@199,534, NOT#136@181,486 | free ends 196,528 ; 107,528 ; 171,528 ; 179,486 | nearest text "COAL FEEDER-A RUNNING" (0.9) |
 | ABC-009A | net 167 | digital | consumers AMT#3@292,447, OR#110@242,467 | free ends 224,437 ; 238,437 ; 116,437 ; 283,447 | nearest text "BOTTOM ASH SCREW COOLER CONTRO" (4.3) |
 | ABC-009A | net 168 | digital | consumers AND#106@199,508, NOT#137@181,493 | free ends 175,502 ; 179,493 ; 196,502 ; 107,502 | nearest text "COAL FEEDER-B RUNNING" (0.9) |
-| ABC-010 | net 76 | digital | consumers AMT#2@491,376, OR#115@438,358, NOT#125@466,393 | free ends 463,393 ; 420,362 ; 486,376 ; 420,376 ; 434,362 ; 369,362 | nearest text "FEED WATER CONTROL" (5.4) |
+| ABC-010 | net 76 | digital | consumers AMT#2@491,376, OR#116@438,358, NOT#126@466,393 | free ends 463,393 ; 420,362 ; 486,376 ; 420,376 ; 434,362 ; 369,362 | nearest text "FEED WATER CONTROL" (5.4) |
 | ABC-011 | net 27 | analog | consumers PVSV#34@273,540, DEV#52@329,522 | free ends 323,522 ; 308,522 ; 273,535 ; 313,522 | nearest text "SV" (3.9) |
 | ABC-012 | net 27 | analog | consumers PVSV#34@302,545, DEV#56@358,527 | free ends 352,527 ; 338,527 ; 302,540 ; 343,527 | nearest text "SV" (3.9) |
 | ABC-019 | net 5 | digital | consumers AND#51@286,147, NOT#53@283,179 | free ends 268,179 ; 284,158 ; 191,179 ; 281,179 | nearest text "ICV TO CV TRANSFER COMPLETE" (3.2) |
 | ABC-020 | net 37 | analog | consumers DEV#49@644,539, SW#51@676,538 | free ends 671,538 ; 649,538 | nearest text "T" (3.4) |
-| ABC-031 | net 23 | analog | consumers DEV#35@684,370, LC#39@708,411, LC#41@708,436, HC#43@708,461, HC#44@708,486 | free ends 703,411 ; 684,411 ; 703,437 ; 684,437 ; 684,377 ; 684,511 ; 703,486 ; 684,486 ; 703,461 ; 684,461 | nearest text "PV" (4.5) |
 | ABC-001A | net 10 | digital | consumers AMT#1@746,410, AMT#2@745,467, AMT#5@746,325 | free ends 631,409 ; 733,409 ; 739,467 ; 733,324 | nearest text "IN MANUAL" (3.0) |
-| ABC-001C | net 76 | digital | consumers AMT#13@453,329, AMT#24@453,368, NOT#86@427,386 | free ends 425,386 ; 443,368 ; 413,368 ; 443,329 ; 413,340 ; 339,340 | nearest text "BOILER MASTER IN MANUAL" (5.9) |
+| ABC-001C | net 76 | digital | consumers AMT#13@453,329, AMT#25@453,368, NOT#87@427,386 | free ends 425,386 ; 443,368 ; 413,368 ; 443,329 ; 413,340 ; 339,340 | nearest text "BOILER MASTER IN MANUAL" (5.9) |
 
-## B. Analog wires with a free end that has NO text, tag or circle within 2.5 units - 61
+## B. Analog wires with a free end that has NO text, tag or circle within 2.5 units - 62
 | Sheet | Net | Kind | Consumers (block @ x,y) | Free ends | Nearest text |
 |---|---|---|---|---|---|
 | ABC-003B | net 12 | analog | consumers AMT#35@317,406 | free ends 317,412 ; 317,418 | nearest text "COS" (5.8) |
@@ -51,13 +50,13 @@ A wire that carries a value into a block but has no source in the logic is treat
 | ABC-005 | net 52 | analog | consumers HS#29@721,309 | free ends 727,309 ; 806,309 | nearest text "COS" (3.3) |
 | ABC-007 | net 25 | analog | consumers SUB#25@525,371 | free ends 525,364 ; 525,346 | nearest text "-" (5.9) |
 | ABC-007 | net 49 | analog | consumers SUB#22@80,371 | free ends 80,364 ; 80,346 | nearest text "-" (5.9) |
-| ABC-008 | net 3 | analog | consumers SUB#60@747,535 | free ends 742,535 ; 729,535 | nearest text "2" (5.0) |
-| ABC-008 | net 91 | analog | consumers DEV#55@659,476 | free ends 647,476 ; 636,476 | nearest text "-" (3.6) |
-| ABC-008 | net 100 | analog | consumers DEV#54@269,476 | free ends 256,476 ; 246,476 | nearest text "-" (3.6) |
+| ABC-008 | net 3 | analog | consumers SUB#61@747,535 | free ends 742,535 ; 729,535 | nearest text "2" (5.0) |
+| ABC-008 | net 91 | analog | consumers DEV#56@659,476 | free ends 647,476 ; 636,476 | nearest text "-" (3.6) |
+| ABC-008 | net 100 | analog | consumers DEV#55@269,476 | free ends 256,476 ; 246,476 | nearest text "-" (3.6) |
 | ABC-009A | net 221 | analog | consumers DEV#88@292,568 | free ends 285,568 ; 267,568 | nearest text "-" (4.1) |
-| ABC-010 | net 23 | analog | consumers DEV#78@782,319 | free ends 776,319 ; 761,319 | nearest text "SV" (4.3) |
-| ABC-010 | net 47 | analog | consumers DEV#80@634,398 | free ends 629,398 ; 614,398 | nearest text "SV" (4.3) |
-| ABC-010 | net 48 | analog | consumers DEV#82@491,450 | free ends 486,450 ; 471,450 | nearest text "SV" (4.3) |
+| ABC-010 | net 23 | analog | consumers DEV#79@782,319 | free ends 776,319 ; 761,319 | nearest text "SV" (4.3) |
+| ABC-010 | net 47 | analog | consumers DEV#81@634,398 | free ends 629,398 ; 614,398 | nearest text "SV" (4.3) |
+| ABC-010 | net 48 | analog | consumers DEV#83@491,450 | free ends 486,450 ; 471,450 | nearest text "SV" (4.3) |
 | ABC-013 | net 22 | analog | consumers DEV#18@388,533 | free ends 383,533 ; 357,533 | nearest text "-" (5.3) |
 | ABC-014 | net 2 | analog | consumers DEV#27@675,553 | free ends 662,553 ; 643,553 | nearest text "+" (3.5) |
 | ABC-014 | net 68 | analog | consumers DEV#26@308,553 | free ends 296,553 ; 276,553 | nearest text "+" (3.5) |
@@ -66,9 +65,9 @@ A wire that carries a value into a block but has no source in the logic is treat
 | ABC-029 | net 7 | analog | consumers DEV#25@762,563 | free ends 755,563 ; 730,563 | nearest text "-" (6.0) |
 | ABC-030 | net 13 | analog | consumers DEV#42@716,522 | free ends 710,522 ; 684,522 | nearest text "+" (6.1) |
 | ABC-030 | net 68 | analog | consumers DEV#43@339,522 | free ends 333,522 ; 307,522 | nearest text "+" (6.1) |
-| ABC-031 | net 39 | analog | consumers DEV#35@684,370 | free ends 678,370 ; 652,370 | nearest text "+" (6.0) |
-| ABC-031 | net 62 | analog | consumers DEV#46@236,522 | free ends 230,522 ; 204,522 | nearest text "-" (6.0) |
-| ABC-031 | net 75 | analog | consumers DEV#45@385,522 | free ends 378,522 ; 353,522 | nearest text "+" (6.0) |
+| ABC-031 | net 39 | analog | consumers DEV#36@684,370 | free ends 678,370 ; 652,370 | nearest text "+" (6.0) |
+| ABC-031 | net 62 | analog | consumers DEV#47@236,522 | free ends 230,522 ; 204,522 | nearest text "-" (6.0) |
+| ABC-031 | net 75 | analog | consumers DEV#46@385,522 | free ends 378,522 ; 353,522 | nearest text "+" (6.0) |
 | ABC-032 | net 41 | analog | consumers DEV#33@301,430 | free ends 296,430 ; 270,430 | nearest text "+" (5.3) |
 | ABC-033 | net 23 | analog | consumers DEV#13@496,522 | free ends 490,522 ; 464,522 | nearest text "-" (6.0) |
 | ABC-034 | net 12 | analog | consumers DEV#24@668,439 | free ends 662,439 ; 637,439 | nearest text "-" (5.3) |
@@ -79,8 +78,9 @@ A wire that carries a value into a block but has no source in the logic is treat
 | ABC-055 | net 49 | analog | consumers VLV#15@760,127 | free ends 760,142 ; 760,128 | nearest text "M" (7.5) |
 | ABC-055 | net 54 | analog | consumers DEV#13@760,624 | free ends 754,624 ; 728,624 | nearest text "+" (5.7) |
 | ABC-056 | net 7 | analog | consumers DEV#15@481,594 | free ends 475,594 ; 449,594 | nearest text "+" (6.1) |
-| ABC-001C | net 18 | analog | consumers MUL#56@249,558 | free ends 250,564 ; 250,576 | nearest text "X" (8.1) |
-| ABC-001C | net 74 | analog | consumers DEV#54@453,523 | free ends 446,523 ; 429,523 | nearest text "SV" (5.5) |
+| ABC-001C | net 74 | analog | consumers DEV#55@453,523 | free ends 446,523 ; 429,523 | nearest text "SV" (5.5) |
+| ABC-001C | net 87 | analog | consumers SEL#19@250,585 | free ends 242,595 ; 242,643 | nearest text "PRI /SEC /AVG" (11.7) |
+| ABC-001C | net 88 | analog | consumers SEL#19@250,585 | free ends 255,595 ; 255,643 | nearest text "S1-MDL193" (18.0) |
 | ABC-001D | net 59 | analog | consumers FX#16@481,431 | free ends 481,437 ; 481,488 | nearest text "F(X)" (6.0) |
 | ABC-003A | net 16 | analog | consumers AMT#48@317,406 | free ends 317,412 ; 317,418 | nearest text "COS" (5.8) |
 | ABC-003A | net 115 | analog | consumers DEV#82@183,600 | free ends 189,600 ; 214,600 | nearest text "COS" (3.1) |

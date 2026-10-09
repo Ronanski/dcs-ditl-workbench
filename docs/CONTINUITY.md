@@ -24,6 +24,9 @@ The audit lists what fails both and how each one is explained. It is part of the
 6. **Instrument tags** (AT-FG1122 = AI0273 by the IO list; PID / MAN tags: the real output, not a stub of the box border).
 7. test-links-all: the last FAIL (ABC-004A > ABC-005 TCF1) was a test artefact (the test forced a wire that the plant model holds); the test now releases the plant hold like the real force does. 182 of 182 links carry the signal.
 
+## Effect on the plant model (docs/PLANT-MODEL.md regenerated)
+With the circles and select boxes now real, three loops that had a dead input wire as PV got their transmitter chain: ABC-008 PICFG108, ABC-010 FICFW1007, ABC-031 LICCD1104 (mode input -> transmitter). ABC-014 FICFA1055B changed from input to none (its PV is calculated from other controllers). Count: transmitter 46, input 7, pin 1, none 4, shared 10.
+
 ## Explained "give nothing" (18, not errors)
 - 12 totalizer displays (SUMA outputs FIQDO1043A..D, FIQCD1120 / 1121, FIQMS1031): the drawing shows the total, no block uses it.
 - 2 "SET value => TAG.SV" instructions (ABC-052 SI0196, SI0254): the wire ends at the SET contact.

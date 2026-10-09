@@ -4,6 +4,9 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
+## v1.20.3 (logic-sim-v1.20.3.html) - continuity of analog signals (revision 1)
+- USER: "icheck lahat ang ABC sheets ... continuity ng signals ... apply fix, release". Report docs/REPORT-v1.20.3.md, docs/CONTINUITY.md, FINDINGS H-40, tools/audit-continuity.js (0 without source / 1410). Reader: link circles up to radius 12, select boxes up to 64 wide. Open: 61 free-end wires (WIRING-SUSPECTS B) not all checked by eye; live DITL <-> ABC exchange; P&ID direction audit; PAF / SAF + coal + air, drum level + feedwater systems.
+
 ## v1.20.2 (logic-sim-v1.20.2.html) - one value per analog address, DITL link (revision 1)
 - USER (checked ABC-002): "may address na walang value, may doble, may zero lang ... dapat alam natin lahat ng analog addresses ... Analog lang may LIVE value ... link sa DITL di gumagana ... release". Report docs/REPORT-v1.20.2.md, docs/ADDRESS-VALUES.md, FINDINGS H-38 / H-39. patch-addr.js: every analog address text (SI / AI, instrument tags, valve tags, AO) has ONE live value; the same SI / AI address on several wires of a sheet is one signal; digital addresses have no badge; the DITL reference opens the DITL page (list link, circle click). tools/audit-addr-values.js 1522 / 1529 (7 unresolved listed), tools/test-ditl-link.js 124 / 124 references. NOT done: live exchange DITL <-> ABC (FROM DITL stays one-click input), highlight of the item inside the DITL sheet. Next: P&ID direction audit, PAF / SAF + coal + air, drum level + feedwater.
 
