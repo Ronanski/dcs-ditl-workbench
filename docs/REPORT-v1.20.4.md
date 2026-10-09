@@ -1,0 +1,7 @@
+# REPORT v1.20.4 - fix of v1.20.3 after the second reviewer's audit of ABC-002
+The audit (docs/AUDIT-ABC002-2026-10-09.md) was right: v1.20.3 had two defects of its own.
+1. **False circle-tag links** (SI0061 bound to the SI0380 connector in ABC-003A, a gain-35 positive feedback, values up to 1e21; the same cause on ABC-004A SI0203, ABC-001C and ABC-002 SI0017). Fix: a tag belongs to its nearest circle; a circle with its own tag takes no other. tools/test-runaway.js (every input non-zero, 120 steps, 51 sheets): v1.20.3 = 5 runaways, v1.20.4 = 0. tools/audit-continuity.js now lists links that close an algebraic loop: v1.20.3 = 2 (ABC-003A 131 <- 130, ABC-009B 40 <- 22), v1.20.4 = 0.
+2. **196 values in another row** (an old badge up to 45 units away was adopted). Fix: same row only. tools/audit-addr-values.js value-in-another-row: 196 -> 0. The value stays beside the tag text.
+Kept from v1.20.3: continuity 1410 / 1410 analog addresses, 0 without a source, 0 unexplained.
+Regression on this build: blocks 526, math 998, legend 0, PID 68, loops 68, pidsign 64 / 64, matrix 2973, proc 54, force-all, lock-all, fixes, own, ui-real, trend, hmi, hmi2, path, trace-x, links-all 0 FAIL, reach 0 / 0, plant, badges, addr, continuity, runaway 0, ditl-link, circles, DITL guard IDENTICAL.
+NOT done: visual comparison of every address with the drawing; the 62 free-end wires of WIRING-SUSPECTS B; digital addresses; exe / apk on a device.
