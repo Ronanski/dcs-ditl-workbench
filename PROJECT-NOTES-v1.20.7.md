@@ -4,6 +4,12 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
+## v1.20.7 (logic-sim-v1.20.7.html) - plant model OFF, flow audit (revision 1)
+- USER (screenshot ABC-002 v1.20.5: SI0012 1.00 vs SI0061 61.25): "idisable ang plant model, lagyan ng on/off button; icheck ang buong logic flow per sheet; walang hulaan; release". Button Plant model (default OFF), tools/patch-plantoff.js, tools/audit-flow.js, tools/test-plantmodel.js, docs/REPORT-v1.20.7.md. SI0012 = 61.25 (fixed by the v1.20.6 address table).
+
+## v1.20.6 (logic-sim-v1.20.6.html) - one address table (revision 1)
+- USER: "mali ang method ... hindi dapat kung sino ang malapit ... ilabas mo ang 1.20.6". tools/addr-table-src.js (anAddr), patch-addr.js, docs/ADDRESS-METHOD.md, ADDRESS-TABLE.md, ADDRESS-REVIEW.md, REPORT-v1.20.6.md, FINDINGS H-42. New tools: audit-addr-table, audit-addr-geometry, shot-batch. Full regression run; DITL IDENTICAL. Open: circle `tags` of the link matcher (audit-links 43), review list, exe / apk.
+
 ## v1.20.5 BETA (logic-sim-v1.20.5.html) - address values only (revision 1)
 - USER: "non-sense na may wire values pa; ang dapat makita lang ay ang values na address ... i-beta version nalang, wag na regression". BETA: the "Wire values" button and the bare-wire numbers are removed; only the value beside an address text remains. Checked ONLY with tools/audit-addr-values.js (1496 of 1501 texts one value, 0 in another row), tools/test-badges.js (updated) and the DITL guard (IDENTICAL). The full regression was NOT run. The deeper redesign (one address -> net table used by engine and display) is in docs/HANDOVER-CHATGPT-ADDRESS-VALUES.md.
 
