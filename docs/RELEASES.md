@@ -4,6 +4,7 @@ Rule: every release gets a row here; the report of the release is `docs/REPORT-v
 
 | Version | Revision | Date | Build | Report | Summary |
 |---|---|---|---|---|---|
+| v1.20.6 | 1 | 2026-10-09 | `logic-sim-v1.20.6.html` (branch ccr-1eda2797-2x3xm4; exe / apk not built) | docs/REPORT-v1.20.6.md, docs/ADDRESS-METHOD.md | one address table for engine and display; no nearest-wire ties; untied texts show no value; full regression run |
 | v1.20.5 BETA | 1 | 2026-10-09 | `logic-sim-v1.20.5.html` (+ exe, apk, GitHub Release v1.20.5) | docs/REPORT-v1.20.5.md | BETA, full regression NOT run: no Wire values button, no bare-wire numbers, only the value beside the address |
 | v1.20.4 | 1 | 2026-10-09 | `logic-sim-v1.20.4.html` (+ exe, apk, GitHub Release v1.20.4) | docs/REPORT-v1.20.4.md, docs/AUDIT-ABC002-2026-10-09.md | fix of my v1.20.3: false circle-tag links (SI0061 <-> SI0380 runaway on 4 sheets) and 196 values in another row; new test-runaway |
 | v1.20.3 | 1 | 2026-10-09 | `logic-sim-v1.20.3.html` (+ exe, apk, GitHub Release v1.20.3) | docs/REPORT-v1.20.3.md, docs/CONTINUITY.md | continuity audit of all analog addresses (0 without source); long-name link circles and wide select boxes now read; circle tags name the signal wire; AO / SI / AI addresses merged |
