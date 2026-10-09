@@ -12,7 +12,7 @@ const res=await p.evaluate(()=>{const seen=new Set(),all=[];for(const sh of AN.s
    const tn=l.toNets.find(n=>(TS.cns[n]||[]).length&&(TS.ext.includes(n)||(TS.xlk&&TS.xlk[n])));if(tn===undefined)continue;
    const dg=TS.nets[tn].dig,fn=l.fromNets.find(n=>(FS.drv[n]||[]).length&&FS.nets[n].dig===dg)??l.fromNets.find(n=>FS.ext.includes(n)&&FS.nets[n].dig===dg);if(fn===undefined){why.push(l.fromNets.some(n=>(FS.drv[n]||[]).length||FS.ext.includes(n))?'sending wire is '+(dg?'analog':'digital')+' but the receiving wire is '+(dg?'digital':'analog'):'no sending wire that is driven or a user input');continue}
    tried=true;const dig=FS.nets[fn].dig;let good=true;const rs=[];
-   for(const val of dig?[1,0,1]:[37.5,12.5]){FS.rt.force[fn]=val;AN.go(AN.sheets.indexOf(l.from));for(let i=0;i<8;i++)AN.settle();AN.go(AN.sheets.indexOf(l.to));for(let i=0;i<12;i++)AN.settle();const got=TS.rt.v[tn];rs.push(val+'->'+(+got).toFixed(2));if(Math.abs(got-val)>1e-3)good=false}
+   for(const val of dig?[1,0,1]:[37.5,12.5]){if(FS.rt.pf)delete FS.rt.pf[fn];/* a user force (setForce) releases the plant hold of the same wire */FS.rt.force[fn]=val;AN.go(AN.sheets.indexOf(l.from));for(let i=0;i<8;i++)AN.settle();AN.go(AN.sheets.indexOf(l.to));for(let i=0;i<12;i++)AN.settle();const got=TS.rt.v[tn];rs.push(val+'->'+(+got).toFixed(2));if(Math.abs(got-val)>1e-3)good=false}
    delete FS.rt.force[fn];if(good){carried=true;break}else why.push('['+rs.join(', ')+'] net'+fn+' -> net'+tn)}
   if(carried)out.carry++;else if(tried)out.fail.push(k+' '+why.join(' ; '));else out.stub.push(k+' '+(why.join(' ; ')||'no receiving wire with consumers on the target sheet'))}
  return out});
