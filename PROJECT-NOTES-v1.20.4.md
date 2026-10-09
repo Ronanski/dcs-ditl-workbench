@@ -4,6 +4,9 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
+## v1.20.4 (logic-sim-v1.20.4.html) - fix of v1.20.3 (revision 1)
+- USER sent a second reviewer's audit of ABC-002. Confirmed: my v1.20.3 made false circle-tag links (SI0061 / SI0380 runaway on 4 sheets) and 196 values in another row. Fixed; tools/test-runaway.js, audit-continuity loop check, audit-addr-values row check. docs/REPORT-v1.20.4.md, docs/AUDIT-ABC002-2026-10-09.md, FINDINGS H-41, DESIGN rule 20.
+
 ## v1.20.3 (logic-sim-v1.20.3.html) - continuity of analog signals (revision 1)
 - USER: "icheck lahat ang ABC sheets ... continuity ng signals ... apply fix, release". Report docs/REPORT-v1.20.3.md, docs/CONTINUITY.md, FINDINGS H-40, tools/audit-continuity.js (0 without source / 1410). Reader: link circles up to radius 12, select boxes up to 64 wide. Open: 61 free-end wires (WIRING-SUSPECTS B) not all checked by eye; live DITL <-> ABC exchange; P&ID direction audit; PAF / SAF + coal + air, drum level + feedwater systems.
 
