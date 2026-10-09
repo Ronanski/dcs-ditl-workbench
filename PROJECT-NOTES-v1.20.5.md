@@ -4,6 +4,9 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
+## v1.20.5 BETA (logic-sim-v1.20.5.html) - address values only (revision 1)
+- USER: "non-sense na may wire values pa; ang dapat makita lang ay ang values na address ... i-beta version nalang, wag na regression". BETA: the "Wire values" button and the bare-wire numbers are removed; only the value beside an address text remains. Checked ONLY with tools/audit-addr-values.js (1496 of 1501 texts one value, 0 in another row), tools/test-badges.js (updated) and the DITL guard (IDENTICAL). The full regression was NOT run. The deeper redesign (one address -> net table used by engine and display) is in docs/HANDOVER-CHATGPT-ADDRESS-VALUES.md.
+
 ## v1.20.4 (logic-sim-v1.20.4.html) - fix of v1.20.3 (revision 1)
 - USER sent a second reviewer's audit of ABC-002. Confirmed: my v1.20.3 made false circle-tag links (SI0061 / SI0380 runaway on 4 sheets) and 196 values in another row. Fixed; tools/test-runaway.js, audit-continuity loop check, audit-addr-values row check. docs/REPORT-v1.20.4.md, docs/AUDIT-ABC002-2026-10-09.md, FINDINGS H-41, DESIGN rule 20.
 

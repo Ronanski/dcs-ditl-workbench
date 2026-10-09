@@ -54,5 +54,7 @@ rep(String.raw` for(const c of R.ci){if(c.r<2.2||c.r>8.3)continue;`,String.raw` 
 rep(String.raw` for(const sh of S.shp){const t=txIn(sh),sg=sigOf(sh);if(sh.w>46||sh.h>46)continue;let k=gk(sh,t,sg);`,String.raw` for(const sh of S.shp){const t=txIn(sh),sg=sigOf(sh);if(sh.h>46||(sh.w>46&&!(sh.w<=64&&t.some(q=>/SELECT\s*CIRCUIT|AVERAGE/i.test(q.t)))))continue;let k=gk(sh,t,sg);`);
 rep(String.raw`plOpen,plClose,plAIs,plRes,plVal});`,String.raw`plOpen,plClose,plAIs,plRes,plVal,dsGoRef,connClick});`);
 rep(String.raw`(S.nets[b.n].dig?(v[b.n]>.5?'1':'0'):fmt(v[b.n]))`,String.raw`(b.ai!=null&&S.rt.st[b.ai]?fmt(S.rt.st[b.ai].act):S.nets[b.n].dig?(v[b.n]>.5?'1':'0'):fmt(v[b.n]))`);
-
+/* BETA v1.20.5 (user: "non-sense na may wire values pa; ang dapat makita lang ay ang values na address"): the toolbar button "Wire values" is gone and the bare-wire numbers are never shown; only the value beside an address text is shown. */
+rep(String.raw`bFit,bVal,bWv,sLv,`,String.raw`bFit,bVal,sLv,`);
+rep(String.raw`AN.wireVals?'':'none'`,String.raw`'none'`);
 };
