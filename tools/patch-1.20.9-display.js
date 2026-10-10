@@ -40,13 +40,14 @@ rep(`bWv.onclick=()=>{AN.wireVals=`,`bRv.onclick=()=>{AN.rv=!AN.rv;bRv.classList
  bWv.onclick=()=>{AN.wireVals=`);
 rep(`function badMarks(){`,`function reviewMarks(){const sh=cs();if(!sh||!sh.S||!L||!L.gb||!L.gb.parentNode)return;const S=sh.S;let g=L.rvg;if(!g||!g.isConnected){g=document.createElementNS('http://www.w3.org/2000/svg','g');g.setAttribute('pointer-events','none');g.setAttribute('id','reviewmarks');L.gb.parentNode.insertBefore(g,L.gb);L.rvg=g;g._k=null}
  if(!AN.rv){if(g._k!=='off'){g._k='off';g.textContent=''}return}
+ if(g._k===sh.name+'|on')return;
  const m=[];const used=new Set(S.blk.map(b=>b.sh));
  for(const s of S.shp)if(!used.has(s)&&s.w>2.5&&s.h>2.5&&s.w<30&&s.h<30&&!(S.gate||[]).some(q=>q.box===s))m.push([s.x0,s.y0,s.x1,s.y1,'?']);
  const E_={AI:[0,1],AO:[1,0],PID:[1,1],PIDV:[1,1],MAN:[1,1],AMT:[2,1],SW:[2,1],SUM:[1,1],DEV:[2,1],SUB:[2,1],DIV:[2,1],HC:[1,1],LC:[1,1],CMPK:[1,1],FX:[1,1],LAG:[1,1],RATE:[1,1],AND:[1,1],OR:[1,1],NOT:[1,1],FF:[1,1],TON:[1,1],TOF:[1,1],TPS:[1,1],SQRT:[1,1],HS:[1,1],LS:[1,1],HLIM:[1,1],LLIM:[1,1],CONST:[0,1],SIGAB:[0,1]};
  for(const b of S.blk){const e=b.k==='MAN'?null:E_[b.k];if(e){const i=b.pins.filter(p=>p.role==='in').length,o=b.pins.filter(p=>p.role==='out').length;if(i<e[0]||(e[1]&&!o&&b.k!=='AO'))m.push([b.x0,b.y0,b.x1,b.y1,'pin?'])}
   if(b.k==='FX'&&!(b.p.tbl&&(b.p.tbl.p2||b.p.tbl.pts))&&!(window.ANLN&&window.ANLN[b.p.ln]))m.push([b.x0,b.y0,b.x1,b.y1,'no table']);
   if((b.k==='RATE'||b.k==='RAMPB')&&b.p.spanUnres)m.push([b.x0,b.y0,b.x1,b.y1,'span?'])}
- const key=sh.name+JSON.stringify(m);if(g._k===key)return;g._k=key;g.textContent='';
+ g._k=sh.name+'|on';g.textContent='';
  for(const q of m){const r=document.createElementNS('http://www.w3.org/2000/svg','rect');r.setAttribute('x',q[0]-1);r.setAttribute('y',-q[3]-1);r.setAttribute('width',q[2]-q[0]+2);r.setAttribute('height',q[3]-q[1]+2);r.setAttribute('fill','none');r.setAttribute('stroke','#ffb24a');r.setAttribute('stroke-width','.5');r.setAttribute('stroke-dasharray','1.4 1');g.appendChild(r);const t=document.createElementNS('http://www.w3.org/2000/svg','text');t.setAttribute('x',q[0]-1);t.setAttribute('y',-q[3]-1.6);t.setAttribute('font-size','2.6');t.setAttribute('fill','#ffb24a');t.setAttribute('stroke','#000');t.setAttribute('stroke-width','.4');t.setAttribute('paint-order','stroke');t.textContent=q[4];g.appendChild(t)}}
 function badMarks(){`);
 rep(`try{badMarks()}catch(e){}`,`try{badMarks()}catch(e){}try{reviewMarks()}catch(e){}`);

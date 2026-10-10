@@ -1,0 +1,45 @@
+### test-ui-1.20.9
+PASS typed (forced) AI value 15 shows beside the AI0273 address  ["AI0273"]
+PASS no value beside the instrument tag AT-FG1122 or the ALM tag
+PASS no 15.00 at ALM / instrument tag
+PASS FORCE typed 99 on a 0 ~ 25 % transmitter is limited to 25  25
+PASS Wire values ON by default: wires without an address show a number  37
+PASS Wire values button switches them off  0
+PASS the two wires into the SELECT CIRCUIT are lit (analog colour) when healthy  ["#ffc233","#ffc233"]
+PASS the wire of a transmitter forced BAD turns grey (excluded from the average)  ["#3b4651","#ffc233"]
+PASS ABC-002 #44 (the division symbol) is a DIV with a / b  {"k":"DIV","nu":62,"de":22,"pins":["undefined:61","a:62","b:22"]}
+PASS block rate set to 7  7
+PASS global Reset keeps the block setting (7)  7
+PASS "Reset this block to default" restores the default rate  1.5 vs 1.5
+PASS block setting (rate 9) survives a reload  9
+PASS minimum air flow: setting 400 T/H = signal 400, drawing 32 % kept  {"th":400,"out":400,"orig":32}
+errs []
+### test-ui-sigab
+PASS transmitters with a SIG.AB flag found on ABC-002 2
+PASS Bad Signal is OFF by default on all of them
+PASS no BAD mark while OFF
+PASS panel has Bad Signal buttons
+PASS force ON sets the flag
+PASS diagram shows FORCED BAD ["FORCED BAD"]
+PASS panel button shows FORCED BAD
+PASS restore normal clears the flag
+PASS restore normal clears the mark
+PASS a zero reading does not set Bad Signal
+errs []
+### test-ui-minair
+PASS panel shows the T/H setting with its unit
+PASS panel shows the original drawing constant 32 % for comparison
+PASS panel says the signal is in T/H
+PASS editable box exists
+PASS default is 400 400
+PASS edit to 500 T/H -> signal 500 T/H {"th":500,"out":500,"orig":32}
+PASS original 32 kept
+PASS setting survives a reload {"th":500}
+PASS "Reset this block to default" restores 400 T/H {"th":400,"out":400}
+errs []
+### test-ui-1.20.8
+toolbar: Digital · DITL | Analog · ABC | View | ▶ Run | ◀ Back | 1 s5 s10 s30 s60 s | Next ▶ | 1x5x10x60x300x | Reset | Fit | Values | Wire values | Review marks | Live: RedLive: YellowLive: B
+forbidden items present: [] file input present: false
+PASS toolbar: no Save / Save as / Open / Import / Imports / Plant items, no file input
+health: Analog health ✕ Click a row to open the sheet. Unknown shapes and pin issues are spots where the drawing was not fully recognised (the simulation passes the signal through). Sheet	Blocks	Ext
+errs []
