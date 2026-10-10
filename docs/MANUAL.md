@@ -38,7 +38,7 @@ Top bar, left to right:
 
 | Control | Meaning |
 |---|---|
-| 💾 Save / Save as… / 📂 Open | Save or open a **project file** (Ctrl+S). Keeps inputs, forces, switches, settings and your linear-table edits. |
+| (removed in v1.20.8) | Save / Save as / Open project are taken out of the toolbar for now (Ctrl+S does nothing). Settings are still kept in this browser automatically. |
 | View | View mode (default): see 2.5. |
 | ▶ Run / ❚❚ Pause | Start / pause the simulation (Space). Run from VIEW starts the simulation. |
 | ◀ Back · 1 s…60 s · Next ▶ | While paused: step the time forward or roll it back by the selected amount. |
@@ -50,8 +50,7 @@ Top bar, left to right:
 | Health | Reader health report of the sheet. |
 | LN tables | The F(X) linear tables and their graph. |
 | Panel | Show/hide the right panel. |
-| Import ABC DXF | Load updated drawings; kept in this browser (see 3.9). |
-| Imports | List of imported drawings, drawing-change report, Back to built-in. |
+| (removed in v1.20.8) | Import ABC DXF and the Imports report are taken out of the toolbar for now (see 3.9). |
 | DITL signals | The signals that come FROM / go TO the DITL page: one-click inputs and live values (3.4c). |
 | HMI | The HMI graphics view: widgets connected to addresses; Tab / Float / Split (3.4d). |
 | ◀ sheet ▶ | Previous / next sheet. PageUp / PageDown also work. |
@@ -111,7 +110,7 @@ The DITL page is not simulated with the ABC sheets and is not touched. The signa
 ### 3.4e Faceplate values, COS manual control, plant model, Trend (v1.17.0, updated after v1.18.0)
 - **Faceplate values**: the PID / MAN / SUMA values written from the DCS (Kp = 100 / P, Ti, Td, limits, ranges, unit) are applied automatically; the panel says "FILE" for them and "ASSUMED" for what is still a guess (docs/ASSUMED-VALUES.md).
 - **COS** (operator manual value / change-over): in the panel section "COS manual values and change-overs": slider + number, range and unit from the diagram, "target -> now"; greyed out when the COS is not energized by the switching logic (exception: a COS used as SV or PV).
-- **Plant model** (simulation only, in the controller panel): the plant answers where the field answers: it writes the TRANSMITTER (AI) of the PV, or the input wire of the PV; the blocks between the transmitter and the PID run as drawn. The PV and the transmitter are read only (greyed, with the reason); control the SV. Gain / time constant / dead time are ESTIMATED from the tuning of the controller (docs/PLANT-MODEL.md lists every controller: transmitter / input / pin / shared / none). Two controllers on the same measurement share one model. Untick the model to use the PV as an input again.
+- **Plant model** (REMOVED from the UI in v1.20.8; the text below is history): the plant answers where the field answers: it writes the TRANSMITTER (AI) of the PV, or the input wire of the PV; the blocks between the transmitter and the PID run as drawn. The PV and the transmitter are read only (greyed, with the reason); control the SV. Gain / time constant / dead time are ESTIMATED from the tuning of the controller (docs/PLANT-MODEL.md lists every controller: transmitter / input / pin / shared / none). Two controllers on the same measurement share one model. Untick the model to use the PV as an input again.
 - **FORCE / SIM wins over the plant**: a point that you hold (F in the HMI, or FORCE in the panel) is never changed by the plant, the SV or the manual command; the plant keeps running underneath and the value goes back to it when you release.
 - **Trend** only for PID, PIDV, MAN, SUMA and FX: Process pane (SV, PV; the PV is the pin that the drawing marks "PV", not always the minus pin) and Controller pane (MV, P, I, D, error); click a name to hide it; Zoom opens a floating window (drag the bar, corner resize, transparency, wheel zoom) with a control strip to change Kp, Ti, Td, limits, SV and the plant model without leaving the graph. No Trend for wires, digital signals or other blocks.
 - **Panel**: fixed width (380 px), every text wraps. The arrows of a number box apply the value like Enter.
@@ -186,3 +185,11 @@ Space run/pause · PageUp/PageDown or ←/→ sheet · F fit · Ctrl+S save · w
 Checked against the drawings and your files (v1.15.0): flip-flops (reset wins when S = R = 1) and timers follow the symbol list of ABC-000; 150 of 153 timers equal the TR table of your memory lists (type and time); 157 of 157 AI ranges equal your IO list; in the simulation every digital output of the 51 sheets can be driven to both 0 and 1 (2191 of 2192; 18 need a sequence of input changes, e.g. latches and pulses); every link between sheets carries its value; no wire is a dead end except the real exits (TO DITL / TCS, annunciator, memory bit); on the screen a digital wire is lit only when its value is 1. The ABC → DITL crossings are not simulated (the DITL page is never touched). This shows the logic is read completely, not that it matches the plant: sheet-by-sheet comparison with the PDFs is still open.
 Simulated: gates, flip-flops, timers (TON/TOF/pulse), T/A-M selectors, comparators, SEL (average of healthy transmitters), CTK, PID with typical tuning, valves/actuators with travel time, ramps, linear and compensation tables, constants, alarms (limits assumed), pulse output.
 Not (yet): the real plant response (there is no plant model: you set the PV yourself or through a simple model), real PID tuning and alarm limits of the plant, other units than unit 1 for descriptions, communication with the real DCS. A few drawing symbols are still unrecognised (listed in docs/BACKLOG.md). Treat results as a study aid and verify against the real system before acting on them.
+
+
+## 6. v1.20.8 additions (what changed for the user)
+- **Removed from the screen for now:** Plant model / Plant window, Save / Save as / Open, Import ABC DXF / Imports.
+- **LINEAR F(X) review flags:** an F(X) with no table, an input outside the domain of its table, or a table chosen with a warning shows a red **NEEDS REVIEW** line in its panel and is counted in **Health** (column "LINEAR / RATE review"). The output of such a block is only a placeholder, never a verified value.
+- **RATE / ramp written in %:** the % rate is converted to engineering units with the span of the signal (the drawn range of the controller the ramp feeds, or the instrument range upstream). Example: ABC-032 "1% / sec" on the 0 ~ 200 T/H flow = 2 T/H per second. A rate written in engineering units (T / Sec, "2.7T / HR", kg/cm2 / min) is used as written. When no span can be found the block keeps the old behaviour and is NEEDS REVIEW.
+- **ABC-002 minimum air flow:** select the "32 % MIN. AIR FLOW" constant: the panel shows the editable **Minimum air flow setting (T/H)** (default 400 T/H), the original drawing constant (32 %) for comparison, and the conversion factor % per T/H (default 0.08 = 32 % / 400 T/H, NEEDS REVIEW). "Back to the drawing value" restores 400 T/H = 32 %.
+- **Bad Signal (SIG.AB), simulation only:** OFF by default. In the panel (group "Bad Signal (SIG.AB)") or in the transmitter's own panel, press the button to force the transmitter **FORCED BAD**; the diagram shows a red FORCED BAD mark above the transmitter. Press again to restore normal. The drawn logic reacts (average-select, T switches, comparators). A zero reading is never bad by itself. Nothing is written to any DCS.

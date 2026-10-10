@@ -1,0 +1,20 @@
+/* ABC-002 minimum air flow in the real UI: editable T/H box, unit shown, original 32 % kept, change reaches the signal, survives a reload.  usage: node tools/test-ui-minair.js file.html */
+const {chromium}=require('/opt/node-tools/node_modules/playwright');const path=require('path');
+(async()=>{const b=await chromium.launch({args:['--no-sandbox']});const p=await b.newPage({viewport:{width:1500,height:900}});const errs=[];p.on('pageerror',e=>errs.push(e.message));
+const R=[];const ok=(n,c,x)=>R.push((c?'PASS ':'FAIL ')+n+(x!==undefined?' '+x:''));
+const open=async()=>{await p.goto('file://'+path.resolve(process.argv[2]));await p.waitForTimeout(2500);await p.click('text=Analog · ABC >> nth=0');await p.waitForTimeout(3500);await p.evaluate(()=>{AN.go(AN.sheets.findIndex(s=>s.name==='ABC-002'))});await p.waitForTimeout(800)};
+await open();
+const sel=async()=>p.evaluate(()=>{const S=AN.cs().S,c=S.blk.find(b=>b.k==='CONST'&&b.p.mt);AN.sel={blk:c};AN.selBox();AN.panelUpd(true);return c.id});
+const id=await sel();await p.waitForTimeout(500);
+const txt=await p.evaluate(()=>document.getElementById('anp').innerText);
+ok('panel shows the T/H setting with its unit',/Minimum air flow setting \(T\/H\)/.test(txt));ok('panel shows the original drawing constant 32 %',/32 %/.test(txt));ok('panel marks the conversion NEEDS REVIEW',/NEEDS REVIEW/.test(txt));
+const inp=p.locator('#anp div.r:has-text("Minimum air flow setting") input').first();ok('editable box exists',await inp.count()>0);
+ok('default is 400',(await inp.inputValue())==='400',await inp.inputValue());
+await inp.evaluate(e=>{e.focus();e.value='500';e.dispatchEvent(new Event('input',{bubbles:true}));e.dispatchEvent(new Event('change',{bubbles:true}));e.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',bubbles:true}))});await p.waitForTimeout(600);
+const v1=await p.evaluate(()=>{const S=AN.cs().S,c=S.blk.find(b=>b.k==='CONST'&&b.p.mt);return{th:c.p.th,out:S.rt.v[c.o[0]],orig:c.p.orig}});
+ok('edit to 500 T/H -> signal 40 %',v1.th===500&&Math.abs(v1.out-40)<1e-9,JSON.stringify(v1));ok('original 32 kept',v1.orig===32);
+await p.reload();await p.waitForTimeout(6000);await p.evaluate(()=>{AN.go(AN.sheets.findIndex(s=>s.name==='ABC-002'))});await p.waitForTimeout(1200);
+const v2=await p.evaluate(()=>{const S=AN.cs().S,c=S.blk.find(b=>b.k==='CONST'&&b.p.mt);return{th:c.p.th}});ok('setting survives a reload',v2.th===500,JSON.stringify(v2));
+await sel();await p.waitForTimeout(400);await p.locator('#anp button:has-text("Back to the drawing value")').dispatchEvent('click');await p.waitForTimeout(500);
+const v3=await p.evaluate(()=>{const S=AN.cs().S,c=S.blk.find(b=>b.k==='CONST'&&b.p.mt);return{th:c.p.th,out:S.rt.v[c.o[0]]}});ok('button restores 400 T/H = 32 %',v3.th===400&&Math.abs(v3.out-32)<1e-9,JSON.stringify(v3));
+console.log(R.join('\n'));console.log('errs',errs);process.exitCode=R.some(x=>x.startsWith('FAIL'))||errs.length?1:0;await b.close()})();

@@ -2,801 +2,1541 @@
  {
   "sheet": "ABC-003B",
   "block": "RAMPB#30",
-  "source": "drawing text: RAMP:1% / sec",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
-  "expected": "t=1s 1, t=2s 2",
-  "actual": "1 , 2",
-  "status": "NEEDS REVIEW",
-  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+  "input": "rate text \"RAMP:1% / sec\"",
+  "expected": "0.65 units/s",
+  "actual": "0.65 units/s",
+  "source": "RAMP:1% / sec x span 65 [downstream PID#7 drawn range 0~65 T/H (upstream source differs: MAN#31 -10~10 - not used)]",
+  "status": "PASS",
+  "evidence": "rate/time-unit/span checked"
  },
  {
   "sheet": "ABC-003B",
   "block": "RAMPB#30",
-  "source": "drawing text: RAMP:1% / sec",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "input": "source of the input: CONST#53",
+  "expected": "-",
+  "actual": "not an instrument: operator / controller / constant",
+  "source": "drawn wiring",
+  "status": "NOT TESTED",
+  "evidence": "no instrument tag directly on the path"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "RAMPB#30",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.65, 2 s: 1.3 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.65 , 1.3 | 0.25 s steps at 1 s / 2 s: 0.65 , 1.3",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 23"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "RAMPB#30",
+  "input": "bypass = 1, same step 0 -> 3",
   "expected": "3 at once (\"1:BYPASS\")",
   "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 28 forced 1"
+  "evidence": "bypass net 28"
  },
  {
   "sheet": "ABC-003C",
   "block": "RAMPB#30",
-  "source": "drawing text: RAMP:1% / sec",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
-  "expected": "t=1s 1, t=2s 2",
-  "actual": "1 , 2",
-  "status": "NEEDS REVIEW",
-  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+  "input": "rate text \"RAMP:1% / sec\"",
+  "expected": "0.65 units/s",
+  "actual": "0.65 units/s",
+  "source": "RAMP:1% / sec x span 65 [downstream PID#7 drawn range 0~65 T/H (upstream source differs: MAN#31 -10~10 - not used)]",
+  "status": "PASS",
+  "evidence": "rate/time-unit/span checked"
  },
  {
   "sheet": "ABC-003C",
   "block": "RAMPB#30",
-  "source": "drawing text: RAMP:1% / sec",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "input": "source of the input: CONST#53",
+  "expected": "-",
+  "actual": "not an instrument: operator / controller / constant",
+  "source": "drawn wiring",
+  "status": "NOT TESTED",
+  "evidence": "no instrument tag directly on the path"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "RAMPB#30",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.65, 2 s: 1.3 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.65 , 1.3 | 0.25 s steps at 1 s / 2 s: 0.65 , 1.3",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 24"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "RAMPB#30",
+  "input": "bypass = 1, same step 0 -> 3",
   "expected": "3 at once (\"1:BYPASS\")",
   "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 29 forced 1"
+  "evidence": "bypass net 29"
  },
  {
   "sheet": "ABC-003D",
   "block": "RAMPB#30",
-  "source": "drawing text: RAMP:1% / sec",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
-  "expected": "t=1s 1, t=2s 2",
-  "actual": "1 , 2",
-  "status": "NEEDS REVIEW",
-  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+  "input": "rate text \"RAMP:1% / sec\"",
+  "expected": "0.65 units/s",
+  "actual": "0.65 units/s",
+  "source": "RAMP:1% / sec x span 65 [downstream PID#7 drawn range 0~65 T/H (upstream source differs: MAN#31 -10~10 - not used)]",
+  "status": "PASS",
+  "evidence": "rate/time-unit/span checked"
  },
  {
   "sheet": "ABC-003D",
   "block": "RAMPB#30",
-  "source": "drawing text: RAMP:1% / sec",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "input": "source of the input: CONST#53",
+  "expected": "-",
+  "actual": "not an instrument: operator / controller / constant",
+  "source": "drawn wiring",
+  "status": "NOT TESTED",
+  "evidence": "no instrument tag directly on the path"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "RAMPB#30",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.65, 2 s: 1.3 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.65 , 1.3 | 0.25 s steps at 1 s / 2 s: 0.65 , 1.3",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 24"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "RAMPB#30",
+  "input": "bypass = 1, same step 0 -> 3",
   "expected": "3 at once (\"1:BYPASS\")",
   "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 29 forced 1"
+  "evidence": "bypass net 29"
  },
  {
   "sheet": "ABC-003E",
   "block": "RATE#28",
-  "source": "drawing text: (no rate text found)",
-  "input": "limits from signals",
-  "expected": "limits follow the up/down limit signals",
-  "actual": "not exercised",
+  "input": "-",
+  "expected": "-",
+  "actual": "-",
+  "source": "-",
   "status": "NOT TESTED",
-  "evidence": "own-limit RATE: needs per-sheet limit values"
+  "evidence": "own limit inputs (limits come from other signals)"
  },
  {
   "sheet": "ABC-003E",
   "block": "RATE#29",
-  "source": "drawing text: (no rate text found)",
-  "input": "limits from signals",
-  "expected": "limits follow the up/down limit signals",
-  "actual": "not exercised",
+  "input": "-",
+  "expected": "-",
+  "actual": "-",
+  "source": "-",
   "status": "NOT TESTED",
-  "evidence": "own-limit RATE: needs per-sheet limit values"
+  "evidence": "own limit inputs (limits come from other signals)"
  },
  {
   "sheet": "ABC-003E",
   "block": "RATE#30",
-  "source": "drawing text: (no rate text found)",
-  "input": "limits from signals",
-  "expected": "limits follow the up/down limit signals",
-  "actual": "not exercised",
+  "input": "-",
+  "expected": "-",
+  "actual": "-",
+  "source": "-",
   "status": "NOT TESTED",
-  "evidence": "own-limit RATE: needs per-sheet limit values"
+  "evidence": "own limit inputs (limits come from other signals)"
  },
  {
   "sheet": "ABC-003E",
   "block": "RATE#31",
-  "source": "drawing text: (no rate text found)",
-  "input": "limits from signals",
-  "expected": "limits follow the up/down limit signals",
-  "actual": "not exercised",
+  "input": "-",
+  "expected": "-",
+  "actual": "-",
+  "source": "-",
   "status": "NOT TESTED",
-  "evidence": "own-limit RATE: needs per-sheet limit values"
+  "evidence": "own limit inputs (limits come from other signals)"
  },
  {
   "sheet": "ABC-004A",
   "block": "RAMPB#35",
-  "source": "drawing text: RAMP:1% / sec",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
-  "expected": "t=1s 1, t=2s 2",
-  "actual": "1 , 2",
-  "status": "NEEDS REVIEW",
-  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+  "input": "rate text \"RAMP:1% / sec\"",
+  "expected": "1.2 units/s",
+  "actual": "1.2 units/s",
+  "source": "RAMP:1% / sec x span 120 [downstream PID#0 drawn range 0~120 T/H]",
+  "status": "PASS",
+  "evidence": "rate/time-unit/span checked"
  },
  {
   "sheet": "ABC-004A",
   "block": "RAMPB#35",
-  "source": "drawing text: RAMP:1% / sec",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
-  "expected": "3 at once (\"1:BYPASS\")",
-  "actual": "3 , 3",
+  "input": "field / manual input net 163 (set 0 then 50)",
+  "expected": "RATE input follows the supplied simulation value",
+  "actual": "block input 0 -> 50",
+  "source": "drawn wiring source -> block input",
   "status": "PASS",
-  "evidence": "bypass net 138 forced 1"
+  "evidence": "valid simulated value reaches the block"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "RAMPB#35",
+  "input": "step 0 -> 3.5999999999999996 with the written rate",
+  "expected": "1 s: 1.2, 2 s: 2.4 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 1.2 , 2.4 | 0.25 s steps at 1 s / 2 s: 1.2 , 2.4",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 163"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "RAMPB#35",
+  "input": "bypass = 1, same step 0 -> 3.5999999999999996",
+  "expected": "3.5999999999999996 at once (\"1:BYPASS\")",
+  "actual": "3.5999999999999996 , 3.5999999999999996",
+  "source": "legend / drawing 1:BYPASS",
+  "status": "PASS",
+  "evidence": "bypass net 138"
  },
  {
   "sheet": "ABC-004A",
   "block": "RATE#74",
-  "source": "drawing text: 0.0 ~ 40.0 T/H ; (1T / Sec)",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
-  "expected": "t=1s 1, t=2s 2",
-  "actual": "1 , 2",
+  "input": "rate text \"(1T / Sec)\"",
+  "expected": "1 units/s",
+  "actual": "1 units/s",
+  "source": "absolute: (1T / Sec)",
   "status": "PASS",
-  "evidence": "force main net 32 -> out net 160"
+  "evidence": "rate/time-unit/span checked"
  },
  {
   "sheet": "ABC-004A",
   "block": "RATE#74",
-  "source": "drawing text: 0.0 ~ 40.0 T/H ; (1T / Sec)",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "input": "source of the input: LINK#-1",
+  "expected": "-",
+  "actual": "not an instrument: cross-sheet link, source is on another sheet",
+  "source": "drawn wiring",
+  "status": "NOT TESTED",
+  "evidence": "no instrument tag directly on the path"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "RATE#74",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 1, 2 s: 2 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 1 , 2 | 0.25 s steps at 1 s / 2 s: 1 , 2",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 32"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "RATE#74",
+  "input": "bypass = 1, same step 0 -> 3",
   "expected": "3 at once (\"1:BYPASS\")",
   "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 33 forced 1"
+  "evidence": "bypass net 33"
  },
  {
   "sheet": "ABC-004A",
   "block": "RATE#75",
-  "source": "drawing text: (no rate text found)",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
-  "expected": "t=1s 1, t=2s 2",
-  "actual": "1 , 2",
-  "status": "PASS",
-  "evidence": "force main net 118 -> out net 117"
+  "input": "rate text \"\"",
+  "expected": "1 units/s",
+  "actual": "1 units/s",
+  "source": "no rate text near the block: engine default / assumed value (1) - not from the drawing",
+  "status": "NEEDS REVIEW",
+  "evidence": "rate not on the drawing"
  },
  {
   "sheet": "ABC-004A",
   "block": "RATE#75",
-  "source": "drawing text: (no rate text found)",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "input": "source of the input: MAN#16",
+  "expected": "-",
+  "actual": "not an instrument: operator / controller / constant",
+  "source": "drawn wiring",
+  "status": "NOT TESTED",
+  "evidence": "no instrument tag directly on the path"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "RATE#75",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 1, 2 s: 2 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 1 , 2 | 0.25 s steps at 1 s / 2 s: 1 , 2",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 118"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "RATE#75",
+  "input": "bypass = 1, same step 0 -> 3",
   "expected": "3 at once (\"1:BYPASS\")",
   "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 25 forced 1"
+  "evidence": "bypass net 25"
  },
  {
   "sheet": "ABC-004B",
   "block": "RATE#25",
-  "source": "drawing text: 0.0 ~ 40.0 T/H ; (1T / Sec)",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
-  "expected": "t=1s 1, t=2s 2",
-  "actual": "1 , 2",
+  "input": "rate text \"(1T / Sec)\"",
+  "expected": "1 units/s",
+  "actual": "1 units/s",
+  "source": "absolute: (1T / Sec)",
   "status": "PASS",
-  "evidence": "force main net 18 -> out net 51"
+  "evidence": "rate/time-unit/span checked"
  },
  {
   "sheet": "ABC-004B",
   "block": "RATE#25",
-  "source": "drawing text: 0.0 ~ 40.0 T/H ; (1T / Sec)",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
-  "expected": "3 at once (\"1:BYPASS\")",
-  "actual": "3 , 3",
-  "status": "PASS",
-  "evidence": "bypass net 19 forced 1"
- },
- {
-  "sheet": "ABC-004B",
-  "block": "RATE#26",
-  "source": "drawing text: (no rate text found)",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
-  "expected": "t=1s 1, t=2s 2",
-  "actual": "1 , 2",
-  "status": "PASS",
-  "evidence": "force main net 41 -> out net 40"
- },
- {
-  "sheet": "ABC-004B",
-  "block": "RATE#26",
-  "source": "drawing text: (no rate text found)",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
-  "expected": "3 at once (\"1:BYPASS\")",
-  "actual": "3 , 3",
-  "status": "PASS",
-  "evidence": "bypass net 7 forced 1"
- },
- {
-  "sheet": "ABC-004C",
-  "block": "RATE#25",
-  "source": "drawing text: 0.0 ~ 40.0 T/H ; (1T / Sec)",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
-  "expected": "t=1s 1, t=2s 2",
-  "actual": "1 , 2",
-  "status": "PASS",
-  "evidence": "force main net 25 -> out net 51"
- },
- {
-  "sheet": "ABC-004C",
-  "block": "RATE#25",
-  "source": "drawing text: 0.0 ~ 40.0 T/H ; (1T / Sec)",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
-  "expected": "3 at once (\"1:BYPASS\")",
-  "actual": "3 , 3",
-  "status": "PASS",
-  "evidence": "bypass net 26 forced 1"
- },
- {
-  "sheet": "ABC-004C",
-  "block": "RATE#26",
-  "source": "drawing text: (no rate text found)",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
-  "expected": "t=1s 1, t=2s 2",
-  "actual": "1 , 2",
-  "status": "PASS",
-  "evidence": "force main net 14 -> out net 13"
- },
- {
-  "sheet": "ABC-004C",
-  "block": "RATE#26",
-  "source": "drawing text: (no rate text found)",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
-  "expected": "3 at once (\"1:BYPASS\")",
-  "actual": "3 , 3",
-  "status": "PASS",
-  "evidence": "bypass net 2 forced 1"
- },
- {
-  "sheet": "ABC-007",
-  "block": "RAMPB#17",
-  "source": "drawing text: RAMP:0.05% / sec",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.05 units/s",
-  "expected": "t=1s 0.05, t=2s 0.1",
-  "actual": "0.05 , 0.1",
+  "input": "field / manual input net 27 (set 0 then 50)",
+  "expected": "RATE input follows the supplied simulation value",
+  "actual": "block input 0 -> 0",
+  "source": "drawn wiring source -> block input",
   "status": "NEEDS REVIEW",
-  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+  "evidence": "no response: a switch leg / limiter on the path blocks it in the default state"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "RATE#25",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 1, 2 s: 2 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 1 , 2 | 0.25 s steps at 1 s / 2 s: 1 , 2",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 18"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "RATE#25",
+  "input": "bypass = 1, same step 0 -> 3",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
+  "status": "PASS",
+  "evidence": "bypass net 19"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "RATE#26",
+  "input": "rate text \"\"",
+  "expected": "1 units/s",
+  "actual": "1 units/s",
+  "source": "no rate text near the block: engine default / assumed value (1) - not from the drawing",
+  "status": "NEEDS REVIEW",
+  "evidence": "rate not on the drawing"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "RATE#26",
+  "input": "field / manual input net 30 (set 0 then 50)",
+  "expected": "RATE input follows the supplied simulation value",
+  "actual": "block input 0 -> 0",
+  "source": "drawn wiring source -> block input",
+  "status": "NEEDS REVIEW",
+  "evidence": "no response: a switch leg / limiter on the path blocks it in the default state"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "RATE#26",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 1, 2 s: 2 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 1 , 2 | 0.25 s steps at 1 s / 2 s: 1 , 2",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 41"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "RATE#26",
+  "input": "bypass = 1, same step 0 -> 3",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
+  "status": "PASS",
+  "evidence": "bypass net 7"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "RATE#25",
+  "input": "rate text \"(1T / Sec)\"",
+  "expected": "1 units/s",
+  "actual": "1 units/s",
+  "source": "absolute: (1T / Sec)",
+  "status": "PASS",
+  "evidence": "rate/time-unit/span checked"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "RATE#25",
+  "input": "field / manual input net 1 (set 0 then 50)",
+  "expected": "RATE input follows the supplied simulation value",
+  "actual": "block input 0 -> 0",
+  "source": "drawn wiring source -> block input",
+  "status": "NEEDS REVIEW",
+  "evidence": "no response: a switch leg / limiter on the path blocks it in the default state"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "RATE#25",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 1, 2 s: 2 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 1 , 2 | 0.25 s steps at 1 s / 2 s: 1 , 2",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 25"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "RATE#25",
+  "input": "bypass = 1, same step 0 -> 3",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
+  "status": "PASS",
+  "evidence": "bypass net 26"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "RATE#26",
+  "input": "rate text \"\"",
+  "expected": "1 units/s",
+  "actual": "1 units/s",
+  "source": "no rate text near the block: engine default / assumed value (1) - not from the drawing",
+  "status": "NEEDS REVIEW",
+  "evidence": "rate not on the drawing"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "RATE#26",
+  "input": "field / manual input net 41 (set 0 then 50)",
+  "expected": "RATE input follows the supplied simulation value",
+  "actual": "block input 0 -> 0",
+  "source": "drawn wiring source -> block input",
+  "status": "NEEDS REVIEW",
+  "evidence": "no response: a switch leg / limiter on the path blocks it in the default state"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "RATE#26",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 1, 2 s: 2 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 1 , 2 | 0.25 s steps at 1 s / 2 s: 1 , 2",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 14"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "RATE#26",
+  "input": "bypass = 1, same step 0 -> 3",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
+  "status": "PASS",
+  "evidence": "bypass net 2"
  },
  {
   "sheet": "ABC-007",
   "block": "RAMPB#17",
-  "source": "drawing text: RAMP:0.05% / sec",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "input": "rate text \"RAMP:0.05% / sec\"",
+  "expected": "0.324 units/s",
+  "actual": "0.324 units/s",
+  "source": "RAMP:0.05% / sec x span 648 [downstream PID#9 drawn range 0~648 T/H]",
+  "status": "PASS",
+  "evidence": "rate/time-unit/span checked"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "RAMPB#17",
+  "input": "field / manual input net 90 (set 0 then 50)",
+  "expected": "RATE input follows the supplied simulation value",
+  "actual": "block input 0 -> 50",
+  "source": "drawn wiring source -> block input",
+  "status": "PASS",
+  "evidence": "valid simulated value reaches the block"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "RAMPB#17",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.324, 2 s: 0.648 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.324 , 0.648 | 0.25 s steps at 1 s / 2 s: 0.324 , 0.648",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 90"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "RAMPB#17",
+  "input": "bypass = 1, same step 0 -> 3",
   "expected": "3 at once (\"1:BYPASS\")",
   "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 79 forced 1"
+  "evidence": "bypass net 79"
  },
  {
   "sheet": "ABC-007",
   "block": "RAMPB#18",
-  "source": "drawing text: RAMP:0.05% / sec",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.05 units/s",
-  "expected": "t=1s 0.05, t=2s 0.1",
-  "actual": "0.05 , 0.1",
+  "input": "rate text \"RAMP:0.05% / sec\"",
+  "expected": "0.05 units/s",
+  "actual": "0.05 units/s",
+  "source": "RAMP:0.05% / sec x span 100 (span NOT resolved, 100 assumed)",
   "status": "NEEDS REVIEW",
-  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+  "evidence": "span of the signal not found (no AI / controller range / table range on the path): % rate still applied as signal units"
  },
  {
   "sheet": "ABC-007",
   "block": "RAMPB#18",
-  "source": "drawing text: RAMP:0.05% / sec",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "input": "field / manual input net 117 (set 0 then 50)",
+  "expected": "RATE input follows the supplied simulation value",
+  "actual": "block input 0 -> 50",
+  "source": "drawn wiring source -> block input",
+  "status": "PASS",
+  "evidence": "valid simulated value reaches the block"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "RAMPB#18",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.05, 2 s: 0.1 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.05 , 0.1 | 0.25 s steps at 1 s / 2 s: 0.05 , 0.09999999999999999",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 117"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "RAMPB#18",
+  "input": "bypass = 1, same step 0 -> 3",
   "expected": "3 at once (\"1:BYPASS\")",
   "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 74 forced 1"
+  "evidence": "bypass net 74"
  },
  {
   "sheet": "ABC-007",
   "block": "RATE#39",
-  "source": "drawing text: (0.5T / Sec)",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.5 units/s",
-  "expected": "t=1s 0.5, t=2s 1",
-  "actual": "0.5 , 1",
+  "input": "rate text \"(0.5T / Sec)\"",
+  "expected": "0.5 units/s",
+  "actual": "0.5 units/s",
+  "source": "absolute: (0.5T / Sec)",
   "status": "PASS",
-  "evidence": "force main net 62 -> out net 60"
+  "evidence": "rate/time-unit/span checked"
  },
  {
   "sheet": "ABC-007",
   "block": "RATE#39",
-  "source": "drawing text: (0.5T / Sec)",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "input": "field / manual input net 61 (set 0 then 50)",
+  "expected": "RATE input follows the supplied simulation value",
+  "actual": "block input 0 -> 50",
+  "source": "drawn wiring source -> block input",
+  "status": "PASS",
+  "evidence": "valid simulated value reaches the block"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "RATE#39",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.5, 2 s: 1 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.5 , 1 | 0.25 s steps at 1 s / 2 s: 0.5 , 1",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 62"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "RATE#39",
+  "input": "bypass = 1, same step 0 -> 3",
   "expected": "3 at once (\"1:BYPASS\")",
   "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 20 forced 1"
+  "evidence": "bypass net 20"
  },
  {
   "sheet": "ABC-007",
   "block": "RATE#40",
-  "source": "drawing text: (0.5T / Sec)",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.5 units/s",
-  "expected": "t=1s 0.5, t=2s 1",
-  "actual": "0.5 , 1",
+  "input": "rate text \"(0.5T / Sec)\"",
+  "expected": "0.5 units/s",
+  "actual": "0.5 units/s",
+  "source": "absolute: (0.5T / Sec)",
   "status": "PASS",
-  "evidence": "force main net 36 -> out net 34"
+  "evidence": "rate/time-unit/span checked"
  },
  {
   "sheet": "ABC-007",
   "block": "RATE#40",
-  "source": "drawing text: (0.5T / Sec)",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "input": "field / manual input net 35 (set 0 then 50)",
+  "expected": "RATE input follows the supplied simulation value",
+  "actual": "block input 0 -> 50",
+  "source": "drawn wiring source -> block input",
+  "status": "PASS",
+  "evidence": "valid simulated value reaches the block"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "RATE#40",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.5, 2 s: 1 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.5 , 1 | 0.25 s steps at 1 s / 2 s: 0.5 , 1",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 36"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "RATE#40",
+  "input": "bypass = 1, same step 0 -> 3",
   "expected": "3 at once (\"1:BYPASS\")",
   "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 18 forced 1"
+  "evidence": "bypass net 18"
  },
  {
   "sheet": "ABC-009A",
   "block": "RATE#97",
-  "source": "drawing text: (no rate text found)",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.05 units/s",
-  "expected": "t=1s 0.05, t=2s 0.1",
-  "actual": "0.05 , 0.1",
-  "status": "PASS",
-  "evidence": "force main net 93 -> out net 92"
+  "input": "rate text \"\"",
+  "expected": "0.05 units/s",
+  "actual": "0.05 units/s",
+  "source": "no rate text near the block: engine default / assumed value (0.05) - not from the drawing",
+  "status": "NEEDS REVIEW",
+  "evidence": "rate not on the drawing"
  },
  {
   "sheet": "ABC-009A",
   "block": "RATE#97",
-  "source": "drawing text: (no rate text found)",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "input": "source of the input: MAN#15",
+  "expected": "-",
+  "actual": "not an instrument: operator / controller / constant",
+  "source": "drawn wiring",
+  "status": "NOT TESTED",
+  "evidence": "no instrument tag directly on the path"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "RATE#97",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.05, 2 s: 0.1 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.05 , 0.1 | 0.25 s steps at 1 s / 2 s: 0.05 , 0.09999999999999999",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 93"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "RATE#97",
+  "input": "bypass = 1, same step 0 -> 3",
   "expected": "3 at once (\"1:BYPASS\")",
   "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 85 forced 1"
+  "evidence": "bypass net 85"
  },
  {
   "sheet": "ABC-009A",
   "block": "RATE#98",
-  "source": "drawing text: (no rate text found)",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.05 units/s",
-  "expected": "t=1s 0.05, t=2s 0.1",
-  "actual": "0.05 , 0.1",
-  "status": "PASS",
-  "evidence": "force main net 79 -> out net 78"
+  "input": "rate text \"\"",
+  "expected": "0.05 units/s",
+  "actual": "0.05 units/s",
+  "source": "no rate text near the block: engine default / assumed value (0.05) - not from the drawing",
+  "status": "NEEDS REVIEW",
+  "evidence": "rate not on the drawing"
  },
  {
   "sheet": "ABC-009A",
   "block": "RATE#98",
-  "source": "drawing text: (no rate text found)",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "input": "source of the input: MAN#42",
+  "expected": "-",
+  "actual": "not an instrument: operator / controller / constant",
+  "source": "drawn wiring",
+  "status": "NOT TESTED",
+  "evidence": "no instrument tag directly on the path"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "RATE#98",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.05, 2 s: 0.1 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.05 , 0.1 | 0.25 s steps at 1 s / 2 s: 0.05 , 0.09999999999999999",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 79"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "RATE#98",
+  "input": "bypass = 1, same step 0 -> 3",
   "expected": "3 at once (\"1:BYPASS\")",
   "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 67 forced 1"
+  "evidence": "bypass net 67"
  },
  {
   "sheet": "ABC-009A",
   "block": "RATE#99",
-  "source": "drawing text: (no rate text found)",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.05 units/s",
-  "expected": "t=1s 0.05, t=2s 0.1",
-  "actual": "0.05 , 0.1",
-  "status": "PASS",
-  "evidence": "force main net 60 -> out net 59"
+  "input": "rate text \"\"",
+  "expected": "0.05 units/s",
+  "actual": "0.05 units/s",
+  "source": "no rate text near the block: engine default / assumed value (0.05) - not from the drawing",
+  "status": "NEEDS REVIEW",
+  "evidence": "rate not on the drawing"
  },
  {
   "sheet": "ABC-009A",
   "block": "RATE#99",
-  "source": "drawing text: (no rate text found)",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "input": "source of the input: MAN#55",
+  "expected": "-",
+  "actual": "not an instrument: operator / controller / constant",
+  "source": "drawn wiring",
+  "status": "NOT TESTED",
+  "evidence": "no instrument tag directly on the path"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "RATE#99",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.05, 2 s: 0.1 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.05 , 0.1 | 0.25 s steps at 1 s / 2 s: 0.05 , 0.09999999999999999",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 60"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "RATE#99",
+  "input": "bypass = 1, same step 0 -> 3",
   "expected": "3 at once (\"1:BYPASS\")",
   "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 49 forced 1"
+  "evidence": "bypass net 49"
  },
  {
   "sheet": "ABC-009B",
   "block": "RATE#20",
-  "source": "drawing text: (no rate text found)",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.05 units/s",
-  "expected": "t=1s 0.05, t=2s 0.1",
-  "actual": "0.05 , 0.1",
-  "status": "PASS",
-  "evidence": "force main net 25 -> out net 24"
+  "input": "rate text \"\"",
+  "expected": "0.05 units/s",
+  "actual": "0.05 units/s",
+  "source": "no rate text near the block: engine default / assumed value (0.05) - not from the drawing",
+  "status": "NEEDS REVIEW",
+  "evidence": "rate not on the drawing"
  },
  {
   "sheet": "ABC-009B",
   "block": "RATE#20",
-  "source": "drawing text: (no rate text found)",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "input": "field / manual input net 40 (set 0 then 50)",
+  "expected": "RATE input follows the supplied simulation value",
+  "actual": "block input 12 -> 12",
+  "source": "drawn wiring source -> block input",
+  "status": "NEEDS REVIEW",
+  "evidence": "no response: a switch leg / limiter on the path blocks it in the default state"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "RATE#20",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.05, 2 s: 0.1 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.05 , 0.1 | 0.25 s steps at 1 s / 2 s: 0.05 , 0.09999999999999999",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 25"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "RATE#20",
+  "input": "bypass = 1, same step 0 -> 3",
   "expected": "3 at once (\"1:BYPASS\")",
   "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 13 forced 1"
+  "evidence": "bypass net 13"
  },
  {
   "sheet": "ABC-019",
   "block": "RAMPB#17",
-  "source": "drawing text: RAMP:1% / sec",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
-  "expected": "t=1s 1, t=2s 2",
-  "actual": "1 , 2",
-  "status": "NEEDS REVIEW",
-  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+  "input": "rate text \"RAMP:1% / sec\"",
+  "expected": "6 units/s",
+  "actual": "6 units/s",
+  "source": "RAMP:1% / sec x span 600 [downstream PID#7 drawn range 0~600 °C]",
+  "status": "PASS",
+  "evidence": "rate/time-unit/span checked"
  },
  {
   "sheet": "ABC-019",
   "block": "RAMPB#17",
-  "source": "drawing text: RAMP:1% / sec",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
-  "expected": "3 at once (\"1:BYPASS\")",
-  "actual": "3 , 3",
+  "input": "field / manual input net 18 (set 0 then 50)",
+  "expected": "RATE input follows the supplied simulation value",
+  "actual": "block input 0 -> 50",
+  "source": "drawn wiring source -> block input",
   "status": "PASS",
-  "evidence": "bypass net 53 forced 1"
+  "evidence": "valid simulated value reaches the block"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "RAMPB#17",
+  "input": "step 0 -> 18 with the written rate",
+  "expected": "1 s: 6, 2 s: 12 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 6 , 12 | 0.25 s steps at 1 s / 2 s: 6 , 12",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 54"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "RAMPB#17",
+  "input": "bypass = 1, same step 0 -> 18",
+  "expected": "18 at once (\"1:BYPASS\")",
+  "actual": "18 , 18",
+  "source": "legend / drawing 1:BYPASS",
+  "status": "PASS",
+  "evidence": "bypass net 53"
  },
  {
   "sheet": "ABC-020",
   "block": "RAMPB#52",
-  "source": "drawing text: RAMP:1% / min",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.016666666666666666 units/s",
-  "expected": "t=1s 0.016666666666666666, t=2s 0.03333333333333333",
-  "actual": "0.016666666666666666 , 0.03333333333333333",
+  "input": "rate text \"RAMP:1% / min\"",
+  "expected": "0.1 units/s",
+  "actual": "0.1 units/s",
+  "source": "RAMP:1% / min x span 600 [downstream PID#0 drawn range 0~600 °C]",
+  "status": "PASS",
+  "evidence": "rate/time-unit/span checked"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "RAMPB#52",
+  "input": "field / manual input net 20 (set 0 then 50)",
+  "expected": "RATE input follows the supplied simulation value",
+  "actual": "block input 0 -> 49.08421805556326",
+  "source": "drawn wiring source -> block input",
+  "status": "PASS",
+  "evidence": "valid simulated value reaches the block"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "RAMPB#52",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.1, 2 s: 0.2 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.1 , 0.2 | 0.25 s steps at 1 s / 2 s: 0.1 , 0.19999999999999998",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 19"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "RAMPB#52",
+  "input": "bypass = 1, same step 0 -> 3",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
+  "status": "PASS",
+  "evidence": "bypass net 16"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "RATE#91",
+  "input": "rate text \"\"",
+  "expected": "2 units/s",
+  "actual": "2 units/s",
+  "source": "no rate text near the block: engine default / assumed value (2) - not from the drawing",
   "status": "NEEDS REVIEW",
-  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
- },
- {
-  "sheet": "ABC-020",
-  "block": "RAMPB#52",
-  "source": "drawing text: RAMP:1% / min",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
-  "expected": "3 at once (\"1:BYPASS\")",
-  "actual": "3 , 3",
-  "status": "PASS",
-  "evidence": "bypass net 16 forced 1"
+  "evidence": "rate not on the drawing"
  },
  {
   "sheet": "ABC-020",
   "block": "RATE#91",
-  "source": "drawing text: (no rate text found)",
-  "input": "ramp path: step 0 -> 6, bypass 0; rate 2 units/s",
-  "expected": "t=1s 2, t=2s 4",
-  "actual": "2 , 4",
-  "status": "PASS",
-  "evidence": "force main net 33 -> out net 32"
+  "input": "field / manual input net 37 (set 0 then 50)",
+  "expected": "RATE input follows the supplied simulation value",
+  "actual": "block input 19 -> 19",
+  "source": "drawn wiring source -> block input",
+  "status": "NEEDS REVIEW",
+  "evidence": "no response: a switch leg / limiter on the path blocks it in the default state"
  },
  {
   "sheet": "ABC-020",
   "block": "RATE#91",
-  "source": "drawing text: (no rate text found)",
-  "input": "bypass path: same step 0 -> 6, bypass = 1",
+  "input": "step 0 -> 6 with the written rate",
+  "expected": "1 s: 2, 2 s: 4 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 2 , 4 | 0.25 s steps at 1 s / 2 s: 2 , 4",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 33"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "RATE#91",
+  "input": "bypass = 1, same step 0 -> 6",
   "expected": "6 at once (\"1:BYPASS\")",
   "actual": "6 , 6",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 25 forced 1"
+  "evidence": "bypass net 25"
  },
  {
   "sheet": "ABC-032",
   "block": "RAMPB#13",
-  "source": "drawing text: RAMP:1% / sec",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
-  "expected": "t=1s 1, t=2s 2",
-  "actual": "1 , 2",
-  "status": "NEEDS REVIEW",
-  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+  "input": "rate text \"RAMP:1% / sec\"",
+  "expected": "2 units/s",
+  "actual": "2 units/s",
+  "source": "user-confirmed: 1%/sec on the 0~200 T/H flow = 2 T/H/s",
+  "status": "PASS",
+  "evidence": "rate/time-unit/span checked"
  },
  {
   "sheet": "ABC-032",
   "block": "RAMPB#13",
-  "source": "drawing text: RAMP:1% / sec",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
-  "expected": "3 at once (\"1:BYPASS\")",
-  "actual": "3 , 3",
+  "input": "source of the input: CONST#10",
+  "expected": "-",
+  "actual": "not an instrument: operator / controller / constant",
+  "source": "drawn wiring",
+  "status": "NOT TESTED",
+  "evidence": "no instrument tag directly on the path"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "RAMPB#13",
+  "input": "step 0 -> 6 with the written rate",
+  "expected": "1 s: 2, 2 s: 4 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 2 , 4 | 0.25 s steps at 1 s / 2 s: 2 , 4",
+  "source": "rate x elapsed simulation time",
   "status": "PASS",
-  "evidence": "bypass net 24 forced 1"
+  "evidence": "force main net 23"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "RAMPB#13",
+  "input": "bypass = 1, same step 0 -> 6",
+  "expected": "6 at once (\"1:BYPASS\")",
+  "actual": "6 , 6",
+  "source": "legend / drawing 1:BYPASS",
+  "status": "PASS",
+  "evidence": "bypass net 24"
  },
  {
   "sheet": "ABC-034",
   "block": "RATE#26",
-  "source": "drawing text: 1% / min",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.016666666666666666 units/s",
-  "expected": "t=1s 0.016666666666666666, t=2s 0.03333333333333333",
-  "actual": "0.016666666666666666 , 0.03333333333333333",
-  "status": "NEEDS REVIEW",
-  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+  "input": "rate text \"1% / min\"",
+  "expected": "0.1 units/s",
+  "actual": "0.1 units/s",
+  "source": "1% / min x span 600 [upstream AI#16 0~600 °C]",
+  "status": "PASS",
+  "evidence": "rate/time-unit/span checked"
  },
  {
   "sheet": "ABC-034",
   "block": "RATE#26",
-  "source": "drawing text: 1% / min",
+  "input": "instrument AI#16 (tag ~ AI0642, range 0 ~ 600 °C)",
+  "expected": "RATE input follows the supplied simulation value",
+  "actual": "block input 0 -> 600",
+  "source": "drawn wiring source -> block input",
+  "status": "PASS",
+  "evidence": "valid simulated value reaches the block"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "RATE#26",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.1, 2 s: 0.2 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.1 , 0.2 | 0.25 s steps at 1 s / 2 s: 0.1 , 0.19999999999999998",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 19"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "RATE#26",
   "input": "bypass path",
   "expected": "-",
   "actual": "no bypass pin on this block",
+  "source": "-",
   "status": "NOT TESTED",
   "evidence": ""
  },
  {
   "sheet": "ABC-050",
   "block": "RAMPB#23",
-  "source": "drawing text: RAMP:1% / sec",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
-  "expected": "t=1s 1, t=2s 2",
-  "actual": "1 , 2",
-  "status": "NEEDS REVIEW",
-  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+  "input": "rate text \"RAMP:1% / sec\"",
+  "expected": "1.5 units/s",
+  "actual": "1.5 units/s",
+  "source": "RAMP:1% / sec x span 150 [downstream PID#0 drawn range 0~150 kg/cm2 (agrees with upstream AI#9 0~150 kg/cm2 + AI#12 0~150 kg/cm2)]",
+  "status": "PASS",
+  "evidence": "rate/time-unit/span checked"
  },
  {
   "sheet": "ABC-050",
   "block": "RAMPB#23",
-  "source": "drawing text: RAMP:1% / sec",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
-  "expected": "3 at once (\"1:BYPASS\")",
-  "actual": "3 , 3",
+  "input": "source of the input: CONST#19",
+  "expected": "-",
+  "actual": "not an instrument: operator / controller / constant",
+  "source": "drawn wiring",
+  "status": "NOT TESTED",
+  "evidence": "no instrument tag directly on the path"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "RAMPB#23",
+  "input": "step 0 -> 4.5 with the written rate",
+  "expected": "1 s: 1.5, 2 s: 3 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 1.5 , 3 | 0.25 s steps at 1 s / 2 s: 1.5 , 3",
+  "source": "rate x elapsed simulation time",
   "status": "PASS",
-  "evidence": "bypass net 98 forced 1"
+  "evidence": "force main net 131"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "RAMPB#23",
+  "input": "bypass = 1, same step 0 -> 4.5",
+  "expected": "4.5 at once (\"1:BYPASS\")",
+  "actual": "4.5 , 4.5",
+  "source": "legend / drawing 1:BYPASS",
+  "status": "PASS",
+  "evidence": "bypass net 98"
  },
  {
   "sheet": "ABC-050",
   "block": "RATE#83",
-  "source": "drawing text: 5% / sec",
-  "input": "ramp path: step 0 -> 15, bypass 0; rate 5 units/s",
-  "expected": "t=1s 5, t=2s 10",
-  "actual": "5 , 10",
-  "status": "NEEDS REVIEW",
-  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+  "input": "rate text \"5% / sec\"",
+  "expected": "5 units/s",
+  "actual": "5 units/s",
+  "source": "5% / sec x span 100 [upstream PID#0 output 0~100]",
+  "status": "PASS",
+  "evidence": "rate/time-unit/span checked"
  },
  {
   "sheet": "ABC-050",
   "block": "RATE#83",
-  "source": "drawing text: 5% / sec",
-  "input": "bypass path: same step 0 -> 15, bypass = 1",
+  "input": "source of the input: CONST#43",
+  "expected": "-",
+  "actual": "not an instrument: operator / controller / constant",
+  "source": "drawn wiring",
+  "status": "NOT TESTED",
+  "evidence": "no instrument tag directly on the path"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "RATE#83",
+  "input": "step 0 -> 15 with the written rate",
+  "expected": "1 s: 5, 2 s: 10 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 5 , 10 | 0.25 s steps at 1 s / 2 s: 5 , 10",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 31"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "RATE#83",
+  "input": "bypass = 1, same step 0 -> 15",
   "expected": "15 at once (\"1:BYPASS\")",
   "actual": "15 , 15",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 30 forced 1"
+  "evidence": "bypass net 30"
  },
  {
   "sheet": "ABC-051",
   "block": "RAMPB#24",
-  "source": "drawing text: RAMP:1.67% / min",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.02783333333333333 units/s",
-  "expected": "t=1s 0.02783333333333333, t=2s 0.05566666666666666",
-  "actual": "0.02783333333333333 , 0.05566666666666666",
-  "status": "NEEDS REVIEW",
-  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+  "input": "rate text \"RAMP:1.67% / min\"",
+  "expected": "0.013916666666666666 units/s",
+  "actual": "0.013916666666666666 units/s",
+  "source": "RAMP:1.67% / min x span 50 [upstream AI#13 0~50 kg/cm2]",
+  "status": "PASS",
+  "evidence": "rate/time-unit/span checked"
  },
  {
   "sheet": "ABC-051",
   "block": "RAMPB#24",
-  "source": "drawing text: RAMP:1.67% / min",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "input": "source of the input: CONST#19",
+  "expected": "-",
+  "actual": "not an instrument: operator / controller / constant",
+  "source": "drawn wiring",
+  "status": "NOT TESTED",
+  "evidence": "no instrument tag directly on the path"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "RAMPB#24",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.013916666666666666, 2 s: 0.02783333333333333 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.013916666666666666 , 0.02783333333333333 | 0.25 s steps at 1 s / 2 s: 0.013916666666666666 , 0.027833333333333328",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 56"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "RAMPB#24",
+  "input": "bypass = 1, same step 0 -> 3",
   "expected": "3 at once (\"1:BYPASS\")",
   "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 53 forced 1"
+  "evidence": "bypass net 53"
  },
  {
   "sheet": "ABC-052",
   "block": "RAMPB#14",
-  "source": "drawing text: RAMP:1% / sec",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
-  "expected": "t=1s 1, t=2s 2",
-  "actual": "1 , 2",
-  "status": "NEEDS REVIEW",
-  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+  "input": "rate text \"RAMP:1% / sec\"",
+  "expected": "0.5 units/s",
+  "actual": "0.5 units/s",
+  "source": "RAMP:1% / sec x span 50 [downstream PID#0 drawn range 0~50 kg/cm2 (upstream source differs: AI#39 0~150 kg/cm2 + AI#41 0~150 kg/cm2 + AI#43 0~150 kg/cm2 - not used)]",
+  "status": "PASS",
+  "evidence": "rate/time-unit/span checked"
  },
  {
   "sheet": "ABC-052",
   "block": "RAMPB#14",
-  "source": "drawing text: RAMP:1% / sec",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "input": "source of the input: CONST#17",
+  "expected": "-",
+  "actual": "not an instrument: operator / controller / constant",
+  "source": "drawn wiring",
+  "status": "NOT TESTED",
+  "evidence": "no instrument tag directly on the path"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "RAMPB#14",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.5, 2 s: 1 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.5 , 1 | 0.25 s steps at 1 s / 2 s: 0.5 , 1",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 21"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "RAMPB#14",
+  "input": "bypass = 1, same step 0 -> 3",
   "expected": "3 at once (\"1:BYPASS\")",
   "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 86 forced 1"
+  "evidence": "bypass net 86"
  },
  {
   "sheet": "ABC-052",
   "block": "RATE#87",
-  "source": "drawing text: X% / sec",
-  "input": "limits from signals",
-  "expected": "limits follow the up/down limit signals",
-  "actual": "not exercised",
+  "input": "-",
+  "expected": "-",
+  "actual": "-",
+  "source": "-",
   "status": "NOT TESTED",
-  "evidence": "own-limit RATE: needs per-sheet limit values"
+  "evidence": "own limit inputs (limits come from other signals)"
  },
  {
   "sheet": "ABC-052",
   "block": "RATE#88",
-  "source": "drawing text: 2 kg/cm2 / min",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.03333333333333333 units/s",
-  "expected": "t=1s 0.03333333333333333, t=2s 0.06666666666666667",
-  "actual": "0.03333333333333333 , 0.06666666666666667",
+  "input": "rate text \"2 kg/cm2 / min\"",
+  "expected": "0.03333333333333333 units/s",
+  "actual": "0.03333333333333333 units/s",
+  "source": "absolute: 2 kg/cm2 / min",
   "status": "PASS",
-  "evidence": "force main net 16 -> out net 11"
+  "evidence": "rate/time-unit/span checked"
  },
  {
   "sheet": "ABC-052",
   "block": "RATE#88",
-  "source": "drawing text: 2 kg/cm2 / min",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "input": "source of the input: CONST#72",
+  "expected": "-",
+  "actual": "not an instrument: operator / controller / constant",
+  "source": "drawn wiring",
+  "status": "NOT TESTED",
+  "evidence": "no instrument tag directly on the path"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "RATE#88",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.03333333333333333, 2 s: 0.06666666666666667 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.03333333333333333 , 0.06666666666666667 | 0.25 s steps at 1 s / 2 s: 0.03333333333333333 , 0.06666666666666667",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 16"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "RATE#88",
+  "input": "bypass = 1, same step 0 -> 3",
   "expected": "3 at once (\"1:BYPASS\")",
   "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 15 forced 1"
+  "evidence": "bypass net 15"
  },
  {
   "sheet": "ABC-001B",
   "block": "RATE#13",
-  "source": "drawing text: (no rate text found)",
-  "input": "limits from signals",
-  "expected": "limits follow the up/down limit signals",
-  "actual": "not exercised",
+  "input": "-",
+  "expected": "-",
+  "actual": "-",
+  "source": "-",
   "status": "NOT TESTED",
-  "evidence": "own-limit RATE: needs per-sheet limit values"
+  "evidence": "own limit inputs (limits come from other signals)"
  },
  {
   "sheet": "ABC-053",
   "block": "RAMPB#15",
-  "source": "drawing text: RAMP:0.5% / sec",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.5 units/s",
-  "expected": "t=1s 0.5, t=2s 1",
-  "actual": "0.5 , 1",
-  "status": "NEEDS REVIEW",
-  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+  "input": "rate text \"RAMP:0.5% / sec\"",
+  "expected": "0.5 units/s",
+  "actual": "0.5 units/s",
+  "source": "RAMP:0.5% / sec x span 100 [downstream PID#0 drawn range 0~100 °C (upstream source differs: AI#18 0~4000 rpm - not used)]",
+  "status": "PASS",
+  "evidence": "rate/time-unit/span checked"
  },
  {
   "sheet": "ABC-053",
   "block": "RAMPB#15",
-  "source": "drawing text: RAMP:0.5% / sec",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "input": "source of the input: CONST#25",
+  "expected": "-",
+  "actual": "not an instrument: operator / controller / constant",
+  "source": "drawn wiring",
+  "status": "NOT TESTED",
+  "evidence": "no instrument tag directly on the path"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "RAMPB#15",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.5, 2 s: 1 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.5 , 1 | 0.25 s steps at 1 s / 2 s: 0.5 , 1",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 31"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "RAMPB#15",
+  "input": "bypass = 1, same step 0 -> 3",
   "expected": "3 at once (\"1:BYPASS\")",
   "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 33 forced 1"
+  "evidence": "bypass net 33"
  },
  {
   "sheet": "ABC-057",
   "block": "RATE#67",
-  "source": "drawing text: 0.1% / sec",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.1 units/s",
-  "expected": "t=1s 0.1, t=2s 0.2",
-  "actual": "0.1 , 0.2",
+  "input": "rate text \"0.1% / sec\"",
+  "expected": "0.1 units/s",
+  "actual": "0.1 units/s",
+  "source": "0.1% / sec x span 100 (span NOT resolved, 100 assumed)",
   "status": "NEEDS REVIEW",
-  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+  "evidence": "span of the signal not found (no AI / controller range / table range on the path): % rate still applied as signal units"
  },
  {
   "sheet": "ABC-057",
   "block": "RATE#67",
-  "source": "drawing text: 0.1% / sec",
+  "input": "source of the input: CONST#6",
+  "expected": "-",
+  "actual": "not an instrument: operator / controller / constant",
+  "source": "drawn wiring",
+  "status": "NOT TESTED",
+  "evidence": "no instrument tag directly on the path"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "RATE#67",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.1, 2 s: 0.2 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.1 , 0.2 | 0.25 s steps at 1 s / 2 s: 0.1 , 0.19999999999999998",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 82"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "RATE#67",
   "input": "bypass path",
   "expected": "-",
   "actual": "no bypass pin on this block",
+  "source": "-",
   "status": "NOT TESTED",
   "evidence": ""
  },
  {
   "sheet": "ABC-001C",
   "block": "RATE#47",
-  "source": "drawing text: 18% / Hr ; ( 0.005% / sec )",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.005 units/s",
-  "expected": "t=1s 0.005, t=2s 0.01",
-  "actual": "0.005 , 0.01",
+  "input": "rate text \"18% / Hr\"",
+  "expected": "0.005 units/s",
+  "actual": "0.005 units/s",
+  "source": "18% / Hr x span 100 (span NOT resolved, 100 assumed)",
   "status": "NEEDS REVIEW",
-  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+  "evidence": "span of the signal not found (no AI / controller range / table range on the path): % rate still applied as signal units"
  },
  {
   "sheet": "ABC-001C",
   "block": "RATE#47",
-  "source": "drawing text: 18% / Hr ; ( 0.005% / sec )",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "input": "source of the input: CONST#43",
+  "expected": "-",
+  "actual": "not an instrument: operator / controller / constant",
+  "source": "drawn wiring",
+  "status": "NOT TESTED",
+  "evidence": "no instrument tag directly on the path"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "RATE#47",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.005, 2 s: 0.01 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.005 , 0.01 | 0.25 s steps at 1 s / 2 s: 0.005 , 0.01",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 39"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "RATE#47",
+  "input": "bypass = 1, same step 0 -> 3",
   "expected": "3 at once (\"1:BYPASS\")",
   "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 109 forced 1"
+  "evidence": "bypass net 109"
  },
  {
   "sheet": "ABC-001D",
   "block": "RATE#3",
-  "source": "drawing text: 2.7T / HR = 2.25% / HR ; ( 0.045T / MIN )",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.000625 units/s",
-  "expected": "t=1s 0.000625, t=2s 0.00125",
-  "actual": "0.000625 , 0.00125",
-  "status": "NEEDS REVIEW",
-  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+  "input": "rate text \"2.7T / HR = 2.25% / HR\"",
+  "expected": "0.00075 units/s",
+  "actual": "0.00075 units/s",
+  "source": "drawing: 2.7T / HR = 2.25% / HR = 0.045T / MIN -> 0.00075 T/s (user-confirmed)",
+  "status": "PASS",
+  "evidence": "rate/time-unit/span checked"
  },
  {
   "sheet": "ABC-001D",
   "block": "RATE#3",
-  "source": "drawing text: 2.7T / HR = 2.25% / HR ; ( 0.045T / MIN )",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "input": "source of the input: CONST#6",
+  "expected": "-",
+  "actual": "not an instrument: operator / controller / constant",
+  "source": "drawn wiring",
+  "status": "NOT TESTED",
+  "evidence": "no instrument tag directly on the path"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "RATE#3",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.00075, 2 s: 0.0015 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.00075 , 0.0015 | 0.25 s steps at 1 s / 2 s: 0.00075 , 0.0014999999999999998",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 69"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "RATE#3",
+  "input": "bypass = 1, same step 0 -> 3",
   "expected": "3 at once (\"1:BYPASS\")",
   "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 70 forced 1"
+  "evidence": "bypass net 70"
  },
  {
   "sheet": "ABC-001D",
   "block": "RATE#4",
-  "source": "drawing text: 1.8T / HR = 1.5% / HR ; ( 0.03T / MIN )",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.0004166666666666667 units/s",
-  "expected": "t=1s 0.0004166666666666667, t=2s 0.0008333333333333334",
-  "actual": "0.0004166666666666667 , 0.0008333333333333334",
-  "status": "NEEDS REVIEW",
-  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+  "input": "rate text \"1.8T / HR = 1.5% / HR\"",
+  "expected": "0.0005 units/s",
+  "actual": "0.0005 units/s",
+  "source": "drawing: 1.8T / HR = 1.5% / HR = 0.03T / MIN -> 0.0005 T/s",
+  "status": "PASS",
+  "evidence": "rate/time-unit/span checked"
  },
  {
   "sheet": "ABC-001D",
   "block": "RATE#4",
-  "source": "drawing text: 1.8T / HR = 1.5% / HR ; ( 0.03T / MIN )",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "input": "source of the input: CONST#6",
+  "expected": "-",
+  "actual": "not an instrument: operator / controller / constant",
+  "source": "drawn wiring",
+  "status": "NOT TESTED",
+  "evidence": "no instrument tag directly on the path"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "RATE#4",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.0005, 2 s: 0.001 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.0005 , 0.001 | 0.25 s steps at 1 s / 2 s: 0.0005 , 0.001",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 17"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "RATE#4",
+  "input": "bypass = 1, same step 0 -> 3",
   "expected": "3 at once (\"1:BYPASS\")",
   "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 63 forced 1"
+  "evidence": "bypass net 63"
  },
  {
   "sheet": "ABC-002",
   "block": "RAMPB#27",
-  "source": "drawing text: RAMP:1% / sec",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
-  "expected": "t=1s 1, t=2s 2",
-  "actual": "1 , 2",
-  "status": "NEEDS REVIEW",
-  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+  "input": "rate text \"RAMP:1% / sec\"",
+  "expected": "0.25 units/s",
+  "actual": "0.25 units/s",
+  "source": "RAMP:1% / sec x span 25 [downstream PID#12 drawn range 0~25 % (upstream source differs: MAN#6 -4~4 - not used)]",
+  "status": "PASS",
+  "evidence": "rate/time-unit/span checked"
  },
  {
   "sheet": "ABC-002",
   "block": "RAMPB#27",
-  "source": "drawing text: RAMP:1% / sec",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "input": "field / manual input net 1 (set 0 then 50)",
+  "expected": "RATE input follows the supplied simulation value",
+  "actual": "block input 0 -> 44.58159883890524",
+  "source": "drawn wiring source -> block input",
+  "status": "PASS",
+  "evidence": "valid simulated value reaches the block"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "RAMPB#27",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.25, 2 s: 0.5 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.25 , 0.5 | 0.25 s steps at 1 s / 2 s: 0.25 , 0.5",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 92"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "RAMPB#27",
+  "input": "bypass = 1, same step 0 -> 3",
   "expected": "3 at once (\"1:BYPASS\")",
   "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 91 forced 1"
+  "evidence": "bypass net 91"
  },
  {
   "sheet": "ABC-002",
   "block": "RATE#75",
-  "source": "drawing text: 0.2% / sec",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.2 units/s",
-  "expected": "t=1s 0.2, t=2s 0.4",
-  "actual": "0.2 , 0.4",
+  "input": "rate text \"0.2% / sec\"",
+  "expected": "0.2 units/s",
+  "actual": "0.2 units/s",
+  "source": "0.2% / sec x span 100 (span NOT resolved, 100 assumed)",
   "status": "NEEDS REVIEW",
-  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+  "evidence": "span of the signal not found (no AI / controller range / table range on the path): % rate still applied as signal units"
  },
  {
   "sheet": "ABC-002",
   "block": "RATE#75",
-  "source": "drawing text: 0.2% / sec",
+  "input": "field / manual input net 78 (set 0 then 50)",
+  "expected": "RATE input follows the supplied simulation value",
+  "actual": "block input 0 -> 50",
+  "source": "drawn wiring source -> block input",
+  "status": "PASS",
+  "evidence": "valid simulated value reaches the block"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "RATE#75",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.2, 2 s: 0.4 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.2 , 0.4 | 0.25 s steps at 1 s / 2 s: 0.2 , 0.39999999999999997",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 33"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "RATE#75",
   "input": "bypass path",
   "expected": "-",
   "actual": "no bypass pin on this block",
+  "source": "-",
   "status": "NOT TESTED",
   "evidence": ""
  },
  {
   "sheet": "ABC-002",
   "block": "RATE#76",
-  "source": "drawing text: 0.2% / sec",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.2 units/s",
-  "expected": "t=1s 0.2, t=2s 0.4",
-  "actual": "0.2 , 0.4",
+  "input": "rate text \"0.2% / sec\"",
+  "expected": "0.2 units/s",
+  "actual": "0.2 units/s",
+  "source": "0.2% / sec x span 100 (span NOT resolved, 100 assumed)",
   "status": "NEEDS REVIEW",
-  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+  "evidence": "span of the signal not found (no AI / controller range / table range on the path): % rate still applied as signal units"
  },
  {
   "sheet": "ABC-002",
   "block": "RATE#76",
-  "source": "drawing text: 0.2% / sec",
+  "input": "field / manual input net 1 (set 0 then 50)",
+  "expected": "RATE input follows the supplied simulation value",
+  "actual": "block input 0 -> 50",
+  "source": "drawn wiring source -> block input",
+  "status": "PASS",
+  "evidence": "valid simulated value reaches the block"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "RATE#76",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.2, 2 s: 0.4 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.2 , 0.4 | 0.25 s steps at 1 s / 2 s: 0.2 , 0.39999999999999997",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 8"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "RATE#76",
   "input": "bypass path",
   "expected": "-",
   "actual": "no bypass pin on this block",
+  "source": "-",
   "status": "NOT TESTED",
   "evidence": ""
  },
  {
   "sheet": "ABC-003A",
   "block": "RAMPB#32",
-  "source": "drawing text: RAMP:1% / sec",
-  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
-  "expected": "t=1s 1, t=2s 2",
-  "actual": "1 , 2",
-  "status": "NEEDS REVIEW",
-  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+  "input": "rate text \"RAMP:1% / sec\"",
+  "expected": "0.65 units/s",
+  "actual": "0.65 units/s",
+  "source": "RAMP:1% / sec x span 65 [downstream PID#13 drawn range 0~65 T/H (upstream source differs: MAN#40 -10~10 - not used)]",
+  "status": "PASS",
+  "evidence": "rate/time-unit/span checked"
  },
  {
   "sheet": "ABC-003A",
   "block": "RAMPB#32",
-  "source": "drawing text: RAMP:1% / sec",
-  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "input": "source of the input: CONST#69",
+  "expected": "-",
+  "actual": "not an instrument: operator / controller / constant",
+  "source": "drawn wiring",
+  "status": "NOT TESTED",
+  "evidence": "no instrument tag directly on the path"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "RAMPB#32",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 0.65, 2 s: 1.3 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 0.65 , 1.3 | 0.25 s steps at 1 s / 2 s: 0.65 , 1.3",
+  "source": "rate x elapsed simulation time",
+  "status": "PASS",
+  "evidence": "force main net 52"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "RAMPB#32",
+  "input": "bypass = 1, same step 0 -> 3",
   "expected": "3 at once (\"1:BYPASS\")",
   "actual": "3 , 3",
+  "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
-  "evidence": "bypass net 126 forced 1"
+  "evidence": "bypass net 126"
  }
 ]

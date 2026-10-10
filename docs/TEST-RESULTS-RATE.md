@@ -1,45 +1,61 @@
-# RATE / ramp vs bypass verification - logic-sim-v1.20.8.html
+# RATE / ramp regression - logic-sim-v1.20.8.html
 
-Counts: {"NEEDS REVIEW":23,"PASS":47,"NOT TESTED":10}
+Counts: {"PASS":105,"NOT TESTED":30,"NEEDS REVIEW":19}
 
-Same input change applied to the ramp path and the bypass path.
+Unit conversion (%/sec, %/min, %/hr, absolute), instrument-tag input, gradual response by elapsed time, ramp vs bypass.
 
 Record fields: sheet, block, input conditions, expected value/unit, actual value/unit, source of expected, evidence, status, correction, retest status. Full records (incl. PASS): `TEST-RESULTS-RATE.json`.
 
 | sheet | block | input | expected | actual | source of expected | status | evidence |
 |---|---|---|---|---|---|---|---|
-| ABC-003B | RAMPB#30 | ramp path: step 0 -> 3, bypass 0; rate 1 units/s | t=1s 1, t=2s 2 | 1 , 2 | drawing text: RAMP:1% / sec | NEEDS REVIEW | ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span) |
-| ABC-003C | RAMPB#30 | ramp path: step 0 -> 3, bypass 0; rate 1 units/s | t=1s 1, t=2s 2 | 1 , 2 | drawing text: RAMP:1% / sec | NEEDS REVIEW | ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span) |
-| ABC-003D | RAMPB#30 | ramp path: step 0 -> 3, bypass 0; rate 1 units/s | t=1s 1, t=2s 2 | 1 , 2 | drawing text: RAMP:1% / sec | NEEDS REVIEW | ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span) |
-| ABC-003E | RATE#28 | limits from signals | limits follow the up/down limit signals | not exercised | drawing text: (no rate text found) | NOT TESTED | own-limit RATE: needs per-sheet limit values |
-| ABC-003E | RATE#29 | limits from signals | limits follow the up/down limit signals | not exercised | drawing text: (no rate text found) | NOT TESTED | own-limit RATE: needs per-sheet limit values |
-| ABC-003E | RATE#30 | limits from signals | limits follow the up/down limit signals | not exercised | drawing text: (no rate text found) | NOT TESTED | own-limit RATE: needs per-sheet limit values |
-| ABC-003E | RATE#31 | limits from signals | limits follow the up/down limit signals | not exercised | drawing text: (no rate text found) | NOT TESTED | own-limit RATE: needs per-sheet limit values |
-| ABC-004A | RAMPB#35 | ramp path: step 0 -> 3, bypass 0; rate 1 units/s | t=1s 1, t=2s 2 | 1 , 2 | drawing text: RAMP:1% / sec | NEEDS REVIEW | ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span) |
-| ABC-007 | RAMPB#17 | ramp path: step 0 -> 3, bypass 0; rate 0.05 units/s | t=1s 0.05, t=2s 0.1 | 0.05 , 0.1 | drawing text: RAMP:0.05% / sec | NEEDS REVIEW | ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span) |
-| ABC-007 | RAMPB#18 | ramp path: step 0 -> 3, bypass 0; rate 0.05 units/s | t=1s 0.05, t=2s 0.1 | 0.05 , 0.1 | drawing text: RAMP:0.05% / sec | NEEDS REVIEW | ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span) |
-| ABC-019 | RAMPB#17 | ramp path: step 0 -> 3, bypass 0; rate 1 units/s | t=1s 1, t=2s 2 | 1 , 2 | drawing text: RAMP:1% / sec | NEEDS REVIEW | ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span) |
-| ABC-020 | RAMPB#52 | ramp path: step 0 -> 3, bypass 0; rate 0.016666666666666666 units/s | t=1s 0.016666666666666666, t=2s 0.03333333333333333 | 0.016666666666666666 , 0.03333333333333333 | drawing text: RAMP:1% / min | NEEDS REVIEW | ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span) |
-| ABC-032 | RAMPB#13 | ramp path: step 0 -> 3, bypass 0; rate 1 units/s | t=1s 1, t=2s 2 | 1 , 2 | drawing text: RAMP:1% / sec | NEEDS REVIEW | ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span) |
-| ABC-034 | RATE#26 | ramp path: step 0 -> 3, bypass 0; rate 0.016666666666666666 units/s | t=1s 0.016666666666666666, t=2s 0.03333333333333333 | 0.016666666666666666 , 0.03333333333333333 | drawing text: 1% / min | NEEDS REVIEW | ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span) |
-| ABC-034 | RATE#26 | bypass path | - | no bypass pin on this block | drawing text: 1% / min | NOT TESTED |  |
-| ABC-050 | RAMPB#23 | ramp path: step 0 -> 3, bypass 0; rate 1 units/s | t=1s 1, t=2s 2 | 1 , 2 | drawing text: RAMP:1% / sec | NEEDS REVIEW | ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span) |
-| ABC-050 | RATE#83 | ramp path: step 0 -> 15, bypass 0; rate 5 units/s | t=1s 5, t=2s 10 | 5 , 10 | drawing text: 5% / sec | NEEDS REVIEW | ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span) |
-| ABC-051 | RAMPB#24 | ramp path: step 0 -> 3, bypass 0; rate 0.02783333333333333 units/s | t=1s 0.02783333333333333, t=2s 0.05566666666666666 | 0.02783333333333333 , 0.05566666666666666 | drawing text: RAMP:1.67% / min | NEEDS REVIEW | ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span) |
-| ABC-052 | RAMPB#14 | ramp path: step 0 -> 3, bypass 0; rate 1 units/s | t=1s 1, t=2s 2 | 1 , 2 | drawing text: RAMP:1% / sec | NEEDS REVIEW | ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span) |
-| ABC-052 | RATE#87 | limits from signals | limits follow the up/down limit signals | not exercised | drawing text: X% / sec | NOT TESTED | own-limit RATE: needs per-sheet limit values |
-| ABC-001B | RATE#13 | limits from signals | limits follow the up/down limit signals | not exercised | drawing text: (no rate text found) | NOT TESTED | own-limit RATE: needs per-sheet limit values |
-| ABC-053 | RAMPB#15 | ramp path: step 0 -> 3, bypass 0; rate 0.5 units/s | t=1s 0.5, t=2s 1 | 0.5 , 1 | drawing text: RAMP:0.5% / sec | NEEDS REVIEW | ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span) |
-| ABC-057 | RATE#67 | ramp path: step 0 -> 3, bypass 0; rate 0.1 units/s | t=1s 0.1, t=2s 0.2 | 0.1 , 0.2 | drawing text: 0.1% / sec | NEEDS REVIEW | ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span) |
-| ABC-057 | RATE#67 | bypass path | - | no bypass pin on this block | drawing text: 0.1% / sec | NOT TESTED |  |
-| ABC-001C | RATE#47 | ramp path: step 0 -> 3, bypass 0; rate 0.005 units/s | t=1s 0.005, t=2s 0.01 | 0.005 , 0.01 | drawing text: 18% / Hr ; ( 0.005% / sec ) | NEEDS REVIEW | ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span) |
-| ABC-001D | RATE#3 | ramp path: step 0 -> 3, bypass 0; rate 0.000625 units/s | t=1s 0.000625, t=2s 0.00125 | 0.000625 , 0.00125 | drawing text: 2.7T / HR = 2.25% / HR ; ( 0.045T / MIN ) | NEEDS REVIEW | ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span) |
-| ABC-001D | RATE#4 | ramp path: step 0 -> 3, bypass 0; rate 0.0004166666666666667 units/s | t=1s 0.0004166666666666667, t=2s 0.0008333333333333334 | 0.0004166666666666667 , 0.0008333333333333334 | drawing text: 1.8T / HR = 1.5% / HR ; ( 0.03T / MIN ) | NEEDS REVIEW | ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span) |
-| ABC-002 | RAMPB#27 | ramp path: step 0 -> 3, bypass 0; rate 1 units/s | t=1s 1, t=2s 2 | 1 , 2 | drawing text: RAMP:1% / sec | NEEDS REVIEW | ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span) |
-| ABC-002 | RATE#75 | ramp path: step 0 -> 3, bypass 0; rate 0.2 units/s | t=1s 0.2, t=2s 0.4 | 0.2 , 0.4 | drawing text: 0.2% / sec | NEEDS REVIEW | ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span) |
-| ABC-002 | RATE#75 | bypass path | - | no bypass pin on this block | drawing text: 0.2% / sec | NOT TESTED |  |
-| ABC-002 | RATE#76 | ramp path: step 0 -> 3, bypass 0; rate 0.2 units/s | t=1s 0.2, t=2s 0.4 | 0.2 , 0.4 | drawing text: 0.2% / sec | NEEDS REVIEW | ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span) |
-| ABC-002 | RATE#76 | bypass path | - | no bypass pin on this block | drawing text: 0.2% / sec | NOT TESTED |  |
-| ABC-003A | RAMPB#32 | ramp path: step 0 -> 3, bypass 0; rate 1 units/s | t=1s 1, t=2s 2 | 1 , 2 | drawing text: RAMP:1% / sec | NEEDS REVIEW | ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span) |
+| ABC-003B | RAMPB#30 | source of the input: CONST#53 | - | not an instrument: operator / controller / constant | drawn wiring | NOT TESTED | no instrument tag directly on the path |
+| ABC-003C | RAMPB#30 | source of the input: CONST#53 | - | not an instrument: operator / controller / constant | drawn wiring | NOT TESTED | no instrument tag directly on the path |
+| ABC-003D | RAMPB#30 | source of the input: CONST#53 | - | not an instrument: operator / controller / constant | drawn wiring | NOT TESTED | no instrument tag directly on the path |
+| ABC-003E | RATE#28 | - | - | - | - | NOT TESTED | own limit inputs (limits come from other signals) |
+| ABC-003E | RATE#29 | - | - | - | - | NOT TESTED | own limit inputs (limits come from other signals) |
+| ABC-003E | RATE#30 | - | - | - | - | NOT TESTED | own limit inputs (limits come from other signals) |
+| ABC-003E | RATE#31 | - | - | - | - | NOT TESTED | own limit inputs (limits come from other signals) |
+| ABC-004A | RATE#74 | source of the input: LINK#-1 | - | not an instrument: cross-sheet link, source is on another sheet | drawn wiring | NOT TESTED | no instrument tag directly on the path |
+| ABC-004A | RATE#75 | rate text "" | 1 units/s | 1 units/s | no rate text near the block: engine default / assumed value (1) - not from the drawing | NEEDS REVIEW | rate not on the drawing |
+| ABC-004A | RATE#75 | source of the input: MAN#16 | - | not an instrument: operator / controller / constant | drawn wiring | NOT TESTED | no instrument tag directly on the path |
+| ABC-004B | RATE#25 | field / manual input net 27 (set 0 then 50) | RATE input follows the supplied simulation value | block input 0 -> 0 | drawn wiring source -> block input | NEEDS REVIEW | no response: a switch leg / limiter on the path blocks it in the default state |
+| ABC-004B | RATE#26 | rate text "" | 1 units/s | 1 units/s | no rate text near the block: engine default / assumed value (1) - not from the drawing | NEEDS REVIEW | rate not on the drawing |
+| ABC-004B | RATE#26 | field / manual input net 30 (set 0 then 50) | RATE input follows the supplied simulation value | block input 0 -> 0 | drawn wiring source -> block input | NEEDS REVIEW | no response: a switch leg / limiter on the path blocks it in the default state |
+| ABC-004C | RATE#25 | field / manual input net 1 (set 0 then 50) | RATE input follows the supplied simulation value | block input 0 -> 0 | drawn wiring source -> block input | NEEDS REVIEW | no response: a switch leg / limiter on the path blocks it in the default state |
+| ABC-004C | RATE#26 | rate text "" | 1 units/s | 1 units/s | no rate text near the block: engine default / assumed value (1) - not from the drawing | NEEDS REVIEW | rate not on the drawing |
+| ABC-004C | RATE#26 | field / manual input net 41 (set 0 then 50) | RATE input follows the supplied simulation value | block input 0 -> 0 | drawn wiring source -> block input | NEEDS REVIEW | no response: a switch leg / limiter on the path blocks it in the default state |
+| ABC-007 | RAMPB#18 | rate text "RAMP:0.05% / sec" | 0.05 units/s | 0.05 units/s | RAMP:0.05% / sec x span 100 (span NOT resolved, 100 assumed) | NEEDS REVIEW | span of the signal not found (no AI / controller range / table range on the path): % rate still applied as signal units |
+| ABC-009A | RATE#97 | rate text "" | 0.05 units/s | 0.05 units/s | no rate text near the block: engine default / assumed value (0.05) - not from the drawing | NEEDS REVIEW | rate not on the drawing |
+| ABC-009A | RATE#97 | source of the input: MAN#15 | - | not an instrument: operator / controller / constant | drawn wiring | NOT TESTED | no instrument tag directly on the path |
+| ABC-009A | RATE#98 | rate text "" | 0.05 units/s | 0.05 units/s | no rate text near the block: engine default / assumed value (0.05) - not from the drawing | NEEDS REVIEW | rate not on the drawing |
+| ABC-009A | RATE#98 | source of the input: MAN#42 | - | not an instrument: operator / controller / constant | drawn wiring | NOT TESTED | no instrument tag directly on the path |
+| ABC-009A | RATE#99 | rate text "" | 0.05 units/s | 0.05 units/s | no rate text near the block: engine default / assumed value (0.05) - not from the drawing | NEEDS REVIEW | rate not on the drawing |
+| ABC-009A | RATE#99 | source of the input: MAN#55 | - | not an instrument: operator / controller / constant | drawn wiring | NOT TESTED | no instrument tag directly on the path |
+| ABC-009B | RATE#20 | rate text "" | 0.05 units/s | 0.05 units/s | no rate text near the block: engine default / assumed value (0.05) - not from the drawing | NEEDS REVIEW | rate not on the drawing |
+| ABC-009B | RATE#20 | field / manual input net 40 (set 0 then 50) | RATE input follows the supplied simulation value | block input 12 -> 12 | drawn wiring source -> block input | NEEDS REVIEW | no response: a switch leg / limiter on the path blocks it in the default state |
+| ABC-020 | RATE#91 | rate text "" | 2 units/s | 2 units/s | no rate text near the block: engine default / assumed value (2) - not from the drawing | NEEDS REVIEW | rate not on the drawing |
+| ABC-020 | RATE#91 | field / manual input net 37 (set 0 then 50) | RATE input follows the supplied simulation value | block input 19 -> 19 | drawn wiring source -> block input | NEEDS REVIEW | no response: a switch leg / limiter on the path blocks it in the default state |
+| ABC-032 | RAMPB#13 | source of the input: CONST#10 | - | not an instrument: operator / controller / constant | drawn wiring | NOT TESTED | no instrument tag directly on the path |
+| ABC-034 | RATE#26 | bypass path | - | no bypass pin on this block | - | NOT TESTED |  |
+| ABC-050 | RAMPB#23 | source of the input: CONST#19 | - | not an instrument: operator / controller / constant | drawn wiring | NOT TESTED | no instrument tag directly on the path |
+| ABC-050 | RATE#83 | source of the input: CONST#43 | - | not an instrument: operator / controller / constant | drawn wiring | NOT TESTED | no instrument tag directly on the path |
+| ABC-051 | RAMPB#24 | source of the input: CONST#19 | - | not an instrument: operator / controller / constant | drawn wiring | NOT TESTED | no instrument tag directly on the path |
+| ABC-052 | RAMPB#14 | source of the input: CONST#17 | - | not an instrument: operator / controller / constant | drawn wiring | NOT TESTED | no instrument tag directly on the path |
+| ABC-052 | RATE#87 | - | - | - | - | NOT TESTED | own limit inputs (limits come from other signals) |
+| ABC-052 | RATE#88 | source of the input: CONST#72 | - | not an instrument: operator / controller / constant | drawn wiring | NOT TESTED | no instrument tag directly on the path |
+| ABC-001B | RATE#13 | - | - | - | - | NOT TESTED | own limit inputs (limits come from other signals) |
+| ABC-053 | RAMPB#15 | source of the input: CONST#25 | - | not an instrument: operator / controller / constant | drawn wiring | NOT TESTED | no instrument tag directly on the path |
+| ABC-057 | RATE#67 | rate text "0.1% / sec" | 0.1 units/s | 0.1 units/s | 0.1% / sec x span 100 (span NOT resolved, 100 assumed) | NEEDS REVIEW | span of the signal not found (no AI / controller range / table range on the path): % rate still applied as signal units |
+| ABC-057 | RATE#67 | source of the input: CONST#6 | - | not an instrument: operator / controller / constant | drawn wiring | NOT TESTED | no instrument tag directly on the path |
+| ABC-057 | RATE#67 | bypass path | - | no bypass pin on this block | - | NOT TESTED |  |
+| ABC-001C | RATE#47 | rate text "18% / Hr" | 0.005 units/s | 0.005 units/s | 18% / Hr x span 100 (span NOT resolved, 100 assumed) | NEEDS REVIEW | span of the signal not found (no AI / controller range / table range on the path): % rate still applied as signal units |
+| ABC-001C | RATE#47 | source of the input: CONST#43 | - | not an instrument: operator / controller / constant | drawn wiring | NOT TESTED | no instrument tag directly on the path |
+| ABC-001D | RATE#3 | source of the input: CONST#6 | - | not an instrument: operator / controller / constant | drawn wiring | NOT TESTED | no instrument tag directly on the path |
+| ABC-001D | RATE#4 | source of the input: CONST#6 | - | not an instrument: operator / controller / constant | drawn wiring | NOT TESTED | no instrument tag directly on the path |
+| ABC-002 | RATE#75 | rate text "0.2% / sec" | 0.2 units/s | 0.2 units/s | 0.2% / sec x span 100 (span NOT resolved, 100 assumed) | NEEDS REVIEW | span of the signal not found (no AI / controller range / table range on the path): % rate still applied as signal units |
+| ABC-002 | RATE#75 | bypass path | - | no bypass pin on this block | - | NOT TESTED |  |
+| ABC-002 | RATE#76 | rate text "0.2% / sec" | 0.2 units/s | 0.2 units/s | 0.2% / sec x span 100 (span NOT resolved, 100 assumed) | NEEDS REVIEW | span of the signal not found (no AI / controller range / table range on the path): % rate still applied as signal units |
+| ABC-002 | RATE#76 | bypass path | - | no bypass pin on this block | - | NOT TESTED |  |
+| ABC-003A | RAMPB#32 | source of the input: CONST#69 | - | not an instrument: operator / controller / constant | drawn wiring | NOT TESTED | no instrument tag directly on the path |
 
-PASS records: 47 (listed only in the json).
+PASS records: 105 (listed only in the json).

@@ -43,11 +43,11 @@
   "sheet": "ABC-006",
   "block": "SEL#41",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
   "sheet": "ABC-008",
@@ -93,11 +93,11 @@
   "sheet": "ABC-008",
   "block": "SEL#9",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
   "sheet": "ABC-009A",
@@ -143,11 +143,11 @@
   "sheet": "ABC-009A",
   "block": "SEL#21",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
   "sheet": "ABC-010",
@@ -213,11 +213,11 @@
   "sheet": "ABC-010",
   "block": "SEL#65",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
   "sheet": "ABC-011",
@@ -263,11 +263,11 @@
   "sheet": "ABC-011",
   "block": "SEL#10",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
   "sheet": "ABC-011",
@@ -313,11 +313,11 @@
   "sheet": "ABC-011",
   "block": "SEL#26",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
   "sheet": "ABC-012",
@@ -363,11 +363,11 @@
   "sheet": "ABC-012",
   "block": "SEL#10",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
   "sheet": "ABC-012",
@@ -413,11 +413,11 @@
   "sheet": "ABC-012",
   "block": "SEL#26",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
   "sheet": "ABC-000",
@@ -483,11 +483,11 @@
   "sheet": "ABC-019",
   "block": "SEL#6",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
   "sheet": "ABC-019",
@@ -533,11 +533,11 @@
   "sheet": "ABC-019",
   "block": "SEL#14",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
   "sheet": "ABC-030",
@@ -583,11 +583,11 @@
   "sheet": "ABC-030",
   "block": "SEL#16",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
   "sheet": "ABC-031",
@@ -633,11 +633,11 @@
   "sheet": "ABC-031",
   "block": "SEL#22",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
   "sheet": "ABC-035",
@@ -683,11 +683,11 @@
   "sheet": "ABC-035",
   "block": "SEL#6",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
   "sheet": "ABC-036",
@@ -733,11 +733,11 @@
   "sheet": "ABC-036",
   "block": "SEL#11",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
   "sheet": "ABC-037",
@@ -783,11 +783,11 @@
   "sheet": "ABC-037",
   "block": "SEL#11",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
   "sheet": "ABC-038",
@@ -833,11 +833,11 @@
   "sheet": "ABC-038",
   "block": "SEL#11",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
   "sheet": "ABC-039",
@@ -883,11 +883,11 @@
   "sheet": "ABC-039",
   "block": "SEL#11",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
   "sheet": "ABC-050",
@@ -933,11 +933,11 @@
   "sheet": "ABC-050",
   "block": "SEL#14",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
   "sheet": "ABC-050",
@@ -1003,11 +1003,11 @@
   "sheet": "ABC-051",
   "block": "SEL#11",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
   "sheet": "ABC-052",
@@ -1063,11 +1063,11 @@
   "sheet": "ABC-052",
   "block": "SEL#33",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
   "sheet": "ABC-052",
@@ -1113,11 +1113,11 @@
   "sheet": "ABC-052",
   "block": "SEL#44",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
   "sheet": "ABC-053",
@@ -1163,11 +1163,11 @@
   "sheet": "ABC-053",
   "block": "SEL#13",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
   "sheet": "ABC-001C",
@@ -1223,11 +1223,11 @@
   "sheet": "ABC-002",
   "block": "SEL#2",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
   "sheet": "ABC-003A",
@@ -1273,10 +1273,10 @@
   "sheet": "ABC-003A",
   "block": "SEL#2",
   "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
-  "expected": "defined failure response; engine rule = hold last good value (50)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
   "actual": "50",
-  "source": "docs/BLOCK-LIBRARY.md SEL (all bad = hold last); the drawing text does not define it",
-  "status": "NEEDS REVIEW",
-  "evidence": "behaviour is defined and deterministic, but its source is the app spec, not the drawing -> user to confirm"
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  }
 ]

@@ -1,0 +1,3802 @@
+[
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN1",
+  "source": "LINEAR.xls sheet S1-LN1 (DWG No. ABC-002)",
+  "input": "X/Y points (4)",
+  "expected": "[(0.0, 0.8), (50.0, 1.0), (100.0, 1.2)] ...",
+  "actual": "[(0, 0.8), (50, 1), (100, 1.2)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN1",
+  "source": "LINEAR.xls sheet S1-LN1 (DWG No. ABC-002)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 1.0)",
+  "actual": "X [0, 100] Y [0, 1]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN1",
+  "source": "LINEAR.xls sheet S1-LN1 (DWG No. ABC-002)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "table S1-LN3",
+  "source": "LINEAR.xls sheet S1-LN3 (DWG No. ABC-004A)",
+  "input": "X/Y points (5)",
+  "expected": "[(-20.0, 0.8), (0.0, 0.8), (50.0, 1.0)] ...",
+  "actual": "[(-20, 0.8), (0, 0.8), (50, 1)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "table S1-LN3",
+  "source": "LINEAR.xls sheet S1-LN3 (DWG No. ABC-004A)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 1.0)",
+  "actual": "X [0, 100] Y [0, 1]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "table S1-LN3",
+  "source": "LINEAR.xls sheet S1-LN3 (DWG No. ABC-004A)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN5",
+  "source": "LINEAR.xls sheet S1-LN5 (DWG No. ABC-002)",
+  "input": "X/Y points (11)",
+  "expected": "[(-24.0, 446.0), (0.0, 446.0), (35.0, 446.0)] ...",
+  "actual": "[(-24, 446), (0, 446), (35, 446)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN5",
+  "source": "LINEAR.xls sheet S1-LN5 (DWG No. ABC-002)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 120.0) Y (0.0, 1115.0)",
+  "actual": "X [0, 120] Y [0, 1115]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN5",
+  "source": "LINEAR.xls sheet S1-LN5 (DWG No. ABC-002)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN7",
+  "source": "LINEAR.xls sheet S1-LN7 (DWG No. ABC-002)",
+  "input": "X/Y points (6)",
+  "expected": "[(0.0, 180.0), (4.0, 190.0), (8.0, 225.0)] ...",
+  "actual": "[(0, 180), (4, 190), (8, 225)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN7",
+  "source": "LINEAR.xls sheet S1-LN7 (DWG No. ABC-002)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 14.0) Y (0.0, 432.0)",
+  "actual": "X [0, 14] Y [0, 432]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN7",
+  "source": "LINEAR.xls sheet S1-LN7 (DWG No. ABC-002)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN8",
+  "source": "LINEAR.xls sheet S1-LN8 (DWG No. ABC-002)",
+  "input": "X/Y points (7)",
+  "expected": "[(-2.8000000000000003, 180.0), (0.0, 180.0), (4.0, 210.0)] ...",
+  "actual": "[(-2.8000000000000003, 180), (0, 180), (4, 210)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN8",
+  "source": "LINEAR.xls sheet S1-LN8 (DWG No. ABC-002)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 14.0) Y (0.0, 648.0)",
+  "actual": "X [0, 14] Y [0, 648]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN8",
+  "source": "LINEAR.xls sheet S1-LN8 (DWG No. ABC-002)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "table S1-LN9",
+  "source": "LINEAR.xls sheet S1-LN9 (DWG No. ABC-003A)",
+  "input": "X/Y points (5)",
+  "expected": "[(-20.0, -10.0), (0.0, -10.0), (50.0, 0.0)] ...",
+  "actual": "[(-20, -10), (0, -10), (50, 0)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "table S1-LN9",
+  "source": "LINEAR.xls sheet S1-LN9 (DWG No. ABC-003A)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 65.0)",
+  "actual": "X [0, 100] Y [0, 65]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "table S1-LN9",
+  "source": "LINEAR.xls sheet S1-LN9 (DWG No. ABC-003A)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN12",
+  "source": "LINEAR.xls sheet S1-LN12 (DWG No. ABC-002)",
+  "input": "X/Y points (11)",
+  "expected": "[(-24.0, 285.0), (0.0, 285.0), (35.0, 285.0)] ...",
+  "actual": "[(-24, 285), (0, 285), (35, 285)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN12",
+  "source": "LINEAR.xls sheet S1-LN12 (DWG No. ABC-002)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 120.0) Y (0.0, 648.0)",
+  "actual": "X [0, 120] Y [0, 648]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN12",
+  "source": "LINEAR.xls sheet S1-LN12 (DWG No. ABC-002)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "table S1-LN13",
+  "source": "LINEAR.xls sheet S1-LN13 (DWG No. ABC-008)",
+  "input": "X/Y points (5)",
+  "expected": "[(-20.0, 0.0), (0.0, 0.0), (14.0, 100.0)] ...",
+  "actual": "[(-20, 0), (0, 0), (14, 100)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "table S1-LN13",
+  "source": "LINEAR.xls sheet S1-LN13 (DWG No. ABC-008)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "table S1-LN13",
+  "source": "LINEAR.xls sheet S1-LN13 (DWG No. ABC-008)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN14",
+  "source": "LINEAR.xls sheet S1-LN14 (DWG No. ABC-002)",
+  "input": "X/Y points (5)",
+  "expected": "[(-20.0, -30.0), (0.0, -30.0), (50.0, 0.0)] ...",
+  "actual": "[(-20, -30), (0, -30), (50, 0)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN14",
+  "source": "LINEAR.xls sheet S1-LN14 (DWG No. ABC-002)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 648.0)",
+  "actual": "X [0, 100] Y [0, 648]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN14",
+  "source": "LINEAR.xls sheet S1-LN14 (DWG No. ABC-002)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN15",
+  "source": "LINEAR.xls sheet S1-LN15 (DWG No. ABC-002)",
+  "input": "X/Y points (5)",
+  "expected": "[(-20.0, 0.8), (0.0, 0.8), (50.0, 1.0)] ...",
+  "actual": "[(-20, 0.8), (0, 0.8), (50, 1)] ...",
+  "status": "PASS",
+  "evidence": "all points compared (Y/100: documented fix H-33, LY column of the file = 0.8 ~ 1.2)"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN15",
+  "source": "LINEAR.xls sheet S1-LN15 (DWG No. ABC-002)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 1.0)",
+  "actual": "X [0, 100] Y [0, 1]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN15",
+  "source": "LINEAR.xls sheet S1-LN15 (DWG No. ABC-002)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN16",
+  "source": "LINEAR.xls sheet S1-LN16 (DWG No. ABC-002)",
+  "input": "X/Y points (11)",
+  "expected": "[(-24.0, 8.0), (0.0, 8.0), (35.0, 8.0)] ...",
+  "actual": "[(-24, 8), (0, 8), (35, 8)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN16",
+  "source": "LINEAR.xls sheet S1-LN16 (DWG No. ABC-002)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 120.0) Y (0.0, 25.0)",
+  "actual": "X [0, 120] Y [0, 25]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN16",
+  "source": "LINEAR.xls sheet S1-LN16 (DWG No. ABC-002)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN17",
+  "source": "LINEAR.xls sheet S1-LN17 (DWG No. ABC-002)",
+  "input": "X/Y points (5)",
+  "expected": "[(-20.0, -4.0), (0.0, -4.0), (50.0, 0.0)] ...",
+  "actual": "[(-20, -4), (0, -4), (50, 0)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN17",
+  "source": "LINEAR.xls sheet S1-LN17 (DWG No. ABC-002)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 21.0)",
+  "actual": "X [0, 100] Y [0, 21]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN17",
+  "source": "LINEAR.xls sheet S1-LN17 (DWG No. ABC-002)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-013",
+  "block": "table S1-LN18",
+  "source": "LINEAR.xls sheet S1-LN18 (DWG No. ABC-013)",
+  "input": "X/Y points (6)",
+  "expected": "[(-100.0, 0.0), (0.0, 0.0), (8.84, 14.0)] ...",
+  "actual": "[(-100, 0), (0, 0), (8.84, 14)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-013",
+  "block": "table S1-LN18",
+  "source": "LINEAR.xls sheet S1-LN18 (DWG No. ABC-013)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 500.0) Y (0.0, 100.0)",
+  "actual": "X [0, 500] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-013",
+  "block": "table S1-LN18",
+  "source": "LINEAR.xls sheet S1-LN18 (DWG No. ABC-013)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "table S1-LN19",
+  "source": "LINEAR.xls sheet S1-LN19 (DWG No. ABC-003A)",
+  "input": "X/Y points (7)",
+  "expected": "[(-0.7000000000000001, 26.0), (0.0, 26.0), (1.0, 26.0)] ...",
+  "actual": "[(-0.7000000000000001, 26), (0, 26), (1, 26)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "table S1-LN19",
+  "source": "LINEAR.xls sheet S1-LN19 (DWG No. ABC-003A)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 3.5) Y (0.0, 65.0)",
+  "actual": "X [0, 3.5] Y [0, 65]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "table S1-LN19",
+  "source": "LINEAR.xls sheet S1-LN19 (DWG No. ABC-003A)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "table S1-LN21",
+  "source": "LINEAR.xls sheet S1-LN21 (DWG No. ABC-003A)",
+  "input": "X/Y points (5)",
+  "expected": "[(-20.0, 0.8), (0.0, 0.8), (50.0, 1.0)] ...",
+  "actual": "[(-20, 0.8), (0, 0.8), (50, 1)] ...",
+  "status": "PASS",
+  "evidence": "all points compared (Y/100: documented fix H-33, LY column of the file = 0.8 ~ 1.2)"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "table S1-LN21",
+  "source": "LINEAR.xls sheet S1-LN21 (DWG No. ABC-003A)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 1.0)",
+  "actual": "X [0, 100] Y [0, 1]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "table S1-LN21",
+  "source": "LINEAR.xls sheet S1-LN21 (DWG No. ABC-003A)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN22",
+  "source": "LINEAR.xls sheet S1-LN22 (DWG No. ABC-002)",
+  "input": "X/Y points (11)",
+  "expected": "[(-24.0, 446.0), (0.0, 446.0), (35.0, 446.0)] ...",
+  "actual": "[(-24, 446), (0, 446), (35, 446)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN22",
+  "source": "LINEAR.xls sheet S1-LN22 (DWG No. ABC-002)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 120.0) Y (0.0, 1115.0)",
+  "actual": "X [0, 120] Y [0, 1115]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN22",
+  "source": "LINEAR.xls sheet S1-LN22 (DWG No. ABC-002)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "table S1-LN23",
+  "source": "LINEAR.xls sheet S1-LN23 (DWG No. ABC-004A)",
+  "input": "X/Y points (5)",
+  "expected": "[(-20.0, -8.0), (0.0, -8.0), (50.0, 0.0)] ...",
+  "actual": "[(-20, -8), (0, -8), (50, 0)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "table S1-LN23",
+  "source": "LINEAR.xls sheet S1-LN23 (DWG No. ABC-004A)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 40.0)",
+  "actual": "X [0, 100] Y [0, 40]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "table S1-LN23",
+  "source": "LINEAR.xls sheet S1-LN23 (DWG No. ABC-004A)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "table S1-LN25",
+  "source": "LINEAR.xls sheet S1-LN25 (DWG No. ABC-004B)",
+  "input": "X/Y points (5)",
+  "expected": "[(-20.0, -8.0), (0.0, -8.0), (50.0, 0.0)] ...",
+  "actual": "[(-20, -8), (0, -8), (50, 0)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "table S1-LN25",
+  "source": "LINEAR.xls sheet S1-LN25 (DWG No. ABC-004B)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 40.0)",
+  "actual": "X [0, 100] Y [0, 40]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "table S1-LN25",
+  "source": "LINEAR.xls sheet S1-LN25 (DWG No. ABC-004B)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "table S1-LN27",
+  "source": "LINEAR.xls sheet S1-LN27 (DWG No. ABC-004C)",
+  "input": "X/Y points (5)",
+  "expected": "[(-20.0, -8.0), (0.0, -8.0), (50.0, 0.0)] ...",
+  "actual": "[(-20, -8), (0, -8), (50, 0)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "table S1-LN27",
+  "source": "LINEAR.xls sheet S1-LN27 (DWG No. ABC-004C)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 40.0)",
+  "actual": "X [0, 100] Y [0, 40]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "table S1-LN27",
+  "source": "LINEAR.xls sheet S1-LN27 (DWG No. ABC-004C)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN29",
+  "source": "LINEAR.xls sheet S1-LN29 (DWG No. ABC-002)",
+  "input": "X/Y points (5)",
+  "expected": "[(-20.0, 0.0), (0.0, 0.0), (80.0, 0.0)] ...",
+  "actual": "[(-20, 0), (0, 0), (80, 0)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN29",
+  "source": "LINEAR.xls sheet S1-LN29 (DWG No. ABC-002)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN29",
+  "source": "LINEAR.xls sheet S1-LN29 (DWG No. ABC-002)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "table S1-LN30",
+  "source": "LINEAR.xls sheet S1-LN30 (DWG No. ABC-010)",
+  "input": "X/Y points (13)",
+  "expected": "[(-60.0, 1007.76), (0.0, 1007.76), (50.0, 995.025)] ...",
+  "actual": "[(-60, 1007.76), (0, 1007.76), (50, 995.025)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "table S1-LN30",
+  "source": "LINEAR.xls sheet S1-LN30 (DWG No. ABC-010)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 300.0) Y (0.0, 833.34)",
+  "actual": "X [0, 300] Y [0, 833.34]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "table S1-LN30",
+  "source": "LINEAR.xls sheet S1-LN30 (DWG No. ABC-010)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "table S1-LN31",
+  "source": "LINEAR.xls sheet S1-LN31 (DWG No. ABC-001C)",
+  "input": "X/Y points (16)",
+  "expected": "[(-30.0, 2.636), (0.0, 2.636), (9.0, 2.636)] ...",
+  "actual": "[(-30, 2.636), (0, 2.636), (9, 2.636)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "table S1-LN31",
+  "source": "LINEAR.xls sheet S1-LN31 (DWG No. ABC-001C)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 150.0) Y (0.0, 35.971)",
+  "actual": "X [0, 150] Y [0, 35.971]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "table S1-LN31",
+  "source": "LINEAR.xls sheet S1-LN31 (DWG No. ABC-001C)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "table S1-LN32",
+  "source": "LINEAR.xls sheet S1-LN32 (DWG No. ABC-001C)",
+  "input": "X/Y points (14)",
+  "expected": "[(-120.0, 70.423), (300.0, 70.423), (330.0, 70.423)] ...",
+  "actual": "[(-120, 70.423), (300, 70.423), (330, 70.423)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "table S1-LN32",
+  "source": "LINEAR.xls sheet S1-LN32 (DWG No. ABC-001C)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 600.0) Y (0.0, 35.97)",
+  "actual": "X [0, 600] Y [0, 35.97]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "table S1-LN32",
+  "source": "LINEAR.xls sheet S1-LN32 (DWG No. ABC-001C)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-009A,9B",
+  "block": "table S1-LN34",
+  "source": "LINEAR.xls sheet S1-LN34 (DWG No. ABC-009A,9B)",
+  "input": "X/Y points (5)",
+  "expected": "[(-20.0, -25.0), (0.0, -25.0), (50.0, 0.0)] ...",
+  "actual": "[(-20, -25), (0, -25), (50, 0)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-009A,9B",
+  "block": "table S1-LN34",
+  "source": "LINEAR.xls sheet S1-LN34 (DWG No. ABC-009A,9B)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-009A,9B",
+  "block": "table S1-LN34",
+  "source": "LINEAR.xls sheet S1-LN34 (DWG No. ABC-009A,9B)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN40",
+  "source": "LINEAR.xls sheet S1-LN40 (DWG No. ABC-002)",
+  "input": "X/Y points (12)",
+  "expected": "[(-223.0, 0.0), (0.0, 0.0), (414.0, 0.0)] ...",
+  "actual": "[(-223, 0), (0, 0), (414, 0)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN40",
+  "source": "LINEAR.xls sheet S1-LN40 (DWG No. ABC-002)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 1115.0) Y (0.0, 120.0)",
+  "actual": "X [0, 1115] Y [0, 120]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "table S1-LN40",
+  "source": "LINEAR.xls sheet S1-LN40 (DWG No. ABC-002)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "table S1-LN42",
+  "source": "LINEAR.xls sheet S1-LN42 (DWG No. ABC-011)",
+  "input": "X/Y points (16)",
+  "expected": "[(-50.0, 100.02), (0.0, 100.02), (9.0, 179.88)] ...",
+  "actual": "[(-50, 100.02), (0, 100.02), (9, 179.88)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "table S1-LN42",
+  "source": "LINEAR.xls sheet S1-LN42 (DWG No. ABC-011)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 250.0) Y (0.0, 600.0)",
+  "actual": "X [0, 250] Y [0, 600]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "table S1-LN42",
+  "source": "LINEAR.xls sheet S1-LN42 (DWG No. ABC-011)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "table S1-LN43",
+  "source": "LINEAR.xls sheet S1-LN43 (DWG No. ABC-012)",
+  "input": "X/Y points (16)",
+  "expected": "[(-30.0, 100.02), (9.0, 179.88), (19.0, 212.4)] ...",
+  "actual": "[(-30, 100.02), (9, 179.88), (19, 212.4)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "table S1-LN43",
+  "source": "LINEAR.xls sheet S1-LN43 (DWG No. ABC-012)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 150.0) Y (0.0, 600.0)",
+  "actual": "X [0, 150] Y [0, 600]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "table S1-LN43",
+  "source": "LINEAR.xls sheet S1-LN43 (DWG No. ABC-012)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "table S1-LN44",
+  "source": "LINEAR.xls sheet S1-LN44 (DWG No. ABC-004A)",
+  "input": "X/Y points (7)",
+  "expected": "[(-20.0, 1.0), (-1.0, 1.0), (-1.0, 0.0)] ...",
+  "actual": "[(-20, 1), (-1, 1), (-1, 0)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "table S1-LN44",
+  "source": "LINEAR.xls sheet S1-LN44 (DWG No. ABC-004A)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "table S1-LN44",
+  "source": "LINEAR.xls sheet S1-LN44 (DWG No. ABC-004A)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "table S1-LN46",
+  "source": "LINEAR.xls sheet S1-LN46 (DWG No. ABC-011)",
+  "input": "X/Y points (5)",
+  "expected": "[(-20.0, 0.0), (0.0, 0.0), (22.22, 100.0)] ...",
+  "actual": "[(-20, 0), (0, 0), (22.22, 100)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "table S1-LN46",
+  "source": "LINEAR.xls sheet S1-LN46 (DWG No. ABC-011)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "table S1-LN46",
+  "source": "LINEAR.xls sheet S1-LN46 (DWG No. ABC-011)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "table S1-LN47",
+  "source": "LINEAR.xls sheet S1-LN47 (DWG No. ABC-011)",
+  "input": "X/Y points (5)",
+  "expected": "[(-20.0, 0.0), (0.0, 0.0), (22.0, 0.0)] ...",
+  "actual": "[(-20, 0), (0, 0), (22, 0)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "table S1-LN47",
+  "source": "LINEAR.xls sheet S1-LN47 (DWG No. ABC-011)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "table S1-LN47",
+  "source": "LINEAR.xls sheet S1-LN47 (DWG No. ABC-011)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "table S1-LN48",
+  "source": "LINEAR.xls sheet S1-LN48 (DWG No. ABC-012)",
+  "input": "X/Y points (5)",
+  "expected": "[(-20.0, 0.0), (0.0, 0.0), (22.0, 100.0)] ...",
+  "actual": "[(-20, 0), (0, 0), (22, 100)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "table S1-LN48",
+  "source": "LINEAR.xls sheet S1-LN48 (DWG No. ABC-012)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "table S1-LN48",
+  "source": "LINEAR.xls sheet S1-LN48 (DWG No. ABC-012)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "table S1-LN49",
+  "source": "LINEAR.xls sheet S1-LN49 (DWG No. ABC-012)",
+  "input": "X/Y points (5)",
+  "expected": "[(-20.0, 0.0), (0.0, 0.0), (18.0, 0.0)] ...",
+  "actual": "[(-20, 0), (0, 0), (18, 0)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "table S1-LN49",
+  "source": "LINEAR.xls sheet S1-LN49 (DWG No. ABC-012)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "table S1-LN49",
+  "source": "LINEAR.xls sheet S1-LN49 (DWG No. ABC-012)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "table S1-LN50",
+  "source": "LINEAR.xls sheet S1-LN50 (DWG No. ABC-008)",
+  "input": "X/Y points (4)",
+  "expected": "[(-20.0, 0.0), (0.0, 0.0), (100.0, 100.0)] ...",
+  "actual": "[(-20, 0), (0, 0), (100, 100)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "table S1-LN50",
+  "source": "LINEAR.xls sheet S1-LN50 (DWG No. ABC-008)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "table S1-LN50",
+  "source": "LINEAR.xls sheet S1-LN50 (DWG No. ABC-008)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "table S1-LN51",
+  "source": "LINEAR.xls sheet S1-LN51 (DWG No. ABC-008)",
+  "input": "X/Y points (4)",
+  "expected": "[(-20.0, 0.0), (0.0, 0.0), (100.0, 100.0)] ...",
+  "actual": "[(-20, 0), (0, 0), (100, 100)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "table S1-LN51",
+  "source": "LINEAR.xls sheet S1-LN51 (DWG No. ABC-008)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "table S1-LN51",
+  "source": "LINEAR.xls sheet S1-LN51 (DWG No. ABC-008)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "table S1-LN54",
+  "source": "LINEAR.xls sheet S1-LN54 (DWG No. ABC-001C)",
+  "input": "X/Y points (10)",
+  "expected": "[(-40.0, 0.0), (0.0, 0.0), (60.0, 35.0)] ...",
+  "actual": "[(-40, 0), (0, 0), (60, 35)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "table S1-LN54",
+  "source": "LINEAR.xls sheet S1-LN54 (DWG No. ABC-001C)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 120.0)",
+  "actual": "X [0, 200] Y [0, 120]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "table S1-LN54",
+  "source": "LINEAR.xls sheet S1-LN54 (DWG No. ABC-001C)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "table S1-LN55",
+  "source": "LINEAR.xls sheet S1-LN55 (DWG No. ABC-001C)",
+  "input": "X/Y points (13)",
+  "expected": "[(-30.0, -2.0), (-9.5, -2.0), (-6.5, -2.0)] ...",
+  "actual": "[(-30, -2), (-9.5, -2), (-6.5, -2)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "table S1-LN55",
+  "source": "LINEAR.xls sheet S1-LN55 (DWG No. ABC-001C)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 150.0) Y (0.0, 200.0)",
+  "actual": "X [0, 150] Y [0, 200]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "table S1-LN55",
+  "source": "LINEAR.xls sheet S1-LN55 (DWG No. ABC-001C)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "table S1-LN58",
+  "source": "LINEAR.xls sheet S1-LN58 (DWG No. ABC-001D)",
+  "input": "X/Y points (9)",
+  "expected": "[(-40.0, 0.55), (0.0, 0.55), (4.9, 0.55)] ...",
+  "actual": "[(-40, 0.55), (0, 0.55), (4.9, 0.55)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "table S1-LN58",
+  "source": "LINEAR.xls sheet S1-LN58 (DWG No. ABC-001D)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 1.0)",
+  "actual": "X [0, 200] Y [0, 1]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "table S1-LN58",
+  "source": "LINEAR.xls sheet S1-LN58 (DWG No. ABC-001D)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "table S1-LN59",
+  "source": "LINEAR.xls sheet S1-LN59 (DWG No. ABC-001D)",
+  "input": "X/Y points (9)",
+  "expected": "[(-40.0, 0.25), (0.0, 0.25), (1.98, 0.25)] ...",
+  "actual": "[(-40, 0.25), (0, 0.25), (1.98, 0.25)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "table S1-LN59",
+  "source": "LINEAR.xls sheet S1-LN59 (DWG No. ABC-001D)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 1.0)",
+  "actual": "X [0, 200] Y [0, 1]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "table S1-LN59",
+  "source": "LINEAR.xls sheet S1-LN59 (DWG No. ABC-001D)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "table S1-LN60",
+  "source": "LINEAR.xls sheet S1-LN60 (DWG No. ABC-001D)",
+  "input": "X/Y points (8)",
+  "expected": "[(-2.0, 0.95), (0.0, 0.95), (0.6, 0.95)] ...",
+  "actual": "[(-2, 0.95), (0, 0.95), (0.6, 0.95)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "table S1-LN60",
+  "source": "LINEAR.xls sheet S1-LN60 (DWG No. ABC-001D)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 10.0) Y (0.0, 1.0)",
+  "actual": "X [0, 10] Y [0, 1]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "table S1-LN60",
+  "source": "LINEAR.xls sheet S1-LN60 (DWG No. ABC-001D)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "table S1-LN61",
+  "source": "LINEAR.xls sheet S1-LN61 (DWG No. ABC-001D)",
+  "input": "X/Y points (13)",
+  "expected": "[(-40.0, 0.0), (0.0, 0.0), (64.0, 0.0)] ...",
+  "actual": "[(-40, 0), (0, 0), (64, 0)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "table S1-LN61",
+  "source": "LINEAR.xls sheet S1-LN61 (DWG No. ABC-001D)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 120.0)",
+  "actual": "X [0, 200] Y [0, 120]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "table S1-LN61",
+  "source": "LINEAR.xls sheet S1-LN61 (DWG No. ABC-001D)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "table S1-LN62",
+  "source": "LINEAR.xls sheet S1-LN62 (DWG No. ABC-001D)",
+  "input": "X/Y points (14)",
+  "expected": "[(-40.0, 0.0), (0.0, 0.0), (50.0, 0.0)] ...",
+  "actual": "[(-40, 0), (0, 0), (50, 0)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "table S1-LN62",
+  "source": "LINEAR.xls sheet S1-LN62 (DWG No. ABC-001D)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 120.0)",
+  "actual": "X [0, 200] Y [0, 120]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "table S1-LN62",
+  "source": "LINEAR.xls sheet S1-LN62 (DWG No. ABC-001D)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "table S2-LN2",
+  "source": "LINEAR.xls sheet S2-LN2 (DWG No. ABC-019)",
+  "input": "X/Y points (16)",
+  "expected": "[(-10.0, 0.0), (0.0, 99.09), (5.0, 158.08)] ...",
+  "actual": "[(-10, 0), (0, 99.09), (5, 158.08)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "table S2-LN2",
+  "source": "LINEAR.xls sheet S2-LN2 (DWG No. ABC-019)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 50.0) Y (0.0, 600.0)",
+  "actual": "X [0, 50] Y [0, 600]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "table S2-LN2",
+  "source": "LINEAR.xls sheet S2-LN2 (DWG No. ABC-019)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "table S2-LN3",
+  "source": "LINEAR.xls sheet S2-LN3 (DWG No. ABC-020)",
+  "input": "X/Y points (8)",
+  "expected": "[(-40.0, 10.0), (0.0, 10.0), (30.0, 15.0)] ...",
+  "actual": "[(-40, 10), (0, 10), (30, 15)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "table S2-LN3",
+  "source": "LINEAR.xls sheet S2-LN3 (DWG No. ABC-020)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 100.0)",
+  "actual": "X [0, 200] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "table S2-LN3",
+  "source": "LINEAR.xls sheet S2-LN3 (DWG No. ABC-020)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "table S2-LN5",
+  "source": "LINEAR.xls sheet S2-LN5 (DWG No. ABC-020)",
+  "input": "X/Y points (5)",
+  "expected": "[(-20.0, 100.0), (0.0, 100.0), (50.0, 50.0)] ...",
+  "actual": "[(-20, 100), (0, 100), (50, 50)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "table S2-LN5",
+  "source": "LINEAR.xls sheet S2-LN5 (DWG No. ABC-020)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "table S2-LN5",
+  "source": "LINEAR.xls sheet S2-LN5 (DWG No. ABC-020)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "table S2-LN6",
+  "source": "LINEAR.xls sheet S2-LN6 (DWG No. ABC-020)",
+  "input": "X/Y points (8)",
+  "expected": "[(-40.0, 420.0), (0.0, 420.0), (37.5, 480.0)] ...",
+  "actual": "[(-40, 420), (0, 420), (37.5, 480)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "table S2-LN6",
+  "source": "LINEAR.xls sheet S2-LN6 (DWG No. ABC-020)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 600.0)",
+  "actual": "X [0, 200] Y [0, 600]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "table S2-LN6",
+  "source": "LINEAR.xls sheet S2-LN6 (DWG No. ABC-020)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "table S2-LN7",
+  "source": "LINEAR.xls sheet S2-LN7 (DWG No. ABC-020)",
+  "input": "X/Y points (2)",
+  "expected": "[(0.0, -50.0), (100.0, 50.0)] ...",
+  "actual": "[(0, -50), (100, 50)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "table S2-LN7",
+  "source": "LINEAR.xls sheet S2-LN7 (DWG No. ABC-020)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "table S2-LN7",
+  "source": "LINEAR.xls sheet S2-LN7 (DWG No. ABC-020)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "table S2-LN8",
+  "source": "LINEAR.xls sheet S2-LN8 (DWG No. ABC-020)",
+  "input": "X/Y points (2)",
+  "expected": "[(-50.0, 0.0), (50.0, 100.0)] ...",
+  "actual": "[(-50, 0), (50, 100)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "table S2-LN8",
+  "source": "LINEAR.xls sheet S2-LN8 (DWG No. ABC-020)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "table S2-LN8",
+  "source": "LINEAR.xls sheet S2-LN8 (DWG No. ABC-020)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "table S2-LN9",
+  "source": "LINEAR.xls sheet S2-LN9 (DWG No. ABC-019)",
+  "input": "X/Y points (8)",
+  "expected": "[(-40.0, 10.0), (0.0, 10.0), (37.5, 10.0)] ...",
+  "actual": "[(-40, 10), (0, 10), (37.5, 10)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "table S2-LN9",
+  "source": "LINEAR.xls sheet S2-LN9 (DWG No. ABC-019)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 600.0)",
+  "actual": "X [0, 200] Y [0, 600]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "table S2-LN9",
+  "source": "LINEAR.xls sheet S2-LN9 (DWG No. ABC-019)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "table S2-LN10",
+  "source": "LINEAR.xls sheet S2-LN10 (DWG No. ABC-051)",
+  "input": "X/Y points (16)",
+  "expected": "[(-10.0, 0.0), (0.0, 129.09), (5.0, 188.08)] ...",
+  "actual": "[(-10, 0), (0, 129.09), (5, 188.08)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "table S2-LN10",
+  "source": "LINEAR.xls sheet S2-LN10 (DWG No. ABC-051)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 50.0) Y (0.0, 600.0)",
+  "actual": "X [0, 50] Y [0, 600]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "table S2-LN10",
+  "source": "LINEAR.xls sheet S2-LN10 (DWG No. ABC-051)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "table S2-LN11",
+  "source": "LINEAR.xls sheet S2-LN11 (DWG No. ABC-052)",
+  "input": "X/Y points (4)",
+  "expected": "[(-50.0, 33.0), (0.0, 33.0), (50.0, 1667.0)] ...",
+  "actual": "[(-50, 33), (0, 33), (50, 1667)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "table S2-LN11",
+  "source": "LINEAR.xls sheet S2-LN11 (DWG No. ABC-052)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 50.0) Y (0.0, 10000.0)",
+  "actual": "X [0, 50] Y [0, 10000]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "table S2-LN11",
+  "source": "LINEAR.xls sheet S2-LN11 (DWG No. ABC-052)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "table S2-LN12",
+  "source": "LINEAR.xls sheet S2-LN12 (DWG No. ABC-052)",
+  "input": "X/Y points (5)",
+  "expected": "[(-30.0, 0.0), (0.0, 0.0), (108.94, 34.77)] ...",
+  "actual": "[(-30, 0), (0, 0), (108.94, 34.77)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "table S2-LN12",
+  "source": "LINEAR.xls sheet S2-LN12 (DWG No. ABC-052)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 150.0) Y (0.0, 50.0)",
+  "actual": "X [0, 150] Y [0, 50]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "table S2-LN12",
+  "source": "LINEAR.xls sheet S2-LN12 (DWG No. ABC-052)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "table S2-LN13",
+  "source": "LINEAR.xls sheet S2-LN13 (DWG No. ABC-051)",
+  "input": "X/Y points (16)",
+  "expected": "[(-10.0, 0.0), (0.0, 99.09), (5.0, 158.07)] ...",
+  "actual": "[(-10, 0), (0, 99.09), (5, 158.07)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "table S2-LN13",
+  "source": "LINEAR.xls sheet S2-LN13 (DWG No. ABC-051)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 50.0) Y (0.0, 600.0)",
+  "actual": "X [0, 50] Y [0, 600]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "table S2-LN13",
+  "source": "LINEAR.xls sheet S2-LN13 (DWG No. ABC-051)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "table S2-LN16",
+  "source": "LINEAR.xls sheet S2-LN16 (DWG No. ABC-030)",
+  "input": "X/Y points (5)",
+  "expected": "[(-30.0, 0.0), (0.0, 0.0), (13.0, 100.0)] ...",
+  "actual": "[(-30, 0), (0, 0), (13, 100)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "table S2-LN16",
+  "source": "LINEAR.xls sheet S2-LN16 (DWG No. ABC-030)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "table S2-LN16",
+  "source": "LINEAR.xls sheet S2-LN16 (DWG No. ABC-030)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "table S2-LN17",
+  "source": "LINEAR.xls sheet S2-LN17 (DWG No. ABC-030)",
+  "input": "X/Y points (5)",
+  "expected": "[(-30.0, 0.0), (0.0, 0.0), (13.0, 0.0)] ...",
+  "actual": "[(-30, 0), (0, 0), (13, 0)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "table S2-LN17",
+  "source": "LINEAR.xls sheet S2-LN17 (DWG No. ABC-030)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "table S2-LN17",
+  "source": "LINEAR.xls sheet S2-LN17 (DWG No. ABC-030)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "table S2-LN18",
+  "source": "LINEAR.xls sheet S2-LN18 (DWG No. ABC-034)",
+  "input": "X/Y points (4)",
+  "expected": "[(-20.0, 0.0), (0.0, 0.0), (100.0, 28.0)] ...",
+  "actual": "[(-20, 0), (0, 0), (100, 28)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "table S2-LN18",
+  "source": "LINEAR.xls sheet S2-LN18 (DWG No. ABC-034)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "table S2-LN18",
+  "source": "LINEAR.xls sheet S2-LN18 (DWG No. ABC-034)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "table S2-LN19",
+  "source": "LINEAR.xls sheet S2-LN19 (DWG No. ABC-034)",
+  "input": "X/Y points (4)",
+  "expected": "[(-20.0, 0.0), (0.0, 0.0), (100.0, 50.0)] ...",
+  "actual": "[(-20, 0), (0, 0), (100, 50)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "table S2-LN19",
+  "source": "LINEAR.xls sheet S2-LN19 (DWG No. ABC-034)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "table S2-LN19",
+  "source": "LINEAR.xls sheet S2-LN19 (DWG No. ABC-034)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "table S2-LN20",
+  "source": "LINEAR.xls sheet S2-LN20 (DWG No. ABC-034)",
+  "input": "X/Y points (6)",
+  "expected": "[(-120.0, 0.0), (0.0, 0.0), (250.0, 0.0)] ...",
+  "actual": "[(-120, 0), (0, 0), (250, 0)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "table S2-LN20",
+  "source": "LINEAR.xls sheet S2-LN20 (DWG No. ABC-034)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 600.0) Y (0.0, 100.0)",
+  "actual": "X [0, 600] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "table S2-LN20",
+  "source": "LINEAR.xls sheet S2-LN20 (DWG No. ABC-034)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "table S2-LN21",
+  "source": "LINEAR.xls sheet S2-LN21 (DWG No. ABC-034)",
+  "input": "X/Y points (8)",
+  "expected": "[(-30.0, 0.0), (0.0, 0.0), (2.5, 10.0)] ...",
+  "actual": "[(-30, 0), (0, 0), (2.5, 10)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "table S2-LN21",
+  "source": "LINEAR.xls sheet S2-LN21 (DWG No. ABC-034)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "table S2-LN21",
+  "source": "LINEAR.xls sheet S2-LN21 (DWG No. ABC-034)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "table S2-LN22",
+  "source": "LINEAR.xls sheet S2-LN22 (DWG No. ABC-053)",
+  "input": "X/Y points (5)",
+  "expected": "[(-800.0, 38.0), (0.0, 38.0), (3600.0, 46.0)] ...",
+  "actual": "[(-800, 38), (0, 38), (3600, 46)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "table S2-LN22",
+  "source": "LINEAR.xls sheet S2-LN22 (DWG No. ABC-053)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 4000.0) Y (0.0, 100.0)",
+  "actual": "X [0, 4000] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "table S2-LN22",
+  "source": "LINEAR.xls sheet S2-LN22 (DWG No. ABC-053)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "table S2-LN31",
+  "source": "LINEAR.xls sheet S2-LN31 (DWG No. ABC-050)",
+  "input": "X/Y points (7)",
+  "expected": "[(-150.0, 0.0), (0.0, 0.0), (8.6, 19.0)] ...",
+  "actual": "[(-150, 0), (0, 0), (8.6, 19)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "table S2-LN31",
+  "source": "LINEAR.xls sheet S2-LN31 (DWG No. ABC-050)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 500.0) Y (0.0, 100.0)",
+  "actual": "X [0, 500] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "table S2-LN31",
+  "source": "LINEAR.xls sheet S2-LN31 (DWG No. ABC-050)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "table S2-LN32",
+  "source": "LINEAR.xls sheet S2-LN32 (DWG No. ABC-050)",
+  "input": "X/Y points (8)",
+  "expected": "[(-100.0, 0.0), (0.0, 0.0), (12.6, 19.0)] ...",
+  "actual": "[(-100, 0), (0, 0), (12.6, 19)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "table S2-LN32",
+  "source": "LINEAR.xls sheet S2-LN32 (DWG No. ABC-050)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 500.0) Y (0.0, 100.0)",
+  "actual": "X [0, 500] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "table S2-LN32",
+  "source": "LINEAR.xls sheet S2-LN32 (DWG No. ABC-050)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "table S2-LN33",
+  "source": "LINEAR.xls sheet S2-LN33 (DWG No. ABC-051)",
+  "input": "X/Y points (8)",
+  "expected": "[(-30.0, 0.0), (0.0, 0.0), (19.0, 19.0)] ...",
+  "actual": "[(-30, 0), (0, 0), (19, 19)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "table S2-LN33",
+  "source": "LINEAR.xls sheet S2-LN33 (DWG No. ABC-051)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "table S2-LN33",
+  "source": "LINEAR.xls sheet S2-LN33 (DWG No. ABC-051)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "table S2-LN34",
+  "source": "LINEAR.xls sheet S2-LN34 (DWG No. ABC-052)",
+  "input": "X/Y points (8)",
+  "expected": "[(-30.0, 0.0), (0.0, 0.0), (19.0, 12.5)] ...",
+  "actual": "[(-30, 0), (0, 0), (19, 12.5)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "table S2-LN34",
+  "source": "LINEAR.xls sheet S2-LN34 (DWG No. ABC-052)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "table S2-LN34",
+  "source": "LINEAR.xls sheet S2-LN34 (DWG No. ABC-052)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-35-39",
+  "block": "table S2-LN38",
+  "source": "LINEAR.xls sheet S2-LN38 (DWG No. ABC-35-39)",
+  "input": "X/Y points (5)",
+  "expected": "[(-30.0, 0.0), (0.0, 0.0), (60.0, 100.0)] ...",
+  "actual": "[(-30, 0), (0, 0), (60, 100)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-35-39",
+  "block": "table S2-LN38",
+  "source": "LINEAR.xls sheet S2-LN38 (DWG No. ABC-35-39)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-35-39",
+  "block": "table S2-LN38",
+  "source": "LINEAR.xls sheet S2-LN38 (DWG No. ABC-35-39)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-35-39",
+  "block": "table S2-LN39",
+  "source": "LINEAR.xls sheet S2-LN39 (DWG No. ABC-35-39)",
+  "input": "X/Y points (5)",
+  "expected": "[(-30.0, 0.0), (0.0, 0.0), (55.0, 0.0)] ...",
+  "actual": "[(-30, 0), (0, 0), (55, 0)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-35-39",
+  "block": "table S2-LN39",
+  "source": "LINEAR.xls sheet S2-LN39 (DWG No. ABC-35-39)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-35-39",
+  "block": "table S2-LN39",
+  "source": "LINEAR.xls sheet S2-LN39 (DWG No. ABC-35-39)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN1",
+  "source": "LINEAR.xls sheet S3-LN1 (DWG No. ABC-057)",
+  "input": "X/Y points (9)",
+  "expected": "[(-40.0, 10.0), (0.0, 10.0), (75.0, 10.0)] ...",
+  "actual": "[(-40, 10), (0, 10), (75, 10)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN1",
+  "source": "LINEAR.xls sheet S3-LN1 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 100.0)",
+  "actual": "X [0, 200] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN1",
+  "source": "LINEAR.xls sheet S3-LN1 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN2",
+  "source": "LINEAR.xls sheet S3-LN2 (DWG No. ABC-057)",
+  "input": "X/Y points (10)",
+  "expected": "[(-40.0, 15.0), (0.0, 15.0), (75.0, 15.0)] ...",
+  "actual": "[(-40, 15), (0, 15), (75, 15)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN2",
+  "source": "LINEAR.xls sheet S3-LN2 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 100.0)",
+  "actual": "X [0, 200] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN2",
+  "source": "LINEAR.xls sheet S3-LN2 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN3",
+  "source": "LINEAR.xls sheet S3-LN3 (DWG No. ABC-057)",
+  "input": "X/Y points (9)",
+  "expected": "[(-40.0, 10.0), (0.0, 10.0), (75.0, 10.0)] ...",
+  "actual": "[(-40, 10), (0, 10), (75, 10)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN3",
+  "source": "LINEAR.xls sheet S3-LN3 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 100.0)",
+  "actual": "X [0, 200] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN3",
+  "source": "LINEAR.xls sheet S3-LN3 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN4",
+  "source": "LINEAR.xls sheet S3-LN4 (DWG No. ABC-057)",
+  "input": "X/Y points (10)",
+  "expected": "[(-40.0, 15.0), (0.0, 15.0), (75.0, 15.0)] ...",
+  "actual": "[(-40, 15), (0, 15), (75, 15)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN4",
+  "source": "LINEAR.xls sheet S3-LN4 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 100.0)",
+  "actual": "X [0, 200] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN4",
+  "source": "LINEAR.xls sheet S3-LN4 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN5",
+  "source": "LINEAR.xls sheet S3-LN5 (DWG No. ABC-057)",
+  "input": "X/Y points (9)",
+  "expected": "[(-40.0, 10.0), (0.0, 10.0), (75.0, 10.0)] ...",
+  "actual": "[(-40, 10), (0, 10), (75, 10)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN5",
+  "source": "LINEAR.xls sheet S3-LN5 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 100.0)",
+  "actual": "X [0, 200] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN5",
+  "source": "LINEAR.xls sheet S3-LN5 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN6",
+  "source": "LINEAR.xls sheet S3-LN6 (DWG No. ABC-057)",
+  "input": "X/Y points (10)",
+  "expected": "[(-40.0, 15.0), (0.0, 15.0), (75.0, 15.0)] ...",
+  "actual": "[(-40, 15), (0, 15), (75, 15)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN6",
+  "source": "LINEAR.xls sheet S3-LN6 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 100.0)",
+  "actual": "X [0, 200] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN6",
+  "source": "LINEAR.xls sheet S3-LN6 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN7",
+  "source": "LINEAR.xls sheet S3-LN7 (DWG No. ABC-057)",
+  "input": "X/Y points (9)",
+  "expected": "[(-40.0, 10.0), (0.0, 10.0), (75.0, 10.0)] ...",
+  "actual": "[(-40, 10), (0, 10), (75, 10)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN7",
+  "source": "LINEAR.xls sheet S3-LN7 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 100.0)",
+  "actual": "X [0, 200] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN7",
+  "source": "LINEAR.xls sheet S3-LN7 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN8",
+  "source": "LINEAR.xls sheet S3-LN8 (DWG No. ABC-057)",
+  "input": "X/Y points (10)",
+  "expected": "[(-40.0, 15.0), (0.0, 15.0), (75.0, 15.0)] ...",
+  "actual": "[(-40, 15), (0, 15), (75, 15)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN8",
+  "source": "LINEAR.xls sheet S3-LN8 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 100.0)",
+  "actual": "X [0, 200] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN8",
+  "source": "LINEAR.xls sheet S3-LN8 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN9",
+  "source": "LINEAR.xls sheet S3-LN9 (DWG No. ABC-057)",
+  "input": "X/Y points (9)",
+  "expected": "[(-40.0, 10.0), (0.0, 10.0), (75.0, 10.0)] ...",
+  "actual": "[(-40, 10), (0, 10), (75, 10)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN9",
+  "source": "LINEAR.xls sheet S3-LN9 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 100.0)",
+  "actual": "X [0, 200] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN9",
+  "source": "LINEAR.xls sheet S3-LN9 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN10",
+  "source": "LINEAR.xls sheet S3-LN10 (DWG No. ABC-057)",
+  "input": "X/Y points (10)",
+  "expected": "[(-40.0, 15.0), (0.0, 15.0), (75.0, 15.0)] ...",
+  "actual": "[(-40, 15), (0, 15), (75, 15)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN10",
+  "source": "LINEAR.xls sheet S3-LN10 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 100.0)",
+  "actual": "X [0, 200] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN10",
+  "source": "LINEAR.xls sheet S3-LN10 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN11",
+  "source": "LINEAR.xls sheet S3-LN11 (DWG No. ABC-057)",
+  "input": "X/Y points (9)",
+  "expected": "[(-40.0, 10.0), (0.0, 10.0), (75.0, 10.0)] ...",
+  "actual": "[(-40, 10), (0, 10), (75, 10)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN11",
+  "source": "LINEAR.xls sheet S3-LN11 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 100.0)",
+  "actual": "X [0, 200] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN11",
+  "source": "LINEAR.xls sheet S3-LN11 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN12",
+  "source": "LINEAR.xls sheet S3-LN12 (DWG No. ABC-057)",
+  "input": "X/Y points (10)",
+  "expected": "[(-40.0, 15.0), (0.0, 15.0), (75.0, 15.0)] ...",
+  "actual": "[(-40, 15), (0, 15), (75, 15)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN12",
+  "source": "LINEAR.xls sheet S3-LN12 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 100.0)",
+  "actual": "X [0, 200] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN12",
+  "source": "LINEAR.xls sheet S3-LN12 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN13",
+  "source": "LINEAR.xls sheet S3-LN13 (DWG No. ABC-057)",
+  "input": "X/Y points (9)",
+  "expected": "[(-40.0, 10.0), (0.0, 10.0), (75.0, 10.0)] ...",
+  "actual": "[(-40, 10), (0, 10), (75, 10)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN13",
+  "source": "LINEAR.xls sheet S3-LN13 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 100.0)",
+  "actual": "X [0, 200] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN13",
+  "source": "LINEAR.xls sheet S3-LN13 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN14",
+  "source": "LINEAR.xls sheet S3-LN14 (DWG No. ABC-057)",
+  "input": "X/Y points (10)",
+  "expected": "[(-40.0, 15.0), (0.0, 15.0), (75.0, 15.0)] ...",
+  "actual": "[(-40, 15), (0, 15), (75, 15)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN14",
+  "source": "LINEAR.xls sheet S3-LN14 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 100.0)",
+  "actual": "X [0, 200] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN14",
+  "source": "LINEAR.xls sheet S3-LN14 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN15",
+  "source": "LINEAR.xls sheet S3-LN15 (DWG No. ABC-057)",
+  "input": "X/Y points (9)",
+  "expected": "[(-40.0, 10.0), (0.0, 10.0), (75.0, 10.0)] ...",
+  "actual": "[(-40, 10), (0, 10), (75, 10)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN15",
+  "source": "LINEAR.xls sheet S3-LN15 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 100.0)",
+  "actual": "X [0, 200] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN15",
+  "source": "LINEAR.xls sheet S3-LN15 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN16",
+  "source": "LINEAR.xls sheet S3-LN16 (DWG No. ABC-057)",
+  "input": "X/Y points (10)",
+  "expected": "[(-40.0, 15.0), (0.0, 15.0), (75.0, 15.0)] ...",
+  "actual": "[(-40, 15), (0, 15), (75, 15)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN16",
+  "source": "LINEAR.xls sheet S3-LN16 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 100.0)",
+  "actual": "X [0, 200] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN16",
+  "source": "LINEAR.xls sheet S3-LN16 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN17",
+  "source": "LINEAR.xls sheet S3-LN17 (DWG No. ABC-057)",
+  "input": "X/Y points (9)",
+  "expected": "[(-40.0, 10.0), (0.0, 10.0), (75.0, 10.0)] ...",
+  "actual": "[(-40, 10), (0, 10), (75, 10)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN17",
+  "source": "LINEAR.xls sheet S3-LN17 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 100.0)",
+  "actual": "X [0, 200] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN17",
+  "source": "LINEAR.xls sheet S3-LN17 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN18",
+  "source": "LINEAR.xls sheet S3-LN18 (DWG No. ABC-057)",
+  "input": "X/Y points (10)",
+  "expected": "[(-40.0, 15.0), (0.0, 15.0), (75.0, 15.0)] ...",
+  "actual": "[(-40, 15), (0, 15), (75, 15)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN18",
+  "source": "LINEAR.xls sheet S3-LN18 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 100.0)",
+  "actual": "X [0, 200] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN18",
+  "source": "LINEAR.xls sheet S3-LN18 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN19",
+  "source": "LINEAR.xls sheet S3-LN19 (DWG No. ABC-057)",
+  "input": "X/Y points (9)",
+  "expected": "[(-40.0, 10.0), (0.0, 10.0), (75.0, 10.0)] ...",
+  "actual": "[(-40, 10), (0, 10), (75, 10)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN19",
+  "source": "LINEAR.xls sheet S3-LN19 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 100.0)",
+  "actual": "X [0, 200] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN19",
+  "source": "LINEAR.xls sheet S3-LN19 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN20",
+  "source": "LINEAR.xls sheet S3-LN20 (DWG No. ABC-057)",
+  "input": "X/Y points (10)",
+  "expected": "[(-40.0, 15.0), (0.0, 15.0), (75.0, 15.0)] ...",
+  "actual": "[(-40, 15), (0, 15), (75, 15)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN20",
+  "source": "LINEAR.xls sheet S3-LN20 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 100.0)",
+  "actual": "X [0, 200] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN20",
+  "source": "LINEAR.xls sheet S3-LN20 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN21",
+  "source": "LINEAR.xls sheet S3-LN21 (DWG No. ABC-057)",
+  "input": "X/Y points (9)",
+  "expected": "[(-40.0, 10.0), (0.0, 10.0), (75.0, 10.0)] ...",
+  "actual": "[(-40, 10), (0, 10), (75, 10)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN21",
+  "source": "LINEAR.xls sheet S3-LN21 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 100.0)",
+  "actual": "X [0, 200] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN21",
+  "source": "LINEAR.xls sheet S3-LN21 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN22",
+  "source": "LINEAR.xls sheet S3-LN22 (DWG No. ABC-057)",
+  "input": "X/Y points (10)",
+  "expected": "[(-40.0, 15.0), (0.0, 15.0), (75.0, 15.0)] ...",
+  "actual": "[(-40, 15), (0, 15), (75, 15)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN22",
+  "source": "LINEAR.xls sheet S3-LN22 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 200.0) Y (0.0, 100.0)",
+  "actual": "X [0, 200] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN22",
+  "source": "LINEAR.xls sheet S3-LN22 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN23",
+  "source": "LINEAR.xls sheet S3-LN23 (DWG No. ABC-057)",
+  "input": "X/Y points (5)",
+  "expected": "[(-20.0, -10.0), (0.0, -10.0), (50.0, 0.0)] ...",
+  "actual": "[(-20, -10), (0, -10), (50, 0)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN23",
+  "source": "LINEAR.xls sheet S3-LN23 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN23",
+  "source": "LINEAR.xls sheet S3-LN23 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN24",
+  "source": "LINEAR.xls sheet S3-LN24 (DWG No. ABC-057)",
+  "input": "X/Y points (5)",
+  "expected": "[(-20.0, -10.0), (0.0, -10.0), (50.0, 0.0)] ...",
+  "actual": "[(-20, -10), (0, -10), (50, 0)] ...",
+  "status": "PASS",
+  "evidence": "all points compared"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN24",
+  "source": "LINEAR.xls sheet S3-LN24 (DWG No. ABC-057)",
+  "input": "X / Y range",
+  "expected": "X (0.0, 100.0) Y (0.0, 100.0)",
+  "actual": "X [0, 100] Y [0, 100]",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "table S3-LN24",
+  "source": "LINEAR.xls sheet S3-LN24 (DWG No. ABC-057)",
+  "input": "LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)",
+  "expected": "all rows consistent",
+  "actual": "0 of 16 rows differ",
+  "status": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "table S1-LN38",
+  "input": "-",
+  "expected": "table in LINEAR.xls",
+  "actual": "not in the file",
+  "source": "Drum Level Calculation.xls",
+  "status": "NEEDS REVIEW",
+  "evidence": "embedded from another reference file (Drum Level Calculation.xls)"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "table S1-LN39",
+  "input": "-",
+  "expected": "table in LINEAR.xls",
+  "actual": "not in the file",
+  "source": "Drum Level Calculation.xls",
+  "status": "NEEDS REVIEW",
+  "evidence": "embedded from another reference file (Drum Level Calculation.xls)"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "FX#52 LN21",
+  "input": "table used = S1-LN21",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-003A)",
+  "actual": "S1-LN21",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "FX#56 LN19",
+  "input": "table used = S1-LN19",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-003A)",
+  "actual": "S1-LN19",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "FX#59 LN9",
+  "input": "table used = S1-LN9",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-003A)",
+  "actual": "S1-LN9",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "FX#52 LN21",
+  "input": "table used = S1-LN21",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-003A)",
+  "actual": "S1-LN21",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "FX#56 LN19",
+  "input": "table used = S1-LN19",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-003A)",
+  "actual": "S1-LN19",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "FX#59 LN9",
+  "input": "table used = S1-LN9",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-003A)",
+  "actual": "S1-LN9",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "FX#52 LN21",
+  "input": "table used = S1-LN21",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-003A)",
+  "actual": "S1-LN21",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "FX#56 LN19",
+  "input": "table used = S1-LN19",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-003A)",
+  "actual": "S1-LN19",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "FX#59 LN9",
+  "input": "table used = S1-LN9",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-003A)",
+  "actual": "S1-LN9",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "FX#64 LN23",
+  "input": "table used = S1-LN23",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-004A)",
+  "actual": "S1-LN23",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "FX#67 LN3",
+  "input": "table used = S1-LN3",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-004A)",
+  "actual": "S1-LN3",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "FX#72 LN44",
+  "input": "table used = S1-LN44",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-004A)",
+  "actual": "S1-LN44",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "FX#23 LN25",
+  "input": "table used = S1-LN25",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-004B)",
+  "actual": "S1-LN25",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "FX#23 LN27",
+  "input": "table used = S1-LN27",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-004C)",
+  "actual": "S1-LN27",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "FX#29 LN13",
+  "input": "table used = S1-LN13",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-008)",
+  "actual": "S1-LN13",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "FX#58 LN51",
+  "input": "table used = S1-LN51",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-008)",
+  "actual": "S1-LN51",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "FX#59 LN50",
+  "input": "table used = S1-LN50",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-008)",
+  "actual": "S1-LN50",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "FX#25 LN34",
+  "input": "table used = S1-LN34",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-009A,9B)",
+  "actual": "S1-LN34",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "FX#50 LN34",
+  "input": "table used = S1-LN34",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-009A,9B)",
+  "actual": "S1-LN34",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "FX#63 LN34",
+  "input": "table used = S1-LN34",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-009A,9B)",
+  "actual": "S1-LN34",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "FX#12 LN34",
+  "input": "table used = S1-LN34",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-009A,9B)",
+  "actual": "S1-LN34",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "FX#18 LN38",
+  "input": "table used = S1-LN38",
+  "expected": "table whose drawing number is this sheet (xls DWG No. None)",
+  "actual": "S1-LN38",
+  "source": "LINEAR.xls",
+  "status": "NEEDS REVIEW",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "FX#19 LN39",
+  "input": "table used = S1-LN39",
+  "expected": "table whose drawing number is this sheet (xls DWG No. None)",
+  "actual": "S1-LN39",
+  "source": "LINEAR.xls",
+  "status": "NEEDS REVIEW",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "FX#39 LN30",
+  "input": "table used = S1-LN30",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-010)",
+  "actual": "S1-LN30",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "FX#27 LN42",
+  "input": "table used = S1-LN42",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-011)",
+  "actual": "S1-LN42",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "FX#40 LN47",
+  "input": "table used = S1-LN47",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-011)",
+  "actual": "S1-LN47",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "FX#41 LN46",
+  "input": "table used = S1-LN46",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-011)",
+  "actual": "S1-LN46",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "FX#27 LN43",
+  "input": "table used = S1-LN43",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-012)",
+  "actual": "S1-LN43",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "FX#40 LN49",
+  "input": "table used = S1-LN49",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-012)",
+  "actual": "S1-LN49",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "FX#41 LN48",
+  "input": "table used = S1-LN48",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-012)",
+  "actual": "S1-LN48",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-013",
+  "block": "FX#9 LN18",
+  "input": "table used = S1-LN18",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-013)",
+  "actual": "S1-LN18",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "FX#22 LN2",
+  "input": "table used = S2-LN2",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-019)",
+  "actual": "S2-LN2",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "FX#37 LN9",
+  "input": "table used = S2-LN9",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-019)",
+  "actual": "S2-LN9",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "FX#42 LN3",
+  "input": "table used = S2-LN3",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-020)",
+  "actual": "S2-LN3",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "FX#76 LN7",
+  "input": "table used = S2-LN7",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-020)",
+  "actual": "S2-LN7",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "FX#79 LN8",
+  "input": "table used = S2-LN8",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-020)",
+  "actual": "S2-LN8",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "FX#80 LN5",
+  "input": "table used = S2-LN5",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-020)",
+  "actual": "S2-LN5",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "FX#88 LN6",
+  "input": "table used = S2-LN6",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-020)",
+  "actual": "S2-LN6",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "FX#36 LN17",
+  "input": "table used = S2-LN17",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-030)",
+  "actual": "S2-LN17",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "FX#37 LN16",
+  "input": "table used = S2-LN16",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-030)",
+  "actual": "S2-LN16",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "FX#8 LN20",
+  "input": "table used = S2-LN20",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-034)",
+  "actual": "S2-LN20",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "FX#13 LN21",
+  "input": "table used = S2-LN21",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-034)",
+  "actual": "S2-LN21",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "FX#17 LN19",
+  "input": "table used = S2-LN19",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-034)",
+  "actual": "S2-LN19",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "FX#18 LN18",
+  "input": "table used = S2-LN18",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-034)",
+  "actual": "S2-LN18",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "FX#18 LN38",
+  "input": "table used = S2-LN38",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-35-39)",
+  "actual": "S2-LN38",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "FX#24 LN39",
+  "input": "table used = S2-LN39",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-35-39)",
+  "actual": "S2-LN39",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "FX#18 LN38",
+  "input": "table used = S2-LN38",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-35-39)",
+  "actual": "S2-LN38",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "FX#24 LN39",
+  "input": "table used = S2-LN39",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-35-39)",
+  "actual": "S2-LN39",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "FX#18 LN38",
+  "input": "table used = S2-LN38",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-35-39)",
+  "actual": "S2-LN38",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "FX#24 LN39",
+  "input": "table used = S2-LN39",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-35-39)",
+  "actual": "S2-LN39",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "FX#18 LN38",
+  "input": "table used = S2-LN38",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-35-39)",
+  "actual": "S2-LN38",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "FX#24 LN39",
+  "input": "table used = S2-LN39",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-35-39)",
+  "actual": "S2-LN39",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "FX#18 LN38",
+  "input": "table used = S2-LN38",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-35-39)",
+  "actual": "S2-LN38",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "FX#24 LN39",
+  "input": "table used = S2-LN39",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-35-39)",
+  "actual": "S2-LN39",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "FX#60 LN32",
+  "input": "table used = S2-LN32",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-050)",
+  "actual": "S2-LN32",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "FX#69 LN31",
+  "input": "table used = S2-LN31",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-050)",
+  "actual": "S2-LN31",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "FX#21 LN10",
+  "input": "table used = S2-LN10",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-051)",
+  "actual": "S2-LN10",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "FX#43 LN13",
+  "input": "table used = S2-LN13",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-051)",
+  "actual": "S2-LN13",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "FX#48 LN33",
+  "input": "table used = S2-LN33",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-051)",
+  "actual": "S2-LN33",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "FX#16 LN12",
+  "input": "table used = S2-LN12",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-052)",
+  "actual": "S2-LN12",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "FX#77 LN34",
+  "input": "table used = S2-LN34",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-052)",
+  "actual": "S2-LN34",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "FX#82 LN11",
+  "input": "table used = S2-LN11",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-052)",
+  "actual": "S2-LN11",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "FX#19 LN22",
+  "input": "table used = S2-LN22",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-053)",
+  "actual": "S2-LN22",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#13 LN16",
+  "input": "table used = S3-LN16",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN16",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#14 LN22",
+  "input": "table used = S3-LN22",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN22",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#17 LN14",
+  "input": "table used = S3-LN14",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN14",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#18 LN20",
+  "input": "table used = S3-LN20",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN20",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#21 LN21",
+  "input": "table used = S3-LN21",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN21",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#23 LN19",
+  "input": "table used = S3-LN19",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN19",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#25 LN12",
+  "input": "table used = S3-LN12",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN12",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#26 LN18",
+  "input": "table used = S3-LN18",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN18",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#29 LN17",
+  "input": "table used = S3-LN17",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN17",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#31 LN15",
+  "input": "table used = S3-LN15",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN15",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#33 LN10",
+  "input": "table used = S3-LN10",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN10",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#36 LN13",
+  "input": "table used = S3-LN13",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN13",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#40 LN8",
+  "input": "table used = S3-LN8",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN8",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#42 LN11",
+  "input": "table used = S3-LN11",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN11",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#44 LN9",
+  "input": "table used = S3-LN9",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN9",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#46 LN6",
+  "input": "table used = S3-LN6",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN6",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#50 LN7",
+  "input": "table used = S3-LN7",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN7",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#53 LN5",
+  "input": "table used = S3-LN5",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN5",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#55 LN4",
+  "input": "table used = S3-LN4",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN4",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#57 LN3",
+  "input": "table used = S3-LN3",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN3",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#59 LN1",
+  "input": "table used = S3-LN1",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN1",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#60 LN2",
+  "input": "table used = S3-LN2",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN2",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#63 LN23",
+  "input": "table used = S3-LN23",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN23",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "FX#64 LN24",
+  "input": "table used = S3-LN24",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-057)",
+  "actual": "S3-LN24",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "FX#4 LN54",
+  "input": "table used = S1-LN54",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-001C)",
+  "actual": "S1-LN54",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "FX#14 LN55",
+  "input": "table used = S1-LN55",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-001C)",
+  "actual": "S1-LN55",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "FX#27 LN32",
+  "input": "table used = S1-LN32",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-001C)",
+  "actual": "S1-LN32",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "FX#29 LN31",
+  "input": "table used = S1-LN31",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-001C)",
+  "actual": "S1-LN31",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "FX#8 LN59",
+  "input": "table used = S1-LN59",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-001D)",
+  "actual": "S1-LN59",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "FX#11 LN58",
+  "input": "table used = S1-LN58",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-001D)",
+  "actual": "S1-LN58",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "FX#14 LN61",
+  "input": "table used = S1-LN61",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-001D)",
+  "actual": "S1-LN61",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "FX#15 LN62",
+  "input": "table used = S1-LN62",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-001D)",
+  "actual": "S1-LN62",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "FX#16 LN60",
+  "input": "table used = S1-LN60",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-001D)",
+  "actual": "S1-LN60",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "FX#38 LN7",
+  "input": "table used = S1-LN7",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-002)",
+  "actual": "S1-LN7",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "FX#39 LN8",
+  "input": "table used = S1-LN8",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-002)",
+  "actual": "S1-LN8",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "FX#43 LN29",
+  "input": "table used = S1-LN29",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-002)",
+  "actual": "S1-LN29",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "FX#46 LN14",
+  "input": "table used = S1-LN14",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-002)",
+  "actual": "S1-LN14",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "FX#49 LN15",
+  "input": "table used = S1-LN15",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-002)",
+  "actual": "S1-LN15",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "FX#53 LN12",
+  "input": "table used = S1-LN12",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-002)",
+  "actual": "S1-LN12",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "FX#56 LN40",
+  "input": "table used = S1-LN40",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-002)",
+  "actual": "S1-LN40",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "FX#61 LN22",
+  "input": "table used = S1-LN22",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-002)",
+  "actual": "S1-LN22",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "FX#68 LN5",
+  "input": "table used = S1-LN5",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-002)",
+  "actual": "S1-LN5",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "FX#70 LN1",
+  "input": "table used = S1-LN1",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-002)",
+  "actual": "S1-LN1",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "FX#71 LN16",
+  "input": "table used = S1-LN16",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-002)",
+  "actual": "S1-LN16",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "FX#74 LN17",
+  "input": "table used = S1-LN17",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-002)",
+  "actual": "S1-LN17",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "FX#68 LN21",
+  "input": "table used = S1-LN21",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-003A)",
+  "actual": "S1-LN21",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "FX#72 LN19",
+  "input": "table used = S1-LN19",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-003A)",
+  "actual": "S1-LN19",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "FX#76 LN9",
+  "input": "table used = S1-LN9",
+  "expected": "table whose drawing number is this sheet (xls DWG No. ABC-003A)",
+  "actual": "S1-LN9",
+  "source": "LINEAR.xls",
+  "status": "PASS",
+  "evidence": "drawing number of the xls table vs sheet of the FX block"
+ }
+]

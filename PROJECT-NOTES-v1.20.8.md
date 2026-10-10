@@ -4,8 +4,11 @@
 
 Rules are NOT here any more: see DESIGN.md. Older entries (v1.8.1 and before): archive/notes/CHANGELOG-to-v1.8.1.md
 
-## v1.20.8 (logic-sim-v1.20.8.html) - requirements batch, first pass (revision 1)
-- USER: grouped requirements PDF + findings xlsx (2026-10-10): Plant model / Plant window and Save / Save as / Open / Import removed from the UI; LINEAR FX no longer passes silently (NEEDS REVIEW flags), RATE without rate flagged; reusable test records (tools/test-verify-fx / sel / rate / not, docs/TEST-RESULTS-*), docs/REPORT-v1.20.8.md. FX conversion itself verified correct on all 112 blocks; open items R1-R6 in the report (rate in % of span, Bad Signal controls not built, SIG.AB case 4, 32 % constant reference). Full browser checklist NOT re-run.
+## v1.20.8 (logic-sim-v1.20.8.html) - requirements batch + decisions of 2026-10-10 (revision 2)
+- USER: grouped requirements PDF + findings xlsx + decisions: (1) % RATE / ramp corrected with the verified span of the signal (ABC-001D FM403 = 0.00075 T/s, ABC-032 = 2 T/H/s; 14 blocks changed, 5 unresolved = NEEDS REVIEW); (2) ABC-002 minimum air flow editable in T/H, default 400, drawing 32 % kept; (3) LINEAR verified against the supplied LINEAR.xls (376 PASS; S1-LN38 / 39 come from the Drum Level file); (4) Bad Signal = user control per transmitter, OFF by default, FORCED BAD mark, no new hold-last logic.
+- Also: Plant model / Plant window / Save / Save as / Open / Import removed from the UI; FX NEEDS REVIEW flags (no table, outside the table, warning); RATE without rate flagged; HS / LS light only the selected input.
+- Tests: tools/test-verify-{fx,sel,rate,not,minair,range,final}.js, test-verify-linear-xls.py, test-ui-{1.20.8,sigab,minair,hs}.js; records docs/TEST-RESULTS-*.md / .json; report docs/REPORT-v1.20.8.md; FINDINGS H-43 .. H-47.
+- Obsolete on purpose: tests that press Save / Open / Import (test-project, test-storage*, the project step of test-ln, test-import).
 
 ## v1.20.7 (logic-sim-v1.20.7.html) - plant model OFF, flow audit (revision 1)
 - USER (screenshot ABC-002 v1.20.5: SI0012 1.00 vs SI0061 61.25): "idisable ang plant model, lagyan ng on/off button; icheck ang buong logic flow per sheet; walang hulaan; release". Button Plant model (default OFF), tools/patch-plantoff.js, tools/audit-flow.js, tools/test-plantmodel.js, docs/REPORT-v1.20.7.md. SI0012 = 61.25 (fixed by the v1.20.6 address table).
