@@ -2544,22 +2544,6 @@
   "retest": "v1.20.8 run"
  },
  {
-  "sheet": "ABC-000",
-  "block": "FX#20",
-  "ln": "",
-  "table": null,
-  "xu": null,
-  "yu": null,
-  "source": "none",
-  "input": "50 (any)",
-  "expected": "warning + NEEDS REVIEW, no silent pass-through",
-  "actual": "status=NOTABLE",
-  "status": "NEEDS REVIEW",
-  "evidence": "S.rt.st[20].fxs=NOTABLE",
-  "correction": "v1.20.8: anFXs flags NOTABLE; panel + Health show NEEDS REVIEW",
-  "retest": "v1.20.8 run"
- },
- {
   "sheet": "ABC-019",
   "block": "FX#22",
   "ln": "LN2",

@@ -13,7 +13,7 @@ const rec=await p.evaluate(()=>{
   for(const x of S.blk){if(x.k!=='FX')continue;const t=x.p.tbl,tag=sh.name+' FX#'+x.id+' '+(x.p.ln||'(no LN)');
    const base={sheet:sh.name,block:'FX#'+x.id,ln:x.p.ln||'',table:t?t.key:null,xu:t?(t.xu||'').trim():null,yu:t?(t.yu||'').trim():null,source:t?('LINEAR.xls '+t.key+(t.src?' / '+t.src:'')):'none'};
    const inN=x.i[0],outN=x.o[0];
-   if(!t||!(t.o0||t.pts)){S.rt.force[inN]=50;for(let k=0;k<8;k++)AN.settle();const st=(S.rt.st[x.id]||{}).fxs;delete S.rt.force[inN];
+   if(!t||!(t.o0||t.pts)){if(sh.name==='ABC-000')continue;/* legend sheet: excluded (user 2026-10-10) */S.rt.force[inN]=50;for(let k=0;k<8;k++)AN.settle();const st=(S.rt.st[x.id]||{}).fxs;delete S.rt.force[inN];
      R.push({...base,input:'50 (any)',expected:'warning + NEEDS REVIEW, no silent pass-through',actual:'status='+st,status:st==='NOTABLE'?'NEEDS REVIEW':'FAIL',evidence:'S.rt.st['+x.id+'].fxs='+st,correction:'v1.20.8: anFXs flags NOTABLE; panel + Health show NEEDS REVIEW',retest:'v1.20.8 run'});continue}
    const pts=t.o0||t.pts,xs=pts.map(q=>q[0]),lo=Math.min(...xs),hi=Math.max(...xs),xr=t.xr||[lo,hi];
    const cases=[['low (range start)',xr[0]],['midpoint',(xr[0]+xr[1])/2],['high (range end)',xr[1]],['below table domain',lo-(hi-lo)*0.1],['above table domain',hi+(hi-lo)*0.1]];
