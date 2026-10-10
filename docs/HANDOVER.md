@@ -8,10 +8,11 @@ Sundin ang protocol ko: simpleng Taglish (80 % Tagalog), PASS / FAIL / NEEDS REV
 Pagkabasa, ibuod sa 5 linya kung nasaan tayo at ano ang uunahin mo (HANDOVER §4), at magsimula.
 ```
 
-## 1. Estado ngayon (v1.20.11: nire-release na; tingnan ang huling commit / run sa ibaba)
-- Latest RELEASE: **v1.20.11** (live values ayon sa EU xlsx + second pane zoom) kapag success ang workflow; ang nakaraan ay v1.20.10 (commit 543814e, nasa main). Root: `logic-sim-v1.20.11.html` = `node tools/patch-1.20.11.js` (base `archive/html/logic-sim-v1.20.9.html`; modules `tools/patch-1.20.11-*.js`). Ang v1.20.10 ay nagre-rebuild pa rin mula sa `patch-1.20.10.js` (SHA256 6325f96f...; released html sa `archive/html/`).
-- Ang user ay nagbigay ng go (gabi ng 2026-10-10): "Release agad". Merge sa main: ginawa para sa v1.20.10 lang; para sa v1.20.11 ay may "release agad" pero walang bagong utos na i-merge: tanungin kung i-merge (HUWAG mag-merge nang walang utos).
-- Natapos: `vplace` (2128 numero / 51 sheet: 0 text, 0 block, 0 numero, 2 wire, 0 hindi pantay), 22 net na walang numero ay may numero, kulay ng numero = settings, second pane: + / - / pinch / double-click / wheel, paper-like na PDF (style.py), `tools/check-release-docs.js`.
+## 1. Estado ngayon (v1.20.11 RELEASED; HINDI pa naka-merge sa main)
+- **Latest release: v1.20.11** (GitHub Release `v1.20.11`, 2026-10-10 gabi; workflow run 29 id 38068960154 = success; commit ng release `bb00701`; assets: html, portable exe, apk, manual pdf, `LogicSim_v1.20.11_Report.pdf`, `LogicSim_v1.20.11_Manual_Testing_Guide.pdf`; SHA256 ng html / report / guide = tugma sa lokal). EXE at APK ay hindi pa tinetest ng Claude.
+- **Main** ay nasa v1.20.10 (PR #6). Ang v1.20.11 ay nasa branch `ccr-2c4847cc-9fe3px`: **walang utos ng user na i-merge ang v1.20.11**: tanungin muna.
+- Root: `logic-sim-v1.20.11.html` = `node tools/patch-1.20.11.js` (base `archive/html/logic-sim-v1.20.9.html`; modules `tools/patch-1.20.11-*.js`). Ang v1.20.10 ay nagre-rebuild pa rin mula sa `patch-1.20.10.js` (SHA256 6325f96f...; released html sa `archive/html/`). Para sa v1.20.12: ilipat ang root html sa archive/html, gumawa ng bagong patch set.
+- Natapos sa v1.20.11: `vplace` (2128 numero / 51 sheet: 0 text, 0 block, 0 numero, 2 wire, 0 hindi pantay), 22 net na walang numero ay may numero, kulay ng numero = settings, second pane: + / - / pinch / double-click / wheel, paper-like na PDF (style.py), `tools/check-release-docs.js`.
 - **DITL part IDENTICAL** (guard 135a852d87c5).
 - Awtomatikong handoff: `.claude/hooks/*`. Bago tapusin ang session: i-update ang §1 at §4, i-commit, i-push.
 
