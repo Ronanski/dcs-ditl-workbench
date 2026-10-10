@@ -1,0 +1,802 @@
+[
+ {
+  "sheet": "ABC-003B",
+  "block": "RAMPB#30",
+  "source": "drawing text: RAMP:1% / sec",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
+  "expected": "t=1s 1, t=2s 2",
+  "actual": "1 , 2",
+  "status": "NEEDS REVIEW",
+  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "RAMPB#30",
+  "source": "drawing text: RAMP:1% / sec",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 28 forced 1"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "RAMPB#30",
+  "source": "drawing text: RAMP:1% / sec",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
+  "expected": "t=1s 1, t=2s 2",
+  "actual": "1 , 2",
+  "status": "NEEDS REVIEW",
+  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "RAMPB#30",
+  "source": "drawing text: RAMP:1% / sec",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 29 forced 1"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "RAMPB#30",
+  "source": "drawing text: RAMP:1% / sec",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
+  "expected": "t=1s 1, t=2s 2",
+  "actual": "1 , 2",
+  "status": "NEEDS REVIEW",
+  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "RAMPB#30",
+  "source": "drawing text: RAMP:1% / sec",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 29 forced 1"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "RATE#28",
+  "source": "drawing text: (no rate text found)",
+  "input": "limits from signals",
+  "expected": "limits follow the up/down limit signals",
+  "actual": "not exercised",
+  "status": "NOT TESTED",
+  "evidence": "own-limit RATE: needs per-sheet limit values"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "RATE#29",
+  "source": "drawing text: (no rate text found)",
+  "input": "limits from signals",
+  "expected": "limits follow the up/down limit signals",
+  "actual": "not exercised",
+  "status": "NOT TESTED",
+  "evidence": "own-limit RATE: needs per-sheet limit values"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "RATE#30",
+  "source": "drawing text: (no rate text found)",
+  "input": "limits from signals",
+  "expected": "limits follow the up/down limit signals",
+  "actual": "not exercised",
+  "status": "NOT TESTED",
+  "evidence": "own-limit RATE: needs per-sheet limit values"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "RATE#31",
+  "source": "drawing text: (no rate text found)",
+  "input": "limits from signals",
+  "expected": "limits follow the up/down limit signals",
+  "actual": "not exercised",
+  "status": "NOT TESTED",
+  "evidence": "own-limit RATE: needs per-sheet limit values"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "RAMPB#35",
+  "source": "drawing text: RAMP:1% / sec",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
+  "expected": "t=1s 1, t=2s 2",
+  "actual": "1 , 2",
+  "status": "NEEDS REVIEW",
+  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "RAMPB#35",
+  "source": "drawing text: RAMP:1% / sec",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 138 forced 1"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "RATE#74",
+  "source": "drawing text: 0.0 ~ 40.0 T/H ; (1T / Sec)",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
+  "expected": "t=1s 1, t=2s 2",
+  "actual": "1 , 2",
+  "status": "PASS",
+  "evidence": "force main net 32 -> out net 160"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "RATE#74",
+  "source": "drawing text: 0.0 ~ 40.0 T/H ; (1T / Sec)",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 33 forced 1"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "RATE#75",
+  "source": "drawing text: (no rate text found)",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
+  "expected": "t=1s 1, t=2s 2",
+  "actual": "1 , 2",
+  "status": "PASS",
+  "evidence": "force main net 118 -> out net 117"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "RATE#75",
+  "source": "drawing text: (no rate text found)",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 25 forced 1"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "RATE#25",
+  "source": "drawing text: 0.0 ~ 40.0 T/H ; (1T / Sec)",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
+  "expected": "t=1s 1, t=2s 2",
+  "actual": "1 , 2",
+  "status": "PASS",
+  "evidence": "force main net 18 -> out net 51"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "RATE#25",
+  "source": "drawing text: 0.0 ~ 40.0 T/H ; (1T / Sec)",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 19 forced 1"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "RATE#26",
+  "source": "drawing text: (no rate text found)",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
+  "expected": "t=1s 1, t=2s 2",
+  "actual": "1 , 2",
+  "status": "PASS",
+  "evidence": "force main net 41 -> out net 40"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "RATE#26",
+  "source": "drawing text: (no rate text found)",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 7 forced 1"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "RATE#25",
+  "source": "drawing text: 0.0 ~ 40.0 T/H ; (1T / Sec)",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
+  "expected": "t=1s 1, t=2s 2",
+  "actual": "1 , 2",
+  "status": "PASS",
+  "evidence": "force main net 25 -> out net 51"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "RATE#25",
+  "source": "drawing text: 0.0 ~ 40.0 T/H ; (1T / Sec)",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 26 forced 1"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "RATE#26",
+  "source": "drawing text: (no rate text found)",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
+  "expected": "t=1s 1, t=2s 2",
+  "actual": "1 , 2",
+  "status": "PASS",
+  "evidence": "force main net 14 -> out net 13"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "RATE#26",
+  "source": "drawing text: (no rate text found)",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 2 forced 1"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "RAMPB#17",
+  "source": "drawing text: RAMP:0.05% / sec",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.05 units/s",
+  "expected": "t=1s 0.05, t=2s 0.1",
+  "actual": "0.05 , 0.1",
+  "status": "NEEDS REVIEW",
+  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "RAMPB#17",
+  "source": "drawing text: RAMP:0.05% / sec",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 79 forced 1"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "RAMPB#18",
+  "source": "drawing text: RAMP:0.05% / sec",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.05 units/s",
+  "expected": "t=1s 0.05, t=2s 0.1",
+  "actual": "0.05 , 0.1",
+  "status": "NEEDS REVIEW",
+  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "RAMPB#18",
+  "source": "drawing text: RAMP:0.05% / sec",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 74 forced 1"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "RATE#39",
+  "source": "drawing text: (0.5T / Sec)",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.5 units/s",
+  "expected": "t=1s 0.5, t=2s 1",
+  "actual": "0.5 , 1",
+  "status": "PASS",
+  "evidence": "force main net 62 -> out net 60"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "RATE#39",
+  "source": "drawing text: (0.5T / Sec)",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 20 forced 1"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "RATE#40",
+  "source": "drawing text: (0.5T / Sec)",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.5 units/s",
+  "expected": "t=1s 0.5, t=2s 1",
+  "actual": "0.5 , 1",
+  "status": "PASS",
+  "evidence": "force main net 36 -> out net 34"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "RATE#40",
+  "source": "drawing text: (0.5T / Sec)",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 18 forced 1"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "RATE#97",
+  "source": "drawing text: (no rate text found)",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.05 units/s",
+  "expected": "t=1s 0.05, t=2s 0.1",
+  "actual": "0.05 , 0.1",
+  "status": "PASS",
+  "evidence": "force main net 93 -> out net 92"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "RATE#97",
+  "source": "drawing text: (no rate text found)",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 85 forced 1"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "RATE#98",
+  "source": "drawing text: (no rate text found)",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.05 units/s",
+  "expected": "t=1s 0.05, t=2s 0.1",
+  "actual": "0.05 , 0.1",
+  "status": "PASS",
+  "evidence": "force main net 79 -> out net 78"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "RATE#98",
+  "source": "drawing text: (no rate text found)",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 67 forced 1"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "RATE#99",
+  "source": "drawing text: (no rate text found)",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.05 units/s",
+  "expected": "t=1s 0.05, t=2s 0.1",
+  "actual": "0.05 , 0.1",
+  "status": "PASS",
+  "evidence": "force main net 60 -> out net 59"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "RATE#99",
+  "source": "drawing text: (no rate text found)",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 49 forced 1"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "RATE#20",
+  "source": "drawing text: (no rate text found)",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.05 units/s",
+  "expected": "t=1s 0.05, t=2s 0.1",
+  "actual": "0.05 , 0.1",
+  "status": "PASS",
+  "evidence": "force main net 25 -> out net 24"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "RATE#20",
+  "source": "drawing text: (no rate text found)",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 13 forced 1"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "RAMPB#17",
+  "source": "drawing text: RAMP:1% / sec",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
+  "expected": "t=1s 1, t=2s 2",
+  "actual": "1 , 2",
+  "status": "NEEDS REVIEW",
+  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "RAMPB#17",
+  "source": "drawing text: RAMP:1% / sec",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 53 forced 1"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "RAMPB#52",
+  "source": "drawing text: RAMP:1% / min",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.016666666666666666 units/s",
+  "expected": "t=1s 0.016666666666666666, t=2s 0.03333333333333333",
+  "actual": "0.016666666666666666 , 0.03333333333333333",
+  "status": "NEEDS REVIEW",
+  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "RAMPB#52",
+  "source": "drawing text: RAMP:1% / min",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 16 forced 1"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "RATE#91",
+  "source": "drawing text: (no rate text found)",
+  "input": "ramp path: step 0 -> 6, bypass 0; rate 2 units/s",
+  "expected": "t=1s 2, t=2s 4",
+  "actual": "2 , 4",
+  "status": "PASS",
+  "evidence": "force main net 33 -> out net 32"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "RATE#91",
+  "source": "drawing text: (no rate text found)",
+  "input": "bypass path: same step 0 -> 6, bypass = 1",
+  "expected": "6 at once (\"1:BYPASS\")",
+  "actual": "6 , 6",
+  "status": "PASS",
+  "evidence": "bypass net 25 forced 1"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "RAMPB#13",
+  "source": "drawing text: RAMP:1% / sec",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
+  "expected": "t=1s 1, t=2s 2",
+  "actual": "1 , 2",
+  "status": "NEEDS REVIEW",
+  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "RAMPB#13",
+  "source": "drawing text: RAMP:1% / sec",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 24 forced 1"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "RATE#26",
+  "source": "drawing text: 1% / min",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.016666666666666666 units/s",
+  "expected": "t=1s 0.016666666666666666, t=2s 0.03333333333333333",
+  "actual": "0.016666666666666666 , 0.03333333333333333",
+  "status": "NEEDS REVIEW",
+  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "RATE#26",
+  "source": "drawing text: 1% / min",
+  "input": "bypass path",
+  "expected": "-",
+  "actual": "no bypass pin on this block",
+  "status": "NOT TESTED",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "RAMPB#23",
+  "source": "drawing text: RAMP:1% / sec",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
+  "expected": "t=1s 1, t=2s 2",
+  "actual": "1 , 2",
+  "status": "NEEDS REVIEW",
+  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "RAMPB#23",
+  "source": "drawing text: RAMP:1% / sec",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 98 forced 1"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "RATE#83",
+  "source": "drawing text: 5% / sec",
+  "input": "ramp path: step 0 -> 15, bypass 0; rate 5 units/s",
+  "expected": "t=1s 5, t=2s 10",
+  "actual": "5 , 10",
+  "status": "NEEDS REVIEW",
+  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "RATE#83",
+  "source": "drawing text: 5% / sec",
+  "input": "bypass path: same step 0 -> 15, bypass = 1",
+  "expected": "15 at once (\"1:BYPASS\")",
+  "actual": "15 , 15",
+  "status": "PASS",
+  "evidence": "bypass net 30 forced 1"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "RAMPB#24",
+  "source": "drawing text: RAMP:1.67% / min",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.02783333333333333 units/s",
+  "expected": "t=1s 0.02783333333333333, t=2s 0.05566666666666666",
+  "actual": "0.02783333333333333 , 0.05566666666666666",
+  "status": "NEEDS REVIEW",
+  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "RAMPB#24",
+  "source": "drawing text: RAMP:1.67% / min",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 53 forced 1"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "RAMPB#14",
+  "source": "drawing text: RAMP:1% / sec",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
+  "expected": "t=1s 1, t=2s 2",
+  "actual": "1 , 2",
+  "status": "NEEDS REVIEW",
+  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "RAMPB#14",
+  "source": "drawing text: RAMP:1% / sec",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 86 forced 1"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "RATE#87",
+  "source": "drawing text: X% / sec",
+  "input": "limits from signals",
+  "expected": "limits follow the up/down limit signals",
+  "actual": "not exercised",
+  "status": "NOT TESTED",
+  "evidence": "own-limit RATE: needs per-sheet limit values"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "RATE#88",
+  "source": "drawing text: 2 kg/cm2 / min",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.03333333333333333 units/s",
+  "expected": "t=1s 0.03333333333333333, t=2s 0.06666666666666667",
+  "actual": "0.03333333333333333 , 0.06666666666666667",
+  "status": "PASS",
+  "evidence": "force main net 16 -> out net 11"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "RATE#88",
+  "source": "drawing text: 2 kg/cm2 / min",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 15 forced 1"
+ },
+ {
+  "sheet": "ABC-001B",
+  "block": "RATE#13",
+  "source": "drawing text: (no rate text found)",
+  "input": "limits from signals",
+  "expected": "limits follow the up/down limit signals",
+  "actual": "not exercised",
+  "status": "NOT TESTED",
+  "evidence": "own-limit RATE: needs per-sheet limit values"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "RAMPB#15",
+  "source": "drawing text: RAMP:0.5% / sec",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.5 units/s",
+  "expected": "t=1s 0.5, t=2s 1",
+  "actual": "0.5 , 1",
+  "status": "NEEDS REVIEW",
+  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "RAMPB#15",
+  "source": "drawing text: RAMP:0.5% / sec",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 33 forced 1"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "RATE#67",
+  "source": "drawing text: 0.1% / sec",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.1 units/s",
+  "expected": "t=1s 0.1, t=2s 0.2",
+  "actual": "0.1 , 0.2",
+  "status": "NEEDS REVIEW",
+  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "RATE#67",
+  "source": "drawing text: 0.1% / sec",
+  "input": "bypass path",
+  "expected": "-",
+  "actual": "no bypass pin on this block",
+  "status": "NOT TESTED",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "RATE#47",
+  "source": "drawing text: 18% / Hr ; ( 0.005% / sec )",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.005 units/s",
+  "expected": "t=1s 0.005, t=2s 0.01",
+  "actual": "0.005 , 0.01",
+  "status": "NEEDS REVIEW",
+  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "RATE#47",
+  "source": "drawing text: 18% / Hr ; ( 0.005% / sec )",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 109 forced 1"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "RATE#3",
+  "source": "drawing text: 2.7T / HR = 2.25% / HR ; ( 0.045T / MIN )",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.000625 units/s",
+  "expected": "t=1s 0.000625, t=2s 0.00125",
+  "actual": "0.000625 , 0.00125",
+  "status": "NEEDS REVIEW",
+  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "RATE#3",
+  "source": "drawing text: 2.7T / HR = 2.25% / HR ; ( 0.045T / MIN )",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 70 forced 1"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "RATE#4",
+  "source": "drawing text: 1.8T / HR = 1.5% / HR ; ( 0.03T / MIN )",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.0004166666666666667 units/s",
+  "expected": "t=1s 0.0004166666666666667, t=2s 0.0008333333333333334",
+  "actual": "0.0004166666666666667 , 0.0008333333333333334",
+  "status": "NEEDS REVIEW",
+  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "RATE#4",
+  "source": "drawing text: 1.8T / HR = 1.5% / HR ; ( 0.03T / MIN )",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 63 forced 1"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "RAMPB#27",
+  "source": "drawing text: RAMP:1% / sec",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
+  "expected": "t=1s 1, t=2s 2",
+  "actual": "1 , 2",
+  "status": "NEEDS REVIEW",
+  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "RAMPB#27",
+  "source": "drawing text: RAMP:1% / sec",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 91 forced 1"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "RATE#75",
+  "source": "drawing text: 0.2% / sec",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.2 units/s",
+  "expected": "t=1s 0.2, t=2s 0.4",
+  "actual": "0.2 , 0.4",
+  "status": "NEEDS REVIEW",
+  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "RATE#75",
+  "source": "drawing text: 0.2% / sec",
+  "input": "bypass path",
+  "expected": "-",
+  "actual": "no bypass pin on this block",
+  "status": "NOT TESTED",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "RATE#76",
+  "source": "drawing text: 0.2% / sec",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 0.2 units/s",
+  "expected": "t=1s 0.2, t=2s 0.4",
+  "actual": "0.2 , 0.4",
+  "status": "NEEDS REVIEW",
+  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "RATE#76",
+  "source": "drawing text: 0.2% / sec",
+  "input": "bypass path",
+  "expected": "-",
+  "actual": "no bypass pin on this block",
+  "status": "NOT TESTED",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "RAMPB#32",
+  "source": "drawing text: RAMP:1% / sec",
+  "input": "ramp path: step 0 -> 3, bypass 0; rate 1 units/s",
+  "expected": "t=1s 1, t=2s 2",
+  "actual": "1 , 2",
+  "status": "NEEDS REVIEW",
+  "evidence": "ramp arithmetic correct, but the rate is written in % and applied as signal units (valid only for a 100-unit span)"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "RAMPB#32",
+  "source": "drawing text: RAMP:1% / sec",
+  "input": "bypass path: same step 0 -> 3, bypass = 1",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
+  "status": "PASS",
+  "evidence": "bypass net 126 forced 1"
+ }
+]

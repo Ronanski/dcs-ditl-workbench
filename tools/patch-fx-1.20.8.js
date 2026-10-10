@@ -13,4 +13,8 @@ rep(`if(P.lnWarn)d.append(h$('small',{style:'color:#ffb24a',txt:'⚠ '+P.lnWarn}
 /* Health table: one more column */
 rep(`['Sheet','Blocks','External inputs','Unknown shapes','Pin issues']`,`['Sheet','Blocks','External inputs','Unknown shapes','Pin issues','LINEAR review']`);
 rep(`h$('td',{cls:o.h.issues.length?'bad':'',txt:o.h.issues.length}))}`,`h$('td',{cls:o.h.issues.length?'bad':'',txt:o.h.issues.length}),(()=>{const n=o.sh.S.blk.filter(q=>q.k==='FX'&&(!(q.p.tbl&&(q.p.tbl.p2||q.p.tbl.pts))&&!(window.ANLN&&window.ANLN[q.p.ln])||q.p.lnWarn)).length;return h$('td',{cls:n?'bad':'',title:'FX blocks without a table or with a table chosen by a warning = NEEDS REVIEW',txt:n})})())}`);
+/* Group D: a RATE / ramp with no rate (missing or 0) and no own limit inputs must not silently become an instant step: flagged s.rev='NO RATE' (value unchanged: pass-through), counted in the Health column */
+rep(`const fx=b.up===undefined,ru=fx?P.rate:rd(b.up),rd_=fx?P.rate:rd(b.dn),d=x-s.y;`,`const fx=b.up===undefined,ru=fx?P.rate:rd(b.up),rd_=fx?P.rate:rd(b.dn),d=x-s.y;s.rev=fx&&!(P.rate>0)?'NO RATE':0;`);
+rep(`'LINEAR review']`,`'LINEAR / RATE review']`);
+rep(`q.k==='FX'&&(!(q.p.tbl&&(q.p.tbl.p2||q.p.tbl.pts))&&!(window.ANLN&&window.ANLN[q.p.ln])||q.p.lnWarn)).length;`,`(q.k==='FX'&&(!(q.p.tbl&&(q.p.tbl.p2||q.p.tbl.pts))&&!(window.ANLN&&window.ANLN[q.p.ln])||q.p.lnWarn))||((q.k==='RATE'||q.k==='RAMPB')&&q.main!==undefined&&q.up===undefined&&!(q.p.rate>0))).length;`);
 };
