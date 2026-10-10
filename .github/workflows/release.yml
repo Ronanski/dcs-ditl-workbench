@@ -110,6 +110,8 @@ jobs:
           cp "${{ needs.version.outputs.html }}" dist/
           cp docs/Logic-Sim-Manual.pdf "dist/logic-sim-v${{ needs.version.outputs.version }}-manual.pdf"
           V="${{ needs.version.outputs.version }}"
+          # release report + manual testing guide of this version (docs/LogicSim_vX.Y.Z_*.pdf), when they exist
+          for f in docs/LogicSim_v${V}_*.pdf; do [ -f "$f" ] && cp "$f" dist/; done || true
           N="PROJECT-NOTES-v${V}.md"
           if [ -f "$N" ]; then awk '/^## /{ if(p) exit; p=1 } p' "$N" > notes.md; fi
           [ -s notes.md ] || echo "Logic Sim v${V}" > notes.md
