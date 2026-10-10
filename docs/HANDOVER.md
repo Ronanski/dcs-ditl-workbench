@@ -8,12 +8,12 @@ Sundin ang protocol ko: simpleng Taglish (80 % Tagalog), PASS / FAIL / NEEDS REV
 Pagkabasa, ibuod sa 5 linya kung nasaan tayo at ano ang uunahin mo (HANDOVER §4), at magsimula.
 ```
 
-## 1. Estado ngayon (v1.20.10 - may GO na ng user para i-release at i-merge sa main; nasa proseso)
-- User message (2026-10-10, huli): "Gawin mo na lahat ng fixes and updates. Then release and merge to main. ... As found, as left, work done, status sa report. Simple lang." = **may go na** para sa v1.20.10 release at merge sa main (isang beses para sa v1.20.10).
-- Latest RELEASE: v1.20.9 (commit 21bb674). v1.20.10 = WIP sa branch `ccr-2c4847cc-9fe3px`. Root: `logic-sim-v1.20.10.html`; ang 1.20.9 ay nasa `archive/html/`.
-- Build: `node tools/patch-1.20.10.js` (mga module: fx, dup, minair, xref, cos, ab, vcol, audit, mode, search, pane2). **DITL part ay dapat IDENTICAL** (guard): lahat ng binago ay nasa analog script lang; HTML/CSS ng DITL ay hindi ginagalaw (ang cv2 pane at placeholder ay ginagawa ng analog script).
-- Natapos sa v1.20.10: F(X) % input scaling (22 F(X); 4 NEEDS REVIEW: ABC-004A LN44, ABC-008 LN13, ABC-020 LN8, ABC-034 LN21), min air flow = 32 % x 400 = 128 T/H, doble-doble na values, click-through FROM/TO DITL + ABC (467), Bad Signal = 0 sa logic + flag, COS popover sa sheet, review marks (88 "?" / 157 "pin?" ay maling marka -> 2 / 0), kulay ng numero (computed / input / forced), Simulation Audit panel (+ export), mode label, global search, second sheet pane (watch-only, max 2).
-- Report generator: `tools/release-docs/make-report-v1.20.10.py` (as found / as left / work done / status) at guide generator (gagawin). Regression results: `docs/REGRESSION-v1.20.10.txt` (isusulat).
+## 1. Estado ngayon (v1.20.10 RELEASED at naka-merge sa main)
+- **Latest release: v1.20.10** (GitHub Release `v1.20.10`, 2026-10-10; workflow run 28 id 38061966162 = success: version / exe / apk / release; commit ng release `543814e`; assets: html, portable exe, apk, manual pdf, `LogicSim_v1.20.10_Report.pdf`, `LogicSim_v1.20.10_Manual_Testing_Guide.pdf`; SHA256 ng html / report / guide = tugma sa lokal). EXE at APK ay hindi pa tinetest ng Claude.
+- Ang user ay nagbigay ng go para sa release at merge sa main (isang beses, para sa v1.20.10). Para sa susunod na version: tanungin ulit.
+- Root: `logic-sim-v1.20.10.html`; ang 1.20.9 ay nasa `archive/html/`. Build: `node tools/patch-1.20.10.js` (modules fx, dup, minair, xref, cos, ab, vcol, audit, mode, search, pane2). Para sa v1.20.11: ilipat ang root html sa archive/html, ang patch-1.20.10* sa tools/history, gumawa ng bagong patch.
+- **DITL part IDENTICAL** (guard 135a852d87c5): lahat ng bago ay nasa analog script lang (ang second pane `#cv2` at ang placeholder ng search ay ginagawa ng analog script).
+- Report generators: `tools/release-docs/make-report-v1.20.10.py` (env `DUPS=88`), `make-guide-v1.20.10.py`, `rehearse-v1.20.10.js` (rehearsal + screenshots sa `docs/guide-img`), `html-to-pdf.js <html> <pdf> vX`. Regression: `docs/REGRESSION-v1.20.10.txt`.
 - Awtomatikong handoff: `.claude/hooks/*`. Bago tapusin ang session: i-update ang §1 at §4, i-commit, i-push.
 
 ## 2. Ano ang nagawa sa v1.20.9 (buod; buo sa docs/REPORT-v1.20.9.md at sa PDF)
@@ -33,11 +33,12 @@ Mga ayos mula sa manual test ng user sa v1.20.8 (MT-01..08): forced AI value sa 
 - Hindi pa gagawin: malaking independent Test Bench; side-by-side sheets / cosmetic UI (P4).
 - Mga requirements file: `docs/requirements/`.
 
-## 4. Susunod na gawin (hintayin ang "go" ng user para sa release)
-1. Tapusin ang buong regression ng v1.20.10 (tingnan §1), i-record sa docs/REGRESSION-v1.20.10.txt; i-update ang test-ui / report kung kailangan; PROJECT-NOTES-v1.20.10.md at REPORT ay hindi pa nasusulat.
-2. Hinihintay ang Batch 2 inspection ng user. NEEDS REVIEW: 5 F(X) na hindi ma-trace ang source range (ABC-004A #72 LN44, ABC-008 #29 LN13, ABC-020 #79 LN8, ABC-034 #13 LN21, ABC-051 #48 LN33); ABC-020 LN5 (MAN 19~100 %) at ABC-003D LN21 (MAN 0.8~1.0752) ay hindi kumpirmado; 5 RATE span (default muna).
-3. Hindi pa nagawa mula sa xlsx findings: COS dikit sa T switch retest; range ng COS/MAN vs output; item 2 (kulay ng forced text), 6, 8, 15 (gradual final element) ay hindi nasuri sa session na ito; side-by-side sheets; Simulation Audit panel; wire-value layout audit sa lahat ng sheet.
-4. Bagong release: sundin ang `docs/RELEASE-PROTOCOL.md`, kailangan ng "go" ng user; tanungin din kung i-merge sa main.
+## 4. Susunod na gawin (hintayin ang "go" ng user para sa bagong version)
+1. **Kunin ang resulta ng manual tests ng user** (MT-01..MT-14 sa `LogicSim_v1.20.10_Manual_Testing_Guide.pdf`; puwede niyang gamitin ang Audit button at i-export ang CSV). Ayusin ang FAIL.
+2. **NEEDS REVIEW (hinihintay ang sagot ng user):** (a) 4 F(X) na hindi ma-scale: ABC-004A LN44 (SUB ng SI0202 / SI0203), ABC-008 LN13 (auto/manual selection), ABC-020 LN8 (DEV), ABC-034 LN21 (MUL): kailangan ang range ng input; (b) 2 digital gate symbol sa ABC-001D (AND o OR?); (c) HS/LS "ramp muna, hindi instant": kailangan ng halimbawang sheet / tag; (d) 4 AO (ABC-003A-D) at 8 FIELD na instant: rule ng ramp; (e) 5 RATE span (default muna); (f) ABC-020 LN5 (MAN 19~100 %) at ABC-003D LN21 (MAN 0.8~1.0752) ay hindi kumpirmado; (g) COS: kung ang "nawala sa taas" ay ang popover.
+3. **Hindi pa nagawa:** resizable / dockable / pin na panel; toolbar dropdown grouping; range ng COS laban sa kinokontrol; range ng output ng ibang block; 83 COS ng ibang uri ay nasa test-cos lang; second pane ay panonood lang (Swap para mag-click).
+4. Mga luma nang test failure (pareho sa v1.20.7-9, plant model / luma): pid "direct + negative plant", back-manual / modes "bad 1", numinput, ln (Save step), own (1), ui-real (4).
+5. Bagong release: sundin ang `docs/RELEASE-PROTOCOL.md`.
 
 ## 5. Paano mag-test (lahat sa root ng repo)
 - Engine (node): `node tools/test-blocks.js <html>`, `test-math`, `test-rate`, `test-comparators`, `test-switch`, `test-legend`, `test-loops`, `test-pidsign`, `test-runaway`, `test-links-all` (mabagal ang ilan; i-background).
