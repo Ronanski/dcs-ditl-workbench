@@ -32,6 +32,8 @@ Mga ayos mula sa manual test ng user sa v1.20.8 (MT-01..08): forced AI value sa 
 - Hindi ite-test ang ABC-000 (legend). Valve / actuator stroke time = DEFAULT, editable (hindi na review item).
 - Hindi pa gagawin: malaking independent Test Bench; side-by-side sheets / cosmetic UI (P4).
 - Mga requirements file: `docs/requirements/`.
+- **Hitsura ng PDF: PAPER-LIKE** (cream, hindi puti) at **dokumentasyon + rules ay updated kada release** (user 2026-10-10): RELEASE-PROTOCOL §7 at §8, DESIGN rule 32 / 33, `tools/check-release-docs.js`.
+- Live values (EU xlsx): hindi tumatakip sa text / block / wire / numero; pantay sa gilid, naka-center sa taas / baba; DESIGN rule 31.
 
 ## 4. Susunod na gawin (hintayin ang "go" ng user para sa bagong version)
 1. **Kunin ang resulta ng manual tests ng user** (MT-01..MT-14 sa `LogicSim_v1.20.10_Manual_Testing_Guide.pdf`; puwede niyang gamitin ang Audit button at i-export ang CSV). Ayusin ang FAIL.

@@ -25,3 +25,21 @@ Kada test: Test ID + ABC sheet; block / tag; starting condition; EXACT na hakban
 
 ## 6. Protektahan ang gumagana
 Digital simulation at DITL page hindi nasisira. Analog accuracy ang priority. I-verify laban sa totoong drawing, wire, address at LINEAR data (`data/reference/LMYP-1_1-LINEAR.xls`). Kulang o malabong reference = NEEDS REVIEW, hindi hula.
+
+## 7. Hitsura ng PDF (RULE ng user, 2026-10-10): PAPER-LIKE, hindi puting-puti
+Masakit sa mata ang maliwanag na puting background, kahit naka eye comfort ang user. **Lahat ng PDF (Report, Manual Testing Guide, at anumang PDF na ipapadala) ay dapat paper-like:** cream / warm na papel (`#efe6cf`), madilim na kayumangging text (`#2e2619`), malambot na kulay ng status (berde / pula / dilaw / abo na hindi matingkad). **Bawal ang purong puti** (`#fff`) sa background, sa table o sa kahon.
+- Ang hitsura ay nasa **isang file lang: `tools/release-docs/style.py`** (CSS at `page()`); lahat ng generator ay gumagamit nito (`exec(open('tools/release-docs/style.py').read())`). Palitan ang kulay doon, hindi sa bawat generator.
+- PDF: `node tools/release-docs/html-to-pdf.js <html> <pdf> vX.Y.Z` (paper mode: buong pahina ay cream, kasama ang margins; may page number). Tingnan ang resulta (pdftoppm) bago ipadala.
+- Bagong generator para sa susunod na version: kopyahin ang `make-report-v*.py` / `make-guide-v*.py` at panatilihin ang `style.py`.
+
+## 8. Dokumentasyon at mga rules ay UPDATED KADA RELEASE (RULE ng user, 2026-10-10)
+Bago ideklarang tapos ang release, patakbuhin ang `node tools/check-release-docs.js` (dapat PASS) at i-update ang LAHAT ng nasa listahan na ito (hindi puwedeng laktawan):
+1. `docs/HANDOVER.md`: §1 estado (version, branch, commit, workflow run), §3 mga bagong desisyon at rules ng user, §4 susunod / NEEDS REVIEW, §5 mga bagong test / tool.
+2. `PROJECT-NOTES-vX.Y.Z.md` (changelog; ilipat ang luma sa `archive/notes/`) at `docs/REPORT-vX.Y.Z.md` (technical).
+3. `docs/FINDINGS.md` (bagong H-xx na may sanhi, ayos, test).
+4. `DESIGN.md`: bagong rules ng user (numbered) at checklist kung nagbago.
+5. `docs/RELEASE-PROTOCOL.md` (ito) at `CLAUDE.md`: kapag may bagong rule o utos ang user sa proseso o sa hitsura ng dokumento.
+6. Report PDF at Guide PDF ng version (paper-like, seksyon 7), `docs/REGRESSION-vX.Y.Z.txt`, `docs/TEST-RESULTS-*.json`.
+7. `docs/MANUAL.md` kung may nagbago na nakikita ng user sa app.
+Kapag may bagong rule ang user sa chat: isulat agad sa DESIGN.md / RELEASE-PROTOCOL.md / HANDOVER §3 sa parehong session, hindi hintayin ang release.
+

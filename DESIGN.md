@@ -41,6 +41,8 @@ portable Windows app without admin rights. The user is an automation engineer (n
 29. **The DITL part of the html is never touched** (guard IDENTICAL): everything new (second pane, search placeholder, css) is created from the analog script.
 30. **Numbers: one per label.** Green computed, cyan typed input, amber forced. A review mark must come from a real unresolved thing, not from the glyph inside a recognised block.
 31. **Live values (user rule, EU xlsx 2026-10-10): a number never covers text, a block, a wire / net or another number; at the side it is level with its anchor, above / below it is centred; every analog net has a number except where an address or the equipment already shows it.** Checked on every sheet by tools/audit-values.js and tools/audit-values-rules.js; a change to the drawing code must keep them at 0.
+32. **Documents are PAPER-LIKE, never bright white (user, 2026-10-10: "masakit sa mata, gawin mong rule").** Every PDF (report, testing guide, anything sent to the user) uses tools/release-docs/style.py: cream paper, dark brown text, soft status colours, no pure white. See docs/RELEASE-PROTOCOL.md section 7.
+33. **The documentation and its rules are updated at EVERY release** (HANDOVER, PROJECT-NOTES, REPORT, FINDINGS, DESIGN, RELEASE-PROTOCOL, CLAUDE.md, MANUAL as needed); `node tools/check-release-docs.js` must PASS before a release is declared done. See docs/RELEASE-PROTOCOL.md section 8.
 
 ## 3. Every build = this checklist
 1. Patch script `tools/patch-X.Y.Z.js` (from the previous html) -> `logic-sim-vX.Y.Z.html`. THE version lives in the file name; the `<title>` ("Logic Sim vX.Y.Z") is the only place inside the html (project-file `ver` and Diagnostics read it from there).

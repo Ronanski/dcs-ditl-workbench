@@ -18,3 +18,8 @@ Project: Logic Sim, offline simulator ng DCS logic drawings (DITL digital + 54 A
 - **Pagsisimula:** ang `.claude/hooks/session-start.sh` (SessionStart hook, naka-register sa `.claude/settings.json`) ay awtomatikong nagpi-print ng briefing mula sa `docs/HANDOVER.md`. Kahit hindi lumabas ang briefing, basahin pa rin ang mga file sa itaas bago gumawa.
 - **Pagtatapos:** ang `.claude/hooks/stop-handoff-check.sh` (Stop hook) ay haharang sa pagtatapos kapag may commit o pagbabago sa session pero hindi na-update ang `docs/HANDOVER.md`. Bago tapusin ang kahit anong session na may nagawa: i-update ang HANDOVER §1 (estado: version, branch, huling commit, ano ang natapos) at §4 (susunod na gawin, NEEDS REVIEW, hindi pa na-test), idagdag ang entry sa `PROJECT-NOTES-vX.Y.Z.md` kung nagbago ang code, tapos i-commit at i-push sa working branch.
 - Kapag may bagong desisyon ang user, isulat sa HANDOVER §3. Kapag may bagong test o tool, isulat sa §5. Kapag hindi tumatakbo ang hooks (hal. ibang environment), gawin pa rin ang mga hakbang na ito nang mano-mano.
+
+## RULES NG USER SA DOKUMENTO (2026-10-10)
+- **Ang PDF ay PAPER-LIKE (cream / warm, madilim na kayumangging text), HINDI puting-puti**: masakit sa mata. Gamitin ang `tools/release-docs/style.py` (RELEASE-PROTOCOL §7, DESIGN rule 32).
+- **Kada release, i-update ang lahat ng dokumentasyon at ang mga rules** (HANDOVER, PROJECT-NOTES, REPORT, FINDINGS, DESIGN, RELEASE-PROTOCOL, CLAUDE.md, MANUAL) at patakbuhin ang `node tools/check-release-docs.js` (RELEASE-PROTOCOL §8, DESIGN rule 33). Ang bagong rule ng user sa chat ay isinusulat agad sa mga file na ito.
+

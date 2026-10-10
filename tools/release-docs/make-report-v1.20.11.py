@@ -4,6 +4,7 @@ import json,collections,html,os,base64
 src=open('tools/release-docs/make-report-v1.20.10.py').read().split("reg=lines(")[0]
 exec(src)
 V='1.20.11'
+exec(open('tools/release-docs/style.py').read())  # paper-like look (rule): overrides CSS / page
 REL='https://github.com/Ronanski/dcs-ditl-workbench/releases/tag/v%s'%V
 DL='https://github.com/Ronanski/dcs-ditl-workbench/releases/download/v%s/'%V
 COMMIT=open('docs/.release-commit').read().strip() if os.path.exists('docs/.release-commit') else '(tingnan ang Release page)'
