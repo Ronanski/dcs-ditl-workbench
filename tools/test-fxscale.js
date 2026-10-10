@@ -10,8 +10,9 @@ const R=await p.evaluate(()=>{const out=[];const run=(sheet,id,cases)=>{AN.go(AN
  run('ABC-002',46,[[-50,-30,'MAN -50 ~ 50 T/H'],[0,0,'50 %'],[50,30,'100 %']]);
  run('ABC-002',74,[[-4,-4,'MAN -4 ~ 4 %'],[0,0,''],[4,4,'']]);
  run('ABC-003A',68,[[0.8,0.8,'MAN 0.8 ~ 1.2 ratio range'],[1.0,1.0,''],[1.2,1.2,'']]);
- AN.go(AN.sheets.findIndex(s=>s.name==='ABC-051'));const S5=AN.cs().S,f=S5.blk.find(z=>z.id===48);S5.rt.force[f.i[0]]=50;for(let k=0;k<8;k++)AN.settle();const st5=(S5.rt.st[48]||{}).fxs;delete S5.rt.force[f.i[0]];
- out.push({n:'ABC-051 LN33 (source range not traced)',exp:'SCALE',act:st5,ok:st5==='SCALE',st:st5,why:'flagged NEEDS REVIEW, not guessed'});
+ const un=(sheet,id,ln,why)=>{AN.go(AN.sheets.findIndex(s=>s.name===sheet));const S5=AN.cs().S,f=S5.blk.find(z=>z.id===id);S5.rt.force[f.i[0]]=50;for(let k=0;k<8;k++)AN.settle();const st5=(S5.rt.st[id]||{}).fxs;delete S5.rt.force[f.i[0]];out.push({n:sheet+' '+ln+' ('+why+')',exp:'SCALE',act:st5,ok:st5==='SCALE',st:st5,why:'flagged NEEDS REVIEW, not guessed'})};
+ un('ABC-004A',72,'LN44','input = difference of two signals');un('ABC-008',29,'LN13','auto / manual selection of several signals');un('ABC-020',79,'LN8','input = difference of two signals');un('ABC-034',13,'LN21','input = product of several signals');
+ AN.go(AN.sheets.findIndex(s=>s.name==='ABC-051'));{const S5=AN.cs().S,f=S5.blk.find(z=>z.id===48);S5.rt.force[f.i[0]]=50;for(let k=0;k<8;k++)AN.settle();const st5=(S5.rt.st[48]||{}).fxs,y=S5.rt.v[f.o[0]];delete S5.rt.force[f.i[0]];out.push({n:'ABC-051 LN33 (source traced through the link to ABC-050: PID output 0 ~ 100 %)',exp:'OK',act:st5,ok:st5==='OK',st:st5,why:'resolved by following the cross-sheet link; output '+y})}
  return out});
 let bad=0;for(const r of R){console.log((r.ok?'PASS ':'FAIL ')+r.n+'  expected '+r.exp+'  actual '+r.act+'  ('+r.why+')');if(!r.ok)bad++}
 console.log(bad?'FAILED '+bad:'ALL PASS',errs.length?errs:'');await b.close();process.exit(bad?1:0)})();
