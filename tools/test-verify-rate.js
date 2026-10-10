@@ -17,11 +17,11 @@ for(const sh of rows){const S=L.build(E,sh);
   /* (1) unit conversion */
   let exp,src;
   if(VERIFIED[key]){exp=VERIFIED[key].r;src=VERIFIED[key].why}
-  else if(!txt){exp=P.rate;src='no rate text near the block: engine default / assumed value ('+P.rate+') - not from the drawing'}
+  else if(!txt){exp=1;src='no rate written on the drawing: DEFAULT 1 per second (user decision 2026-10-10)'}
   else if(!pct){exp=num*tf(txt);src='absolute: '+txt}
   else{const sp=P.spanUnres?100:P.span;exp=num*tf(txt)*sp/100;src=txt+' x span '+sp+(P.spanUnres?' (span NOT resolved, 100 assumed)':' ['+P.spanSrc+']')}
   const okU=Math.abs(P.rate-exp)<=1e-12+1e-9*Math.abs(exp);
-  rec.push({...base,input:'rate text "'+txt+'"',expected:exp+' units/s',actual:P.rate+' units/s',source:src,status:!txt?'NEEDS REVIEW':(!okU?'FAIL':(P.spanUnres?'NEEDS REVIEW':'PASS')),evidence:P.spanUnres?'span of the signal not found (no AI / controller range / table range on the path): % rate still applied as signal units':!txt?'rate not on the drawing':'rate/time-unit/span checked'});
+  rec.push({...base,input:'rate text "'+txt+'"',expected:exp+' units/s',actual:P.rate+' units/s',source:src,status:!okU?'FAIL':(P.spanUnres?'NEEDS REVIEW':'PASS'),evidence:P.spanUnres?'span of the signal not found (no AI / controller range / table range on the path): user decision: default for now (rate applied as written)':!txt?'DEFAULT rate 1 /s (editable in the block panel, "Reset this block to default")':'rate/time-unit/span checked'});
   /* (2) source of the input: the NEAREST terminal on the analog data path (BFS) is the real source of the block input */
   {const seen=new Set([b.main]);let lvl=[b.main],term=null;for(let g=0;lvl.length&&g<40&&!term;g++){const nx=[];for(const n of lvl){const ds=S.drv[n]||[];if(!ds.length&&S.ext.includes(n)){term={k:'ext',n};break}for(const d of ds){const bl=d.i===undefined&&d.id!==undefined?S.blk.find(z=>z.id===d.id):d;if(!bl)continue;if(['AI','MAN','CONST','PID','PIDV'].includes(bl.k)){term={k:bl.k,bl};break}if(bl.k==='LINK'&&!(bl.i||[]).some(m=>m>=0&&(S.drv[m]||[]).length||S.ext.includes(m))){term={k:'LINK',bl};break}for(const m of bl.i||[])if(m>=0&&!seen.has(m)&&!S.nets[m].dig){seen.add(m);nx.push(m)}}if(term)break}lvl=nx}
    const rt=S.rt,keep=rt.ramp;

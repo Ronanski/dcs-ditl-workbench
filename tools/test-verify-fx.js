@@ -23,7 +23,7 @@ const rec=await p.evaluate(()=>{
      let status,note='';
      if(outside){status=(st==='OUT'&&Math.abs(act-exp)<1e-6)?'PASS':'FAIL';note='out of table domain: end value held AND flagged OUT (NEEDS REVIEW in the panel)'}
      else status=Math.abs(act-exp)<1e-6*Math.max(1,Math.abs(exp))?'PASS':'FAIL';
-     if(status==='PASS'&&unitBad&&!outside){status='NEEDS REVIEW';note='numbers match the table but a unit of the table header is empty'}
+     if(status==='PASS'&&unitBad&&!outside){note='numbers match the table; the unit text of the LINEAR header is empty (informational: the ranges and the description are in the table; user 2026-10-10)'}
      R.push({...base,input:nm+': '+xv+' '+base.xu,expected:exp+' '+base.yu+(note?' ('+note+')':''),actual:act+' '+base.yu+' st='+st,status,evidence:'force net '+inN+' -> read net '+outN,correction:'',retest:'v1.20.8 run'})}
    /* range of the transmitter that feeds the block (only when the FX input is a transmitter, possibly through LAG / RATE / LINK) against the x range of the table */
    {const up=(n,d,pa)=>{const q=(S.drv[n]||[])[0];if(!q)return null;const bl=S.blk.find(z=>z.id===q.id);if(!bl)return null;if(bl.k==='AI')return{bl,pa:pa.concat('AI')};if(d>6||!['LAG','RATE','RAMPB','LINK','ABS'].includes(bl.k))return null;return up(bl.i[0],d+1,pa.concat(bl.k))};

@@ -1,4 +1,4 @@
-# NOT gate truth table - logic-sim-v1.20.8.html
+# NOT gate truth table - logic-sim-v1.20.9.html
 
 Counts: {"PASS":488}
 
