@@ -194,3 +194,18 @@ Open: none (O-07 closed by H-17, O-08 is a drawing exit). 2 circles stay NOT LIN
 | H-45 | ABC-002 "32% MIN. AIR FLOW" was a fixed constant | ABC-002 CONST#1 | - | editable T/H setting (default 400), original 32 % kept, conversion shown | tools/test-verify-minair.js, tools/test-ui-minair.js |
 | H-46 | Bad Signal had no clear label / mark | all transmitters with SIG.AB | the flag was a plain 0 / 1 button | Bad Signal OFF / FORCED BAD button, diagram mark, inspector row | tools/test-ui-sigab.js, tools/test-verify-sel.js |
 | H-47 | The embedded LINEAR tables checked against LINEAR.xls (89 tables): all X / Y points and ranges equal; S1-LN15 / S1-LN21 differ by the documented / 100 (H-33); S1-LN38 / 39 come from the Drum Level file | all FX | - | none needed | tools/test-verify-linear-xls.py |
+
+
+## H-48 .. H-57 (2026-10-10, manual tests of v1.20.8 by the user)
+| # | Finding | Sheet / place | Cause | Fix | Test |
+|---|---|---|---|---|---|
+| H-48 | A value typed (FORCE) on the AI output updated the ALM but not the AI address | ABC-002 AI0273 | the address value read the AI's own value, not the (forced) net | a forced net shows the net value | tools/test-ui-1.20.9.js |
+| H-49 | Values beside the ALM and beside the instrument tag of a transmitter (user: unnecessary, the AI address is enough) | all sheets | rule 6 / 7 tags got a badge | none for ALM tags, ALM wires, "tag -> AI block" | test-ui-1.20.9 |
+| H-50 | Values typed beyond the range written on the drawing | FORCE box, field inputs | no clamp (the slider was right) | limited to the written range, message; nets without a written range are not limited | test-ui-1.20.9 |
+| H-51 | The two wires into the SELECT CIRCUIT were grey although the signal arrives | ABC-002 (SIG.AB junction wires) | the reader classes the wire that leaves the SIG.AB junction as the DIGITAL flag net | S.selw: drawn as the analog signal of the transmitter; grey only when it is BAD (excluded from the average) | test-ui-1.20.9, tools/audit-grey-analog.js (296 dimmed analog nets, all by design: unselected leg / nobody downstream) |
+| H-52 | The division symbol (bar + two tiny-circle dots) was read as a minus: b - a instead of a / b | ABC-002 #44 (SI0049), ABC-008 #61 | dots are circles r 0.31, the rule counted only junction dots | tiny circles count as dots; a / b by pin labels | test-math (DIV 42), test-ui-1.20.9 |
+| H-53 | Block settings (rate, stroke, tuning...) went back to default at the global Reset | all blocks | reset() wiped AN.sv and restored p0 | config kept; "Reset this block to default" per block | test-ui-1.20.9 |
+| H-54 | SIG.AB <-> transmitter pairing and the SELECT CIRCUIT input mapping by distance (50 units) | all sheets | proximity rule | by wire connection (198 / 198 paired: 180 same as before, 18 new, 0 conflicts) | test-verify-sel, pair audit in REPORT-v1.20.9 |
+| H-55 | ABC-002 minimum air flow: the signal compared with SI0036 TAF DEMAND is in T/H, the 32 % constant was compared with 446 T/H | ABC-002 CONST#1 | % constant against a T/H signal | the editable T/H setting (default 400) IS the signal; 32 % kept for comparison | test-verify-minair, test-ui-minair |
+| H-56 | S1-LN38 / S1-LN39 (ABC-010): the 19-point curve of the Excel file differs from the DCS patterns (up to 1.2 % / 2.5 % between 139 and 219 kg/cm2) | ABC-010 | the DCS interpolates one segment 139 -> 219 | the 16 points of the DCS screenshots (data/reference) | test-verify-linear-xls.py |
+| H-57 | High / low selector: a wire shared with another block stayed lit on the unselected leg | 18 HS / LS | net-level dimming only | leg of the unselected input dimmed (pin -> first junction) | tools/test-ui-hs.js (36 / 36) |

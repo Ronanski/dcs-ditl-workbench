@@ -43,6 +43,10 @@ if(rb){await p.evaluate(([id])=>{const S=AN.cs().S;AN.sel={blk:S.blk.find(q=>q.i
  await p.evaluate(([id])=>{const S=AN.cs().S;AN.sel={blk:S.blk.find(q=>q.id===id)};AN.selBox();AN.panelUpd(true)},[rb.id]);await p.waitForTimeout(500);
  await p.evaluate(()=>{[...document.querySelectorAll('#anp button')].find(x=>/Reset this block to default/.test(x.textContent)).click()});await p.waitForTimeout(500);
  const r3=await p.evaluate(([id])=>AN.cs().S.blk.find(q=>q.id===id).p.rate,[rb.id]);ok('"Reset this block to default" restores the default rate',Math.abs(r3-rb.rate)<1e-12,r3+' vs '+rb.rate)}
+// 6b. the setting survives a page reload
+if(rb){await go('ABC-050');await p.evaluate(([id])=>{const S=AN.cs().S;AN.sel={blk:S.blk.find(q=>q.id===id)};AN.selBox();AN.panelUpd(true)},[rb.id]);await p.waitForTimeout(400);
+ await p.evaluate(()=>{const row=[...document.querySelectorAll('#anp div.r')].find(r=>/Rate \(signal/.test(r.innerText));const i=row.querySelector('input');i.value='9';i.dispatchEvent(new Event('change',{bubbles:true}))});await p.waitForTimeout(400);
+ await p.reload();await p.waitForTimeout(6000);await go('ABC-050');const r4=await p.evaluate(([id])=>AN.cs().S.blk.find(q=>q.id===id).p.rate,[rb.id]);ok('block setting (rate 9) survives a reload',r4===9,r4)}
 // 7. min air flow signal is the T/H setting
 await go('ABC-002');const ma=await p.evaluate(()=>{const S=AN.cs().S,c=S.blk.find(b=>b.k==='CONST'&&b.p.mt);return{th:c.p.th,out:S.rt.v[c.o[0]],orig:c.p.orig}});ok('minimum air flow: setting 400 T/H = signal 400, drawing 32 % kept',ma.th===400&&ma.out===400&&ma.orig===32,JSON.stringify(ma));
 console.log(R.join('\n'));console.log('errs',errs);process.exitCode=R.some(x=>x.startsWith('FAIL'))||errs.length?1:0;await b.close()})();
