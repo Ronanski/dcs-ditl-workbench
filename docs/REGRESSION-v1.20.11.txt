@@ -1,0 +1,14 @@
+Live values (audit-values, 51 sheet, 2128 numero)||0 sa text, 0 sa block, 0 sa ibang numero, 2 sa wire (dumadampi), 0 hindi pantay - PASS
+Analog net na walang numero (audit-values-rules)||0 sa 2207 - PASS
+test-pane2||10 / 10 PASS (wheel in / out, +, -, drag, double-click, live, walang duplicate, swap, close)
+test-fxscale||20 / 20 PASS
+test-xref||4 / 4 PASS
+test-audit||9 / 9 PASS
+test-search||5 / 5 PASS
+test-ui-hs, ui-sigab, ui-minair, ui-1.20.9||36, 10, 9, 14 PASS
+Engine (node): test-blocks, math, rate, comparators, switch, legend, loops, pidsign, runaway, links-all, cos||526 / 0 failures; 998 checks; 43 / 0; 240 / 0; 210 / 0; 0 mismatch; 68 / 68; 64 / 64; 0 runaway; 182 / 182 links; ALL PASS - PASS
+Browser: circles, anim, ditl-link, ditl-signals, trace-x, path, defaults-ui, fixes, addr-ui, hmi, hmi2, force-all, lock-all, blocks-ui, links, ades, pid-all, badges, drum, cos||PASS
+test-pid ("direct + negative plant"), test-back-manual at test-modes ("bad 1"), test-numinput||pareho ang resulta sa v1.20.7-10: luma / plant model - NEEDS REVIEW, hindi galing sa v1.20.11
+test-ln||fails sa Save step (inalis ang Save): obsolete
+test-own (1 FAIL), test-ui-real (4 FAIL)||pareho sa v1.20.7-10 (plant model) - NEEDS REVIEW
+DITL guard||IDENTICAL (135a852d87c5)

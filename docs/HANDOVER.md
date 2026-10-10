@@ -8,11 +8,10 @@ Sundin ang protocol ko: simpleng Taglish (80 % Tagalog), PASS / FAIL / NEEDS REV
 Pagkabasa, ibuod sa 5 linya kung nasaan tayo at ano ang uunahin mo (HANDOVER §4), at magsimula.
 ```
 
-## 1. Estado ngayon (v1.20.11 WIP: live values + second pane zoom; may go ng user na i-release agad)
-- Latest RELEASE: v1.20.10 (commit 543814e, nasa main). Root: `logic-sim-v1.20.11.html` = build ng `node tools/patch-1.20.11.js` (base: `archive/html/logic-sim-v1.20.9.html`; modules `tools/patch-1.20.11-*.js`; ang v1.20.10 ay nagre-rebuild pa rin mula sa `patch-1.20.10.js`, SHA256 6325f96f...; ang released html ay nasa `archive/html/logic-sim-v1.20.10.html`).
-- User (2026-10-10 gabi): unahin ang LIVE VALUES ayon sa EU xlsx rules (hindi tumatakip sa text / block / wire / ibang numero; pantay sa gilid, naka-center sa taas / baba; kulay), ayusin ang zoom ng second sheet, ayusin ang lahat ng kaya na hindi kailangan ng input niya, **release agad**. Bukas ang verification / manual test results niya at ang mga kailangan ng input niya.
-- Natapos: `vplace` (tools/patch-1.20.11-vplace.js): 2128 numero sa 51 sheet = 0 text / 0 block / 0 numero / 2 wire na dumadampi, 0 hindi pantay; 22 net na walang numero ay may numero na; kulay ng computed / typed / forced ay settings (Legend & style > Values); second pane: + / - / pinch / double-click / wheel. Tools: `tools/audit-values.js`, `tools/audit-values-rules.js`.
-- Gagawin pa sa release: regression (reg3), rehearse-v1.20.11.js, report + guide v1.20.11 (`tools/release-docs/make-report-v1.20.11.py`, guide generator), workflow dispatch, verify, merge sa main, SendUserFile.
+## 1. Estado ngayon (v1.20.11: nire-release na; tingnan ang huling commit / run sa ibaba)
+- Latest RELEASE: **v1.20.11** (live values ayon sa EU xlsx + second pane zoom) kapag success ang workflow; ang nakaraan ay v1.20.10 (commit 543814e, nasa main). Root: `logic-sim-v1.20.11.html` = `node tools/patch-1.20.11.js` (base `archive/html/logic-sim-v1.20.9.html`; modules `tools/patch-1.20.11-*.js`). Ang v1.20.10 ay nagre-rebuild pa rin mula sa `patch-1.20.10.js` (SHA256 6325f96f...; released html sa `archive/html/`).
+- Ang user ay nagbigay ng go (gabi ng 2026-10-10): "Release agad". Merge sa main: ginawa para sa v1.20.10 lang; para sa v1.20.11 ay may "release agad" pero walang bagong utos na i-merge: tanungin kung i-merge (HUWAG mag-merge nang walang utos).
+- Natapos: `vplace` (2128 numero / 51 sheet: 0 text, 0 block, 0 numero, 2 wire, 0 hindi pantay), 22 net na walang numero ay may numero, kulay ng numero = settings, second pane: + / - / pinch / double-click / wheel, paper-like na PDF (style.py), `tools/check-release-docs.js`.
 - **DITL part IDENTICAL** (guard 135a852d87c5).
 - Awtomatikong handoff: `.claude/hooks/*`. Bago tapusin ang session: i-update ang §1 at §4, i-commit, i-push.
 
@@ -35,12 +34,12 @@ Mga ayos mula sa manual test ng user sa v1.20.8 (MT-01..08): forced AI value sa 
 - **Hitsura ng PDF: PAPER-LIKE** (cream, hindi puti) at **dokumentasyon + rules ay updated kada release** (user 2026-10-10): RELEASE-PROTOCOL §7 at §8, DESIGN rule 32 / 33, `tools/check-release-docs.js`.
 - Live values (EU xlsx): hindi tumatakip sa text / block / wire / numero; pantay sa gilid, naka-center sa taas / baba; DESIGN rule 31.
 
-## 4. Susunod na gawin (hintayin ang "go" ng user para sa bagong version)
-1. **Kunin ang resulta ng manual tests ng user** (MT-01..MT-14 sa `LogicSim_v1.20.10_Manual_Testing_Guide.pdf`; puwede niyang gamitin ang Audit button at i-export ang CSV). Ayusin ang FAIL.
-2. **NEEDS REVIEW (hinihintay ang sagot ng user):** (a) 4 F(X) na hindi ma-scale: ABC-004A LN44 (SUB ng SI0202 / SI0203), ABC-008 LN13 (auto/manual selection), ABC-020 LN8 (DEV), ABC-034 LN21 (MUL): kailangan ang range ng input; (b) 2 digital gate symbol sa ABC-001D (AND o OR?); (c) HS/LS "ramp muna, hindi instant": kailangan ng halimbawang sheet / tag; (d) 4 AO (ABC-003A-D) at 8 FIELD na instant: rule ng ramp; (e) 5 RATE span (default muna); (f) ABC-020 LN5 (MAN 19~100 %) at ABC-003D LN21 (MAN 0.8~1.0752) ay hindi kumpirmado; (g) COS: kung ang "nawala sa taas" ay ang popover.
-3. **Hindi pa nagawa:** resizable / dockable / pin na panel; toolbar dropdown grouping; range ng COS laban sa kinokontrol; range ng output ng ibang block; 83 COS ng ibang uri ay nasa test-cos lang; second pane ay panonood lang (Swap para mag-click).
-4. Mga luma nang test failure (pareho sa v1.20.7-9, plant model / luma): pid "direct + negative plant", back-manual / modes "bad 1", numinput, ln (Save step), own (1), ui-real (4).
-5. Bagong release: sundin ang `docs/RELEASE-PROTOCOL.md`.
+## 4. Susunod na gawin (bukas, kasama ang user)
+1. **Manual test results ng user**: MT-01..MT-14 (guide v1.20.10) at MT-V1..V5 (guide v1.20.11). Ayusin ang FAIL.
+2. **NEEDS REVIEW (hinihintay ang sagot ng user):** (a) 4 F(X) na hindi ma-scale: ABC-004A LN44, ABC-008 LN13, ABC-020 LN8, ABC-034 LN21 (range ng input); (b) 2 digital gate sa ABC-001D (AND / OR?); (c) HS/LS "ramp muna": halimbawang sheet / tag; (d) 4 AO + 8 FIELD na instant: rule ng ramp; (e) 5 RATE span (default muna); (f) ABC-020 LN5 at ABC-003D LN21 (range na ipinalagay); (g) COS popover = ang "nawala sa taas"?; (h) **instrument tag**: ang Excel rule 1 ay may numero, pero ang sagot ng user sa MT-02 (v1.20.8) ay wala: kumpirmahin; (i) kulay ng numero (green = computed, cyan = typed, amber = forced): kumpirmahin.
+3. Hindi pa nagawa: resizable / dockable / pin na panel; toolbar dropdown; range ng COS laban sa kinokontrol; range ng output ng ibang block.
+4. Luma nang test failure (pareho sa v1.20.7-10): pid "direct + negative plant", back-manual / modes "bad 1", numinput, ln (Save step), own (1), ui-real (4).
+5. Bagong release: sundin ang `docs/RELEASE-PROTOCOL.md` (pati §7 paper-like at §8 docs kada release; `node tools/check-release-docs.js`).
 
 ## 5. Paano mag-test (lahat sa root ng repo)
 - Engine (node): `node tools/test-blocks.js <html>`, `test-math`, `test-rate`, `test-comparators`, `test-switch`, `test-legend`, `test-loops`, `test-pidsign`, `test-runaway`, `test-links-all` (mabagal ang ilan; i-background).

@@ -1,4 +1,4 @@
-# Bad Signal (SIG.AB) - logic-sim-v1.20.10.html
+# Bad Signal (SIG.AB) - logic-sim-v1.20.11.html
 
 Counts: {"PASS":553,"NOT TESTED":59}
 

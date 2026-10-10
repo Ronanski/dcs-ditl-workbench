@@ -1,4 +1,4 @@
-# COS beside T switch - logic-sim-v1.20.10.html
+# COS beside T switch - logic-sim-v1.20.11.html
 
 Counts: {"PASS":360,"NOT TESTED":83}
 

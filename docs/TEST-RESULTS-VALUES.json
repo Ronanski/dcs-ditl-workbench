@@ -507,6 +507,6 @@
   "expected": "0 overlaps, all aligned",
   "actual": "text 0, block 0, wire 1, number 0, misaligned 0",
   "status": "PASS",
-  "evidence": "A 20.51 @659,388 L"
+  "evidence": "A 20.48 @659,388 L"
  }
 ]

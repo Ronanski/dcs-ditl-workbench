@@ -1,4 +1,4 @@
-# Range limits - logic-sim-v1.20.10.html
+# Range limits - logic-sim-v1.20.11.html
 
 Counts: {"PASS":212,"NEEDS REVIEW":155,"NOT TESTED":1}
 
