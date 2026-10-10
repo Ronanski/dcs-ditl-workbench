@@ -1,0 +1,10 @@
+Engine (node): test-blocks||526 / 0 failures - PASS
+test-math (add, sub, mul, div, sum, dev, limits...)||998 checks / 0 mismatches - PASS (DIV 42 checks: the 2 corrected division blocks included)
+test-rate / test-comparators / test-switch||43 / 0; 240 / 0; 210 / 0 - PASS
+test-legend (FF, TON, TOF, TPS), test-loops, test-pidsign||0 mismatch; 68 / 68; 64 / 64 - PASS
+test-runaway (51 sheets), test-links-all, test-cos||0 runaway; 183 / 183 links; ALL PASS - PASS
+Browser, 21 tests: circles, anim, ditl-link, ditl-signals, trace-x, path, defaults-ui, fixes, addr-ui, hmi, hmi2, force-all, lock-all, blocks-ui, links, ades, back-manual, pid, pid-all, modes, numinput||PASS (modes "bad 1" and numinput "no INPUT box" are identical on v1.20.7 / v1.20.8)
+test-badges and test-drum||were written for the old rules (no wire values; old 19-point drum curve); updated to the new decisions (Wire values ON; DCS patterns: 541.2 mm at 145 kg/cm2) and now PASS
+test-ln||fails only at the project Save step (Save removed on purpose); all steps before it pass - obsolete step
+test-own (1 FAIL), test-ui-real (4 FAIL)||identical failures on v1.20.7 and v1.20.8 (plant model): not caused by this version - NEEDS REVIEW
+Not run: test-project, test-storage, test-storage2, test-import, test-trend||Save / Open / Import UI removed; trend not re-run - NOT TESTED
