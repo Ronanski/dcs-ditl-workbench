@@ -1,0 +1,101 @@
+{
+ "OUT": {
+  "mt01": {
+   "ai": 3,
+   "tag": "AI0181",
+   "rng": {
+    "lo": 0,
+    "hi": 25,
+    "u": "kg/cm2"
+   },
+   "on": 4,
+   "cx": 505.215,
+   "cy": 619.8599999999999,
+   "dev": 10,
+   "devOut": 1,
+   "before": {
+    "signal": 12.5,
+    "dev": 12.5
+   },
+   "hasBadBtn": true,
+   "after": {
+    "signal": 0,
+    "dev": 0
+   },
+   "back": {
+    "signal": 12.5,
+    "dev": 12.5
+   }
+  },
+  "mt02": {
+   "popup": "✕ | COS manual value | COS manual ▸ ACT MCV-FA1043-B | T switch:  | Auto (follows the select signal) | Force input A (auto leg) | Force input B (manual leg: COS value) | Active: B | range 0.00 ~ 65.00 T/H | ✓ | target 0.00 → now 0.00 T/H | ENERGIZED: the T switch is on the manual leg · switching: M.0125 = 1 | Min (0.00) | Mid (32.50) | Max (65.00)",
+   "after": {
+    "target": 12.5,
+    "value": 12.5,
+    "run": true
+   },
+   "closed": true
+  },
+  "dbg": {
+   "n": 1,
+   "val": "12.5",
+   "dis": false,
+   "en": "ce input B (manual leg: COS value)\nActive: B\nrange 0.00 ~ 65.00 T/H\n✓\ntarget 0.00 → now 0.00 T/H\nENERGIZED: the T switch is on the manual leg · switching: M.0125 = 1\nMin (0.00)\nMid (32.50)\nMax (65.00)"
+  },
+  "dbg2": {
+   "on": {
+    "on": true,
+    "why": "ENERGIZED: the T switch is on the manual leg · switching: M.0125 = 0"
+   },
+   "ext": 12.5,
+   "sheet": "ABC-003B",
+   "same": 2
+  },
+  "mt03": {
+   "panel": [
+    "Input to the table (%): ratio x 100 (1.0 = 100 %)",
+    "Table X now: 100.00 %"
+   ],
+   "out": 50,
+   "x": 100
+  },
+  "mt04": {
+   "points": [
+    [
+     8000,
+     0.8
+    ],
+    [
+     10000,
+     1
+    ],
+    [
+     12000,
+     1.2
+    ]
+   ],
+   "man": true
+  },
+  "mt05": {
+   "th": 400,
+   "out": 128,
+   "id": 1
+  },
+  "mt06": {
+   "rv": true,
+   "marks": 0
+  },
+  "mt07": {},
+  "mt08": {
+   "links": 16
+  },
+  "mt10": {
+   "second": "ABC-004A"
+  },
+  "mt12": {
+   "mode": "SIMULATION - RUNNING",
+   "frc": 1
+  }
+ },
+ "errs": []
+}

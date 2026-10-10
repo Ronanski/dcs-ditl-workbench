@@ -245,9 +245,9 @@
   "input": "rate text \"\"",
   "expected": "1 units/s",
   "actual": "1 units/s",
-  "source": "no rate text near the block: engine default / assumed value (1) - not from the drawing",
-  "status": "NEEDS REVIEW",
-  "evidence": "rate not on the drawing"
+  "source": "no rate written on the drawing: DEFAULT 1 per second (user decision 2026-10-10)",
+  "status": "PASS",
+  "evidence": "DEFAULT rate 1 /s (editable in the block panel, \"Reset this block to default\")"
  },
  {
   "sheet": "ABC-004A",
@@ -325,9 +325,9 @@
   "input": "rate text \"\"",
   "expected": "1 units/s",
   "actual": "1 units/s",
-  "source": "no rate text near the block: engine default / assumed value (1) - not from the drawing",
-  "status": "NEEDS REVIEW",
-  "evidence": "rate not on the drawing"
+  "source": "no rate written on the drawing: DEFAULT 1 per second (user decision 2026-10-10)",
+  "status": "PASS",
+  "evidence": "DEFAULT rate 1 /s (editable in the block panel, \"Reset this block to default\")"
  },
  {
   "sheet": "ABC-004B",
@@ -405,9 +405,9 @@
   "input": "rate text \"\"",
   "expected": "1 units/s",
   "actual": "1 units/s",
-  "source": "no rate text near the block: engine default / assumed value (1) - not from the drawing",
-  "status": "NEEDS REVIEW",
-  "evidence": "rate not on the drawing"
+  "source": "no rate written on the drawing: DEFAULT 1 per second (user decision 2026-10-10)",
+  "status": "PASS",
+  "evidence": "DEFAULT rate 1 /s (editable in the block panel, \"Reset this block to default\")"
  },
  {
   "sheet": "ABC-004C",
@@ -487,7 +487,7 @@
   "actual": "0.05 units/s",
   "source": "RAMP:0.05% / sec x span 100 (span NOT resolved, 100 assumed)",
   "status": "NEEDS REVIEW",
-  "evidence": "span of the signal not found (no AI / controller range / table range on the path): % rate still applied as signal units"
+  "evidence": "span of the signal not found (no AI / controller range / table range on the path): user decision: default for now (rate applied as written)"
  },
  {
   "sheet": "ABC-007",
@@ -603,11 +603,11 @@
   "sheet": "ABC-009A",
   "block": "RATE#97",
   "input": "rate text \"\"",
-  "expected": "0.05 units/s",
-  "actual": "0.05 units/s",
-  "source": "no rate text near the block: engine default / assumed value (0.05) - not from the drawing",
-  "status": "NEEDS REVIEW",
-  "evidence": "rate not on the drawing"
+  "expected": "1 units/s",
+  "actual": "1 units/s",
+  "source": "no rate written on the drawing: DEFAULT 1 per second (user decision 2026-10-10)",
+  "status": "PASS",
+  "evidence": "DEFAULT rate 1 /s (editable in the block panel, \"Reset this block to default\")"
  },
  {
   "sheet": "ABC-009A",
@@ -623,8 +623,8 @@
   "sheet": "ABC-009A",
   "block": "RATE#97",
   "input": "step 0 -> 3 with the written rate",
-  "expected": "1 s: 0.05, 2 s: 0.1 (same with 0.25 s steps), not instant",
-  "actual": "1 s steps 0.05 , 0.1 | 0.25 s steps at 1 s / 2 s: 0.05 , 0.09999999999999999",
+  "expected": "1 s: 1, 2 s: 2 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 1 , 2 | 0.25 s steps at 1 s / 2 s: 1 , 2",
   "source": "rate x elapsed simulation time",
   "status": "PASS",
   "evidence": "force main net 93"
@@ -643,11 +643,11 @@
   "sheet": "ABC-009A",
   "block": "RATE#98",
   "input": "rate text \"\"",
-  "expected": "0.05 units/s",
-  "actual": "0.05 units/s",
-  "source": "no rate text near the block: engine default / assumed value (0.05) - not from the drawing",
-  "status": "NEEDS REVIEW",
-  "evidence": "rate not on the drawing"
+  "expected": "1 units/s",
+  "actual": "1 units/s",
+  "source": "no rate written on the drawing: DEFAULT 1 per second (user decision 2026-10-10)",
+  "status": "PASS",
+  "evidence": "DEFAULT rate 1 /s (editable in the block panel, \"Reset this block to default\")"
  },
  {
   "sheet": "ABC-009A",
@@ -663,8 +663,8 @@
   "sheet": "ABC-009A",
   "block": "RATE#98",
   "input": "step 0 -> 3 with the written rate",
-  "expected": "1 s: 0.05, 2 s: 0.1 (same with 0.25 s steps), not instant",
-  "actual": "1 s steps 0.05 , 0.1 | 0.25 s steps at 1 s / 2 s: 0.05 , 0.09999999999999999",
+  "expected": "1 s: 1, 2 s: 2 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 1 , 2 | 0.25 s steps at 1 s / 2 s: 1 , 2",
   "source": "rate x elapsed simulation time",
   "status": "PASS",
   "evidence": "force main net 79"
@@ -683,11 +683,11 @@
   "sheet": "ABC-009A",
   "block": "RATE#99",
   "input": "rate text \"\"",
-  "expected": "0.05 units/s",
-  "actual": "0.05 units/s",
-  "source": "no rate text near the block: engine default / assumed value (0.05) - not from the drawing",
-  "status": "NEEDS REVIEW",
-  "evidence": "rate not on the drawing"
+  "expected": "1 units/s",
+  "actual": "1 units/s",
+  "source": "no rate written on the drawing: DEFAULT 1 per second (user decision 2026-10-10)",
+  "status": "PASS",
+  "evidence": "DEFAULT rate 1 /s (editable in the block panel, \"Reset this block to default\")"
  },
  {
   "sheet": "ABC-009A",
@@ -703,8 +703,8 @@
   "sheet": "ABC-009A",
   "block": "RATE#99",
   "input": "step 0 -> 3 with the written rate",
-  "expected": "1 s: 0.05, 2 s: 0.1 (same with 0.25 s steps), not instant",
-  "actual": "1 s steps 0.05 , 0.1 | 0.25 s steps at 1 s / 2 s: 0.05 , 0.09999999999999999",
+  "expected": "1 s: 1, 2 s: 2 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 1 , 2 | 0.25 s steps at 1 s / 2 s: 1 , 2",
   "source": "rate x elapsed simulation time",
   "status": "PASS",
   "evidence": "force main net 60"
@@ -723,11 +723,11 @@
   "sheet": "ABC-009B",
   "block": "RATE#20",
   "input": "rate text \"\"",
-  "expected": "0.05 units/s",
-  "actual": "0.05 units/s",
-  "source": "no rate text near the block: engine default / assumed value (0.05) - not from the drawing",
-  "status": "NEEDS REVIEW",
-  "evidence": "rate not on the drawing"
+  "expected": "1 units/s",
+  "actual": "1 units/s",
+  "source": "no rate written on the drawing: DEFAULT 1 per second (user decision 2026-10-10)",
+  "status": "PASS",
+  "evidence": "DEFAULT rate 1 /s (editable in the block panel, \"Reset this block to default\")"
  },
  {
   "sheet": "ABC-009B",
@@ -743,8 +743,8 @@
   "sheet": "ABC-009B",
   "block": "RATE#20",
   "input": "step 0 -> 3 with the written rate",
-  "expected": "1 s: 0.05, 2 s: 0.1 (same with 0.25 s steps), not instant",
-  "actual": "1 s steps 0.05 , 0.1 | 0.25 s steps at 1 s / 2 s: 0.05 , 0.09999999999999999",
+  "expected": "1 s: 1, 2 s: 2 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 1 , 2 | 0.25 s steps at 1 s / 2 s: 1 , 2",
   "source": "rate x elapsed simulation time",
   "status": "PASS",
   "evidence": "force main net 25"
@@ -843,11 +843,11 @@
   "sheet": "ABC-020",
   "block": "RATE#91",
   "input": "rate text \"\"",
-  "expected": "2 units/s",
-  "actual": "2 units/s",
-  "source": "no rate text near the block: engine default / assumed value (2) - not from the drawing",
-  "status": "NEEDS REVIEW",
-  "evidence": "rate not on the drawing"
+  "expected": "1 units/s",
+  "actual": "1 units/s",
+  "source": "no rate written on the drawing: DEFAULT 1 per second (user decision 2026-10-10)",
+  "status": "PASS",
+  "evidence": "DEFAULT rate 1 /s (editable in the block panel, \"Reset this block to default\")"
  },
  {
   "sheet": "ABC-020",
@@ -862,9 +862,9 @@
  {
   "sheet": "ABC-020",
   "block": "RATE#91",
-  "input": "step 0 -> 6 with the written rate",
-  "expected": "1 s: 2, 2 s: 4 (same with 0.25 s steps), not instant",
-  "actual": "1 s steps 2 , 4 | 0.25 s steps at 1 s / 2 s: 2 , 4",
+  "input": "step 0 -> 3 with the written rate",
+  "expected": "1 s: 1, 2 s: 2 (same with 0.25 s steps), not instant",
+  "actual": "1 s steps 1 , 2 | 0.25 s steps at 1 s / 2 s: 1 , 2",
   "source": "rate x elapsed simulation time",
   "status": "PASS",
   "evidence": "force main net 33"
@@ -872,9 +872,9 @@
  {
   "sheet": "ABC-020",
   "block": "RATE#91",
-  "input": "bypass = 1, same step 0 -> 6",
-  "expected": "6 at once (\"1:BYPASS\")",
-  "actual": "6 , 6",
+  "input": "bypass = 1, same step 0 -> 3",
+  "expected": "3 at once (\"1:BYPASS\")",
+  "actual": "3 , 3",
   "source": "legend / drawing 1:BYPASS",
   "status": "PASS",
   "evidence": "bypass net 25"
@@ -1227,7 +1227,7 @@
   "actual": "0.1 units/s",
   "source": "0.1% / sec x span 100 (span NOT resolved, 100 assumed)",
   "status": "NEEDS REVIEW",
-  "evidence": "span of the signal not found (no AI / controller range / table range on the path): % rate still applied as signal units"
+  "evidence": "span of the signal not found (no AI / controller range / table range on the path): user decision: default for now (rate applied as written)"
  },
  {
   "sheet": "ABC-057",
@@ -1267,7 +1267,7 @@
   "actual": "0.005 units/s",
   "source": "18% / Hr x span 100 (span NOT resolved, 100 assumed)",
   "status": "NEEDS REVIEW",
-  "evidence": "span of the signal not found (no AI / controller range / table range on the path): % rate still applied as signal units"
+  "evidence": "span of the signal not found (no AI / controller range / table range on the path): user decision: default for now (rate applied as written)"
  },
  {
   "sheet": "ABC-001C",
@@ -1427,7 +1427,7 @@
   "actual": "0.2 units/s",
   "source": "0.2% / sec x span 100 (span NOT resolved, 100 assumed)",
   "status": "NEEDS REVIEW",
-  "evidence": "span of the signal not found (no AI / controller range / table range on the path): % rate still applied as signal units"
+  "evidence": "span of the signal not found (no AI / controller range / table range on the path): user decision: default for now (rate applied as written)"
  },
  {
   "sheet": "ABC-002",
@@ -1467,7 +1467,7 @@
   "actual": "0.2 units/s",
   "source": "0.2% / sec x span 100 (span NOT resolved, 100 assumed)",
   "status": "NEEDS REVIEW",
-  "evidence": "span of the signal not found (no AI / controller range / table range on the path): % rate still applied as signal units"
+  "evidence": "span of the signal not found (no AI / controller range / table range on the path): user decision: default for now (rate applied as written)"
  },
  {
   "sheet": "ABC-002",

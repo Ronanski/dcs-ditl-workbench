@@ -5,6 +5,6 @@ await p.goto('file://'+path.resolve(process.argv[2]));await p.waitForTimeout(250
 await p.evaluate(async()=>{await AN.data;AN.go(AN.sheets.findIndex(s=>s.name==='ABC-002'));await new Promise(r=>setTimeout(r,400));if(AN.view)document.querySelector('button[title^="View mode"]').click()});await p.click('#anbar button:has-text("Run")');
 const probe=()=>p.evaluate(async()=>{const o=[];for(const name of ['ABC-002','ABC-010','ABC-050','ABC-013','ABC-019','ABC-004A']){AN.go(AN.sheets.findIndex(s=>s.name===name));await new Promise(r=>setTimeout(r,500));const bd=(AN.dbgL&&AN.dbgL.bd)||[];const vis=bd.filter(x=>x.t.style.display!=='none');o.push({name,total:bd.length,visible:vis.length,visibleWire:vis.filter(x=>x.wire).length,addr:vis.filter(x=>!x.wire).length})}return o});
 const off=await probe();console.log(JSON.stringify(off));
-ck('default: no number on a bare wire (every visible value is beside an address)',off.every(x=>x.visibleWire===0&&x.addr>0),JSON.stringify(off.map(x=>x.name+':'+x.visibleWire+'/'+x.addr)));
-ck('no "Wire values" button any more (beta v1.20.5)',!(await p.evaluate(()=>[...document.querySelectorAll('button')].some(b=>b.textContent==='Wire values'))));
+ck('v1.20.9 default: Wire values ON, analog wires without an address show a number, addresses show theirs',off.every(x=>x.visibleWire>0&&x.addr>0),JSON.stringify(off.map(x=>x.name+':'+x.visibleWire+'/'+x.addr)));
+ck('the "Wire values" button is back (v1.20.9)',await p.evaluate(()=>[...document.querySelectorAll('button')].some(b=>b.textContent==='Wire values')));
 ck('no page errors',errs.length===0,errs.slice(0,3).join('|'));console.log(fail?fail+' FAIL':'ALL PASS');await b.close();process.exit(fail?1:0)})();

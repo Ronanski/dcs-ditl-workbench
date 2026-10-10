@@ -8,7 +8,7 @@ const r=await p.evaluate(()=>{AN.go(AN.sheets.findIndex(s=>s.name==='ABC-010'));
   for(let i=0;i<40;i++)AN.settle();o.push({p,l,ln:fx.map(b=>b.p.ln+'='+(+S.rt.v[b.o[0]]).toFixed(3)).join(' '),out:S.blk.filter(b=>b.k==='DIV').map(b=>+S.rt.v[b.o[0]].toFixed(2))})}
  return {o,warn:fx.map(b=>b.p.lnWarn||''),src:fx.map(b=>b.p.tbl&&b.p.tbl.src||'')}});
 let bad=0;const T=(c,m)=>{if(!c)bad++;console.log((c?'OK   ':'FAIL ')+m)};
-T(r.src.every(s=>/Drum Level Calculation/.test(s)),'LN38 and LN39 of station 1 come from the Drum Level Calculation file ('+r.src.join(', ')+')');T(r.warn.every(w=>!w),'no table warning ('+r.warn.join('|')+')');
+T(r.src.every(s=>/Drum Level Calculation|DCS Engr Station pattern/.test(s)),'LN38 and LN39 of station 1 come from the DCS patterns 038 / 039 (v1.20.9) or the Drum Level file ('+r.src.join(', ')+')');T(r.warn.every(w=>!w),'no table warning ('+r.warn.join('|')+')');
 for(const x of r.o){if(x.p===0)T(x.out.every(v=>Math.abs(v-x.l)<1e-6),'0 kg/cm2, level '+x.l+' mm -> corrected '+x.out.join(', ')+' (identity)')}
-const q=r.o.find(x=>x.p===145);T(q&&q.out.every(v=>Math.abs(v-531.3)<1),'145 kg/cm2, 300 mm -> '+(q&&q.out.join(', '))+' ('+(q&&q.ln)+')');
+const q=r.o.find(x=>x.p===145);T(q&&q.out.every(v=>Math.abs(v-541.2)<1),'145 kg/cm2, 300 mm -> 541.2 with the DCS patterns (531.3 with the old 19-point curve): '+(q&&q.out.join(', '))+' ('+(q&&q.ln)+')');
 console.log('errs',errs.length);await b.close();process.exit(bad+errs.length?1:0)})();

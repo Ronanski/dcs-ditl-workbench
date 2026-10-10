@@ -13,25 +13,27 @@ const rec=await p.evaluate(()=>{
   for(const x of S.blk){if(x.k!=='FX')continue;const t=x.p.tbl,tag=sh.name+' FX#'+x.id+' '+(x.p.ln||'(no LN)');
    const base={sheet:sh.name,block:'FX#'+x.id,ln:x.p.ln||'',table:t?t.key:null,xu:t?(t.xu||'').trim():null,yu:t?(t.yu||'').trim():null,source:t?('LINEAR.xls '+t.key+(t.src?' / '+t.src:'')):'none'};
    const inN=x.i[0],outN=x.o[0];
-   if(!t||!(t.o0||t.pts)){S.rt.force[inN]=50;for(let k=0;k<8;k++)AN.settle();const st=(S.rt.st[x.id]||{}).fxs;delete S.rt.force[inN];
+   if(!t||!(t.o0||t.pts)){if(sh.name==='ABC-000')continue;/* legend sheet: excluded (user 2026-10-10) */S.rt.force[inN]=50;for(let k=0;k<8;k++)AN.settle();const st=(S.rt.st[x.id]||{}).fxs;delete S.rt.force[inN];
      R.push({...base,input:'50 (any)',expected:'warning + NEEDS REVIEW, no silent pass-through',actual:'status='+st,status:st==='NOTABLE'?'NEEDS REVIEW':'FAIL',evidence:'S.rt.st['+x.id+'].fxs='+st,correction:'v1.20.8: anFXs flags NOTABLE; panel + Health show NEEDS REVIEW',retest:'v1.20.8 run'});continue}
    const pts=t.o0||t.pts,xs=pts.map(q=>q[0]),lo=Math.min(...xs),hi=Math.max(...xs),xr=t.xr||[lo,hi];
+   const toRaw=v=>x.fxin?(x.fxin.k==='ratio'?v/100:x.fxin.lo+v/100*(x.fxin.hi-x.fxin.lo)):v,toX=r=>x.fxin?(x.fxin.k==='ratio'?r*100:(r-x.fxin.lo)/(x.fxin.hi-x.fxin.lo)*100):r,scl=x.fxin?(x.fxin.k==='ratio'?' [input = ratio x 100]':' [input scaled from '+x.fxin.lo+' ~ '+x.fxin.hi+' '+x.fxin.u+' to 0 ~ 100 %]'):(x.fxrev?' [source range not traced: NOT scaled]':'');
    const cases=[['low (range start)',xr[0]],['midpoint',(xr[0]+xr[1])/2],['high (range end)',xr[1]],['below table domain',lo-(hi-lo)*0.1],['above table domain',hi+(hi-lo)*0.1]];
    const unitBad=!/\S/.test(base.xu.replace(/RANGE/i,'').replace(/[()]/g,''))||!/\S/.test(base.yu.replace(/RANGE/i,'').replace(/[()]/g,''));
-   for(const [nm,xv] of cases){S.rt.force[inN]=xv;for(let k=0;k<8;k++)AN.settle();const act=S.rt.v[outN],st=(S.rt.st[x.id]||{}).fxs;delete S.rt.force[inN];
+   for(const [nm,xv] of cases){S.rt.force[inN]=toRaw(xv);for(let k=0;k<8;k++)AN.settle();const act=S.rt.v[outN],st=(S.rt.st[x.id]||{}).fxs;delete S.rt.force[inN];
      const outside=xv<lo||xv>hi,exp=outside?(xv<lo?interp(pts,lo):interp(pts,hi)):interp(pts,xv);
      let status,note='';
-     if(outside){status=(st==='OUT'&&Math.abs(act-exp)<1e-6)?'PASS':'FAIL';note='out of table domain: end value held AND flagged OUT (NEEDS REVIEW in the panel)'}
+     if(x.fxrev&&st==='SCALE'){status='NEEDS REVIEW';note='the table takes a percent of a range, the source range could not be traced without a guess: input NOT scaled'}
+     else if(outside){status=(st==='OUT'&&Math.abs(act-exp)<1e-6)?'PASS':'FAIL';note='out of table domain: end value held AND flagged OUT (NEEDS REVIEW in the panel)'}
      else status=Math.abs(act-exp)<1e-6*Math.max(1,Math.abs(exp))?'PASS':'FAIL';
-     if(status==='PASS'&&unitBad&&!outside){status='NEEDS REVIEW';note='numbers match the table but a unit of the table header is empty'}
-     R.push({...base,input:nm+': '+xv+' '+base.xu,expected:exp+' '+base.yu+(note?' ('+note+')':''),actual:act+' '+base.yu+' st='+st,status,evidence:'force net '+inN+' -> read net '+outN,correction:'',retest:'v1.20.8 run'})}
+     if(status==='PASS'&&unitBad&&!outside){note='numbers match the table; the unit text of the LINEAR header is empty (informational: the ranges and the description are in the table; user 2026-10-10)'}
+     R.push({...base,input:nm+': '+xv+' '+base.xu+(x.fxin||x.fxrev?' (raw signal '+(+toRaw(xv).toFixed(6))+')'+scl:''),expected:exp+' '+base.yu+(note?' ('+note+')':''),actual:act+' '+base.yu+' st='+st,status,evidence:'force net '+inN+' -> read net '+outN,correction:'',retest:'v1.20.8 run'})}
    /* range of the transmitter that feeds the block (only when the FX input is a transmitter, possibly through LAG / RATE / LINK) against the x range of the table */
    {const up=(n,d,pa)=>{const q=(S.drv[n]||[])[0];if(!q)return null;const bl=S.blk.find(z=>z.id===q.id);if(!bl)return null;if(bl.k==='AI')return{bl,pa:pa.concat('AI')};if(d>6||!['LAG','RATE','RAMPB','LINK','ABS'].includes(bl.k))return null;return up(bl.i[0],d+1,pa.concat(bl.k))};
     const u=up(inN,0,[]);
     if(u&&u.bl.rng){const r=u.bl.rng,ok=Math.abs(r.lo-xr[0])<1e-9&&Math.abs(r.hi-xr[1])<1e-9;
      R.push({...base,input:'transmitter range '+r.lo+' ~ '+r.hi+' (path '+u.pa.join('>')+')',expected:'= table x range '+xr[0]+' ~ '+xr[1]+' '+base.xu,actual:r.lo+' ~ '+r.hi,status:ok?'PASS':'NEEDS REVIEW',evidence:'AI block #'+u.bl.id+' rng vs '+base.table+' xr',correction:'',retest:'v1.20.8 run'});
      if(u.pa.length===1){const rt=S.rt,keep=rt.ramp;rt.ramp=0;const st=rt.st[u.bl.id],old=st.val;
-      for(const [nm,v] of [['transmitter at low',r.lo],['transmitter at mid',(r.lo+r.hi)/2],['transmitter at high',r.hi]]){st.val=v;for(let k=0;k<10;k++)AN.settle();const act=rt.v[outN];const exp=interp(pts,v);
+      for(const [nm,v] of [['transmitter at low',r.lo],['transmitter at mid',(r.lo+r.hi)/2],['transmitter at high',r.hi]]){st.val=v;for(let k=0;k<10;k++)AN.settle();const act=rt.v[outN];const exp=interp(pts,toX(v));
        R.push({...base,input:nm+': '+v+' (AI #'+u.bl.id+' -> FX, drawn wiring)',expected:exp+' '+base.yu,actual:act+' '+base.yu,status:Math.abs(act-exp)<1e-6*Math.max(1,Math.abs(exp))?'PASS':'FAIL',evidence:'field side AI -> FX output net '+outN,correction:'',retest:'v1.20.8 run'})}
       st.val=old;rt.ramp=keep;for(let k=0;k<10;k++)AN.settle()}}}
   }}

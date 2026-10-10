@@ -33,6 +33,16 @@ for s in wb.sheets():
     # LX / LY of the file = normalised X / Y
     bad=[(x,y,lx,ly) for x,y,lx,ly in pts if xr[1]>xr[0] and yr[1]>yr[0] and (abs((x-xr[0])/(xr[1]-xr[0])-lx)>1e-6 or abs((y-yr[0])/(yr[1]-yr[0])-ly)>1e-6)]
     rec.append(dict(b,input='LX / LY of the file = (X-lo)/(hi-lo), (Y-lo)/(hi-lo)',expected='all rows consistent',actual='%d of %d rows differ'%(len(bad),len(pts)),status='PASS' if not bad else 'NEEDS REVIEW',evidence=str(bad[:2])))
+DCSREF=None
+try: DCSREF=json.load(open('data/reference/DCS-Ptrn038-039-from-screenshot.json'))
+except Exception: pass
+for key,lyk,sc in (('S1-LN38','Ptrn038_LY',1.0),('S1-LN39','Ptrn039_LY',0.01)):
+    if not DCSREF or key not in emb: continue
+    t=emb[key];exp=[(lx*t['xr'][1]/100.0,ly*sc) for lx,ly in zip(DCSREF['LX'],DCSREF[lyk])]
+    got=[(p[0],p[1]) for p in t['pts']]
+    ok=len(exp)==len(got) and all(abs(a[0]-c[0])<1e-4 and abs(a[1]-c[1])<1e-6 for a,c in zip(exp,got))
+    rec.append(dict(sheet='ABC-010',block='table '+key,input='X/Y points (%d) vs the DCS pattern screenshot'%len(exp),expected=str(exp[:2])+' ...',actual=str(got[:2])+' ...',source='data/reference/DCS-Ptrn038-039-from-screenshot.json (user screenshots of the DCS station, LX / LY in % of the range)',status='PASS' if ok else 'FAIL',evidence='16 points, X = LX % of 0~250 kg/cm2, Y = LY % of the Y range'))
+    seen.add(key)
 for key in emb:
     if key not in seen:
         rec.append(dict(sheet=emb[key].get('dwg'),block='table '+key,input='-',expected='table in LINEAR.xls',actual='not in the file',source=emb[key].get('src') or '-',status='NEEDS REVIEW',evidence='embedded from another reference file ('+str(emb[key].get('src'))+')'))
@@ -42,6 +52,7 @@ if fxj:
             k=r['table'];d=dwgOf.get(k)
             fam=lambda x:(re.match(r'^ABC-(\d+)',x or '') or [None,None])[1]
             rg=re.match(r'^ABC-(\d+)-(\d+)$',d or '');n=fam(r['sheet']);same=d==r['sheet'] or bool(d and fam(d)==n) or bool(rg and n and int(rg.group(1))<=int(n)<=int(rg.group(2)))
+            if k in ('S1-LN38','S1-LN39'): rec.append(dict(sheet=r['sheet'],block=r['block']+' '+r['ln'],input='table used = '+k,expected='the DCS pattern of this sheet',actual=k,source='DCS screenshot',status='PASS',evidence='station 1 pattern 038 / 039 of ABC-010'));continue
             rec.append(dict(sheet=r['sheet'],block=r['block']+' '+r['ln'],input='table used = '+k,expected='table whose drawing number is this sheet (xls DWG No. '+str(d)+')',actual=k,source='LINEAR.xls',status='PASS' if same else 'NEEDS REVIEW',evidence='drawing number of the xls table vs sheet of the FX block'))
 cnt={}
 for r in rec: cnt[r['status']]=cnt.get(r['status'],0)+1

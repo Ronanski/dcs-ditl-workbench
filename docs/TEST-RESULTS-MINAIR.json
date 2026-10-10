@@ -2,81 +2,71 @@
  {
   "sheet": "ABC-002",
   "block": "CONST#1",
+  "source": "user decision 2026-10-10 (default 400 T/H, keep the drawing 32 %)",
   "input": "initial state",
-  "expected": "default 400 T/H, original drawing constant 32 % kept",
-  "actual": "th=400 orig=32 val=32",
-  "source": "user decision 2026-10-10",
+  "expected": "setting 400 T/H, signal 32 % x 400 = 128, original 32 % kept",
+  "actual": "th=400 signal=128 orig=32 val=32",
   "status": "PASS",
-  "evidence": "block parameters"
+  "evidence": "block parameters + net value"
  },
  {
   "sheet": "ABC-002",
   "block": "CONST#1",
-  "input": "default 400 T/H",
-  "expected": "constant 32 %, high selector output 32 % (other input 0)",
-  "actual": "constant 32, HS 32",
-  "source": "400 T/H x 0.08 = 32 % = drawing",
-  "status": "PASS",
-  "evidence": "CONST out net 70, HS out net 66"
- },
- {
-  "sheet": "ABC-002",
-  "block": "CONST#1",
+  "source": "user decision 2026-10-10 (default 400 T/H, keep the drawing 32 %)",
   "input": "edited to 500 T/H",
-  "expected": "constant 40 %, high selector output 40 % (other input 0)",
-  "actual": "constant 40, HS 40",
-  "source": "500 x 0.08",
+  "expected": "signal 32 % x 500 = 160 T/H, HS output 160 (other input 0)",
+  "actual": "signal 160, HS 160",
   "status": "PASS",
   "evidence": "CONST out net 70, HS out net 66"
  },
  {
   "sheet": "ABC-002",
   "block": "CONST#1",
-  "input": "downstream SUM after the change 400 -> 500 T/H (other inputs unchanged)",
-  "expected": "SUM output changes by the + 8 % step",
-  "actual": "32 -> 40",
   "source": "drawn wiring HS -> SUM",
+  "input": "downstream SUM after 400 -> 500 T/H",
+  "expected": "SUM output changes by 32 (= 32 % of the 100 T/H change; sign = sign of that SUM leg)",
+  "actual": "128 -> 160",
   "status": "PASS",
-  "evidence": "sign of the SUM leg decides: delta shown"
+  "evidence": "delta 32"
  },
  {
   "sheet": "ABC-002",
   "block": "CONST#1",
+  "source": "user decision 2026-10-10 (default 400 T/H, keep the drawing 32 %)",
   "input": "edited to 0 T/H",
-  "expected": "constant 0 %, high selector output 0 % (other input 0)",
-  "actual": "constant 0, HS 0",
-  "source": "0 x 0.08",
+  "expected": "signal 32 % x 0 = 0 T/H, HS output 0 (other input 0)",
+  "actual": "signal 0, HS 0",
   "status": "PASS",
   "evidence": "CONST out net 70, HS out net 66"
  },
  {
   "sheet": "ABC-002",
   "block": "CONST#1",
-  "input": "edited k to 0.1 %/T/H at 400 T/H",
-  "expected": "constant 40 %, high selector output 40 % (other input 0)",
-  "actual": "constant 40, HS 40",
-  "source": "400 x 0.1",
+  "source": "user decision 2026-10-10 (default 400 T/H, keep the drawing 32 %)",
+  "input": "edited to 250 T/H",
+  "expected": "signal 32 % x 250 = 80 T/H, HS output 80 (other input 0)",
+  "actual": "signal 80, HS 80",
   "status": "PASS",
   "evidence": "CONST out net 70, HS out net 66"
  },
  {
   "sheet": "ABC-002",
   "block": "CONST#1",
-  "input": "selector input 60 % > constant 32 %",
-  "expected": "HS passes 60",
-  "actual": "60",
   "source": "HIGH selector",
+  "input": "selector other input 600 > 128",
+  "expected": "HS passes 600",
+  "actual": "600",
   "status": "PASS",
-  "evidence": "other input forced 60"
+  "evidence": "other input forced 600"
  },
  {
   "sheet": "ABC-002",
   "block": "CONST#1",
-  "input": "conversion 0.08 % per T/H",
-  "expected": "conversion written on the drawing",
-  "actual": "not on the drawing; chosen so that the default equals 32 %",
-  "source": "drawing SCALE CONVERT 35 / 1115 = 0.0314 % per T/H differs",
-  "status": "NEEDS REVIEW",
-  "evidence": "user decision: default 400 T/H; relation to the % signal to be confirmed"
+  "source": "user explanation 2026-10-10",
+  "input": "meaning of the drawing text \"32 %\"",
+  "expected": "32 % OF the minimum air flow",
+  "actual": "128 T/H at the default 400 T/H minimum air flow",
+  "status": "PASS",
+  "evidence": "the base (400 T/H) is the editable default of the user's first instruction; the real minimum air flow of the plant is not written on the drawing (edit it in the panel)"
  }
 ]

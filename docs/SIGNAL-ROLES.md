@@ -6,17 +6,17 @@ Why: in a real plant the operator changes the SV, the manual values and the swit
 | Role | Points |
 |---|---|
 | analog · feedback: follows the position of its valve / actuator | 59 |
-| analog · free transmitter: operator edits it (no modelled loop uses it) | 77 |
-| analog · linked from another sheet (set there) | 1 |
+| analog · free transmitter: operator edits it (no modelled loop uses it) | 139 |
+| analog · linked from another sheet (set there) | 27 |
 | analog · operator SV (COS) | 38 |
 | analog · operator value (COS) | 102 |
-| analog · other analog input (operator) | 145 |
-| analog · plant-driven (read only; F = simulate) | 73 |
+| analog · other analog input (operator) | 113 |
+| digital · linked from another sheet (set there) | 20 |
 | digital · operator mode input (A / M / CAS from the logic) | 58 |
-| digital · operator switch (COS) | 26 |
+| digital · operator switch (COS) | 25 |
 | digital · operator switch (signal bad flag) | 47 |
-| digital · switch / status / DITL signal (operator) | 453 |
-| **Total** | **1079** |
+| digital · switch / status / DITL signal (operator) | 433 |
+| **Total** | **1061** |
 
 ## Every point
 | Sheet | A/D | Kind | Address / wire | IO list / memory list | Role | Detail |
@@ -80,16 +80,32 @@ Why: in a real plant the operator changes the SV, the manual values and the swit
 | ABC-020 | A | transmitter AI | S4 AI0375 | ZT-FG1117-D · #1 Superheater pass flue gas biasing damper (4) position · AI-Wet · 0 ~ 100 % | feedback: follows the position of its valve / actuator |  |
 | ABC-020 | A | transmitter AI | S4 AI0372 | ZT-FG1117-A · #1 Superheater pass flue gas biasing damper (1) position · AI-Wet · 0 ~ 100 % | feedback: follows the position of its valve / actuator |  |
 | ABC-020 | A | transmitter AI | S4 AI0373 | ZT-FG1117-B · #1 Superheater pass flue gas biasing damper (2) position · AI-Wet · 0 ~ 100 % | feedback: follows the position of its valve / actuator |  |
+| ABC-001C | A | transmitter AI | AI0131 | PT-MS1002 · #1 Boiler finishing superheater outlet main steam pressure · AI-Wet · 0 ~ 150 kg/cm2 / range 0 ~ 150 Kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-001C | A | transmitter AI | AI0419 | GCP-AI1001 · #1 Generator MW (C) · AI-Dry · 0 ~ 240 MW / range 0 ~ 240 MW | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-001C | A | transmitter AI | AI0774 | GCP-AI1002 · #1 Generator MW (D) · AI-Dry · 0 ~ 240 MW / range 0 ~ 240 MW | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-001C | A | transmitter AI | AI0129 | FT-MS1031 · #1 Boiler main steam flow · AI-Wet · 0 ~ 500 T/H / range 0 ~ 500 T/H | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-001C | A | transmitter AI | AI0420 | TCS-AI1001 · #1 Target MW setpoint feedback · AI-Dry · 0 ~ 200 MW / range 0 ~ 200 MW | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-002 | A | transmitter AI | AI0273 | AT-FG1122 · #1 Boiler air preheater inlet flue gas O2 analyzer (A) · AI-Dry · 0 ~ 25 % / range 0 ~ 25 % | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-002 | A | transmitter AI | AI0433 | AT-FG1123 · #1 Boiler air preheater inlet flue gas O2 analyzer (B) · AI-Dry · 0 ~ 25 % / range 0 ~ 25 % | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-003A | A | transmitter AI | AI0673 | TT-FA1087 · #1 Boiler air preheater outlet to furnace secondary air temp. (B) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-003A | A | transmitter AI | AI0164 | FT-FA1043-A · #1 Boiler start up burner-A hot secondary air inlet flow · AI-Wet · 0 ~ 65 T/H / range 0 ~ 65 T/H | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-003A | A | transmitter AI | AI0515 | FT-DO1043-A · #1 Boiler start up burner-A supply line oil flow · AI-D(D) · 0 ~ 3.5 T/H / range 0 ~ 3.5 T/H | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-003A | A | transmitter AI | AI0657 | TT-FA1086 · #1 Boiler air preheater outlet to furnace secondary air temp. (A) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-003A | A | transmitter AI | AI0293 | PT-DO1043-A2 · #1 Boiler start up burner-A diesel oil supply line oil pressure · AI-Wet · 0 ~ 10 kg/cm2 / range 0 ~ 10 kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-003A | A | transmitter AI | AI0289 | PT-FA1088 · #1 Boiler air preheater outlet to furnace secondary air pressure · AI-Wet · 0 ~ 3000 mmH2O / range 0 ~ 3000 mmH2O | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-003B | A | transmitter AI | AI0290 | FT-FA1043-B · #1 Boiler start up burner-B hot secondary air inlet flow · AI-Wet · 0 ~ 65 T/H / range 0 ~ 65 T/H | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-003B | A | transmitter AI | AI0546 | FT-DO1043-B · #1 Boiler start up burner-B supply line oil flow · AI-D(D) · 0 ~ 3.5 T/H / range 0 ~ 3.5 T/H | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-003B | A | transmitter AI | AI0439 | PT-DO1043-B2 · #1 Boiler start up burner-B diesel oil supply line oil pressure · AI-Wet · 0 ~ 10 kg/cm2 / range 0 ~ 10 kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-003C | A | transmitter AI | AI0403 | FT-FA1043-C · #1 Boiler start up burner-C hot secondary air inlet flow · AI-Wet · 0 ~ 65 T/H / range 0 ~ 65 T/H | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-003C | A | transmitter AI | AI0517 | FT-DO1043-C · #1 Boiler start up burner-C supply line oil flow · AI-D(D) · 0 ~ 3.5 T/H / range 0 ~ 3.5 T/H | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-003C | A | transmitter AI | AI0596 | PT-DO1043-C2 · #1 Boiler start up burner-C diesel oil supply line oil pressure · AI-Wet · 0 ~ 10 kg/cm2 / range 0 ~ 10 kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-003D | A | transmitter AI | AI0597 | FT-FA1043-D · #1 Boiler start up burner-D hot secondary air inlet flow · AI-Wet · 0 ~ 65 T/H / range 0 ~ 65 T/H | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-003D | A | transmitter AI | AI0548 | FT-DO1043-D · #1 Boiler start up burner-D supply line oil flow · AI-D(D) · 0 ~ 3.5 T/H / range 0 ~ 3.5 T/H | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-003D | A | transmitter AI | AI0771 | PT-DO1043-D2 · #1 Boiler start up burner-D diesel oil supply line oil pressure · AI-Wet · 0 ~ 10 kg/cm2 / range 0 ~ 10 kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-004A | A | transmitter AI | AI0480 | MIF-CL1061-A · #1 Coal feeder-A feedrate · AI-D(D) · 0 ~ 40 T/H / range 0 ~ 40 T/H | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-004B | A | transmitter AI | AI0512 | MIF-CL1061-B · #1 Coal feeder-B feedrate · AI-D(D) · 0 ~ 40 T/H / range 0 ~ 40 T/H | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-004C | A | transmitter AI | AI0544 | MIF-CL1061-C · #1 Coal feeder-C feedrate · AI-D(D) · 0 ~ 40 T/H / range 0 ~ 40 T/H | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-005 | A | transmitter AI | AI0466 | AT-FG1057-1 · #1 Stack outlet flue gas SOx value · AI-Dry · 0 ~ 500 ppm / range 0 ~ 500 ppm | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-005 | A | transmitter AI | AI0151 | ST-M1311 · #1 Limestone feeder speed · AI-Dry · 0 ~ 100 % / range 0 ~ 100 %  ( 0.00 ~ 27.00 T/H ) | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-006 | A | transmitter AI | AI0628 | TT-FA1082 · #1 Boiler SAF inlet air temperature · AI-Wet · 0 ~ 100 °C / range 0 ~ 100 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-006 | A | transmitter AI | AI0513 | FT-FA1081 · #1 Boiler SAF inlet air flow · AI-W(D) · 0 ~ 432 T/H / range 0 ~ 432 T/H | free transmitter: operator edits it (no modelled loop uses it) |  |
@@ -107,17 +123,32 @@ Why: in a real plant the operator changes the SV, the manual values and the swit
 | ABC-008 | A | transmitter AI | AI0481 | ST-LO1756 · #1 Hydraulic coupling of IDF speed feedback · AI-D(D) · 0 ~ 1200 rpm | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-008 | A | transmitter AI | AI0194 | ZT-FG1056-1 · #1 Boiler IDF inlet vane control damper position · AI-Wet · 0 ~ 100 % | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-009A | A | transmitter AI | AI0150 | ST-L1060A · #1 Bottom ash cooler-A converter speed · AI-Dry · 0 ~ 5 rpm / range 0 ~ 5 rpm | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-009A | A | transmitter AI | AI0134 | DPT-FG1081 · #1 Furnace plenum/upper layer diff. pressure (A) · AI-Wet · 0 ~ 2500 mmH2O / range 0 ~ 2500 mmH2O | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-009A | A | transmitter AI | AI0262 | DPT-FG1082 · #1 Furnace plenum/upper layer diff. pressure (B) · AI-Wet · 0 ~ 2500 mmH2O / range 0 ~ 2500 mmH2O | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-009A | A | transmitter AI | AI0279 | ST-L1060B · #1 Bottom ash cooler-B converter speed · AI-Dry · 0 ~ 5 rpm / range 0 ~ 5 rpm | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-009A | A | transmitter AI | AI0407 | ST-L1060C · #1 Bottom ash cooler-C converter speed · AI-Dry · 0 ~ 5 rpm / range 0 ~ 5 rpm | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-009B | A | transmitter AI | AI0769 | ST-L1060D · #1 Bottom ash cooler-D converter speed · AI-Dry · 0 ~ 5 rpm / range 0 ~ 5 rpm | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-010 | A | transmitter AI | AI0258 | LT-BR1001-2 · #1 Boiler drum level (2) · AI-Wet · -422 ~ 820 mm / range -422 ~ 820 mm | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-010 | A | transmitter AI | AI0130 | LT-BR1001-1 · #1 Boiler drum level (1) · AI-Wet · -422 ~ 820 mm / range -422 ~ 820 mm | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-010 | A | transmitter AI | AI0386 | LT-BR1001-3 · #1 Boiler drum level (3) · AI-Wet · -422 ~ 820 mm / range -422 ~ 820 mm | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-010 | A | transmitter AI | AI0256 | FT-FW1007-1 · #1 Boiler feed water flow (1) · AI-Wet · 0 ~ 550 T/H / range 0 ~ 550 T/H | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-010 | A | transmitter AI | AI0592 | TT-FW1160 · #1 Boiler economizer #1 inlet water temperature · AI-Wet · 0 ~ 300 °C / range 0 ~ 300 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-010 | A | transmitter AI | AI0384 | FT-FW1007-2 · #1 Boiler feed water flow (2) · AI-Wet · 0 ~ 550 T/H / range 0 ~ 550 T/H | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-010 | A | transmitter AI | AI0128 | PT-BR1001-1 · #1 Boiler drum pressure (1) · AI-Wet · 0 ~ 250 kg/cm2 / range 0 ~ 250 kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-010 | A | transmitter AI | AI0385 | PT-BR1001-2 · #1 Boiler drum pressure(2) · AI-Wet · 0 ~ 250 kg/cm2 / range 0 ~ 250 kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-011 | A | transmitter AI | AI0610 | TT-BR1140-1 · #1 Superheater NO.2 outlet header steam temperature (1) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-011 | A | transmitter AI | AI0642 | TT-BR1140-2 · #1 Superheater NO.2 outlet header steam temperature (2) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-011 | A | transmitter AI | AI0609 | TT-BR1130-1 · #1 Superheater NO.2 inlet header steam temperature (1) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-011 | A | transmitter AI | AI0641 | TT-BR1130-2 · #1 Superheater NO.2 inlet header steam temperature (2) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-012 | A | transmitter AI | AI0612 | TT-MS1004-1 · #1 Boiler finishing S/H outlet main steam temp. (1) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-012 | A | transmitter AI | AI0644 | TT-MS1004-2 · #1 Boiler finishing S/H outlet main steam temp. (2) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-012 | A | transmitter AI | AI0611 | TT-BR1150-1 · #1 Finishing S/H inlet header steam temperature (1) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-012 | A | transmitter AI | AI0643 | TT-BR1150-2 · #1 Finishing S/H inlet header steam temperature (2) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-014 | A | transmitter AI | AI0176 | ZT-FA1055-A1 · #1 Boiler FA blower-A inlet flow control damper position · AI-Wet · 0 ~ 100 % | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-014 | A | transmitter AI | AI0196 | ZT-FA1055-B1 · #1 Boiler FA blower-B inlet flow control damper position · AI-Wet · 0 ~ 100 % | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-017 | A | transmitter AI | AI0533 | PT-SB1052 · #1 Boiler sootblower header steam pressure · AI-Wet · 0 ~ 50 kg/cm2 / range 0 ~ 50 kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-019 | A | transmitter AI | AI0867 | TT-HR1002-1 · #1 Reheater outlet header temperature (1) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-019 | A | transmitter AI | AI0899 | TT-HR1002-2 · #1 Reheater outlet header temperature (2) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-019 | A | transmitter AI | AI0866 | TT-CR1005-1 · #1 Reheater inlet desuperheater temperature (1) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-019 | A | transmitter AI | AI0898 | TT-CR1005-2 · #1 Reheater inlet desuperheater temperature (2) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-019 | A | transmitter AI | AI0529 | PT-CR1006 · #1 Reheat inlet header pressure · AI-Wet · 0 ~ 50 kg/cm2 / range 0 ~ 50 kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
@@ -139,24 +170,101 @@ Why: in a real plant the operator changes the SV, the manual values and the swit
 | ABC-027 | A | transmitter AI | AI0836 | TT-FG1090-E · #1 Furnace lower layer under temp. (E) · AI-Wet · 0 ~ 1200 °C / range 0 ~ 1200 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-027 | A | transmitter AI | AI0865 | TT-FG1090-H · #1 Furnace lower layer under temp. (H) · AI-Wet · 0 ~ 1200 °C / range 0 ~ 1200 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-027 | A | transmitter AI | AI0866 | TT-FG1090-I · #1 Furnace lower layer under temp. (I) · AI-Wet · 0 ~ 1200 °C / range 0 ~ 1200 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-028 | A | transmitter AI | AI0181 | PT-DO0005 · Diesel oil pump outlet to start-up burner oil pressure · AI-Wet · 0 ~ 25 kg/cm2 / range 0 ~ 25 kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-029 | A | transmitter AI | AI0514 | PT-DO1008 · #1 Boiler start up burner diesel oil circulation line oil pressure · AI-W(D) · 0 ~ 25 kg/cm2 / range 0 ~ 25 kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-029 | A | transmitter AI | AI0276 | ZT-DO1012 · #1 Diesel oil pump to burner pressure control valve position · AI-Wet · 0 ~ 100 % / range 0 ~ 100 % | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-030 | A | transmitter AI | AI0514 | PT-AS1004 · #1 Main steam pipe to aux. steam supply pressure · AI-Wet · 0 ~ 15 kg/cm2 / range 0 ~ 15 kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-030 | A | transmitter AI | AI0515 | PT-AS1005 · #1 Cold reheat to aux. steam supply pressure · AI-Wet · 0 ~ 15 kg/cm2 / range 0 ~ 15 kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-031 | A | transmitter AI | AI0640 | LT-CD1110 · #1 Condenser hot well water level · AI-W(D) · -436 ~ 464 mm / range -436 ~ 464 mm | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-031 | A | transmitter AI | AI0672 | LT-CD1104-1 · #1 Boiler deaerator storage tank level (1) · AI-Wet · -2335 ~ 1095 mm / range -2335 ~ 1095 mm | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-031 | A | transmitter AI | AI0848 | LT-CD1104-2 · #1 Boiler deaerator storage tank level (2) · AI-Wet · -2335 ~ 1095 mm / range -2335 ~ 1095 mm | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-031 | A | transmitter AI | AI0928 | LT-CD1104-3 · #1 Boiler deaerator storage tank level (3) · AI-Wet · -2335 ~ 1095 mm / range -2335 ~ 1095 mm | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-032 | A | transmitter AI | AI0436 | FT-CD1121 · #1 Condensate polisher inlet water flow · AI-Wet · 0 ~ 200 T/H / range 0 ~ 200 T/H | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-032 | A | transmitter AI | AI0437 | FT-CD1120 · #1 Condensate water flow · AI-Wet · 0 ~ 400 T/H / range 0 ~ 400 T/H | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-033 | A | transmitter AI | AI0641 | TT-AS1001 · #1 Main steam to aux. steam desuperheater temperature · AI-W(D) · 0 ~ 600 °C / range 0 ~ 600 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-034 | A | transmitter AI | AI0902 | TT-AS1017 · #1 Gland steam turbine side temperature · AI-Wet · 0 ~ 300 °C / range 0 ~ 300 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-034 | A | transmitter AI | AI0642 | TT-AS1003 · #1 Aux. steam header temperature · AI-W(D) · 0 ~ 600 °C / range 0 ~ 600 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-034 | A | transmitter AI | AI0886 | PV-GS1031 · #1 Steam seal feed valve manipulation value · AI-Dry · 0 ~ 100 % / range 0 ~ 100 % | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-034 | A | transmitter AI | AI0757 | ZT-AS1011 · #1 HP turbine warming valve position · AI-Dry · 0 ~ 100 % / range 0 ~ 100 % | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-035 | A | transmitter AI | AI0676 | LT-HD1105-1 · #1 NO.1 HPH level (1) · AI-Wet · -300 ~ 310 mm / range -300 ~ 310 mm | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-035 | A | transmitter AI | AI0852 | LT-HD1105-2 · #1 NO.1 HPH level (2) · AI-Wet · -300 ~ 310 mm / range -300 ~ 310 mm | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-036 | A | transmitter AI | AI0677 | LT-HD1106-1 · #1 NO.2 HPH level (1) · AI-Wet · -300 ~ 310 mm / range -300 ~ 310 mm | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-036 | A | transmitter AI | AI0853 | LT-HD1106-2 · #1 NO.2 HPH level (2) · AI-Wet · -300 ~ 310 mm / range -300 ~ 310 mm | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-037 | A | transmitter AI | AI0673 | LT-HD1101-1 · #1 NO.1 LPH level (1) · AI-Wet · -320 ~ 290 mm / range -320 ~ 290 mm | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-037 | A | transmitter AI | AI0849 | LT-HD1101-2 · #1 NO.1 LPH level (2) · AI-Wet · -320 ~ 290 mm / range -320 ~ 290 mm | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-038 | A | transmitter AI | AI0674 | LT-HD1102-1 · #1 NO.2 LPH level (1) · AI-Wet · -315 ~ 295 mm / range -315 ~ 295 mm | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-038 | A | transmitter AI | AI0850 | LT-HD1102-2 · #1 NO.2 LPH level (2) · AI-Wet · -315 ~ 295 mm / range -315 ~ 295 mm | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-039 | A | transmitter AI | AI0675 | LT-HD1103-1 · #1 NO.3 LPH level (1) · AI-Wet · -310 ~ 300 mm / range -310 ~ 300 mm | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-039 | A | transmitter AI | AI0851 | LT-HD1103-2 · #1 NO.3 LPH level (2) · AI-Wet · -310 ~ 300 mm / range -310 ~ 300 mm | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-050 | A | transmitter AI | AI0416 | PT-MS1006-1 · #1 Turbine main steam pressure(1) · AI-Wet · 0 ~ 150 kg/cm2 / range 0 ~ 150 kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-050 | A | transmitter AI | AI0512 | PT-MS1006-2 · #1 Turbine main steam pressure(2) · AI-Wet · 0 ~ 150 kg/cm2 / range 0 ~ 150 kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-051 | A | transmitter AI | AI0865 | TT-MS1022-1 · #1 HP turbine bypass outlet temperature (1) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-051 | A | transmitter AI | AI0897 | TT-MS1022-2 · #1 HP turbine bypass outlet temperature (2) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-051 | A | transmitter AI | AI0528 | PT-CR1003 · #1 Cold reheat steam pressure · AI-Wet · 0 ~ 50 kg/cm2 / range 0 ~ 50 kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-051 | A | transmitter AI | AI0900 | TT-CR1004 · #1 Cold reheat steam temperature · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-051 | A | transmitter AI | AI0566 | PT-MS1021 · #1 HP turbine bypass outlet pressure · AI-Wet · 0 ~ 50 kg/cm2 / range 0 ~ 50 kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-052 | A | transmitter AI | AI0421 | PT-HR1003-1 · #1 Hot reheat steam pressure(1) · AI-Wet · 0 ~ 50 kg/cm2 / range 0 ~ 50 kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-052 | A | transmitter AI | AI0513 | PT-HR1003-2 · #1 Hot reheat steam pressure(2) · AI-Wet · 0 ~ 50 kg/cm2 / range 0 ~ 50 kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-052 | A | transmitter AI | AI0864 | TT-HR1012-1 · #1 LP turbine bypass outlet temperature (1) · AI-Wet · 0 ~ 300 °C / range 0 ~ 300 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-052 | A | transmitter AI | AI0896 | TT-HR1012-2 · #1 LP turbine bypass outlet temperature (2) · AI-Wet · 0 ~ 300 °C / range 0 ~ 300 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-052 | A | transmitter AI | AI0868 | TT-HR1004 · #1 Hot reheat steam temperature · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-052 | A | transmitter AI | AI0883 | PT-ST1001-1 · #1 HP turbine first stage steam pressure (A) · AI-Dry · 0 ~ 150 kg/cm2 / range 0 ~ 150 kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-052 | A | transmitter AI | AI0884 | PT-ST1001-2 · #1 HP turbine first stage steam pressure (B) · AI-Dry · 0 ~ 150 kg/cm2 / range 0 ~ 150 kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-052 | A | transmitter AI | AI0885 | PT-ST1001-3 · #1 HP turbine first stage steam pressure (C) · AI-Dry · 0 ~ 150 kg/cm2 / range 0 ~ 150 kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-053 | A | transmitter AI | AI0452 | TE-LO1002-1 · #1 Turbine lube oil cooler outlet oil temperature (A) · AI-Dry · 0 ~ 100 °C / range 0 ~ 100 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-053 | A | transmitter AI | AI0516 | TE-LO1002-2 · #1 Turbine lube oil cooler outlet oil temperature (B) · AI-Dry · 0 ~ 100 °C / range 0 ~ 100 °C | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-053 | A | transmitter AI | AI0534 | TCS-AI1004 · #1 Turbine rated speed · AI-Dry · 0 ~ 4000 rpm / range 0 ~ 4000 rpm | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-054 | A | transmitter AI | S2 AI0737 | ZT-HR1391 · #1 Hot reheat steam blow-off motor valve position · AI-Wet · 0 ~ 100 % / range 0 ~ 100 % | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-055 | A | transmitter AI | AI0181 | ZT-BR1391 · #1 S/H NO.1 outlet header to reheater motor valve position · AI-Wet · 0 ~ 100 % / range 0 ~ 100 % | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-056 | A | transmitter AI | AI0417 | PT-CD1104 · #1 Boiler deaerator pressure · AI-Wet · 0 ~ 10 kg/cm2 / range 0 ~ 10 kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-056 | A | transmitter AI | AI0562 | PT-TS1022 · #1 Turbine NO.4 extraction steam pressure · AI-Wet · 0 ~ 5 kg/cm2 / range 0 ~ 5 kg/cm2 | free transmitter: operator edits it (no modelled loop uses it) |  |
 | ABC-057 | A | transmitter AI | S1 AI0288 | PT-FA1085 · #1 Boiler SAF outlet to air preheater air pressure · AI-Wet · 0 ~ 3000 mmH2O / range 0 ~ 3000 mmH2O | free transmitter: operator edits it (no modelled loop uses it) |  |
+| ABC-002 | A | input wire | F(X) |  | linked from another sheet (set there) |  |
+| ABC-002 | A | input wire | F(X) |  | linked from another sheet (set there) |  |
+| ABC-002 | A | input wire | FAF |  | linked from another sheet (set there) |  |
+| ABC-002 | A | input wire | SI0140 | TOTAL COAL FLOW | linked from another sheet (set there) |  |
+| ABC-002 | D | input wire | M.0101 | BOILER MAIN STEAM FLOW > 220T/H | linked from another sheet (set there) |  |
+| ABC-002 | A | input wire | 003A |  | linked from another sheet (set there) |  |
+| ABC-002 | A | input wire | SI0003 | COAL CAL. | linked from another sheet (set there) |  |
+| ABC-002 | A | input wire | SAF |  | linked from another sheet (set there) |  |
+| ABC-002 | D | input wire | M.008B | USED | linked from another sheet (set there) |  |
+| ABC-004A | D | input wire | M.025B | HOUSE OPERATION ON | linked from another sheet (set there) |  |
+| ABC-004A | D | input wire | COAL FEEDER-C RUNNING |  | linked from another sheet (set there) |  |
+| ABC-004A | D | input wire | COAL FEEDER-B RUNNING |  | linked from another sheet (set there) |  |
+| ABC-004A | A | input wire | f(t) |  | linked from another sheet (set there) |  |
+| ABC-004A | D | input wire | M.016E | C-COAL FEEDER RUNNING(OFF DELAY) | linked from another sheet (set there) |  |
+| ABC-004A | A | input wire | f(t) |  | linked from another sheet (set there) |  |
+| ABC-004A | D | input wire | M.015E | B-COAL FEEDER RUNNING(OFF DELAY) | linked from another sheet (set there) |  |
+| ABC-004A | D | input wire | M.016F | C-COAL FEEDER DEMAND(MV) >= 83.3% | linked from another sheet (set there) |  |
+| ABC-004A | D | input wire | M.015F | B-COAL FEEDER DEMAND(MV) >= 83.3% | linked from another sheet (set there) |  |
+| ABC-004A | A | input wire | FICCL1061C.MV |  | linked from another sheet (set there) |  |
+| ABC-004A | A | input wire | → DEV |  | linked from another sheet (set there) |  |
+| ABC-004A | A | input wire | → DEV |  | linked from another sheet (set there) |  |
+| ABC-004A | A | input wire | SI0134 | C-COAL FEEDER FLOW | linked from another sheet (set there) |  |
+| ABC-004A | A | input wire | SI0124 | B-COAL FEEDER FLOW | linked from another sheet (set there) |  |
+| ABC-004A | A | input wire | FICCL1061B.MV |  | linked from another sheet (set there) |  |
+| ABC-004A | D | input wire | 1:b |  | linked from another sheet (set there) |  |
+| ABC-004A | D | input wire | 1:b |  | linked from another sheet (set there) |  |
+| ABC-004A | D | input wire | M.3402 | C-COAL FEEDER RUNNING (BC FROM S4) | linked from another sheet (set there) |  |
+| ABC-004A | A | input wire | RAMP:1% / sec |  | linked from another sheet (set there) |  |
+| ABC-004A | D | input wire | M.3401 | B-COAL FEEDER RUNNING (BC FROM S4) | linked from another sheet (set there) |  |
+| ABC-008 | A | input wire | PAF-MV |  | linked from another sheet (set there) |  |
+| ABC-008 | A | input wire | SAF-MV |  | linked from another sheet (set there) |  |
+| ABC-011 | A | input wire | F(X) |  | linked from another sheet (set there) |  |
+| ABC-012 | A | input wire | 001C |  | linked from another sheet (set there) |  |
+| ABC-020 | A | input wire | STN101017 |  | linked from another sheet (set there) |  |
+| ABC-020 | A | input wire | RHT |  | linked from another sheet (set there) |  |
+| ABC-030 | D | input wire | M.0124 | TURBINE TRIP/HOUSE LOAD/52G OPEN (PULSE) | linked from another sheet (set there) |  |
+| ABC-030 | A | input wire | TICR1004.PV |  | linked from another sheet (set there) |  |
+| ABC-030 | A | input wire | PICR1003.PV |  | linked from another sheet (set there) |  |
+| ABC-050 | A | input wire | STN101015 |  | linked from another sheet (set there) |  |
+| ABC-051 | D | input wire | M.071A | HP T/B bypass steam press. ctl demand > 0% | linked from another sheet (set there) |  |
+| ABC-051 | A | input wire | F(X) |  | linked from another sheet (set there) |  |
+| ABC-051 | D | input wire | 1:a |  | linked from another sheet (set there) |  |
+| ABC-051 | D | input wire | M.071E | HP T/B bypass steam press. ctl demand < 2% | linked from another sheet (set there) |  |
+| ABC-051 | D | input wire | M.0124 | TURBINE TRIP/HOUSE LOAD/52G OPEN (PULSE) | linked from another sheet (set there) |  |
+| ABC-051 | D | input wire | M.0707 | HP BYPASS STEAM PRESSURE CONTROL DEMAND > 4% | linked from another sheet (set there) |  |
+| ABC-051 | D | input wire | M.0702 | ALL BFWP STOPPED | linked from another sheet (set there) |  |
 | ABC-057 | A | input wire | STN101019 |  | linked from another sheet (set there) |  |
 | ABC-001C | A | input wire | COS manual SV ▸ PIC-COBM |  | operator SV (COS) |  |
 | ABC-003A | A | input wire | COS manual SV ▸ PICDO1043A |  | operator SV (COS) |  |
@@ -277,7 +385,6 @@ Why: in a real plant the operator changes the SV, the manual values and the swit
 | ABC-016 | D | input wire | COS manual (on / off) ▸ MAN HICFA1022 |  | operator switch (COS) |  |
 | ABC-016 | D | input wire | COS manual (on / off) ▸ MAN HICFA1024 |  | operator switch (COS) |  |
 | ABC-016 | D | input wire | COS manual (on / off) ▸ MAN HICFA1026 |  | operator switch (COS) |  |
-| ABC-030 | D | input wire | M.0124 | TURBINE TRIP/HOUSE LOAD/52G OPEN (PULSE) | operator switch (COS) |  |
 | ABC-031 | D | input wire | B.1008 | USED | operator switch (COS) |  |
 | ABC-056 | D | input wire | M.0124 | TURBINE TRIP/HOUSE LOAD/52G OPEN (PULSE) | operator switch (COS) |  |
 | ABC-001C | D | SIG.AB flag | B.069B | USED | operator switch (signal bad flag) |  |
@@ -434,24 +541,15 @@ Why: in a real plant the operator changes the SV, the manual values and the swit
 | ABC-001A | A | input wire | SI0212 | UNIT LOAD DEMAND (CHANGE RATE LIMIT) (RAMP) | other analog input (operator) |  |
 | ABC-001B | A | input wire | TURBINE MASTER IN MANUAL |  | other analog input (operator) |  |
 | ABC-001B | A | input wire | SI0220 | UNIT LOAD DEMAND BEFORE RAMP | other analog input (operator) |  |
-| ABC-001C | A | input wire | → MUL |  | other analog input (operator) |  |
 | ABC-001C | A | input wire | F(X) |  | other analog input (operator) |  |
 | ABC-001C | A | input wire | SI0017 | TOTAL FUEL FLOW | other analog input (operator) |  |
+| ABC-001C | A | input wire | B.069B |  | other analog input (operator) |  |
+| ABC-001C | A | input wire | → SEL |  | other analog input (operator) |  |
 | ABC-001C | A | input wire | SI0226 | UNIT LOAD DEMAND(0~200MW BASE) | other analog input (operator) |  |
 | ABC-001C | A | input wire | SI0219 | BIR FUEL DEMAND | other analog input (operator) |  |
-| ABC-001C | A | input wire | f(t) |  | other analog input (operator) |  |
 | ABC-001D | A | input wire | F(X) |  | other analog input (operator) |  |
 | ABC-001D | A | input wire | SI0212 | UNIT LOAD DEMAND (CHANGE RATE LIMIT) (RAMP) | other analog input (operator) |  |
 | ABC-001D | A | input wire | SI0220 | UNIT LOAD DEMAND BEFORE RAMP | other analog input (operator) |  |
-| ABC-002 | A | input wire | F(X) |  | other analog input (operator) |  |
-| ABC-002 | A | input wire | F(X) |  | other analog input (operator) |  |
-| ABC-002 | A | input wire | FAF |  | other analog input (operator) |  |
-| ABC-002 | A | input wire | SI0140 | TOTAL COAL FLOW | other analog input (operator) |  |
-| ABC-002 | A | input wire | 003A |  | other analog input (operator) |  |
-| ABC-002 | A | input wire | SI0003 | COAL CAL. | other analog input (operator) |  |
-| ABC-002 | A | input wire | SAF |  | other analog input (operator) |  |
-| ABC-002 | A | input wire | TOF |  | other analog input (operator) |  |
-| ABC-002 | A | input wire | TOF |  | other analog input (operator) |  |
 | ABC-003A | A | input wire | 003E |  | other analog input (operator) |  |
 | ABC-003A | A | input wire | 001C |  | other analog input (operator) |  |
 | ABC-003A | A | input wire | SI0480 | D-DIESEL OIL FLOW(WEIGHT) | other analog input (operator) |  |
@@ -482,48 +580,29 @@ Why: in a real plant the operator changes the SV, the manual values and the swit
 | ABC-003E | A | input wire | PS0004 |  | other analog input (operator) |  |
 | ABC-003E | A | input wire | PTN004029 |  | other analog input (operator) |  |
 | ABC-003E | A | input wire | FICDO1043A.SV |  | other analog input (operator) |  |
-| ABC-003E | A | input wire | 003C |  | other analog input (operator) |  |
-| ABC-003E | A | input wire | 003B |  | other analog input (operator) |  |
-| ABC-003E | A | input wire | → SW |  | other analog input (operator) |  |
 | ABC-003E | A | input wire | 003A |  | other analog input (operator) |  |
-| ABC-004A | A | input wire | f(t) |  | other analog input (operator) |  |
-| ABC-004A | A | input wire | f(t) |  | other analog input (operator) |  |
-| ABC-004A | A | input wire | FICCL1061C.MV |  | other analog input (operator) |  |
-| ABC-004A | A | input wire | AO0231 |  | other analog input (operator) |  |
-| ABC-004A | A | input wire | → DEV |  | other analog input (operator) |  |
-| ABC-004A | A | input wire | → DEV |  | other analog input (operator) |  |
-| ABC-004A | A | input wire | SI0134 | C-COAL FEEDER FLOW | other analog input (operator) |  |
-| ABC-004A | A | input wire | SI0124 | B-COAL FEEDER FLOW | other analog input (operator) |  |
-| ABC-004A | A | input wire | FICCL1061B.MV |  | other analog input (operator) |  |
-| ABC-004A | A | input wire | RAMP:1% / sec |  | other analog input (operator) |  |
 | ABC-004B | A | input wire | 004A |  | other analog input (operator) |  |
 | ABC-004B | A | input wire | FIC-CF.MV |  | other analog input (operator) |  |
-| ABC-004B | A | input wire | AO0356 |  | other analog input (operator) |  |
 | ABC-004C | A | input wire | 004A |  | other analog input (operator) |  |
-| ABC-004C | A | input wire | AO0800 |  | other analog input (operator) |  |
 | ABC-004C | A | input wire | FIC-CF.MV |  | other analog input (operator) |  |
 | ABC-005 | A | input wire | 004A |  | other analog input (operator) |  |
 | ABC-007 | A | input wire | → SUB |  | other analog input (operator) |  |
 | ABC-007 | A | input wire | FICFA1081.PV |  | other analog input (operator) |  |
 | ABC-007 | A | input wire | → SUB |  | other analog input (operator) |  |
 | ABC-007 | A | input wire | FICFA1071.PV |  | other analog input (operator) |  |
+| ABC-007 | A | input wire | PV |  | other analog input (operator) |  |
 | ABC-007 | A | input wire | RAMP:0.05% / sec |  | other analog input (operator) |  |
 | ABC-007 | A | input wire | RAMP:0.05% / sec |  | other analog input (operator) |  |
-| ABC-008 | A | input wire | → SUB |  | other analog input (operator) |  |
-| ABC-008 | A | input wire | PAF-MV |  | other analog input (operator) |  |
-| ABC-008 | A | input wire | SAF-MV |  | other analog input (operator) |  |
-| ABC-009A | A | input wire | AO0339 |  | other analog input (operator) |  |
-| ABC-009A | A | input wire | AO0323 |  | other analog input (operator) |  |
-| ABC-009A | A | input wire | AO0211 |  | other analog input (operator) |  |
+| ABC-007 | A | input wire | PV |  | other analog input (operator) |  |
+| ABC-008 | A | input wire | → DIV |  | other analog input (operator) |  |
 | ABC-009A | A | input wire | 1:b |  | other analog input (operator) |  |
 | ABC-009A | A | input wire | → SW |  | other analog input (operator) |  |
-| ABC-009B | A | input wire | AO0787 |  | other analog input (operator) |  |
 | ABC-009B | A | input wire | PIC-BASC.MV |  | other analog input (operator) |  |
 | ABC-010 | A | input wire | 001C |  | other analog input (operator) |  |
-| ABC-011 | A | input wire | F(X) |  | other analog input (operator) |  |
-| ABC-012 | A | input wire | 001C |  | other analog input (operator) |  |
 | ABC-013 | A | input wire | 001C |  | other analog input (operator) |  |
 | ABC-013 | A | input wire | STN102018 |  | other analog input (operator) |  |
+| ABC-013 | A | input wire | 001C |  | other analog input (operator) |  |
+| ABC-014 | A | input wire | PV |  | other analog input (operator) |  |
 | ABC-015 | A | input wire | SI0230 |  | other analog input (operator) |  |
 | ABC-015 | A | input wire | SI0231 |  | other analog input (operator) |  |
 | ABC-015 | A | input wire | SI0232 |  | other analog input (operator) |  |
@@ -550,103 +629,26 @@ Why: in a real plant the operator changes the SV, the manual values and the swit
 | ABC-019 | A | input wire | F(X) |  | other analog input (operator) |  |
 | ABC-019 | A | input wire | RHTD |  | other analog input (operator) |  |
 | ABC-019 | A | input wire | → SUM |  | other analog input (operator) |  |
-| ABC-020 | A | input wire | STN101017 |  | other analog input (operator) |  |
 | ABC-020 | A | input wire | → DEV |  | other analog input (operator) |  |
 | ABC-026 | A | input wire | DI0000 |  | other analog input (operator) |  |
 | ABC-026 | A | input wire | → SUM |  | other analog input (operator) |  |
-| ABC-030 | A | input wire | TICR1004.PV |  | other analog input (operator) |  |
-| ABC-030 | A | input wire | PICR1003.PV |  | other analog input (operator) |  |
 | ABC-050 | A | input wire | SI1817 | USED | other analog input (operator) |  |
 | ABC-050 | A | input wire | SI1816 | USED | other analog input (operator) |  |
 | ABC-050 | A | input wire | SI1815 | USED | other analog input (operator) |  |
 | ABC-050 | A | input wire | SI1814 | USED | other analog input (operator) |  |
 | ABC-050 | A | input wire | SI1813 | USED | other analog input (operator) |  |
 | ABC-050 | A | input wire | SI1812 | USED | other analog input (operator) |  |
-| ABC-050 | A | input wire | STN101015 |  | other analog input (operator) |  |
 | ABC-050 | A | input wire | SI1829 | USED | other analog input (operator) |  |
 | ABC-050 | A | input wire | SI1828 | USED | other analog input (operator) |  |
 | ABC-050 | A | input wire | SI1827 | USED | other analog input (operator) |  |
 | ABC-050 | A | input wire | SI1823 | USED | other analog input (operator) |  |
 | ABC-050 | A | input wire | SI1822 | USED | other analog input (operator) |  |
 | ABC-050 | A | input wire | SI1821 | USED | other analog input (operator) |  |
-| ABC-051 | A | input wire | F(X) |  | other analog input (operator) |  |
 | ABC-052 | A | input wire | < 3% |  | other analog input (operator) |  |
 | ABC-054 | A | input wire | → VLV |  | other analog input (operator) |  |
+| ABC-054 | A | input wire | STN102017 |  | other analog input (operator) |  |
 | ABC-055 | A | input wire | SI0156 |  | other analog input (operator) |  |
 | ABC-055 | A | input wire | → VLV |  | other analog input (operator) |  |
-| ABC-001C | A | transmitter AI | AI0131 | PT-MS1002 · #1 Boiler finishing superheater outlet main steam pressure · AI-Wet · 0 ~ 150 kg/cm2 / range 0 ~ 150 Kg/cm2 | plant-driven (read only; F = simulate) | measurement of PIC-COBM |
-| ABC-002 | A | transmitter AI | AI0273 | AT-FG1122 · #1 Boiler air preheater inlet flue gas O2 analyzer (A) · AI-Dry · 0 ~ 25 % / range 0 ~ 25 % | plant-driven (read only; F = simulate) | measurement of AICFG112 |
-| ABC-002 | A | transmitter AI | AI0433 | AT-FG1123 · #1 Boiler air preheater inlet flue gas O2 analyzer (B) · AI-Dry · 0 ~ 25 % / range 0 ~ 25 % | plant-driven (read only; F = simulate) | measurement of AICFG112 |
-| ABC-003A | A | transmitter AI | AI0164 | FT-FA1043-A · #1 Boiler start up burner-A hot secondary air inlet flow · AI-Wet · 0 ~ 65 T/H / range 0 ~ 65 T/H | plant-driven (read only; F = simulate) | measurement of FICFA1043A |
-| ABC-003A | A | transmitter AI | AI0515 | FT-DO1043-A · #1 Boiler start up burner-A supply line oil flow · AI-D(D) · 0 ~ 3.5 T/H / range 0 ~ 3.5 T/H | plant-driven (read only; F = simulate) | measurement of FICDO1043A |
-| ABC-003A | A | transmitter AI | AI0293 | PT-DO1043-A2 · #1 Boiler start up burner-A diesel oil supply line oil pressure · AI-Wet · 0 ~ 10 kg/cm2 / range 0 ~ 10 kg/cm2 | plant-driven (read only; F = simulate) | measurement of PICDO1043A |
-| ABC-003B | A | transmitter AI | AI0290 | FT-FA1043-B · #1 Boiler start up burner-B hot secondary air inlet flow · AI-Wet · 0 ~ 65 T/H / range 0 ~ 65 T/H | plant-driven (read only; F = simulate) | measurement of FICFA1043B |
-| ABC-003B | A | transmitter AI | AI0546 | FT-DO1043-B · #1 Boiler start up burner-B supply line oil flow · AI-D(D) · 0 ~ 3.5 T/H / range 0 ~ 3.5 T/H | plant-driven (read only; F = simulate) | measurement of FICDO1043B |
-| ABC-003B | A | transmitter AI | AI0439 | PT-DO1043-B2 · #1 Boiler start up burner-B diesel oil supply line oil pressure · AI-Wet · 0 ~ 10 kg/cm2 / range 0 ~ 10 kg/cm2 | plant-driven (read only; F = simulate) | measurement of PICDO1043B |
-| ABC-003C | A | transmitter AI | AI0403 | FT-FA1043-C · #1 Boiler start up burner-C hot secondary air inlet flow · AI-Wet · 0 ~ 65 T/H / range 0 ~ 65 T/H | plant-driven (read only; F = simulate) | measurement of FICFA1043C |
-| ABC-003C | A | transmitter AI | AI0517 | FT-DO1043-C · #1 Boiler start up burner-C supply line oil flow · AI-D(D) · 0 ~ 3.5 T/H / range 0 ~ 3.5 T/H | plant-driven (read only; F = simulate) | measurement of FICDO1043C |
-| ABC-003C | A | transmitter AI | AI0596 | PT-DO1043-C2 · #1 Boiler start up burner-C diesel oil supply line oil pressure · AI-Wet · 0 ~ 10 kg/cm2 / range 0 ~ 10 kg/cm2 | plant-driven (read only; F = simulate) | measurement of PICDO1043C |
-| ABC-003D | A | transmitter AI | AI0597 | FT-FA1043-D · #1 Boiler start up burner-D hot secondary air inlet flow · AI-Wet · 0 ~ 65 T/H / range 0 ~ 65 T/H | plant-driven (read only; F = simulate) | measurement of FICFA1043D |
-| ABC-003D | A | transmitter AI | AI0548 | FT-DO1043-D · #1 Boiler start up burner-D supply line oil flow · AI-D(D) · 0 ~ 3.5 T/H / range 0 ~ 3.5 T/H | plant-driven (read only; F = simulate) | measurement of FICDO1043D |
-| ABC-003D | A | transmitter AI | AI0771 | PT-DO1043-D2 · #1 Boiler start up burner-D diesel oil supply line oil pressure · AI-Wet · 0 ~ 10 kg/cm2 / range 0 ~ 10 kg/cm2 | plant-driven (read only; F = simulate) | measurement of PICDO1043D |
-| ABC-003E | A | input wire | 003A |  | plant-driven (read only; F = simulate) | PV input of FIC-OM |
-| ABC-005 | A | transmitter AI | AI0466 | AT-FG1057-1 · #1 Stack outlet flue gas SOx value · AI-Dry · 0 ~ 500 ppm / range 0 ~ 500 ppm | plant-driven (read only; F = simulate) | measurement of AICFG10571 |
-| ABC-007 | A | input wire | PV |  | plant-driven (read only; F = simulate) | PV input of FICFA1071 |
-| ABC-007 | A | input wire | PV |  | plant-driven (read only; F = simulate) | PV input of FICFA1081 |
-| ABC-008 | A | input wire | SI0180 | FURNACE PRESSURE CONTROL PV | plant-driven (read only; F = simulate) | PV input of PICFG108 |
-| ABC-009A | A | transmitter AI | AI0134 | DPT-FG1081 · #1 Furnace plenum/upper layer diff. pressure (A) · AI-Wet · 0 ~ 2500 mmH2O / range 0 ~ 2500 mmH2O | plant-driven (read only; F = simulate) | measurement of DPICFG108 |
-| ABC-009A | A | transmitter AI | AI0262 | DPT-FG1082 · #1 Furnace plenum/upper layer diff. pressure (B) · AI-Wet · 0 ~ 2500 mmH2O / range 0 ~ 2500 mmH2O | plant-driven (read only; F = simulate) | measurement of DPICFG108 |
-| ABC-010 | A | transmitter AI | AI0130 | LT-BR1001-1 · #1 Boiler drum level (1) · AI-Wet · -422 ~ 820 mm / range -422 ~ 820 mm | plant-driven (read only; F = simulate) | measurement of LICBR1001 |
-| ABC-010 | A | transmitter AI | AI0386 | LT-BR1001-3 · #1 Boiler drum level (3) · AI-Wet · -422 ~ 820 mm / range -422 ~ 820 mm | plant-driven (read only; F = simulate) | measurement of LICBR1001 |
-| ABC-010 | A | input wire | SI0269 | FEED WATER FLOW AVERAGE VALUE | plant-driven (read only; F = simulate) | PV input of FICFW1007 |
-| ABC-011 | A | transmitter AI | AI0610 | TT-BR1140-1 · #1 Superheater NO.2 outlet header steam temperature (1) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | plant-driven (read only; F = simulate) | measurement of TICBR1140 |
-| ABC-011 | A | transmitter AI | AI0642 | TT-BR1140-2 · #1 Superheater NO.2 outlet header steam temperature (2) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | plant-driven (read only; F = simulate) | measurement of TICBR1140 |
-| ABC-011 | A | transmitter AI | AI0609 | TT-BR1130-1 · #1 Superheater NO.2 inlet header steam temperature (1) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | plant-driven (read only; F = simulate) | measurement of TICBR1130 |
-| ABC-011 | A | transmitter AI | AI0641 | TT-BR1130-2 · #1 Superheater NO.2 inlet header steam temperature (2) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | plant-driven (read only; F = simulate) | measurement of TICBR1130 |
-| ABC-012 | A | transmitter AI | AI0612 | TT-MS1004-1 · #1 Boiler finishing S/H outlet main steam temp. (1) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | plant-driven (read only; F = simulate) | measurement of TICMS1004 |
-| ABC-012 | A | transmitter AI | AI0644 | TT-MS1004-2 · #1 Boiler finishing S/H outlet main steam temp. (2) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | plant-driven (read only; F = simulate) | measurement of TICMS1004 |
-| ABC-012 | A | transmitter AI | AI0611 | TT-BR1150-1 · #1 Finishing S/H inlet header steam temperature (1) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | plant-driven (read only; F = simulate) | measurement of TICBR1150 |
-| ABC-012 | A | transmitter AI | AI0643 | TT-BR1150-2 · #1 Finishing S/H inlet header steam temperature (2) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | plant-driven (read only; F = simulate) | measurement of TICBR1150 |
-| ABC-013 | A | input wire | 001C |  | plant-driven (read only; F = simulate) | PV input of PICMS1002 |
-| ABC-014 | A | input wire | PV |  | plant-driven (read only; F = simulate) | PV input of FICFA1055B |
-| ABC-014 | A | input wire | PV |  | plant-driven (read only; F = simulate) | PV input of FICFA1055A |
-| ABC-017 | A | transmitter AI | AI0533 | PT-SB1052 · #1 Boiler sootblower header steam pressure · AI-Wet · 0 ~ 50 kg/cm2 / range 0 ~ 50 kg/cm2 | plant-driven (read only; F = simulate) | measurement of PICSB1052 |
-| ABC-019 | A | transmitter AI | AI0867 | TT-HR1002-1 · #1 Reheater outlet header temperature (1) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | plant-driven (read only; F = simulate) | measurement of TICHR1002 |
-| ABC-019 | A | transmitter AI | AI0899 | TT-HR1002-2 · #1 Reheater outlet header temperature (2) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | plant-driven (read only; F = simulate) | measurement of TICHR1002 |
-| ABC-020 | A | input wire | RHT |  | plant-driven (read only; F = simulate) | PV input of TICHR1002A |
-| ABC-028 | A | transmitter AI | AI0181 | PT-DO0005 · Diesel oil pump outlet to start-up burner oil pressure · AI-Wet · 0 ~ 25 kg/cm2 / range 0 ~ 25 kg/cm2 | plant-driven (read only; F = simulate) | measurement of PICDO0005 |
-| ABC-029 | A | transmitter AI | AI0514 | PT-DO1008 · #1 Boiler start up burner diesel oil circulation line oil pressure · AI-W(D) · 0 ~ 25 kg/cm2 / range 0 ~ 25 kg/cm2 | plant-driven (read only; F = simulate) | measurement of PICDO1008 |
-| ABC-030 | A | transmitter AI | AI0514 | PT-AS1004 · #1 Main steam pipe to aux. steam supply pressure · AI-Wet · 0 ~ 15 kg/cm2 / range 0 ~ 15 kg/cm2 | plant-driven (read only; F = simulate) | measurement of PICAS1005 |
-| ABC-030 | A | transmitter AI | AI0515 | PT-AS1005 · #1 Cold reheat to aux. steam supply pressure · AI-Wet · 0 ~ 15 kg/cm2 / range 0 ~ 15 kg/cm2 | plant-driven (read only; F = simulate) | measurement of PICAS1005 |
-| ABC-031 | A | transmitter AI | AI0640 | LT-CD1110 · #1 Condenser hot well water level · AI-W(D) · -436 ~ 464 mm / range -436 ~ 464 mm | plant-driven (read only; F = simulate) | measurement of LICCD1110A |
-| ABC-031 | A | input wire | SI0202 |  | plant-driven (read only; F = simulate) | PV input of LICCD1104 |
-| ABC-032 | A | transmitter AI | AI0436 | FT-CD1121 · #1 Condensate polisher inlet water flow · AI-Wet · 0 ~ 200 T/H / range 0 ~ 200 T/H | plant-driven (read only; F = simulate) | measurement of FICCD1121 |
-| ABC-032 | A | transmitter AI | AI0437 | FT-CD1120 · #1 Condensate water flow · AI-Wet · 0 ~ 400 T/H / range 0 ~ 400 T/H | plant-driven (read only; F = simulate) | measurement of FICCD1120 |
-| ABC-033 | A | transmitter AI | AI0641 | TT-AS1001 · #1 Main steam to aux. steam desuperheater temperature · AI-W(D) · 0 ~ 600 °C / range 0 ~ 600 °C | plant-driven (read only; F = simulate) | measurement of TICAS1001 |
-| ABC-034 | A | transmitter AI | AI0902 | TT-AS1017 · #1 Gland steam turbine side temperature · AI-Wet · 0 ~ 300 °C / range 0 ~ 300 °C | plant-driven (read only; F = simulate) | measurement of TICAS1017 |
-| ABC-035 | A | transmitter AI | AI0676 | LT-HD1105-1 · #1 NO.1 HPH level (1) · AI-Wet · -300 ~ 310 mm / range -300 ~ 310 mm | plant-driven (read only; F = simulate) | measurement of LICHD11051 |
-| ABC-035 | A | transmitter AI | AI0852 | LT-HD1105-2 · #1 NO.1 HPH level (2) · AI-Wet · -300 ~ 310 mm / range -300 ~ 310 mm | plant-driven (read only; F = simulate) | measurement of LICHD11051 |
-| ABC-036 | A | transmitter AI | AI0677 | LT-HD1106-1 · #1 NO.2 HPH level (1) · AI-Wet · -300 ~ 310 mm / range -300 ~ 310 mm | plant-driven (read only; F = simulate) | measurement of LICHD11061 |
-| ABC-036 | A | transmitter AI | AI0853 | LT-HD1106-2 · #1 NO.2 HPH level (2) · AI-Wet · -300 ~ 310 mm / range -300 ~ 310 mm | plant-driven (read only; F = simulate) | measurement of LICHD11061 |
-| ABC-037 | A | transmitter AI | AI0673 | LT-HD1101-1 · #1 NO.1 LPH level (1) · AI-Wet · -320 ~ 290 mm / range -320 ~ 290 mm | plant-driven (read only; F = simulate) | measurement of LICHD11011 |
-| ABC-037 | A | transmitter AI | AI0849 | LT-HD1101-2 · #1 NO.1 LPH level (2) · AI-Wet · -320 ~ 290 mm / range -320 ~ 290 mm | plant-driven (read only; F = simulate) | measurement of LICHD11011 |
-| ABC-038 | A | transmitter AI | AI0674 | LT-HD1102-1 · #1 NO.2 LPH level (1) · AI-Wet · -315 ~ 295 mm / range -315 ~ 295 mm | plant-driven (read only; F = simulate) | measurement of LICHD11021 |
-| ABC-038 | A | transmitter AI | AI0850 | LT-HD1102-2 · #1 NO.2 LPH level (2) · AI-Wet · -315 ~ 295 mm / range -315 ~ 295 mm | plant-driven (read only; F = simulate) | measurement of LICHD11021 |
-| ABC-039 | A | transmitter AI | AI0675 | LT-HD1103-1 · #1 NO.3 LPH level (1) · AI-Wet · -310 ~ 300 mm / range -310 ~ 300 mm | plant-driven (read only; F = simulate) | measurement of LICHD11031 |
-| ABC-039 | A | transmitter AI | AI0851 | LT-HD1103-2 · #1 NO.3 LPH level (2) · AI-Wet · -310 ~ 300 mm / range -310 ~ 300 mm | plant-driven (read only; F = simulate) | measurement of LICHD11031 |
-| ABC-050 | A | transmitter AI | AI0416 | PT-MS1006-1 · #1 Turbine main steam pressure(1) · AI-Wet · 0 ~ 150 kg/cm2 / range 0 ~ 150 kg/cm2 | plant-driven (read only; F = simulate) | measurement of PICMS1006 |
-| ABC-050 | A | transmitter AI | AI0512 | PT-MS1006-2 · #1 Turbine main steam pressure(2) · AI-Wet · 0 ~ 150 kg/cm2 / range 0 ~ 150 kg/cm2 | plant-driven (read only; F = simulate) | measurement of PICMS1006 |
-| ABC-051 | A | transmitter AI | AI0865 | TT-MS1022-1 · #1 HP turbine bypass outlet temperature (1) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | plant-driven (read only; F = simulate) | measurement of TICMS1022 |
-| ABC-051 | A | transmitter AI | AI0897 | TT-MS1022-2 · #1 HP turbine bypass outlet temperature (2) · AI-Wet · 0 ~ 600 °C / range 0 ~ 600 °C | plant-driven (read only; F = simulate) | measurement of TICMS1022 |
-| ABC-052 | A | transmitter AI | AI0421 | PT-HR1003-1 · #1 Hot reheat steam pressure(1) · AI-Wet · 0 ~ 50 kg/cm2 / range 0 ~ 50 kg/cm2 | plant-driven (read only; F = simulate) | measurement of PICHR1003 |
-| ABC-052 | A | transmitter AI | AI0513 | PT-HR1003-2 · #1 Hot reheat steam pressure(2) · AI-Wet · 0 ~ 50 kg/cm2 / range 0 ~ 50 kg/cm2 | plant-driven (read only; F = simulate) | measurement of PICHR1003 |
-| ABC-052 | A | transmitter AI | AI0864 | TT-HR1012-1 · #1 LP turbine bypass outlet temperature (1) · AI-Wet · 0 ~ 300 °C / range 0 ~ 300 °C | plant-driven (read only; F = simulate) | measurement of TICHR1012 |
-| ABC-052 | A | transmitter AI | AI0896 | TT-HR1012-2 · #1 LP turbine bypass outlet temperature (2) · AI-Wet · 0 ~ 300 °C / range 0 ~ 300 °C | plant-driven (read only; F = simulate) | measurement of TICHR1012 |
-| ABC-053 | A | transmitter AI | AI0452 | TE-LO1002-1 · #1 Turbine lube oil cooler outlet oil temperature (A) · AI-Dry · 0 ~ 100 °C / range 0 ~ 100 °C | plant-driven (read only; F = simulate) | measurement of TICLO1002 |
-| ABC-053 | A | transmitter AI | AI0516 | TE-LO1002-2 · #1 Turbine lube oil cooler outlet oil temperature (B) · AI-Dry · 0 ~ 100 °C / range 0 ~ 100 °C | plant-driven (read only; F = simulate) | measurement of TICLO1002 |
-| ABC-054 | A | input wire | STN102017 |  | plant-driven (read only; F = simulate) | PV input of PICHR1391 |
-| ABC-055 | A | transmitter AI | AI0181 | ZT-BR1391 · #1 S/H NO.1 outlet header to reheater motor valve position · AI-Wet · 0 ~ 100 % / range 0 ~ 100 % | plant-driven (read only; F = simulate) | measurement of HICBR1391 |
-| ABC-056 | A | transmitter AI | AI0417 | PT-CD1104 · #1 Boiler deaerator pressure · AI-Wet · 0 ~ 10 kg/cm2 / range 0 ~ 10 kg/cm2 | plant-driven (read only; F = simulate) | measurement of PICCD1104 |
 | ABC-001A | D | input wire | IN MANUAL |  | switch / status / DITL signal (operator) |  |
 | ABC-001A | D | input wire | SETTER IN MANUAL |  | switch / status / DITL signal (operator) |  |
 | ABC-001B | D | input wire | M.0001 | ALWAYS "1" | switch / status / DITL signal (operator) |  |
@@ -676,8 +678,6 @@ Why: in a real plant the operator changes the SV, the manual values and the swit
 | ABC-001C | D | input wire | B.0643 | USED | switch / status / DITL signal (operator) |  |
 | ABC-001D | D | input wire | M.201F | CCS MODE CONTROL | switch / status / DITL signal (operator) |  |
 | ABC-002 | D | input wire | SA FLOW CTL REMOTE MODE |  | switch / status / DITL signal (operator) |  |
-| ABC-002 | D | input wire | M.0101 | BOILER MAIN STEAM FLOW > 220T/H | switch / status / DITL signal (operator) |  |
-| ABC-002 | D | input wire | M.008B | USED | switch / status / DITL signal (operator) |  |
 | ABC-003A | D | input wire | M.0098 |  | switch / status / DITL signal (operator) |  |
 | ABC-003A | D | input wire | M.008F |  | switch / status / DITL signal (operator) |  |
 | ABC-003A | D | input wire | M.0358 | A-BURNER OIL CONTROL SELECT FLOW (CRT) | switch / status / DITL signal (operator) |  |
@@ -772,11 +772,7 @@ Why: in a real plant the operator changes the SV, the manual values and the swit
 | ABC-003E | D | input wire | M.008D | OIL MASTER NOT USE P.B.(CRT) | switch / status / DITL signal (operator) |  |
 | ABC-003E | D | input wire | M.0096 |  | switch / status / DITL signal (operator) |  |
 | ABC-003E | D | input wire | → SW (digital) |  | switch / status / DITL signal (operator) |  |
-| ABC-004A | D | input wire | M.025B | HOUSE OPERATION ON | switch / status / DITL signal (operator) |  |
-| ABC-004A | D | input wire | COAL FEEDER-C RUNNING |  | switch / status / DITL signal (operator) |  |
-| ABC-004A | D | input wire | COAL FEEDER-B RUNNING |  | switch / status / DITL signal (operator) |  |
 | ABC-004A | D | input wire | CONTROL IN MANUAL |  | switch / status / DITL signal (operator) |  |
-| ABC-004A | D | input wire | M.016E | C-COAL FEEDER RUNNING(OFF DELAY) | switch / status / DITL signal (operator) |  |
 | ABC-004A | D | input wire | M.3417 |  | switch / status / DITL signal (operator) |  |
 | ABC-004A | D | input wire | B.072C |  | switch / status / DITL signal (operator) |  |
 | ABC-004A | D | input wire | M.3416 |  | switch / status / DITL signal (operator) |  |
@@ -789,28 +785,20 @@ Why: in a real plant the operator changes the SV, the manual values and the swit
 | ABC-004A | D | input wire | → AND (digital) |  | switch / status / DITL signal (operator) |  |
 | ABC-004A | D | input wire | → AND (digital) |  | switch / status / DITL signal (operator) |  |
 | ABC-004A | D | input wire | → AND (digital) |  | switch / status / DITL signal (operator) |  |
-| ABC-004A | D | input wire | M.015E | B-COAL FEEDER RUNNING(OFF DELAY) | switch / status / DITL signal (operator) |  |
 | ABC-004A | D | input wire | M.3405 |  | switch / status / DITL signal (operator) |  |
 | ABC-004A | D | input wire | → AND (digital) |  | switch / status / DITL signal (operator) |  |
 | ABC-004A | D | input wire | ( FROM ABC-004C ) |  | switch / status / DITL signal (operator) |  |
 | ABC-004A | D | input wire | ( FROM ABC-004B ) |  | switch / status / DITL signal (operator) |  |
 | ABC-004A | D | input wire | M.3405 | COAL FEEDER A/B/C ALL IN REMOTE & RUN(FROM S4) | switch / status / DITL signal (operator) |  |
-| ABC-004A | D | input wire | M.016F | C-COAL FEEDER DEMAND(MV) >= 83.3% | switch / status / DITL signal (operator) |  |
-| ABC-004A | D | input wire | M.015F | B-COAL FEEDER DEMAND(MV) >= 83.3% | switch / status / DITL signal (operator) |  |
-| ABC-004A | D | input wire | 1:b |  | switch / status / DITL signal (operator) |  |
 | ABC-004A | D | input wire | COAL FEEDER C IN MANUAL |  | switch / status / DITL signal (operator) |  |
-| ABC-004A | D | input wire | 1:b |  | switch / status / DITL signal (operator) |  |
 | ABC-004A | D | input wire | B.0728 |  | switch / status / DITL signal (operator) |  |
-| ABC-004A | D | input wire | M.3402 | C-COAL FEEDER RUNNING (BC FROM S4) | switch / status / DITL signal (operator) |  |
 | ABC-004A | D | input wire | M.3411 |  | switch / status / DITL signal (operator) |  |
 | ABC-004A | D | input wire | B.072A |  | switch / status / DITL signal (operator) |  |
 | ABC-004A | D | input wire | M.3410 |  | switch / status / DITL signal (operator) |  |
 | ABC-004A | D | input wire | B.0718 | USED | switch / status / DITL signal (operator) |  |
 | ABC-004A | D | input wire | COAL FEEDER |  | switch / status / DITL signal (operator) |  |
-| ABC-004A | D | input wire | M.3400 | A-COAL FEEDER RUNNING (BC FROM S4) | switch / status / DITL signal (operator) |  |
 | ABC-004A | D | input wire | B.0723 |  | switch / status / DITL signal (operator) |  |
 | ABC-004A | D | input wire | B.0720 |  | switch / status / DITL signal (operator) |  |
-| ABC-004A | D | input wire | M.3401 | B-COAL FEEDER RUNNING (BC FROM S4) | switch / status / DITL signal (operator) |  |
 | ABC-004B | D | input wire | M.025B | HOUSE OPERATION ON | switch / status / DITL signal (operator) |  |
 | ABC-004B | D | input wire | B.0720 | USED | switch / status / DITL signal (operator) |  |
 | ABC-004B | D | input wire | M.3405 |  | switch / status / DITL signal (operator) |  |
@@ -1046,14 +1034,8 @@ Why: in a real plant the operator changes the SV, the manual values and the swit
 | ABC-050 | D | input wire | I.000F |  | switch / status / DITL signal (operator) |  |
 | ABC-050 | D | input wire | I.0414 | TCS-DI1043 · #1 Turbine start-up hot mode · DI | switch / status / DITL signal (operator) |  |
 | ABC-050 | D | input wire | I.0413 | TCS-DI1042 · #1 Turbine start-up warm mode · DI | switch / status / DITL signal (operator) |  |
-| ABC-051 | D | input wire | M.071A | HP T/B bypass steam press. ctl demand > 0% | switch / status / DITL signal (operator) |  |
 | ABC-051 | D | input wire | B.1006 | USED | switch / status / DITL signal (operator) |  |
 | ABC-051 | D | input wire | I.0400 | TCS-DI1003 · #1 Turbine trip · DI | switch / status / DITL signal (operator) |  |
-| ABC-051 | D | input wire | 1:a |  | switch / status / DITL signal (operator) |  |
-| ABC-051 | D | input wire | M.071E | HP T/B bypass steam press. ctl demand < 2% | switch / status / DITL signal (operator) |  |
-| ABC-051 | D | input wire | M.0124 | TURBINE TRIP/HOUSE LOAD/52G OPEN (PULSE) | switch / status / DITL signal (operator) |  |
-| ABC-051 | D | input wire | M.0707 | HP BYPASS STEAM PRESSURE CONTROL DEMAND > 4% | switch / status / DITL signal (operator) |  |
-| ABC-051 | D | input wire | M.0702 | ALL BFWP STOPPED | switch / status / DITL signal (operator) |  |
 | ABC-051 | D | input wire | I.0418 | TCS-DI1031 · #1 ICV to CV transfer complete · DI | switch / status / DITL signal (operator) |  |
 | ABC-051 | D | input wire | I.0414 | TCS-DI1043 · #1 Turbine start-up hot mode · DI | switch / status / DITL signal (operator) |  |
 | ABC-051 | D | input wire | I.0413 | TCS-DI1042 · #1 Turbine start-up warm mode · DI | switch / status / DITL signal (operator) |  |

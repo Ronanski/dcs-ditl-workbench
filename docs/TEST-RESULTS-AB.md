@@ -1,0 +1,71 @@
+# Bad Signal (SIG.AB) - logic-sim-v1.20.10.html
+
+Counts: {"PASS":553,"NOT TESTED":59}
+
+Every transmitter with a SIG.AB box.
+
+Record fields: sheet, block, input conditions, expected value/unit, actual value/unit, source of expected, evidence, status, correction, retest status. Full records (incl. PASS): `TEST-RESULTS-AB.json`.
+
+| sheet | block | input | expected | actual | source of expected | status | evidence |
+|---|---|---|---|---|---|---|---|
+| ABC-003B | AI#17 / SIGAB#20 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#17 b.fb |
+| ABC-003C | AI#17 / SIGAB#20 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#17 b.fb |
+| ABC-003D | AI#17 / SIGAB#20 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#17 b.fb |
+| ABC-007 | AI#14 / SIGAB#27 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#14 b.fb |
+| ABC-007 | AI#15 / SIGAB#16 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#15 b.fb |
+| ABC-008 | AI#30 / SIGAB#31 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#30 b.fb |
+| ABC-015 | AI#3 / SIGAB#2 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#3 b.fb |
+| ABC-015 | AI#8 / SIGAB#7 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#8 b.fb |
+| ABC-015 | AI#13 / SIGAB#12 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#13 b.fb |
+| ABC-015 | AI#18 / SIGAB#17 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#18 b.fb |
+| ABC-015 | AI#23 / SIGAB#22 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#23 b.fb |
+| ABC-015 | AI#28 / SIGAB#27 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#28 b.fb |
+| ABC-015 | AI#30 / SIGAB#31 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#30 b.fb |
+| ABC-015 | AI#32 / SIGAB#33 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#32 b.fb |
+| ABC-015 | AI#34 / SIGAB#35 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#34 b.fb |
+| ABC-015 | AI#36 / SIGAB#37 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#36 b.fb |
+| ABC-015 | AI#38 / SIGAB#39 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#38 b.fb |
+| ABC-015 | AI#40 / SIGAB#41 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#40 b.fb |
+| ABC-015 | AI#45 / SIGAB#44 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#45 b.fb |
+| ABC-015 | AI#50 / SIGAB#49 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#50 b.fb |
+| ABC-015 | AI#55 / SIGAB#54 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#55 b.fb |
+| ABC-015 | AI#60 / SIGAB#59 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#60 b.fb |
+| ABC-015 | AI#65 / SIGAB#64 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#65 b.fb |
+| ABC-015 | AI#70 / SIGAB#69 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#70 b.fb |
+| ABC-015 | AI#72 / SIGAB#73 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#72 b.fb |
+| ABC-015 | AI#74 / SIGAB#75 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#74 b.fb |
+| ABC-015 | AI#76 / SIGAB#77 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#76 b.fb |
+| ABC-015 | AI#78 / SIGAB#79 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#78 b.fb |
+| ABC-015 | AI#80 / SIGAB#81 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#80 b.fb |
+| ABC-015 | AI#82 / SIGAB#83 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#82 b.fb |
+| ABC-016 | AI#3 / SIGAB#2 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#3 b.fb |
+| ABC-016 | AI#8 / SIGAB#7 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#8 b.fb |
+| ABC-016 | AI#13 / SIGAB#12 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#13 b.fb |
+| ABC-016 | AI#18 / SIGAB#17 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#18 b.fb |
+| ABC-016 | AI#23 / SIGAB#22 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#23 b.fb |
+| ABC-016 | AI#28 / SIGAB#27 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#28 b.fb |
+| ABC-016 | AI#30 / SIGAB#31 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#30 b.fb |
+| ABC-016 | AI#32 / SIGAB#33 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#32 b.fb |
+| ABC-016 | AI#34 / SIGAB#35 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#34 b.fb |
+| ABC-016 | AI#36 / SIGAB#37 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#36 b.fb |
+| ABC-016 | AI#38 / SIGAB#39 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#38 b.fb |
+| ABC-016 | AI#40 / SIGAB#41 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#40 b.fb |
+| ABC-016 | AI#45 / SIGAB#44 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#45 b.fb |
+| ABC-016 | AI#50 / SIGAB#49 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#50 b.fb |
+| ABC-016 | AI#55 / SIGAB#54 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#55 b.fb |
+| ABC-016 | AI#60 / SIGAB#59 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#60 b.fb |
+| ABC-016 | AI#62 / SIGAB#63 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#62 b.fb |
+| ABC-016 | AI#64 / SIGAB#65 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#64 b.fb |
+| ABC-016 | AI#66 / SIGAB#67 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#66 b.fb |
+| ABC-016 | AI#68 / SIGAB#69 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#68 b.fb |
+| ABC-020 | AI#7 / SIGAB#8 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#7 b.fb |
+| ABC-020 | AI#9 / SIGAB#10 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#9 b.fb |
+| ABC-020 | AI#15 / SIGAB#16 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#15 b.fb |
+| ABC-020 | AI#17 / SIGAB#18 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#17 b.fb |
+| ABC-020 | AI#23 / SIGAB#24 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#23 b.fb |
+| ABC-020 | AI#25 / SIGAB#26 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#25 b.fb |
+| ABC-020 | AI#31 / SIGAB#32 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#31 b.fb |
+| ABC-020 | AI#33 / SIGAB#34 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#33 b.fb |
+| ABC-003A | AI#26 / SIGAB#29 | - | free transmitter | feedback AI: its value follows the position of its valve / actuator | user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1 | NOT TESTED | AI#26 b.fb |
+
+PASS records: 553 (listed only in the json).

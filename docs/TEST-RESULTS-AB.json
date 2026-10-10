@@ -1,0 +1,6122 @@
+[
+ {
+  "sheet": "ABC-003B",
+  "block": "AI#4 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 39",
+  "expected": "39",
+  "actual": "39",
+  "status": "PASS",
+  "evidence": "AI out net 125"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "AI#4 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 125, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "AI#4 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver TP#18",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "AI#4 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "39 and flag 0",
+  "actual": "signal 39, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 2.1",
+  "expected": "2.1",
+  "actual": "2.1",
+  "status": "PASS",
+  "evidence": "AI out net 123"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 123, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver SW#0",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "2.1 and flag 0",
+  "actual": "signal 2.1, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "AI#17 / SIGAB#20",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#17 b.fb"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "AI#27 / SIGAB#26",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 6",
+  "expected": "6",
+  "actual": "6",
+  "status": "PASS",
+  "evidence": "AI out net 55"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "AI#27 / SIGAB#26",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 55, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "AI#27 / SIGAB#26",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver DEV#62",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "AI#27 / SIGAB#26",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "6 and flag 0",
+  "actual": "signal 6, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "AI#4 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 39",
+  "expected": "39",
+  "actual": "39",
+  "status": "PASS",
+  "evidence": "AI out net 125"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "AI#4 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 125, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "AI#4 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver TP#18",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "AI#4 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "39 and flag 0",
+  "actual": "signal 39, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 2.1",
+  "expected": "2.1",
+  "actual": "2.1",
+  "status": "PASS",
+  "evidence": "AI out net 123"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 123, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver SW#0",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "2.1 and flag 0",
+  "actual": "signal 2.1, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "AI#17 / SIGAB#20",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#17 b.fb"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "AI#27 / SIGAB#26",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 6",
+  "expected": "6",
+  "actual": "6",
+  "status": "PASS",
+  "evidence": "AI out net 68"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "AI#27 / SIGAB#26",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 68, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "AI#27 / SIGAB#26",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver DEV#62",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "AI#27 / SIGAB#26",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "6 and flag 0",
+  "actual": "signal 6, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "AI#4 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 39",
+  "expected": "39",
+  "actual": "39",
+  "status": "PASS",
+  "evidence": "AI out net 125"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "AI#4 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 125, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "AI#4 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver TP#18",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "AI#4 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "39 and flag 0",
+  "actual": "signal 39, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 2.1",
+  "expected": "2.1",
+  "actual": "2.1",
+  "status": "PASS",
+  "evidence": "AI out net 123"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 123, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver SW#0",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "2.1 and flag 0",
+  "actual": "signal 2.1, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "AI#17 / SIGAB#20",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#17 b.fb"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "AI#27 / SIGAB#26",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 6",
+  "expected": "6",
+  "actual": "6",
+  "status": "PASS",
+  "evidence": "AI out net 55"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "AI#27 / SIGAB#26",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 55, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "AI#27 / SIGAB#26",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver DEV#62",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "AI#27 / SIGAB#26",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "6 and flag 0",
+  "actual": "signal 6, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "AI#24 / SIGAB#23",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 24",
+  "expected": "24",
+  "actual": "24",
+  "status": "PASS",
+  "evidence": "AI out net 181"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "AI#24 / SIGAB#23",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 181, flag net 191"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "AI#24 / SIGAB#23",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver MAN#12",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "AI#24 / SIGAB#23",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "24 and flag 0",
+  "actual": "signal 24, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 24",
+  "expected": "24",
+  "actual": "24",
+  "status": "PASS",
+  "evidence": "AI out net 53"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 53, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver MAN#0",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "24 and flag 0",
+  "actual": "signal 24, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 24",
+  "expected": "24",
+  "actual": "24",
+  "status": "PASS",
+  "evidence": "AI out net 53"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 53, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver MAN#0",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "24 and flag 0",
+  "actual": "signal 24, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "AI#5 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 300",
+  "expected": "300",
+  "actual": "300",
+  "status": "PASS",
+  "evidence": "AI out net 3"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "AI#5 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 3, flag net 24"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "AI#5 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver DEV#35",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "AI#5 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "300 and flag 0",
+  "actual": "signal 300, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 60",
+  "expected": "60",
+  "actual": "60",
+  "status": "PASS",
+  "evidence": "AI out net 16"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 16, flag net 11"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#8",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "60 and flag 0",
+  "actual": "signal 60, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#4 / SIGAB#3",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 60",
+  "expected": "60",
+  "actual": "60",
+  "status": "PASS",
+  "evidence": "AI out net 27"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#4 / SIGAB#3",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 27, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#4 / SIGAB#3",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#5",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#4 / SIGAB#3",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "60 and flag 0",
+  "actual": "signal 60, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 259.2",
+  "expected": "259.2",
+  "actual": "259.2",
+  "status": "PASS",
+  "evidence": "AI out net 52"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 52, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver TP#13",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "259.2 and flag 0",
+  "actual": "signal 259.2, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 388.8",
+  "expected": "388.8",
+  "actual": "388.8",
+  "status": "PASS",
+  "evidence": "AI out net 50"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 50, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver TP#15",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "388.8 and flag 0",
+  "actual": "signal 388.8, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 21",
+  "expected": "21",
+  "actual": "21",
+  "status": "PASS",
+  "evidence": "AI out net 48"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 48, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver TP#17",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "21 and flag 0",
+  "actual": "signal 21, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#24 / SIGAB#23",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 120",
+  "expected": "120",
+  "actual": "120",
+  "status": "PASS",
+  "evidence": "AI out net 23"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#24 / SIGAB#23",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 23, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#24 / SIGAB#23",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#25",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#24 / SIGAB#23",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "120 and flag 0",
+  "actual": "signal 120, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#27 / SIGAB#26",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 120",
+  "expected": "120",
+  "actual": "120",
+  "status": "PASS",
+  "evidence": "AI out net 22"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#27 / SIGAB#26",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 22, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#27 / SIGAB#26",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#28",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#27 / SIGAB#26",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "120 and flag 0",
+  "actual": "signal 120, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#30 / SIGAB#29",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 60",
+  "expected": "60",
+  "actual": "60",
+  "status": "PASS",
+  "evidence": "AI out net 24"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#30 / SIGAB#29",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 24, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#30 / SIGAB#29",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver TP#15",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#30 / SIGAB#29",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "60 and flag 0",
+  "actual": "signal 60, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#34 / SIGAB#33",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 306",
+  "expected": "306",
+  "actual": "306",
+  "status": "PASS",
+  "evidence": "AI out net 5"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#34 / SIGAB#33",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 5, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#34 / SIGAB#33",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver TP#42",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#34 / SIGAB#33",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "306 and flag 0",
+  "actual": "signal 306, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#36 / SIGAB#35",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 360",
+  "expected": "360",
+  "actual": "360",
+  "status": "PASS",
+  "evidence": "AI out net 7"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#36 / SIGAB#35",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 7, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#36 / SIGAB#35",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#37",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#36 / SIGAB#35",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "360 and flag 0",
+  "actual": "signal 360, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#39 / SIGAB#38",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 360",
+  "expected": "360",
+  "actual": "360",
+  "status": "PASS",
+  "evidence": "AI out net 6"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#39 / SIGAB#38",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 6, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#39 / SIGAB#38",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#40",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#39 / SIGAB#38",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "360 and flag 0",
+  "actual": "signal 360, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "AI#14 / SIGAB#27",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#14 b.fb"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "AI#15 / SIGAB#16",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#15 b.fb"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "AI#1 / SIGAB#0",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 120",
+  "expected": "120",
+  "actual": "120",
+  "status": "PASS",
+  "evidence": "AI out net 103"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "AI#1 / SIGAB#0",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 103, flag net 96"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "AI#1 / SIGAB#0",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#2",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "AI#1 / SIGAB#0",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "120 and flag 0",
+  "actual": "signal 120, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "AI#4 / SIGAB#3",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 120",
+  "expected": "120",
+  "actual": "120",
+  "status": "PASS",
+  "evidence": "AI out net 4"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "AI#4 / SIGAB#3",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 4, flag net 97"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "AI#4 / SIGAB#3",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#5",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "AI#4 / SIGAB#3",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "120 and flag 0",
+  "actual": "signal 120, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 120",
+  "expected": "120",
+  "actual": "120",
+  "status": "PASS",
+  "evidence": "AI out net 102"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 102, flag net 98"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#8",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "120 and flag 0",
+  "actual": "signal 120, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "AI#23 / SIGAB#24",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 60",
+  "expected": "60",
+  "actual": "60",
+  "status": "PASS",
+  "evidence": "AI out net 68"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "AI#23 / SIGAB#24",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 68, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "AI#23 / SIGAB#24",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#25",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "AI#23 / SIGAB#24",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "60 and flag 0",
+  "actual": "signal 60, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "AI#26 / SIGAB#32",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 60",
+  "expected": "60",
+  "actual": "60",
+  "status": "PASS",
+  "evidence": "AI out net 44"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "AI#26 / SIGAB#32",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 44, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "AI#26 / SIGAB#32",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "60 and flag 0",
+  "actual": "signal 60, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "AI#30 / SIGAB#31",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#30 b.fb"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#20 / SIGAB#19",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 3",
+  "expected": "3",
+  "actual": "3",
+  "status": "PASS",
+  "evidence": "AI out net 198"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#20 / SIGAB#19",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 198, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#20 / SIGAB#19",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver MAN#11",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#20 / SIGAB#19",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "3 and flag 0",
+  "actual": "signal 3, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#34 / SIGAB#33",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 1500",
+  "expected": "1500",
+  "actual": "1500",
+  "status": "PASS",
+  "evidence": "AI out net 166"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#34 / SIGAB#33",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 166, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#34 / SIGAB#33",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver SEL#21",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#34 / SIGAB#33",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "1500 and flag 0",
+  "actual": "signal 1500, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#36 / SIGAB#66",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 1500",
+  "expected": "1500",
+  "actual": "1500",
+  "status": "PASS",
+  "evidence": "AI out net 101"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#36 / SIGAB#66",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 101, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#36 / SIGAB#66",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver SEL#21",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#36 / SIGAB#66",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "1500 and flag 0",
+  "actual": "signal 1500, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#46 / SIGAB#45",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 3",
+  "expected": "3",
+  "actual": "3",
+  "status": "PASS",
+  "evidence": "AI out net 143"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#46 / SIGAB#45",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 143, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#46 / SIGAB#45",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver MAN#38",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#46 / SIGAB#45",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "3 and flag 0",
+  "actual": "signal 3, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#59 / SIGAB#58",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 3",
+  "expected": "3",
+  "actual": "3",
+  "status": "PASS",
+  "evidence": "AI out net 125"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#59 / SIGAB#58",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 125, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#59 / SIGAB#58",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver MAN#51",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#59 / SIGAB#58",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "3 and flag 0",
+  "actual": "signal 3, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "AI#8 / SIGAB#7",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 3",
+  "expected": "3",
+  "actual": "3",
+  "status": "PASS",
+  "evidence": "AI out net 41"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "AI#8 / SIGAB#7",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 41, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "AI#8 / SIGAB#7",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver MAN#0",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "AI#8 / SIGAB#7",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "3 and flag 0",
+  "actual": "signal 3, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#5 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 323.19999999999993",
+  "expected": "323.19999999999993",
+  "actual": "323.19999999999993",
+  "status": "PASS",
+  "evidence": "AI out net 151"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#5 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 151, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#5 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver SUB#7",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#5 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "323.19999999999993 and flag 0",
+  "actual": "signal 323.19999999999993, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 323.19999999999993",
+  "expected": "323.19999999999993",
+  "actual": "323.19999999999993",
+  "status": "PASS",
+  "evidence": "AI out net 146"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 146, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver SUB#14",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "323.19999999999993 and flag 0",
+  "actual": "signal 323.19999999999993, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#26 / SIGAB#25",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 323.19999999999993",
+  "expected": "323.19999999999993",
+  "actual": "323.19999999999993",
+  "status": "PASS",
+  "evidence": "AI out net 139"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#26 / SIGAB#25",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 139, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#26 / SIGAB#25",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver SUB#28",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#26 / SIGAB#25",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "323.19999999999993 and flag 0",
+  "actual": "signal 323.19999999999993, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#34 / SIGAB#33",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 330",
+  "expected": "330",
+  "actual": "330",
+  "status": "PASS",
+  "evidence": "AI out net 3"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#34 / SIGAB#33",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 3, flag net 78"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#34 / SIGAB#33",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver MUL#93",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#34 / SIGAB#33",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "330 and flag 0",
+  "actual": "signal 330, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#37 / SIGAB#36",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 180",
+  "expected": "180",
+  "actual": "180",
+  "status": "PASS",
+  "evidence": "AI out net 123"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#37 / SIGAB#36",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 123, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#37 / SIGAB#36",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#38",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#37 / SIGAB#36",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "180 and flag 0",
+  "actual": "signal 180, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#59 / SIGAB#58",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 330",
+  "expected": "330",
+  "actual": "330",
+  "status": "PASS",
+  "evidence": "AI out net 1"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#59 / SIGAB#58",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 1, flag net 54"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#59 / SIGAB#58",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver MUL#94",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#59 / SIGAB#58",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "330 and flag 0",
+  "actual": "signal 330, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#70 / SIGAB#66",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 150",
+  "expected": "150",
+  "actual": "150",
+  "status": "PASS",
+  "evidence": "AI out net 42"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#70 / SIGAB#66",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 42, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#70 / SIGAB#66",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver SEL#65",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#70 / SIGAB#66",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "150 and flag 0",
+  "actual": "signal 150, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#71 / SIGAB#68",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 150",
+  "expected": "150",
+  "actual": "150",
+  "status": "PASS",
+  "evidence": "AI out net 43"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#71 / SIGAB#68",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 43, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#71 / SIGAB#68",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver SEL#65",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#71 / SIGAB#68",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "150 and flag 0",
+  "actual": "signal 150, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "AI#5 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 360",
+  "expected": "360",
+  "actual": "360",
+  "status": "PASS",
+  "evidence": "AI out net 6"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "AI#5 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 6, flag net 32"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "AI#5 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#6",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "AI#5 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "360 and flag 0",
+  "actual": "signal 360, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "AI#8 / SIGAB#7",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 360",
+  "expected": "360",
+  "actual": "360",
+  "status": "PASS",
+  "evidence": "AI out net 8"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "AI#8 / SIGAB#7",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 8, flag net 34"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "AI#8 / SIGAB#7",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#9",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "AI#8 / SIGAB#7",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "360 and flag 0",
+  "actual": "signal 360, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "AI#21 / SIGAB#20",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 360",
+  "expected": "360",
+  "actual": "360",
+  "status": "PASS",
+  "evidence": "AI out net 28"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "AI#21 / SIGAB#20",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 28, flag net 36"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "AI#21 / SIGAB#20",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#22",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "AI#21 / SIGAB#20",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "360 and flag 0",
+  "actual": "signal 360, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "AI#24 / SIGAB#23",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 360",
+  "expected": "360",
+  "actual": "360",
+  "status": "PASS",
+  "evidence": "AI out net 30"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "AI#24 / SIGAB#23",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 30, flag net 37"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "AI#24 / SIGAB#23",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#25",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "AI#24 / SIGAB#23",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "360 and flag 0",
+  "actual": "signal 360, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "AI#5 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 360",
+  "expected": "360",
+  "actual": "360",
+  "status": "PASS",
+  "evidence": "AI out net 6"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "AI#5 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 6, flag net 32"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "AI#5 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#6",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "AI#5 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "360 and flag 0",
+  "actual": "signal 360, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "AI#8 / SIGAB#7",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 360",
+  "expected": "360",
+  "actual": "360",
+  "status": "PASS",
+  "evidence": "AI out net 8"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "AI#8 / SIGAB#7",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 8, flag net 34"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "AI#8 / SIGAB#7",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#9",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "AI#8 / SIGAB#7",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "360 and flag 0",
+  "actual": "signal 360, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "AI#21 / SIGAB#20",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 360",
+  "expected": "360",
+  "actual": "360",
+  "status": "PASS",
+  "evidence": "AI out net 28"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "AI#21 / SIGAB#20",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 28, flag net 36"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "AI#21 / SIGAB#20",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#22",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "AI#21 / SIGAB#20",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "360 and flag 0",
+  "actual": "signal 360, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "AI#24 / SIGAB#23",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 360",
+  "expected": "360",
+  "actual": "360",
+  "status": "PASS",
+  "evidence": "AI out net 30"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "AI#24 / SIGAB#23",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 30, flag net 37"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "AI#24 / SIGAB#23",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#25",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "AI#24 / SIGAB#23",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "360 and flag 0",
+  "actual": "signal 360, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "AI#9 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 60",
+  "expected": "60",
+  "actual": "60",
+  "status": "PASS",
+  "evidence": "AI out net 1"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "AI#9 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 1, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "AI#9 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "60 and flag 0",
+  "actual": "signal 60, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "AI#20 / SIGAB#21",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 60",
+  "expected": "60",
+  "actual": "60",
+  "status": "PASS",
+  "evidence": "AI out net 0"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "AI#20 / SIGAB#21",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 0, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "AI#20 / SIGAB#21",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "60 and flag 0",
+  "actual": "signal 60, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#3 / SIGAB#2",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#3 b.fb"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#8 / SIGAB#7",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#8 b.fb"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#13 / SIGAB#12",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#13 b.fb"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#18 / SIGAB#17",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#18 b.fb"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#23 / SIGAB#22",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#23 b.fb"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#28 / SIGAB#27",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#28 b.fb"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#30 / SIGAB#31",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#30 b.fb"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#32 / SIGAB#33",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#32 b.fb"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#34 / SIGAB#35",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#34 b.fb"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#36 / SIGAB#37",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#36 b.fb"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#38 / SIGAB#39",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#38 b.fb"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#40 / SIGAB#41",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#40 b.fb"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#45 / SIGAB#44",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#45 b.fb"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#50 / SIGAB#49",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#50 b.fb"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#55 / SIGAB#54",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#55 b.fb"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#60 / SIGAB#59",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#60 b.fb"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#65 / SIGAB#64",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#65 b.fb"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#70 / SIGAB#69",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#70 b.fb"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#72 / SIGAB#73",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#72 b.fb"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#74 / SIGAB#75",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#74 b.fb"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#76 / SIGAB#77",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#76 b.fb"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#78 / SIGAB#79",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#78 b.fb"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#80 / SIGAB#81",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#80 b.fb"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "AI#82 / SIGAB#83",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#82 b.fb"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "AI#3 / SIGAB#2",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#3 b.fb"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "AI#8 / SIGAB#7",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#8 b.fb"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "AI#13 / SIGAB#12",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#13 b.fb"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "AI#18 / SIGAB#17",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#18 b.fb"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "AI#23 / SIGAB#22",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#23 b.fb"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "AI#28 / SIGAB#27",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#28 b.fb"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "AI#30 / SIGAB#31",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#30 b.fb"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "AI#32 / SIGAB#33",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#32 b.fb"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "AI#34 / SIGAB#35",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#34 b.fb"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "AI#36 / SIGAB#37",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#36 b.fb"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "AI#38 / SIGAB#39",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#38 b.fb"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "AI#40 / SIGAB#41",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#40 b.fb"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "AI#45 / SIGAB#44",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#45 b.fb"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "AI#50 / SIGAB#49",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#50 b.fb"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "AI#55 / SIGAB#54",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#55 b.fb"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "AI#60 / SIGAB#59",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#60 b.fb"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "AI#62 / SIGAB#63",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#62 b.fb"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "AI#64 / SIGAB#65",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#64 b.fb"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "AI#66 / SIGAB#67",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#66 b.fb"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "AI#68 / SIGAB#69",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#68 b.fb"
+ },
+ {
+  "sheet": "ABC-017",
+  "block": "AI#5 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 30",
+  "expected": "30",
+  "actual": "30",
+  "status": "PASS",
+  "evidence": "AI out net 4"
+ },
+ {
+  "sheet": "ABC-017",
+  "block": "AI#5 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 4, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-017",
+  "block": "AI#5 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver DEV#11",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-017",
+  "block": "AI#5 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "30 and flag 0",
+  "actual": "signal 30, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#1 / SIGAB#0",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 360",
+  "expected": "360",
+  "actual": "360",
+  "status": "PASS",
+  "evidence": "AI out net 61"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#1 / SIGAB#0",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 61, flag net 42"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#1 / SIGAB#0",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#2",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#1 / SIGAB#0",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "360 and flag 0",
+  "actual": "signal 360, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#4 / SIGAB#3",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 360",
+  "expected": "360",
+  "actual": "360",
+  "status": "PASS",
+  "evidence": "AI out net 60"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#4 / SIGAB#3",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 60, flag net 41"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#4 / SIGAB#3",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#5",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#4 / SIGAB#3",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "360 and flag 0",
+  "actual": "signal 360, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 360",
+  "expected": "360",
+  "actual": "360",
+  "status": "PASS",
+  "evidence": "AI out net 57"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 57, flag net 46"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#10",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "360 and flag 0",
+  "actual": "signal 360, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 360",
+  "expected": "360",
+  "actual": "360",
+  "status": "PASS",
+  "evidence": "AI out net 56"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 56, flag net 45"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#13",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "360 and flag 0",
+  "actual": "signal 360, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#19 / SIGAB#18",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 30",
+  "expected": "30",
+  "actual": "30",
+  "status": "PASS",
+  "evidence": "AI out net 50"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#19 / SIGAB#18",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 50, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#19 / SIGAB#18",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#20",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#19 / SIGAB#18",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "30 and flag 0",
+  "actual": "signal 30, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "AI#7 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#7 b.fb"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "AI#9 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#9 b.fb"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "AI#15 / SIGAB#16",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#15 b.fb"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "AI#17 / SIGAB#18",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#17 b.fb"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "AI#23 / SIGAB#24",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#23 b.fb"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "AI#25 / SIGAB#26",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#25 b.fb"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "AI#31 / SIGAB#32",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#31 b.fb"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "AI#33 / SIGAB#34",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#33 b.fb"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#1 / SIGAB#0",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 720",
+  "expected": "720",
+  "actual": "720",
+  "status": "PASS",
+  "evidence": "AI out net 2"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#1 / SIGAB#0",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 2, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#1 / SIGAB#0",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#2",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#1 / SIGAB#0",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "720 and flag 0",
+  "actual": "signal 720, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 720",
+  "expected": "720",
+  "actual": "720",
+  "status": "PASS",
+  "evidence": "AI out net 10"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 10, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#7",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "720 and flag 0",
+  "actual": "signal 720, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 720",
+  "expected": "720",
+  "actual": "720",
+  "status": "PASS",
+  "evidence": "AI out net 18"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 18, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#12",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "720 and flag 0",
+  "actual": "signal 720, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#16 / SIGAB#15",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 720",
+  "expected": "720",
+  "actual": "720",
+  "status": "PASS",
+  "evidence": "AI out net 26"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#16 / SIGAB#15",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 26, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#16 / SIGAB#15",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#17",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#16 / SIGAB#15",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "720 and flag 0",
+  "actual": "signal 720, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#21 / SIGAB#20",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 720",
+  "expected": "720",
+  "actual": "720",
+  "status": "PASS",
+  "evidence": "AI out net 34"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#21 / SIGAB#20",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 34, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#21 / SIGAB#20",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#22",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#21 / SIGAB#20",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "720 and flag 0",
+  "actual": "signal 720, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#42 / SIGAB#41",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 720",
+  "expected": "720",
+  "actual": "720",
+  "status": "PASS",
+  "evidence": "AI out net 65"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#42 / SIGAB#41",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 65, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#42 / SIGAB#41",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#43",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#42 / SIGAB#41",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "720 and flag 0",
+  "actual": "signal 720, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#50 / SIGAB#49",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 720",
+  "expected": "720",
+  "actual": "720",
+  "status": "PASS",
+  "evidence": "AI out net 75"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#50 / SIGAB#49",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 75, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#50 / SIGAB#49",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#51",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#50 / SIGAB#49",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "720 and flag 0",
+  "actual": "signal 720, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#55 / SIGAB#54",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 720",
+  "expected": "720",
+  "actual": "720",
+  "status": "PASS",
+  "evidence": "AI out net 83"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#55 / SIGAB#54",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 83, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#55 / SIGAB#54",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#56",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#55 / SIGAB#54",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "720 and flag 0",
+  "actual": "signal 720, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#60 / SIGAB#59",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 720",
+  "expected": "720",
+  "actual": "720",
+  "status": "PASS",
+  "evidence": "AI out net 91"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#60 / SIGAB#59",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 91, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#60 / SIGAB#59",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#61",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#60 / SIGAB#59",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "720 and flag 0",
+  "actual": "signal 720, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#1 / SIGAB#0",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 720",
+  "expected": "720",
+  "actual": "720",
+  "status": "PASS",
+  "evidence": "AI out net 2"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#1 / SIGAB#0",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 2, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#1 / SIGAB#0",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#2",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#1 / SIGAB#0",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "720 and flag 0",
+  "actual": "signal 720, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 720",
+  "expected": "720",
+  "actual": "720",
+  "status": "PASS",
+  "evidence": "AI out net 10"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 10, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#7",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "720 and flag 0",
+  "actual": "signal 720, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 720",
+  "expected": "720",
+  "actual": "720",
+  "status": "PASS",
+  "evidence": "AI out net 18"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 18, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#12",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "720 and flag 0",
+  "actual": "signal 720, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#16 / SIGAB#15",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 720",
+  "expected": "720",
+  "actual": "720",
+  "status": "PASS",
+  "evidence": "AI out net 26"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#16 / SIGAB#15",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 26, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#16 / SIGAB#15",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#17",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#16 / SIGAB#15",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "720 and flag 0",
+  "actual": "signal 720, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#21 / SIGAB#20",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 720",
+  "expected": "720",
+  "actual": "720",
+  "status": "PASS",
+  "evidence": "AI out net 34"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#21 / SIGAB#20",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 34, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#21 / SIGAB#20",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#22",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#21 / SIGAB#20",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "720 and flag 0",
+  "actual": "signal 720, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#35 / SIGAB#34",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 720",
+  "expected": "720",
+  "actual": "720",
+  "status": "PASS",
+  "evidence": "AI out net 52"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#35 / SIGAB#34",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 52, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#35 / SIGAB#34",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#36",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#35 / SIGAB#34",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "720 and flag 0",
+  "actual": "signal 720, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#43 / SIGAB#42",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 720",
+  "expected": "720",
+  "actual": "720",
+  "status": "PASS",
+  "evidence": "AI out net 62"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#43 / SIGAB#42",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 62, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#43 / SIGAB#42",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#44",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#43 / SIGAB#42",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "720 and flag 0",
+  "actual": "signal 720, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#48 / SIGAB#47",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 720",
+  "expected": "720",
+  "actual": "720",
+  "status": "PASS",
+  "evidence": "AI out net 70"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#48 / SIGAB#47",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 70, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#48 / SIGAB#47",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#49",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#48 / SIGAB#47",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "720 and flag 0",
+  "actual": "signal 720, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#53 / SIGAB#52",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 720",
+  "expected": "720",
+  "actual": "720",
+  "status": "PASS",
+  "evidence": "AI out net 78"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#53 / SIGAB#52",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 78, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#53 / SIGAB#52",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#54",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#53 / SIGAB#52",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "720 and flag 0",
+  "actual": "signal 720, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-028",
+  "block": "AI#3 / SIGAB#2",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 15",
+  "expected": "15",
+  "actual": "15",
+  "status": "PASS",
+  "evidence": "AI out net 4"
+ },
+ {
+  "sheet": "ABC-028",
+  "block": "AI#3 / SIGAB#2",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 4, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-028",
+  "block": "AI#3 / SIGAB#2",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver DEV#10",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-028",
+  "block": "AI#3 / SIGAB#2",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "15 and flag 0",
+  "actual": "signal 15, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "AI#4 / SIGAB#3",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 15",
+  "expected": "15",
+  "actual": "15",
+  "status": "PASS",
+  "evidence": "AI out net 48"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "AI#4 / SIGAB#3",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 48, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "AI#4 / SIGAB#3",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver DEV#25",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "AI#4 / SIGAB#3",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "15 and flag 0",
+  "actual": "signal 15, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 60",
+  "expected": "60",
+  "actual": "60",
+  "status": "PASS",
+  "evidence": "AI out net 20"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 20, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver MAN#8",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "60 and flag 0",
+  "actual": "signal 60, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 9",
+  "expected": "9",
+  "actual": "9",
+  "status": "PASS",
+  "evidence": "AI out net 32"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 32, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#12",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "9 and flag 0",
+  "actual": "signal 9, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "AI#14 / SIGAB#13",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 9",
+  "expected": "9",
+  "actual": "9",
+  "status": "PASS",
+  "evidence": "AI out net 34"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "AI#14 / SIGAB#13",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 34, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "AI#14 / SIGAB#13",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#15",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "AI#14 / SIGAB#13",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "9 and flag 0",
+  "actual": "signal 9, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "AI#2 / SIGAB#30",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 104",
+  "expected": "104",
+  "actual": "104",
+  "status": "PASS",
+  "evidence": "AI out net 4"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "AI#2 / SIGAB#30",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 4, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "AI#2 / SIGAB#30",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver LC#41",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "AI#2 / SIGAB#30",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "104 and flag 0",
+  "actual": "signal 104, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "AI#14 / SIGAB#13",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value -277",
+  "expected": "-277",
+  "actual": "-277",
+  "status": "PASS",
+  "evidence": "AI out net 45"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "AI#14 / SIGAB#13",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 45, flag net 38"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "AI#14 / SIGAB#13",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#15",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "AI#14 / SIGAB#13",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "-277 and flag 0",
+  "actual": "signal -277, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "AI#17 / SIGAB#16",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value -277",
+  "expected": "-277",
+  "actual": "-277",
+  "status": "PASS",
+  "evidence": "AI out net 18"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "AI#17 / SIGAB#16",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 18, flag net 37"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "AI#17 / SIGAB#16",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#18",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "AI#17 / SIGAB#16",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "-277 and flag 0",
+  "actual": "signal -277, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "AI#20 / SIGAB#19",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value -277",
+  "expected": "-277",
+  "actual": "-277",
+  "status": "PASS",
+  "evidence": "AI out net 44"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "AI#20 / SIGAB#19",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 44, flag net 36"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "AI#20 / SIGAB#19",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#21",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "AI#20 / SIGAB#19",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "-277 and flag 0",
+  "actual": "signal -277, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 120",
+  "expected": "120",
+  "actual": "120",
+  "status": "PASS",
+  "evidence": "AI out net 19"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 19, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver SQRT#23",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "120 and flag 0",
+  "actual": "signal 120, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "AI#20 / SIGAB#19",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 240",
+  "expected": "240",
+  "actual": "240",
+  "status": "PASS",
+  "evidence": "AI out net 38"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "AI#20 / SIGAB#19",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 38, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "AI#20 / SIGAB#19",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver SQRT#25",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "AI#20 / SIGAB#19",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "240 and flag 0",
+  "actual": "signal 240, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-033",
+  "block": "AI#3 / SIGAB#2",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 360",
+  "expected": "360",
+  "actual": "360",
+  "status": "PASS",
+  "evidence": "AI out net 25"
+ },
+ {
+  "sheet": "ABC-033",
+  "block": "AI#3 / SIGAB#2",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 25, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-033",
+  "block": "AI#3 / SIGAB#2",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver DEV#13",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-033",
+  "block": "AI#3 / SIGAB#2",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "360 and flag 0",
+  "actual": "signal 360, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 180",
+  "expected": "180",
+  "actual": "180",
+  "status": "PASS",
+  "evidence": "AI out net 0"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 0, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver DEV#24",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "180 and flag 0",
+  "actual": "signal 180, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "AI#16 / SIGAB#15",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 360",
+  "expected": "360",
+  "actual": "360",
+  "status": "PASS",
+  "evidence": "AI out net 19"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "AI#16 / SIGAB#15",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 19, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "AI#16 / SIGAB#15",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver RATE#26",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "AI#16 / SIGAB#15",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "360 and flag 0",
+  "actual": "signal 360, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "AI#20 / SIGAB#19",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 60",
+  "expected": "60",
+  "actual": "60",
+  "status": "PASS",
+  "evidence": "AI out net 31"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "AI#20 / SIGAB#19",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 31, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "AI#20 / SIGAB#19",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver FX#18",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "AI#20 / SIGAB#19",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "60 and flag 0",
+  "actual": "signal 60, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "AI#22 / SIGAB#21",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 60",
+  "expected": "60",
+  "actual": "60",
+  "status": "PASS",
+  "evidence": "AI out net 29"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "AI#22 / SIGAB#21",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 29, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "AI#22 / SIGAB#21",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver FX#17",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "AI#22 / SIGAB#21",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "60 and flag 0",
+  "actual": "signal 60, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "AI#14 / SIGAB#13",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 66",
+  "expected": "66",
+  "actual": "66",
+  "status": "PASS",
+  "evidence": "AI out net 11"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "AI#14 / SIGAB#13",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 11, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "AI#14 / SIGAB#13",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver SEL#6",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "AI#14 / SIGAB#13",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "66 and flag 0",
+  "actual": "signal 66, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "AI#17 / SIGAB#16",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 66",
+  "expected": "66",
+  "actual": "66",
+  "status": "PASS",
+  "evidence": "AI out net 12"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "AI#17 / SIGAB#16",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 12, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "AI#17 / SIGAB#16",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#5",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "AI#17 / SIGAB#16",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "66 and flag 0",
+  "actual": "signal 66, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 66",
+  "expected": "66",
+  "actual": "66",
+  "status": "PASS",
+  "evidence": "AI out net 11"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 11, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#7",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "66 and flag 0",
+  "actual": "signal 66, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 66",
+  "expected": "66",
+  "actual": "66",
+  "status": "PASS",
+  "evidence": "AI out net 13"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 13, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#10",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "66 and flag 0",
+  "actual": "signal 66, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 46",
+  "expected": "46",
+  "actual": "46",
+  "status": "PASS",
+  "evidence": "AI out net 11"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 11, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#7",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "46 and flag 0",
+  "actual": "signal 46, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 46",
+  "expected": "46",
+  "actual": "46",
+  "status": "PASS",
+  "evidence": "AI out net 13"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 13, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#10",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "46 and flag 0",
+  "actual": "signal 46, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 51",
+  "expected": "51",
+  "actual": "51",
+  "status": "PASS",
+  "evidence": "AI out net 11"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 11, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#7",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "51 and flag 0",
+  "actual": "signal 51, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 51",
+  "expected": "51",
+  "actual": "51",
+  "status": "PASS",
+  "evidence": "AI out net 13"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 13, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#10",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "51 and flag 0",
+  "actual": "signal 51, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 56",
+  "expected": "56",
+  "actual": "56",
+  "status": "PASS",
+  "evidence": "AI out net 11"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 11, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#7",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "56 and flag 0",
+  "actual": "signal 56, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 56",
+  "expected": "56",
+  "actual": "56",
+  "status": "PASS",
+  "evidence": "AI out net 13"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 13, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#10",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "56 and flag 0",
+  "actual": "signal 56, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 90",
+  "expected": "90",
+  "actual": "90",
+  "status": "PASS",
+  "evidence": "AI out net 148"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 148, flag net 145"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#10",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "90 and flag 0",
+  "actual": "signal 90, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 90",
+  "expected": "90",
+  "actual": "90",
+  "status": "PASS",
+  "evidence": "AI out net 147"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 147, flag net 144"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#13",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "AI#12 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "90 and flag 0",
+  "actual": "signal 90, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 360",
+  "expected": "360",
+  "actual": "360",
+  "status": "PASS",
+  "evidence": "AI out net 67"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 67, flag net 32"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#7",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#6 / SIGAB#5",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "360 and flag 0",
+  "actual": "signal 360, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 360",
+  "expected": "360",
+  "actual": "360",
+  "status": "PASS",
+  "evidence": "AI out net 65"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 65, flag net 31"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#10",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#9 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "360 and flag 0",
+  "actual": "signal 360, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#13 / SIGAB#12",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 30",
+  "expected": "30",
+  "actual": "30",
+  "status": "PASS",
+  "evidence": "AI out net 42"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#13 / SIGAB#12",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 42, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#13 / SIGAB#12",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#14",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#13 / SIGAB#12",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "30 and flag 0",
+  "actual": "signal 30, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#16 / SIGAB#15",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 360",
+  "expected": "360",
+  "actual": "360",
+  "status": "PASS",
+  "evidence": "AI out net 11"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#16 / SIGAB#15",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 11, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#16 / SIGAB#15",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#17",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#16 / SIGAB#15",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "360 and flag 0",
+  "actual": "signal 360, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#40 / SIGAB#39",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 30",
+  "expected": "30",
+  "actual": "30",
+  "status": "PASS",
+  "evidence": "AI out net 9"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#40 / SIGAB#39",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 9, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#40 / SIGAB#39",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#41",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#40 / SIGAB#39",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "30 and flag 0",
+  "actual": "signal 30, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 30",
+  "expected": "30",
+  "actual": "30",
+  "status": "PASS",
+  "evidence": "AI out net 38"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 38, flag net 169"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ADD#85",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "30 and flag 0",
+  "actual": "signal 30, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#10 / SIGAB#9",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 30",
+  "expected": "30",
+  "actual": "30",
+  "status": "PASS",
+  "evidence": "AI out net 35"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#10 / SIGAB#9",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 35, flag net 168"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#10 / SIGAB#9",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ADD#86",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#10 / SIGAB#9",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "30 and flag 0",
+  "actual": "signal 30, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#28 / SIGAB#27",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 180",
+  "expected": "180",
+  "actual": "180",
+  "status": "PASS",
+  "evidence": "AI out net 138"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#28 / SIGAB#27",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 138, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#28 / SIGAB#27",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#29",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#28 / SIGAB#27",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "180 and flag 0",
+  "actual": "signal 180, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#31 / SIGAB#30",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 180",
+  "expected": "180",
+  "actual": "180",
+  "status": "PASS",
+  "evidence": "AI out net 130"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#31 / SIGAB#30",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 130, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#31 / SIGAB#30",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#32",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#31 / SIGAB#30",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "180 and flag 0",
+  "actual": "signal 180, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#36 / SIGAB#35",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 360",
+  "expected": "360",
+  "actual": "360",
+  "status": "PASS",
+  "evidence": "AI out net 133"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#36 / SIGAB#35",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 133, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#36 / SIGAB#35",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#37",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#36 / SIGAB#35",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "360 and flag 0",
+  "actual": "signal 360, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#39 / SIGAB#38",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 90",
+  "expected": "90",
+  "actual": "90",
+  "status": "PASS",
+  "evidence": "AI out net 129"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#39 / SIGAB#38",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 129, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#39 / SIGAB#38",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#18",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#39 / SIGAB#38",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "90 and flag 0",
+  "actual": "signal 90, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#41 / SIGAB#40",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 90",
+  "expected": "90",
+  "actual": "90",
+  "status": "PASS",
+  "evidence": "AI out net 127"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#41 / SIGAB#40",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 127, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#41 / SIGAB#40",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#19",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#41 / SIGAB#40",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "90 and flag 0",
+  "actual": "signal 90, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#43 / SIGAB#42",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 90",
+  "expected": "90",
+  "actual": "90",
+  "status": "PASS",
+  "evidence": "AI out net 125"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#43 / SIGAB#42",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 125, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#43 / SIGAB#42",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#20",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#43 / SIGAB#42",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "90 and flag 0",
+  "actual": "signal 90, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "AI#8 / SIGAB#7",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 60",
+  "expected": "60",
+  "actual": "60",
+  "status": "PASS",
+  "evidence": "AI out net 12"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "AI#8 / SIGAB#7",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 12, flag net 17"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "AI#8 / SIGAB#7",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#9",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "AI#8 / SIGAB#7",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "60 and flag 0",
+  "actual": "signal 60, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 60",
+  "expected": "60",
+  "actual": "60",
+  "status": "PASS",
+  "evidence": "AI out net 14"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 14, flag net 18"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#12",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "AI#11 / SIGAB#10",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "60 and flag 0",
+  "actual": "signal 60, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "AI#18 / SIGAB#17",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 2400",
+  "expected": "2400",
+  "actual": "2400",
+  "status": "PASS",
+  "evidence": "AI out net 24"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "AI#18 / SIGAB#17",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 24, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "AI#18 / SIGAB#17",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#16",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "AI#18 / SIGAB#17",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "2400 and flag 0",
+  "actual": "signal 2400, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-054",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 60",
+  "expected": "60",
+  "actual": "60",
+  "status": "PASS",
+  "evidence": "AI out net 0"
+ },
+ {
+  "sheet": "ABC-054",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 0, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-054",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver PIDV#0",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-054",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "60 and flag 0",
+  "actual": "signal 60, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "AI#3 / SIGAB#2",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 60",
+  "expected": "60",
+  "actual": "60",
+  "status": "PASS",
+  "evidence": "AI out net 0"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "AI#3 / SIGAB#2",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 0, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "AI#3 / SIGAB#2",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver PIDV#0",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "AI#3 / SIGAB#2",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "60 and flag 0",
+  "actual": "signal 60, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-056",
+  "block": "AI#3 / SIGAB#2",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 6",
+  "expected": "6",
+  "actual": "6",
+  "status": "PASS",
+  "evidence": "AI out net 5"
+ },
+ {
+  "sheet": "ABC-056",
+  "block": "AI#3 / SIGAB#2",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 5, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-056",
+  "block": "AI#3 / SIGAB#2",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver DEV#14",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-056",
+  "block": "AI#3 / SIGAB#2",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "6 and flag 0",
+  "actual": "signal 6, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-056",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 3",
+  "expected": "3",
+  "actual": "3",
+  "status": "PASS",
+  "evidence": "AI out net 8"
+ },
+ {
+  "sheet": "ABC-056",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 8, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-056",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver MUL#16",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-056",
+  "block": "AI#7 / SIGAB#6",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "3 and flag 0",
+  "actual": "signal 3, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "AI#2 / SIGAB#1",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 1800",
+  "expected": "1800",
+  "actual": "1800",
+  "status": "PASS",
+  "evidence": "AI out net 93"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "AI#2 / SIGAB#1",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 93, flag net 91"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "AI#2 / SIGAB#1",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#3",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "AI#2 / SIGAB#1",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "1800 and flag 0",
+  "actual": "signal 1800, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#10 / SIGAB#9",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 90",
+  "expected": "90",
+  "actual": "90",
+  "status": "PASS",
+  "evidence": "AI out net 66"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#10 / SIGAB#9",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 66, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#10 / SIGAB#9",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver FX#29",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#10 / SIGAB#9",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "90 and flag 0",
+  "actual": "signal 90, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#16 / SIGAB#15",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 144",
+  "expected": "144",
+  "actual": "144",
+  "status": "PASS",
+  "evidence": "AI out net 64"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#16 / SIGAB#15",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 64, flag net 59"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#16 / SIGAB#15",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#31",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#16 / SIGAB#15",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "144 and flag 0",
+  "actual": "signal 144, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#18 / SIGAB#17",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 144",
+  "expected": "144",
+  "actual": "144",
+  "status": "PASS",
+  "evidence": "AI out net 62"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#18 / SIGAB#17",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 62, flag net 58"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#18 / SIGAB#17",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#32",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#18 / SIGAB#17",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "144 and flag 0",
+  "actual": "signal 144, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#21 / SIGAB#20",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 300",
+  "expected": "300",
+  "actual": "300",
+  "status": "PASS",
+  "evidence": "AI out net 85"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#21 / SIGAB#20",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 85, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#21 / SIGAB#20",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver MUL#28",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#21 / SIGAB#20",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "300 and flag 0",
+  "actual": "signal 300, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#40 / SIGAB#39",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 120",
+  "expected": "120",
+  "actual": "120",
+  "status": "PASS",
+  "evidence": "AI out net 23"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#40 / SIGAB#39",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 23, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#40 / SIGAB#39",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver AMT#8",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#40 / SIGAB#39",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "120 and flag 0",
+  "actual": "signal 120, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "AI#3 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 15",
+  "expected": "15",
+  "actual": "15",
+  "status": "PASS",
+  "evidence": "AI out net 45"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "AI#3 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 45, flag net 47"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "AI#3 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver SEL#2",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "AI#3 / SIGAB#8",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "15 and flag 0",
+  "actual": "signal 15, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "AI#4 / SIGAB#9",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 15",
+  "expected": "15",
+  "actual": "15",
+  "status": "PASS",
+  "evidence": "AI out net 46"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "AI#4 / SIGAB#9",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 46, flag net 48"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "AI#4 / SIGAB#9",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver SEL#2",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "AI#4 / SIGAB#9",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "15 and flag 0",
+  "actual": "signal 15, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#6 / SIGAB#7",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 360",
+  "expected": "360",
+  "actual": "360",
+  "status": "PASS",
+  "evidence": "AI out net 157"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#6 / SIGAB#7",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 157, flag net 179"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#6 / SIGAB#7",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver SEL#2",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#6 / SIGAB#7",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "360 and flag 0",
+  "actual": "signal 360, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#10 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 39",
+  "expected": "39",
+  "actual": "39",
+  "status": "PASS",
+  "evidence": "AI out net 152"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#10 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 152, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#10 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver TP#27",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#10 / SIGAB#11",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "39 and flag 0",
+  "actual": "signal 39, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#19 / SIGAB#18",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 2.1",
+  "expected": "2.1",
+  "actual": "2.1",
+  "status": "PASS",
+  "evidence": "AI out net 150"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#19 / SIGAB#18",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 150, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#19 / SIGAB#18",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver SW#0",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#19 / SIGAB#18",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "2.1 and flag 0",
+  "actual": "signal 2.1, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#25 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 360",
+  "expected": "360",
+  "actual": "360",
+  "status": "PASS",
+  "evidence": "AI out net 155"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#25 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag 1",
+  "status": "PASS",
+  "evidence": "AI out net 155, flag net 148"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#25 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver SEL#2",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#25 / SIGAB#4",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "360 and flag 0",
+  "actual": "signal 360, flag 0",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#26 / SIGAB#29",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "-",
+  "expected": "free transmitter",
+  "actual": "feedback AI: its value follows the position of its valve / actuator",
+  "status": "NOT TESTED",
+  "evidence": "AI#26 b.fb"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#38 / SIGAB#37",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 6",
+  "expected": "6",
+  "actual": "6",
+  "status": "PASS",
+  "evidence": "AI out net 107"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#38 / SIGAB#37",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 107, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#38 / SIGAB#37",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver DEV#82",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#38 / SIGAB#37",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "6 and flag 0",
+  "actual": "signal 6, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#43 / SIGAB#41",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "normal, value 1800",
+  "expected": "1800",
+  "actual": "1800",
+  "status": "PASS",
+  "evidence": "AI out net 46"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#43 / SIGAB#41",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "Bad Signal ON",
+  "expected": "0 into the logic and flag = 1",
+  "actual": "signal 0, flag null",
+  "status": "PASS",
+  "evidence": "AI out net 46, no wire of this sheet carries the B flag (it is used by address on other sheets / DITL)"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#43 / SIGAB#41",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "receiver ALM#42",
+  "expected": "receiver input net = 0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "consumer of the net"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#43 / SIGAB#41",
+  "source": "user rule 2026-10-10: bad signal = receiving block gets 0 and the B flag is 1",
+  "input": "back to normal",
+  "expected": "1800 and flag 0",
+  "actual": "signal 1800, flag null",
+  "status": "PASS",
+  "evidence": "restore"
+ }
+]

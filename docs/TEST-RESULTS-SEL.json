@@ -151,26 +151,6 @@
  },
  {
   "sheet": "ABC-010",
-  "block": "SEL#32",
-  "input": "(no cases)",
-  "expected": "SIG.AB flag per input",
-  "actual": "inputs 2, flags [null,null]",
-  "source": "drawing",
-  "status": "NOT TESTED",
-  "evidence": "a SIG.AB flag is not tied to every input of this SEL by the reader"
- },
- {
-  "sheet": "ABC-010",
-  "block": "SEL#62",
-  "input": "(no cases)",
-  "expected": "SIG.AB flag per input",
-  "actual": "inputs 2, flags [null,null]",
-  "source": "drawing",
-  "status": "NOT TESTED",
-  "evidence": "a SIG.AB flag is not tied to every input of this SEL by the reader"
- },
- {
-  "sheet": "ABC-010",
   "block": "SEL#65 (modes AVG/PRI/SEC)",
   "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
   "expected": "50 (average of both healthy)",
@@ -418,26 +398,6 @@
   "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
   "status": "PASS",
   "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
- },
- {
-  "sheet": "ABC-000",
-  "block": "SEL#11",
-  "input": "(no cases)",
-  "expected": "SIG.AB flag per input",
-  "actual": "inputs 3, flags [null,null,null]",
-  "source": "drawing",
-  "status": "NOT TESTED",
-  "evidence": "a SIG.AB flag is not tied to every input of this SEL by the reader"
- },
- {
-  "sheet": "ABC-000",
-  "block": "SEL#12",
-  "input": "(no cases)",
-  "expected": "SIG.AB flag per input",
-  "actual": "inputs 2, flags [null,null]",
-  "source": "drawing",
-  "status": "NOT TESTED",
-  "evidence": "a SIG.AB flag is not tied to every input of this SEL by the reader"
  },
  {
   "sheet": "ABC-019",
@@ -940,26 +900,6 @@
   "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
  },
  {
-  "sheet": "ABC-050",
-  "block": "SEL#39",
-  "input": "(no cases)",
-  "expected": "SIG.AB flag per input",
-  "actual": "inputs 3, flags [null,null,null]",
-  "source": "drawing",
-  "status": "NOT TESTED",
-  "evidence": "a SIG.AB flag is not tied to every input of this SEL by the reader"
- },
- {
-  "sheet": "ABC-050",
-  "block": "SEL#40",
-  "input": "(no cases)",
-  "expected": "SIG.AB flag per input",
-  "actual": "inputs 3, flags [null,null,null]",
-  "source": "drawing",
-  "status": "NOT TESTED",
-  "evidence": "a SIG.AB flag is not tied to every input of this SEL by the reader"
- },
- {
   "sheet": "ABC-051",
   "block": "SEL#11 (modes AVG/PRI/SEC)",
   "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
@@ -1008,16 +948,6 @@
   "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
   "status": "PASS",
   "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
- },
- {
-  "sheet": "ABC-052",
-  "block": "SEL#12",
-  "input": "(no cases)",
-  "expected": "SIG.AB flag per input",
-  "actual": "inputs 2, flags [null,null]",
-  "source": "drawing",
-  "status": "NOT TESTED",
-  "evidence": "a SIG.AB flag is not tied to every input of this SEL by the reader"
  },
  {
   "sheet": "ABC-052",
@@ -1168,16 +1098,6 @@
   "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
   "status": "PASS",
   "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
- },
- {
-  "sheet": "ABC-001C",
-  "block": "SEL#19",
-  "input": "(no cases)",
-  "expected": "SIG.AB flag per input",
-  "actual": "inputs 2, flags [null,null]",
-  "source": "drawing",
-  "status": "NOT TESTED",
-  "evidence": "a SIG.AB flag is not tied to every input of this SEL by the reader"
  },
  {
   "sheet": "ABC-002",

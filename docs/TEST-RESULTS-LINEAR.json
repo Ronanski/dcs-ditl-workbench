@@ -2672,22 +2672,22 @@
  {
   "sheet": "ABC-010",
   "block": "table S1-LN38",
-  "input": "-",
-  "expected": "table in LINEAR.xls",
-  "actual": "not in the file",
-  "source": "Drum Level Calculation.xls",
-  "status": "NEEDS REVIEW",
-  "evidence": "embedded from another reference file (Drum Level Calculation.xls)"
+  "input": "X/Y points (16) vs the DCS pattern screenshot",
+  "expected": "[(-50.0, 100.0), (0.0, 100.0)] ...",
+  "actual": "[(-50, 100), (0, 100)] ...",
+  "source": "data/reference/DCS-Ptrn038-039-from-screenshot.json (user screenshots of the DCS station, LX / LY in % of the range)",
+  "status": "PASS",
+  "evidence": "16 points, X = LX % of 0~250 kg/cm2, Y = LY % of the Y range"
  },
  {
   "sheet": "ABC-010",
   "block": "table S1-LN39",
-  "input": "-",
-  "expected": "table in LINEAR.xls",
-  "actual": "not in the file",
-  "source": "Drum Level Calculation.xls",
-  "status": "NEEDS REVIEW",
-  "evidence": "embedded from another reference file (Drum Level Calculation.xls)"
+  "input": "X/Y points (16) vs the DCS pattern screenshot",
+  "expected": "[(-50.0, 1.0), (0.0, 1.0)] ...",
+  "actual": "[(-50, 1), (0, 1)] ...",
+  "source": "data/reference/DCS-Ptrn038-039-from-screenshot.json (user screenshots of the DCS station, LX / LY in % of the range)",
+  "status": "PASS",
+  "evidence": "16 points, X = LX % of 0~250 kg/cm2, Y = LY % of the Y range"
  },
  {
   "sheet": "ABC-003B",
@@ -2903,21 +2903,21 @@
   "sheet": "ABC-010",
   "block": "FX#18 LN38",
   "input": "table used = S1-LN38",
-  "expected": "table whose drawing number is this sheet (xls DWG No. None)",
+  "expected": "the DCS pattern of this sheet",
   "actual": "S1-LN38",
-  "source": "LINEAR.xls",
-  "status": "NEEDS REVIEW",
-  "evidence": "drawing number of the xls table vs sheet of the FX block"
+  "source": "DCS screenshot",
+  "status": "PASS",
+  "evidence": "station 1 pattern 038 / 039 of ABC-010"
  },
  {
   "sheet": "ABC-010",
   "block": "FX#19 LN39",
   "input": "table used = S1-LN39",
-  "expected": "table whose drawing number is this sheet (xls DWG No. None)",
+  "expected": "the DCS pattern of this sheet",
   "actual": "S1-LN39",
-  "source": "LINEAR.xls",
-  "status": "NEEDS REVIEW",
-  "evidence": "drawing number of the xls table vs sheet of the FX block"
+  "source": "DCS screenshot",
+  "status": "PASS",
+  "evidence": "station 1 pattern 038 / 039 of ABC-010"
  },
  {
   "sheet": "ABC-010",

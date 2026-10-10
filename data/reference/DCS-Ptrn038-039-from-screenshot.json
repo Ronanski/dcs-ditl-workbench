@@ -1,0 +1,4 @@
+{"source":"user screenshots 2026-10-10 of DCS Engr Station 'Linearize Line Pattern Definition' + 'Data Set', FCS2000EI station 101 (files DCS-Ptrn038-screenshot.png, DCS-Ptrn039-screenshot.png). X / Y are in % of the range (X range 0 ~ 250 kg/cm2, Y range 0 ~ 100 %). Transcribed by Claude from the images.",
+"LX":[-20.00,0.00,7.60,11.60,15.60,19.60,23.60,27.60,31.60,35.60,39.60,43.60,47.60,51.60,55.60,87.60],
+"Ptrn038_LY":[100.00,100.00,99.12,98.66,98.18,97.69,97.17,96.64,96.08,95.48,94.85,94.18,93.47,92.69,91.85,77.15],
+"Ptrn039_LY":[100.00,100.00,87.76,84.37,81.42,78.72,76.16,73.70,71.29,68.90,66.51,64.10,61.64,59.11,56.48,19.76]}

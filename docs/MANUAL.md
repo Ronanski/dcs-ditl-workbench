@@ -193,3 +193,13 @@ Not (yet): the real plant response (there is no plant model: you set the PV your
 - **RATE / ramp written in %:** the % rate is converted to engineering units with the span of the signal (the drawn range of the controller the ramp feeds, or the instrument range upstream). Example: ABC-032 "1% / sec" on the 0 ~ 200 T/H flow = 2 T/H per second. A rate written in engineering units (T / Sec, "2.7T / HR", kg/cm2 / min) is used as written. When no span can be found the block keeps the old behaviour and is NEEDS REVIEW.
 - **ABC-002 minimum air flow:** select the "32 % MIN. AIR FLOW" constant: the panel shows the editable **Minimum air flow setting (T/H)** (default 400 T/H), the original drawing constant (32 %) for comparison, and the conversion factor % per T/H (default 0.08 = 32 % / 400 T/H, NEEDS REVIEW). "Back to the drawing value" restores 400 T/H = 32 %.
 - **Bad Signal (SIG.AB), simulation only:** OFF by default. In the panel (group "Bad Signal (SIG.AB)") or in the transmitter's own panel, press the button to force the transmitter **FORCED BAD**; the diagram shows a red FORCED BAD mark above the transmitter. Press again to restore normal. The drawn logic reacts (average-select, T switches, comparators). A zero reading is never bad by itself. Nothing is written to any DCS.
+
+## 7. v1.20.9 additions (what changed for the user)
+- **Values:** the AI / SI address shows the value; no value beside the ALM or beside the instrument tag of a transmitter. A forced (typed) value shows everywhere it belongs.
+- **Wire values** (button, default ON): a small number on every analog wire that has no address. Off = numbers only beside addresses.
+- **Review marks** (button, default ON): amber dashed boxes where the result is not verified: `?` unknown shape, `pin?` missing pin, `no table` F(X) without a table, `span?` RATE / ramp without a found span.
+- **Range:** a value you type (FORCE box, field input) is limited to the range written on the drawing; a message tells you. A wire without a written range is not limited.
+- **SELECT CIRCUIT:** the wires from the SIG.AB junctions are drawn as analog (lit); grey only when that transmitter is FORCED BAD.
+- **Reset:** the Reset button clears values, forces, switches and timers but keeps the settings of the blocks (rate, stroke time, tuning, limits). Each block panel has **Reset this block to default**.
+- **ABC-002 minimum air flow:** the setting in T/H (default 400) is the signal into the HIGH selector. The drawing constant (32 %) is shown for comparison only.
+- **Bad Signal pairing** is by wire connection (the transmitter whose wire the SIG.AB box is attached to).
