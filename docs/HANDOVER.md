@@ -1,49 +1,47 @@
-# HANDOVER — continue in a new chat session
+# HANDOVER - isang connect sa repo, alam na ang gagawin (huling update: v1.20.8, 2026-10-10)
 
-## Prompt to paste into the new session (attach nothing unless the user has new files)
+## 0. Paste-in prompt para sa bagong session
 ```
-Ituloy natin ang proyekto: Logic Sim (simulator ng DCS logic drawings) sa repo ronanski/dcs-ditl-workbench, branch claude/trusting-goodall-313vmr.
-
-BASAHIN MUNA, sa ganitong ayos, bago gumawa ng kahit ano:
-1. README.md
-2. DESIGN.md  (mga rules na HINDI nababago + checklist ng bawat build, §3)
-2b. docs/FUNCTIONALITY.md (ANO ang dapat gawin ng bawat symbol - ito ang batas), docs/LINKING.md (page links), docs/FINDINGS.md (mga nahanap na mali + paano i-check), docs/DATA-FILES.md (mga file na binigay ng user at saan ginagamit - wag nang hingin ulit), docs/ASSUMED-VALUES.md (LAHAT ng numerong wala sa drawing: galing sa file o assumed), docs/REPORT-v1.15.0.md (buong report: findings, ginawa, as-left)
-3. PROJECT-NOTES-v1.20.8.md  (ang pinakabagong entry sa taas; ito rin ang changelog)
-4. docs/HANDOVER.md  (estado + bukas na items + mga pangako sa user)
-5. docs/BACKLOG.md  (ang "Logic scan" sections sa dulo = ang kasalukuyang trabaho)
-
-RULES NG USER (huwag kalimutan):
-- Ako ay automation engineer (hindi coder): Taglish, simple, tapat, engineer-style. Sabihin kung ano ang na-TEST at ano ang HINDI.
-- WALANG build / release / push ng bagong version hangga't wala akong "go". Mag-commit/push ng WIP sa branch ay ok (walang PR). Ang build = patch script -> logic-sim-vX.Y.Z.html sa root (isa lang ang html sa root), guard IDENTICAL, tests, notes + manual + PDF, archive ng lumang html, push (GitHub Actions ang gumagawa ng exe + apk + Release), SendUserFile ang html. Exe/apk: ako na ang magte-test; html lang ang ipadala.
-- DITL page: HUWAG galawin. Guard: node tools/guard-ditl.js baseline/ditl-workbench-v1.0.0.html <html>  -> dapat IDENTICAL.
-- Kapag may drawing na pinag-uusapan: TINGNAN mo ang drawing (node tools/shot-region.js <html> ABC-xxx cx cy width out.png, tapos Read ang png) at itunton ang wiring; huwag manghula. Ang user ay nagbabasa ng diagram at hindi gusto ng mga tanong na masasagot mo sa pagbasa.
-- Ang comparators (HC/LC) ay may range at gumagana (test-comparators 238/238): huwag isiping sira ang "stuck" na galing lang sa random na test.
-- ABC-052 AND #112: huwag pansinin. ABC-002 #32 ratio = SCALE CONVERT (a / b as written).
-
-KASALUKUYANG ESTADO (v1.14.3, released): modes VIEW (default, grey, click = auto trace) / RUN / PAUSE (Back + Next 1-60 s); thin solid wires; descriptions ng IO/memory lists (hover + selected); 54 ABC sheets read; switching (T, A/M, COS, Y/N) verified 382/384; 100 % (2100/2100) ng digital outputs ay naaabot sa simulation (tools/justify.js; 14 sa sequence lang).
-
-SUSUNOD NA GAWIN (ayon sa pagkakasunod):
-A. TAPOS na sa v1.14.2 (33 na hindi naaabot -> 0; mga ⊠ NOT at AND gate na maling basa ang inayos).
-B. (nagsimula na sa v1.14.3: legend test, circles, MAN) Sheet-por-sheet na pag-verify ng LAHAT ng block kinds (multiplier, rate limit, divide, PID, T, COS, SUB, SUM, ramp, FX, hindi lang gates) sa 51 sheets,  laban sa drawing: simulan sa mga sheet na may pinakamaraming "stuck" (node tools/triage.js, tools/stuck-roots.js). Tingnan ang drawing, ayusin ang reader, i-test.
-C. Mga tanong na dapat kumpirmahin ng user (isang beses lang itanong, may rekomendasyon): "/" na kahon sa ABC-001B = "T = B / A * 100 / 60" (tinawag niyang "rate"); DROP RATE (ABC-055) sign at window (30 s default); .MAN tags digital; DCMP sign (PV-SV vs DEV = SV-PV); siyam na FF dominance cases; TP formula; totoong PID gains / alarm limits (DCS database).
-D. Pagkatapos: manual (docs/MANUAL.md + PDF: node tools/build-manual-pdf.js) ay i-update sa bawat release; susunod na malaking hakbang = plant simulator / controller simulator (docs/ARCHITECTURE.md, docs/PLAN.md) — itanong muna ang pagkakasunod.
-
-Pagkabasa, ibuod mo sa 5 linya kung nasaan tayo at ano ang uunahin mo, at simulan agad ang A (walang hihintaying tanong maliban kung kailangan talaga).
+Ituloy natin ang Logic Sim (repo ronanski/dcs-ditl-workbench, branch ccr-2c4847cc-9fe3px; tingnan ang docs/HANDOVER.md §1 kung may mas bago).
+BASAHIN MUNA, sa ayos: CLAUDE.md -> docs/HANDOVER.md -> docs/RELEASE-PROTOCOL.md -> DESIGN.md -> PROJECT-NOTES-v1.20.8.md -> docs/REPORT-v1.20.8.md.
+Sundin ang protocol ko: simpleng Taglish (80 % Tagalog), PASS / FAIL / NEEDS REVIEW / NOT TESTED, walang hula, ipadala sa chat ang PDF report at HTML, huwag galawin ang DITL, walang bagong release nang walang "go" ko.
+Pagkabasa, ibuod sa 5 linya kung nasaan tayo at ano ang uunahin mo (HANDOVER §4), at magsimula.
 ```
 
-## State (v1.14.3)
-- Current build: `logic-sim-v1.14.3.html` (root). Patch script: `tools/patch-1.14.3.js` (reads archive/html/logic-sim-v1.14.2.html, writes root). Old patches: tools/history/.
-- Notes / changelog: PROJECT-NOTES-v1.20.8.md. Manual: docs/MANUAL.md + docs/Logic-Sim-Manual.pdf (attached to each Release). Percent: docs/PROGRESS.md (Phase 1 ≈ 65.3 %).
-- Releases: GitHub Actions (.github/workflows/release.yml) builds exe + apk and publishes vX.Y.Z when a root logic-sim-v*.html is pushed. User tests exe/apk himself.
+## 1. Estado ngayon
+- **Latest release: v1.20.8** (GitHub Release `v1.20.8`, 2026-10-10; html + exe + apk + manual pdf + `LogicSim_v1.20.8_Report.pdf` + `LogicSim_v1.20.8_Manual_Testing_Guide.pdf`). Code commit `301d88b`; huling commit sa branch ay docs / workflow / handover lang. Workflow runs: 25 (unang build) at 26 (nag-attach ng PDF; na-rebuild ang exe/apk, parehong code).
+- **Working branch:** `ccr-2c4847cc-9fe3px` (galing sa `main` + v1.20.8 work). Ang `main` ay may v1.20.7. Walang PR na ginawa (hindi hiningi). Kapag na-merge na ang branch ng user sa main, i-restart ang branch mula sa main (tingnan ang cloud-session rules) bago magtrabaho.
+- Ang root ay may ISANG html lang: `logic-sim-v1.20.8.html`. Ang nakaraang html ay nasa `archive/html/`. Build = `node tools/patch-1.20.8.js` (nagbabasa ng `archive/html/logic-sim-v1.20.7.html`, sumusulat ng root html) + `tools/patch-fx-1.20.8.js`. Para sa v1.20.9: kopyahin ang v1.20.8 patch scheme (patch script mula sa nakaraang html -> bagong html; ilipat ang lumang html sa archive/html at ang lumang patch sa tools/history).
+- **DITL page ay hindi ginagalaw.** Guard: `node tools/guard-ditl.js baseline/ditl-workbench-v1.0.0.html logic-sim-v1.20.8.html` = IDENTICAL.
 
-## Tools you will use (all in tools/, run with node)
-- lib.js (load the engine + sheets without a browser), guard-ditl.js, patch-<ver>.js (the build), version.js
-- Tests (browser, Chromium via /opt/node-tools/node_modules/playwright): test-modes, test-project, test-storage, test-storage2, test-numinput, test-pid, test-ln, test-anim, test-circles, test-ades, test-addr-ui, test-back-manual; engine tests (node only): test-comparators, test-switch
-- Scan: triage.js, stuck-roots.js, zero-analog.js, multi-out.js, audit-switch.js, justify.js, why-stuck.js <html> <sheet> <block id>, ades-coverage.js, ext-type.js, undriven.js
-- Pictures: shot-region.js <html> <sheet> <cx> <cy> <width> <out.png> (then Read the png)
-- Notes: bump AN_PV in the patch whenever reader numbering of nets / blocks changes (now 14); never reference a const before its definition; no phone testing.
+## 2. Ano ang nagawa sa v1.20.8 (buod; buong detalye sa docs/REPORT-v1.20.8.md at ng PDF)
+Inalis sa UI: Plant model, Plant window, Save / Save as / Open, Import DXF / Imports. LINEAR F(X) NEEDS REVIEW flags. % RATE / ramp -> engineering unit gamit ang span ng signal (14 blocks nagbago, 5 hindi malutas). ABC-002 minimum airflow editable (T/H, default 400, 32 % kept, conversion 0.08 %/T/H = NEEDS REVIEW). Bad Signal (SIG.AB) button OFF / FORCED BAD + marka sa diagram. High/Low selector: napiling wire lang ang naka-ilaw. LINEAR na-verify laban sa LINEAR.xls (376 PASS).
 
-## Read also: docs/PROGRESS.md, docs/BACKLOG.md, docs/BLOCK-LIBRARY.md, docs/PLAN.md, docs/ARCHITECTURE.md
+## 3. Mga desisyon ng user (hindi na itatanong ulit)
+- Terminology: simulation values (input / converted / output), hindi "actual plant values".
+- % RATE: gamitin ang tunay na span ng signal; ABC-001D FM403 = 0.00075 T/s; ABC-032 "1%/sec" sa 0-200 T/H = 2 T/H/s.
+- ABC-002 minimum airflow: editable, default 400 T/H, huwag ipalagay na 32 % = 400 T/H palagi; ipakita ang orihinal.
+- LINEAR: gamitin ang `data/reference/LMYP-1_1-LINEAR.xls` (nasa repo na; huwag hingin ulit). S1-LN15 / S1-LN21 = Y / 100 (H-33, dokumentado).
+- SIG.AB: user-controlled, OFF default; walang bagong hold-last logic; zero ay hindi bad; simulation lang.
+- Hindi pa gagawin: malaking independent Test Bench; side-by-side sheets / cosmetic UI (P4).
+- Mga requirements file ng user: `docs/requirements/` (grouped PDF, findings xlsx).
 
-## Open items
-1. (done in v1.14.2: all outputs reachable.) 2. Sheet-by-sheet verification (B). 3. User confirmations (C). 4. Shapes still unrecognised: none known after v1.14.1 except the duplicated DCMP outputs. 5. Real PID tuning / alarm limits need the DCS data. 6. Direction: plant simulator + controller simulator + engineering station (offline).
+## 4. Susunod na gawin (ayon sa prayoridad; hintayin ang "go" ng user para sa bagong version)
+1. **Kunin ang resulta ng manual tests ng user** (MT-01..MT-08 sa Manual Testing Guide). Ayusin ang anumang FAIL; i-update ang report.
+2. **NEEDS REVIEW na kailangan ng sagot ng user:** span ng 5 RATE (ABC-007 RAMPB#18, ABC-057 RATE#67, ABC-001C RATE#47 "18%/Hr", ABC-002 RATE#75 / #76); conversion ng ABC-002 min airflow; S1-LN38 / S1-LN39 (kailangan ang `Drum Level Calculation.xls`, wala sa repo); RATE na walang nakasulat na rate (ABC-004A #75, 004B/C #26, 009A/B, 020 #91) at stroke times ng valves (ASSUMED).
+3. **Hindi pa nagawa / hindi na-retest (core ng requirements PDF):** COS na dikit sa T switch (finding 20); grey analog sa Simulation mode (13); range ng COS / MAN setpoint vs MV (4, 5, 17); wire geometry / net-label consistency at marker ng unknown symbol / missing pin sa mismong drawing (Group B); high/low selector test coverage (22 NOT TESTED); pagpares ng transmitter <-> SIG.AB flag ay "pinakamalapit na flag" (≤ 50 units), hindi pa na-audit (DESIGN rule 21); 8 SEL na walang flag sa bawat input; Normal / Manual Test Value / Restore controls; Simulation Audit panel (data model = `docs/TEST-RESULTS-*.json`).
+4. Palawakin ang test coverage sheet-por-sheet (coverage table sa report §6 ang listahan; maraming sheet ang walang record sa ilang kategorya). Huwag mag-claim ng full coverage.
+5. Bagong release: sundin ang `docs/RELEASE-PROTOCOL.md`.
+
+## 5. Paano mag-test (lahat sa root ng repo)
+- Engine (node): `node tools/test-blocks.js <html>`, `test-math`, `test-rate`, `test-comparators`, `test-switch`, `test-legend`, `test-loops`, `test-pidsign`, `test-runaway`, `test-links-all` (mabagal ang ilan; i-background).
+- Bagong record tests (v1.20.8): `node tools/test-verify-fx.js <html> docs/TEST-RESULTS-FX`, pareho para sa `-sel`, `-rate`, `-not`, `-minair`, `-range`, `-final`; `python3 tools/test-verify-linear-xls.py <html> data/reference/LMYP-1_1-LINEAR.xls docs/TEST-RESULTS-LINEAR docs/TEST-RESULTS-FX.json` (kailangan ang `pip install xlrd`); UI: `node tools/test-ui-1.20.8.js`, `test-ui-sigab.js`, `test-ui-minair.js`, `test-ui-hs.js`.
+- Browser tests gumagamit ng `/opt/node-tools/node_modules/playwright` (Chromium sa cloud). Larawan ng drawing: `node tools/shot-region.js <html> ABC-002 cx cy width out.png`, tapos Read ang png.
+- **Alam na pre-existing / obsolete na pagkabigo (hindi bagong sira):** `test-own` (1 FAIL) at `test-ui-real` (4 FAIL) ay pareho sa v1.20.7 (plant-model); `test-modes` "bad 1" at `test-numinput` "no INPUT box" ay pareho sa v1.20.7; `test-ln` ay bumabagsak sa Save step (inalis ang Save); `test-project`, `test-storage*`, `test-import` ay luma na dahil inalis ang Save/Open/Import UI.
+- Mga gotcha: sa node test, huwag i-cache ang `rt.st[id]` (pinapalitan ang state objects); ang `AN.settle()` ay para sa kasalukuyang sheet lang (gamitin muna ang `AN.go(index)`); sa playwright, ang click sa panel ay minsan hinaharangan ng ibang div: gamitin ang `dispatchEvent('click')`.
+
+## 6. Build / release (buod; buo sa docs/RELEASE-PROTOCOL.md)
+Walang `gh` CLI; gamitin ang GitHub MCP tools. Workflow dispatch sa working branch, i-verify ang run + assets + SHA256, tapos ipadala sa chat ang PDF report at HTML. Ang workflow ay nag-a-attach ng `docs/LogicSim_vX.Y.Z_*.pdf`; ang PDF ay gawin muna at i-commit BAGO i-dispatch.
+
+## 7. Mga file na mahalaga
+`CLAUDE.md` (entry) - `DESIGN.md` (rules) - `docs/RELEASE-PROTOCOL.md` - `docs/REPORT-v1.20.8.md` (technical) - `docs/TEST-RESULTS-*.md/.json` (mga record) - `docs/FINDINGS.md` (H-43..H-47 ang bago) - `docs/DATA-FILES.md` (mga file ng user at saan ginagamit) - `docs/ASSUMED-VALUES.md` (lahat ng ASSUMED na numero) - `data/reference/` (LINEAR.xls) - `docs/requirements/` (requirements PDF + findings xlsx) - `tools/release-docs/` (generator ng report PDF).

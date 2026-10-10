@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Verify the LINEAR tables embedded in the app against the supplied reference file LMYP-1 #1-LINEAR.xls (needs: pip install xlrd).
-usage: python3 tools/test-verify-linear-xls.py <logic-sim.html> <LINEAR.xls> [out-prefix] [docs/TEST-RESULTS-FX.json]
+usage: python3 tools/test-verify-linear-xls.py <logic-sim.html> data/reference/LMYP-1_1-LINEAR.xls [out-prefix] [docs/TEST-RESULTS-FX.json]
 For every sheet 'S<stn>-LN<n>' of the xls: X / Y points (cols X-INPUT / Y-OUTPUT), ranges, LX / LY (normalised = (v-lo)/(hi-lo)) against the embedded table (same key); then, for every FX block of docs/TEST-RESULTS-FX.json, that the table used is the table whose drawing number (DWG No. of the xls) is the sheet of the block.
 Status: PASS / FAIL / NEEDS REVIEW (not in the xls, or drawing number differs) / NOT TESTED."""
 import sys,json,re,xlrd

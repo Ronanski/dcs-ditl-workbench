@@ -49,3 +49,9 @@ Never run a script from inside the directory that holds the user's files, and ke
 - `DCS Numbering` sheet of the IO list (numbering system of the DCS addresses).
 - Memory lists: DI / FP / SI descriptions only as hover texts; PTN names only as texts.
 - ALM limits, PID gains, PIDV pulse timing, PRI / SEC / AVG default modes are **not in any of these files** (they live in the DCS loop / analog databases): see `docs/ASSUMED-VALUES.md` for what was assumed instead.
+
+
+## Added 2026-10-10 (v1.20.8)
+- `data/reference/LMYP-1_1-LINEAR.xls` = copy of `LMYP-1 #1-LINEAR.xls` supplied by the user (89 tables + DATA). Used by `tools/test-verify-linear-xls.py` to verify the tables embedded in the app (376 PASS). Do not ask the user to send it again.
+- `docs/requirements/LogicSim_v1.20.7_Requirements_GROUPED.pdf` and `LOGICSIM_EU_REPORT_FINDINGS.xlsx` = the requirements batch of 2026-10-10 (20 findings, Groups A-F).
+- Still NOT in the repo: `Drum Level Calculation.xls` (S1-LN38 / S1-LN39 are embedded from it, tools/data/drum-level-ln.json), IO list and Memory xls (already embedded in the app).
