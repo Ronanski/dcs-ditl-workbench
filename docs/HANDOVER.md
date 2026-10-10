@@ -14,6 +14,8 @@ Pagkabasa, ibuod sa 5 linya kung nasaan tayo at ano ang uunahin mo (HANDOVER §4
 - Ang root ay may ISANG html lang: `logic-sim-v1.20.8.html`. Ang nakaraang html ay nasa `archive/html/`. Build = `node tools/patch-1.20.8.js` (nagbabasa ng `archive/html/logic-sim-v1.20.7.html`, sumusulat ng root html) + `tools/patch-fx-1.20.8.js`. Para sa v1.20.9: kopyahin ang v1.20.8 patch scheme (patch script mula sa nakaraang html -> bagong html; ilipat ang lumang html sa archive/html at ang lumang patch sa tools/history).
 - **DITL page ay hindi ginagalaw.** Guard: `node tools/guard-ditl.js baseline/ditl-workbench-v1.0.0.html logic-sim-v1.20.8.html` = IDENTICAL.
 
+- **Awtomatikong handoff (2026-10-10):** `.claude/settings.json` + `.claude/hooks/session-start.sh` (briefing sa simula, nire-record ang HEAD) + `.claude/hooks/stop-handoff-check.sh` (hinaharang ang pagtatapos kung may nagawa pero hindi na-update ang HANDOVER). Bago tapusin ang bawat session: i-update ang §1 at §4 dito, i-commit, i-push. Kung hindi gumana ang hooks sa isang environment, gawin nang mano-mano.
+
 ## 2. Ano ang nagawa sa v1.20.8 (buod; buong detalye sa docs/REPORT-v1.20.8.md at ng PDF)
 Inalis sa UI: Plant model, Plant window, Save / Save as / Open, Import DXF / Imports. LINEAR F(X) NEEDS REVIEW flags. % RATE / ramp -> engineering unit gamit ang span ng signal (14 blocks nagbago, 5 hindi malutas). ABC-002 minimum airflow editable (T/H, default 400, 32 % kept, conversion 0.08 %/T/H = NEEDS REVIEW). Bad Signal (SIG.AB) button OFF / FORCED BAD + marka sa diagram. High/Low selector: napiling wire lang ang naka-ilaw. LINEAR na-verify laban sa LINEAR.xls (376 PASS).
 
@@ -43,5 +45,5 @@ Inalis sa UI: Plant model, Plant window, Save / Save as / Open, Import DXF / Imp
 ## 6. Build / release (buod; buo sa docs/RELEASE-PROTOCOL.md)
 Walang `gh` CLI; gamitin ang GitHub MCP tools. Workflow dispatch sa working branch, i-verify ang run + assets + SHA256, tapos ipadala sa chat ang PDF report at HTML. Ang workflow ay nag-a-attach ng `docs/LogicSim_vX.Y.Z_*.pdf`; ang PDF ay gawin muna at i-commit BAGO i-dispatch.
 
-## 7. Mga file na mahalaga
+## 7. Mga file na mahalaga (kasama ang `.claude/` hooks)
 `CLAUDE.md` (entry) - `DESIGN.md` (rules) - `docs/RELEASE-PROTOCOL.md` - `docs/REPORT-v1.20.8.md` (technical) - `docs/TEST-RESULTS-*.md/.json` (mga record) - `docs/FINDINGS.md` (H-43..H-47 ang bago) - `docs/DATA-FILES.md` (mga file ng user at saan ginagamit) - `docs/ASSUMED-VALUES.md` (lahat ng ASSUMED na numero) - `data/reference/` (LINEAR.xls) - `docs/requirements/` (requirements PDF + findings xlsx) - `tools/release-docs/` (generator ng report PDF).
