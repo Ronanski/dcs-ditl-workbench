@@ -1,0 +1,512 @@
+[
+ {
+  "sheet": "ABC-003B",
+  "block": "live values (59 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "live values (59 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "live values (59 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "live values (49 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "live values (89 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "live values (27 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "live values (27 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "live values (34 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "live values (22 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "live values (50 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "live values (55 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "live values (97 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "live values (19 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "live values (75 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "live values (32 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "live values (32 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-013",
+  "block": "live values (17 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "live values (22 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "live values (84 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "live values (70 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-017",
+  "block": "live values (10 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "live values (29 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "live values (77 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "live values (62 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "live values (60 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-028",
+  "block": "live values (10 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "live values (25 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "live values (28 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "live values (34 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "live values (32 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "live values (38 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-033",
+  "block": "live values (12 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "live values (22 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "live values (24 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "live values (24 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "live values (24 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "live values (24 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "live values (24 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "live values (80 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "live values (46 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "live values (71 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-001B",
+  "block": "live values (19 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "live values (29 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-054",
+  "block": "live values (7 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "live values (9 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-056",
+  "block": "live values (13 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "live values (78 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "live values (57 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 1, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": "W 0.00 @252,451 L"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "live values (22 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "live values (87 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 0, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": ""
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "live values (73 numbers)",
+  "source": "user rules (LOGICSIM_EU_REPORT_FINDINGS): do not cover text / block / wire / other number; level at the side, centred above / below",
+  "input": "all numbers visible while running",
+  "expected": "0 overlaps, all aligned",
+  "actual": "text 0, block 0, wire 1, number 0, misaligned 0",
+  "status": "PASS",
+  "evidence": "A 20.51 @659,388 L"
+ }
+]

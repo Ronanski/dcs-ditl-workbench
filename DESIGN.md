@@ -40,6 +40,7 @@ portable Windows app without admin rights. The user is an automation engineer (n
 28. **A source range is never guessed.** An F(X) whose X is in % takes (value - lo) / (hi - lo) x 100 of the range of the signal that feeds it (written range, ratio x 100, PID output); if the source cannot be traced it is flagged SCALE (NEEDS REVIEW) and NOT scaled.
 29. **The DITL part of the html is never touched** (guard IDENTICAL): everything new (second pane, search placeholder, css) is created from the analog script.
 30. **Numbers: one per label.** Green computed, cyan typed input, amber forced. A review mark must come from a real unresolved thing, not from the glyph inside a recognised block.
+31. **Live values (user rule, EU xlsx 2026-10-10): a number never covers text, a block, a wire / net or another number; at the side it is level with its anchor, above / below it is centred; every analog net has a number except where an address or the equipment already shows it.** Checked on every sheet by tools/audit-values.js and tools/audit-values-rules.js; a change to the drawing code must keep them at 0.
 
 ## 3. Every build = this checklist
 1. Patch script `tools/patch-X.Y.Z.js` (from the previous html) -> `logic-sim-vX.Y.Z.html`. THE version lives in the file name; the `<title>` ("Logic Sim vX.Y.Z") is the only place inside the html (project-file `ver` and Diagnostics read it from there).

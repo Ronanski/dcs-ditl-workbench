@@ -8,12 +8,12 @@ Sundin ang protocol ko: simpleng Taglish (80 % Tagalog), PASS / FAIL / NEEDS REV
 Pagkabasa, ibuod sa 5 linya kung nasaan tayo at ano ang uunahin mo (HANDOVER §4), at magsimula.
 ```
 
-## 1. Estado ngayon (v1.20.10 RELEASED at naka-merge sa main)
-- **Latest release: v1.20.10** (GitHub Release `v1.20.10`, 2026-10-10; workflow run 28 id 38061966162 = success: version / exe / apk / release; commit ng release `543814e`; assets: html, portable exe, apk, manual pdf, `LogicSim_v1.20.10_Report.pdf`, `LogicSim_v1.20.10_Manual_Testing_Guide.pdf`; SHA256 ng html / report / guide = tugma sa lokal). EXE at APK ay hindi pa tinetest ng Claude.
-- Ang user ay nagbigay ng go para sa release at merge sa main (isang beses, para sa v1.20.10). Para sa susunod na version: tanungin ulit.
-- Root: `logic-sim-v1.20.10.html`; ang 1.20.9 ay nasa `archive/html/`. Build: `node tools/patch-1.20.10.js` (modules fx, dup, minair, xref, cos, ab, vcol, audit, mode, search, pane2). Para sa v1.20.11: ilipat ang root html sa archive/html, ang patch-1.20.10* sa tools/history, gumawa ng bagong patch.
-- **DITL part IDENTICAL** (guard 135a852d87c5): lahat ng bago ay nasa analog script lang (ang second pane `#cv2` at ang placeholder ng search ay ginagawa ng analog script).
-- Report generators: `tools/release-docs/make-report-v1.20.10.py` (env `DUPS=88`), `make-guide-v1.20.10.py`, `rehearse-v1.20.10.js` (rehearsal + screenshots sa `docs/guide-img`), `html-to-pdf.js <html> <pdf> vX`. Regression: `docs/REGRESSION-v1.20.10.txt`.
+## 1. Estado ngayon (v1.20.11 WIP: live values + second pane zoom; may go ng user na i-release agad)
+- Latest RELEASE: v1.20.10 (commit 543814e, nasa main). Root: `logic-sim-v1.20.11.html` = build ng `node tools/patch-1.20.11.js` (base: `archive/html/logic-sim-v1.20.9.html`; modules `tools/patch-1.20.11-*.js`; ang v1.20.10 ay nagre-rebuild pa rin mula sa `patch-1.20.10.js`, SHA256 6325f96f...; ang released html ay nasa `archive/html/logic-sim-v1.20.10.html`).
+- User (2026-10-10 gabi): unahin ang LIVE VALUES ayon sa EU xlsx rules (hindi tumatakip sa text / block / wire / ibang numero; pantay sa gilid, naka-center sa taas / baba; kulay), ayusin ang zoom ng second sheet, ayusin ang lahat ng kaya na hindi kailangan ng input niya, **release agad**. Bukas ang verification / manual test results niya at ang mga kailangan ng input niya.
+- Natapos: `vplace` (tools/patch-1.20.11-vplace.js): 2128 numero sa 51 sheet = 0 text / 0 block / 0 numero / 2 wire na dumadampi, 0 hindi pantay; 22 net na walang numero ay may numero na; kulay ng computed / typed / forced ay settings (Legend & style > Values); second pane: + / - / pinch / double-click / wheel. Tools: `tools/audit-values.js`, `tools/audit-values-rules.js`.
+- Gagawin pa sa release: regression (reg3), rehearse-v1.20.11.js, report + guide v1.20.11 (`tools/release-docs/make-report-v1.20.11.py`, guide generator), workflow dispatch, verify, merge sa main, SendUserFile.
+- **DITL part IDENTICAL** (guard 135a852d87c5).
 - Awtomatikong handoff: `.claude/hooks/*`. Bago tapusin ang session: i-update ang §1 at §4, i-commit, i-push.
 
 ## 2. Ano ang nagawa sa v1.20.9 (buod; buo sa docs/REPORT-v1.20.9.md at sa PDF)

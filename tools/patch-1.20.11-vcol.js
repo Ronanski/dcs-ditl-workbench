@@ -1,0 +1,14 @@
+/* finding 2 of the user's xlsx: a FORCED value must look different from a SIMULATED (typed / slider) input and from a COMPUTED value.  Green = computed by the logic, cyan = input typed or slid by the engineer (analog), amber = FORCED. Shown on the badge beside the wire / address; also listed in the legend. */
+module.exports=(rep,repAll)=>{
+rep(`.bd.dg{fill:var(--vcol,#8dffb8)}`,`.bd.dg{fill:var(--vcol,#8dffb8)}.bd.inp{fill:#6ad7ff}.bd.frc{fill:#ffb04d}`);
+rep(`if(b.last!==x){b.last=x;b.t.textContent=x}}
+ const t=S.rt.t;`,`if(b.last!==x){b.last=x;b.t.textContent=x}
+  {const es=S._extSet||(S._extSet=new Set(S.ext)),ck=S.rt.force[b.n]!==undefined?'f':(es.has(b.n)&&!S.nets[b.n].dig)?'i':'';if(b.ck!==ck){b.ck=ck;b.t.classList.toggle('frc',ck==='f');b.t.classList.toggle('inp',ck==='i')}}}
+ const t=S.rt.t;`);
+rep(`<b>Wires</b><div class="it"><svg width="24" height="13"><line x1="0" y1="6" x2="24" y2="6" stroke="var(--live)"`,`<b>Numbers</b><div class="it"><span style="color:#8dffb8;font-weight:700">12.3</span>&nbsp;computed by the logic</div><div class="it"><span style="color:#6ad7ff;font-weight:700">12.3</span>&nbsp;simulated input (typed or slider)</div><div class="it"><span style="color:#ffb04d;font-weight:700">12.3</span>&nbsp;FORCED value</div><b>Wires</b><div class="it"><svg width="24" height="13"><line x1="0" y1="6" x2="24" y2="6" stroke="var(--live)"`);
+/* the colours of the three kinds of number are settings (Legend & style > Values) */
+rep(`h$('b',{txt:'Values (numbers on the drawing)'}),sel('Colour','vc',[['green','Green'],['amber','Amber'],['white','White'],['cyan','Cyan'],['yellow','Yellow'],['magenta','Magenta'],['orange','Orange'],['wire','Like the analog wire']]),`,`h$('b',{txt:'Values (numbers on the drawing)'}),sel('Computed by the logic','vc',[['green','Green'],['amber','Amber'],['white','White'],['cyan','Cyan'],['yellow','Yellow'],['magenta','Magenta'],['orange','Orange'],['wire','Like the analog wire']]),sel('Simulated input (typed / slider)','vi',[['cyan','Cyan'],['white','White'],['yellow','Yellow'],['magenta','Magenta'],['orange','Orange'],['amber','Amber'],['green','Green']]),sel('FORCED value','vz',[['amber','Amber'],['orange','Orange'],['red','Red'],['magenta','Magenta'],['yellow','Yellow'],['white','White'],['cyan','Cyan']]),`);
+rep(`vc:'green',vs:1,vf:'mono',vw:600}`,`vc:'green',vi:'cyan',vz:'amber',vs:1,vf:'mono',vw:600}`);
+rep(`setProperty('--vcol',AN.ws.vc==='wire'?anLite(ANC):(VCS[AN.ws.vc]||VCS.green));`,`setProperty('--vcol',AN.ws.vc==='wire'?anLite(ANC):(VCS[AN.ws.vc]||VCS.green));AN.ws.vi=AN.ws.vi||'cyan';AN.ws.vz=AN.ws.vz||'amber';document.documentElement.style.setProperty('--vin',VCS[AN.ws.vi]||VCS.cyan);document.documentElement.style.setProperty('--vfr',VCS[AN.ws.vz]||VCS.amber);`);
+rep(`.bd.inp{fill:#6ad7ff}.bd.frc{fill:#ffb04d}`,`.bd.inp{fill:var(--vin,#8fe3ff)}.bd.frc{fill:var(--vfr,#ffd27a)}`);
+};
