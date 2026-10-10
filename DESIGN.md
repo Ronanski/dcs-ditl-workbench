@@ -36,6 +36,10 @@ portable Windows app without admin rights. The user is an automation engineer (n
 24. **Block settings are CONFIG, not simulation state.** The global Reset keeps them; each block has "Reset this block to default". A RATE / ramp without a written rate is 1 per second until the user decides otherwise.
 25. **Pairing is by CONNECTION, never by distance** (SIG.AB flag <-> transmitter, SELECT CIRCUIT input <-> transmitter). Unpaired = listed, never guessed.
 26. **Unresolved things are shown on the drawing** (Review marks) and counted in Health: they are NEEDS REVIEW, never a verified result.
+27. **Bad Signal (SIG.AB) forced = the logic receives ZERO from that transmitter and the B flag is 1** (user 2026-10-10). Select circuits exclude the bad input by its flag.
+28. **A source range is never guessed.** An F(X) whose X is in % takes (value - lo) / (hi - lo) x 100 of the range of the signal that feeds it (written range, ratio x 100, PID output); if the source cannot be traced it is flagged SCALE (NEEDS REVIEW) and NOT scaled.
+29. **The DITL part of the html is never touched** (guard IDENTICAL): everything new (second pane, search placeholder, css) is created from the analog script.
+30. **Numbers: one per label.** Green computed, cyan typed input, amber forced. A review mark must come from a real unresolved thing, not from the glyph inside a recognised block.
 
 ## 3. Every build = this checklist
 1. Patch script `tools/patch-X.Y.Z.js` (from the previous html) -> `logic-sim-vX.Y.Z.html`. THE version lives in the file name; the `<title>` ("Logic Sim vX.Y.Z") is the only place inside the html (project-file `ver` and Diagnostics read it from there).
