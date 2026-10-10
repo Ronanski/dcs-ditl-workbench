@@ -48,5 +48,5 @@ if(rb){await go('ABC-050');await p.evaluate(([id])=>{const S=AN.cs().S;AN.sel={b
  await p.evaluate(()=>{const row=[...document.querySelectorAll('#anp div.r')].find(r=>/Rate \(signal/.test(r.innerText));const i=row.querySelector('input');i.value='9';i.dispatchEvent(new Event('change',{bubbles:true}))});await p.waitForTimeout(400);
  await p.reload();await p.waitForTimeout(6000);await go('ABC-050');const r4=await p.evaluate(([id])=>AN.cs().S.blk.find(q=>q.id===id).p.rate,[rb.id]);ok('block setting (rate 9) survives a reload',r4===9,r4)}
 // 7. min air flow signal is the T/H setting
-await go('ABC-002');const ma=await p.evaluate(()=>{const S=AN.cs().S,c=S.blk.find(b=>b.k==='CONST'&&b.p.mt);return{th:c.p.th,out:S.rt.v[c.o[0]],orig:c.p.orig}});ok('minimum air flow: setting 400 T/H = signal 400, drawing 32 % kept',ma.th===400&&ma.out===400&&ma.orig===32,JSON.stringify(ma));
+await go('ABC-002');const ma=await p.evaluate(()=>{const S=AN.cs().S,c=S.blk.find(b=>b.k==='CONST'&&b.p.mt);return{th:c.p.th,out:S.rt.v[c.o[0]],orig:c.p.orig}});ok('minimum air flow: min air flow 400 T/H, signal 32 % x 400 = 128 (v1.20.10)',ma.th===400&&Math.abs(ma.out-128)<1e-9&&ma.orig===32,JSON.stringify(ma));
 console.log(R.join('\n'));console.log('errs',errs);process.exitCode=R.some(x=>x.startsWith('FAIL'))||errs.length?1:0;await b.close()})();
