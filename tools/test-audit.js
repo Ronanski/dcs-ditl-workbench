@@ -1,0 +1,20 @@
+/* v1.20.10: Simulation Audit panel: select a block, press FAIL, fill the form, save, see it in the list, re-test, export CSV / JSON, survives a reload.  usage: node tools/test-audit.js file.html */
+const {chromium}=require('/opt/node-tools/node_modules/playwright');const path=require('path');
+(async()=>{const b=await chromium.launch({args:['--no-sandbox']});const ctx=await b.newContext({viewport:{width:1700,height:1000},acceptDownloads:true});const p=await ctx.newPage();const errs=[];p.on('pageerror',e=>errs.push(e.message));
+const R=[];const ok=(n,c,x)=>R.push((c?'PASS ':'FAIL ')+n+(x!==undefined?'  '+x:''));
+await p.goto('file://'+path.resolve(process.argv[2]));await p.waitForTimeout(2500);await p.click('text=Analog · ABC >> nth=0');await p.waitForTimeout(3500);
+await p.evaluate(()=>AN.go(AN.sheets.findIndex(s=>s.name==='ABC-002')));await p.waitForTimeout(700);
+ok('Audit button exists',await p.locator('#anbar button:has-text("Audit")').count()===1);
+await p.evaluate(()=>{AN.sel={blk:AN.cs().S.blk.find(b=>b.k==='FX'&&b.p.ln==='LN29')};AN.selBox();AN.panelUpd(true)});await p.waitForTimeout(500);
+ok('FAIL / PASS / NEEDS REVIEW buttons under the block title',await p.locator('#anp button:text-is("FAIL")').count()>=1);
+await p.locator('#anp button:text-is("FAIL")').first().dispatchEvent('click');await p.waitForTimeout(400);
+const vis=await p.evaluate(()=>getComputedStyle(document.getElementById('anau')).display+'|'+!!document.querySelector('#anau textarea'));ok('FAIL opens the audit panel with a form',vis==='block|true',vis);
+const ev=await p.evaluate(()=>document.getElementById('anau').innerText);ok('evidence is filled in automatically (inputs, outputs, forced, time)',/inputs:/.test(ev)&&/outputs:/.test(ev)&&/forced signals/.test(ev)&&/sim time/.test(ev),ev.slice(ev.indexOf('Evidence'),ev.indexOf('Evidence')+160).replace(/\n/g,' | '));
+const ins=p.locator('#anau input');await ins.nth(0).fill('LN29 with input 1.0');await ins.nth(1).fill('50');await p.locator('#anau button:text-is("Save to report")').dispatchEvent('click');await p.waitForTimeout(300);
+const row=await p.evaluate(()=>document.querySelector('#anau table')?document.querySelector('#anau table').innerText:'');ok('the entry is listed with sheet, block, expected and result FAIL',/ABC-002/.test(row)&&/FX/.test(row)&&/FAIL/.test(row)&&/50/.test(row),row.replace(/\n/g,' | ').slice(0,200));
+await p.locator('#anau td button:text-is("PASS")').first().dispatchEvent('click');await p.waitForTimeout(300);ok('retest status is recorded',/RETEST PASS/.test(await p.evaluate(()=>document.getElementById('anau').innerText)));
+const [dl]=await Promise.all([p.waitForEvent('download'),p.locator('#anau button:text-is("Export CSV")').dispatchEvent('click')]);ok('CSV export downloads a file',/\.csv$/.test(dl.suggestedFilename()),dl.suggestedFilename());
+const [dj]=await Promise.all([p.waitForEvent('download'),p.locator('#anau button:text-is("Export JSON")').dispatchEvent('click')]);ok('JSON export downloads a file',/\.json$/.test(dj.suggestedFilename()),dj.suggestedFilename());
+await p.reload();await p.waitForTimeout(5000);await p.locator('#anbar button:has-text("Audit")').dispatchEvent('click');await p.waitForTimeout(300);
+ok('the report survives a reload',/FAIL/.test(await p.evaluate(()=>document.getElementById('anau').innerText))&&/LN29/.test(await p.evaluate(()=>localStorage.getItem('ls-audit'))));
+console.log(R.join('\n'));console.log('errs',errs);process.exitCode=R.some(x=>x.startsWith('FAIL'))||errs.length?1:0;await b.close()})();

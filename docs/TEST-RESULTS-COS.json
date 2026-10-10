@@ -1,0 +1,4432 @@
+[
+ {
+  "sheet": "ABC-003B",
+  "block": "COS#8",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 157 -> T#9 out net 35"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "COS#8",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 157 -> T#9 out net 35"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "COS#8",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 157 -> T#9 out net 35"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "COS#8",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#9"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "COS#10",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "COS#24",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 159 -> T#23 out net 61"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "COS#24",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 159 -> T#23 out net 61"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "COS#24",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 159 -> T#23 out net 61"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "COS#24",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#23"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "COS#25",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "COS#34",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 161 -> T#33 out net 34"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "COS#34",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 1.75",
+  "expected": "1.75",
+  "actual": "1.75",
+  "status": "PASS",
+  "evidence": "COS net 161 -> T#33 out net 34"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "COS#34",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 3.5",
+  "expected": "3.5",
+  "actual": "3.5",
+  "status": "PASS",
+  "evidence": "COS net 161 -> T#33 out net 34"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "COS#34",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 3.5",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#33"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "COS#36",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "COS#8",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 157 -> T#9 out net 17"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "COS#8",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 157 -> T#9 out net 17"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "COS#8",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 157 -> T#9 out net 17"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "COS#8",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#9"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "COS#10",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "COS#24",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 159 -> T#23 out net 74"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "COS#24",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 159 -> T#23 out net 74"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "COS#24",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 159 -> T#23 out net 74"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "COS#24",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#23"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "COS#25",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "COS#34",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 161 -> T#33 out net 35"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "COS#34",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 1.75",
+  "expected": "1.75",
+  "actual": "1.75",
+  "status": "PASS",
+  "evidence": "COS net 161 -> T#33 out net 35"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "COS#34",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 3.5",
+  "expected": "3.5",
+  "actual": "3.5",
+  "status": "PASS",
+  "evidence": "COS net 161 -> T#33 out net 35"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "COS#34",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 3.5",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#33"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "COS#36",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "COS#8",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 157 -> T#9 out net 17"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "COS#8",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 157 -> T#9 out net 17"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "COS#8",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 157 -> T#9 out net 17"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "COS#8",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#9"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "COS#10",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "COS#24",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 159 -> T#23 out net 61"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "COS#24",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 159 -> T#23 out net 61"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "COS#24",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 159 -> T#23 out net 61"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "COS#24",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#23"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "COS#25",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "COS#34",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 161 -> T#33 out net 35"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "COS#34",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 1.75",
+  "expected": "1.75",
+  "actual": "1.75",
+  "status": "PASS",
+  "evidence": "COS net 161 -> T#33 out net 35"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "COS#34",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 3.5",
+  "expected": "3.5",
+  "actual": "3.5",
+  "status": "PASS",
+  "evidence": "COS net 161 -> T#33 out net 35"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "COS#34",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 3.5",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#33"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "COS#36",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "COS#2",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 154 -> T#1 out net 147"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "COS#2",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 154 -> T#1 out net 147"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "COS#2",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 154 -> T#1 out net 147"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "COS#2",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#1"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "COS#3",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 209 -> T#2 out net 207"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 60",
+  "expected": "60",
+  "actual": "60",
+  "status": "PASS",
+  "evidence": "COS net 209 -> T#2 out net 207"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 120",
+  "expected": "120",
+  "actual": "120",
+  "status": "PASS",
+  "evidence": "COS net 209 -> T#2 out net 207"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 120",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#2"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#4",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 210 -> T#5 out net 48"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#4",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 210 -> T#5 out net 48"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#4",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 210 -> T#5 out net 48"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#4",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#5"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#7",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 211 -> T#8 out net 204"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#7",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 211 -> T#8 out net 204"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#7",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 211 -> T#8 out net 204"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#7",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#8"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#10",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 212 -> T#11 out net 45"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#10",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 212 -> T#11 out net 45"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#10",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 212 -> T#11 out net 45"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#10",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#11"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#15",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 213 -> T#14 out net 41"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#15",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 20",
+  "expected": "20",
+  "actual": "20",
+  "status": "PASS",
+  "evidence": "COS net 213 -> T#14 out net 41"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#15",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 40",
+  "expected": "40",
+  "actual": "40",
+  "status": "PASS",
+  "evidence": "COS net 213 -> T#14 out net 41"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#15",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 40",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#14"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#47",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 214 -> T#48 out net 90"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#47",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 214 -> T#48 out net 90"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#47",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 214 -> T#48 out net 90"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#47",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#48"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#54",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 215 -> T#55 out net 91"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#54",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 215 -> T#55 out net 91"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#54",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 215 -> T#55 out net 91"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "COS#54",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#55"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "COS#3",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 60 -> T#2 out net 57"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "COS#3",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 20",
+  "expected": "20",
+  "actual": "20",
+  "status": "PASS",
+  "evidence": "COS net 60 -> T#2 out net 57"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "COS#3",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 40",
+  "expected": "40",
+  "actual": "40",
+  "status": "PASS",
+  "evidence": "COS net 60 -> T#2 out net 57"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "COS#3",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 40",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#2"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "COS#3",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 60 -> T#2 out net 57"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "COS#3",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 20",
+  "expected": "20",
+  "actual": "20",
+  "status": "PASS",
+  "evidence": "COS net 60 -> T#2 out net 57"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "COS#3",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 40",
+  "expected": "40",
+  "actual": "40",
+  "status": "PASS",
+  "evidence": "COS net 60 -> T#2 out net 57"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "COS#3",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 40",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#2"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "COS#3",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "COS#9",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 61 -> T#10 out net 30"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "COS#9",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 61 -> T#10 out net 30"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "COS#9",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 61 -> T#10 out net 30"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "COS#9",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#10"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "COS#17",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "COS#22",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "COS#23",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "COS#3",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "COS#5",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 125 -> T#6 out net 121"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "COS#5",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 125 -> T#6 out net 121"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "COS#5",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 125 -> T#6 out net 121"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "COS#5",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#6"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "COS#10",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "COS#12",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 127 -> T#13 out net 104"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "COS#12",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 127 -> T#13 out net 104"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "COS#12",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 127 -> T#13 out net 104"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "COS#12",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#13"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "COS#11",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 110 -> T#12 out net 16"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "COS#11",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 110 -> T#12 out net 16"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "COS#11",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 110 -> T#12 out net 16"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "COS#11",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#12"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "COS#13",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "COS#17",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 112 -> T#18 out net 65"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "COS#17",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 112 -> T#18 out net 65"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "COS#17",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 112 -> T#18 out net 65"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "COS#17",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#18"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "COS#19",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 223 -> T#2 out net 220"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 1250",
+  "expected": "1250",
+  "actual": "1250",
+  "status": "PASS",
+  "evidence": "COS net 223 -> T#2 out net 220"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 2500",
+  "expected": "2500",
+  "actual": "2500",
+  "status": "PASS",
+  "evidence": "COS net 223 -> T#2 out net 220"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 2500",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#2"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#4",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#6",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 225 -> T#7 out net 0"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#6",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 225 -> T#7 out net 0"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#6",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 225 -> T#7 out net 0"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#6",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#7"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#9",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 226 -> T#10 out net 216"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#9",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 226 -> T#10 out net 216"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#9",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 226 -> T#10 out net 216"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#9",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#10"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#14",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 227 -> T#13 out net 212"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#14",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 227 -> T#13 out net 212"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#14",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 227 -> T#13 out net 212"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#14",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#13"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#41",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 228 -> T#40 out net 150"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#41",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 228 -> T#40 out net 150"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#41",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 228 -> T#40 out net 150"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#41",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#40"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#54",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 229 -> T#53 out net 132"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#54",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 229 -> T#53 out net 132"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#54",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 229 -> T#53 out net 132"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "COS#54",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#53"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "COS#3",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 50 -> T#2 out net 48"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "COS#3",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 50 -> T#2 out net 48"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "COS#3",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 50 -> T#2 out net 48"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "COS#3",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#2"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = -422",
+  "expected": "-422",
+  "actual": "-422",
+  "status": "PASS",
+  "evidence": "COS net 155 -> T#2 out net 154"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 199",
+  "expected": "199",
+  "actual": "199",
+  "status": "PASS",
+  "evidence": "COS net 155 -> T#2 out net 154"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 820",
+  "expected": "820",
+  "actual": "820",
+  "status": "PASS",
+  "evidence": "COS net 155 -> T#2 out net 154"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 820",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#2"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "COS#21",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = -422",
+  "expected": "-422",
+  "actual": "-422",
+  "status": "PASS",
+  "evidence": "COS net 156 -> T#22 out net 142"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "COS#21",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 199",
+  "expected": "199",
+  "actual": "199",
+  "status": "PASS",
+  "evidence": "COS net 156 -> T#22 out net 142"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "COS#21",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 820",
+  "expected": "820",
+  "actual": "820",
+  "status": "PASS",
+  "evidence": "COS net 156 -> T#22 out net 142"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "COS#21",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 820",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#22"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "COS#24",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "COS#41",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 158 -> T#42 out net 129"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "COS#41",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 275",
+  "expected": "275",
+  "actual": "275",
+  "status": "PASS",
+  "evidence": "COS net 158 -> T#42 out net 129"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "COS#41",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 550",
+  "expected": "550",
+  "actual": "550",
+  "status": "PASS",
+  "evidence": "COS net 158 -> T#42 out net 129"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "COS#41",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 550",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#42"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "COS#44",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 159 -> T#45 out net 51"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "COS#44",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 159 -> T#45 out net 51"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "COS#44",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 159 -> T#45 out net 51"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "COS#44",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#45"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "COS#52",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "COS#75",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = -422",
+  "expected": "-422",
+  "actual": "-422",
+  "status": "PASS",
+  "evidence": "COS net 161 -> T#74 out net 39"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "COS#75",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 199",
+  "expected": "199",
+  "actual": "199",
+  "status": "PASS",
+  "evidence": "COS net 161 -> T#74 out net 39"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "COS#75",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 820",
+  "expected": "820",
+  "actual": "820",
+  "status": "PASS",
+  "evidence": "COS net 161 -> T#74 out net 39"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "COS#75",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 820",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#74"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "COS#76",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 101 -> T#2 out net 2"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 300",
+  "expected": "300",
+  "actual": "300",
+  "status": "PASS",
+  "evidence": "COS net 101 -> T#2 out net 2"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 600",
+  "expected": "600",
+  "actual": "600",
+  "status": "PASS",
+  "evidence": "COS net 101 -> T#2 out net 2"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 600",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#2"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "COS#12",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 102 -> T#13 out net 11"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "COS#12",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 102 -> T#13 out net 11"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "COS#12",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 102 -> T#13 out net 11"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "COS#12",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#13"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "COS#18",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "COS#19",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 104 -> T#17 out net 1"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "COS#19",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 104 -> T#17 out net 1"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "COS#19",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 104 -> T#17 out net 1"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "COS#19",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#17"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 104 -> T#2 out net 2"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 300",
+  "expected": "300",
+  "actual": "300",
+  "status": "PASS",
+  "evidence": "COS net 104 -> T#2 out net 2"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 600",
+  "expected": "600",
+  "actual": "600",
+  "status": "PASS",
+  "evidence": "COS net 104 -> T#2 out net 2"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 600",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#2"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "COS#12",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 105 -> T#13 out net 11"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "COS#12",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 105 -> T#13 out net 11"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "COS#12",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 105 -> T#13 out net 11"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "COS#12",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#13"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "COS#18",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "COS#19",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 107 -> T#17 out net 1"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "COS#19",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 107 -> T#17 out net 1"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "COS#19",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 107 -> T#17 out net 1"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "COS#19",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#17"
+ },
+ {
+  "sheet": "ABC-013",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-013",
+  "block": "COS#11",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "COS#22",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "COS#23",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "COS#24",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 72 -> T#1 out net 62"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "COS#24",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 72 -> T#1 out net 62"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "COS#24",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 72 -> T#1 out net 62"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "COS#24",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#1"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "COS#25",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 73 -> T#12 out net 29"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "COS#25",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 73 -> T#12 out net 29"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "COS#25",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 73 -> T#12 out net 29"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "COS#25",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#12"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "COS#85",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "COS#87",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "COS#89",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "COS#91",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "COS#93",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "COS#95",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "COS#97",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "COS#99",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "COS#101",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "COS#103",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "COS#105",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "COS#107",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "COS#71",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "COS#73",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "COS#75",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "COS#77",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "COS#79",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "COS#81",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "COS#83",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "COS#85",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "COS#87",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "COS#89",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-017",
+  "block": "COS#8",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-017",
+  "block": "COS#9",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "COS#15",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 65 -> T#16 out net 55"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "COS#15",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 65 -> T#16 out net 55"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "COS#15",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 65 -> T#16 out net 55"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "COS#15",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#16"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "COS#26",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 66 -> T#27 out net 26"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "COS#26",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 66 -> T#27 out net 26"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "COS#26",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 66 -> T#27 out net 26"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "COS#26",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#27"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 192 -> T#2 out net 189"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 192 -> T#2 out net 189"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 192 -> T#2 out net 189"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#2"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "COS#35",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 193 -> T#36 out net 109"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "COS#35",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 300",
+  "expected": "300",
+  "actual": "300",
+  "status": "PASS",
+  "evidence": "COS net 193 -> T#36 out net 109"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "COS#35",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 600",
+  "expected": "600",
+  "actual": "600",
+  "status": "PASS",
+  "evidence": "COS net 193 -> T#36 out net 109"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "COS#35",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 600",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#36"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "COS#41",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 194 -> T#40 out net 103"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "COS#41",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 194 -> T#40 out net 103"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "COS#41",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 194 -> T#40 out net 103"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "COS#41",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#40"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "COS#46",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 195 -> T#45 out net 93"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "COS#46",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 195 -> T#45 out net 93"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "COS#46",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 195 -> T#45 out net 93"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "COS#46",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#45"
+ },
+ {
+  "sheet": "ABC-028",
+  "block": "COS#6",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-028",
+  "block": "COS#7",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 15 -> T#1 out net 13"
+ },
+ {
+  "sheet": "ABC-028",
+  "block": "COS#7",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 15 -> T#1 out net 13"
+ },
+ {
+  "sheet": "ABC-028",
+  "block": "COS#7",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 15 -> T#1 out net 13"
+ },
+ {
+  "sheet": "ABC-028",
+  "block": "COS#7",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#1"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "COS#7",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 54 -> T#1 out net 49"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "COS#7",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 54 -> T#1 out net 49"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "COS#7",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 54 -> T#1 out net 49"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "COS#7",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#1"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "COS#15",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 55 -> T#9 out net 22"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "COS#15",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 55 -> T#9 out net 22"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "COS#15",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 55 -> T#9 out net 22"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "COS#15",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#9"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "COS#16",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "COS#4",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "COS#5",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 72 -> T#3 out net 41"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "COS#5",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 72 -> T#3 out net 41"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "COS#5",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 72 -> T#3 out net 41"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "COS#5",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#3"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "COS#22",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "COS#27",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "COS#3",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "COS#4",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 82 -> T#1 out net 8"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "COS#4",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 82 -> T#1 out net 8"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "COS#4",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 82 -> T#1 out net 8"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "COS#4",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#1"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "COS#9",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "COS#10",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "COS#25",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "COS#26",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 86 -> T#24 out net 26"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "COS#26",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 86 -> T#24 out net 26"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "COS#26",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 86 -> T#24 out net 26"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "COS#26",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#24"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 53 -> T#2 out net 1"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 53 -> T#2 out net 1"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 53 -> T#2 out net 1"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#2"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "COS#7",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 54 -> T#6 out net 0"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "COS#7",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 54 -> T#6 out net 0"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "COS#7",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 54 -> T#6 out net 0"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "COS#7",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#6"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "COS#15",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 55 -> T#16 out net 48"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "COS#15",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 55 -> T#16 out net 48"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "COS#15",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 55 -> T#16 out net 48"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "COS#15",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#16"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "COS#21",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "COS#3",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 28 -> T#2 out net 6"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "COS#3",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 28 -> T#2 out net 6"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "COS#3",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 200",
+  "expected": "200",
+  "actual": "200",
+  "status": "PASS",
+  "evidence": "COS net 28 -> T#2 out net 6"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "COS#3",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 200",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#2"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "COS#4",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "COS#9",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 30 -> T#8 out net 16"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "COS#9",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 30 -> T#8 out net 16"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "COS#9",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 200",
+  "expected": "200",
+  "actual": "200",
+  "status": "PASS",
+  "evidence": "COS net 30 -> T#8 out net 16"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "COS#9",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 200",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#8"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "COS#13",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 31 -> T#12 out net 23"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "COS#13",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 31 -> T#12 out net 23"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "COS#13",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 200",
+  "expected": "200",
+  "actual": "200",
+  "status": "PASS",
+  "evidence": "COS net 31 -> T#12 out net 23"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "COS#13",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 200",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#12"
+ },
+ {
+  "sheet": "ABC-033",
+  "block": "COS#4",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-033",
+  "block": "COS#5",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 34 -> T#2 out net 11"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 34 -> T#2 out net 11"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 34 -> T#2 out net 11"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#2"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "COS#5",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 66 -> T#2 out net 61"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 66 -> T#2 out net 61"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 66 -> T#2 out net 61"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#2"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "COS#7",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "COS#12",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 68 -> T#11 out net 58"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "COS#12",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 68 -> T#11 out net 58"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "COS#12",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 68 -> T#11 out net 58"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "COS#12",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#11"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 66 -> T#2 out net 59"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 66 -> T#2 out net 59"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 66 -> T#2 out net 59"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#2"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "COS#12",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "COS#17",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 68 -> T#16 out net 58"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "COS#17",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 68 -> T#16 out net 58"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "COS#17",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 68 -> T#16 out net 58"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "COS#17",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#16"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 66 -> T#2 out net 59"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 66 -> T#2 out net 59"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 66 -> T#2 out net 59"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#2"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "COS#12",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "COS#17",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 68 -> T#16 out net 58"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "COS#17",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 68 -> T#16 out net 58"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "COS#17",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 68 -> T#16 out net 58"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "COS#17",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#16"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 66 -> T#2 out net 59"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 66 -> T#2 out net 59"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 66 -> T#2 out net 59"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#2"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "COS#12",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "COS#17",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 68 -> T#16 out net 58"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "COS#17",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 68 -> T#16 out net 58"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "COS#17",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 68 -> T#16 out net 58"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "COS#17",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#16"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 66 -> T#2 out net 59"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 66 -> T#2 out net 59"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 66 -> T#2 out net 59"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#2"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "COS#12",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "COS#17",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 68 -> T#16 out net 58"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "COS#17",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 68 -> T#16 out net 58"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "COS#17",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 68 -> T#16 out net 58"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "COS#17",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#16"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 164 -> T#2 out net 162"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 164 -> T#2 out net 162"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 164 -> T#2 out net 162"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#2"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "COS#7",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 165 -> T#6 out net 163"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "COS#7",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 165 -> T#6 out net 163"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "COS#7",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 165 -> T#6 out net 163"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "COS#7",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#6"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "COS#23",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 81 -> T#22 out net 58"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "COS#23",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 81 -> T#22 out net 58"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "COS#23",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 81 -> T#22 out net 58"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "COS#23",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#22"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "COS#5",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 185 -> T#4 out net 10"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "COS#5",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 185 -> T#4 out net 10"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "COS#5",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 185 -> T#4 out net 10"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "COS#5",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#4"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "COS#22",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "COS#34",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "COS#51",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-001B",
+  "block": "COS#2",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 17 -> T#1 out net 12"
+ },
+ {
+  "sheet": "ABC-001B",
+  "block": "COS#2",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 5",
+  "expected": "5",
+  "actual": "5",
+  "status": "PASS",
+  "evidence": "COS net 17 -> T#1 out net 12"
+ },
+ {
+  "sheet": "ABC-001B",
+  "block": "COS#2",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 10",
+  "expected": "10",
+  "actual": "10",
+  "status": "PASS",
+  "evidence": "COS net 17 -> T#1 out net 12"
+ },
+ {
+  "sheet": "ABC-001B",
+  "block": "COS#2",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 10",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#1"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 50 -> T#2 out net 43"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 50 -> T#2 out net 43"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 50 -> T#2 out net 43"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#2"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "COS#6",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 51 -> T#5 out net 0"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "COS#6",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 51 -> T#5 out net 0"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "COS#6",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 51 -> T#5 out net 0"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "COS#6",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#5"
+ },
+ {
+  "sheet": "ABC-054",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-054",
+  "block": "COS#2",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 23 -> T#3 out net 14"
+ },
+ {
+  "sheet": "ABC-054",
+  "block": "COS#2",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 23 -> T#3 out net 14"
+ },
+ {
+  "sheet": "ABC-054",
+  "block": "COS#2",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 23 -> T#3 out net 14"
+ },
+ {
+  "sheet": "ABC-054",
+  "block": "COS#2",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#3"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "COS#1",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "COS#4",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 58 -> T#5 out net 2"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "COS#4",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 58 -> T#5 out net 2"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "COS#4",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 58 -> T#5 out net 2"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "COS#4",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#5"
+ },
+ {
+  "sheet": "ABC-056",
+  "block": "COS#4",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-056",
+  "block": "COS#5",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "COS#12",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "COS#24",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 145 -> T#25 out net 92"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "COS#24",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 145 -> T#25 out net 92"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "COS#24",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 145 -> T#25 out net 92"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "COS#24",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#25"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "COS#35",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 146 -> T#34 out net 36"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "COS#35",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 146 -> T#34 out net 36"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "COS#35",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 146 -> T#34 out net 36"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "COS#35",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#34"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "COS#37",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 147 -> T#36 out net 32"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "COS#37",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 147 -> T#36 out net 32"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "COS#37",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 147 -> T#36 out net 32"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "COS#37",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#36"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "COS#13",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 116 -> T#14 out net 51"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "COS#13",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 116 -> T#14 out net 51"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "COS#13",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 116 -> T#14 out net 51"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "COS#13",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#14"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "COS#15",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 117 -> T#11 out net 55"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "COS#15",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 117 -> T#11 out net 55"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "COS#15",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 117 -> T#11 out net 55"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "COS#15",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#11"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "COS#14",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 201 -> T#15 out net 175"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "COS#14",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 201 -> T#15 out net 175"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "COS#14",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 201 -> T#15 out net 175"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "COS#14",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#15"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "COS#16",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "COS#35",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 203 -> T#34 out net 113"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "COS#35",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "COS net 203 -> T#34 out net 113"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "COS#35",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "COS net 203 -> T#34 out net 113"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "COS#35",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 100",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#34"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "COS#36",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "COS#47",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS low = 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "COS net 205 -> T#46 out net 166"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "COS#47",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS mid = 1.75",
+  "expected": "1.75",
+  "actual": "1.75",
+  "status": "PASS",
+  "evidence": "COS net 205 -> T#46 out net 166"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "COS#47",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to B; COS high = 3.5",
+  "expected": "3.5",
+  "actual": "3.5",
+  "status": "PASS",
+  "evidence": "COS net 205 -> T#46 out net 166"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "COS#47",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "T forced to A (leg a = 7); COS = 3.5",
+  "expected": "7 (the COS value must not pass)",
+  "actual": "7",
+  "status": "PASS",
+  "evidence": "T#46"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "COS#49",
+  "source": "T switch: input B = manual value (COS), input A = automatic signal",
+  "input": "-",
+  "expected": "COS tied to a T switch",
+  "actual": "COS not tied (no manual value created)",
+  "status": "NOT TESTED",
+  "evidence": "b.used=undefined"
+ }
+]

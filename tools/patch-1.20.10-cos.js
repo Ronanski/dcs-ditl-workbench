@@ -1,0 +1,17 @@
+/* user (2026-10-10): the COS (operator manual value) was controlled only by a slider in the side panel; the user wants direct intervention ON the sheet: click the COS and a control opens beside it (number box + OK, slider, min / mid / max, status why it is or is not energized). It stays until the user closes it (x or Esc) or selects another block. */
+module.exports=(rep,repAll)=>{
+rep(`function selBox(){try{tagHi()}catch(e){}`,`function cosPopClose(){const o=document.getElementById('cospop');if(o){if(o._pu)for(const f of o._pu){const k=PU.indexOf(f);if(k>=0)PU.splice(k,1)}o.remove()}}
+function cosPopPos(){const o=document.getElementById('cospop');if(!o||!L||!AN.sel||!AN.sel.blk)return;const b=AN.sel.blk,svg=L.gb&&L.gb.ownerSVGElement;if(!svg)return;const m=svg.getScreenCTM(),p=svg.createSVGPoint();p.x=b.x1+1;p.y=-b.y1;const q=p.matrixTransform(m);o.style.left=Math.max(4,Math.min(innerWidth-o.offsetWidth-4,q.x+6))+'px';o.style.top=Math.max(4,Math.min(innerHeight-o.offsetHeight-4,q.y-o.offsetHeight-6))+'px'}
+function cosPop(){cosPopClose();const sh=cs(),s=AN.sel;if(!sh||!sh.S||!s||!s.blk||s.blk.k!=='COS'||!s.blk.used||AN.cat!=='an')return;const S=sh.S,b=s.blk,n=b.vnet,e=cosInfo(S,n);if(!e)return;
+ const o=h$('div',{id:'cospop'});o.style.cssText='position:fixed;z-index:60;background:#0c1216;border:1px solid #ff7ad9;border-radius:6px;padding:8px 10px;width:260px;box-shadow:0 4px 18px #000a;font-size:12px;color:#dde';
+ const x=h$('button',{txt:'✕',title:'Close (Esc)'});x.style.cssText='float:right;padding:0 6px';x.onclick=()=>{AN.sel=null;selBox();cosPopClose()};
+ const PU0=PU.length;o.append(x,h$('b',{txt:'COS manual value',style:'color:#ff7ad9'}),h$('div',{txt:(cosDesc(S,sh,e)||nm(S,n)||''),style:'color:#9ab;margin:2px 0 4px'}));
+ {/* the operator change-over of the T switch next to this COS: Auto / Force A / Force B */const tg=S.blk.filter(z=>z.k==='AMT'||z.k==='SW').sort((p,q)=>Math.hypot(p.cx-b.cx,p.cy-b.cy)-Math.hypot(q.cx-b.cx,q.cy-b.cy))[0];
+  if(tg&&Math.hypot(tg.cx-b.cx,tg.cy-b.cy)<24){const st=S.rt.st[tg.id],a=h$('select',{},[h$('option',{value:'',txt:'Auto (follows the select signal)'}),h$('option',{value:'A',txt:'Force input A (auto leg)'}),h$('option',{value:'B',txt:'Force input B (manual leg: COS value)'})]);a.value=st.fm||'';a.onchange=()=>swSet(sh,tg,a.value);const t=h$('span',{style:'margin-left:6px;color:#8fe3b0'});const f=()=>{t.textContent='Active: '+(st.pk||'A')+(st.fm?' (forced)':'');if(document.activeElement!==a)a.value=st.fm||''};f._s=1;PU.push(f);f();o.append(h$('div',{style:'margin:4px 0'},[h$('span',{txt:'T switch: '}),a,t]))}}
+ o.append(ctl(S,sh,n));
+ if(e.rng){const r=e.rng,set=v=>{if(!cosOn(S,e).on)return;S.rt.ext[n]=v;(sv(sh).ext=sv(sh).ext||{})[n]=v;anSave();settle()},row=h$('div',{style:'display:flex;gap:6px;margin-top:6px'});for(const [t,v] of [['Min',r.lo],['Mid',(r.lo+r.hi)/2],['Max',r.hi]])row.append(h$('button',{txt:t+' ('+fmt(v)+')',onclick:()=>set(v)}));o.append(row)}
+ o._pu=PU.slice(PU0);document.body.append(o);cosPopPos()}
+document.addEventListener('keydown',ev=>{if(ev.key==='Escape'&&document.getElementById('cospop')){AN.sel=null;try{selBox()}catch(e){}cosPopClose()}});
+function selBox(){try{cosPop()}catch(e){console.error('cosPop',e)}try{tagHi()}catch(e){}`);
+rep(`function paint(){const sh=cs();if(!sh||!sh.S||!L)return;`,`function paint(){const sh=cs();if(!sh||!sh.S||!L)return;try{cosPopPos()}catch(e){}`);
+};
