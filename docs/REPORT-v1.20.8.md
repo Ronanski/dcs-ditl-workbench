@@ -63,7 +63,12 @@ Limitation: the pairing transmitter <-> SIG.AB flag is the existing nearest-flag
 | test-verify-final (81 VLV / ACT: command instant, position gradual) | 81 PASS (strokes are the block defaults 20 s / 30 s = ASSUMED, not drawn) |
 | test-verify-range (MAN clamp at drawn range, AI) | 212 PASS, 155 NEEDS REVIEW (MAN with track / preset pins override the typed value; AI is limited by the UI box, not by the engine), 1 NOT TESTED, 0 FAIL |
 | test-ui-hs (HS / LS: only the selected wire lit) | 4 PASS (2 selectors), 22 NOT TESTED (the selector is idle in the default T / AMT state or shares its input wires), 0 FAIL |
-REGRESSION_PLACEHOLDER
+Regression on the frozen final build (engine, node): test-blocks 526 / 0 failures; test-math 998 checks / 0 mismatches; test-rate 43 / 0; test-comparators 240 / 0; test-switch 210 / 0; test-legend (FF 282, TON 35, TOF 19, TPS 108) 0 mismatch; test-loops 68 / 68; test-pidsign 64 / 64; test-runaway 0 runaway on 51 sheets; test-links-all 183 / 183.
+Regression (browser, 25 existing tests run on the final build): 22 PASS (circles, anim, ditl-link, ditl-signals, trace-x, path, defaults-ui, badges, cos, fixes, addr-ui, hmi, hmi2, force-all, lock-all, blocks-ui, links, ades, back-manual, drum, pid, pid-all). 3 non-zero:
+- test-ln: every step passes up to the project Save step, which fails because Save was removed on purpose (obsolete).
+- test-own (1 FAIL "Auto page plant-value widget") and test-ui-real (4 FAIL, plant slider / HMI click): IDENTICAL failures on v1.20.7 (checked), plant-model related, not caused by this batch.
+- test-modes "bad 1" and test-numinput "no INPUT box" are identical on v1.20.7 (pre-existing).
+Not run: test-project, test-storage, test-storage2, test-import, test-trend (Save / Open / Import UI removed or not re-run).
 
 ## 4. Confirmed bugs, NEEDS REVIEW, NOT TESTED, limitations
 Confirmed and fixed: H-43 (silent y = x / clamp), H-44 (% rates in signal units, 14 blocks changed), HS / LS lit both inputs, ABC-002 constant not editable, Bad Signal had no label / mark.
