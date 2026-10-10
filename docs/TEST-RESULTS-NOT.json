@@ -1,0 +1,4882 @@
+[
+ {
+  "sheet": "ABC-003B",
+  "block": "NOT#93",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 67 -> read net 74"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "NOT#93",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 67 -> read net 74"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "NOT#94",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 68 -> read net 70"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "NOT#94",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 68 -> read net 70"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "NOT#95",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 52 -> read net 53"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "NOT#95",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 52 -> read net 53"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "NOT#96",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 50 -> read net 49"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "NOT#96",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 50 -> read net 49"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "NOT#97",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 44 -> read net 43"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "NOT#97",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 44 -> read net 43"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "NOT#98",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 40 -> read net 96"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "NOT#98",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 40 -> read net 96"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "NOT#99",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 4 -> read net 5"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "NOT#99",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 4 -> read net 5"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "NOT#93",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 65 -> read net 66"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "NOT#93",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 65 -> read net 66"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "NOT#94",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 63 -> read net 62"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "NOT#94",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 63 -> read net 62"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "NOT#95",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 57 -> read net 56"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "NOT#95",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 57 -> read net 56"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "NOT#96",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 53 -> read net 96"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "NOT#96",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 53 -> read net 96"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "NOT#97",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 38 -> read net 45"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "NOT#97",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 38 -> read net 45"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "NOT#98",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 39 -> read net 41"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "NOT#98",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 39 -> read net 41"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "NOT#99",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 5 -> read net 6"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "NOT#99",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 5 -> read net 6"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "NOT#93",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 67 -> read net 74"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "NOT#93",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 67 -> read net 74"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "NOT#94",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 68 -> read net 70"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "NOT#94",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 68 -> read net 70"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "NOT#95",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 52 -> read net 53"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "NOT#95",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 52 -> read net 53"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "NOT#96",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 50 -> read net 49"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "NOT#96",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 50 -> read net 49"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "NOT#97",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 44 -> read net 43"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "NOT#97",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 44 -> read net 43"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "NOT#98",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 40 -> read net 96"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "NOT#98",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 40 -> read net 96"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "NOT#99",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 5 -> read net 6"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "NOT#99",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 5 -> read net 6"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#47",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 140 -> read net 141"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#47",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 140 -> read net 141"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#48",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 117 -> read net 118"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#48",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 117 -> read net 118"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#49",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 115 -> read net 121"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#49",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 115 -> read net 121"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#50",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 95 -> read net 96"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#50",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 95 -> read net 96"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#51",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 94 -> read net 99"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#51",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 94 -> read net 99"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#52",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 74 -> read net 75"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#52",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 74 -> read net 75"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#53",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 73 -> read net 78"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#53",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 73 -> read net 78"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#54",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 53 -> read net 54"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#54",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 53 -> read net 54"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#55",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 52 -> read net 57"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#55",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 52 -> read net 57"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#56",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 42 -> read net 43"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#56",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 42 -> read net 43"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#57",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 40 -> read net 41"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#57",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 40 -> read net 41"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#58",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 38 -> read net 39"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#58",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 38 -> read net 39"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#59",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 36 -> read net 37"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#59",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 36 -> read net 37"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#60",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 14 -> read net 30"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#60",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 14 -> read net 30"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#61",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 2 -> read net 3"
+ },
+ {
+  "sheet": "ABC-003E",
+  "block": "NOT#61",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 2 -> read net 3"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#102",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 176 -> read net 177"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#102",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 176 -> read net 177"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#103",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 173 -> read net 175"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#103",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 173 -> read net 175"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#104",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 102 -> read net 202"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#104",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 102 -> read net 202"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#105",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 172 -> read net 187"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#105",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 172 -> read net 187"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#106",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 168 -> read net 171"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#106",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 168 -> read net 171"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#107",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 166 -> read net 167"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#107",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 166 -> read net 167"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#108",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 164 -> read net 165"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#108",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 164 -> read net 165"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#109",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 38 -> read net 27"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#109",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 38 -> read net 27"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#110",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 157 -> read net 158"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#110",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 157 -> read net 158"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#111",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 149 -> read net 150"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#111",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 149 -> read net 150"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#112",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 24 -> read net 44"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#112",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 24 -> read net 44"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#113",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 49 -> read net 73"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#113",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 49 -> read net 73"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#114",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 88 -> read net 89"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#114",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 88 -> read net 89"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#115",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 86 -> read net 87"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#115",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 86 -> read net 87"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#116",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 82 -> read net 85"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#116",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 82 -> read net 85"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#117",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 78 -> read net 81"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#117",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 78 -> read net 81"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#118",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 69 -> read net 72"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#118",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 69 -> read net 72"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#119",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 65 -> read net 68"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#119",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 65 -> read net 68"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#120",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 56 -> read net 59"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#120",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 56 -> read net 59"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#121",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 52 -> read net 55"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#121",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 52 -> read net 55"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#122",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 50 -> read net 51"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#122",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 50 -> read net 51"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#123",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 31 -> read net 33"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#123",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 31 -> read net 33"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#124",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 25 -> read net 123"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#124",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 25 -> read net 123"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#125",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 25 -> read net 26"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "NOT#125",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 25 -> read net 26"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "NOT#34",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 24 -> read net 13"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "NOT#34",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 24 -> read net 13"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "NOT#35",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 17 -> read net 19"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "NOT#35",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 17 -> read net 19"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "NOT#36",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 7 -> read net 8"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "NOT#36",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 7 -> read net 8"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "NOT#37",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 11 -> read net 12"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "NOT#37",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 11 -> read net 12"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "NOT#38",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 3 -> read net 5"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "NOT#38",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 3 -> read net 5"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "NOT#34",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 38 -> read net 40"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "NOT#34",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 38 -> read net 40"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "NOT#35",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 31 -> read net 20"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "NOT#35",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 31 -> read net 20"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "NOT#36",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 24 -> read net 26"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "NOT#36",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 24 -> read net 26"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "NOT#37",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 2 -> read net 3"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "NOT#37",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 2 -> read net 3"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "NOT#38",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 6 -> read net 7"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "NOT#38",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 6 -> read net 7"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "NOT#45",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 21 -> read net 19"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "NOT#45",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 21 -> read net 19"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "NOT#46",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 23 -> read net 22"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "NOT#46",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 23 -> read net 22"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "NOT#47",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 26 -> read net 25"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "NOT#47",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 26 -> read net 25"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "NOT#63",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 19 -> read net 20"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "NOT#63",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 19 -> read net 20"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "NOT#64",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 16 -> read net 17"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "NOT#64",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 16 -> read net 17"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "NOT#60",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 109 -> read net 110"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "NOT#60",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 109 -> read net 110"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "NOT#61",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 94 -> read net 95"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "NOT#61",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 94 -> read net 95"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "NOT#62",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 67 -> read net 68"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "NOT#62",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 67 -> read net 68"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "NOT#63",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 64 -> read net 65"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "NOT#63",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 64 -> read net 65"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "NOT#64",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 54 -> read net 56"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "NOT#64",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 54 -> read net 56"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "NOT#65",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 41 -> read net 42"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "NOT#65",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 41 -> read net 42"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "NOT#66",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 38 -> read net 39"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "NOT#66",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 38 -> read net 39"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "NOT#67",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 17 -> read net 30"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "NOT#67",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 17 -> read net 30"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "NOT#68",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 53 -> read net 20"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "NOT#68",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 53 -> read net 20"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "NOT#69",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 19 -> read net 18"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "NOT#69",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 19 -> read net 18"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "NOT#77",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 13 -> read net 8"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "NOT#77",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 13 -> read net 8"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "NOT#78",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 83 -> read net 87"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "NOT#78",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 83 -> read net 87"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "NOT#79",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 58 -> read net 59"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "NOT#79",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 58 -> read net 59"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#133",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 201 -> read net 109"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#133",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 201 -> read net 109"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#134",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 2 -> read net 29"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#134",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 2 -> read net 29"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#135",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 2 -> read net 196"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#135",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 2 -> read net 196"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#136",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 159 -> read net 170"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#136",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 159 -> read net 170"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#137",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 168 -> read net 169"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#137",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 168 -> read net 169"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#138",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 155 -> read net 156"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#138",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 155 -> read net 156"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#139",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 66 -> read net 108"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#139",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 66 -> read net 108"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#140",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 85 -> read net 98"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#140",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 85 -> read net 98"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#141",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 85 -> read net 86"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#141",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 85 -> read net 86"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#142",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 67 -> read net 68"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#142",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 67 -> read net 68"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#143",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 71 -> read net 72"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#143",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 71 -> read net 72"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#144",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 49 -> read net 50"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#144",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 49 -> read net 50"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#145",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 53 -> read net 54"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#145",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 53 -> read net 54"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#146",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 1 -> read net 26"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#146",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 1 -> read net 26"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#147",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 1 -> read net 25"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#147",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 1 -> read net 25"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#148",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 3 -> read net 21"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#148",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 3 -> read net 21"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#149",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 3 -> read net 23"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#149",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 3 -> read net 23"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#150",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 19 -> read net 16"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#150",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 19 -> read net 16"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#151",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 19 -> read net 15"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#151",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 19 -> read net 15"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#152",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 4 -> read net 11"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#152",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 4 -> read net 11"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#153",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 4 -> read net 13"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#153",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 4 -> read net 13"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#154",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 9 -> read net 6"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#154",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 9 -> read net 6"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#155",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 9 -> read net 5"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "NOT#155",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 9 -> read net 5"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "NOT#29",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 13 -> read net 14"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "NOT#29",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 13 -> read net 14"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "NOT#30",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 17 -> read net 18"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "NOT#30",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 17 -> read net 18"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "NOT#31",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 0 -> read net 7"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "NOT#31",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 0 -> read net 7"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "NOT#32",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 0 -> read net 9"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "NOT#32",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 0 -> read net 9"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "NOT#33",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 5 -> read net 2"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "NOT#33",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 5 -> read net 2"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "NOT#34",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 5 -> read net 1"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "NOT#34",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 5 -> read net 1"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "NOT#122",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 101 -> read net 104"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "NOT#122",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 101 -> read net 104"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "NOT#123",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 100 -> read net 102"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "NOT#123",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 100 -> read net 102"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "NOT#124",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 92 -> read net 96"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "NOT#124",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 92 -> read net 96"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "NOT#125",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 72 -> read net 86"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "NOT#125",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 72 -> read net 86"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "NOT#126",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 76 -> read net 77"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "NOT#126",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 76 -> read net 77"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "NOT#127",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 25 -> read net 19"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "NOT#127",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 25 -> read net 19"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "NOT#128",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 18 -> read net 15"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "NOT#128",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 18 -> read net 15"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "NOT#129",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 11 -> read net 10"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "NOT#129",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 11 -> read net 10"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "NOT#130",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 9 -> read net 8"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "NOT#130",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 9 -> read net 8"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "NOT#72",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 63 -> read net 60"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "NOT#72",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 63 -> read net 60"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "NOT#73",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 50 -> read net 53"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "NOT#73",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 50 -> read net 53"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "NOT#75",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 61 -> read net 58"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "NOT#75",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 61 -> read net 58"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "NOT#76",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 50 -> read net 53"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "NOT#76",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 50 -> read net 53"
+ },
+ {
+  "sheet": "ABC-013",
+  "block": "NOT#27",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 1 -> read net 2"
+ },
+ {
+  "sheet": "ABC-013",
+  "block": "NOT#27",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 1 -> read net 2"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "NOT#34",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 56 -> read net 59"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "NOT#34",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 56 -> read net 59"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "NOT#35",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 54 -> read net 55"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "NOT#35",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 54 -> read net 55"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "NOT#36",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 53 -> read net 52"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "NOT#36",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 53 -> read net 52"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "NOT#37",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 23 -> read net 26"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "NOT#37",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 23 -> read net 26"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "NOT#38",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 21 -> read net 22"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "NOT#38",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 21 -> read net 22"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "NOT#39",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 20 -> read net 19"
+ },
+ {
+  "sheet": "ABC-014",
+  "block": "NOT#39",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 20 -> read net 19"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#132",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 100 -> read net 101"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#132",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 100 -> read net 101"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#133",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 104 -> read net 105"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#133",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 104 -> read net 105"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#134",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 108 -> read net 109"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#134",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 108 -> read net 109"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#135",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 112 -> read net 113"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#135",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 112 -> read net 113"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#136",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 116 -> read net 117"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#136",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 116 -> read net 117"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#137",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 120 -> read net 121"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#137",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 120 -> read net 121"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#138",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 124 -> read net 125"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#138",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 124 -> read net 125"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#139",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 128 -> read net 129"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#139",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 128 -> read net 129"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#140",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 132 -> read net 133"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#140",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 132 -> read net 133"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#141",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 136 -> read net 137"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#141",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 136 -> read net 137"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#142",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 140 -> read net 141"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#142",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 140 -> read net 141"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#143",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 144 -> read net 145"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "NOT#143",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 144 -> read net 145"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "NOT#110",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 75 -> read net 76"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "NOT#110",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 75 -> read net 76"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "NOT#111",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 80 -> read net 81"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "NOT#111",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 80 -> read net 81"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "NOT#112",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 85 -> read net 86"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "NOT#112",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 85 -> read net 86"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "NOT#113",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 90 -> read net 91"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "NOT#113",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 90 -> read net 91"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "NOT#114",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 95 -> read net 96"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "NOT#114",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 95 -> read net 96"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "NOT#115",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 100 -> read net 101"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "NOT#115",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 100 -> read net 101"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "NOT#116",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 105 -> read net 106"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "NOT#116",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 105 -> read net 106"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "NOT#117",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 110 -> read net 111"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "NOT#117",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 110 -> read net 111"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "NOT#118",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 115 -> read net 116"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "NOT#118",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 115 -> read net 116"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "NOT#119",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 120 -> read net 121"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "NOT#119",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 120 -> read net 121"
+ },
+ {
+  "sheet": "ABC-000",
+  "block": "NOT#37",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 3 -> read net 5"
+ },
+ {
+  "sheet": "ABC-000",
+  "block": "NOT#37",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 3 -> read net 5"
+ },
+ {
+  "sheet": "ABC-017",
+  "block": "NOT#18",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 0 -> read net 2"
+ },
+ {
+  "sheet": "ABC-017",
+  "block": "NOT#18",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 0 -> read net 2"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "NOT#52",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 38 -> read net 6"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "NOT#52",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 38 -> read net 6"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "NOT#53",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 5 -> read net 10"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "NOT#53",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 5 -> read net 10"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "NOT#54",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 8 -> read net 7"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "NOT#54",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 8 -> read net 7"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "NOT#121",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 44 -> read net 46"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "NOT#121",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 44 -> read net 46"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "NOT#122",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 41 -> read net 40"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "NOT#122",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 41 -> read net 40"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "NOT#123",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 25 -> read net 38"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "NOT#123",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 25 -> read net 38"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "NOT#124",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 25 -> read net 26"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "NOT#124",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 25 -> read net 26"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "NOT#125",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 11 -> read net 12"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "NOT#125",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 11 -> read net 12"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "NOT#61",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 13 -> read net 16"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "NOT#61",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 13 -> read net 16"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "NOT#62",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 15 -> read net 17"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "NOT#62",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 15 -> read net 17"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "NOT#43",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 22 -> read net 21"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "NOT#43",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 22 -> read net 21"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "NOT#46",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 59 -> read net 60"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "NOT#46",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 59 -> read net 60"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "NOT#47",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 59 -> read net 63"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "NOT#47",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 59 -> read net 63"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "NOT#46",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 61 -> read net 62"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "NOT#46",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 61 -> read net 62"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "NOT#47",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 61 -> read net 65"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "NOT#47",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 61 -> read net 65"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "NOT#46",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 61 -> read net 62"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "NOT#46",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 61 -> read net 62"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "NOT#47",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 61 -> read net 64"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "NOT#47",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 61 -> read net 64"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "NOT#46",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 61 -> read net 62"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "NOT#46",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 61 -> read net 62"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "NOT#47",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 61 -> read net 64"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "NOT#47",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 61 -> read net 64"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "NOT#46",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 61 -> read net 62"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "NOT#46",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 61 -> read net 62"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "NOT#47",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 61 -> read net 64"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "NOT#47",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 61 -> read net 64"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "NOT#103",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 121 -> read net 123"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "NOT#103",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 121 -> read net 123"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "NOT#104",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 120 -> read net 122"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "NOT#104",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 120 -> read net 122"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "NOT#105",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 29 -> read net 30"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "NOT#105",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 29 -> read net 30"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "NOT#106",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 19 -> read net 20"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "NOT#106",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 19 -> read net 20"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "NOT#120",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 118 -> read net 122"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "NOT#120",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 118 -> read net 122"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "NOT#121",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 117 -> read net 119"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "NOT#121",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 117 -> read net 119"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "NOT#122",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 107 -> read net 111"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "NOT#122",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 107 -> read net 111"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "NOT#123",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 106 -> read net 108"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "NOT#123",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 106 -> read net 108"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "NOT#124",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 104 -> read net 105"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "NOT#124",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 104 -> read net 105"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "NOT#125",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 48 -> read net 49"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "NOT#125",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 48 -> read net 49"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "NOT#126",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 27 -> read net 28"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "NOT#126",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 27 -> read net 28"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "NOT#127",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 24 -> read net 25"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "NOT#127",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 24 -> read net 25"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "NOT#128",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 14 -> read net 15"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "NOT#128",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 14 -> read net 15"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "NOT#129",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 30 -> read net 7"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "NOT#129",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 30 -> read net 7"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "NOT#130",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 9 -> read net 8"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "NOT#130",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 9 -> read net 8"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "NOT#45",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 48 -> read net 49"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "NOT#45",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 48 -> read net 49"
+ },
+ {
+  "sheet": "ABC-054",
+  "block": "NOT#16",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 8 -> read net 9"
+ },
+ {
+  "sheet": "ABC-054",
+  "block": "NOT#16",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 8 -> read net 9"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "NOT#26",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 46 -> read net 47"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "NOT#26",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 46 -> read net 47"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "NOT#27",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 44 -> read net 45"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "NOT#27",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 44 -> read net 45"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "NOT#28",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 41 -> read net 42"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "NOT#28",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 41 -> read net 42"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "NOT#29",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 33 -> read net 32"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "NOT#29",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 33 -> read net 32"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "NOT#30",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 23 -> read net 30"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "NOT#30",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 23 -> read net 30"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "NOT#31",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 23 -> read net 28"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "NOT#31",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 23 -> read net 28"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "NOT#32",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 23 -> read net 26"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "NOT#32",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 23 -> read net 26"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "NOT#33",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 18 -> read net 17"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "NOT#33",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 18 -> read net 17"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "NOT#34",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 10 -> read net 8"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "NOT#34",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 10 -> read net 8"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "NOT#35",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 5 -> read net 6"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "NOT#35",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 5 -> read net 6"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "NOT#76",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 91 -> read net 89"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "NOT#76",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 91 -> read net 89"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "NOT#77",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 73 -> read net 75"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "NOT#77",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 73 -> read net 75"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#79",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 105 -> read net 112"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#79",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 105 -> read net 112"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#80",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 109 -> read net 111"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#80",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 109 -> read net 111"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#81",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 109 -> read net 110"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#81",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 109 -> read net 110"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#82",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 103 -> read net 16"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#82",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 103 -> read net 16"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#83",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 138 -> read net 99"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#83",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 138 -> read net 99"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#84",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 126 -> read net 100"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#84",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 126 -> read net 100"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#85",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 83 -> read net 131"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#85",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 83 -> read net 131"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#86",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 125 -> read net 80"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#86",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 125 -> read net 80"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#87",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 76 -> read net 77"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#87",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 76 -> read net 77"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#88",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 56 -> read net 55"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#88",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 56 -> read net 55"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#89",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 53 -> read net 54"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#89",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 53 -> read net 54"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#90",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 51 -> read net 52"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#90",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 51 -> read net 52"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#91",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 49 -> read net 50"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#91",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 49 -> read net 50"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#92",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 47 -> read net 48"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#92",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 47 -> read net 48"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#93",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 22 -> read net 21"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#93",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 22 -> read net 21"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#94",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 11 -> read net 12"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#94",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 11 -> read net 12"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#95",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 9 -> read net 10"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "NOT#95",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 9 -> read net 10"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "NOT#28",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 0 -> read net 1"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "NOT#28",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 0 -> read net 1"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "NOT#29",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 2 -> read net 29"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "NOT#29",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 2 -> read net 29"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "NOT#30",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 5 -> read net 36"
+ },
+ {
+  "sheet": "ABC-001D",
+  "block": "NOT#30",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 5 -> read net 36"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "NOT#82",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 41 -> read net 38"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "NOT#82",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 41 -> read net 38"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "NOT#83",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 88 -> read net 64"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "NOT#83",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 88 -> read net 64"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "NOT#117",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 197 -> read net 169"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "NOT#117",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 197 -> read net 169"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "NOT#118",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 82 -> read net 83"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "NOT#118",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 82 -> read net 83"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "NOT#119",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 71 -> read net 76"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "NOT#119",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 71 -> read net 76"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "NOT#120",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 72 -> read net 74"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "NOT#120",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 72 -> read net 74"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "NOT#121",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 10 -> read net 103"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "NOT#121",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 10 -> read net 103"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "NOT#122",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 65 -> read net 64"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "NOT#122",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 65 -> read net 64"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "NOT#123",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 43 -> read net 42"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "NOT#123",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 43 -> read net 42"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "NOT#124",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 41 -> read net 40"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "NOT#124",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 41 -> read net 40"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "NOT#125",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 39 -> read net 38"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "NOT#125",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 39 -> read net 38"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "NOT#126",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 37 -> read net 36"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "NOT#126",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 37 -> read net 36"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "NOT#127",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=0",
+  "expected": "1",
+  "actual": "1",
+  "status": "PASS",
+  "evidence": "force net 3 -> read net 4"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "NOT#127",
+  "source": "truth table of NOT (docs/FUNCTIONALITY.md)",
+  "input": "in=1",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "force net 3 -> read net 4"
+ }
+]

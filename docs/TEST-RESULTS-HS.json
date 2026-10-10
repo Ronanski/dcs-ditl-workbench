@@ -1,0 +1,262 @@
+[
+ {
+  "sheet": "ABC-003B",
+  "block": "HS#29",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "A larger",
+  "expected": "-",
+  "actual": "the selector output itself is unused in the default switch states (whole block dimmed)",
+  "status": "NOT TESTED",
+  "evidence": "downstream T / AMT leg not selected"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "HS#29",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "B larger",
+  "expected": "-",
+  "actual": "the selector output itself is unused in the default switch states (whole block dimmed)",
+  "status": "NOT TESTED",
+  "evidence": "downstream T / AMT leg not selected"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "HS#29",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "A larger",
+  "expected": "-",
+  "actual": "the selector output itself is unused in the default switch states (whole block dimmed)",
+  "status": "NOT TESTED",
+  "evidence": "downstream T / AMT leg not selected"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "HS#29",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "B larger",
+  "expected": "-",
+  "actual": "the selector output itself is unused in the default switch states (whole block dimmed)",
+  "status": "NOT TESTED",
+  "evidence": "downstream T / AMT leg not selected"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "HS#29",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "A larger",
+  "expected": "-",
+  "actual": "the selector output itself is unused in the default switch states (whole block dimmed)",
+  "status": "NOT TESTED",
+  "evidence": "downstream T / AMT leg not selected"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "HS#29",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "B larger",
+  "expected": "-",
+  "actual": "the selector output itself is unused in the default switch states (whole block dimmed)",
+  "status": "NOT TESTED",
+  "evidence": "downstream T / AMT leg not selected"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "HS#29",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "A larger",
+  "expected": "-",
+  "actual": "the selector output itself is unused in the default switch states (whole block dimmed)",
+  "status": "NOT TESTED",
+  "evidence": "downstream T / AMT leg not selected"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "HS#29",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "B larger",
+  "expected": "-",
+  "actual": "the selector output itself is unused in the default switch states (whole block dimmed)",
+  "status": "NOT TESTED",
+  "evidence": "downstream T / AMT leg not selected"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "HS#30",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "-",
+  "expected": "-",
+  "actual": "inputs 2 (an input net feeds other blocks)",
+  "status": "NOT TESTED",
+  "evidence": "only 2-input selectors with private input wires are exercised"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "HS#30",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "-",
+  "expected": "-",
+  "actual": "inputs 2 (an input net feeds other blocks)",
+  "status": "NOT TESTED",
+  "evidence": "only 2-input selectors with private input wires are exercised"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "HS#14",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "-",
+  "expected": "-",
+  "actual": "inputs 2 (an input net feeds other blocks)",
+  "status": "NOT TESTED",
+  "evidence": "only 2-input selectors with private input wires are exercised"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "LS#15",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "-",
+  "expected": "-",
+  "actual": "inputs 2 (an input net feeds other blocks)",
+  "status": "NOT TESTED",
+  "evidence": "only 2-input selectors with private input wires are exercised"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "HS#53",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "A larger (70 / 30)",
+  "expected": "max 70; dimmed net 47, lit net 46",
+  "actual": "out 70; dead(other)=true dead(selected)=false",
+  "status": "PASS",
+  "evidence": "S._dead after paint"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "HS#53",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "B larger (30 / 70)",
+  "expected": "max 70; dimmed net 46, lit net 47",
+  "actual": "out 70; dead(other)=true dead(selected)=false",
+  "status": "PASS",
+  "evidence": "S._dead after paint"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "LS#70",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "-",
+  "expected": "-",
+  "actual": "inputs 2 (an input net feeds other blocks)",
+  "status": "NOT TESTED",
+  "evidence": "only 2-input selectors with private input wires are exercised"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "HS#20",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "-",
+  "expected": "-",
+  "actual": "inputs 2 (an input net feeds other blocks)",
+  "status": "NOT TESTED",
+  "evidence": "only 2-input selectors with private input wires are exercised"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "HS#31",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "-",
+  "expected": "-",
+  "actual": "inputs 2 (an input net feeds other blocks)",
+  "status": "NOT TESTED",
+  "evidence": "only 2-input selectors with private input wires are exercised"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "HS#15",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "A larger (70 / 30)",
+  "expected": "max 70; dimmed net 158, lit net 156",
+  "actual": "out 70; dead(other)=true dead(selected)=false",
+  "status": "PASS",
+  "evidence": "S._dead after paint"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "HS#15",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "B larger (30 / 70)",
+  "expected": "max 70; dimmed net 156, lit net 158",
+  "actual": "out 70; dead(other)=true dead(selected)=false",
+  "status": "PASS",
+  "evidence": "S._dead after paint"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "LS#33",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "-",
+  "expected": "-",
+  "actual": "inputs 2 (an input net feeds other blocks)",
+  "status": "NOT TESTED",
+  "evidence": "only 2-input selectors with private input wires are exercised"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "HS#0",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "-",
+  "expected": "-",
+  "actual": "inputs 2 (an input net feeds other blocks)",
+  "status": "NOT TESTED",
+  "evidence": "only 2-input selectors with private input wires are exercised"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "HS#19",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "-",
+  "expected": "-",
+  "actual": "inputs 2 (an input net feeds other blocks)",
+  "status": "NOT TESTED",
+  "evidence": "only 2-input selectors with private input wires are exercised"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "LS#58",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "-",
+  "expected": "-",
+  "actual": "inputs 2 (an input net feeds other blocks)",
+  "status": "NOT TESTED",
+  "evidence": "only 2-input selectors with private input wires are exercised"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "HS#62",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "-",
+  "expected": "-",
+  "actual": "inputs 3 (an input net feeds other blocks)",
+  "status": "NOT TESTED",
+  "evidence": "only 2-input selectors with private input wires are exercised"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "HS#22",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "A larger",
+  "expected": "-",
+  "actual": "the selector output itself is unused in the default switch states (whole block dimmed)",
+  "status": "NOT TESTED",
+  "evidence": "downstream T / AMT leg not selected"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "HS#22",
+  "source": "HS = max, LS = min of the inputs; unselected input dimmed like a T switch leg",
+  "input": "B larger",
+  "expected": "-",
+  "actual": "the selector output itself is unused in the default switch states (whole block dimmed)",
+  "status": "NOT TESTED",
+  "evidence": "downstream T / AMT leg not selected"
+ }
+]

@@ -1,0 +1,3682 @@
+[
+ {
+  "sheet": "ABC-003B",
+  "block": "MAN#28",
+  "source": "drawn range 0.8 ~ 1.2",
+  "input": "at low: 0.8",
+  "expected": "0.8",
+  "actual": "0.8",
+  "status": "PASS",
+  "evidence": "MAN output net 32"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "MAN#28",
+  "source": "drawn range 0.8 ~ 1.2",
+  "input": "at high: 1.2",
+  "expected": "1.2",
+  "actual": "1.2",
+  "status": "PASS",
+  "evidence": "MAN output net 32"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "MAN#28",
+  "source": "drawn range 0.8 ~ 1.2",
+  "input": "below range: 0.76",
+  "expected": "0.8",
+  "actual": "0.8",
+  "status": "PASS",
+  "evidence": "MAN output net 32"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "MAN#28",
+  "source": "drawn range 0.8 ~ 1.2",
+  "input": "above range: 1.24",
+  "expected": "1.2",
+  "actual": "1.2",
+  "status": "PASS",
+  "evidence": "MAN output net 32"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "MAN#31",
+  "source": "drawn range -10 ~ 10 T/H",
+  "input": "at low: -10",
+  "expected": "-10",
+  "actual": "-10",
+  "status": "PASS",
+  "evidence": "MAN output net 22"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "MAN#31",
+  "source": "drawn range -10 ~ 10 T/H",
+  "input": "at high: 10",
+  "expected": "10",
+  "actual": "10",
+  "status": "PASS",
+  "evidence": "MAN output net 22"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "MAN#31",
+  "source": "drawn range -10 ~ 10 T/H",
+  "input": "below range: -12",
+  "expected": "-10",
+  "actual": "-10",
+  "status": "PASS",
+  "evidence": "MAN output net 22"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "MAN#31",
+  "source": "drawn range -10 ~ 10 T/H",
+  "input": "above range: 12",
+  "expected": "10",
+  "actual": "10",
+  "status": "PASS",
+  "evidence": "MAN output net 22"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "AI#4",
+  "source": "drawn range 0 ~ 65 T/H",
+  "input": "engine fed above range: 71.5",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "71.5",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "AI#12",
+  "source": "drawn range 0 ~ 3.5 T/H",
+  "input": "engine fed above range: 3.85",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "3.85",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "AI#27",
+  "source": "drawn range 0 ~ 10 kg/cm2",
+  "input": "engine fed above range: 11",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "11",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "MAN#28",
+  "source": "drawn range 0.8 ~ 1.2",
+  "input": "at low: 0.8",
+  "expected": "0.8",
+  "actual": "0.8",
+  "status": "PASS",
+  "evidence": "MAN output net 33"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "MAN#28",
+  "source": "drawn range 0.8 ~ 1.2",
+  "input": "at high: 1.2",
+  "expected": "1.2",
+  "actual": "1.2",
+  "status": "PASS",
+  "evidence": "MAN output net 33"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "MAN#28",
+  "source": "drawn range 0.8 ~ 1.2",
+  "input": "below range: 0.76",
+  "expected": "0.8",
+  "actual": "0.8",
+  "status": "PASS",
+  "evidence": "MAN output net 33"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "MAN#28",
+  "source": "drawn range 0.8 ~ 1.2",
+  "input": "above range: 1.24",
+  "expected": "1.2",
+  "actual": "1.2",
+  "status": "PASS",
+  "evidence": "MAN output net 33"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "MAN#31",
+  "source": "drawn range -10 ~ 10 T/H",
+  "input": "at low: -10",
+  "expected": "-10",
+  "actual": "-10",
+  "status": "PASS",
+  "evidence": "MAN output net 23"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "MAN#31",
+  "source": "drawn range -10 ~ 10 T/H",
+  "input": "at high: 10",
+  "expected": "10",
+  "actual": "10",
+  "status": "PASS",
+  "evidence": "MAN output net 23"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "MAN#31",
+  "source": "drawn range -10 ~ 10 T/H",
+  "input": "below range: -12",
+  "expected": "-10",
+  "actual": "-10",
+  "status": "PASS",
+  "evidence": "MAN output net 23"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "MAN#31",
+  "source": "drawn range -10 ~ 10 T/H",
+  "input": "above range: 12",
+  "expected": "10",
+  "actual": "10",
+  "status": "PASS",
+  "evidence": "MAN output net 23"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "AI#4",
+  "source": "drawn range 0 ~ 65 T/H",
+  "input": "engine fed above range: 71.5",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "71.5",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "AI#12",
+  "source": "drawn range 0 ~ 3.5 T/H",
+  "input": "engine fed above range: 3.85",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "3.85",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "AI#27",
+  "source": "drawn range 0 ~ 10 kg/cm2",
+  "input": "engine fed above range: 11",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "11",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "MAN#28",
+  "source": "drawn range 0.8 ~ 1.0752",
+  "input": "at low: 0.8",
+  "expected": "0.8",
+  "actual": "0.8",
+  "status": "PASS",
+  "evidence": "MAN output net 33"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "MAN#28",
+  "source": "drawn range 0.8 ~ 1.0752",
+  "input": "at high: 1.0752",
+  "expected": "1.0752",
+  "actual": "1.0752",
+  "status": "PASS",
+  "evidence": "MAN output net 33"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "MAN#28",
+  "source": "drawn range 0.8 ~ 1.0752",
+  "input": "below range: 0.77248",
+  "expected": "0.8",
+  "actual": "0.8",
+  "status": "PASS",
+  "evidence": "MAN output net 33"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "MAN#28",
+  "source": "drawn range 0.8 ~ 1.0752",
+  "input": "above range: 1.10272",
+  "expected": "1.0752",
+  "actual": "1.0752",
+  "status": "PASS",
+  "evidence": "MAN output net 33"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "MAN#31",
+  "source": "drawn range -10 ~ 10 T/H",
+  "input": "at low: -10",
+  "expected": "-10",
+  "actual": "-10",
+  "status": "PASS",
+  "evidence": "MAN output net 23"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "MAN#31",
+  "source": "drawn range -10 ~ 10 T/H",
+  "input": "at high: 10",
+  "expected": "10",
+  "actual": "10",
+  "status": "PASS",
+  "evidence": "MAN output net 23"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "MAN#31",
+  "source": "drawn range -10 ~ 10 T/H",
+  "input": "below range: -12",
+  "expected": "-10",
+  "actual": "-10",
+  "status": "PASS",
+  "evidence": "MAN output net 23"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "MAN#31",
+  "source": "drawn range -10 ~ 10 T/H",
+  "input": "above range: 12",
+  "expected": "10",
+  "actual": "10",
+  "status": "PASS",
+  "evidence": "MAN output net 23"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "AI#4",
+  "source": "drawn range 0 ~ 65 T/H",
+  "input": "engine fed above range: 71.5",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "71.5",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "AI#12",
+  "source": "drawn range 0 ~ 3.5 T/H",
+  "input": "engine fed above range: 3.85",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "3.85",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "AI#27",
+  "source": "drawn range 0 ~ 10 kg/cm2",
+  "input": "engine fed above range: 11",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "11",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "MAN#12",
+  "source": "drawn range 0 ~ 40 T/H",
+  "input": "at low: 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "MAN output net 199"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "MAN#12",
+  "source": "drawn range 0 ~ 40 T/H",
+  "input": "at high: 40",
+  "expected": "40",
+  "actual": "0",
+  "status": "NEEDS REVIEW",
+  "evidence": "MAN output net 199 - the MAN has track / preset input pins: the typed value is overridden by them in this state"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "MAN#12",
+  "source": "drawn range 0 ~ 40 T/H",
+  "input": "below range: -4",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "MAN output net 199"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "MAN#12",
+  "source": "drawn range 0 ~ 40 T/H",
+  "input": "above range: 44",
+  "expected": "40",
+  "actual": "0",
+  "status": "NEEDS REVIEW",
+  "evidence": "MAN output net 199 - the MAN has track / preset input pins: the typed value is overridden by them in this state"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "MAN#16",
+  "source": "drawn range -8 ~ 8 T/H",
+  "input": "at low: -8",
+  "expected": "-8",
+  "actual": "-8",
+  "status": "PASS",
+  "evidence": "MAN output net 136"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "MAN#16",
+  "source": "drawn range -8 ~ 8 T/H",
+  "input": "at high: 8",
+  "expected": "8",
+  "actual": "8",
+  "status": "PASS",
+  "evidence": "MAN output net 136"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "MAN#16",
+  "source": "drawn range -8 ~ 8 T/H",
+  "input": "below range: -9.6",
+  "expected": "-8",
+  "actual": "-8",
+  "status": "PASS",
+  "evidence": "MAN output net 136"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "MAN#16",
+  "source": "drawn range -8 ~ 8 T/H",
+  "input": "above range: 9.6",
+  "expected": "8",
+  "actual": "8",
+  "status": "PASS",
+  "evidence": "MAN output net 136"
+ },
+ {
+  "sheet": "ABC-004A",
+  "block": "AI#24",
+  "source": "drawn range 0 ~ 40 T/H",
+  "input": "engine fed above range: 44",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "44",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "MAN#0",
+  "source": "drawn range 0 ~ 40 T/H",
+  "input": "at low: 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "MAN output net 58"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "MAN#0",
+  "source": "drawn range 0 ~ 40 T/H",
+  "input": "at high: 40",
+  "expected": "40",
+  "actual": "0",
+  "status": "NEEDS REVIEW",
+  "evidence": "MAN output net 58 - the MAN has track / preset input pins: the typed value is overridden by them in this state"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "MAN#0",
+  "source": "drawn range 0 ~ 40 T/H",
+  "input": "below range: -4",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "MAN output net 58"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "MAN#0",
+  "source": "drawn range 0 ~ 40 T/H",
+  "input": "above range: 44",
+  "expected": "40",
+  "actual": "0",
+  "status": "NEEDS REVIEW",
+  "evidence": "MAN output net 58 - the MAN has track / preset input pins: the typed value is overridden by them in this state"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "MAN#4",
+  "source": "drawn range -8 ~ 8 T/H",
+  "input": "at low: -8",
+  "expected": "-8",
+  "actual": "-8",
+  "status": "PASS",
+  "evidence": "MAN output net 48"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "MAN#4",
+  "source": "drawn range -8 ~ 8 T/H",
+  "input": "at high: 8",
+  "expected": "8",
+  "actual": "8",
+  "status": "PASS",
+  "evidence": "MAN output net 48"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "MAN#4",
+  "source": "drawn range -8 ~ 8 T/H",
+  "input": "below range: -9.6",
+  "expected": "-8",
+  "actual": "-8",
+  "status": "PASS",
+  "evidence": "MAN output net 48"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "MAN#4",
+  "source": "drawn range -8 ~ 8 T/H",
+  "input": "above range: 9.6",
+  "expected": "8",
+  "actual": "8",
+  "status": "PASS",
+  "evidence": "MAN output net 48"
+ },
+ {
+  "sheet": "ABC-004B",
+  "block": "AI#6",
+  "source": "drawn range 0 ~ 40 T/H",
+  "input": "engine fed above range: 44",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "44",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "MAN#0",
+  "source": "drawn range 0 ~ 40 T/H",
+  "input": "at low: 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "MAN output net 58"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "MAN#0",
+  "source": "drawn range 0 ~ 40 T/H",
+  "input": "at high: 40",
+  "expected": "40",
+  "actual": "0",
+  "status": "NEEDS REVIEW",
+  "evidence": "MAN output net 58 - the MAN has track / preset input pins: the typed value is overridden by them in this state"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "MAN#0",
+  "source": "drawn range 0 ~ 40 T/H",
+  "input": "below range: -4",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "MAN output net 58"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "MAN#0",
+  "source": "drawn range 0 ~ 40 T/H",
+  "input": "above range: 44",
+  "expected": "40",
+  "actual": "0",
+  "status": "NEEDS REVIEW",
+  "evidence": "MAN output net 58 - the MAN has track / preset input pins: the typed value is overridden by them in this state"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "MAN#4",
+  "source": "drawn range -8 ~ 8 T/H",
+  "input": "at low: -8",
+  "expected": "-8",
+  "actual": "-8",
+  "status": "PASS",
+  "evidence": "MAN output net 48"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "MAN#4",
+  "source": "drawn range -8 ~ 8 T/H",
+  "input": "at high: 8",
+  "expected": "8",
+  "actual": "8",
+  "status": "PASS",
+  "evidence": "MAN output net 48"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "MAN#4",
+  "source": "drawn range -8 ~ 8 T/H",
+  "input": "below range: -9.6",
+  "expected": "-8",
+  "actual": "-8",
+  "status": "PASS",
+  "evidence": "MAN output net 48"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "MAN#4",
+  "source": "drawn range -8 ~ 8 T/H",
+  "input": "above range: 9.6",
+  "expected": "8",
+  "actual": "8",
+  "status": "PASS",
+  "evidence": "MAN output net 48"
+ },
+ {
+  "sheet": "ABC-004C",
+  "block": "AI#6",
+  "source": "drawn range 0 ~ 40 T/H",
+  "input": "engine fed above range: 44",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "44",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "AI#5",
+  "source": "drawn range 0 ~ 500 ppm",
+  "input": "engine fed above range: 550",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "550",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-005",
+  "block": "AI#7",
+  "source": "drawn range 0 ~ 100 %  ( 0.00 ~ 27.00 T/H )",
+  "input": "engine fed above range: 110",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "110",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#4",
+  "source": "drawn range 0 ~ 100 °C",
+  "input": "engine fed above range: 110",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "110",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#7",
+  "source": "drawn range 0 ~ 432 T/H",
+  "input": "engine fed above range: 475.2",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "475.2",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#9",
+  "source": "drawn range 0 ~ 648 T/H",
+  "input": "engine fed above range: 712.8",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "712.8",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#11",
+  "source": "drawn range 0 ~ 35 T/H",
+  "input": "engine fed above range: 38.5",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "38.5",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#24",
+  "source": "drawn range 0 ~ 200 °C",
+  "input": "engine fed above range: 220",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "220",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#27",
+  "source": "drawn range 0 ~ 200 °C",
+  "input": "engine fed above range: 220",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "220",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#30",
+  "source": "drawn range 0 ~ 100 °C",
+  "input": "engine fed above range: 110",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "110",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#34",
+  "source": "drawn range 0 ~ 510 T/H",
+  "input": "engine fed above range: 561",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "561",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#36",
+  "source": "drawn range 0 ~ 600 °C",
+  "input": "engine fed above range: 660",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "660",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "AI#39",
+  "source": "drawn range 0 ~ 600 °C",
+  "input": "engine fed above range: 660",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "660",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "AI#1",
+  "source": "drawn range -600 ~ 600 mmH2O",
+  "input": "engine fed above range: 720",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "720",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "AI#4",
+  "source": "drawn range -600 ~ 600 mmH2O",
+  "input": "engine fed above range: 720",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "720",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "AI#7",
+  "source": "drawn range -600 ~ 600 mmH2O",
+  "input": "engine fed above range: 720",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "720",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#11",
+  "source": "drawn range 0.6 ~ 2.3499999999999996 rpm",
+  "input": "at low: 0.6",
+  "expected": "0.6",
+  "actual": "2.3499999999999996",
+  "status": "NEEDS REVIEW",
+  "evidence": "MAN output net 213 - the MAN has track / preset input pins: the typed value is overridden by them in this state"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#11",
+  "source": "drawn range 0.6 ~ 2.3499999999999996 rpm",
+  "input": "at high: 2.3499999999999996",
+  "expected": "2.3499999999999996",
+  "actual": "2.3499999999999996",
+  "status": "PASS",
+  "evidence": "MAN output net 213"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#11",
+  "source": "drawn range 0.6 ~ 2.3499999999999996 rpm",
+  "input": "below range: 0.42500000000000004",
+  "expected": "0.6",
+  "actual": "2.3499999999999996",
+  "status": "NEEDS REVIEW",
+  "evidence": "MAN output net 213 - the MAN has track / preset input pins: the typed value is overridden by them in this state"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#11",
+  "source": "drawn range 0.6 ~ 2.3499999999999996 rpm",
+  "input": "above range: 2.5249999999999995",
+  "expected": "2.3499999999999996",
+  "actual": "2.3499999999999996",
+  "status": "PASS",
+  "evidence": "MAN output net 213"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#15",
+  "source": "drawn range -25 ~ 25 rpm",
+  "input": "at low: -25",
+  "expected": "-25",
+  "actual": "-25",
+  "status": "PASS",
+  "evidence": "MAN output net 192"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#15",
+  "source": "drawn range -25 ~ 25 rpm",
+  "input": "at high: 25",
+  "expected": "25",
+  "actual": "25",
+  "status": "PASS",
+  "evidence": "MAN output net 192"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#15",
+  "source": "drawn range -25 ~ 25 rpm",
+  "input": "below range: -30",
+  "expected": "-25",
+  "actual": "-25",
+  "status": "PASS",
+  "evidence": "MAN output net 192"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#15",
+  "source": "drawn range -25 ~ 25 rpm",
+  "input": "above range: 30",
+  "expected": "25",
+  "actual": "25",
+  "status": "PASS",
+  "evidence": "MAN output net 192"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#38",
+  "source": "drawn range 0.6 ~ 2.3499999999999996 rpm",
+  "input": "at low: 0.6",
+  "expected": "0.6",
+  "actual": "2.3499999999999996",
+  "status": "NEEDS REVIEW",
+  "evidence": "MAN output net 151 - the MAN has track / preset input pins: the typed value is overridden by them in this state"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#38",
+  "source": "drawn range 0.6 ~ 2.3499999999999996 rpm",
+  "input": "at high: 2.3499999999999996",
+  "expected": "2.3499999999999996",
+  "actual": "2.3499999999999996",
+  "status": "PASS",
+  "evidence": "MAN output net 151"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#38",
+  "source": "drawn range 0.6 ~ 2.3499999999999996 rpm",
+  "input": "below range: 0.42500000000000004",
+  "expected": "0.6",
+  "actual": "2.3499999999999996",
+  "status": "NEEDS REVIEW",
+  "evidence": "MAN output net 151 - the MAN has track / preset input pins: the typed value is overridden by them in this state"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#38",
+  "source": "drawn range 0.6 ~ 2.3499999999999996 rpm",
+  "input": "above range: 2.5249999999999995",
+  "expected": "2.3499999999999996",
+  "actual": "2.3499999999999996",
+  "status": "PASS",
+  "evidence": "MAN output net 151"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#42",
+  "source": "drawn range -25 ~ 25 rpm",
+  "input": "at low: -25",
+  "expected": "-25",
+  "actual": "-25",
+  "status": "PASS",
+  "evidence": "MAN output net 140"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#42",
+  "source": "drawn range -25 ~ 25 rpm",
+  "input": "at high: 25",
+  "expected": "25",
+  "actual": "25",
+  "status": "PASS",
+  "evidence": "MAN output net 140"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#42",
+  "source": "drawn range -25 ~ 25 rpm",
+  "input": "below range: -30",
+  "expected": "-25",
+  "actual": "-25",
+  "status": "PASS",
+  "evidence": "MAN output net 140"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#42",
+  "source": "drawn range -25 ~ 25 rpm",
+  "input": "above range: 30",
+  "expected": "25",
+  "actual": "25",
+  "status": "PASS",
+  "evidence": "MAN output net 140"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#51",
+  "source": "drawn range 0.6 ~ 2.3499999999999996 rpm",
+  "input": "at low: 0.6",
+  "expected": "0.6",
+  "actual": "2.3499999999999996",
+  "status": "NEEDS REVIEW",
+  "evidence": "MAN output net 133 - the MAN has track / preset input pins: the typed value is overridden by them in this state"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#51",
+  "source": "drawn range 0.6 ~ 2.3499999999999996 rpm",
+  "input": "at high: 2.3499999999999996",
+  "expected": "2.3499999999999996",
+  "actual": "2.3499999999999996",
+  "status": "PASS",
+  "evidence": "MAN output net 133"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#51",
+  "source": "drawn range 0.6 ~ 2.3499999999999996 rpm",
+  "input": "below range: 0.42500000000000004",
+  "expected": "0.6",
+  "actual": "2.3499999999999996",
+  "status": "NEEDS REVIEW",
+  "evidence": "MAN output net 133 - the MAN has track / preset input pins: the typed value is overridden by them in this state"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#51",
+  "source": "drawn range 0.6 ~ 2.3499999999999996 rpm",
+  "input": "above range: 2.5249999999999995",
+  "expected": "2.3499999999999996",
+  "actual": "2.3499999999999996",
+  "status": "PASS",
+  "evidence": "MAN output net 133"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#55",
+  "source": "drawn range -25 ~ 25 rpm",
+  "input": "at low: -25",
+  "expected": "-25",
+  "actual": "-25",
+  "status": "PASS",
+  "evidence": "MAN output net 122"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#55",
+  "source": "drawn range -25 ~ 25 rpm",
+  "input": "at high: 25",
+  "expected": "25",
+  "actual": "25",
+  "status": "PASS",
+  "evidence": "MAN output net 122"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#55",
+  "source": "drawn range -25 ~ 25 rpm",
+  "input": "below range: -30",
+  "expected": "-25",
+  "actual": "-25",
+  "status": "PASS",
+  "evidence": "MAN output net 122"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "MAN#55",
+  "source": "drawn range -25 ~ 25 rpm",
+  "input": "above range: 30",
+  "expected": "25",
+  "actual": "25",
+  "status": "PASS",
+  "evidence": "MAN output net 122"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#20",
+  "source": "drawn range 0 ~ 5 rpm",
+  "input": "engine fed above range: 5.5",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "5.5",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#34",
+  "source": "drawn range 0 ~ 2500 mmH2O",
+  "input": "engine fed above range: 2750",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "2750",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#36",
+  "source": "drawn range 0 ~ 2500 mmH2O",
+  "input": "engine fed above range: 2750",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "2750",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#46",
+  "source": "drawn range 0 ~ 5 rpm",
+  "input": "engine fed above range: 5.5",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "5.5",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "AI#59",
+  "source": "drawn range 0 ~ 5 rpm",
+  "input": "engine fed above range: 5.5",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "5.5",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "MAN#0",
+  "source": "drawn range 0.6 ~ 2.3499999999999996 rpm",
+  "input": "at low: 0.6",
+  "expected": "0.6",
+  "actual": "2.3499999999999996",
+  "status": "NEEDS REVIEW",
+  "evidence": "MAN output net 49 - the MAN has track / preset input pins: the typed value is overridden by them in this state"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "MAN#0",
+  "source": "drawn range 0.6 ~ 2.3499999999999996 rpm",
+  "input": "at high: 2.3499999999999996",
+  "expected": "2.3499999999999996",
+  "actual": "2.3499999999999996",
+  "status": "PASS",
+  "evidence": "MAN output net 49"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "MAN#0",
+  "source": "drawn range 0.6 ~ 2.3499999999999996 rpm",
+  "input": "below range: 0.42500000000000004",
+  "expected": "0.6",
+  "actual": "2.3499999999999996",
+  "status": "NEEDS REVIEW",
+  "evidence": "MAN output net 49 - the MAN has track / preset input pins: the typed value is overridden by them in this state"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "MAN#0",
+  "source": "drawn range 0.6 ~ 2.3499999999999996 rpm",
+  "input": "above range: 2.5249999999999995",
+  "expected": "2.3499999999999996",
+  "actual": "2.3499999999999996",
+  "status": "PASS",
+  "evidence": "MAN output net 49"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "MAN#4",
+  "source": "drawn range -25 ~ 25 rpm",
+  "input": "at low: -25",
+  "expected": "-25",
+  "actual": "-25",
+  "status": "PASS",
+  "evidence": "MAN output net 37"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "MAN#4",
+  "source": "drawn range -25 ~ 25 rpm",
+  "input": "at high: 25",
+  "expected": "25",
+  "actual": "25",
+  "status": "PASS",
+  "evidence": "MAN output net 37"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "MAN#4",
+  "source": "drawn range -25 ~ 25 rpm",
+  "input": "below range: -30",
+  "expected": "-25",
+  "actual": "-25",
+  "status": "PASS",
+  "evidence": "MAN output net 37"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "MAN#4",
+  "source": "drawn range -25 ~ 25 rpm",
+  "input": "above range: 30",
+  "expected": "25",
+  "actual": "25",
+  "status": "PASS",
+  "evidence": "MAN output net 37"
+ },
+ {
+  "sheet": "ABC-009B",
+  "block": "AI#8",
+  "source": "drawn range 0 ~ 5 rpm",
+  "input": "engine fed above range: 5.5",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "5.5",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#5",
+  "source": "drawn range -422 ~ 820 mm",
+  "input": "engine fed above range: 944.2",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "944.2",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#12",
+  "source": "drawn range -422 ~ 820 mm",
+  "input": "engine fed above range: 944.2",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "944.2",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#26",
+  "source": "drawn range -422 ~ 820 mm",
+  "input": "engine fed above range: 944.2",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "944.2",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#34",
+  "source": "drawn range 0 ~ 550 T/H",
+  "input": "engine fed above range: 605",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "605",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#37",
+  "source": "drawn range 0 ~ 300 °C",
+  "input": "engine fed above range: 330",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "330",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#59",
+  "source": "drawn range 0 ~ 550 T/H",
+  "input": "engine fed above range: 605",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "605",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#70",
+  "source": "drawn range 0 ~ 250 kg/cm2",
+  "input": "engine fed above range: 275",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "275",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "AI#71",
+  "source": "drawn range 0 ~ 250 kg/cm2",
+  "input": "engine fed above range: 275",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "275",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "AI#5",
+  "source": "drawn range 0 ~ 600 °C",
+  "input": "engine fed above range: 660",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "660",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "AI#8",
+  "source": "drawn range 0 ~ 600 °C",
+  "input": "engine fed above range: 660",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "660",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "AI#21",
+  "source": "drawn range 0 ~ 600 °C",
+  "input": "engine fed above range: 660",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "660",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "AI#24",
+  "source": "drawn range 0 ~ 600 °C",
+  "input": "engine fed above range: 660",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "660",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "AI#5",
+  "source": "drawn range 0 ~ 600 °C",
+  "input": "engine fed above range: 660",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "660",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "AI#8",
+  "source": "drawn range 0 ~ 600 °C",
+  "input": "engine fed above range: 660",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "660",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "AI#21",
+  "source": "drawn range 0 ~ 600 °C",
+  "input": "engine fed above range: 660",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "660",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "AI#24",
+  "source": "drawn range 0 ~ 600 °C",
+  "input": "engine fed above range: 660",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "660",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#0",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at low: -1",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 1"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#0",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at high: 101",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 1"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#0",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "below range: -11.200000000000001",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 1"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#0",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "above range: 111.2",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 1"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#5",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at low: -1",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 7"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#5",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at high: 101",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 7"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#5",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "below range: -11.200000000000001",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 7"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#5",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "above range: 111.2",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 7"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#10",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at low: -1",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 13"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#10",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at high: 101",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 13"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#10",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "below range: -11.200000000000001",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 13"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#10",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "above range: 111.2",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 13"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#15",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at low: -1",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 19"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#15",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at high: 101",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 19"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#15",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "below range: -11.200000000000001",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 19"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#15",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "above range: 111.2",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 19"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#20",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at low: -1",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 25"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#20",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at high: 101",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 25"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#20",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "below range: -11.200000000000001",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 25"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#20",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "above range: 111.2",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 25"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#25",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at low: -1",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 31"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#25",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at high: 101",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 31"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#25",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "below range: -11.200000000000001",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 31"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#25",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "above range: 111.2",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 31"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#42",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at low: -1",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 50"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#42",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at high: 101",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 50"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#42",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "below range: -11.200000000000001",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 50"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#42",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "above range: 111.2",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 50"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#47",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at low: -1",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 56"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#47",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at high: 101",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 56"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#47",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "below range: -11.200000000000001",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 56"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#47",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "above range: 111.2",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 56"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#52",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at low: -1",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 62"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#52",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at high: 101",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 62"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#52",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "below range: -11.200000000000001",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 62"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#52",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "above range: 111.2",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 62"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#57",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at low: -1",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 68"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#57",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at high: 101",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 68"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#57",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "below range: -11.200000000000001",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 68"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#57",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "above range: 111.2",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 68"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#62",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at low: -1",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 74"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#62",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at high: 101",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 74"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#62",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "below range: -11.200000000000001",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 74"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#62",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "above range: 111.2",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 74"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#67",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at low: -1",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 80"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#67",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at high: 101",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 80"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#67",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "below range: -11.200000000000001",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 80"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "MAN#67",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "above range: 111.2",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 80"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#0",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at low: -1",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 72"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#0",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at high: 101",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 72"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#0",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "below range: -11.200000000000001",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 72"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#0",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "above range: 111.2",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 72"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#5",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at low: -1",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 97"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#5",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at high: 101",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 97"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#5",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "below range: -11.200000000000001",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 97"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#5",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "above range: 111.2",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 97"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#10",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at low: -1",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 77"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#10",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at high: 101",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 77"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#10",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "below range: -11.200000000000001",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 77"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#10",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "above range: 111.2",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 77"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#15",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at low: -1",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 102"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#15",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at high: 101",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 102"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#15",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "below range: -11.200000000000001",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 102"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#15",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "above range: 111.2",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 102"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#20",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at low: -1",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 82"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#20",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at high: 101",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 82"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#20",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "below range: -11.200000000000001",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 82"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#20",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "above range: 111.2",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 82"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#25",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at low: -1",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 107"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#25",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at high: 101",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 107"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#25",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "below range: -11.200000000000001",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 107"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#25",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "above range: 111.2",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 107"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#42",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at low: -1",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 87"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#42",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at high: 101",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 87"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#42",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "below range: -11.200000000000001",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 87"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#42",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "above range: 111.2",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 87"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#47",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at low: -1",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 112"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#47",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at high: 101",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 112"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#47",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "below range: -11.200000000000001",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 112"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#47",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "above range: 111.2",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 112"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#52",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at low: -1",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 92"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#52",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at high: 101",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 92"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#52",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "below range: -11.200000000000001",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 92"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#52",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "above range: 111.2",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 92"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#57",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at low: -1",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 117"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#57",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "at high: 101",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 117"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#57",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "below range: -11.200000000000001",
+  "expected": "-1",
+  "actual": "-1",
+  "status": "PASS",
+  "evidence": "MAN output net 117"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "MAN#57",
+  "source": "drawn range -1 ~ 101 %",
+  "input": "above range: 111.2",
+  "expected": "101",
+  "actual": "101",
+  "status": "PASS",
+  "evidence": "MAN output net 117"
+ },
+ {
+  "sheet": "ABC-000",
+  "block": "MAN#7",
+  "input": "-",
+  "expected": "-",
+  "actual": "-",
+  "source": "-",
+  "status": "NOT TESTED",
+  "evidence": "no output net (legend block)"
+ },
+ {
+  "sheet": "ABC-017",
+  "block": "AI#5",
+  "source": "drawn range 0 ~ 50 kg/cm2",
+  "input": "engine fed above range: 55",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "55",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#1",
+  "source": "drawn range 0 ~ 600 °C",
+  "input": "engine fed above range: 660",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "660",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#4",
+  "source": "drawn range 0 ~ 600 °C",
+  "input": "engine fed above range: 660",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "660",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#9",
+  "source": "drawn range 0 ~ 600 °C",
+  "input": "engine fed above range: 660",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "660",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#12",
+  "source": "drawn range 0 ~ 600 °C",
+  "input": "engine fed above range: 660",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "660",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "AI#19",
+  "source": "drawn range 0 ~ 50 kg/cm2",
+  "input": "engine fed above range: 55",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "55",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "MAN#38",
+  "source": "drawn range 19 ~ 100 %",
+  "input": "at low: 19",
+  "expected": "19",
+  "actual": "19",
+  "status": "PASS",
+  "evidence": "MAN output net 105"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "MAN#38",
+  "source": "drawn range 19 ~ 100 %",
+  "input": "at high: 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "MAN output net 105"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "MAN#38",
+  "source": "drawn range 19 ~ 100 %",
+  "input": "below range: 10.9",
+  "expected": "19",
+  "actual": "19",
+  "status": "PASS",
+  "evidence": "MAN output net 105"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "MAN#38",
+  "source": "drawn range 19 ~ 100 %",
+  "input": "above range: 108.1",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "MAN output net 105"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "MAN#44",
+  "source": "drawn range 10 ~ 100 %",
+  "input": "at low: 10",
+  "expected": "10",
+  "actual": "10",
+  "status": "PASS",
+  "evidence": "MAN output net 94"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "MAN#44",
+  "source": "drawn range 10 ~ 100 %",
+  "input": "at high: 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "MAN output net 94"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "MAN#44",
+  "source": "drawn range 10 ~ 100 %",
+  "input": "below range: 1",
+  "expected": "10",
+  "actual": "10",
+  "status": "PASS",
+  "evidence": "MAN output net 94"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "MAN#44",
+  "source": "drawn range 10 ~ 100 %",
+  "input": "above range: 109",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "MAN output net 94"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#1",
+  "source": "drawn range 0 ~ 1200 °C",
+  "input": "engine fed above range: 1320",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "1320",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#6",
+  "source": "drawn range 0 ~ 1200 °C",
+  "input": "engine fed above range: 1320",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "1320",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#11",
+  "source": "drawn range 0 ~ 1200 °C",
+  "input": "engine fed above range: 1320",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "1320",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#16",
+  "source": "drawn range 0 ~ 1200 °C",
+  "input": "engine fed above range: 1320",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "1320",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#21",
+  "source": "drawn range 0 ~ 1200 °C",
+  "input": "engine fed above range: 1320",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "1320",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#42",
+  "source": "drawn range 0 ~ 1200 °C",
+  "input": "engine fed above range: 1320",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "1320",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#50",
+  "source": "drawn range 0 ~ 1200 °C",
+  "input": "engine fed above range: 1320",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "1320",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#55",
+  "source": "drawn range 0 ~ 1200 °C",
+  "input": "engine fed above range: 1320",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "1320",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-026",
+  "block": "AI#60",
+  "source": "drawn range 0 ~ 1200 °C",
+  "input": "engine fed above range: 1320",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "1320",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#1",
+  "source": "drawn range 0 ~ 1200 °C",
+  "input": "engine fed above range: 1320",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "1320",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#6",
+  "source": "drawn range 0 ~ 1200 °C",
+  "input": "engine fed above range: 1320",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "1320",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#11",
+  "source": "drawn range 0 ~ 1200 °C",
+  "input": "engine fed above range: 1320",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "1320",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#16",
+  "source": "drawn range 0 ~ 1200 °C",
+  "input": "engine fed above range: 1320",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "1320",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#21",
+  "source": "drawn range 0 ~ 1200 °C",
+  "input": "engine fed above range: 1320",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "1320",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#35",
+  "source": "drawn range 0 ~ 1200 °C",
+  "input": "engine fed above range: 1320",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "1320",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#43",
+  "source": "drawn range 0 ~ 1200 °C",
+  "input": "engine fed above range: 1320",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "1320",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#48",
+  "source": "drawn range 0 ~ 1200 °C",
+  "input": "engine fed above range: 1320",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "1320",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-027",
+  "block": "AI#53",
+  "source": "drawn range 0 ~ 1200 °C",
+  "input": "engine fed above range: 1320",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "1320",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-028",
+  "block": "AI#3",
+  "source": "drawn range 0 ~ 25 kg/cm2",
+  "input": "engine fed above range: 27.5",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "27.5",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "MAN#8",
+  "source": "drawn range 0 ~ 100 %",
+  "input": "at low: 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "MAN output net 23"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "MAN#8",
+  "source": "drawn range 0 ~ 100 %",
+  "input": "at high: 100",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "MAN output net 23"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "MAN#8",
+  "source": "drawn range 0 ~ 100 %",
+  "input": "below range: -10",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "MAN output net 23"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "MAN#8",
+  "source": "drawn range 0 ~ 100 %",
+  "input": "above range: 110",
+  "expected": "100",
+  "actual": "100",
+  "status": "PASS",
+  "evidence": "MAN output net 23"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "AI#4",
+  "source": "drawn range 0 ~ 25 kg/cm2",
+  "input": "engine fed above range: 27.5",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "27.5",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "AI#12",
+  "source": "drawn range 0 ~ 100 %",
+  "input": "engine fed above range: 110",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "110",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "AI#11",
+  "source": "drawn range 0 ~ 15 kg/cm2",
+  "input": "engine fed above range: 16.5",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "16.5",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "AI#14",
+  "source": "drawn range 0 ~ 15 kg/cm2",
+  "input": "engine fed above range: 16.5",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "16.5",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "AI#2",
+  "source": "drawn range -436 ~ 464 mm",
+  "input": "engine fed above range: 554",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "554",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "AI#14",
+  "source": "drawn range -2335 ~ 1095 mm",
+  "input": "engine fed above range: 1438",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "1438",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "AI#17",
+  "source": "drawn range -2335 ~ 1095 mm",
+  "input": "engine fed above range: 1438",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "1438",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "AI#20",
+  "source": "drawn range -2335 ~ 1095 mm",
+  "input": "engine fed above range: 1438",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "1438",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "AI#12",
+  "source": "drawn range 0 ~ 200 T/H",
+  "input": "engine fed above range: 220",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "220",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "AI#20",
+  "source": "drawn range 0 ~ 400 T/H",
+  "input": "engine fed above range: 440",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "440",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "MAN#0",
+  "source": "drawn range 0 ~ 200 MW",
+  "input": "at low: 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "MAN output net 5"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "MAN#0",
+  "source": "drawn range 0 ~ 200 MW",
+  "input": "at high: 200",
+  "expected": "200",
+  "actual": "200",
+  "status": "PASS",
+  "evidence": "MAN output net 5"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "MAN#0",
+  "source": "drawn range 0 ~ 200 MW",
+  "input": "below range: -20",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "MAN output net 5"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "MAN#0",
+  "source": "drawn range 0 ~ 200 MW",
+  "input": "above range: 220",
+  "expected": "200",
+  "actual": "200",
+  "status": "PASS",
+  "evidence": "MAN output net 5"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "MAN#6",
+  "source": "drawn range 0 ~ 151 MW",
+  "input": "at low: 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "MAN output net 14"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "MAN#6",
+  "source": "drawn range 0 ~ 151 MW",
+  "input": "at high: 151",
+  "expected": "151",
+  "actual": "151",
+  "status": "PASS",
+  "evidence": "MAN output net 14"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "MAN#6",
+  "source": "drawn range 0 ~ 151 MW",
+  "input": "below range: -15.100000000000001",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "MAN output net 14"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "MAN#6",
+  "source": "drawn range 0 ~ 151 MW",
+  "input": "above range: 166.1",
+  "expected": "151",
+  "actual": "151",
+  "status": "PASS",
+  "evidence": "MAN output net 14"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "MAN#10",
+  "source": "drawn range 0 ~ 200 MW",
+  "input": "at low: 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "MAN output net 21"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "MAN#10",
+  "source": "drawn range 0 ~ 200 MW",
+  "input": "at high: 200",
+  "expected": "200",
+  "actual": "0",
+  "status": "NEEDS REVIEW",
+  "evidence": "MAN output net 21 - the MAN has track / preset input pins: the typed value is overridden by them in this state"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "MAN#10",
+  "source": "drawn range 0 ~ 200 MW",
+  "input": "below range: -20",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "MAN output net 21"
+ },
+ {
+  "sheet": "ABC-001A",
+  "block": "MAN#10",
+  "source": "drawn range 0 ~ 200 MW",
+  "input": "above range: 220",
+  "expected": "200",
+  "actual": "0",
+  "status": "NEEDS REVIEW",
+  "evidence": "MAN output net 21 - the MAN has track / preset input pins: the typed value is overridden by them in this state"
+ },
+ {
+  "sheet": "ABC-033",
+  "block": "AI#3",
+  "source": "drawn range 0 ~ 600 °C",
+  "input": "engine fed above range: 660",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "660",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "AI#11",
+  "source": "drawn range 0 ~ 300 °C",
+  "input": "engine fed above range: 330",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "330",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "AI#16",
+  "source": "drawn range 0 ~ 600 °C",
+  "input": "engine fed above range: 660",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "660",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "AI#20",
+  "source": "drawn range 0 ~ 100 %",
+  "input": "engine fed above range: 110",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "110",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "AI#22",
+  "source": "drawn range 0 ~ 100 %",
+  "input": "engine fed above range: 110",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "110",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "AI#14",
+  "source": "drawn range -300 ~ 310 mm",
+  "input": "engine fed above range: 371",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "371",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "AI#17",
+  "source": "drawn range -300 ~ 310 mm",
+  "input": "engine fed above range: 371",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "371",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "AI#6",
+  "source": "drawn range -300 ~ 310 mm",
+  "input": "engine fed above range: 371",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "371",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "AI#9",
+  "source": "drawn range -300 ~ 310 mm",
+  "input": "engine fed above range: 371",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "371",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "AI#6",
+  "source": "drawn range -320 ~ 290 mm",
+  "input": "engine fed above range: 351",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "351",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "AI#9",
+  "source": "drawn range -320 ~ 290 mm",
+  "input": "engine fed above range: 351",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "351",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "AI#6",
+  "source": "drawn range -315 ~ 295 mm",
+  "input": "engine fed above range: 356",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "356",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "AI#9",
+  "source": "drawn range -315 ~ 295 mm",
+  "input": "engine fed above range: 356",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "356",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "AI#6",
+  "source": "drawn range -310 ~ 300 mm",
+  "input": "engine fed above range: 361",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "361",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "AI#9",
+  "source": "drawn range -310 ~ 300 mm",
+  "input": "engine fed above range: 361",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "361",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "AI#9",
+  "source": "drawn range 0 ~ 150 kg/cm2",
+  "input": "engine fed above range: 165",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "165",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "AI#12",
+  "source": "drawn range 0 ~ 150 kg/cm2",
+  "input": "engine fed above range: 165",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "165",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#6",
+  "source": "drawn range 0 ~ 600 °C",
+  "input": "engine fed above range: 660",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "660",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#9",
+  "source": "drawn range 0 ~ 600 °C",
+  "input": "engine fed above range: 660",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "660",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#13",
+  "source": "drawn range 0 ~ 50 kg/cm2",
+  "input": "engine fed above range: 55",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "55",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#16",
+  "source": "drawn range 0 ~ 600 °C",
+  "input": "engine fed above range: 660",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "660",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "AI#40",
+  "source": "drawn range 0 ~ 50 kg/cm2",
+  "input": "engine fed above range: 55",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "55",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#7",
+  "source": "drawn range 0 ~ 50 kg/cm2",
+  "input": "engine fed above range: 55",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "55",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#10",
+  "source": "drawn range 0 ~ 50 kg/cm2",
+  "input": "engine fed above range: 55",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "55",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#28",
+  "source": "drawn range 0 ~ 300 °C",
+  "input": "engine fed above range: 330",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "330",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#31",
+  "source": "drawn range 0 ~ 300 °C",
+  "input": "engine fed above range: 330",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "330",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#36",
+  "source": "drawn range 0 ~ 600 °C",
+  "input": "engine fed above range: 660",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "660",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#39",
+  "source": "drawn range 0 ~ 150 kg/cm2",
+  "input": "engine fed above range: 165",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "165",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#41",
+  "source": "drawn range 0 ~ 150 kg/cm2",
+  "input": "engine fed above range: 165",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "165",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "AI#43",
+  "source": "drawn range 0 ~ 150 kg/cm2",
+  "input": "engine fed above range: 165",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "165",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-001B",
+  "block": "MAN#0",
+  "source": "drawn range 0.1 ~ 3 MW/MIN",
+  "input": "at low: 0.1",
+  "expected": "0.1",
+  "actual": "0.1",
+  "status": "PASS",
+  "evidence": "MAN output net 11"
+ },
+ {
+  "sheet": "ABC-001B",
+  "block": "MAN#0",
+  "source": "drawn range 0.1 ~ 3 MW/MIN",
+  "input": "at high: 3",
+  "expected": "3",
+  "actual": "3",
+  "status": "PASS",
+  "evidence": "MAN output net 11"
+ },
+ {
+  "sheet": "ABC-001B",
+  "block": "MAN#0",
+  "source": "drawn range 0.1 ~ 3 MW/MIN",
+  "input": "below range: -0.18999999999999997",
+  "expected": "0.1",
+  "actual": "0.1",
+  "status": "PASS",
+  "evidence": "MAN output net 11"
+ },
+ {
+  "sheet": "ABC-001B",
+  "block": "MAN#0",
+  "source": "drawn range 0.1 ~ 3 MW/MIN",
+  "input": "above range: 3.29",
+  "expected": "3",
+  "actual": "3",
+  "status": "PASS",
+  "evidence": "MAN output net 11"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "AI#8",
+  "source": "drawn range 0 ~ 100 °C",
+  "input": "engine fed above range: 110",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "110",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "AI#11",
+  "source": "drawn range 0 ~ 100 °C",
+  "input": "engine fed above range: 110",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "110",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "AI#18",
+  "source": "drawn range 0 ~ 4000 rpm",
+  "input": "engine fed above range: 4400",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "4400",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-054",
+  "block": "AI#7",
+  "source": "drawn range 0 ~ 100 %",
+  "input": "engine fed above range: 110",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "110",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "AI#3",
+  "source": "drawn range 0 ~ 100 %",
+  "input": "engine fed above range: 110",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "110",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-056",
+  "block": "AI#3",
+  "source": "drawn range 0 ~ 10 kg/cm2",
+  "input": "engine fed above range: 11",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "11",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-056",
+  "block": "AI#7",
+  "source": "drawn range 0 ~ 5 kg/cm2",
+  "input": "engine fed above range: 5.5",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "5.5",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "MAN#11",
+  "source": "drawn range -10 ~ 10 %",
+  "input": "at low: -10",
+  "expected": "-10",
+  "actual": "-10",
+  "status": "PASS",
+  "evidence": "MAN output net 62"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "MAN#11",
+  "source": "drawn range -10 ~ 10 %",
+  "input": "at high: 10",
+  "expected": "10",
+  "actual": "10",
+  "status": "PASS",
+  "evidence": "MAN output net 62"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "MAN#11",
+  "source": "drawn range -10 ~ 10 %",
+  "input": "below range: -12",
+  "expected": "-10",
+  "actual": "-10",
+  "status": "PASS",
+  "evidence": "MAN output net 62"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "MAN#11",
+  "source": "drawn range -10 ~ 10 %",
+  "input": "above range: 12",
+  "expected": "10",
+  "actual": "10",
+  "status": "PASS",
+  "evidence": "MAN output net 62"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "MAN#12",
+  "source": "drawn range -10 ~ 10 %",
+  "input": "at low: -10",
+  "expected": "-10",
+  "actual": "-10",
+  "status": "PASS",
+  "evidence": "MAN output net 59"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "MAN#12",
+  "source": "drawn range -10 ~ 10 %",
+  "input": "at high: 10",
+  "expected": "10",
+  "actual": "10",
+  "status": "PASS",
+  "evidence": "MAN output net 59"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "MAN#12",
+  "source": "drawn range -10 ~ 10 %",
+  "input": "below range: -12",
+  "expected": "-10",
+  "actual": "-10",
+  "status": "PASS",
+  "evidence": "MAN output net 59"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "MAN#12",
+  "source": "drawn range -10 ~ 10 %",
+  "input": "above range: 12",
+  "expected": "10",
+  "actual": "10",
+  "status": "PASS",
+  "evidence": "MAN output net 59"
+ },
+ {
+  "sheet": "ABC-057",
+  "block": "AI#2",
+  "source": "drawn range 0 ~ 3000 mmH2O",
+  "input": "engine fed above range: 3300",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "3300",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "MAN#7",
+  "source": "drawn range 0 ~ 200 MW",
+  "input": "at low: 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "MAN output net 102"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "MAN#7",
+  "source": "drawn range 0 ~ 200 MW",
+  "input": "at high: 200",
+  "expected": "200",
+  "actual": "0",
+  "status": "NEEDS REVIEW",
+  "evidence": "MAN output net 102 - the MAN has track / preset input pins: the typed value is overridden by them in this state"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "MAN#7",
+  "source": "drawn range 0 ~ 200 MW",
+  "input": "below range: -20",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "MAN output net 102"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "MAN#7",
+  "source": "drawn range 0 ~ 200 MW",
+  "input": "above range: 220",
+  "expected": "200",
+  "actual": "0",
+  "status": "NEEDS REVIEW",
+  "evidence": "MAN output net 102 - the MAN has track / preset input pins: the typed value is overridden by them in this state"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "MAN#22",
+  "source": "drawn range 0 ~ 100 %",
+  "input": "at low: 0",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "MAN output net 81"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "MAN#22",
+  "source": "drawn range 0 ~ 100 %",
+  "input": "at high: 100",
+  "expected": "100",
+  "actual": "0",
+  "status": "NEEDS REVIEW",
+  "evidence": "MAN output net 81 - the MAN has track / preset input pins: the typed value is overridden by them in this state"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "MAN#22",
+  "source": "drawn range 0 ~ 100 %",
+  "input": "below range: -10",
+  "expected": "0",
+  "actual": "0",
+  "status": "PASS",
+  "evidence": "MAN output net 81"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "MAN#22",
+  "source": "drawn range 0 ~ 100 %",
+  "input": "above range: 110",
+  "expected": "100",
+  "actual": "0",
+  "status": "NEEDS REVIEW",
+  "evidence": "MAN output net 81 - the MAN has track / preset input pins: the typed value is overridden by them in this state"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#10",
+  "source": "drawn range 0 ~ 150 Kg/cm2",
+  "input": "engine fed above range: 165",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "165",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#16",
+  "source": "drawn range 0 ~ 240 MW",
+  "input": "engine fed above range: 264",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "264",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#18",
+  "source": "drawn range 0 ~ 240 MW",
+  "input": "engine fed above range: 264",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "264",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#21",
+  "source": "drawn range 0 ~ 500 T/H",
+  "input": "engine fed above range: 550",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "550",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "AI#40",
+  "source": "drawn range 0 ~ 200 MW",
+  "input": "engine fed above range: 220",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "220",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "MAN#5",
+  "source": "drawn range -50 ~ 50 T/H",
+  "input": "at low: -50",
+  "expected": "-50",
+  "actual": "-50",
+  "status": "PASS",
+  "evidence": "MAN output net 10"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "MAN#5",
+  "source": "drawn range -50 ~ 50 T/H",
+  "input": "at high: 50",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "MAN output net 10"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "MAN#5",
+  "source": "drawn range -50 ~ 50 T/H",
+  "input": "below range: -60",
+  "expected": "-50",
+  "actual": "-50",
+  "status": "PASS",
+  "evidence": "MAN output net 10"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "MAN#5",
+  "source": "drawn range -50 ~ 50 T/H",
+  "input": "above range: 60",
+  "expected": "50",
+  "actual": "50",
+  "status": "PASS",
+  "evidence": "MAN output net 10"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "MAN#6",
+  "source": "drawn range -4 ~ 4 %",
+  "input": "at low: -4",
+  "expected": "-4",
+  "actual": "-4",
+  "status": "PASS",
+  "evidence": "MAN output net 11"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "MAN#6",
+  "source": "drawn range -4 ~ 4 %",
+  "input": "at high: 4",
+  "expected": "4",
+  "actual": "4",
+  "status": "PASS",
+  "evidence": "MAN output net 11"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "MAN#6",
+  "source": "drawn range -4 ~ 4 %",
+  "input": "below range: -4.8",
+  "expected": "-4",
+  "actual": "-4",
+  "status": "PASS",
+  "evidence": "MAN output net 11"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "MAN#6",
+  "source": "drawn range -4 ~ 4 %",
+  "input": "above range: 4.8",
+  "expected": "4",
+  "actual": "4",
+  "status": "PASS",
+  "evidence": "MAN output net 11"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "MAN#25",
+  "source": "drawn range 8000 ~ 12000 Kcal / Kg",
+  "input": "at low: 8000",
+  "expected": "8000",
+  "actual": "8000",
+  "status": "PASS",
+  "evidence": "MAN output net 80"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "MAN#25",
+  "source": "drawn range 8000 ~ 12000 Kcal / Kg",
+  "input": "at high: 12000",
+  "expected": "12000",
+  "actual": "12000",
+  "status": "PASS",
+  "evidence": "MAN output net 80"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "MAN#25",
+  "source": "drawn range 8000 ~ 12000 Kcal / Kg",
+  "input": "below range: 7600",
+  "expected": "8000",
+  "actual": "8000",
+  "status": "PASS",
+  "evidence": "MAN output net 80"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "MAN#25",
+  "source": "drawn range 8000 ~ 12000 Kcal / Kg",
+  "input": "above range: 12400",
+  "expected": "12000",
+  "actual": "12000",
+  "status": "PASS",
+  "evidence": "MAN output net 80"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "AI#3",
+  "source": "drawn range 0 ~ 25 %",
+  "input": "engine fed above range: 27.5",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "27.5",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "AI#4",
+  "source": "drawn range 0 ~ 25 %",
+  "input": "engine fed above range: 27.5",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "27.5",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "MAN#17",
+  "source": "drawn range 0.8 ~ 1.2",
+  "input": "at low: 0.8",
+  "expected": "0.8",
+  "actual": "0.8",
+  "status": "PASS",
+  "evidence": "MAN output net 171"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "MAN#17",
+  "source": "drawn range 0.8 ~ 1.2",
+  "input": "at high: 1.2",
+  "expected": "1.2",
+  "actual": "1.2",
+  "status": "PASS",
+  "evidence": "MAN output net 171"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "MAN#17",
+  "source": "drawn range 0.8 ~ 1.2",
+  "input": "below range: 0.76",
+  "expected": "0.8",
+  "actual": "0.8",
+  "status": "PASS",
+  "evidence": "MAN output net 171"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "MAN#17",
+  "source": "drawn range 0.8 ~ 1.2",
+  "input": "above range: 1.24",
+  "expected": "1.2",
+  "actual": "1.2",
+  "status": "PASS",
+  "evidence": "MAN output net 171"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "MAN#40",
+  "source": "drawn range -10 ~ 10 T/H",
+  "input": "at low: -10",
+  "expected": "-10",
+  "actual": "-10",
+  "status": "PASS",
+  "evidence": "MAN output net 51"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "MAN#40",
+  "source": "drawn range -10 ~ 10 T/H",
+  "input": "at high: 10",
+  "expected": "10",
+  "actual": "10",
+  "status": "PASS",
+  "evidence": "MAN output net 51"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "MAN#40",
+  "source": "drawn range -10 ~ 10 T/H",
+  "input": "below range: -12",
+  "expected": "-10",
+  "actual": "-10",
+  "status": "PASS",
+  "evidence": "MAN output net 51"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "MAN#40",
+  "source": "drawn range -10 ~ 10 T/H",
+  "input": "above range: 12",
+  "expected": "10",
+  "actual": "10",
+  "status": "PASS",
+  "evidence": "MAN output net 51"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#6",
+  "source": "drawn range 0 ~ 600 °C",
+  "input": "engine fed above range: 660",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "660",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#10",
+  "source": "drawn range 0 ~ 65 T/H",
+  "input": "engine fed above range: 71.5",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "71.5",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#19",
+  "source": "drawn range 0 ~ 3.5 T/H",
+  "input": "engine fed above range: 3.85",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "3.85",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#25",
+  "source": "drawn range 0 ~ 600 °C",
+  "input": "engine fed above range: 660",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "660",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#38",
+  "source": "drawn range 0 ~ 10 kg/cm2",
+  "input": "engine fed above range: 11",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "11",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "AI#43",
+  "source": "drawn range 0 ~ 3000 mmH2O",
+  "input": "engine fed above range: 3300",
+  "expected": "inside the drawn range (UI enforces it) or flagged",
+  "actual": "3300",
+  "status": "NEEDS REVIEW",
+  "evidence": "engine passes the value; range is enforced by the input box / slider (test-numinput)"
+ }
+]

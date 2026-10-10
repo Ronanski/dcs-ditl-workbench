@@ -1,0 +1,82 @@
+[
+ {
+  "sheet": "ABC-002",
+  "block": "CONST#1",
+  "input": "initial state",
+  "expected": "default 400 T/H, original drawing constant 32 % kept",
+  "actual": "th=400 orig=32 val=32",
+  "source": "user decision 2026-10-10",
+  "status": "PASS",
+  "evidence": "block parameters"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "CONST#1",
+  "input": "default 400 T/H",
+  "expected": "constant 32 %, high selector output 32 % (other input 0)",
+  "actual": "constant 32, HS 32",
+  "source": "400 T/H x 0.08 = 32 % = drawing",
+  "status": "PASS",
+  "evidence": "CONST out net 70, HS out net 66"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "CONST#1",
+  "input": "edited to 500 T/H",
+  "expected": "constant 40 %, high selector output 40 % (other input 0)",
+  "actual": "constant 40, HS 40",
+  "source": "500 x 0.08",
+  "status": "PASS",
+  "evidence": "CONST out net 70, HS out net 66"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "CONST#1",
+  "input": "downstream SUM after the change 400 -> 500 T/H (other inputs unchanged)",
+  "expected": "SUM output changes by the + 8 % step",
+  "actual": "32 -> 40",
+  "source": "drawn wiring HS -> SUM",
+  "status": "PASS",
+  "evidence": "sign of the SUM leg decides: delta shown"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "CONST#1",
+  "input": "edited to 0 T/H",
+  "expected": "constant 0 %, high selector output 0 % (other input 0)",
+  "actual": "constant 0, HS 0",
+  "source": "0 x 0.08",
+  "status": "PASS",
+  "evidence": "CONST out net 70, HS out net 66"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "CONST#1",
+  "input": "edited k to 0.1 %/T/H at 400 T/H",
+  "expected": "constant 40 %, high selector output 40 % (other input 0)",
+  "actual": "constant 40, HS 40",
+  "source": "400 x 0.1",
+  "status": "PASS",
+  "evidence": "CONST out net 70, HS out net 66"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "CONST#1",
+  "input": "selector input 60 % > constant 32 %",
+  "expected": "HS passes 60",
+  "actual": "60",
+  "source": "HIGH selector",
+  "status": "PASS",
+  "evidence": "other input forced 60"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "CONST#1",
+  "input": "conversion 0.08 % per T/H",
+  "expected": "conversion written on the drawing",
+  "actual": "not on the drawing; chosen so that the default equals 32 %",
+  "source": "drawing SCALE CONVERT 35 / 1115 = 0.0314 % per T/H differs",
+  "status": "NEEDS REVIEW",
+  "evidence": "user decision: default 400 T/H; relation to the % signal to be confirmed"
+ }
+]

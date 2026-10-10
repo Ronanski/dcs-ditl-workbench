@@ -1,0 +1,812 @@
+[
+ {
+  "sheet": "ABC-003B",
+  "block": "ACT#15 MCV-FA1043-B",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 119"
+ },
+ {
+  "sheet": "ABC-003B",
+  "block": "VLV#67 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 155"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "ACT#15 MCV-FA1043-C",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 119"
+ },
+ {
+  "sheet": "ABC-003C",
+  "block": "VLV#67 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 155"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "ACT#15 MCV-FA1043-D",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 119"
+ },
+ {
+  "sheet": "ABC-003D",
+  "block": "VLV#67 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 155"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "ACT#0 MCV-FA1054-1",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 107"
+ },
+ {
+  "sheet": "ABC-007",
+  "block": "ACT#7 MCV-FA1053-1",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 92"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "ACT#15 SC-LO1756",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 93"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "VLV#97 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 121"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "VLV#98 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 38"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "VLV#53 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 18"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "VLV#54 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 70"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "VLV#57 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 18"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "VLV#58 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 68"
+ },
+ {
+  "sheet": "ABC-013",
+  "block": "VLV#19 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 46"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "ACT#4 MCV-FA1005",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 2"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "ACT#9 MCV-FA1006",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 8"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "ACT#14 MCV-FA1007",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 14"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "ACT#19 MCV-FA1008",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 20"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "ACT#24 MCV-FA1009",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 26"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "ACT#29 MCV-FA1010",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 32"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "ACT#46 MCV-FA1011",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 51"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "ACT#51 MCV-FA1012",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 57"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "ACT#56 MCV-FA1013",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 63"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "ACT#61 MCV-FA1014",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 69"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "ACT#66 MCV-FA1015",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 75"
+ },
+ {
+  "sheet": "ABC-015",
+  "block": "ACT#71 MCV-FA1016",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 81"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "ACT#4 MCV-FA1017",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 1"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "ACT#9 MCV-FA1018",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 6"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "ACT#14 MCV-FA1019",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 11"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "ACT#19 MCV-FA1020",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 16"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "ACT#24 MCV-FA1021",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 21"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "ACT#29 MCV-FA1022",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 26"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "ACT#46 MCV-FA1023",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 44"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "ACT#51 MCV-FA1024",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 49"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "ACT#56 MCV-FA1025",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 54"
+ },
+ {
+  "sheet": "ABC-016",
+  "block": "ACT#61 MCV-FA1026",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 59"
+ },
+ {
+  "sheet": "ABC-017",
+  "block": "VLV#13 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 12"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "VLV#40 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 37"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "ACT#4 TCV-FG1116-C",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 187"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "ACT#6 TCV-FG1116-D",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 184"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "ACT#12 TCV-FG1116-A",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 170"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "ACT#14 TCV-FG1116-B",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 167"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "ACT#20 TCV-FG1117-C",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 153"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "ACT#22 TCV-FG1117-D",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 150"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "ACT#28 TCV-FG1117-A",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 136"
+ },
+ {
+  "sheet": "ABC-020",
+  "block": "ACT#30 TCV-FG1117-B",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 133"
+ },
+ {
+  "sheet": "ABC-028",
+  "block": "VLV#11 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 6"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "VLV#26 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 46"
+ },
+ {
+  "sheet": "ABC-029",
+  "block": "VLV#27 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 18"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "VLV#44 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 2"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "VLV#45 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 16"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "VLV#46 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 25"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "VLV#49 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 74"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "VLV#50 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 61"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "VLV#51 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 35"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "VLV#36 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 7"
+ },
+ {
+  "sheet": "ABC-032",
+  "block": "VLV#37 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 30"
+ },
+ {
+  "sheet": "ABC-033",
+  "block": "VLV#14 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 22"
+ },
+ {
+  "sheet": "ABC-034",
+  "block": "VLV#27 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 4"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "VLV#33 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 4"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "VLV#34 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 21"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "VLV#33 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 4"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "VLV#34 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 20"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "VLV#33 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 4"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "VLV#34 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 20"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "VLV#33 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 4"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "VLV#34 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 20"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "VLV#33 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 4"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "VLV#34 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 20"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "VLV#84 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 159"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "VLV#52 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 78"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "VLV#89 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 182"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "VLV#90 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 150"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "VLV#38 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 5"
+ },
+ {
+  "sheet": "ABC-054",
+  "block": "VLV#10 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 12"
+ },
+ {
+  "sheet": "ABC-055",
+  "block": "VLV#15 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 49"
+ },
+ {
+  "sheet": "ABC-056",
+  "block": "VLV#17 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 19"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "ACT#23 MCV-FA1043-A",
+  "source": "block stroke time P.stroke=30 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 3.3333333333333335 %, after 30 s: 100 %",
+  "actual": "1 s: 3.3333333333333335 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 146"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "VLV#87 ",
+  "source": "block stroke time P.stroke=20 s (default / assumed unless on the drawing)",
+  "input": "command 0 -> 100 (digital OPEN is instant)",
+  "expected": "position 1 s: 5 %, after 20 s: 100 %",
+  "actual": "1 s: 5 %, end: 100 %",
+  "status": "PASS",
+  "evidence": "cmd net 196"
+ }
+]

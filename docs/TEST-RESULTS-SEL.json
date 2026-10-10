@@ -1,0 +1,1282 @@
+[
+ {
+  "sheet": "ABC-006",
+  "block": "SEL#41 (modes AVG)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 7,6; flags st[35],st[38] -> output net 4"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "SEL#41 (modes AVG)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 7,6; flags st[35],st[38] -> output net 4"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "SEL#41 (modes AVG)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 7,6; flags st[35],st[38] -> output net 4"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "SEL#41 (modes AVG)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 7,6; flags st[35],st[38] -> output net 4"
+ },
+ {
+  "sheet": "ABC-006",
+  "block": "SEL#41",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "SEL#9 (modes AVG)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 103,4; flags st[0],st[3] -> output net 60"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "SEL#9 (modes AVG)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 103,4; flags st[0],st[3] -> output net 60"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "SEL#9 (modes AVG)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 103,4; flags st[0],st[3] -> output net 60"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "SEL#9 (modes AVG)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 103,4; flags st[0],st[3] -> output net 60"
+ },
+ {
+  "sheet": "ABC-008",
+  "block": "SEL#9",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "SEL#21 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 166,101; flags st[33],st[66] -> output net 38"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "SEL#21 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 166,101; flags st[33],st[66] -> output net 38"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "SEL#21 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 166,101; flags st[33],st[66] -> output net 38"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "SEL#21 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 166,101; flags st[33],st[66] -> output net 38"
+ },
+ {
+  "sheet": "ABC-009A",
+  "block": "SEL#21",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "SEL#32",
+  "input": "(no cases)",
+  "expected": "SIG.AB flag per input",
+  "actual": "inputs 2, flags [null,null]",
+  "source": "drawing",
+  "status": "NOT TESTED",
+  "evidence": "a SIG.AB flag is not tied to every input of this SEL by the reader"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "SEL#62",
+  "input": "(no cases)",
+  "expected": "SIG.AB flag per input",
+  "actual": "inputs 2, flags [null,null]",
+  "source": "drawing",
+  "status": "NOT TESTED",
+  "evidence": "a SIG.AB flag is not tied to every input of this SEL by the reader"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "SEL#65 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 42,43; flags st[66],st[68] -> output net 20"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "SEL#65 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 42,43; flags st[66],st[68] -> output net 20"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "SEL#65 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 42,43; flags st[66],st[68] -> output net 20"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "SEL#65 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 42,43; flags st[66],st[68] -> output net 20"
+ },
+ {
+  "sheet": "ABC-010",
+  "block": "SEL#65",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "SEL#10 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 6,8; flags st[4],st[7] -> output net 13"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "SEL#10 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 6,8; flags st[4],st[7] -> output net 13"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "SEL#10 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 6,8; flags st[4],st[7] -> output net 13"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "SEL#10 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 6,8; flags st[4],st[7] -> output net 13"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "SEL#10",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "SEL#26 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 28,30; flags st[20],st[23] -> output net 3"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "SEL#26 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 28,30; flags st[20],st[23] -> output net 3"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "SEL#26 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 28,30; flags st[20],st[23] -> output net 3"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "SEL#26 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 28,30; flags st[20],st[23] -> output net 3"
+ },
+ {
+  "sheet": "ABC-011",
+  "block": "SEL#26",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "SEL#10 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 6,8; flags st[4],st[7] -> output net 13"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "SEL#10 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 6,8; flags st[4],st[7] -> output net 13"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "SEL#10 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 6,8; flags st[4],st[7] -> output net 13"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "SEL#10 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 6,8; flags st[4],st[7] -> output net 13"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "SEL#10",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "SEL#26 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 28,30; flags st[20],st[23] -> output net 3"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "SEL#26 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 28,30; flags st[20],st[23] -> output net 3"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "SEL#26 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 28,30; flags st[20],st[23] -> output net 3"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "SEL#26 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 28,30; flags st[20],st[23] -> output net 3"
+ },
+ {
+  "sheet": "ABC-012",
+  "block": "SEL#26",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ },
+ {
+  "sheet": "ABC-000",
+  "block": "SEL#11",
+  "input": "(no cases)",
+  "expected": "SIG.AB flag per input",
+  "actual": "inputs 3, flags [null,null,null]",
+  "source": "drawing",
+  "status": "NOT TESTED",
+  "evidence": "a SIG.AB flag is not tied to every input of this SEL by the reader"
+ },
+ {
+  "sheet": "ABC-000",
+  "block": "SEL#12",
+  "input": "(no cases)",
+  "expected": "SIG.AB flag per input",
+  "actual": "inputs 2, flags [null,null]",
+  "source": "drawing",
+  "status": "NOT TESTED",
+  "evidence": "a SIG.AB flag is not tied to every input of this SEL by the reader"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "SEL#6 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 61,60; flags st[0],st[3] -> output net 9"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "SEL#6 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 61,60; flags st[0],st[3] -> output net 9"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "SEL#6 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 61,60; flags st[0],st[3] -> output net 9"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "SEL#6 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 61,60; flags st[0],st[3] -> output net 9"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "SEL#6",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "SEL#14 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 57,56; flags st[8],st[11] -> output net 27"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "SEL#14 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 57,56; flags st[8],st[11] -> output net 27"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "SEL#14 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 57,56; flags st[8],st[11] -> output net 27"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "SEL#14 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 57,56; flags st[8],st[11] -> output net 27"
+ },
+ {
+  "sheet": "ABC-019",
+  "block": "SEL#14",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "SEL#16 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 32,34; flags st[10],st[13] -> output net 12"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "SEL#16 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 32,34; flags st[10],st[13] -> output net 12"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "SEL#16 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 32,34; flags st[10],st[13] -> output net 12"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "SEL#16 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 32,34; flags st[10],st[13] -> output net 12"
+ },
+ {
+  "sheet": "ABC-030",
+  "block": "SEL#16",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "SEL#22 (modes AVG)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 45,18; flags st[13],st[16] -> output net 23"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "SEL#22 (modes AVG)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 45,18; flags st[13],st[16] -> output net 23"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "SEL#22 (modes AVG)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 45,18; flags st[13],st[16] -> output net 23"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "SEL#22 (modes AVG)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 45,18; flags st[13],st[16] -> output net 23"
+ },
+ {
+  "sheet": "ABC-031",
+  "block": "SEL#22",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "SEL#6 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 11,12; flags st[13],st[16] -> output net 0"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "SEL#6 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 11,12; flags st[13],st[16] -> output net 0"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "SEL#6 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 11,12; flags st[13],st[16] -> output net 0"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "SEL#6 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 11,12; flags st[13],st[16] -> output net 0"
+ },
+ {
+  "sheet": "ABC-035",
+  "block": "SEL#6",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "SEL#11 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 11,13; flags st[5],st[8] -> output net 0"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "SEL#11 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 11,13; flags st[5],st[8] -> output net 0"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "SEL#11 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 11,13; flags st[5],st[8] -> output net 0"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "SEL#11 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 11,13; flags st[5],st[8] -> output net 0"
+ },
+ {
+  "sheet": "ABC-036",
+  "block": "SEL#11",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "SEL#11 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 11,13; flags st[5],st[8] -> output net 0"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "SEL#11 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 11,13; flags st[5],st[8] -> output net 0"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "SEL#11 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 11,13; flags st[5],st[8] -> output net 0"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "SEL#11 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 11,13; flags st[5],st[8] -> output net 0"
+ },
+ {
+  "sheet": "ABC-037",
+  "block": "SEL#11",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "SEL#11 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 11,13; flags st[5],st[8] -> output net 0"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "SEL#11 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 11,13; flags st[5],st[8] -> output net 0"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "SEL#11 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 11,13; flags st[5],st[8] -> output net 0"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "SEL#11 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 11,13; flags st[5],st[8] -> output net 0"
+ },
+ {
+  "sheet": "ABC-038",
+  "block": "SEL#11",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "SEL#11 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 11,13; flags st[5],st[8] -> output net 0"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "SEL#11 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 11,13; flags st[5],st[8] -> output net 0"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "SEL#11 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 11,13; flags st[5],st[8] -> output net 0"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "SEL#11 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 11,13; flags st[5],st[8] -> output net 0"
+ },
+ {
+  "sheet": "ABC-039",
+  "block": "SEL#11",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "SEL#14 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 148,147; flags st[8],st[11] -> output net 133"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "SEL#14 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 148,147; flags st[8],st[11] -> output net 133"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "SEL#14 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 148,147; flags st[8],st[11] -> output net 133"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "SEL#14 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 148,147; flags st[8],st[11] -> output net 133"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "SEL#14",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "SEL#39",
+  "input": "(no cases)",
+  "expected": "SIG.AB flag per input",
+  "actual": "inputs 3, flags [null,null,null]",
+  "source": "drawing",
+  "status": "NOT TESTED",
+  "evidence": "a SIG.AB flag is not tied to every input of this SEL by the reader"
+ },
+ {
+  "sheet": "ABC-050",
+  "block": "SEL#40",
+  "input": "(no cases)",
+  "expected": "SIG.AB flag per input",
+  "actual": "inputs 3, flags [null,null,null]",
+  "source": "drawing",
+  "status": "NOT TESTED",
+  "evidence": "a SIG.AB flag is not tied to every input of this SEL by the reader"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "SEL#11 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 67,65; flags st[5],st[8] -> output net 4"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "SEL#11 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 67,65; flags st[5],st[8] -> output net 4"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "SEL#11 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 67,65; flags st[5],st[8] -> output net 4"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "SEL#11 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 67,65; flags st[5],st[8] -> output net 4"
+ },
+ {
+  "sheet": "ABC-051",
+  "block": "SEL#11",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "SEL#12",
+  "input": "(no cases)",
+  "expected": "SIG.AB flag per input",
+  "actual": "inputs 2, flags [null,null]",
+  "source": "drawing",
+  "status": "NOT TESTED",
+  "evidence": "a SIG.AB flag is not tied to every input of this SEL by the reader"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "SEL#33 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 138,130; flags st[27],st[30] -> output net 96"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "SEL#33 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 138,130; flags st[27],st[30] -> output net 96"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "SEL#33 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 138,130; flags st[27],st[30] -> output net 96"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "SEL#33 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 138,130; flags st[27],st[30] -> output net 96"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "SEL#33",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "SEL#44 (modes AVG)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 129,127; flags st[38],st[40] -> output net 157"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "SEL#44 (modes AVG)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 129,127; flags st[38],st[40] -> output net 157"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "SEL#44 (modes AVG)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 129,127; flags st[38],st[40] -> output net 157"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "SEL#44 (modes AVG)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 129,127; flags st[38],st[40] -> output net 157"
+ },
+ {
+  "sheet": "ABC-052",
+  "block": "SEL#44",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "SEL#13 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 12,14; flags st[7],st[10] -> output net 1"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "SEL#13 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 12,14; flags st[7],st[10] -> output net 1"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "SEL#13 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 12,14; flags st[7],st[10] -> output net 1"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "SEL#13 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 12,14; flags st[7],st[10] -> output net 1"
+ },
+ {
+  "sheet": "ABC-053",
+  "block": "SEL#13",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ },
+ {
+  "sheet": "ABC-001C",
+  "block": "SEL#19",
+  "input": "(no cases)",
+  "expected": "SIG.AB flag per input",
+  "actual": "inputs 2, flags [null,null]",
+  "source": "drawing",
+  "status": "NOT TESTED",
+  "evidence": "a SIG.AB flag is not tied to every input of this SEL by the reader"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "SEL#2 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 45,46; flags st[8],st[9] -> output net 49"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "SEL#2 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 45,46; flags st[8],st[9] -> output net 49"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "SEL#2 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 45,46; flags st[8],st[9] -> output net 49"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "SEL#2 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 45,46; flags st[8],st[9] -> output net 49"
+ },
+ {
+  "sheet": "ABC-002",
+  "block": "SEL#2",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "SEL#2 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 1: Primary Normal / Secondary Normal (P=40, S=60)",
+  "expected": "50 (average of both healthy)",
+  "actual": "50",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 155,157; flags st[4],st[7] -> output net 85"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "SEL#2 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 2: Primary Bad Signal / Secondary Normal (P=40, S=60)",
+  "expected": "60 (bad input excluded, secondary used)",
+  "actual": "60",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 155,157; flags st[4],st[7] -> output net 85"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "SEL#2 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 3: Primary Normal / Secondary Bad Signal (P=40, S=60)",
+  "expected": "40 (bad input excluded, primary used)",
+  "actual": "40",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 155,157; flags st[4],st[7] -> output net 85"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "SEL#2 (modes AVG/PRI/SEC)",
+  "input": "SIG.AB case 5: Primary Normal = 0 / Secondary Normal nonzero (P=0, S=60)",
+  "expected": "30 (zero is a valid measurement, not bad)",
+  "actual": "30",
+  "source": "docs/FUNCTIONALITY.md AVERAGE SELECT CIRCUIT (average of healthy inputs)",
+  "status": "PASS",
+  "evidence": "force inputs net 155,157; flags st[4],st[7] -> output net 85"
+ },
+ {
+  "sheet": "ABC-003A",
+  "block": "SEL#2",
+  "input": "SIG.AB case 4: both Bad Signal (inputs moved 40/60 -> 45/65)",
+  "expected": "existing logic: all inputs bad = hold last good value (50)",
+  "actual": "50",
+  "source": "existing SEL logic (docs/BLOCK-LIBRARY.md); the drawing text does not define a different response",
+  "status": "PASS",
+  "evidence": "existing SEL logic kept unchanged (user decision 2026-10-10: no new hold-last behaviour is added; the existing response is reported, not extended)"
+ }
+]
