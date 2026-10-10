@@ -76,4 +76,10 @@ NEEDS REVIEW (user input needed): 5 RATE / RAMPB without a resolvable span (2.1)
 NOT TESTED / NOT DONE in this batch (core items of the PDF that remain open): Group B wire-geometry / net-label consistency re-audit and unknown-symbol / missing-pin markers on the drawing (Health lists them only); COS vs T-switch adjacency retest (finding 20; test-switch 210 / 0 on the existing cases); grey analog signals in Simulation mode (finding 13) not reproduced; per-signal range enforcement of COS / MAN setpoint vs MV (findings 4, 5, 17): only the MAN clamp and the existing UI boxes were exercised; Normal / Manual Test Value / Restore controls beyond Bad Signal; Simulation Audit panel (the JSON records are the data model); side-by-side sheets and other optional UI. The 54 sheets were NOT fully validated: only the blocks listed above were exercised.
 
 ## 5. Build / release
-See section 6 (filled in after the workflow ran).
+Branch `ccr-2c4847cc-9fe3px`, built commit `301d88b` (docs-only commits after it do not change the html). Workflow "Release (exe + apk + html)" run 25 (workflow_dispatch), https://github.com/Ronanski/dcs-ditl-workbench/actions/runs/38040999536 : jobs version / apk / exe / release all `success`.
+Release v1.20.8 (published, checked through the GitHub API): https://github.com/Ronanski/dcs-ditl-workbench/releases/tag/v1.20.8
+- logic-sim-v1.20.8.html (3,588,055 bytes, equals the committed file) - https://github.com/Ronanski/dcs-ditl-workbench/releases/download/v1.20.8/logic-sim-v1.20.8.html
+- logic-sim-v1.20.8-portable.exe (76,676,268 bytes) - .../download/v1.20.8/logic-sim-v1.20.8-portable.exe
+- logic-sim-v1.20.8.apk (5,416,655 bytes) - .../download/v1.20.8/logic-sim-v1.20.8.apk
+- logic-sim-v1.20.8-manual.pdf
+NOT verified: the exe and apk were built by the workflow but never installed or run by Claude (only the html was tested). The manual PDF was rebuilt from docs/MANUAL.md.
